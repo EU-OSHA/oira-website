@@ -1,0 +1,7 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function osha_wiki_install() {
+}

@@ -1,36 +1,64 @@
+# Sensitive information #
+#########################
 # Ignore configuration files that may contain sensitive information.
-sites/*/*settings*.php
+docroot/sites/*/settings*.php
+*.local.php
+drush/aliases/aliases.drushrc.php
+conf/apache.conf
+conf/config.json
+conf/varnish.vcl
+.idea
+phpunit.xml
+results/*
+tmp
 
-# Ignore paths that contain generated content.
-files/
-sites/*/files
-sites/*/private
 
-# Ignore default text files
-robots.txt
-/CHANGELOG.txt
-/COPYRIGHT.txt
-/INSTALL*.txt
-/LICENSE.txt
-/MAINTAINERS.txt
-/UPGRADE.txt
-/README.txt
-sites/all/README.txt
-sites/all/modules/README.txt
-sites/all/themes/README.txt
+# User Generated Content #
+##########################
+docroot/files
+docroot/sites/*/files
+docroot/sites/*/private
 
-# Ignore everything but the "sites" folder ( for non core developer )
-.htaccess
-web.config
-authorize.php
-cron.php
-index.php
-install.php
-update.php
-xmlrpc.php
-/includes
-/misc
-/modules
-/profiles
-/scripts
-/themes
+# Vagrant Files #
+#################
+.vagrant
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# It's better to unpack these files and commit the raw source, git has its own
+# built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon\?
+Thumbs.db
+
+# Allow these extensions for testing purposes #
+###############################################
+!docroot/sites/all/modules/osha/osha_migration/data/test/export/*/file/*.zip
+tmp

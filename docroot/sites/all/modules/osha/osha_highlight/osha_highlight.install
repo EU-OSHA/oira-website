@@ -1,0 +1,45 @@
+<?php
+
+// CW-988 delete field_summary
+function osha_highlight_update_7001() {
+  if ($instance = field_info_instance('node', 'field_summary', 'highlight')) {
+    field_delete_instance($instance);
+  }
+}
+
+/**
+ * Update missing highlights body text.
+ */
+function osha_highlight_update_7002() {
+  $json_path = drupal_get_path('module', 'osha_highlight') . '/missing_highlights.json';
+  if(file_exists($json_path)) {
+    if ($data = json_decode(file_get_contents($json_path))) {
+      $rows = array();
+      foreach ($data as $hightlight) {
+        $source = substr($hightlight->path, 4);
+        $rows[$source]['body'][$hightlight->language] = $hightlight->description . $hightlight->text;
+      }
+      foreach ($rows as $source => $row) {
+        $migrate_row = db_select('migrate_map_highlight', 'mh')
+          ->fields('mh')
+          ->condition('sourceid1', $source)
+          ->execute()
+          ->fetchAssoc();
+        if (!empty($migrate_row) && $node = node_load($migrate_row['destid1'])) {
+          foreach ($row['body'] as $lang => $value) {
+            $text = MigrationUtil::decodeHTMLText($value);
+            $text = OshaTMGMTRetranslate::prepare_text($text);
+            $node->body[$lang][0] = array(
+              'value' => $text,
+              'format' => 'full_html',
+            );
+          }
+          field_attach_update('node', $node);
+        }
+      }
+    }
+    else {
+      throw new DrupalUpdateException('Highligh json could not be opened.');
+    }
+  }
+}
