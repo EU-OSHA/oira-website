@@ -380,7 +380,7 @@ $options['init-modules'] = array(
   'smart_trim',
   'menu_attributes',
   'menu_item_visibility',
-//  'shs',
+  'shs',
   'smtp',
 
   // Enable last (conflict with rules)
@@ -485,6 +485,7 @@ $options['init-modules'] = array(
   'osha',
   'osha_workflow',
   'osha_tmgmt',
+  'osha_press_release',
   'osha_news',
   'osha_highlight',
   'osha_infographics',
