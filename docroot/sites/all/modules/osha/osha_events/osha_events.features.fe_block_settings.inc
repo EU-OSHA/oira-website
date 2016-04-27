@@ -23,28 +23,16 @@ function osha_events_default_fe_block_settings() {
     'pages' => 'oshevents',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'oira_frontend',
         'weight' => 0,
       ),
       'osha_admin' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'osha_admin',
-        'weight' => 0,
-      ),
-      'osha_frontend' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'osha_frontend',
-        'weight' => 4,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => 0,
       ),
     ),
@@ -64,28 +52,16 @@ function osha_events_default_fe_block_settings() {
 node/5322',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'oira_frontend',
         'weight' => 0,
       ),
       'osha_admin' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'osha_admin',
-        'weight' => 0,
-      ),
-      'osha_frontend' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'osha_frontend',
-        'weight' => 17,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => 0,
       ),
     ),
@@ -104,28 +80,16 @@ node/5322',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'oira_frontend',
         'weight' => 0,
       ),
       'osha_admin' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'osha_admin',
-        'weight' => 0,
-      ),
-      'osha_frontend' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'osha_frontend',
-        'weight' => 3,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => 0,
       ),
     ),
@@ -144,28 +108,16 @@ node/5322',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'oira_frontend',
         'weight' => 0,
       ),
       'osha_admin' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'osha_admin',
-        'weight' => 0,
-      ),
-      'osha_frontend' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
-        'theme' => 'osha_frontend',
-        'weight' => 3,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
         'weight' => 0,
       ),
     ),
