@@ -5,6 +5,7 @@ package = NCW
 version = 7.x-0.1
 project = ncw_migration
 dependencies[] = migrate
+configure = admin/config/system/ncw_migration
 files[] = ncw_migration.migrate.events.inc
 files[] = ncw_migration.migrate.highlights.inc
 files[] = ncw_migration.migrate.inc

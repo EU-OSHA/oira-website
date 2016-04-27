@@ -38,9 +38,8 @@ function ncw_migration_migrate_api() {
       'news' => array(
         'group_name' => 'ncw',
         'dependencies' => array(
-          'tax_tags', 'publications_add_res', 'news_add_res',
-          'press_releases_add_res',
-          'highlights_add_res'
+          'tax_tags', 'news_add_res',
+          'highlights_add_res',
         ),
         'class_name' => 'NCWNewsMigration',
       ),
@@ -71,9 +70,8 @@ function ncw_migration_migrate_api() {
       'highlights' => array(
         'group_name' => 'ncw',
         'dependencies' => array(
-          'tax_tags', 'publications_add_res', 'news_add_res',
-          'press_releases_add_res',
-          'highlights_add_res'
+          'tax_tags', 'news_add_res',
+          'highlights_add_res',
         ),
         'class_name' => 'NCWHighlightMigration',
       ),
@@ -102,25 +100,25 @@ function ncw_migration_migrate_api() {
         'dependencies' => array(),
         'class_name' => 'NCWTaxonomyCountryStatusMigration',
       ),
-      'tax_fop_link_sections' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array(),
-        'class_name' => 'NCWTaxonomyFOPLinkSectionsMigration',
-      ),
-      'tax_newsletter_sections' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array(),
-        'class_name' => 'NCWTaxonomyNewsletterSectionsMigration',
-      ),
+//      'tax_fop_link_sections' => array(
+//        'group_name' => 'ncw',
+//        'dependencies' => array(),
+//        'class_name' => 'NCWTaxonomyFOPLinkSectionsMigration',
+//      ),
+//      'tax_newsletter_sections' => array(
+//        'group_name' => 'ncw',
+//        'dependencies' => array(),
+//        'class_name' => 'NCWTaxonomyNewsletterSectionsMigration',
+//      ),
       // Don't migrate some types
       // Magazine, Annual reports and other corporate publications, Promotional Material
       // Evaluation reports, Corporate strategies and annual management plans
-      'tax_publication_types' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array(),
-        'class_name' => 'NCWTaxonomyPublicationTypeMigration',
-        'skip_ids' => array(4, 2, 3, 1, 3022),
-      ),
+//      'tax_publication_types' => array(
+//        'group_name' => 'ncw',
+//        'dependencies' => array(),
+//        'class_name' => 'NCWTaxonomyPublicationTypeMigration',
+//        'skip_ids' => array(4, 2, 3, 1, 3022),
+//      ),
       'tax_segment' => array(
         'group_name' => 'ncw',
         'dependencies' => array(),
@@ -374,8 +372,8 @@ abstract class AbstractNCWNodeMigration extends Migration {
   }
 
   public function getMigrationURL() {
-    $root = variable_get('hwc_migration_root_url', '');
-    $variable = variable_get('hwc_migration_' . $this->getMachineName() . '_url');
+    $root = variable_get('ncw_migration_root_url', '');
+    $variable = variable_get('ncw_migration_' . $this->getMachineName() . '_url');
     return $root . $variable;
   }
 
@@ -781,12 +779,12 @@ abstract class AbstractNCWTaxonomyTermSource extends AbstractNCWNodeSource {
 function ncw_migration_datasource_url() {
   $ret = NULL;
   static $errorDisplayed = FALSE;
-  $ret = variable_get('hwc_migration_root_url');
+  $ret = variable_get('ncw_migration_root_url');
   if (empty($ret)) {
     $ret = 'http://osha.localhost';
     if (!$errorDisplayed) {
       $errorDisplayed = TRUE;
-      drupal_set_message("Empty 'hwc_migration_root_url' variable. Using default 'http://osha.localhost'", 'warning');
+      drupal_set_message("Empty 'ncw_migration_root_url' variable. Using default 'http://osha.localhost'", 'warning');
     }
   }
   return $ret;

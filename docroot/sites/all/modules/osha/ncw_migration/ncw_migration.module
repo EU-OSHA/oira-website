@@ -1,5 +1,16 @@
 <?php
 
+function ncw_migration_menu() {
+  $items['admin/config/system/ncw_migration'] = array(
+    'title' => 'NCW Migration configuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ncw_migration_config_form'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'ncw_migration.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
 
 /**
  * Implements Elysia hook_cronapi().
@@ -7,7 +18,7 @@
 function ncw_migration_cronapi() {
   return array('ncw_migration_cron' => array(
     'description' => 'Migrate NCW content',
-    'rule' => '0 0 * * *', // Daily at midnight.
+    'rule' => '0 3 * * *',
   ));
 }
 
