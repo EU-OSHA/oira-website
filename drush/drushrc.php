@@ -443,6 +443,18 @@ $options['init-modules'] = array(
   'eu_captcha',
 //  'spamspan',
 
+  'panels',
+  'page_manager',
+  'views_content',
+  'i18n_panels',
+  'panels_mini',
+  'ds',
+  'ds_ui',
+  'ds_extras',
+  'ds_forms',
+  'field_formatter_settings',
+  'field_formatter_class',
+
   // Social share
   'on_the_web',
 
@@ -489,6 +501,7 @@ $options['init-modules'] = array(
   'osha_linkchecker',
 
   'osha_lingua_tools',
+  'ncw_migration',
 
   // Newsletter modules.
 //  'entity_collection',
