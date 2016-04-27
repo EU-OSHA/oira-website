@@ -19,6 +19,10 @@ class NCWEventsMigration extends AbstractNCWNodeMigration {
     $this->addFieldMapping('field_tags:create_term')->defaultValue(FALSE);
     $this->addFieldMapping('field_tags', 'field_tags');
 
+    $this->addFieldMapping('field_country:source_type')->defaultValue('tid');
+    $this->addFieldMapping('field_country:create_term')->defaultValue(FALSE);
+    $this->addFieldMapping('field_country', 'field_country');
+
     $this->addUnmigratedDestinations(array(
       'field_city:language',
       'field_agency_contact_reply:language',
@@ -50,6 +54,9 @@ class NCWEventsMigration extends AbstractNCWNodeMigration {
     parent::prepareRow($row);
     // Trim title.
     $row->field_tags = osha_migration_normalize_migrated_term_reference($row->field_tags, 'tax_tags');
+    if (!empty($row->field_country_code[LANGUAGE_NONE][0]['value'])) {
+      $row->field_country = ncw_migration_get_country_by_code($row->field_country_code[LANGUAGE_NONE][0]['value']);
+    }
     $row->title = views_trim_text(array(
       'max_length' => 150,
       'word_boundary' => TRUE,
@@ -73,7 +80,7 @@ class NCWEventsSource extends AbstractNCWNodeSource {
       'body_language',
       'body_summary',
       'body_format',
-      'field_country_code',
+      'field_country',
       'field_city',
       'field_agency_role',
       'field_tags',
@@ -102,6 +109,7 @@ class NCWEventsSource extends AbstractNCWNodeSource {
       'field_related_documents',
       'field_related_documents_language',
     );
-    return array_combine($fields, $fields);
+    $fields = array_combine($fields, $fields);
+    return $fields;
   }
 }

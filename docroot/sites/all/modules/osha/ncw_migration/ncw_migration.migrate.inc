@@ -18,7 +18,7 @@ function ncw_migration_migrate_api() {
     'migrations' => array(
       'events' => array(
         'group_name' => 'ncw',
-        'dependencies' => array('tax_tags'),
+        'dependencies' => array('tax_tags', 'tax_country'),
         'class_name' => 'NCWEventsMigration',
       ),
 //      'publications' => array(
@@ -1063,6 +1063,20 @@ function ncw_migration_find_migrated_item_id($source_nid, $migration_name) {
         array('!machine' => $migration_name, '!src' => $source_nid, '!dest' => $destid1['destid1'])
     );
     return $destid1['destid1'];
+  }
+  return NULL;
+}
+
+function ncw_migration_get_country_by_code($iso2) {
+  $voc = taxonomy_vocabulary_machine_name_load('country');
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+    ->propertyCondition('vid', $voc->vid)
+    ->fieldCondition('field_iso2', 'value', strtoupper($iso2));
+  $result = $query->execute();
+  if (isset($result['taxonomy_term'])) {
+    $tids = array_keys($result['taxonomy_term']);
+    return current($tids);
   }
   return NULL;
 }

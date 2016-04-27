@@ -14,96 +14,90 @@ function osha_events_default_fe_block_settings() {
 
   $export['views--exp-events_index-page'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => '-exp-events_index-page',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'oshevents',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
-        'weight' => -31,
+        'theme' => 'oira_frontend',
+        'weight' => 0,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
   $export['views-events-block_1'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'events-block_1',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'past-events
-past-events/*',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
-        'weight' => -58,
+        'theme' => 'oira_frontend',
+        'weight' => 0,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
-    'title' => 'Calendar filter',
-    'visibility' => 1,
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['views-events-block_2'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'events-block_2',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'events
-events/*',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
-        'weight' => -60,
+        'theme' => 'oira_frontend',
+        'weight' => 0,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
     'title' => '',
-    'visibility' => 1,
+    'visibility' => 0,
   );
 
   $export['views-events_index-block_1'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'events_index-block_1',
     'i18n_block_language' => array(),
@@ -113,16 +107,16 @@ events/*',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
-        'weight' => 13,
+        'theme' => 'oira_frontend',
+        'weight' => 0,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),

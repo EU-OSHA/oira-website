@@ -256,22 +256,25 @@ function osha_events_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '11',
         ),
         'title' => array(
           'weight' => '4',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '13',
         ),
         'workbench_access' => array(
-          'weight' => '15',
+          'weight' => '14',
         ),
         'language' => array(
           'weight' => '4',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '21',
         ),
       ),
       'display' => array(
