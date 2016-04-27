@@ -28,48 +28,6 @@ function osha_menu() {
 }
 
 /**
- * Implements hook_menu_alter().
- */
-function osha_menu_alter(&$items) {
-  if (isset($items['aggregator/sources/%aggregator_feed'])) {
-    $items['aggregator/sources/%aggregator_feed']['page callback'] = 'osha_aggregator_page_source';
-  }
-}
-
-/**
- * Override aggregator_page_source to localize the title.
- */
-function osha_aggregator_page_source($feed) {
-  drupal_set_title(t($feed->title));
-  $feed_source = theme('aggregator_feed_source', array('feed' => $feed));
-
-  // It is safe to include the fid in the query because it's loaded from the
-  // database by aggregator_feed_load.
-  $items = aggregator_feed_items_load('source', $feed);
-
-  return _aggregator_page_list($items, arg(3), $feed_source);
-}
-
-/**
- * Implements hook_node_update().
- */
-function osha_node_update($node) {
-  osha_expire_node_page($node);
-}
-
-/**
- * Implements hook_nodequeue_sort_alter().
- */
-function osha_nodequeue_sort_alter(&$nodes, $sqid) {
-  if ($sqid == 4 || $sqid == 5) {
-    osha_expire_view_page('about-eu-osha/press-room');
-  }
-  if ($sqid == 6) {
-    osha_expire_view_page('tools-and-publications/publications');
-  }
-}
-
-/**
  * Implements hook_js_alter().
  */
 function osha_js_alter(&$javascript) {
@@ -204,6 +162,8 @@ function osha_date_format_types() {
     'osha_day_only'  => t('Day only'),
     'month' => t('Month: F'),
     'year_and_month'  => t('Year and Month'),
+    'day_month_year' => t('Day Month Year'),
+    'month_day_year' => t('Month Day Year'),
   );
 }
 
@@ -360,97 +320,6 @@ function osha_get_mysql_column_size($table, $column) {
 }
 
 /**
- * Replace the node title with field_tile for page/article. Uses title module.
- *
- * Warning: Assuming no content is present
- */
-function osha_replace_title_field() {
-  if (module_load_include('module', 'title', 'title')) {
-    $types = array('article', 'page');
-    foreach ($types as $bundle) {
-      // Inspired by https://www.drupal.org/files/1801242-title-upgrade.patch
-      title_field_replacement_toggle('node', $bundle, 'title');
-      drupal_set_message(
-        t('Replacing title_field for !bundle', array('!bundle' => $bundle))
-      );
-    }
-  }
-  else {
-    drupal_set_message('osha_replace_title_field: Title module not available', 'warning');
-  }
-}
-
-/**
- * Enable translation for the basic page entity.
- */
-function osha_configure_basic_page() {
-  if (module_load_include('inc', 'node', 'content_types')) {
-    $form_state['values']['language_content_type'] = ENTITY_TRANSLATION_ENABLED;
-    $form_state['values']['entity_translation_hide_translation_links'] = 1;
-    $form_state['values']['promote'] = NULL;
-    $form_state['values']['comment'] = 1;
-    $type = node_type_load('page');
-    drupal_form_submit('node_type_form', $form_state, $type);
-    $errors = form_get_errors();
-    if (!empty($errors)) {
-      foreach ($errors as $error) {
-        drupal_set_message(
-          t('Basic page setup error: !error', array('!error' => $error))
-        );
-      }
-    }
-  }
-  else {
-    drupal_set_message('osha_configure_basic_page: content_types module not available', 'warning');
-  }
-}
-
-/**
- * Enable translation for the tags taxonomy..
- */
-function osha_configure_tags_taxonomy() {
-  if (module_load_include('inc', 'taxonomy', 'taxonomy.admin')) {
-    $form_state['values']['i18n_mode'] = 1;
-    $form_state['triggering_element']['#value'] = t('Save');
-    $form_state['triggering_element']['#name'] = 'op';
-    $type = taxonomy_vocabulary_machine_name_load('tags');
-    drupal_form_submit('taxonomy_form_vocabulary', $form_state, $type);
-    $errors = form_get_errors();
-    if (!empty($errors)) {
-      foreach ($errors as $error) {
-        drupal_set_message(
-          t('Tags setup error: !error', array('!error' => $error))
-        );
-      }
-    }
-  }
-  else {
-    drupal_set_message('osha_configure_tags_taxonomy: taxonomy module not available', 'warning');
-  }
-}
-
-/**
- * Make the field_image field translatable.
- */
-function osha_enable_field_image_translations() {
-  if (module_load_include('inc', 'entity_translation', 'entity_translation.admin')) {
-    $info = field_info_field('field_image');
-    if ($info !== NULL) {
-      drupal_set_message('Making field_image field translatable');
-      $form_state['values']['translatable'] = "0";
-      $form_state['field']['field_name'] = 'field_image';
-      drupal_form_submit('entity_translation_translatable_form', $form_state, 'field_image');
-    }
-    else {
-      drupal_set_message('field_image field not available yet', 'error');
-    }
-  }
-  else {
-    drupal_set_message('osha_configure_basic_page: entity_translation module not available', 'error');
-  }
-}
-
-/**
  * Implements hook_entity_info_alter().
  */
 function osha_entity_info_alter(&$entity_info) {
@@ -462,13 +331,11 @@ function osha_entity_info_alter(&$entity_info) {
 
 function osha_disabled_language_list() {
   $disabled = array(
-  );
-  return drupal_map_assoc($disabled);
-}
-
-function osha_extra_language_list() {
-  $disabled = array(
-    'tr', 'ru', 'ca',
+    'sq',
+    'bs',
+    'sr',
+    'mk',
+    'sh',
   );
   return drupal_map_assoc($disabled);
 }
@@ -496,11 +363,16 @@ function osha_language_list($osha_sorted = FALSE) {
   return $languages;
 }
 
-function osha_language_list_options() {
+function osha_language_list_options($native = FALSE) {
   $languages = osha_language_list();
   $return = array();
   foreach ($languages as $lang => $language) {
-    $return[$lang] = $language->name;
+    if ($native) {
+      $return[$lang] = $language->native;
+    }
+    else {
+      $return[$lang] = $language->name;
+    }
   }
   return $return;
 }
@@ -588,19 +460,14 @@ function osha_form_alter(&$form, &$form_state, $form_id){
   // Change cardinality (one value) for activity field
   if(in_array($form['#form_id'],
     array(
-      'blog_node_form',
       'article_node_form',
       'page_node_form',
       'calls_node_form',
-      'directive_node_form',
-      'guideline_node_form',
-      'highlight_node_form',
       'infographic_node_form',
       'job_vacancies_node_form',
       'news_node_form',
       'press_release_node_form',
-      'publication_node_form',
-      'seminar_node_form'))) {
+      'publication_node_form'))) {
     $form['field_activity']['und']['#cardinality'] = 1;
     $form['field_activity']['und']['#multiple'] = FALSE;
     $form['field_activity']['und']['#empty_option'] = 'Select activity';
@@ -674,7 +541,7 @@ function osha_node_view($node, $view_mode, $langcode) {
     $node->article_type_code = FALSE;
     if (!empty($node->field_article_type[LANGUAGE_NONE][0]['tid'])) {
       $term = taxonomy_term_load($node->field_article_type[LANGUAGE_NONE][0]['tid']);
-      $node->article_type_code = $term->field_article_type_code[LANGUAGE_NONE][0]['value'];
+      $node->article_type_code = !empty($term->field_article_type_code) ? $term->field_article_type_code[LANGUAGE_NONE][0]['value'] : '';
     }
   }
 
@@ -682,6 +549,14 @@ function osha_node_view($node, $view_mode, $langcode) {
   if ($node->type == 'webform') {
     if (isset($node->content['webform']['#form']['preview'])) {
       unset($node->content['field_page_introduction']);
+    }
+  }
+
+  if ($view_mode != 'full') {
+    if (!empty($node->field_archived[LANGUAGE_NONE][0]['value'])) {
+      if (!empty($node->content['title_field'][0]['#markup'])) {
+        $node->content['title_field'][0]['#markup'] .= '<span class="title-archived">' . t('Archived') . '</span>';
+      }
     }
   }
 }
@@ -710,6 +585,28 @@ function osha_file_view($file, $view_mode, $langcode) {
 }
 
 /**
+ * Implements hook_url_outbound_alter().
+ */
+function osha_url_outbound_alter(&$path, $original_path, $path_language) {
+  // CW-1899: use the English url_alias when node is not translated
+  if (strpos($path, 'node/') === 0) {
+    $en_path_alias = drupal_lookup_path('alias', $path, 'en');
+    if ($en_path_alias) {
+      $path = $en_path_alias;
+    }
+  } else if (strpos($path, 'entity-collection/') === 0) {
+    $eid = substr($path, 18);
+    if ($eid && is_numeric($eid)) {
+      $entity_collection = entity_load_single('entity_collection', $eid);
+      if ($entity_collection) {
+        $path = 'entity-collection/'.$entity_collection->name;
+      }
+    }
+  }
+  return;
+}
+
+/**
  * Implements hook_url_inbound_alter().
  */
 function osha_url_inbound_alter(&$path, $original_path, $path_language) {
@@ -720,9 +617,8 @@ function osha_url_inbound_alter(&$path, $original_path, $path_language) {
   if (empty($orig_path_source) && empty($orig_path_alias)) {
     $source_en = drupal_lookup_path('source', $original_path, 'en');
     if (!empty($source_en)) {
-      // Pass the current query params to the redirect.
-      $query = drupal_get_query_parameters();
-      drupal_goto($source_en, array('query' => $query), 301);
+      $path = $source_en;
+      return;
     }
   }
   // For images, in migrated content there are images with alias appended
@@ -839,28 +735,6 @@ function osha_tokens_alter(array &$replacements, array $context) {
 }
 
 /**
- * Add alt and title attributes to images thumbnails
- */
-function osha_thumbnail_alt_title(&$build, $content_type, $field, $formatter){
-  $current_language = 'en';
-
-  if($build['#bundle'] == $content_type){
-    if(isset($build[$field]) && $build[$field]['#formatter'] == $formatter){
-      foreach($build[$field] as $key => $image){
-        if(is_array($image) && isset($image['#item'])){
-          if(isset($build['#node']->title_field[$build['#language']][0]['value'])){
-            $current_language = $build['#language'];
-          }
-          $build[$field][$key]['#item']['alt'] = $build['#node']->title_field[$current_language][0]['value'];
-          $build[$field][$key]['#item']['title'] = $build['#node']->title_field[$current_language][0]['value'];
-        }
-      }
-    }
-  }
-}
-
-
-/**
  * Retrieve the decoded name for Activity field attached to a node.
  *
  * @param object $node
@@ -879,6 +753,13 @@ function osha_node_activity_name($node) {
     }
   }
   return '';
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function osha_node_update($node) {
+  osha_expire_node_page($node);
 }
 
 function osha_expire_node_page($node) {
@@ -959,38 +840,5 @@ function osha_expire_page($path) {
     cache_clear_all($base_root . $path, 'cache_page');
     // /path/to/page
     varnish_purge($host, $path);
-  }
-}
-
-/**
- * Alter metatags before being cached.
- *
- * This hook is invoked prior to the meta tags for a given page are cached.
- *
- * @param array $output
- *   All of the meta tags to be output for this page in their raw format. This
- *   is a heavily nested array.
- * @param string $instance
- *   An identifier for the current page's page type, typically a combination
- *   of the entity name and bundle name, e.g. "node:story".
- */
-function osha_metatag_metatags_view_alter(&$output, $instance) {
- if (isset($output['description']['#attached']['drupal_add_html_head'][0][0]['#value'])) {
-    if ($instance == 'global:frontpage') {
-      $queue = entityqueue_subqueue_load('frontpage_video');
-      $wrapper = entity_metadata_wrapper('entityqueue_subqueue', $queue);
-      $items = $wrapper->eq_node->value();
-      if (!empty($items)) {
-        $lang = $GLOBALS['language']->language;
-        $wrapper_node = entity_metadata_wrapper('node', $items[0]);
-        $output['description']['#attached']['drupal_add_html_head'][0][0]['#value'] = text_summary(trim(strip_tags($wrapper_node->language($lang)->body->value()['value'])), NULL, 150);
-      }
-    } else {
-      $output['description']['#attached']['drupal_add_html_head'][0][0]['#value'] = text_summary($output['description']['#attached']['drupal_add_html_head'][0][0]['#value'], NULL, 150);
-    }
-   $output['description']['#attached']['drupal_add_html_head'][0][0]['#value'] = strlen($output['description']['#attached']['drupal_add_html_head'][0][0]['#value']) > 150 ? $output['description']['#attached']['drupal_add_html_head'][0][0]['#value'].'...' : $output['description']['#attached']['drupal_add_html_head'][0][0]['#value'];
-  }
-  if (isset($output['abstract']['#attached']['drupal_add_html_head'][0][0]['#value'])) {
-    $output['abstract']['#attached']['drupal_add_html_head'][0][0]['#value'] = text_summary($output['abstract']['#attached']['drupal_add_html_head'][0][0]['#value'], NULL, 150).'...';
   }
 }

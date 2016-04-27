@@ -9,7 +9,6 @@
 function osha_views_query_alter(&$view, &$query) {
   // Switch from JOIN to LEFT JOIN with workbench_moderation_node_history
   // to allow adding content types which are not moderated (i.e. page).
-  return;
   if ($view->name == 'administration_content') {
     if (isset($query->table_queue['workbench_moderation_node_history']['join']->type)) {
       $query->table_queue['workbench_moderation_node_history']['join']->type = 'LEFT';
@@ -22,6 +21,6 @@ function osha_views_query_alter(&$view, &$query) {
     if (in_array('views', arg())) {
       drupal_set_message('Be careful! Overwriting query in osha.views.inc. Changing filters order may affect the view.', 'warning');
     }
-    $query->where[3]['conditions'][1]['field'] = 'node.type';
+    $query->where[2]['conditions'][1]['field'] = 'node.type';
   }
 }

@@ -14,6 +14,7 @@ function osha_default_fe_block_settings() {
 
   $export['lang_dropdown-language'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'language',
     'i18n_block_language' => array(),
@@ -23,25 +24,26 @@ function osha_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'napo_frontend' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'napo_frontend',
-        'weight' => 0,
+      'hwc_frontend' => array(
+        'region' => 'header',
+        'status' => 1,
+        'theme' => 'hwc_frontend',
+        'weight' => -65,
       ),
-      'osha_admin' => array(
+      'seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'osha_admin',
+        'theme' => 'seven',
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
   $export['lang_dropdown-language_content'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'language_content',
     'i18n_block_language' => array(),
@@ -51,16 +53,16 @@ function osha_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'napo_frontend' => array(
-        'region' => 'menu',
-        'status' => 1,
-        'theme' => 'napo_frontend',
-        'weight' => -36,
-      ),
-      'osha_admin' => array(
+      'hwc_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'osha_admin',
+        'theme' => 'hwc_frontend',
+        'weight' => -6,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
         'weight' => 0,
       ),
     ),

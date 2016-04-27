@@ -7,7 +7,6 @@ function osha_get_translatable_strings() {
     'Article',
     'Activity',
     'Additional resources',
-    'Alt text',
     'Archived',
     'Article type',
     'Body',
@@ -23,7 +22,6 @@ function osha_get_translatable_strings() {
     'Publication date',
     'Summary',
     'Tags',
-    'Thesaurus',
     'Title',
     'Title text',
 
@@ -31,6 +29,7 @@ function osha_get_translatable_strings() {
     'News & Events',
     'Press',
     'Contact us',
+    'European Agency for Safety and Health at Work',
 
     // String from footer
     'an agency of the European Union',
@@ -38,7 +37,6 @@ function osha_get_translatable_strings() {
     'Site map',
 
     // Content from osha_blocks
-    '<div><a class="seminar_back-to-seminars back-to-link" href="/tools-and-publications/seminars">Back to seminars</a></div>',
     '<div class="link"><span>Interested in specific topics?</span><a href="!url">Try alert service</a></div>',
     'OSHwiki featured articles',
     'We are no longer actively maintaining this information, so don\'t be surprised if you find some broken links or if some of the information is out of date.',
@@ -67,7 +65,7 @@ function osha_get_translatable_strings() {
     'Go to last page',
 
     // Other strings
-    'Share this on:',
+    'Share this article',
     'Share',
     'Recent tweets',
     'Clear filter',

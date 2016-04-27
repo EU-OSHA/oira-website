@@ -55,7 +55,6 @@ function osha_sort_language_list($languages) {
   $lang_order = array(
     'bg',
     'cs',
-    'ca',
     'da',
     'de',
     'et',
@@ -75,12 +74,10 @@ function osha_sort_language_list($languages) {
     'pl',
     'pt',
     'ro',
-    'ru',
     'sk',
     'sl',
     'fi',
     'sv',
-    'tr',
   );
 
   $result = array();
