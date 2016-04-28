@@ -126,6 +126,7 @@ function oira_frontend_preprocess_field(&$variables) {
     $variables['theme_hook_suggestions'][] = 'field__' . $variables['element']['#field_name'] . '__' . $variables['element']['#view_mode'];
   }
 }
+
 function oira_frontend_preprocess_node(&$vars) {
   if (isset($vars['content']['links']['node']['#links']['node-readmore'])) {
 //    $vars['content']['links']['node']['#links']['node-readmore']['title'] = t('See more');

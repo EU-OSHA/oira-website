@@ -298,6 +298,8 @@ $options['init-modules'] = array(
   'views_bulk_operations',
   'date_views',
   'better_exposed_filters',
+  'views_accordion',
+  'draggableviews',
 
   'mailsystem',
   'htmlmail',
@@ -498,6 +500,7 @@ $options['init-modules'] = array(
 //  'osha_contact',
   'osha_authentication',
   'osha_sitemap',
+  'napo_contact',
 
   'linkchecker',
   'osha_linkchecker',

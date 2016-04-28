@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Set napo_contact's weight over views module.
+ */
+function napo_contact_update_7001() {
+  db_update('system')
+    ->fields(array('weight' => 11))
+    ->condition('name', 'napo_contact')
+    ->execute();
+}
+
+/**
+ * Disable comments for exiting faqs.
+ */
+function napo_contact_update_7002() {
+  db_update('node')
+    ->fields(array('comment' => 1))
+    ->condition('type', 'faq')
+    ->execute();
+}
+
+/**
+ * Revert napo_contact.
+ */
+function napo_contact_update_7003() {
+  features_revert_module('napo_contact');
+}
