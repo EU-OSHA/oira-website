@@ -10,7 +10,7 @@
 function napo_contact_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-faq-body'
+  // Exported field_instance: 'node-faq-body'.
   $field_instances['node-faq-body'] = array(
     'bundle' => 'faq',
     'default_value' => NULL,
@@ -20,11 +20,25 @@ function napo_contact_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -34,6 +48,7 @@ function napo_contact_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
+          'field_formatter_class' => '',
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
@@ -67,7 +82,7 @@ function napo_contact_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-faq-field_weight'
+  // Exported field_instance: 'node-faq-field_weight'.
   $field_instances['node-faq-field_weight'] = array(
     'bundle' => 'faq',
     'default_value' => NULL,
@@ -80,7 +95,19 @@ function napo_contact_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -114,7 +141,7 @@ function napo_contact_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-faq-title_field'
+  // Exported field_instance: 'node-faq-title_field'.
   $field_instances['node-faq-title_field'] = array(
     'bundle' => 'faq',
     'default_value' => NULL,
@@ -127,7 +154,19 @@ function napo_contact_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -166,8 +205,6 @@ function napo_contact_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Answer');
-  t('Body');
-  t('Comment');
   t('Title');
   t('Weight');
 

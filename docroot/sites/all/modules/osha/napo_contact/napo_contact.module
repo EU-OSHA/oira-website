@@ -12,6 +12,7 @@ include_once 'napo_contact.features.inc';
 function napo_contact_menu_alter(&$items) {
   // Add access callback for Reorder episodes tab.
   $items['node/%/reorder-faqs']['access callback'] = 'napo_contact_reoder_faq_access_callback';
+  $items['contact']['access callback'] = FALSE;
 }
 
 /**
@@ -25,9 +26,8 @@ function napo_contact_reoder_faq_access_callback($options) {
   if (!$access) {
     return FALSE;
   }
-  $contact_nid = variable_get('napo_contact_page_nid', 253);
   $node = node_load(arg(1));
-  if ($node && $node->nid == $contact_nid) {
+  if ($node && $node->type == 'faq') {
     return TRUE;
   }
   return FALSE;

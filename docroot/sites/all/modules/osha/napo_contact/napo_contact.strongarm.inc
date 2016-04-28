@@ -111,13 +111,6 @@ function napo_contact_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_webform';
-  $strongarm->value = '0';
-  $export['comment_webform'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_comment_filter_faq';
   $strongarm->value = 0;
   $export['entity_translation_comment_filter_faq'] = $strongarm;
