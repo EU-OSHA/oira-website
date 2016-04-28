@@ -49,6 +49,7 @@ function ncw_migration_migrate_api() {
         'group_name' => 'ncw',
         'dependencies' => array(
           'wiki_categories',
+          'nace_codes',
         ),
         'class_name' => 'NCWWikiPagesMigration',
       ),
