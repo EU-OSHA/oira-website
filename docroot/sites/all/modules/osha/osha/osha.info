@@ -159,7 +159,6 @@ features[node][] = internal_url
 features[node][] = webform
 features[path_breadcrumbs][] = contact_page
 features[path_breadcrumbs][] = node_breadcrumbs
-features[taxonomy][] = tags
 features[user_permission][] = access PDF version
 features[user_permission][] = access news feeds
 features[user_permission][] = access site-wide contact form
