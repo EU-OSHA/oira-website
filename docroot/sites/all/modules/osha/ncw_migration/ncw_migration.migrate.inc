@@ -35,6 +35,18 @@ function ncw_migration_migrate_api() {
 //        'dependencies' => array('tax_tags', 'tax_publication_types'),
 //        'class_name' => 'NCWAdditionalResourcesPublicationsMigration',
 //      ),
+      'wiki_categories' => array(
+        'group_name' => 'ncw',
+        'dependencies' => array(),
+        'class_name' => 'NCWTaxonomyWikiCategoriesMigration',
+      ),
+      'wiki_pages' => array(
+        'group_name' => 'ncw',
+        'dependencies' => array(
+          'wiki_categories',
+        ),
+        'class_name' => 'NCWWikiPagesMigration',
+      ),
       'news' => array(
         'group_name' => 'ncw',
         'dependencies' => array(
