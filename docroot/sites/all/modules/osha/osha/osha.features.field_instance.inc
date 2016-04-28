@@ -382,6 +382,12 @@ function osha_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'pub_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1033,6 +1039,82 @@ function osha_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-article-field_nace_codes'.
+  $field_instances['node-article-field_nace_codes'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'highlights_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'newsletter_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'scs' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nace_codes',
+    'label' => 'Nace',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'multiple_selects',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'multiple_selects',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-article-field_page_count'.
   $field_instances['node-article-field_page_count'] = array(
     'bundle' => 'article',
@@ -1286,6 +1368,12 @@ function osha_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'pub_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1374,6 +1462,12 @@ function osha_field_default_field_instances() {
         'weight' => 3,
       ),
       'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1715,6 +1809,12 @@ function osha_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'pub_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1806,6 +1906,12 @@ function osha_field_default_field_instances() {
         'weight' => 1,
       ),
       'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1923,6 +2029,12 @@ function osha_field_default_field_instances() {
         'weight' => 0,
       ),
       'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2047,6 +2159,12 @@ function osha_field_default_field_instances() {
         'weight' => 3,
       ),
       'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2835,6 +2953,7 @@ function osha_field_default_field_instances() {
   t('Image');
   t('Language');
   t('Level');
+  t('Nace');
   t('Name');
   t('Page Introduction');
   t('Page count');
