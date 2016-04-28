@@ -10,7 +10,7 @@
 function osha_wiki_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-wiki_page-body'
+  // Exported field_instance: 'node-wiki_page-body'.
   $field_instances['node-wiki_page-body'] = array(
     'bundle' => 'wiki_page',
     'default_value' => NULL,
@@ -85,7 +85,7 @@ function osha_wiki_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki_page-field_nace_codes'
+  // Exported field_instance: 'node-wiki_page-field_nace_codes'.
   $field_instances['node-wiki_page-field_nace_codes'] = array(
     'bundle' => 'wiki_page',
     'default_value' => NULL,
@@ -150,7 +150,7 @@ function osha_wiki_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki_page-field_summary'
+  // Exported field_instance: 'node-wiki_page-field_summary'.
   $field_instances['node-wiki_page-field_summary'] = array(
     'bundle' => 'wiki_page',
     'default_value' => NULL,
@@ -221,7 +221,7 @@ function osha_wiki_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki_page-field_tags'
+  // Exported field_instance: 'node-wiki_page-field_tags'.
   $field_instances['node-wiki_page-field_tags'] = array(
     'bundle' => 'wiki_page',
     'default_value' => NULL,
@@ -293,72 +293,7 @@ function osha_wiki_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki_page-field_thesaurus'
-  $field_instances['node-wiki_page-field_thesaurus'] = array(
-    'bundle' => 'wiki_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 8,
-      ),
-      'highlights_item' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'newsletter_item' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_slideshow' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_wiki' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_thesaurus',
-    'label' => 'Thesaurus',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'multiple_selects',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'multiple_selects',
-      'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-wiki_page-field_updated'
+  // Exported field_instance: 'node-wiki_page-field_updated'.
   $field_instances['node-wiki_page-field_updated'] = array(
     'bundle' => 'wiki_page',
     'deleted' => 0,
@@ -429,7 +364,7 @@ function osha_wiki_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki_page-field_wiki_categories'
+  // Exported field_instance: 'node-wiki_page-field_wiki_categories'.
   $field_instances['node-wiki_page-field_wiki_categories'] = array(
     'bundle' => 'wiki_page',
     'default_value' => NULL,
@@ -495,7 +430,7 @@ function osha_wiki_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki_page-field_wiki_page_url'
+  // Exported field_instance: 'node-wiki_page-field_wiki_page_url'.
   $field_instances['node-wiki_page-field_wiki_page_url'] = array(
     'bundle' => 'wiki_page',
     'default_value' => NULL,
@@ -589,7 +524,7 @@ function osha_wiki_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki_page-title_field'
+  // Exported field_instance: 'node-wiki_page-title_field'.
   $field_instances['node-wiki_page-title_field'] = array(
     'bundle' => 'wiki_page',
     'default_value' => NULL,
@@ -671,7 +606,6 @@ function osha_wiki_field_default_field_instances() {
   t('Nace');
   t('Summary');
   t('Tags');
-  t('Thesaurus');
   t('Title');
   t('URL');
   t('Updated');

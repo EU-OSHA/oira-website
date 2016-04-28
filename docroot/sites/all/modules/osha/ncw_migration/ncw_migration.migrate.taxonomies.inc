@@ -99,3 +99,11 @@ class CountryNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
     );
   }
 }
+
+class NCWTaxonomyWikiCategoriesMigration extends AbstractNCWTaxonomyTermMigration {
+
+  public function __construct($arguments) {
+    parent::__construct($arguments, 'SimpleNCWTaxonomyTermSource', 'wiki_categories');
+    $this->description = 'Import taxonomy "wiki_categories" from NCW';
+  }
+}
