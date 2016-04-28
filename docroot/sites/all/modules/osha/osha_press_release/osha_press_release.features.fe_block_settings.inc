@@ -100,7 +100,7 @@ function osha_press_release_default_fe_block_settings() {
       ),
     ),
     'title' => 'Join our news distribution list',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['panels_mini-press_room_blocks'] = array(

@@ -55,7 +55,7 @@ function osha_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'oira_frontend',
-        'weight' => -6,
+        'weight' => 0,
       ),
       'osha_admin' => array(
         'region' => '',
