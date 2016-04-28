@@ -454,6 +454,7 @@ $options['init-modules'] = array(
   'ds_forms',
   'field_formatter_settings',
   'field_formatter_class',
+  'manualcrop',
 
   // Social share
   'on_the_web',
