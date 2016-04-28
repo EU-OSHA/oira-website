@@ -110,6 +110,16 @@ function oira_frontend_panels_flexible($vars) {
   $output .= "</div>\n</div>\n";
   return $output;
 }
+
+function oira_frontend_preprocess_page(&$vars) {
+  if (drupal_is_front_page()) {
+    unset($vars['page']['content']['system_main']['default_message']);
+    drupal_set_title('');
+  }
+}
+
+
+
 function oira_frontend_preprocess_field(&$variables) {
   // Add theme suggestion for field based on field name and view mode.
   if (!empty($variables['element']['#view_mode'])) {
@@ -421,30 +431,3 @@ function oira_frontend_top_anchor(&$vars) {
   );
   $vars['top_anchor'] = l('<img alt="Anchor to top" src="'.file_create_url(path_to_theme().'/images/anchor-top.png').'" />', '', $options);
 }
-
-/**
- * Draw the flexible layout.
- */
-function oira_frontent_panels_flexible($vars) {
-  $css_id = $vars['css_id'];
-  $content = $vars['content'];
-  $settings = $vars['settings'];
-  $display = $vars['display'];
-  $layout = $vars['layout'];
-  $handler = $vars['renderer'];
-
-  panels_flexible_convert_settings($settings, $layout);
-
-  $renderer = panels_flexible_create_renderer(FALSE, $css_id, $content, $settings, $display, $layout, $handler);
-
-  $output = "<div class=\"panel-flexible " . $renderer->base['canvas'] . " clearfix\" $renderer->id_str>\n";
-  $output .= "<div class=\"panel-flexible-inside " . $renderer->base['canvas'] . "-inside\">\n";
-
-  $output .= panels_flexible_render_items($renderer, $settings['items']['canvas']['children'], $renderer->base['canvas']);
-
-  // Wrap the whole thing up nice and snug
-  $output .= "</div>\n</div>\n";
-
-  return $output;
-}
-
