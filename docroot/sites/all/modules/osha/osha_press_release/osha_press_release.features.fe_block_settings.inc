@@ -26,10 +26,10 @@ function osha_press_release_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
+        'theme' => 'oira_frontend',
         'weight' => -49,
       ),
       'seven' => array(
@@ -57,10 +57,10 @@ function osha_press_release_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
+        'theme' => 'oira_frontend',
         'weight' => -51,
       ),
       'seven' => array(
@@ -86,10 +86,10 @@ function osha_press_release_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
+        'theme' => 'oira_frontend',
         'weight' => 3,
       ),
       'seven' => array(
@@ -117,10 +117,10 @@ function osha_press_release_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => 'content',
         'status' => 1,
-        'theme' => 'hwc_frontend',
+        'theme' => 'oira_frontend',
         'weight' => -54,
       ),
       'seven' => array(
@@ -148,10 +148,10 @@ function osha_press_release_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
+        'theme' => 'oira_frontend',
         'weight' => -50,
       ),
       'seven' => array(
@@ -177,10 +177,10 @@ function osha_press_release_default_fe_block_settings() {
     'pages' => 'inside-eu-osha/press-room',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
+        'theme' => 'oira_frontend',
         'weight' => 22,
       ),
       'seven' => array(
