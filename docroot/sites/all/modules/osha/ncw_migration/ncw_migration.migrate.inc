@@ -40,10 +40,16 @@ function ncw_migration_migrate_api() {
         'dependencies' => array(),
         'class_name' => 'NCWTaxonomyWikiCategoriesMigration',
       ),
+      'nace_codes' => array(
+        'group_name' => 'ncw',
+        'dependencies' => array(),
+        'class_name' => 'NCWTaxonomyNaceCodesMigration',
+      ),
       'wiki_pages' => array(
         'group_name' => 'ncw',
         'dependencies' => array(
           'wiki_categories',
+          'nace_codes',
         ),
         'class_name' => 'NCWWikiPagesMigration',
       ),

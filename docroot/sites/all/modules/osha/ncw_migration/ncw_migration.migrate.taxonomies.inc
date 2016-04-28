@@ -107,3 +107,12 @@ class NCWTaxonomyWikiCategoriesMigration extends AbstractNCWTaxonomyTermMigratio
     $this->description = 'Import taxonomy "wiki_categories" from NCW';
   }
 }
+
+
+class NCWTaxonomyNaceCodesMigration extends AbstractNCWTaxonomyTermMigration {
+
+  public function __construct($arguments) {
+    parent::__construct($arguments, 'SimpleNCWTaxonomyTermSource', 'nace_codes');
+    $this->description = 'Import taxonomy "nace_codes" from NCW';
+  }
+}
