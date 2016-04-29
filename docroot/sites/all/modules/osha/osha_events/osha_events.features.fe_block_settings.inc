@@ -20,7 +20,7 @@ function osha_events_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'oshevents',
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
@@ -37,7 +37,7 @@ function osha_events_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-events-block_1'] = array(
@@ -48,7 +48,8 @@ function osha_events_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'past-events
+past-events/*',
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
@@ -64,8 +65,8 @@ function osha_events_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
+    'title' => 'Calendar filter',
+    'visibility' => 1,
   );
 
   $export['views-events-block_2'] = array(
@@ -76,7 +77,8 @@ function osha_events_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'events
+events/*',
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
@@ -93,7 +95,7 @@ function osha_events_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   $export['views-events_index-block_1'] = array(
