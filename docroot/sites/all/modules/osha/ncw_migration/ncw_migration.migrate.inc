@@ -12,14 +12,19 @@ function ncw_migration_migrate_api() {
     'api' => 2,
     'groups' => array(
       'ncw' => array(
-        'title' => 'Import data from NCW'
+        'title' => 'Import data from NCW',
       ),
     ),
     'migrations' => array(
       'events' => array(
         'group_name' => 'ncw',
-        'dependencies' => array('tax_tags', 'tax_country'),
+        'dependencies' => array('tax_tags', 'tax_country', 'events_add_res'),
         'class_name' => 'NCWEventsMigration',
+      ),
+      'events_add_res' => array(
+        'group_name' => 'ncw',
+        'dependencies' => array('tax_tags', 'tax_country'),
+        'class_name' => 'NCWAdditionalResourcesEventsMigration',
       ),
 //      'publications' => array(
 //        'group_name' => 'ncw',
@@ -40,16 +45,11 @@ function ncw_migration_migrate_api() {
         'dependencies' => array(),
         'class_name' => 'NCWTaxonomyWikiCategoriesMigration',
       ),
-      'nace_codes' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array(),
-        'class_name' => 'NCWTaxonomyNaceCodesMigration',
-      ),
       'wiki_pages' => array(
         'group_name' => 'ncw',
         'dependencies' => array(
           'wiki_categories',
-          'nace_codes',
+          'tax_nace_codes',
           'tax_tags',
         ),
         'class_name' => 'NCWWikiPagesMigration',
@@ -109,6 +109,11 @@ function ncw_migration_migrate_api() {
 //        'dependencies' => array(),
 //        'class_name' => 'NCWPressContactMigration',
 //      ),
+      'tax_nace_codes' => array(
+        'group_name' => 'ncw',
+        'dependencies' => array(),
+        'class_name' => 'NCWTaxonomyNaceCodesMigration',
+      ),
       'tax_country' => array(
         'group_name' => 'ncw',
         'dependencies' => array('tax_country_status'),
@@ -1084,8 +1089,7 @@ function osha_migration_normalize_migrated_term_reference(&$original, $source_mi
 
 function ncw_migration_find_additional_resource($source_nid) {
   $migrations = array(
-    'publications_add_res', 'news_add_res',
-    'press_releases_add_res', 'highlights_add_res'
+    'news_add_res', 'highlights_add_res', 'events_add_res',
   );
   foreach($migrations as $machine_name) {
     $migration = Migration::getInstance($machine_name);

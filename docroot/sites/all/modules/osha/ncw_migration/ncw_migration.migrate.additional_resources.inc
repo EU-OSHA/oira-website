@@ -33,6 +33,22 @@ class NCWAdditionalResourcesNewsMigration extends NCWHighlightMigration {
   }
 }
 
+/**
+ * Migrates additional resources - news
+ *
+ * Set hwc_migration_events_add_res_url variable for explicit source URL.
+ */
+class NCWAdditionalResourcesEventsMigration extends NCWEventsMigration {
+
+  public function __construct($arguments) {
+    $arguments['source_klass'] = 'NCWAdditionalResourcesEventsSource';
+    parent::__construct($arguments);
+    /** @var NCWAdditionalResourcesBaseSource content_type */
+    $this->source->content_type = 'events';
+    $this->description = 'Import additional highlights (into news) from NCW';
+  }
+}
+
 
 /**
  * Migrates additional resources - press_release
@@ -164,6 +180,53 @@ class NCWAdditionalResourcesNewsSource extends NCWAdditionalResourcesBaseSource 
       'field_character_count',
       'field_page_count',
       // @todo: 'field_aditional_resources' - recursive! :-(
+    );
+    return array_combine($fields, $fields);
+  }
+}
+
+class NCWAdditionalResourcesEventsSource extends NCWAdditionalResourcesBaseSource {
+
+  /**
+   * The list of available fields to map from the source, keyed by field name.
+   */
+  public function contentFields() {
+    $fields = array(
+      'title_field',
+      'title_field_language',
+      'body',
+      'body_language',
+      'body_summary',
+      'body_format',
+      'field_country',
+      'field_city',
+      'field_agency_role',
+      'field_tags',
+      'field_adonis',
+      'field_adonis_language',
+      'field_agency_contact_reply',
+      'field_agency_initial_contact',
+      'field_agency_rep_confirmed',
+      'field_color',
+      'field_comments_summary_after_eve',
+      'field_comments_summary_after_eve_language',
+      'field_event_in_amp',
+      'field_event_type',
+      'field_for_the_web',
+      'field_number_of_attendees',
+      'field_organised_by',
+      'field_organization',
+      'field_satisfaction_rate',
+      'field_start_date',
+      'field_start_date_timezone',
+      'field_start_date_value2',
+      'field_unit_ref',
+      'field_website_of_event',
+      'field_website_of_event_title',
+      'field_website_of_event_attributes',
+      'field_related_documents',
+      'field_related_documents_language',
+    // @todo: 'field_aditional_resources' - recursive! :-(
     );
     return array_combine($fields, $fields);
   }
