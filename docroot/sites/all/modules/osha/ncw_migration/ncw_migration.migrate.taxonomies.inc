@@ -1,5 +1,6 @@
 <?php
 
+/* ----------------- MIGRATIONS ----------------- */
 class NCWTaxonomyCountryMigration extends AbstractNCWTaxonomyTermMigration {
 
   public function __construct($arguments) {
@@ -56,7 +57,25 @@ class NCWTaxonomyTagsMigration extends AbstractNCWTaxonomyTermMigration {
   }
 }
 
+class NCWTaxonomyWikiCategoriesMigration extends AbstractNCWTaxonomyTermMigration {
 
+  public function __construct($arguments) {
+    parent::__construct($arguments, 'SimpleNCWTaxonomyTermSource', 'wiki_categories');
+    $this->description = 'Import taxonomy "wiki_categories" from NCW';
+  }
+}
+
+
+class NCWTaxonomyNaceCodesMigration extends AbstractNCWTaxonomyTermMigration {
+
+  public function __construct($arguments) {
+    parent::__construct($arguments, 'NaceCodesNCWTaxonomyTermSource', 'nace_codes');
+    $this->description = 'Import taxonomy "nace_codes" from NCW';
+  }
+}
+
+
+/* ----------------- SOURCES ----------------- */
 class SimpleNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
 
   public function contentFields() {
@@ -100,19 +119,15 @@ class CountryNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
   }
 }
 
-class NCWTaxonomyWikiCategoriesMigration extends AbstractNCWTaxonomyTermMigration {
+class NaceCodesNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
 
-  public function __construct($arguments) {
-    parent::__construct($arguments, 'SimpleNCWTaxonomyTermSource', 'wiki_categories');
-    $this->description = 'Import taxonomy "wiki_categories" from NCW';
-  }
-}
-
-
-class NCWTaxonomyNaceCodesMigration extends AbstractNCWTaxonomyTermMigration {
-
-  public function __construct($arguments) {
-    parent::__construct($arguments, 'SimpleNCWTaxonomyTermSource', 'nace_codes');
-    $this->description = 'Import taxonomy "nace_codes" from NCW';
+  public function contentFields() {
+    return array(
+      'field_nace_code' => 'field_nace_code',
+      'field_nace_changes' => 'field_nace_changes',
+      'field_nace_includes' => 'field_nace_includes',
+      'field_nace_excludes' => 'field_nace_excludes',
+      'field_nace_includes_also' => 'field_nace_includes_also',
+    );
   }
 }
