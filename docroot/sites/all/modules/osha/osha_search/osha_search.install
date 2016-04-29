@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function osha_search_install() {
+  $server = search_api_server_load('solr_server');
+  if (empty($server)) {
+    $cfg = array(
+      'name' => 'Solr server',
+      'machine_name' => 'solr_server',
+      'class' => 'search_api_solr_service',
+      'enabled' => 1,
+      'description' => 'Search server',
+      'options' => array(
+        'scheme' => 'http',
+        'host' => 'localhost',
+        'port' => '8983',
+        'path' => '/solr',
+        'http_user' => '',
+        'http_password' => '',
+        'excerpt' => NULL,
+        'retrieve_data' => NULL,
+        'highlight_data' => NULL,
+        'skip_schema_check' => NULL,
+        'solr_version' => '',
+        'http_method' => 'AUTO',
+      ),
+    );
+    $server = new SearchApiServer($cfg);
+    $server->save();
+  }
+}

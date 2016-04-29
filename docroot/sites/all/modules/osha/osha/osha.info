@@ -337,6 +337,7 @@ features[variable][] = site_map_show_menus
 features[variable][] = site_map_show_titles
 features[variable][] = smtp_allowhtml
 features[variable][] = spamspan_dot_enable
+features[variable][] = entity_translation_entity_types
 features[variable][] = workbench_access_node_type_internal_url
 features[variable][] = workbench_moderation_default_state_internal_url
 features[views_view][] = administration_content

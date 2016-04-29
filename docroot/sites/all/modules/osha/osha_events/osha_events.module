@@ -191,7 +191,7 @@ function osha_events_node_view($node, $view_mode, $langcode) {
           case 'event_location':
             $location = $wrapper->field_location->value();
             $city = $wrapper->field_city->value();
-            $country = $wrapper->field_country_code->label();
+            $country = $wrapper->field_country->label();
             $node->content[$field_name] = array(
               '#markup' => theme('event_location', array('location' => $location, 'city' => $city, 'country' => $country))
             );

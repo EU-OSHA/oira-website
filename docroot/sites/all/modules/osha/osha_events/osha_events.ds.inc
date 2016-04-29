@@ -138,7 +138,7 @@ function osha_events_ds_layout_settings_info() {
       'right' => array(
         3 => 'field_location',
         4 => 'field_city',
-        5 => 'field_country_code',
+        5 => 'field_country',
       ),
       'center' => array(
         6 => 'body',
