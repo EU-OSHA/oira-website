@@ -50,6 +50,7 @@ function ncw_migration_migrate_api() {
         'dependencies' => array(
           'wiki_categories',
           'nace_codes',
+          'tax_tags',
         ),
         'class_name' => 'NCWWikiPagesMigration',
       ),
