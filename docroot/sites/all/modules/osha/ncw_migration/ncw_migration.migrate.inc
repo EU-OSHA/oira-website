@@ -550,6 +550,9 @@ abstract class AbstractNCWNodeSource extends MigrateSource {
         if ($rowd = $this->fileGetContents($node_url)) {
           if ($row_ob = json_decode($rowd, TRUE)) {
             $row = new stdClass();
+            if (!empty($ob->parent_tid)) {
+              $row->parent = $ob->parent_tid;
+            }
             foreach($row_ob as $k => $v) {
               $row->$k = $v;
             }
@@ -655,6 +658,8 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
   protected function addFieldMappings() {
     // Taxnomy term base fields
     $this->addSimpleMappings(array('name', 'description', 'format', 'weight'));
+    $this->addFieldMapping('parent', 'parent')
+      ->sourceMigration($this->getMachineName());
 
     // Handle field migration in a generic way
     $fields = field_info_instances('taxonomy_term', $this->bundle);
@@ -757,6 +762,20 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
         ));
       }
       $handler->saveTranslations();
+    }
+  }
+
+  protected function createStub($migration, array $source_id) {
+    $term = new stdClass();
+    $voc = taxonomy_vocabulary_machine_name_load($this->destination->getBundle());
+    $term->name = format_string(MIGRATE_STUB_MARKER . ' stub for original nid: !id', array('!id' => $source_id[0]));
+    $term->vid = $voc->vid;
+    taxonomy_term_save($term);
+    if (isset($term->tid)) {
+      return array($term->tid);
+    }
+    else {
+      return FALSE;
     }
   }
 }
