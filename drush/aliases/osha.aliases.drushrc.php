@@ -3,7 +3,7 @@
 $aliases['staging'] = array(
   'uri' => 'osha.edw.ro',
   'db-allows-remote' => TRUE,
-  'remote-host' => 'osha.edw.ro',
+  'remote-host' => 'php-osha.edw.ro',
   'remote-user' => 'osha',
   'root' => '/var/www/html/docroot',
   'path-aliases' => array(
