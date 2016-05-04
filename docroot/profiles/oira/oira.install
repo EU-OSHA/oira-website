@@ -217,4 +217,6 @@ function oira_install() {
     ->execute();
   variable_set('admin_theme', 'osha_admin');
   variable_set('node_admin_theme', '1');
+
+  variable_set('entity_translation_entity_types', array('node' => 'node', 'taxonomy_term' => 'taxonomy_term'));
 }

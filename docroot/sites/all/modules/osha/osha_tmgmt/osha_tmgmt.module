@@ -29,6 +29,23 @@ include_once 'osha_tmgmt.entity.inc';
 module_load_include('inc', 'osha_tmgmt', 'osha_tmgmt.workflow');
 module_load_include('inc', 'osha_tmgmt', 'osha_tmgmt.permissions');
 
+
+/**
+ * Implements Elysia hook_cronapi().
+ */
+function osha_tmgmt_cron_cronapi() {
+  return array('osha_tmgmt_cron' => array(
+    'description' => 'Remove old job items that were in cart',
+    'rule' => '0 0 * * *', // Synchronize daily
+  ));
+}
+
+function osha_tmgmt_cron() {
+  // Remove old job items in cart
+  $time_limit = strtotime('-1 day');
+  _osha_tmgmt_remove_old_cart_jobs($time_limit);
+}
+
 function osha_tmgmt_menu() {
   $items['node/%/layout-validation/%tmgmt_job_item'] = array(
     'page callback' => 'osha_tmgmt_layout_validation_node_preview',
@@ -58,6 +75,24 @@ function osha_tmgmt_menu() {
 
 
   return $items;
+}
+
+/**
+ * hook_translated_menu_link_alter().
+ */
+function osha_tmgmt_translated_menu_link_alter(&$item, $map) {
+  // Menu link preview.
+  if (!empty($_GET['osha_tmgmt_ml_preview']) && user_access('preview layout validation')) {
+    $preview_comp = explode(':', $_GET['osha_tmgmt_ml_preview']);
+    if ($item['mlid'] == $preview_comp[1]) {
+      if ($job_item = tmgmt_job_item_load($preview_comp[0])) {
+        $data = current($job_item->getData());
+        if (!empty($data['#translation']['#text'])) {
+          $item['title'] = $data['#translation']['#text'];
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -532,22 +567,29 @@ function osha_tmgmt_node_access($node, $operation, $user) {
       if ($count > 0) {
         return NODE_ACCESS_DENY;
       }
-    }
-    if (!empty($node->workbench_moderation['current']->state) && $node->workbench_moderation['current']->state != 'published') {
-      // MC-30 - see if there are unmerged items
-      $query = db_select('tmgmt_job_item')
-        ->fields(NULL, array('tjiid'));
-      $query->condition('state', '4', '<>') // TMGMT_JOB_ITEM_STATE_ABORTED
-        ->condition('item_type', 'node')
-        ->condition('item_id', $node->nid)
-        ->condition('merged', NULL);
-      $count = $query->execute()->rowCount();
-      if ($count > 0) {
-        return NODE_ACCESS_DENY;
+      if (!empty($node->workbench_moderation['current']->state) && $node->workbench_moderation['current']->state != 'published') {
+        // MC-30 - see if there are unmerged items
+        $query = db_select('tmgmt_job_item')
+          ->fields(NULL, array('tjiid'));
+        $query->condition('state', '4', '<>') // TMGMT_JOB_ITEM_STATE_ABORTED
+          ->condition('item_type', 'node')
+          ->condition('item_id', $node->nid)
+          ->condition('merged', NULL);
+        $count = $query->execute()->rowCount();
+        if ($count > 0) {
+          return NODE_ACCESS_DENY;
+        }
       }
     }
   }
   return NODE_ACCESS_IGNORE;
+}
+
+function _osha_tmgmt_remove_old_cart_jobs($changed) {
+  db_delete('tmgmt_job_item')
+    ->condition('tjid', 0)
+    ->condition('changed', $changed, '<')
+    ->execute();
 }
 
 /**
@@ -807,6 +849,7 @@ function osha_tmgmt_tmgmt_source_translation_structure($job_item,
  * Implements hook_form_alter().
  */
 function osha_tmgmt_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
   // Checks if the form is a source item form, and generates it's supposed id.
   $form_source_id = '';
   if (isset($form_state['plugin']) && isset($form_state['item_type'])) {
@@ -937,9 +980,6 @@ function osha_tmgmt_form_alter(&$form, &$form_state, $form_id) {
       );
       $form['empty_cart']['#submit'] = array('osha_tmgmt_ui_cart_empty_cart_form_submit');
       $form['remove_selected']['#submit'] = array('osha_tmgmt_ui_cart_remove_selected_form_submit');
-
-      // Validation for extra languages not to mix with other languages.
-      $form['request_translation']['#validate'][] = 'osha_tmgmt_retranslation_validate';
       break;
 
     case 'views_form_tmgmt_node_selection_view_tmgmt_node_selection_view_page':
@@ -997,7 +1037,6 @@ function osha_tmgmt_form_alter(&$form, &$form_state, $form_id) {
       osha_tmgmt_form_alter_add_source_target_info($form, $form_state);
       $form['actions']['accept']['#value'] = 'Publish';
       $job_item = $form_state['item'];
-      global $user;
       $form['actions']['accept']['#access'] =
         $job_item->state != TMGMT_JOB_ITEM_STATE_ABORTED
         && $job_item->state != TMGMT_JOB_ITEM_STATE_ACCEPTED
@@ -1018,13 +1057,40 @@ function osha_tmgmt_form_alter(&$form, &$form_state, $form_id) {
         // Happens when user clicks the Ajax checkmark button on review form.
         drupal_set_message('Value was saved');
       }
+
       $form['actions']['accept']['#value'] = 'Publish';
-      global $user;
+
+      // For menu links, add a preview link.
+      if (isset($form_state['item']) && $form_state['item']->item_type == 'menu_link'
+        && user_access('preview layout validation')) {
+        $menu_link_comp = explode(':', $form_state['item']->item_id) ;
+        $menu_link = menu_link_load($menu_link_comp[2]);
+        //$form['preview'] = array(
+        $menu_link_title = ($form_state['item']->item_id).':title';
+        $form['review'][$menu_link_title][$menu_link_title]['actions']['preview'] = array(
+          '#theme' => 'link',
+          '#text' => 'Preview layout',
+          '#path' => $menu_link['link_path'],
+          '#weight' => 10,
+          '#options' => array(
+            'attributes' => array('target' => '_blank'),
+            'html' => FALSE,
+            'query' => array('osha_tmgmt_ml_preview' => $form_state['item']->tjiid . ':' . $menu_link['mlid']),
+            'language' => language_list()[$form_state['item']->target_language],
+          ),
+        );
+        $form['actions']['accept']['#value'] = 'Approve layout and publish';
+      }
 
       $form['actions']['accept']['#access'] =
         $job_item->state != TMGMT_JOB_ITEM_STATE_ABORTED
         && $job_item->state != TMGMT_JOB_ITEM_STATE_ACCEPTED
         && (user_access('accept job item translation') || in_array('Layout Validator', $user->roles));
+
+    case 'locale_languages_overview_form':
+      foreach(element_children($form['weight']) as $key) {
+        $form['weight'][$key]['#delta'] = 100;
+      }
   }
 }
 
@@ -1036,20 +1102,6 @@ function osha_tmgmt_ui_cart_empty_cart_form_submit($form, &$form_state) {
 function osha_tmgmt_ui_cart_remove_selected_form_submit($form, &$form_state) {
   drupal_get_messages(NULL, TRUE);
   tmgmt_ui_cart_remove_selected_form_submit($form, $form_state);
-}
-
-function osha_tmgmt_retranslation_validate($form, &$form_state) {
-  $extra_lang = osha_extra_language_list();
-  // i18n_language_name()
-  $extra_lang_name = array();
-  foreach($extra_lang as $language) {
-    $extra_lang_name[$language] = locale_language_name($language);
-  }
-
-  $intersect = array_intersect($extra_lang, $form_state['values']['target_language']);
-  if (count($intersect) && count($intersect) < count($form_state['values']['target_language'])) {
-    form_set_error('target_language', strtr('Please create a separate job to include only <strong>@lang</strong> languages', array('@lang' => implode(', ', $extra_lang_name))));
-  }
 }
 
 function osha_tmgmt_form_alter_add_source_target_info(&$form, $form_state) {
@@ -1333,6 +1385,7 @@ function osha_tmgmt_form_tmgmt_ui_entity_translation_review_form_alter(&$form, &
       $form['actions']['ready_to_publish']['#access'] = TRUE;
     }
 
+
     $form['actions']['reject'] = array(
       '#type' => 'submit',
       '#submit' => array('osha_tmgmt_job_item_translation_reject'),
@@ -1353,6 +1406,9 @@ function osha_tmgmt_form_tmgmt_ui_entity_translation_review_form_alter(&$form, &
       $form['actions']['accept']['#submit'] = array('osha_tmgtm_job_item_node_accept_submit');
       $form['#submit'] = array();
     }
+
+    // CW-1851 Remove previous comment saved in local storage (unless item state is 2)
+    $form_protect_js_file = drupal_get_path('module', 'osha_tmgmt').'/js/osha_tmgmt_form_protect_clean.js';
 
     // Alter form on different states.
     switch ($job_item->state) {
@@ -1406,6 +1462,8 @@ function osha_tmgmt_form_tmgmt_ui_entity_translation_review_form_alter(&$form, &
           '#validate' => array('osha_tmgmt_require_content_validation_validate'),
           '#access' => user_access('set job item to require content validation state'),
         );
+        // CW-1851 Make sure comments are not lost
+        $form_protect_js_file = drupal_get_path('module', 'osha_tmgmt').'/js/osha_tmgmt_form_protect.js';
         break;
 
       case TMGMT_JOB_ITEM_STATE_ABORTED:
@@ -1423,6 +1481,8 @@ function osha_tmgmt_form_tmgmt_ui_entity_translation_review_form_alter(&$form, &
         $form['actions']['#access'] = FALSE;
         break;
     }
+    // CW-1851 Make sure comments are not lost or clean previous comment
+    $form['#attached']['js'][] = $form_protect_js_file;
   }
 }
 
@@ -1921,12 +1981,6 @@ function osha_tmgmt_job_items_mass_change_submit($form, $form_state) {
     $id = $job_item->item_type . '-' . $job_item->item_id;
     if (in_array($id , $publish) && $job_item->state != $new_state) {
       // Change the state
-      if ($job_item->state == OSHA_TMGMT_JOB_ITEM_STATE_TranslationValidationRequired) {
-        // CW-1766: Notify the current validator that his action is no longer required
-        $removed_validators = osha_tmgmt_load_validators_by_job_item($job_item);
-        $old_current_validator = osha_tmgmt_load_validators_next($removed_validators);
-        OshaWorkflowNotifications::notifyTranslationValidatorsRemoved($old_current_validator, $job_item);
-      }
       switch ($new_state) {
         case TMGMT_JOB_ITEM_STATE_ACTIVE:
           $job_item->toOnTranslation('Mass updated by ' . $user->name);
@@ -2175,20 +2229,11 @@ function osha_tmgmt_tmgmt_ui_cart_content_submit($form, &$form_state) {
     }
     if ($job) {
       // Set the title to job #
-      $job->label = t('Translation job NAPO #!tjid', array('!tjid' => $job->tjid));
+      $job->label = t('Translation job HWC #!tjid', array('!tjid' => $job->tjid));
       $job->priority = $values['priority'];
       OshaTMGMTStatistics::computeJobStatistics($job);
       $job->save();
-
-      $target_lang = $form_state['values']['target_language'];
-      $extra_lang = osha_extra_language_list();
-      if (count(array_intersect($extra_lang, $target_lang))) {
-        // Notify translation manager to make action on this job.
-        OshaWorkflowNotifications::notifyTranslationManager($job);
-      }
-      else {
-        OshaWorkflowNotifications::notifyTranslationJobCreated($job);
-      }
+      OshaWorkflowNotifications::notifyTranslationJobCreated($job);
 
       // This whole block replaces tmgmt_ui_job_checkout_and_redirect().
       $redirects = tmgmt_ui_job_checkout_multiple(array($job));
@@ -2462,7 +2507,7 @@ function osha_tmgmt_views_default_views_alter(&$views) {
  */
 function osha_tmgmt_mail($key, &$message, $params) {
   if ($key == 'notifyNodeIsReadyToPublish') {
-    $subject = variable_get('osha_mail_template_approval_subject', '[NAPO Website] CMW: ([node:nid]) [node:title-field]');
+    $subject = variable_get('osha_mail_template_approval_subject', '[OSHA Website] CMW: ([node:nid]) [node:title-field]');
     $body = variable_get('osha_mail_template_approval_body',
       'Dear [user:name],
       There was new content published/ready to publish that can be translated [node:url].
@@ -2471,7 +2516,7 @@ function osha_tmgmt_mail($key, &$message, $params) {
     );
   }
   elseif ($key == 'osha_tmgmt_content_validator_removed') {
-    $subject = variable_get('osha_mail_template_content_validator_removed_subject', '[NAPO Website] CMW: [tmgmt_job_item:tjid:label]');
+    $subject = variable_get('osha_mail_template_content_validator_removed_subject', '[OSHA Website] CMW: [tmgmt_job_item:tjid:label]');
     $body = variable_get('osha_mail_template_content_validator_removed_body',
       'Dear [user:name],
       The website administrator decided that your review of translation task <a href="[tmgmt_job_item:url]">[tmgmt_job_item:tjid:label] ([tmgmt_job_item:target-language])</a> is no longer needed.
@@ -2480,8 +2525,7 @@ function osha_tmgmt_mail($key, &$message, $params) {
     );
   }
   elseif (isset($params['tmgmt_job_item'])) {
-    // osha_workflow_notification
-    $subject = variable_get('osha_mail_template_translation_job_item_subject', '[NAPO Website] CMW: [tmgmt_job_item:tjid:label]');
+    $subject = variable_get('osha_mail_template_translation_job_item_subject', '[HWC Website] CMW: [tmgmt_job_item:tjid:label]');
     $body = variable_get('osha_mail_template_translation_job_item_body',
       'Dear [user:name],
       You have a translation task that needs your attention <a href="[tmgmt_job_item:url]">[tmgmt_job_item:tjid:label] ([tmgmt_job_item:target-language])</a>.
@@ -2490,7 +2534,7 @@ function osha_tmgmt_mail($key, &$message, $params) {
     );
   }
   else {
-    $subject = variable_get('osha_mail_template_translation_subject', '[NAPO Website] CMW: [tmgmt_job:label]');
+    $subject = variable_get('osha_mail_template_translation_subject', '[HWC Website] CMW: [tmgmt_job:label]');
     $body = variable_get('osha_mail_template_translation_body',
       'Dear [user:name],
       You have a translation task that needs your attention <a href="[site:url]/admin/tmgmt/jobs/[tmgmt_job:tjid]">[tmgmt_job:label]</a>.
@@ -2503,7 +2547,8 @@ function osha_tmgmt_mail($key, &$message, $params) {
 }
 
 function osha_tmgmt_job_item_in_extra_language($job_item) {
-  return in_array($job_item->target_language, osha_extra_language_list());
+  //For the moment, we have no more extra languages so always return false
+  return FALSE;
 }
 
 class OshaTMGMTStatistics {
@@ -2626,6 +2671,9 @@ class OshaTMGMTStatistics {
           );
           $sxml = simplexml_import_dom($doc);
           foreach ($selectors as $attribute => $expr) {
+            if(!$sxml) {
+              continue;
+            }
             $tags = $sxml->xpath($expr);
             foreach ($tags as $tag) {
               $attributes = $tag->attributes();
@@ -2820,5 +2868,97 @@ function osha_tmgmt_literal_get_translation($string) {
   }
   else {
     return t($string); // Applies only to english untranslated strings
+  }
+}
+
+/**
+ * Add translations to identicals strings that are missing translations.
+ */
+function _osha_tmgmt_add_translations_to_identical_strings($source) {
+  $trans_query = db_select('locales_target', 'lt');
+  $trans_query->innerJoin('locales_source', 'ls', 'ls.lid=lt.lid');
+  $trans_query->fields('lt', array('lid', 'translation', 'language'));
+  $trans_query->fields('ls', array('source', 'context'));
+  $trans_query->condition('ls.source', $source);
+  $trans_result = $trans_query->execute();
+
+  while ($row = $trans_result->fetchAssoc()) {
+    $identical = db_query(
+      'SELECT lid FROM {locales_source} WHERE source = :source AND lid <> :lid',
+      array('source' => $row['source'], 'lid' => $row['lid'])
+    )->fetchCol();
+    foreach ($identical as $ilid) {
+      $exists = db_query("SELECT COUNT(lid) FROM {locales_target} WHERE lid = :lid AND language = :language", array(':lid' => $ilid, ':language' => $row['language']))
+        ->fetchField();
+      // @todo Only singular strings are managed here, we should take care of
+      //   plural information of processed string.
+      if (!$exists) {
+        $fields = array(
+          'lid' => $ilid,
+          'language' => $row['language'],
+          'translation' => $row['translation'],
+        );
+        db_insert('locales_target')
+          ->fields($fields)
+          ->execute();
+      }
+//      else {
+//        $fields = array(
+//          'translation' => $row['translation'],
+//        );
+//        db_update('locales_target')
+//          ->fields($fields)
+//          ->condition('lid', $ilid)
+//          ->condition('language', $row['language'])
+//          ->execute();
+//      }
+    }
+  }
+}
+
+
+/**
+ * Add translations to identicals strings that are missing translations.
+ */
+function _osha_tmgmt_add_translations_from_terms_to_strings($voc_name) {
+  $voc = taxonomy_vocabulary_machine_name_load($voc_name);
+  $terms = taxonomy_term_load_multiple(array(), array('vid' => $voc->vid));
+
+  foreach ($terms as $term) {
+    _osha_tmgmt_add_translations_to_identical_strings($term->name);
+  }
+}
+
+/**
+ * Add translations to identicals strings that are missing translations.
+ */
+function _osha_tmgmt_add_translations_from_strings_to_terms($voc_name) {
+  $voc = taxonomy_vocabulary_machine_name_load($voc_name);
+  $terms = taxonomy_term_load_multiple(array(), array('vid' => $voc->vid));
+
+  foreach ($terms as $term) {
+    $trans_query = db_select('locales_target', 'lt');
+    $trans_query->innerJoin('locales_source', 'ls', 'ls.lid=lt.lid');
+    $trans_query->fields('lt', array('lid', 'translation', 'language'));
+    $trans_query->fields('ls', array('source', 'context'));
+    $trans_query->condition('ls.source', $term->name);
+    $trans_result = $trans_query->execute();
+    $handler = entity_translation_get_handler('taxonomy_term', $term);
+    while ($row = $trans_result->fetchAssoc()) {
+        $term->name_field[$row['language']][0]['value'] = $row['translation'];
+      foreach($term->name_field as $lang => $data) {
+        if (empty($term->translations->data[$lang])) {
+          $handler->setTranslation(array(
+            'language' => $row['language'],
+            'source' => 'en',
+            'status' => 1,
+            'translate' => 0,
+            'uid' => 1,
+          ));
+        }
+      }
+    }
+    $handler->saveTranslations();
+    taxonomy_term_save($term);
   }
 }

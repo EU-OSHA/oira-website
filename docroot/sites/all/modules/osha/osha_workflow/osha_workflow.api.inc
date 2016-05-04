@@ -157,10 +157,10 @@ function osha_workflow_is_assigned_project_manager($nid) {
 function osha_workflow_create_roles() {
   module_load_include('inc', 'osha_workflow', 'osha_workflow.permissions');
   $roles = array(
-    'Editor' => osha_workflow_permissions_role_editor(),
-    'Review Manager' => osha_workflow_permissions_role_review_manager(),
-    'Project Manager' => osha_workflow_permissions_role_project_manager(),
-    'Approver' => osha_workflow_permissions_role_approver(),
+    OSHA_WORKFLOW_ROLE_EDITOR => osha_workflow_permissions_role_editor(),
+    OSHA_WORKFLOW_ROLE_REVIEW_MANAGER => osha_workflow_permissions_role_review_manager(),
+    OSHA_WORKFLOW_ROLE_PROJECT_MANAGER => osha_workflow_permissions_role_project_manager(),
+    OSHA_WORKFLOW_ROLE_APPROVER => osha_workflow_permissions_role_approver(),
   );
 
   foreach ($roles as $role_name => $permissions) {
@@ -174,7 +174,7 @@ function osha_workflow_create_roles() {
     }
     user_role_grant_permissions($role->rid, $permissions);
     // Grant workbench access for this role.
-    workbench_access_role_section_save($role->rid, 'main-menu', 'menu');
+    workbench_access_role_section_save($role->rid, 'section', 'taxonomy');
   }
 }
 
@@ -524,9 +524,15 @@ class OshaWorkflowPermissions {
     if (!$user) {
       global $user;
     }
-    $is_rm = self::userHasRole(OSHA_WORKFLOW_ROLE_REVIEW_MANAGER, $user);
-    $is_admin = self::userHasRole(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, $user);
-    return $is_admin || $is_rm;
+    if (isset($node->workbench_moderation)) {
+      $node_in_rm_section = FALSE;
+      if (self::userHasRole(OSHA_WORKFLOW_ROLE_REVIEW_MANAGER, $user)) {
+        $node_in_rm_section = osha_workflow_node_in_rm_section($node, $user);
+      }
+      $is_admin = self::userHasRole(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, $user);
+      return $is_admin || $node_in_rm_section;
+    }
+    return FALSE;
   }
 
 
@@ -753,22 +759,6 @@ class OshaWorkflowNotifications {
   }
 
   /**
-   * Notification sent when the node is published
-   *
-   * (Approved => FinalDraft)
-   *
-   * @param object $node
-   *   Affected node
-   */
-  public static function notifyNodeIsPublished($node) {
-    // Notify PM.
-    $users = osha_workflow_get_pms_users($node->nid);
-    if (!empty($users)) {
-      OshaWorkflowNotifications::sendEmail($users, array('node' => $node), 'osha_workflow');
-    }
-  }
-
-  /**
    * Notification sent when the node is ready to be published.
    *
    * Notify Administrators (web team) that PM set in ReadyToPublish
@@ -779,12 +769,8 @@ class OshaWorkflowNotifications {
    *   Affected node
    */
   public static function notifyNodeIsReadyToPublish($node) {
-    // Notify PMs that is ready to pbulish.
-    // Some node may not have PM.
-    $users = osha_workflow_get_pms_users($node->nid);
-    if (!empty($users)) {
-      OshaWorkflowNotifications::sendEmail($users, array('node' => $node), 'osha_workflow');
-    }
+    $review_managers = osha_workflow_get_node_rm($node);
+    OshaWorkflowNotifications::sendEmail($review_managers, array('node' => $node), 'osha_workflow');
 
     $translation_managers = OshaWorkflowPermissions::getUsersByRole(OSHA_WORKFLOW_ROLE_TRANSLATION_MANAGER);
     OshaWorkflowNotifications::sendEmail($translation_managers, array('node' => $node), 'osha_tmgmt', 'notifyNodeIsReadyToPublish');
@@ -799,8 +785,8 @@ class OshaWorkflowNotifications {
       'from' => $from_state,
       'to' => $to_state,
     );
-    $review_managers = OshaWorkflowPermissions::getUsersByRole(OSHA_WORKFLOW_ROLE_ADMINISTRATOR);
-    OshaWorkflowNotifications::sendEmail($review_managers, $params, 'osha_workflow', 'osha_workflow_notification_admin');
+    $users = osha_workflow_get_node_rm($node);
+    OshaWorkflowNotifications::sendEmail($users, $params, 'osha_workflow', 'osha_workflow_notification_admin');
   }
 
   /**
@@ -883,17 +869,6 @@ class OshaWorkflowNotifications {
   }
 
   /**
-   * Notify Translation Manager the job needs his attention.
-   *
-   * @param TMGMTJobItem|OshaTMGMTJobItem $tmgmt_job_item
-   *   Job created
-   */
-  public static function notifyTranslationManager($tmgmt_job_item) {
-    $users = OshaWorkflowPermissions::getUsersByRole(OSHA_WORKFLOW_ROLE_TRANSLATION_MANAGER);
-    OshaWorkflowNotifications::sendEmail($users, array('tmgmt_job_item' => $tmgmt_job_item), 'osha_tmgmt');
-  }
-
-  /**
    * Notify Next Translation Content Validator the content needs validation..
    *
    * @param TMGMTJobItem|OshaTMGMTJobItem $tmgmt_job_item
@@ -904,14 +879,6 @@ class OshaWorkflowNotifications {
     $next_validator = osha_tmgmt_load_validators_next($validators);
     OshaWorkflowNotifications::sendEmail($next_validator, array('tmgmt_job_item' => $tmgmt_job_item), 'osha_tmgmt');
   }
-
-  /**
-   * CW-1766 Notify Content Validator that his action is no longer needed.
-   */
-  public static function notifyTranslationValidatorsRemoved($validator, $tmgmt_job_item) {
-    OshaWorkflowNotifications::sendEmail($validator, array('tmgmt_job_item' => $tmgmt_job_item), 'osha_tmgmt', 'osha_tmgmt_content_validator_removed');
-  }
-
 
   /**
    * Notify Project Manager that translation is ready to publish..

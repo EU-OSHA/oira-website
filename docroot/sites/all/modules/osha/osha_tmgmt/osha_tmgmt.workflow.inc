@@ -58,7 +58,8 @@ function osha_tmgmt_user_can_edit_job_item($job_item) {
       break;
 
     case OSHA_TMGMT_JOB_ITEM_STATE_TranslationValidated:
-      if (user_access('set job item to ready to publish state')) {
+      if (user_access('set job item to ready to publish state')
+      || osha_tmgmt_is_internal_translator($job_item)) {
         return TRUE;
       }
       break;
@@ -71,7 +72,8 @@ function osha_tmgmt_user_can_edit_job_item($job_item) {
       break;
 
     case OSHA_TMGMT_JOB_ITEM_STATE_TranslatedReadyToPublish:
-      if (user_access('accept job item translation')) {
+      if (user_access('accept job item translation')
+        || osha_tmgmt_is_internal_translator($job_item)) {
         return TRUE;
       }
       break;
@@ -896,12 +898,12 @@ function osha_tmgmt_file_translation_upload_submit($form, &$form_state) {
           $job->has_file_uploaded = 1;
           $job->save();
 
-          // CW-1299 https://eu-osha.bilbomatica.es:5433/browse/CW-1299?focusedCommentId=12616&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-12616
-          // For non-nodes (literals, menu links and taxonomy terms) accept automatically the translations.
+          // CW-1299, MC-20
+          // Except nodes and menu_links, the others should be directly published.
           foreach($job->getItems() as $job_item) {
-            if ($job_item->item_type != 'node') {
+            if (!in_array($job_item->item_type, array('menu_link', 'node'))) {
               $job_item->acceptTranslationIntoEntity();
-            }
+          }
           }
         } catch (Exception $e) {
           $job->addMessage('File import failed with the following message: @message', array('@message' => $e->getMessage()), 'error');

@@ -122,7 +122,7 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['fields']['section']['id'] = 'section';
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
-  $handler->display->display_options['fields']['section']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['section']['label'] = 'Partner';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -177,6 +177,7 @@ function osha_workflow_views_default_views() {
   $handler = $view->new_display('page', 'Approver NR', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Needs Approval';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view osh approver needs review tab';
@@ -198,9 +199,10 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['filters']['state']['field'] = 'state';
   $handler->display->display_options['filters']['state']['value'] = array(
-    'ready_to_publish' => 'ready_to_publish',
+    'to_be_approved' => 'to_be_approved',
   );
   $handler->display->display_options['path'] = 'admin/workbench/approve';
+  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Needs Approval';
   $handler->display->display_options['menu']['weight'] = '5';
   $handler->display->display_options['menu']['context'] = 0;
@@ -248,6 +250,41 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['filters']['current']['field'] = 'current';
   $handler->display->display_options['filters']['current']['value'] = '1';
+  /* Filter criterion: Workbench Moderation: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    'to_be_approved' => 'to_be_approved',
+  );
+  $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
+  $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+  );
+  $handler->display->display_options['filters']['state']['expose']['reduce'] = TRUE;
+  /* Filter criterion: HWC Partner: If node has current CPM assigned */
+  $handler->display->display_options['filters']['cpm_assigned']['id'] = 'cpm_assigned';
+  $handler->display->display_options['filters']['cpm_assigned']['table'] = 'hwc_partner';
+  $handler->display->display_options['filters']['cpm_assigned']['field'] = 'cpm_assigned';
+  $handler->display->display_options['filters']['cpm_assigned']['value'] = '1';
   $handler->display->display_options['path'] = 'admin/workbench/manager';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Needs PM Review';
@@ -286,7 +323,7 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['filters']['state']['field'] = 'state';
   $handler->display->display_options['filters']['state']['value'] = array(
-    'ready_to_publish' => 'ready_to_publish',
+    'needs_review' => 'needs_review',
   );
   $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
   $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
@@ -313,6 +350,7 @@ function osha_workflow_views_default_views() {
   $handler = $view->new_display('page', 'Content', 'content');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Content';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view osh content tab';
@@ -364,14 +402,11 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
     'page' => 'page',
-    'blog' => 'blog',
     'calls' => 'calls',
-    'highlight' => 'highlight',
     'job_vacancies' => 'job_vacancies',
     'news' => 'news',
     'press_release' => 'press_release',
     'publication' => 'publication',
-    'seminar' => 'seminar',
   );
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
@@ -422,6 +457,7 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['title'] = 'My Content';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'view osh my content tab';
   $handler->display->display_options['defaults']['query'] = FALSE;
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -431,6 +467,10 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['relationships']['nid']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content revision: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -441,11 +481,23 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Workbench Moderation: State */
+  $handler->display->display_options['fields']['state']['id'] = 'state';
+  $handler->display->display_options['fields']['state']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['fields']['state']['field'] = 'state';
+  $handler->display->display_options['fields']['state']['machine_name'] = 0;
   /* Field: Workbench Access: Section */
   $handler->display->display_options['fields']['section']['id'] = 'section';
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
-  $handler->display->display_options['fields']['section']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['section']['label'] = 'Partner';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Author';
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -461,12 +513,6 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Workbench Moderation: Current */
-  $handler->display->display_options['filters']['current']['id'] = 'current';
-  $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
-  $handler->display->display_options['filters']['current']['field'] = 'current';
-  $handler->display->display_options['filters']['current']['value'] = '1';
-  $handler->display->display_options['filters']['current']['group'] = 1;
   /* Filter criterion: Global: Combine fields filter */
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
@@ -499,17 +545,9 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
-    'blog' => 'blog',
-    'calls' => 'calls',
-    'directive' => 'directive',
-    'guideline' => 'guideline',
-    'highlight' => 'highlight',
-    'job_vacancies' => 'job_vacancies',
+    'events' => 'events',
+    'hwc_gallery' => 'hwc_gallery',
     'news' => 'news',
-    'press_release' => 'press_release',
-    'publication' => 'publication',
-    'seminar' => 'seminar',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
@@ -529,18 +567,65 @@ function osha_workflow_views_default_views() {
     9 => 0,
     10 => 0,
     11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Workbench Access: Access filter */
+  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['group'] = 1;
+  $handler->display->display_options['filters']['access_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['access_id']['expose']['operator_id'] = 'access_id_op';
+  $handler->display->display_options['filters']['access_id']['expose']['label'] = 'Partner';
+  $handler->display->display_options['filters']['access_id']['expose']['operator'] = 'access_id_op';
+  $handler->display->display_options['filters']['access_id']['expose']['identifier'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    14 => 0,
+    15 => 0,
+  );
+  $handler->display->display_options['filters']['access_id']['access_id'] = array();
+  $handler->display->display_options['filters']['access_id']['size'] = '5';
+  /* Filter criterion: Workbench Moderation: Current */
+  $handler->display->display_options['filters']['current']['id'] = 'current';
+  $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['current']['field'] = 'current';
+  $handler->display->display_options['filters']['current']['value'] = '1';
+  $handler->display->display_options['filters']['current']['group'] = 1;
+  /* Filter criterion: HWC Partner: If node belongs to current partner or user is author */
+  $handler->display->display_options['filters']['belongs_partner']['id'] = 'belongs_partner';
+  $handler->display->display_options['filters']['belongs_partner']['table'] = 'hwc_partner';
+  $handler->display->display_options['filters']['belongs_partner']['field'] = 'belongs_partner';
+  $handler->display->display_options['filters']['belongs_partner']['value'] = '1';
+  $handler->display->display_options['filters']['belongs_partner']['group'] = 1;
   $handler->display->display_options['path'] = 'admin/workbench/my-content';
-  $handler->display->display_options['menu']['title'] = 'Moderated';
+  $handler->display->display_options['menu']['title'] = 'My content';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 1;
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: My Content */
   $handler = $view->new_display('page', 'My Content', 'my_content_non_moderated');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'My Content Non-Moderated';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['query'] = FALSE;
@@ -561,6 +646,11 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Content: Activity */
+  $handler->display->display_options['fields']['field_activity']['id'] = 'field_activity';
+  $handler->display->display_options['fields']['field_activity']['table'] = 'field_data_field_activity';
+  $handler->display->display_options['fields']['field_activity']['field'] = 'field_activity';
+  $handler->display->display_options['fields']['field_activity']['type'] = 'taxonomy_term_reference_plain';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -616,16 +706,11 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
-    'blog' => 'blog',
     'calls' => 'calls',
-    'directive' => 'directive',
-    'guideline' => 'guideline',
-    'highlight' => 'highlight',
     'job_vacancies' => 'job_vacancies',
     'news' => 'news',
     'press_release' => 'press_release',
     'publication' => 'publication',
-    'seminar' => 'seminar',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
@@ -685,7 +770,7 @@ function osha_workflow_views_default_views() {
     t('author'),
     t('Title'),
     t('Type'),
-    t('Section'),
+    t('Partner'),
     t('Author'),
     t('State'),
     t('Operations'),
@@ -699,9 +784,11 @@ function osha_workflow_views_default_views() {
     t('Needs Review Manager Review'),
     t('Content'),
     t('Search'),
+    t('Section'),
     t('My Content'),
     t('My Content Non-Moderated'),
     t('revision user'),
+    t('Activity'),
   );
   $export['osh_workflow_admin'] = $view;
 

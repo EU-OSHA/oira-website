@@ -143,154 +143,26 @@ $handler->display->display_options['fields']['views_bulk_operations']['vbo_setti
 $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
 $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
 $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+  'rules_component::osha_tmgmt_add_items_to_cart_retranslate' => array(
+    'selected' => 1,
+    'skip_confirmation' => 1,
+    'override_label' => 1,
+    'label' => 'Add to cart (retranslation)',
+  ),
   'rules_component::tmgmt_node_ui_tmgmt_nodes_add_items_to_cart' => array(
     'selected' => 1,
     'skip_confirmation' => 1,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::nodequeue_add_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_assign_owner_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::scs_views_create_newsletter_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::views_bulk_operations_delete_item' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::views_bulk_operations_delete_revision' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::views_bulk_operations_script_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_make_sticky_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_make_unsticky_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::views_bulk_operations_modify_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-    'settings' => array(
-      'show_all_tokens' => 1,
-      'display_values' => array(
-        '_all_' => '_all_',
-      ),
-    ),
-  ),
-  'action::views_bulk_operations_argument_selector_action' => array(
-    'selected' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-    'settings' => array(
-      'url' => '',
-    ),
-  ),
-  'action::node_promote_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_publish_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_unpromote_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::nodequeue_remove_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_save_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::system_send_email_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_unpublish_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::node_unpublish_by_keyword_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
-  ),
-  'action::pathauto_node_update_action' => array(
-    'selected' => 0,
-    'postpone_processing' => 0,
-    'skip_confirmation' => 0,
-    'override_label' => 0,
-    'label' => '',
+    'override_label' => 1,
+    'label' => 'Add to cart (full translation)',
   ),
 );
+/* Field: Content: Summary */
+$handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
+$handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
+$handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
+$handler->display->display_options['fields']['field_summary']['label'] = '';
+$handler->display->display_options['fields']['field_summary']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
 /* Field: Content: Body */
 $handler->display->display_options['fields']['body']['id'] = 'body';
 $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -389,16 +261,10 @@ $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
-  'consortium_partner' => 'consortium_partner',
-  'faq' => 'faq',
-  'home_video' => 'home_video',
-  'lesson' => 'lesson',
-  'lesson_toolkit' => 'lesson_toolkit',
-  'lesson_video' => 'lesson_video',
-  'napo_album' => 'napo_album',
-  'napo_friend' => 'napo_friend',
-  'napo_image' => 'napo_image',
-  'napo_video' => 'napo_video',
+  'news' => 'news',
+  'note_to_editor' => 'note_to_editor',
+  'press_release' => 'press_release',
+  'publication' => 'publication',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
 $handler->display->display_options['filters']['type']['exposed'] = TRUE;
@@ -418,6 +284,7 @@ $handler->display->display_options['filters']['type']['expose']['remember_roles'
   7 => 0,
   8 => 0,
   9 => 0,
+  10 => 0,
 );
 /* Filter criterion: Global: Combine fields filter */
 $handler->display->display_options['filters']['combine']['id'] = 'combine';
@@ -440,11 +307,13 @@ $handler->display->display_options['filters']['combine']['expose']['remember_rol
   7 => 0,
   8 => 0,
   9 => 0,
+  10 => 0,
+  11 => 0,
 );
 $handler->display->display_options['filters']['combine']['fields'] = array(
+  'field_summary' => 'field_summary',
   'body' => 'body',
   'title_1' => 'title_1',
-  'title_field' => 'title_field',
 );
 /* Filter criterion: Content: Nid */
 $handler->display->display_options['filters']['nid']['id'] = 'nid';
@@ -623,6 +492,10 @@ $handler->display->display_options['filters']['state']['expose']['remember_roles
   9 => 0,
   10 => 0,
   11 => 0,
+  12 => 0,
+  13 => 0,
+  14 => 0,
+  15 => 0,
 );
 $handler->display->display_options['filters']['state']['expose']['reduce'] = TRUE;
 $handler->display->display_options['filters']['state']['group_info']['label'] = 'Workflow state';
@@ -710,6 +583,8 @@ $translatables['tmgmt_node_selection_view'] = array(
   t('author'),
   t('Translations'),
   t('- Choose an operation -'),
+  t('Add to cart (retranslation)'),
+  t('Add to cart (full translation)'),
   t('Title'),
   t('Type of content'),
   t('Workflow state'),
@@ -725,6 +600,7 @@ $translatables['tmgmt_node_selection_view'] = array(
   t('Free text'),
   t('Node ID'),
   t('Not translated in'),
+  t('Activity'),
   t('Section'),
   t('Published includes also items without publishing workflow. Use CTRL to select multiple items'),
   t('Updated after'),

@@ -82,6 +82,7 @@ function osha_tmgmt_workflow_permissions_role_translation_manager() {
   // translate content
   // translate any entity
   // translate node entities
+  // translate taxonomy_term entities
   // accept translation jobs
 
   // Local Translator??
