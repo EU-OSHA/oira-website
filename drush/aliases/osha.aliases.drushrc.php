@@ -5,7 +5,7 @@ $aliases['staging'] = array(
   'db-allows-remote' => TRUE,
   'remote-host' => 'osha.edw.ro',
   'remote-user' => 'osha',
-  'root' => '/expert/osha/docroot',
+  'root' => '/var/www/html/docroot',
   'path-aliases' => array(
     '%files' => 'sites/default/files',
   ),
