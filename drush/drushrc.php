@@ -502,6 +502,8 @@ $options['init-modules'] = array(
   'osha_sitemap',
   'napo_contact',
 
+  'oira_partner',
+
   'linkchecker',
   'osha_linkchecker',
 
