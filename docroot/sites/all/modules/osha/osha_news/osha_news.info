@@ -15,7 +15,6 @@ dependencies[] = media
 dependencies[] = multiple_selects
 dependencies[] = number
 dependencies[] = osha
-dependencies[] = osha_infographics
 dependencies[] = osha_taxonomies
 dependencies[] = path_breadcrumbs
 dependencies[] = smart_trim

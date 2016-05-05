@@ -18,6 +18,14 @@ function oira_partner_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function oira_partner_node_info() {
   $items = array(
+    'collaborator' => array(
+      'name' => 'Collaborator',
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => 'Title',
+      'help' => '',
+    ),
     'partner' => array(
       'name' => 'Partner',
       'base' => 'node_content',

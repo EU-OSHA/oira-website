@@ -24,7 +24,6 @@ dependencies[] = media
 dependencies[] = multiple_selects
 dependencies[] = options
 dependencies[] = osha
-dependencies[] = osha_infographics
 dependencies[] = osha_news
 dependencies[] = osha_press_release
 dependencies[] = osha_taxonomies
