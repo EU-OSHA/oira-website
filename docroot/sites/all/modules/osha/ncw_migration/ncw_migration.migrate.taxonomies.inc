@@ -121,6 +121,22 @@ class CountryNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
 
 class NaceCodesNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
 
+  public function __construct(array $options) {
+    parent::__construct($options);
+    $data = $this->fileGetContents($this->endpoint_url);
+    if ($data = json_decode($data)) {
+      if (!empty($data->items)) {
+        $data = $data->items;
+        foreach ($data as $ob) {
+          $ob = $ob->item;
+          if ($ob->parent_tid != 0) {
+            $this->skip_ids[] = $this->itemIdentifier($ob);
+          }
+        }
+      }
+    }
+  }
+
   public function contentFields() {
     return array(
       'field_nace_code' => 'field_nace_code',
