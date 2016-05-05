@@ -503,6 +503,7 @@ $options['init-modules'] = array(
   'napo_contact',
 
   'oira_partner',
+  'hwc_practical_tool',
 
   'linkchecker',
   'osha_linkchecker',
