@@ -12,7 +12,7 @@ include_once 'osha_authentication.features.inc';
  */
 function osha_authentication_cronapi() {
   return array('osha_authentication_cron' => array(
-    'description' => 'Synchronize LDAP sections and users to Drupal',
+    'description' => 'Synchronize LDAP users to Drupal and set their roles',
     'rule' => '*/10 * * * *', // Every 10 minutes
   ));
 }
@@ -32,7 +32,26 @@ function osha_authentication_cron() {
  * Implements hook_form_FORM_ID_alter().
  */
 function osha_authentication_form_user_login_alter(&$form, &$form_state) {
+  $form['name']['#title'] = t('E-mail');
   array_unshift($form['#validate'], 'osha_authentication_user_login_validate');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function osha_authentication_form_user_pass_alter(&$form, &$form_state) {
+  $form['name']['#title'] = t('E-mail');
+}
+
+function hwc_frontend_menu_local_tasks_alter(&$data) {
+  if (!empty($data['tabs'][0]['output']) && is_array($data['tabs'][0]['output'])) {
+    foreach($data['tabs'][0]['output'] as &$tab) {
+      if ($tab['#link']['path'] == 'user/password') {
+        $tab['#link']['title'] = t('Forgot password?');
+      }
+    }
+
+  }
 }
 
 /**
@@ -121,31 +140,28 @@ function osha_authentication_user_login(&$edit, $user) {
     // Assign user the calculated roles.
     $roles = osha_authentication_extract_user_roles(array_keys($authorization));
 
-    // Update user section assignment if user has roles: Editor, Project Manager or Review Manager
+    // Update user section assignment if user has roles 'campaign partner'
     // Remove user from all sections before rebuilding it
-//    workbench_access_rebuild_user($user->uid, array());
-//    osha_workflow_rebuild_pm_sections($user->uid, array());
-//    osha_workflow_rebuild_rm_sections($user->uid, array());
-
-    /*foreach($authorization as $role => $sections) {
+    workbench_access_rebuild_user($user->uid, array());
+    foreach($authorization as $role => $sections) {
       switch($role) {
-        case 'Editor':
-          workbench_access_rebuild_user($user->uid, $sections);
-          break;
-
-        case 'Project Manager':
-          osha_workflow_rebuild_pm_sections($user->uid, $sections);
-          break;
-
-        case 'Review Manager':
-          osha_workflow_rebuild_rm_sections($user->uid, $sections);
-          break;
+        case ROLE_CAMPAIGN_PARTNER:
+          try {
+            workbench_access_rebuild_user($user->uid, array_unique($sections));
+          } catch(Exception $e) {
+            watchdog(
+              'osha_authentication',
+              'Error while rebuilding user: !uid, !message',
+              array(
+                '!uid' => $user->uid,
+                '!message' => $e->getMessage()
+              ),
+              WATCHDOG_ERROR
+            );
+          }
           break;
       }
-    }*/
-    // LDAP_APPRV_US_01 - Assign Approver to the default list of approvers
-//    $is_approver = in_array('Approver', $roles);
-//    osha_authentication_user_login_approver($user, $is_approver);
+    }
 
     // Configure translator skills
     $user->tmgmt_translation_skills[LANGUAGE_NONE] = array();
@@ -187,19 +203,23 @@ function osha_authentication_build_user_from_ldap($user, $ldap_server) {
   $languages = array();
   $language_list = language_list();
   foreach($user->ldap_groups as $dn) {
-    list($role_name, $section_id, $language) = osha_authentication_get_role_and_section_from_dn($dn);
-    /*if (!empty($section_id)) {
-      if ($section_id == 'section') {
-        $section = $section_id;
+    list($role_name, $language) = osha_authentication_get_role_from_dn($dn);
+    // section (Partner GUID) is read from user's 'gecos' attribute
+    if (!empty($user->field_user_partner_guid[LANGUAGE_NONE][0]['value'])) {
+      $partner_guid = $user->field_user_partner_guid[LANGUAGE_NONE][0]['value'];
+      /** @var stdClass $term */
+      if ($term = osha_workflow_get_partner_section_by_guid($partner_guid)) {
+        $authorizations[$role_name][] = $term->tid;
       }
       else {
-        $term = osha_workflow_get_section_term_by_ldap_id($section_id);
-        $section = $term->tid;
+        watchdog(
+          'osha_authentication',
+          'Cannot find partner section with GUID: !guid',
+          array('!guid' => $partner_guid),
+          WATCHDOG_ERROR
+        );
       }
-      if ($section) {
-        $authorizations[$role_name][] = $section;
-      }
-    }*/
+    }
     if (!array_key_exists($role_name, $authorizations)) {
       $authorizations[$role_name] = array();
     }
