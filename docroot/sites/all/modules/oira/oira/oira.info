@@ -1,0 +1,6 @@
+name = oira
+description = OIRA specific customizations
+core = 7.x
+package = OIRA
+version = 7.x-0.1
+features[features_api][] = api:2
