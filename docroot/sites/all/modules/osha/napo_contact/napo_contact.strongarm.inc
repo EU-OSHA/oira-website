@@ -21,7 +21,7 @@ function napo_contact_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_faq';
-  $strongarm->value = '-1';
+  $strongarm->value = '0';
   $export['comment_anonymous_faq'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -128,6 +128,19 @@ function napo_contact_strongarm() {
   $strongarm->name = 'entity_translation_node_metadata_faq';
   $strongarm->value = '0';
   $export['entity_translation_node_metadata_faq'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__faq';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 1,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
+    'shared_fields_original_only' => 1,
+  );
+  $export['entity_translation_settings_node__faq'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -297,6 +310,13 @@ function napo_contact_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_enable_node__faq';
+  $strongarm->value = TRUE;
+  $export['metatag_enable_node__faq'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_contact_us_faq';
   $strongarm->value = array(
     0 => 'status',
@@ -308,8 +328,7 @@ function napo_contact_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_faq';
   $strongarm->value = array(
-    0 => 'moderation',
-    1 => 'revision',
+    0 => 'status',
   );
   $export['node_options_faq'] = $strongarm;
 
@@ -324,7 +343,7 @@ function napo_contact_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_faq';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_faq'] = $strongarm;
 
   $strongarm = new stdClass();

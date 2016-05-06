@@ -16,7 +16,10 @@ function napo_contact_default_page_manager_pages() {
   $page->admin_title = 'Contact us';
   $page->admin_description = '';
   $page->path = 'contact-us';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -114,9 +117,9 @@ function napo_contact_default_page_manager_pages() {
       'args' => '',
       'url' => '',
       'display' => 'block',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title_heading' => 'div',
     );
     $pane->cache = array();
     $pane->style = array(
