@@ -18,6 +18,8 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   $languages = hwc_req_param($form_state, 'languages', array($language->language));
   $sort = hwc_req_param($form_state, 'sort', 'date');
   $relevant_for = hwc_req_param($form_state, 'relevant_for', array(0));
+  $country = hwc_req_param($form_state, 'country', array(0));
+
   $form = array(
     '#action' => 'practical-tools',
     '#method' => 'GET',
@@ -71,6 +73,12 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     '#options' => osha_language_list_options(TRUE),
     '#default_value' => $languages ,
     '#title' => t('Tools are available in several languages'),
+  );
+  $form['left-column']['country'] = array(
+    '#type' => 'checkboxes',
+    '#options' => _hwc_taxonomy_filter_options_list('country', array('0' => t('Any country'))),
+    '#default_value' => $country,
+    '#title' => t('Country'),
   );
   $form['#attached']['js'] = array(
     drupal_get_path('module', 'hwc_practical_tool') . '/js/checkbox-submit.js',
