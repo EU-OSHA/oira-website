@@ -135,7 +135,6 @@ class NaceCodesNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
         }
       }
     }
-    dpm($this->skip_ids);
   }
 
   public function contentFields() {
