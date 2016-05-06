@@ -1,5 +1,7 @@
 <?php
 
+define('SOLR_SEARCH_INDEX', 'default_multilingual_node_index');
+
 // We need these 2 functions (hwc_req_param() and _hwc_segment_options_list())
 // because they are used within modules copied from hwc website.
 function hwc_req_param($form_state, $name, $default = NULL) {
@@ -24,18 +26,6 @@ function hwc_req_param($form_state, $name, $default = NULL) {
     return $ret;
   }
   return $default;
-}
-
-function _hwc_segment_options_list() {
-  $return = array('0' => t('All audience'));
-  $vocabulary = taxonomy_vocabulary_machine_name_load('segment');
-  if (!empty($vocabulary)) {
-    $terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
-    foreach($terms as $key => $term) {
-      $return[$term->tid] = $term->name;
-    }
-  }
-  return $return;
 }
 
 /**
