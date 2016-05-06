@@ -60,6 +60,25 @@ function osha_image_default_styles() {
     ),
   );
 
+  // Exported image style: generic_detail_thumbnail.
+  $styles['generic_detail_thumbnail'] = array(
+    'label' => 'Generic detail image (small)',
+    'effects' => array(
+      2 => array(
+        'name' => 'manualcrop_crop_and_scale',
+        'data' => array(
+          'width' => 300,
+          'height' => 300,
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 0,
+          'style_name' => 'generic_detail_thumbnail',
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
   return $styles;
 }
 

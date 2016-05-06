@@ -159,26 +159,32 @@ function hwc_practical_tool_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'osha_wiki' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'workbench_access' => array(
           'weight' => '1',
         ),
         'language' => array(
           'weight' => '5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(),

@@ -220,4 +220,5 @@ function oira_install() {
 
   variable_set('entity_translation_entity_types', array('node' => 'node', 'taxonomy_term' => 'taxonomy_term'));
   variable_set('jquery_update_jquery_admin_version', 'default');
+  variable_set('manualcrop_skip_js_check', 1);
 }

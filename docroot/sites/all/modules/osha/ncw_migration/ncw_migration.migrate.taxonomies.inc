@@ -129,12 +129,13 @@ class NaceCodesNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
         $data = $data->items;
         foreach ($data as $ob) {
           $ob = $ob->item;
-          if ($ob->parent_tid != 0) {
+          if (!empty($ob->parent_tid)) {
             $this->skip_ids[] = $this->itemIdentifier($ob);
           }
         }
       }
     }
+    dpm($this->skip_ids);
   }
 
   public function contentFields() {
