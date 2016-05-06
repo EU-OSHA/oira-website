@@ -504,6 +504,7 @@ $options['init-modules'] = array(
 
   'oira_partner',
   'hwc_practical_tool',
+  'oira',
 
   'linkchecker',
   'osha_linkchecker',
