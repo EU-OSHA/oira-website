@@ -1483,7 +1483,7 @@ function osha_events_views_default_views() {
   $handler->display->display_options['filters']['search_api_language']['value'] = array(
     'current' => 'current',
   );
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Starting date and time: Start date (indexed) */
   $handler->display->display_options['filters']['field_start_date_value']['id'] = 'field_start_date_value';
   $handler->display->display_options['filters']['field_start_date_value']['table'] = 'search_api_index_default_multilingual_node_index';
   $handler->display->display_options['filters']['field_start_date_value']['field'] = 'field_start_date_value';
@@ -1792,6 +1792,35 @@ function osha_events_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Indexed Multilingual Content: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_default_multilingual_node_index';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'events' => 'events',
+  );
+  /* Filter criterion: Indexed Multilingual Content: Status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_default_multilingual_node_index';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    1 => '1',
+  );
+  /* Filter criterion: Indexed Multilingual Content: Item language */
+  $handler->display->display_options['filters']['search_api_language']['id'] = 'search_api_language';
+  $handler->display->display_options['filters']['search_api_language']['table'] = 'search_api_index_default_multilingual_node_index';
+  $handler->display->display_options['filters']['search_api_language']['field'] = 'search_api_language';
+  $handler->display->display_options['filters']['search_api_language']['value'] = array(
+    'current' => 'current',
+  );
+  /* Filter criterion: Starting date and time: Start date (indexed) */
+  $handler->display->display_options['filters']['field_start_date_value']['id'] = 'field_start_date_value';
+  $handler->display->display_options['filters']['field_start_date_value']['table'] = 'search_api_index_default_multilingual_node_index';
+  $handler->display->display_options['filters']['field_start_date_value']['field'] = 'field_start_date_value';
+  $handler->display->display_options['filters']['field_start_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_start_date_value']['value'] = 'now';
   $translatables['events_search'] = array(
     t('Master'),
     t('Past events'),
