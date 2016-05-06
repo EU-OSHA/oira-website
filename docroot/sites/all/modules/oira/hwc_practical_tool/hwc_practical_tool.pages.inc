@@ -1,16 +1,14 @@
 <?php
 
-
-function _hwc_sector_options_list() {
-  $return = array('0' => t('All audience'));
-  $vocabulary = taxonomy_vocabulary_machine_name_load('nace_codes');
+function _hwc_taxonomy_filter_options_list($vocabulary, $default = array()) {
+  $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary);
   if (!empty($vocabulary)) {
     $terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
     foreach($terms as $key => $term) {
-      $return[$term->tid] = $term->name;
+      $default[$term->tid] = $term->name;
     }
   }
-  return $return;
+  return $default;
 }
 
 function hwc_practical_tool_menu_tools_form($form, $form_state) {
@@ -64,7 +62,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   );
   $form['left-column']['relevant_for'] = array(
     '#type' => 'checkboxes',
-    '#options' => _hwc_sector_options_list(),
+    '#options' => _hwc_taxonomy_filter_options_list('nace_codes', array('0' => t('All audience'))),
     '#default_value' => $relevant_for,
     '#title' => t('Sector'),
   );
