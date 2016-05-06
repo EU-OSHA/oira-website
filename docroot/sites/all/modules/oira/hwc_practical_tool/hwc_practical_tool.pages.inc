@@ -1,7 +1,7 @@
 <?php
 
 
-function _hwc_segment_options_list() {
+function _hwc_sector_options_list() {
   $return = array('0' => t('All audience'));
   $vocabulary = taxonomy_vocabulary_machine_name_load('nace_codes');
   if (!empty($vocabulary)) {
@@ -64,7 +64,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   );
   $form['left-column']['relevant_for'] = array(
     '#type' => 'checkboxes',
-    '#options' => _hwc_segment_options_list(),
+    '#options' => _hwc_sector_options_list(),
     '#default_value' => $relevant_for,
     '#title' => t('Sector'),
   );
