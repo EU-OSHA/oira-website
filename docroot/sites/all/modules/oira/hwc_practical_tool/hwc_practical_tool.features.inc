@@ -22,7 +22,7 @@ function hwc_practical_tool_ctools_plugin_api($module = NULL, $api = NULL) {
 function hwc_practical_tool_node_info() {
   $items = array(
     'practical_tool' => array(
-      'name' => 'Practical Tool',
+      'name' => 'OiRA Tool',
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
