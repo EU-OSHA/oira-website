@@ -85,14 +85,13 @@ function ncw_migration_migrate_api() {
 //        'dependencies' => array('tax_tags'),
 //        'class_name' => 'NCWAdditionalResourcesPressReleasesMigration',
 //      ),
-//      'highlights' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(
-//          'tax_tags', 'news_add_res',
-//          'highlights_add_res',
-//        ),
-//        'class_name' => 'NCWHighlightMigration',
-//      ),
+      'highlights' => array(
+        'group_name' => 'ncw',
+        'dependencies' => array(
+          'tax_tags',
+        ),
+        'class_name' => 'NCWHighlightMigration',
+      ),
 //      'highlights_add_res' => array(
 //        'group_name' => 'ncw',
 //        'dependencies' => array('tax_tags'),
