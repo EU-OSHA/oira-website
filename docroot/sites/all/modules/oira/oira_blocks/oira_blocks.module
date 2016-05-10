@@ -171,23 +171,31 @@ function related_ncw_publications_block_view() {
         'base_url' => $ncw_url,
         'absolute' => TRUE,
       ]);
-      $json = file_get_contents($export_url);
-      $publications = json_decode($json, TRUE);
-      foreach ($publications as $key => $publication) {
-        if (empty($title = $publication['title'][$language->language])) {
-          if (empty($title = $publication['title']['en'])) {
-            if (empty($title = $publication['title'][LANGUAGE_NONE])) {
-              $title = reset($publication['title']);
+      // DO NOT wait more than 30 seconds for retrieving the related publications
+      $ctx = stream_context_create(array('http'=>
+        array(
+          'timeout' => 30,
+        )
+      ));
+      $json = file_get_contents($export_url, false, $ctx);
+      if (!empty($json)) {
+        $publications = json_decode($json, TRUE);
+        foreach ($publications as $key => $publication) {
+          if (empty($title = $publication['title'][$language->language])) {
+            if (empty($title = $publication['title']['en'])) {
+              if (empty($title = $publication['title'][LANGUAGE_NONE])) {
+                $title = reset($publication['title']);
+              }
             }
           }
+          $related_publications[] = [
+            'title' => $title,
+            'url' => url($publication['path_alias'], [
+              'base_url' => $ncw_url,
+              'absolute' => TRUE,
+            ]),
+          ];
         }
-        $related_publications[] = [
-          'title' => $title,
-          'url' => url($publication['path_alias'], [
-            'base_url' => $ncw_url,
-            'absolute' => TRUE,
-          ]),
-        ];
       }
     }
   }
