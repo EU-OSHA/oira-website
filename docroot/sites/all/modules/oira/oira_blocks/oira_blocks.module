@@ -170,7 +170,7 @@ function related_ncw_publications_block_view() {
         'base_url' => $ncw_url,
         'absolute' => TRUE,
       ]);
-      if (($json = cache_get('ncw_publications_import_' . $tags_url)) === FALSE) {
+      if (($cache = cache_get('ncw_publications_import_' . $tags_url)) === FALSE) {
         // DO NOT wait more than 30 seconds for retrieving the related publications
         $ctx = stream_context_create(array('http'=>
           array(
@@ -180,6 +180,9 @@ function related_ncw_publications_block_view() {
         $json = file_get_contents($export_url, false, $ctx);
         $cache_expire = time() + variable_get('page_cache_maximum_age', 900);
         cache_set('ncw_publications_import_' . $tags_url, $json, $bin = 'cache', $cache_expire);
+      }
+      else {
+        $json = $cache->data;
       }
       if (!empty($json)) {
         $publications = json_decode($json, TRUE);
