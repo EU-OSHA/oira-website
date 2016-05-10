@@ -142,8 +142,29 @@ function related_ncw_publications_block_view() {
   $related_publications = array();
   if ($node = menu_get_object()) {
     if ($node->type == 'article') {
+      $tags = array();
+      if (!empty($node->field_tags)) {
+        foreach ($node->field_tags[LANGUAGE_NONE] as $tag) {
+          $term = taxonomy_term_load($tag['tid']);
+          if (!empty($term->field_tags_code)) {
+            $tags[$tag['tid']] = $term->field_tags_code[LANGUAGE_NONE][0]['value'];
+          }
+        }
+      }
       $ncw_url = variable_get('ncw_migration_root_url', 'https://osha.europa.eu/');
-      $json = file_get_contents('http://osha-website.local/en/export/tools-and-publications/publications/tags-construction-corporate_social_responsibility?limit=3');
+
+      $export_url = 'export/tools-and-publications/publications/';
+      if (!empty($tags)) {
+        $export_url .= 'tags-' . implode('-', $tags);
+      }
+      $export_url = url($export_url, [
+        'base_url' => $ncw_url,
+        'absolute' => TRUE,
+        'query' => [
+          'limit' => 3,
+        ],
+      ]);
+      $json = file_get_contents($export_url);
       $publications = json_decode($json, TRUE);
       foreach ($publications as $key => $publication) {
         if (empty($title = $publication['title'][$language->language])) {
