@@ -18,7 +18,20 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   $languages = hwc_req_param($form_state, 'languages', array($language->language));
   $sort = hwc_req_param($form_state, 'sort', 'date');
   $relevant_for = hwc_req_param($form_state, 'relevant_for', array(0));
+  $country_options =  _hwc_taxonomy_filter_options_list('country', array('0' => t('Any country')));
   $country = hwc_req_param($form_state, 'country', array(0));
+  /** @var SelectQuery $q */
+  $q = db_select('field_data_field_country', 'c')
+    ->fields('c', ['field_country_tid'])
+    ->groupBy('c.field_country_tid');
+  $q->addExpression('COUNT(*)', 'count');
+  $country_count = $q->execute()->fetchAllKeyed();
+  foreach ($country_options as $tid => $country) {
+    if ($tid != 0) {
+      $count = !empty($country_count[$tid]) ? $country_count[$tid] : 0;
+      $country_options[$tid] = "{$country} <span class='count'>({$count})</span>";
+    }
+  }
 
   $form = array(
     '#action' => 'practical-tools',
@@ -76,7 +89,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   );
   $form['left-column']['country'] = array(
     '#type' => 'checkboxes',
-    '#options' => _hwc_taxonomy_filter_options_list('country', array('0' => t('Any country'))),
+    '#options' => $country_options,
     '#default_value' => $country,
     '#title' => t('Country'),
   );
