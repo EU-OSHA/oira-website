@@ -114,6 +114,9 @@
 </header>
 
 <div class="main-container">
+  <div>
+    <?php print render($page['above_header']); ?>
+  </div>
 
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
