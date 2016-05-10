@@ -185,13 +185,14 @@ function related_ncw_publications_block_view() {
       if (!empty($json)) {
         $publications = json_decode($json, TRUE);
         foreach ($publications as $key => $publication) {
-          if (empty($title = $publication['title'][$language->language])) {
-            if (empty($title = $publication['title']['en'])) {
-              if (empty($title = $publication['title'][LANGUAGE_NONE])) {
-                $title = reset($publication['title']);
+          if (empty($publication['title'][$language->language]) || !($lang = $language->language)) {
+            if (empty($publication['title']['en']) || !($lang = 'en')) {
+              if (empty($publication['title'][LANGUAGE_NONE]) || !($lang = LANGUAGE_NONE)) {
+                $lang = key($publication['title']);
               }
             }
           }
+          $title = $publication['title'][$lang];
           $related_publications[] = [
             'title' => $title,
             'url' => url($publication['path_alias'], [
