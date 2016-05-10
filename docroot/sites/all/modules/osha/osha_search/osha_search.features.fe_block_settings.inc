@@ -14,36 +14,34 @@ function osha_search_default_fe_block_settings() {
 
   $export['facetapi-bhmRHTzU2n0ejKZP9wDI0S1oi2DgbSDm'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'bhmRHTzU2n0ejKZP9wDI0S1oi2DgbSDm',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => 'search',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'hwc_frontend',
-        'weight' => 0,
-      ),
-      'seven' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'oira_frontend',
+        'weight' => 0,
+      ),
+      'osha_admin' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
-    'title' => 'Show:',
-    'visibility' => 1,
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['menu-menu-search'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'menu-search',
     'i18n_block_language' => array(),
@@ -54,16 +52,16 @@ function osha_search_default_fe_block_settings() {
 search/wiki',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'hwc_frontend',
+        'theme' => 'oira_frontend',
         'weight' => 0,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
@@ -73,7 +71,6 @@ search/wiki',
 
   $export['osha_search-osha_search_clear_filters'] = array(
     'cache' => 8,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'osha_search_clear_filters',
     'i18n_block_language' => array(),
@@ -89,16 +86,16 @@ node/2544
 legislation/guidelines/*',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
+      'oira_frontend' => array(
         'region' => 'sidebar_first',
         'status' => 1,
-        'theme' => 'hwc_frontend',
-        'weight' => -51,
+        'theme' => 'oira_frontend',
+        'weight' => 0,
       ),
-      'seven' => array(
-        'region' => 'content',
+      'osha_admin' => array(
+        'region' => 'sidebar_first',
         'status' => 1,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
@@ -108,7 +105,6 @@ legislation/guidelines/*',
 
   $export['search-form'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'form',
     'i18n_block_language' => array(),
@@ -118,16 +114,16 @@ legislation/guidelines/*',
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
-        'region' => 'header',
-        'status' => 1,
-        'theme' => 'hwc_frontend',
-        'weight' => -69,
-      ),
-      'seven' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'oira_frontend',
+        'weight' => 0,
+      ),
+      'osha_admin' => array(
+        'region' => 'dashboard_inactive',
+        'status' => 1,
+        'theme' => 'osha_admin',
         'weight' => -10,
       ),
     ),
@@ -137,7 +133,6 @@ legislation/guidelines/*',
 
   $export['views--exp-search-site'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => '-exp-search-site',
     'i18n_block_language' => array(),
@@ -147,16 +142,16 @@ legislation/guidelines/*',
     'pages' => 'search',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'hwc_frontend',
-        'weight' => -67,
-      ),
-      'seven' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'oira_frontend',
+        'weight' => 0,
+      ),
+      'osha_admin' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),

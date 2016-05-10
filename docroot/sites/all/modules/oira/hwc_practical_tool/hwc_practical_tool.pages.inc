@@ -14,6 +14,8 @@ function _hwc_taxonomy_filter_options_list($vocabulary, $default = array()) {
 function hwc_practical_tool_menu_tools_form($form, $form_state) {
   drupal_set_title(t('Practical tools'));
   global $language;
+  $form = array();
+  return $form;
   $text = hwc_req_param($form_state, 'text');
   $languages = hwc_req_param($form_state, 'languages', array($language->language));
   $sort = hwc_req_param($form_state, 'sort', 'date');

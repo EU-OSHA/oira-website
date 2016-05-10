@@ -567,7 +567,7 @@ function osha_search_facetapi_default_facet_settings() {
   $facet->searcher = 'search_api@default_multilingual_node_index';
   $facet->realm = 'block';
   $facet->facet = 'field_nace_codes';
-  $facet->enabled = FALSE;
+  $facet->enabled = TRUE;
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
