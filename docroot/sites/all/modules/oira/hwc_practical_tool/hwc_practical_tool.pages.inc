@@ -150,6 +150,7 @@ function hwc_practical_tool_menu_tools_search_native($form_state) {
     $languages = array($language->language);
   $text = hwc_req_param($form_state, 'text');
   $relevant_for = hwc_req_param($form_state, 'relevant_for', array());
+  $countries = hwc_req_param($form_state, 'country', array());
   $is_search = !empty($text);
   $restrict = array();
   if ($is_search) {
@@ -190,6 +191,10 @@ function hwc_practical_tool_menu_tools_search_native($form_state) {
   if (!empty($relevant_for)) {
     $q->innerJoin('field_data_field_nace_codes', 'fs', 'fs.entity_id = a.nid AND fs.revision_id = a.vid');
     $q->condition('fs.field_nace_codes_tid', $relevant_for, 'IN');
+  }
+  if (!empty($countries)) {
+    $q->innerJoin('field_data_field_country', 'fcountry', 'fcountry.entity_id = a.nid AND fcountry.revision_id = a.vid');
+    $q->condition('fcountry.field_country_tid', $countries, 'IN');
   }
   $nids = $q->execute()->fetchCol();
   $nids = array_unique($nids);
