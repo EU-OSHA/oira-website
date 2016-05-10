@@ -156,10 +156,9 @@ function related_ncw_publications_block_view() {
       $ncw_url = variable_get('ncw_migration_root_url', 'https://osha.europa.eu/');
       $export_url = 'export/tools-and-publications/publications/';
       $view_all_url = 'tools-and-publications/publications/';
-      if (!empty($tags)) {
-        $export_url .= 'tags-' . implode('-', $tags);
-        $view_all_url .= 'tags-' . implode('-', $tags);
-      }
+      $tags_url = !empty($tags) ? 'tags-' . implode('-', $tags) : '';
+      $export_url .= $tags_url;
+      $view_all_url .= $tags_url;
       $export_url = url($export_url, [
         'base_url' => $ncw_url,
         'absolute' => TRUE,
@@ -171,13 +170,17 @@ function related_ncw_publications_block_view() {
         'base_url' => $ncw_url,
         'absolute' => TRUE,
       ]);
-      // DO NOT wait more than 30 seconds for retrieving the related publications
-      $ctx = stream_context_create(array('http'=>
-        array(
-          'timeout' => 30,
-        )
-      ));
-      $json = file_get_contents($export_url, false, $ctx);
+      if (($json = cache_get('ncw_publications_import_' . $tags_url)) === FALSE) {
+        // DO NOT wait more than 30 seconds for retrieving the related publications
+        $ctx = stream_context_create(array('http'=>
+          array(
+            'timeout' => 30,
+          )
+        ));
+        $json = file_get_contents($export_url, false, $ctx);
+        $cache_expire = time() + variable_get('page_cache_maximum_age', 900);
+        cache_set('ncw_publications_import_' . $tags_url, $json, $bin = 'cache', $cache_expire);
+      }
       if (!empty($json)) {
         $publications = json_decode($json, TRUE);
         foreach ($publications as $key => $publication) {
