@@ -461,6 +461,7 @@ $options['init-modules'] = array(
 
   // Social share
   'on_the_web',
+  'text_resize',
 
   // Link content types with main menu items
   'menu_position',
