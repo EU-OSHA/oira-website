@@ -103,6 +103,7 @@ features[field_instance][] = node-article-field_publication_date
 features[field_instance][] = node-article-field_recommended_articles
 features[field_instance][] = node-article-field_recommended_resources
 features[field_instance][] = node-article-field_summary
+features[field_instance][] = node-article-field_wiki_categories
 features[field_instance][] = node-article-title_field
 features[field_instance][] = node-internal_url-body
 features[field_instance][] = node-internal_url-field_external_url
