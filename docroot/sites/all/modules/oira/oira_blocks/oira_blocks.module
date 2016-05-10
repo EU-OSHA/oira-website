@@ -15,6 +15,12 @@ function oira_blocks_block_info() {
       'info' => t('Related publications from Corporate website'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
     ),
+    'oira_print_friendly' => array(
+      'info' => t('OiRA Print friendly'),
+      'status' => 1,
+      'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+      'region' => 'above_header',
+    ),
   );
 }
 
@@ -32,6 +38,12 @@ function oira_blocks_block_view($delta = '') {
     case 'related_ncw_publications':
       $block['subject'] = t('Related publications');
       $block['content'] = related_ncw_publications_block_view();
+      break;
+    case 'oira_print_friendly':
+      $block['subject'] = '<none>';
+      $block['content'] = array(
+        '#markup' => '<a href="javascript:if(window.print)window.print();" class="printfriendly" title="Print page"></a>'
+      );
       break;
   }
 
