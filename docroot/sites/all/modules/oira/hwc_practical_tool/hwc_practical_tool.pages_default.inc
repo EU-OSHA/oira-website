@@ -551,10 +551,10 @@ function hwc_practical_tool_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-6336f44b-900b-4517-b211-5fd940a216cf';
+    $pane->pid = 'new-fe797c3c-9c83-4318-93ef-dacacb0c0ea4';
     $pane->panel = 'content';
     $pane->type = 'views';
-    $pane->subtype = 'tool_search';
+    $pane->subtype = 'tools_search';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -582,9 +582,9 @@ function hwc_practical_tool_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '6336f44b-900b-4517-b211-5fd940a216cf';
-    $display->content['new-6336f44b-900b-4517-b211-5fd940a216cf'] = $pane;
-    $display->panels['content'][0] = 'new-6336f44b-900b-4517-b211-5fd940a216cf';
+    $pane->uuid = 'fe797c3c-9c83-4318-93ef-dacacb0c0ea4';
+    $display->content['new-fe797c3c-9c83-4318-93ef-dacacb0c0ea4'] = $pane;
+    $display->panels['content'][0] = 'new-fe797c3c-9c83-4318-93ef-dacacb0c0ea4';
     $pane = new stdClass();
     $pane->pid = 'new-d04bcb06-9c71-4101-b8c9-301b3dcdbc06';
     $pane->panel = 'sidebar_right';
