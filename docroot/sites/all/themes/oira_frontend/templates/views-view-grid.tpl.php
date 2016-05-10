@@ -9,16 +9,16 @@
  *
  * @ingroup views_templates
  */
-?>
+?><?php dpm($column_classes); ?>
 <?php if (!empty($title)) : ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <div class="<?php print $class; ?>"<?php print $attributes; ?>>
   <?php foreach ($rows as $row_number => $columns): ?>
     <?php $x = (int) (12 / $options['columns']); ?>
-    <div <?php if ($row_classes[$row_number]) { print 'class="row ' . $row_classes[$row_number] .'"';  } ?>>
+    <div class="row <?php if ($row_classes[$row_number]) { print $row_classes[$row_number];  } ?>">
       <?php foreach ($columns as $column_number => $item): ?>
-        <div <?php if ($column_classes[$row_number][$column_number]) { print 'class="col-md-' . $x . ' ' . $column_classes[$row_number][$column_number] .' col-sm-6 col-xs-12"';  } ?>>
+        <div class="col-md-<?php print $x; ?> col-sm-6 col-xs-12 <?php if ($column_classes[$row_number][$column_number]) { print $column_classes[$row_number][$column_number];  } ?>">
           <div class="views-item-columns-container">
             <?php print $item; ?>
           </div>
