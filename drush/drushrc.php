@@ -506,6 +506,7 @@ $options['init-modules'] = array(
   'hwc_practical_tool',
   'shorten',
   'oira',
+  'oira_blocks',
 
   'linkchecker',
   'osha_linkchecker',
