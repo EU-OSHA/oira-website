@@ -203,6 +203,9 @@ function related_ncw_publications_block_view() {
       }
     }
   }
+  if (empty($related_publications)) {
+    return NULL;
+  }
   return theme('related_ncw_publications', array(
     'publications' => $related_publications,
     'view_all_url' => $view_all_url,
