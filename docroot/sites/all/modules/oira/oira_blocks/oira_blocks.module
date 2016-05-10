@@ -55,7 +55,8 @@ function oira_blocks_theme($existing, $type, $theme, $path) {
     'related_ncw_publications' => array(
       'template' => 'related_ncw_publications',
       'variables' => array(
-        'publications' => NULL
+        'publications' => NULL,
+        'view_all_url' => NULL
       ),
       'path' => $path . '/templates'
     ),
@@ -140,6 +141,7 @@ function osha_blocks_get_related_wiki($node) {
 function related_ncw_publications_block_view() {
   global $language;
   $related_publications = array();
+  $view_all_url = '';
   if ($node = menu_get_object()) {
     if ($node->type == 'article') {
       $tags = array();
@@ -152,10 +154,11 @@ function related_ncw_publications_block_view() {
         }
       }
       $ncw_url = variable_get('ncw_migration_root_url', 'https://osha.europa.eu/');
-
       $export_url = 'export/tools-and-publications/publications/';
+      $view_all_url = 'tools-and-publications/publications/';
       if (!empty($tags)) {
         $export_url .= 'tags-' . implode('-', $tags);
+        $view_all_url .= 'tags-' . implode('-', $tags);
       }
       $export_url = url($export_url, [
         'base_url' => $ncw_url,
@@ -163,6 +166,10 @@ function related_ncw_publications_block_view() {
         'query' => [
           'limit' => 3,
         ],
+      ]);
+      $view_all_url = url($view_all_url, [
+        'base_url' => $ncw_url,
+        'absolute' => TRUE,
       ]);
       $json = file_get_contents($export_url);
       $publications = json_decode($json, TRUE);
@@ -178,12 +185,14 @@ function related_ncw_publications_block_view() {
           'title' => $title,
           'url' => url($publication['path_alias'], [
             'base_url' => $ncw_url,
-            'prefix' => $language->language,
             'absolute' => TRUE,
           ]),
         ];
       }
     }
   }
-  return theme('related_ncw_publications', array('publications' => $related_publications));
+  return theme('related_ncw_publications', array(
+    'publications' => $related_publications,
+    'view_all_url' => $view_all_url,
+  ));
 }
