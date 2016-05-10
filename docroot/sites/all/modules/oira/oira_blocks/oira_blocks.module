@@ -11,6 +11,10 @@ function oira_blocks_block_info() {
       'info' => t('OSHwiki featured articles custom block'),
       'cache' => DRUPAL_CACHE_PER_PAGE,
     ),
+    'related_ncw_publications' => array(
+      'info' => t('Related publications from Corporate website'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+    ),
   );
 }
 
@@ -24,6 +28,10 @@ function oira_blocks_block_view($delta = '') {
     case 'oshwiki_featured_articles':
       $block['subject'] = t('OSHwiki featured articles');
       $block['content'] = oshwiki_featured_articles_block_view();
+      break;
+    case 'related_ncw_publications':
+      $block['subject'] = t('Related publications');
+      $block['content'] = related_ncw_publications_block_view();
       break;
   }
 
@@ -44,13 +52,20 @@ function oira_blocks_theme($existing, $type, $theme, $path) {
       ),
       'path' => $path . '/templates'
     ),
+    'related_ncw_publications' => array(
+      'template' => 'related_ncw_publications',
+      'variables' => array(
+        'publications' => NULL
+      ),
+      'path' => $path . '/templates'
+    ),
   );
 }
 
 function oshwiki_featured_articles_block_view() {
   $tagged_wikis = array();
   if ($node = menu_get_object()) {
-    if ($node->type == 'publication' || $node->type == 'article') {
+    if ($node->type == 'article') {
       $tagged_wikis = osha_blocks_get_related_wiki($node);
     }
   }
@@ -120,4 +135,34 @@ function osha_blocks_get_related_wiki($node) {
     }
   }
   return $tagged_wikis;
+}
+
+function related_ncw_publications_block_view() {
+  global $language;
+  $related_publications = array();
+  if ($node = menu_get_object()) {
+    if ($node->type == 'article') {
+      $ncw_url = variable_get('ncw_migration_root_url', 'https://osha.europa.eu/');
+      $json = file_get_contents('http://osha-website.local/en/export/tools-and-publications/publications/tags-construction-corporate_social_responsibility?limit=3');
+      $publications = json_decode($json, TRUE);
+      foreach ($publications as $key => $publication) {
+        if (empty($title = $publication['title'][$language->language])) {
+          if (empty($title = $publication['title']['en'])) {
+            if (empty($title = $publication['title'][LANGUAGE_NONE])) {
+              $title = reset($publication['title']);
+            }
+          }
+        }
+        $related_publications[] = [
+          'title' => $title,
+          'url' => url($publication['path_alias'], [
+            'base_url' => $ncw_url,
+            'prefix' => $language->language,
+            'absolute' => TRUE,
+          ]),
+        ];
+      }
+    }
+  }
+  return theme('related_ncw_publications', array('publications' => $related_publications));
 }
