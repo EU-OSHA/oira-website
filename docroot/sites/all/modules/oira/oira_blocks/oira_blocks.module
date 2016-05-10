@@ -143,14 +143,12 @@ function related_ncw_publications_block_view() {
   $related_publications = array();
   $view_all_url = '';
   if ($node = menu_get_object()) {
-    if ($node->type == 'article') {
+    if ($node->type == 'article' && !empty($node->field_tags)) {
       $tags = array();
-      if (!empty($node->field_tags)) {
-        foreach ($node->field_tags[LANGUAGE_NONE] as $tag) {
-          $term = taxonomy_term_load($tag['tid']);
-          if (!empty($term->field_tags_code)) {
-            $tags[$tag['tid']] = $term->field_tags_code[LANGUAGE_NONE][0]['value'];
-          }
+      foreach ($node->field_tags[LANGUAGE_NONE] as $tag) {
+        $term = taxonomy_term_load($tag['tid']);
+        if (!empty($term->field_tags_code)) {
+          $tags[$tag['tid']] = $term->field_tags_code[LANGUAGE_NONE][0]['value'];
         }
       }
       $ncw_url = variable_get('ncw_migration_root_url', 'https://osha.europa.eu/');
