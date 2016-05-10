@@ -1,2 +1,64 @@
 <?php
 
+/**
+ * Implements hook_block_info().
+ */
+function oira_blocks_block_info() {
+  return array(
+    'oshwiki_featured_articles' => array(
+      'info' => t('OSHwiki featured articles custom block'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function oira_blocks_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'oshwiki_featured_articles':
+      $block['subject'] = t('OSHwiki featured articles');
+      $block['content'] = oshwiki_featured_articles_block_view();
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function oira_blocks_theme($existing, $type, $theme, $path) {
+  $path = drupal_get_path('module', 'oira_blocks');
+
+  return array(
+    'oshwiki_featured_articles' => array(
+      'template' => 'oshwiki_featured_articles',
+      'variables' => array(
+        'tagged_wikis' => NULL
+      ),
+      'path' => $path . '/templates'
+    ),
+  );
+}
+
+function oshwiki_featured_articles_block_view() {
+  $tagged_wikis = array();
+  if ($node = menu_get_object()) {
+    if ($node->type == 'publication' || $node->type == 'article') {
+      $tagged_wikis = osha_blocks_get_related_wiki($node);
+    }
+  }
+  return theme('oshwiki_featured_articles', array('tagged_wikis' => $tagged_wikis));
+}
+/**
+ * Called from hook_block_view
+ */
+function osha_blocks_get_related_wiki($node) {
+  $wiki_articles_no = 0;
+  $tagged_wikis = array();
+  return $tagged_wikis;
+}
