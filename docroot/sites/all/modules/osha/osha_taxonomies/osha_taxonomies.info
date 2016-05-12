@@ -49,7 +49,6 @@ features[taxonomy][] = article_types
 features[taxonomy][] = contact_topic
 features[taxonomy][] = contact_type_of_sender
 features[taxonomy][] = esener
-features[taxonomy][] = nace_codes
 features[taxonomy][] = section
 features[taxonomy][] = tags
 features[taxonomy][] = wiki_categories

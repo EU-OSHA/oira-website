@@ -97,7 +97,6 @@ features[field_instance][] = node-article-field_article_type
 features[field_instance][] = node-article-field_character_count
 features[field_instance][] = node-article-field_expiration_date
 features[field_instance][] = node-article-field_image
-features[field_instance][] = node-article-field_nace_codes
 features[field_instance][] = node-article-field_page_count
 features[field_instance][] = node-article-field_publication_date
 features[field_instance][] = node-article-field_recommended_articles
