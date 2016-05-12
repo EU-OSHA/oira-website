@@ -243,6 +243,9 @@ function oira_partner_strongarm() {
         'workbench_access' => array(
           'weight' => '0',
         ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(
         'profile_update_link' => array(

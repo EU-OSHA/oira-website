@@ -1,6 +1,7 @@
 name = Oira Partner
 core = 7.x
 package = OIRA
+version = 7.x-0.1
 dependencies[] = email
 dependencies[] = features
 dependencies[] = i18n_taxonomy
@@ -54,6 +55,7 @@ features[field_instance][] = node-partner-field_ph_address
 features[field_instance][] = node-partner-field_ph_address_extra
 features[field_instance][] = node-partner-field_ph_cp
 features[field_instance][] = node-partner-field_ph_town
+features[field_instance][] = node-partner-field_sector
 features[field_instance][] = node-partner-field_social_profile
 features[field_instance][] = node-partner-field_website
 features[field_instance][] = node-partner-title_field
