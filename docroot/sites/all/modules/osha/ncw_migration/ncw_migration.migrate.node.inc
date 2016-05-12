@@ -36,7 +36,6 @@ class NCWSingleArticleMigration extends AbstractNCWNodeMigration {
     $this->addUnmigratedDestinations(array(
       'field_article_type:source_type', 'field_article_type:ignore_case',
       'field_expiration_date:rrule',
-      'field_nace_codes', 'field_nace_codes:source_type', 'field_nace_codes:create_term', 'field_nace_codes:ignore_case',
 
       'field_image:file_class', 'field_image:preserve_files', 'field_image:destination_dir',
       'field_image:destination_file', 'field_image:source_dir', 'field_image:urlencode', 'field_image:alt', 'field_image:title',

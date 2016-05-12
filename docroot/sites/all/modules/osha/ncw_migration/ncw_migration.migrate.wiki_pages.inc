@@ -19,10 +19,6 @@ class NCWWikiPagesMigration extends AbstractNCWNodeMigration {
     $this->addFieldMapping('field_wiki_categories:create_term')->defaultValue(FALSE);
     $this->addFieldMapping('field_wiki_categories', 'field_wiki_categories');
 
-    $this->addFieldMapping('field_nace_codes:source_type')->defaultValue('tid');
-    $this->addFieldMapping('field_nace_codes:create_term')->defaultValue(FALSE);
-    $this->addFieldMapping('field_nace_codes', 'field_nace_codes');
-
     $this->addFieldMapping('field_tags:source_type')->defaultValue('tid');
     $this->addFieldMapping('field_tags:create_term')->defaultValue(FALSE);
     $this->addFieldMapping('field_tags', 'field_tags');
@@ -32,7 +28,6 @@ class NCWWikiPagesMigration extends AbstractNCWNodeMigration {
 
   protected function getManuallyMigratedFields() {
     return array(
-      'field_nace_codes',
       'field_tags',
       'field_wiki_categories',
     );
@@ -41,7 +36,6 @@ class NCWWikiPagesMigration extends AbstractNCWNodeMigration {
   function prepareRow($row) {
     parent::prepareRow($row);
     $row->field_wiki_categories = osha_migration_normalize_migrated_term_reference($row->field_wiki_categories, 'wiki_categories');
-    $row->field_nace_codes = osha_migration_normalize_migrated_term_reference($row->field_nace_codes, 'nace_codes');
     $row->field_tags = osha_migration_normalize_migrated_term_reference($row->field_tags, 'tax_tags');
   }
 }
@@ -64,7 +58,6 @@ class NCWWikiPagesSource extends AbstractNCWNodeSource {
       'field_summary_format',
       'field_summary_language',
       'field_updated',
-      'field_nace_codes',
       'field_tags',
       'field_wiki_categories',
       'field_wiki_page_url',

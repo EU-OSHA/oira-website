@@ -65,16 +65,6 @@ class NCWTaxonomyWikiCategoriesMigration extends AbstractNCWTaxonomyTermMigratio
   }
 }
 
-
-class NCWTaxonomyNaceCodesMigration extends AbstractNCWTaxonomyTermMigration {
-
-  public function __construct($arguments) {
-    parent::__construct($arguments, 'NaceCodesNCWTaxonomyTermSource', 'nace_codes');
-    $this->description = 'Import taxonomy "nace_codes" from NCW';
-  }
-}
-
-
 /* ----------------- SOURCES ----------------- */
 class SimpleNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
 
@@ -115,35 +105,6 @@ class CountryNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
       'field_iso2' => 'field_iso2',
       'field_flag' => 'field_flag',
       'field_country_status' => 'field_country_status',
-    );
-  }
-}
-
-class NaceCodesNCWTaxonomyTermSource extends AbstractNCWTaxonomyTermSource {
-
-  public function __construct(array $options) {
-    parent::__construct($options);
-    $data = $this->fileGetContents($this->endpoint_url);
-    if ($data = json_decode($data)) {
-      if (!empty($data->items)) {
-        $data = $data->items;
-        foreach ($data as $ob) {
-          $ob = $ob->item;
-          if (!empty($ob->parent_tid)) {
-            $this->skip_ids[] = $this->itemIdentifier($ob);
-          }
-        }
-      }
-    }
-  }
-
-  public function contentFields() {
-    return array(
-      'field_nace_code' => 'field_nace_code',
-      'field_nace_changes' => 'field_nace_changes',
-      'field_nace_includes' => 'field_nace_includes',
-      'field_nace_excludes' => 'field_nace_excludes',
-      'field_nace_includes_also' => 'field_nace_includes_also',
     );
   }
 }

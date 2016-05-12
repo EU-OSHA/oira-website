@@ -49,7 +49,6 @@ function ncw_migration_migrate_api() {
         'group_name' => 'ncw',
         'dependencies' => array(
           'wiki_categories',
-          'tax_nace_codes',
           'tax_tags',
         ),
         'class_name' => 'NCWWikiPagesMigration',
@@ -107,11 +106,6 @@ function ncw_migration_migrate_api() {
 //        'dependencies' => array(),
 //        'class_name' => 'NCWPressContactMigration',
 //      ),
-      'tax_nace_codes' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array(),
-        'class_name' => 'NCWTaxonomyNaceCodesMigration',
-      ),
       'tax_country' => array(
         'group_name' => 'ncw',
         'dependencies' => array('tax_country_status'),
