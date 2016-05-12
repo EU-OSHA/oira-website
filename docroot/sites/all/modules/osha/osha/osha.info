@@ -75,7 +75,6 @@ features[field_base][] = field_file_image_alt_text
 features[field_base][] = field_file_image_title_text
 features[field_base][] = field_image
 features[field_base][] = field_language
-features[field_base][] = field_nace_codes
 features[field_base][] = field_page_count
 features[field_base][] = field_page_introduction
 features[field_base][] = field_publication_date

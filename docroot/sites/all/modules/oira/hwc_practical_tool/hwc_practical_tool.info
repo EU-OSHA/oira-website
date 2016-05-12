@@ -42,7 +42,6 @@ features[field_instance][] = node-practical_tool-field_alternative_title
 features[field_instance][] = node-practical_tool-field_country
 features[field_instance][] = node-practical_tool-field_image
 features[field_instance][] = node-practical_tool-field_language
-features[field_instance][] = node-practical_tool-field_nace_codes
 features[field_instance][] = node-practical_tool-field_publication_date
 features[field_instance][] = node-practical_tool-field_revised_date
 features[field_instance][] = node-practical_tool-field_tool_link
