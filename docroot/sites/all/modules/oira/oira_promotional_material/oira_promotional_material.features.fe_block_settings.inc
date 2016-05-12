@@ -14,26 +14,30 @@ function oira_promotional_material_default_fe_block_settings() {
 
   $export['views-promotional_materials-block'] = array(
     'cache' => -1,
+    'custom' => 0,
     'delta' => 'promotional_materials-block',
     'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'oira_frontend' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'oira_frontend',
         'weight' => 0,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   return $export;
