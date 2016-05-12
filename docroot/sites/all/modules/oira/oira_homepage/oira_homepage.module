@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OiRA Homepage feature.
+ */
+
+include_once 'oira_homepage.features.inc';
