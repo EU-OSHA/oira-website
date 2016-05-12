@@ -1442,6 +1442,132 @@ function osha_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-article-field_related_oshwiki_articles'.
+  $field_instances['node-article-field_related_oshwiki_articles'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'highlights_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'newsletter_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_oshwiki_articles',
+    'label' => 'OSHwiki featured articles',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_sector'.
+  $field_instances['node-article-field_sector'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 15,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sector',
+    'label' => 'Sector',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 31,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-article-field_summary'.
   $field_instances['node-article-field_summary'] = array(
     'bundle' => 'article',
@@ -1548,38 +1674,23 @@ function osha_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_related_oshwiki_articles'
-  $field_instances['node-article-field_related_oshwiki_articles'] = array(
+  // Exported field_instance: 'node-article-field_tags'.
+  $field_instances['node-article-field_tags'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Enter a comma-separated list of words to describe your content.',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'highlights_item' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'newsletter_item' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
       ),
       'osha_resources' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'osha_slideshow' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1593,33 +1704,34 @@ function osha_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_related_oshwiki_articles',
-    'label' => 'OSHwiki featured articles',
-    'required' => 0,
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => FALSE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'taxonomy',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
+        'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 13,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => -4,
     ),
   );
 
-  // Exported field_instance: 'node-article-field_wiki_categories'
+  // Exported field_instance: 'node-article-field_wiki_categories'.
   $field_instances['node-article-field_wiki_categories'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
@@ -3013,18 +3125,22 @@ function osha_field_default_field_instances() {
   t('Character count');
   t('Code');
   t('Description');
+  t('Enter a comma-separated list of words to describe your content.');
   t('Expiration date');
   t('Image');
   t('Language');
   t('Level');
-  t('Nace');
   t('Name');
+  t('OSHwiki category');
+  t('OSHwiki featured articles');
   t('Page Introduction');
   t('Page count');
   t('Publication date');
   t('Recommended articles');
   t('Recommended resources');
+  t('Sector');
   t('Summary');
+  t('Tags');
   t('Title');
   t('Title text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');
