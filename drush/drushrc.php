@@ -525,6 +525,8 @@ $options['init-modules'] = array(
   'securepages',
   'update',
 
+  'oira_promotional_material',
+
 );
 
 
