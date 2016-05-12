@@ -526,6 +526,7 @@ $options['init-modules'] = array(
   'update',
 
   'oira_promotional_material',
+  'oira_homepage',
 
 );
 
