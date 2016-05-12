@@ -1,4 +1,4 @@
-name = OIRA tool
+name = hwc_practical_tool
 core = 7.x
 package = OIRA
 version = 7.x-0.8
@@ -51,6 +51,7 @@ features[field_instance][] = taxonomy_term-practical_tool_types-description_fiel
 features[field_instance][] = taxonomy_term-practical_tool_types-name_field
 features[node][] = practical_tool
 features[page_manager_handlers][] = node_view__practical_tool_details
+features[page_manager_pages][] = oira_tools
 features[page_manager_pages][] = practical_tools_listing
 features[taxonomy][] = practical_tool_types
 features[variable][] = comment_anonymous_practical_tool

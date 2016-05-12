@@ -59,6 +59,23 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_default_multilingual_node_index';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+  );
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
     'body:value' => 'body:value',
     'field_alternative_body:value' => 'field_alternative_body:value',
@@ -69,6 +86,10 @@ function hwc_practical_tool_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'toolss';
   $translatables['tools_search'] = array(
     t('Master'),
     t('Tools search'),
@@ -86,7 +107,9 @@ function hwc_practical_tool_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Multilingual ID'),
+    t('Search'),
     t('Block'),
+    t('Page'),
   );
   $export['tools_search'] = $view;
 

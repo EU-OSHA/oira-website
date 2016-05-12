@@ -1,4 +1,4 @@
-name = oira
+name = oira_profile
 description = Install with commonly used features pre-configured.
 version = VERSION
 core = 7.x

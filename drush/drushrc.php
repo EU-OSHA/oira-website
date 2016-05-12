@@ -458,6 +458,7 @@ $options['init-modules'] = array(
   'field_formatter_settings',
   'field_formatter_class',
   'manualcrop',
+  'panels_breadcrumbs',
 
   // Social share
   'on_the_web',
@@ -483,6 +484,7 @@ $options['init-modules'] = array(
   'search_api_et_solr',
   'search_api_views',
   'search_api_attachments',
+  'search_api_title2',
 
 
   'osha_taxonomies',

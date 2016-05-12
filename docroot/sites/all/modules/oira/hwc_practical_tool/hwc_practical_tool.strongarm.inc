@@ -63,7 +63,7 @@ function hwc_practical_tool_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_hide_translation_links_practical_tool';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['entity_translation_hide_translation_links_practical_tool'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -196,7 +196,7 @@ function hwc_practical_tool_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_practical_tool';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_practical_tool'] = $strongarm;
 
   $strongarm = new stdClass();

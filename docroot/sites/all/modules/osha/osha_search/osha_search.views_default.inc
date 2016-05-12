@@ -285,7 +285,7 @@ function osha_search_views_default_views() {
   $handler->display->display_options['sorts']['field_publication_date']['order'] = 'DESC';
   $handler->display->display_options['sorts']['field_publication_date']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_publication_date']['expose']['label'] = 'Publication date';
-  /* Sort criterion: Broken/missing handler */
+  /* Sort criterion: Indexed Multilingual Content: Title #2 */
   $handler->display->display_options['sorts']['title2']['id'] = 'title2';
   $handler->display->display_options['sorts']['title2']['table'] = 'search_api_index_default_multilingual_node_index';
   $handler->display->display_options['sorts']['title2']['field'] = 'title2';

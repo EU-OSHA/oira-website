@@ -383,6 +383,84 @@ function hwc_practical_tool_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'oira_tools';
+  $page->task = 'page';
+  $page->admin_title = 'Oira Tools';
+  $page->admin_description = '';
+  $page->path = 'oira-tools';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_oira_tools__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'oira_tools';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '0dd33c22-fbd7-41ec-a6a7-6ab0ef34bbba';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-dbbf4807-29f5-46a4-bda5-a6ca841cacd2';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'hwc_practical_tool-hwc_practical_tool_listing';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'dbbf4807-29f5-46a4-bda5-a6ca841cacd2';
+    $display->content['new-dbbf4807-29f5-46a4-bda5-a6ca841cacd2'] = $pane;
+    $display->panels['center'][0] = 'new-dbbf4807-29f5-46a4-bda5-a6ca841cacd2';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-dbbf4807-29f5-46a4-bda5-a6ca841cacd2';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['oira_tools'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'practical_tools_listing';
   $page->task = 'page';
   $page->admin_title = 'Oira tools listing';
@@ -551,7 +629,7 @@ function hwc_practical_tool_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-fe797c3c-9c83-4318-93ef-dacacb0c0ea4';
+    $pane->pid = 'new-df911f43-11c4-4148-b5b6-8f1d831ddb49';
     $pane->panel = 'content';
     $pane->type = 'views';
     $pane->subtype = 'tools_search';
@@ -569,7 +647,7 @@ function hwc_practical_tool_default_page_manager_pages() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block',
+      'display' => 'page_1',
       'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
@@ -582,9 +660,9 @@ function hwc_practical_tool_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'fe797c3c-9c83-4318-93ef-dacacb0c0ea4';
-    $display->content['new-fe797c3c-9c83-4318-93ef-dacacb0c0ea4'] = $pane;
-    $display->panels['content'][0] = 'new-fe797c3c-9c83-4318-93ef-dacacb0c0ea4';
+    $pane->uuid = 'df911f43-11c4-4148-b5b6-8f1d831ddb49';
+    $display->content['new-df911f43-11c4-4148-b5b6-8f1d831ddb49'] = $pane;
+    $display->panels['content'][0] = 'new-df911f43-11c4-4148-b5b6-8f1d831ddb49';
     $pane = new stdClass();
     $pane->pid = 'new-d04bcb06-9c71-4101-b8c9-301b3dcdbc06';
     $pane->panel = 'sidebar_right';

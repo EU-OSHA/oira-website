@@ -113,7 +113,7 @@
   </div>
 </header>
 
-<div class="main-container">
+<div class="main-container container-fluid">
   <div>
     <?php print render($page['above_header']); ?>
   </div>
