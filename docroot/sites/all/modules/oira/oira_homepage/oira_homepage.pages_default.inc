@@ -144,7 +144,7 @@ function oira_homepage_default_page_manager_pages() {
           0 => 7,
         ),
         'parent' => 'main',
-        'class' => 'row',
+        'class' => '',
         'hide_empty' => 0,
       ),
       7 => array(
@@ -302,25 +302,36 @@ function oira_homepage_default_page_manager_pages() {
     $display->content['new-c12890d8-4a82-4186-a28b-3cd716cab9d4'] = $pane;
     $display->panels['news_section'][0] = 'new-c12890d8-4a82-4186-a28b-3cd716cab9d4';
     $pane = new stdClass();
-    $pane->pid = 'new-cd0d9b24-1a05-49fc-8e43-a334c3ea4fbe';
+    $pane->pid = 'new-d4c0411c-81b7-4995-92e6-d59d490f9372';
+    $pane->panel = 'oira_tools';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'oira_tools';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'OiRA tools',
+      'override_title_heading' => 'h3',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd4c0411c-81b7-4995-92e6-d59d490f9372';
+    $display->content['new-d4c0411c-81b7-4995-92e6-d59d490f9372'] = $pane;
+    $display->panels['oira_tools'][0] = 'new-d4c0411c-81b7-4995-92e6-d59d490f9372';
+    $pane = new stdClass();
+    $pane->pid = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
     $pane->panel = 'promotional_materials';
-    $pane->type = 'views';
+    $pane->type = 'panels_mini';
     $pane->subtype = 'promotional_materials';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '3',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block',
       'override_title' => 1,
       'override_title_text' => 'Promotional materials',
       'override_title_heading' => 'h3',
@@ -333,9 +344,9 @@ function oira_homepage_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'cd0d9b24-1a05-49fc-8e43-a334c3ea4fbe';
-    $display->content['new-cd0d9b24-1a05-49fc-8e43-a334c3ea4fbe'] = $pane;
-    $display->panels['promotional_materials'][0] = 'new-cd0d9b24-1a05-49fc-8e43-a334c3ea4fbe';
+    $pane->uuid = 'a0b06c34-2e96-42d4-89cf-be424671d2e4';
+    $display->content['new-a0b06c34-2e96-42d4-89cf-be424671d2e4'] = $pane;
+    $display->panels['promotional_materials'][0] = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
