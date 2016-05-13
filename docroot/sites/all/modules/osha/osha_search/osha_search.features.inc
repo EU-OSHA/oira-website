@@ -80,7 +80,6 @@ function osha_search_default_search_api_index() {
         "field_main_contact" : { "type" : "text" },
         "field_main_contact_email" : { "type" : "text" },
         "field_mission_statement" : { "type" : "text" },
-        "field_nace_codes" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_orgtype" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_page_count" : { "type" : "decimal" },
         "field_partner_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
