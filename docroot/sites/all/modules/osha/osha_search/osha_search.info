@@ -33,7 +33,6 @@ features[facetapi][] = search_api@default_multilingual_node_index:block:body:sum
 features[facetapi][] = search_api@default_multilingual_node_index:block:body:value
 features[facetapi][] = search_api@default_multilingual_node_index:block:changed
 features[facetapi][] = search_api@default_multilingual_node_index:block:created
-features[facetapi][] = search_api@default_multilingual_node_index:block:field_activity
 features[facetapi][] = search_api@default_multilingual_node_index:block:field_article_type
 features[facetapi][] = search_api@default_multilingual_node_index:block:field_author
 features[facetapi][] = search_api@default_multilingual_node_index:block:field_country

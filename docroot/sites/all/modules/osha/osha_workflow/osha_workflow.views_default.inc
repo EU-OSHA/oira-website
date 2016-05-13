@@ -280,7 +280,7 @@ function osha_workflow_views_default_views() {
     15 => 0,
   );
   $handler->display->display_options['filters']['state']['expose']['reduce'] = TRUE;
-  /* Filter criterion: HWC Partner: If node has current CPM assigned */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['cpm_assigned']['id'] = 'cpm_assigned';
   $handler->display->display_options['filters']['cpm_assigned']['table'] = 'hwc_partner';
   $handler->display->display_options['filters']['cpm_assigned']['field'] = 'cpm_assigned';
@@ -608,7 +608,7 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['current']['field'] = 'current';
   $handler->display->display_options['filters']['current']['value'] = '1';
   $handler->display->display_options['filters']['current']['group'] = 1;
-  /* Filter criterion: HWC Partner: If node belongs to current partner or user is author */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['belongs_partner']['id'] = 'belongs_partner';
   $handler->display->display_options['filters']['belongs_partner']['table'] = 'hwc_partner';
   $handler->display->display_options['filters']['belongs_partner']['field'] = 'belongs_partner';
@@ -646,11 +646,6 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Field: Content: Activity */
-  $handler->display->display_options['fields']['field_activity']['id'] = 'field_activity';
-  $handler->display->display_options['fields']['field_activity']['table'] = 'field_data_field_activity';
-  $handler->display->display_options['fields']['field_activity']['field'] = 'field_activity';
-  $handler->display->display_options['fields']['field_activity']['type'] = 'taxonomy_term_reference_plain';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -788,7 +783,6 @@ function osha_workflow_views_default_views() {
     t('My Content'),
     t('My Content Non-Moderated'),
     t('revision user'),
-    t('Activity'),
   );
   $export['osh_workflow_admin'] = $view;
 

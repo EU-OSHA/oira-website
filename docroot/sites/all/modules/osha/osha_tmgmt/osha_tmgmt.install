@@ -180,6 +180,16 @@ function osha_tmgmt_install() {
     db_add_field('tmgmt_job', 'file_sent', $field);
   }
 
+  if (!db_field_exists('tmgmt_job_item', 'is_full_translation')) {
+    $field = array(
+      'type' => 'int',
+      'unsigned' => FALSE,
+      'default' => 1,
+      'description' => 'FALSE if retranslation, TRUE if full-translation.',
+    );
+    db_add_field('tmgmt_job_item', 'is_full_translation', $field);
+  }
+
   // Configure file translator for the CDT format and remove other translators.
   /* @var TMGMTTranslator $file */
   $file = tmgmt_translator_load('file');
@@ -591,6 +601,19 @@ function osha_tmgmt_update_7016() {
 }
 
 function osha_tmgmt_update_7017() {
+  // CW-1822: Choose between full/re translation when adding into the cart
+  if (!db_field_exists('tmgmt_job_item', 'is_full_translation')) {
+    $field = array(
+      'type' => 'int',
+      'unsigned' => FALSE,
+      'default' => 1,
+      'description' => 'FALSE if retranslation, TRUE if full-translation.',
+    );
+    db_add_field('tmgmt_job_item', 'is_full_translation', $field);
+  }
+}
+
+function osha_tmgmt_update_7018() {
   // CW-1822: Choose between full/re translation when adding into the cart
   if (!db_field_exists('tmgmt_job_item', 'is_full_translation')) {
     $field = array(

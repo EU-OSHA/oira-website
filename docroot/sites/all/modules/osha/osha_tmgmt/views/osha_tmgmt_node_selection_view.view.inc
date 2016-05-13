@@ -600,7 +600,6 @@ $translatables['tmgmt_node_selection_view'] = array(
   t('Free text'),
   t('Node ID'),
   t('Not translated in'),
-  t('Activity'),
   t('Section'),
   t('Published includes also items without publishing workflow. Use CTRL to select multiple items'),
   t('Updated after'),

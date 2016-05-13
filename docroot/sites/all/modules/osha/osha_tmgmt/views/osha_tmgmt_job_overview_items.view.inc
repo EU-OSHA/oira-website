@@ -34,7 +34,6 @@ $handler->display->display_options['style_options']['columns'] = array(
   'character_count' => 'character_count',
   'type' => 'type',
   'section' => 'section',
-  'field_activity-revision_id' => 'field_activity-revision_id',
   'state' => 'state',
   'changed' => 'changed',
   'name' => 'name',
@@ -86,13 +85,6 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
   'section' => array(
-    'align' => '',
-    'separator' => '',
-    'empty_column' => 0,
-  ),
-  'field_activity-revision_id' => array(
-    'sortable' => 1,
-    'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,

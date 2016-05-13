@@ -2,7 +2,6 @@
 
 function osha_news_get_translatable_strings() {
   return array(
-    'Activity',
     'Additional resources',
     'External resources',
     'Expiration date',

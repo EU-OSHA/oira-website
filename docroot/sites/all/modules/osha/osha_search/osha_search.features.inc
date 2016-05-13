@@ -50,12 +50,10 @@ function osha_search_default_search_api_index() {
         "created" : { "type" : "date" },
         "edit_url" : { "type" : "uri" },
         "field_abbreviation_name" : { "type" : "text" },
-        "field_activity" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_aditional_resources" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_aditional_resources:body:summary" : { "type" : "list\\u003Ctext\\u003E" },
         "field_aditional_resources:body:value" : { "type" : "list\\u003Ctext\\u003E" },
         "field_aditional_resources:field_article_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_aditional_resources:field_summary" : { "type" : "list\\u003Ctext\\u003E" },
         "field_aditional_resources:field_tags" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
@@ -98,7 +96,6 @@ function osha_search_default_search_api_index() {
         "field_recommended_resources" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_revised_date" : { "type" : "date" },
         "field_sector" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_summary" : { "type" : "text" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_tags:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_tool_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },

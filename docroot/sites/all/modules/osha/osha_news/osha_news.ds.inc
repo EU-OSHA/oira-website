@@ -113,7 +113,6 @@ function osha_news_ds_layout_settings_info() {
         11 => 'field_aditional_resources',
       ),
       'footer' => array(
-        12 => 'field_activity',
         13 => 'field_tags',
         14 => 'field_page_count',
         15 => 'field_character_count',
@@ -136,7 +135,6 @@ function osha_news_ds_layout_settings_info() {
       'field_publication_date' => 'center',
       'field_expiration_date' => 'center',
       'field_aditional_resources' => 'center',
-      'field_activity' => 'footer',
       'field_tags' => 'footer',
       'field_page_count' => 'footer',
       'field_character_count' => 'footer',
