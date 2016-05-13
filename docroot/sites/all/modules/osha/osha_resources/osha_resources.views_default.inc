@@ -57,7 +57,7 @@ function osha_resources_views_default_views() {
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Sort criterion: Field: Publication date (field_publication_date) */
+  /* Sort criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
   $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
   $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
@@ -95,22 +95,13 @@ function osha_resources_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Starting date and time */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['label'] = '';
   $handler->display->display_options['fields']['field_start_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_start_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_start_date']['settings'] = array(
-    'format_type' => 'day_month_year',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'osha_date_theme' => '',
-    'field_formatter_class' => '',
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -126,32 +117,20 @@ function osha_resources_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Starting date and time */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_start_date_1']['id'] = 'field_start_date_1';
   $handler->display->display_options['fields']['field_start_date_1']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['fields']['field_start_date_1']['field'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date_1']['label'] = '';
   $handler->display->display_options['fields']['field_start_date_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_start_date_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_start_date_1']['settings'] = array(
-    'format_type' => 'month_day_year',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'osha_date_theme' => '',
-    'field_formatter_class' => '',
-  );
-  /* Field: Content: Country */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_country_code']['id'] = 'field_country_code';
   $handler->display->display_options['fields']['field_country_code']['table'] = 'field_data_field_country_code';
   $handler->display->display_options['fields']['field_country_code']['field'] = 'field_country_code';
   $handler->display->display_options['fields']['field_country_code']['label'] = '';
   $handler->display->display_options['fields']['field_country_code']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_country_code']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_country_code']['settings'] = array(
-    'field_formatter_class' => '',
-  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -190,21 +169,18 @@ function osha_resources_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Starting date and time -  start date (field_start_date) */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['field_start_date_value']['id'] = 'field_start_date_value';
   $handler->display->display_options['sorts']['field_start_date_value']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['sorts']['field_start_date_value']['field'] = 'field_start_date_value';
   $handler->display->display_options['sorts']['field_start_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Starting date and time -  start date (field_start_date) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_start_date_value']['id'] = 'field_start_date_value';
   $handler->display->display_options['filters']['field_start_date_value']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['filters']['field_start_date_value']['field'] = 'field_start_date_value';
   $handler->display->display_options['filters']['field_start_date_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_start_date_value']['granularity'] = 'hour';
-  $handler->display->display_options['filters']['field_start_date_value']['form_type'] = 'date_text';
-  $handler->display->display_options['filters']['field_start_date_value']['default_date'] = 'now';
   $translatables['additional_resources'] = array(
     t('Master'),
     t('Additional resources'),

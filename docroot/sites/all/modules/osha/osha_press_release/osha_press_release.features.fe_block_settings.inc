@@ -14,7 +14,6 @@ function osha_press_release_default_fe_block_settings() {
 
   $export['osha_press_release-osha_press_kit'] = array(
     'cache' => 8,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'osha_press_kit',
     'i18n_block_language' => array(),
@@ -30,12 +29,12 @@ function osha_press_release_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'oira_frontend',
-        'weight' => -49,
+        'weight' => -38,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
+        'status' => 1,
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
@@ -45,7 +44,6 @@ function osha_press_release_default_fe_block_settings() {
 
   $export['osha_press_release-osha_press_rel_become_partner'] = array(
     'cache' => 8,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'osha_press_rel_become_partner',
     'i18n_block_language' => array(),
@@ -61,12 +59,12 @@ function osha_press_release_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'oira_frontend',
-        'weight' => -51,
+        'weight' => -38,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
+      'osha_admin' => array(
+        'region' => 'sidebar_second',
+        'status' => 1,
+        'theme' => 'osha_admin',
         'weight' => 4,
       ),
     ),
@@ -76,7 +74,6 @@ function osha_press_release_default_fe_block_settings() {
 
   $export['osha_press_release-osha_press_rel_join_list'] = array(
     'cache' => 8,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'osha_press_rel_join_list',
     'i18n_block_language' => array(),
@@ -92,10 +89,10 @@ function osha_press_release_default_fe_block_settings() {
         'theme' => 'oira_frontend',
         'weight' => 3,
       ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
+      'osha_admin' => array(
+        'region' => 'sidebar_second',
+        'status' => 1,
+        'theme' => 'osha_admin',
         'weight' => 3,
       ),
     ),
@@ -105,7 +102,6 @@ function osha_press_release_default_fe_block_settings() {
 
   $export['panels_mini-press_room_blocks'] = array(
     'cache' => -1,
-    'css_class' => 'container',
     'custom' => 0,
     'delta' => 'press_room_blocks',
     'i18n_block_language' => array(),
@@ -121,12 +117,12 @@ function osha_press_release_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -54,
+        'weight' => -38,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
@@ -136,7 +132,6 @@ function osha_press_release_default_fe_block_settings() {
 
   $export['views-press_contacts-block'] = array(
     'cache' => -1,
-    'css_class' => 'col-sm-3',
     'custom' => 0,
     'delta' => 'press_contacts-block',
     'i18n_block_language' => array(),
@@ -152,12 +147,12 @@ function osha_press_release_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'oira_frontend',
-        'weight' => -50,
+        'weight' => -38,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
@@ -167,7 +162,6 @@ function osha_press_release_default_fe_block_settings() {
 
   $export['views-press_releases-block'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
     'delta' => 'press_releases-block',
     'i18n_block_language' => array(),
@@ -183,10 +177,10 @@ function osha_press_release_default_fe_block_settings() {
         'theme' => 'oira_frontend',
         'weight' => 22,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),

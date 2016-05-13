@@ -70,7 +70,6 @@ features[field_base][] = field_wg_category
 features[field_base][] = field_wg_role_1
 features[field_base][] = field_wg_role_2
 features[field_base][] = field_zip_code
-features[field_instance][] = node-press_contact-field_city
 features[field_instance][] = node-press_contact-field_contact_type
 features[field_instance][] = node-press_contact-field_country
 features[field_instance][] = node-press_contact-field_personal_title
