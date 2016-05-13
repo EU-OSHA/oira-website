@@ -48,17 +48,30 @@ function _hwc_practical_tool_facet_value_clear(&$facets) {
   }
 }
 
+function _hwc_practical_tool_strip_param_value($params, $name, $value = NULL) {
+  if (!empty($params[$name])) {
+    if (!is_array($params[$name])) {
+      unset($params[$name]);
+    }
+    else {
+      $flipped = array_flip($params[$name]);
+      if (!empty($flipped[$value])) {
+        unset($params[$name][$flipped[$value]]);
+        if (empty($params[$name])) {
+          unset($params[$name]);
+        }
+      }
+    }
+  }
+  return $params;
+}
+
 function hwc_practical_tool_menu_tools_form($form, $form_state) {
-  drupal_set_title(t('Practical tools'));
   global $language;
+  drupal_set_title(t('OiRA tools'));
 
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $selected_languages = _hwc_practical_tool_get_req_param($form_state, 'field_language:value', array($language->language));
   $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
-  $selected_sectors = _hwc_practical_tool_get_req_param($form_state, 'field_sector', array(0));
-  $selected_countries = _hwc_practical_tool_get_req_param($form_state, 'field_country', array(0));
-
-
 
   $form = array(
     '#action' => 'oira-tools',
@@ -77,7 +90,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
       '#attributes' => array('class' => array('col-md-9')),
     ),
   );
-  $form['content']['text'] = array(
+  $form['left-column']['search']['text'] = array(
     '#type' => 'textfield',
     '#size' => 30,
     '#title' => t('Search'),
@@ -85,62 +98,59 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     '#default_value' => $text,
     '#title_display' => 'invisible',
     '#attributes' => array('placeholder' => t('Search OiRA tools')),
-    '#prefix' => '<div id="search" class="col-sm-6">',
   );
-  $form['content']['submit'] = array(
+  $form['left-column']['search']['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Search'),
-    '#suffix' => '</div>',
   );
   $form['content']['sort_fieldset'] = array(
     /* Needed so that the page passes Web Accessibility test */
     '#type' => 'fieldset',
-    '#attributes' => array('class' => array('col-sm-6')),
+    '#attributes' => array('class' => array('col-md-12')),
   );
   $form['content']['sort_fieldset']['sort'] = array(
-    '#type' => 'radios',
-    '#title' => t('Sort by'),
+    '#type' => 'select',
+    '#title' => t('Order'),
     '#default_value' => $sort,
-    '#options' => array('date' => t('Date'), 'alphabetically' => t('Alphabetically')),
+    '#options' => array('date' => t('Latest first'), 'alphabetically' => t('Alphabetically')),
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
   $response = hwc_practical_tool_search($form_state, $per_page);
+  $facets_def = hwc_practical_tool_get_facets_def();
   $facets = array();
   if (!empty($response['search_api_facets'])) {
     $facets = $response['search_api_facets'];
     _hwc_practical_tool_facet_value_clear($facets);
   }
-  if (!empty($facets['field_language:value'])) {
-    $languages = osha_language_list_options(TRUE);
-    $lang_options = array();
-    foreach ($facets['field_language:value'] as $facet_value) {
-      if (!empty($languages[$facet_value['filter']])) {
-        $lang_options[$facet_value['filter']] = $languages[$facet_value['filter']] . ' ' . strtr('(@no)', array('@no' => $facet_value['count']));
-      }
-    }
-    $form['left-column']['field_language:value'] = array(
-      '#type' => 'checkboxes',
-      '#options' => $lang_options,
-      '#default_value' => $selected_languages ,
-      '#title' => t('Tools are available in several languages'),
-    );
-  }
+  $query_params = drupal_get_query_parameters();
 
-  if (!empty($facets['field_country'])) {
-    $countries = _hwc_taxonomy_filter_options_list('country');
-    $countries_options = array();
-    foreach ($facets['field_country'] as $facet_value) {
-      if (!empty($countries[$facet_value['filter']])) {
-        $countries_options[$facet_value['filter']] = $countries[$facet_value['filter']] . ' ' . strtr('(@no)', array('@no' => $facet_value['count']));
+  foreach ($facets_def as $field_name => $facet_def) {
+    if (!empty($facets[$field_name])) {
+      $values_list = call_user_func($facet_def['options_callback'], $facet_def['options_callback_args']);
+      $options = array();
+      foreach ($facets[$field_name] as $facet_value) {
+        if (!empty($values_list[$facet_value['filter']])) {
+          $options[$facet_value['filter']] = $values_list[$facet_value['filter']] . ' ' . strtr('(@no)', array('@no' => $facet_value['count']));
+        }
+      }
+      $form['left-column'][$field_name] = array(
+        '#type' => 'checkboxes',
+        '#options' => $options,
+        '#default_value' => _hwc_practical_tool_get_req_param($form_state, $field_name, array()),
+        '#title' => t('Country'),
+      );
+      if (!empty($form['left-column'][$field_name]['#default_value'])) {
+        foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
+          $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
+          $form['left-column']['search']['filters'][] = array(
+            '#type' => 'markup',
+            '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
+          );
+        }
+
       }
     }
-    $form['left-column']['field_country'] = array(
-      '#type' => 'checkboxes',
-      '#options' => $countries_options,
-      '#default_value' => $selected_countries ,
-      '#title' => t('Country'),
-    );
   }
 
   $nids = array();
@@ -230,26 +240,35 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
 
 function hwc_practical_tool_get_facets_def() {
   return array(
-    'field_language:value' => array(
-      'field' => 'field_language:value',
-      'limit' => 50,
-      'operator' => 'or',
-      'min_count' => 1,
-      'missing' => 0,
-    ),
-    'field_nace_codes' => array(
-      'field' => 'field_nace_codes',
-      'limit' => 50,
-      'operator' => 'or',
-      'min_count' => 1,
-      'missing' => 0,
-    ),
     'field_country' => array(
+      'label' => t('Country'),
       'field' => 'field_country',
       'limit' => 50,
       'operator' => 'or',
       'min_count' => 1,
       'missing' => 0,
+      'options_callback' => '_hwc_taxonomy_filter_options_list',
+      'options_callback_args' => array('country'),
+    ),
+    'field_language:value' => array(
+      'label' => t('Language'),
+      'field' => 'field_language:value',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => 'osha_language_list_options',
+      'options_callback_args' => array(TRUE),
+    ),
+    'field_sector' => array(
+      'label' => t('Sector'),
+      'field' => 'field_sector',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => '_hwc_taxonomy_filter_options_list',
+      'options_callback_args' => array('sector'),
     ),
   );
 }
