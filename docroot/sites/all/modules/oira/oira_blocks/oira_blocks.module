@@ -19,7 +19,7 @@ function oira_blocks_block_info() {
       'info' => t('OiRA Print friendly'),
       'status' => 1,
       'visibility' => BLOCK_VISIBILITY_NOTLISTED,
-      'region' => 'above_header',
+      'region' => 'header_block',
     ),
   );
 }
