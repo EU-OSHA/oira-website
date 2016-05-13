@@ -15,7 +15,7 @@ function oira_homepage_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Homepage';
   $page->admin_description = '';
-  $page->path = 'homepage';
+  $page->path = 'hp';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array();
@@ -286,9 +286,9 @@ function oira_homepage_default_page_manager_pages() {
       'args' => '',
       'url' => '',
       'display' => 'oshnews_latest',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title' => 1,
+      'override_title_text' => 'Latest news',
+      'override_title_heading' => 'h3',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -321,9 +321,9 @@ function oira_homepage_default_page_manager_pages() {
       'args' => '',
       'url' => '',
       'display' => 'block',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title' => 1,
+      'override_title_text' => 'Promotional materials',
+      'override_title_heading' => 'h3',
     );
     $pane->cache = array();
     $pane->style = array(

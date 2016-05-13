@@ -9,7 +9,7 @@
  *
  * @ingroup views_templates
  */
-?><?php dpm($column_classes); ?>
+?>
 <?php if (!empty($title)) : ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
