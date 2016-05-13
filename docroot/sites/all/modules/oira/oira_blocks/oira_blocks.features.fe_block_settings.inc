@@ -24,7 +24,7 @@ function oira_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => 'above_header',
+        'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
         'weight' => 0,
@@ -52,7 +52,7 @@ function oira_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => 'above_header',
+        'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
         'weight' => 0,
@@ -64,7 +64,7 @@ function oira_blocks_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
