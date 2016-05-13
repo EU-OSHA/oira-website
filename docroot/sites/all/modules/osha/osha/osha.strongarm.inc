@@ -870,22 +870,22 @@ el.remove();
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '9',
+          'weight' => '16',
         ),
         'language' => array(
           'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '17',
         ),
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '18',
         ),
         'workbench_access' => array(
           'weight' => '1',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '22',
         ),
       ),
       'display' => array(

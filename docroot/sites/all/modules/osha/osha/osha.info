@@ -91,7 +91,6 @@ features[field_instance][] = file-image-field_file_image_alt_text
 features[field_instance][] = file-image-field_file_image_title_text
 features[field_instance][] = file-image-field_language
 features[field_instance][] = node-article-body
-features[field_instance][] = node-article-field_activity
 features[field_instance][] = node-article-field_aditional_resources
 features[field_instance][] = node-article-field_archived
 features[field_instance][] = node-article-field_article_type

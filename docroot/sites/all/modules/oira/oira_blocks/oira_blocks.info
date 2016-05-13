@@ -9,4 +9,5 @@ dependencies[] = text_resize
 features[fe_block_settings][] = oira_blocks-oira_print_friendly
 features[fe_block_settings][] = on_the_web-0
 features[fe_block_settings][] = text_resize-0
+features[views][] = related_content
 features[features_api][] = api:2
