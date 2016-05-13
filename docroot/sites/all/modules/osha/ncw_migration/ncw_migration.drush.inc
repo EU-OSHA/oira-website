@@ -26,24 +26,12 @@ function drush_ncw_migration_hwc_migrate_all() {
   $migrations = array(
     'tax_country_status',
     'tax_country',
-    'tax_fop_link_sections',
-    'tax_newsletter_sections',
-    'tax_publication_types',
     'tax_tags',
-    'tax_segment',
+    'wiki_categories',
 
-    'highlights_add_res',
-    'press_releases_add_res',
-    'news_add_res',
-    'publications_add_res',
-    'infographics',
-    'events',
-    'notes_to_editor',
     'highlights',
-    'publications',
     'news',
-    'press_releases',
-    'press_contacts',
+    'wiki_pages',
   );
   foreach($migrations as $migration) {
     ncw_migration_run_single($migration);

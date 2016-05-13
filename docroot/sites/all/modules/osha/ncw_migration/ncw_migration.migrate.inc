@@ -16,11 +16,11 @@ function ncw_migration_migrate_api() {
       ),
     ),
     'migrations' => array(
-      'events' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array('tax_tags', 'tax_country'),
-        'class_name' => 'NCWEventsMigration',
-      ),
+//      'events' => array(
+//        'group_name' => 'ncw',
+//        'dependencies' => array('tax_tags', 'tax_country'),
+//        'class_name' => 'NCWEventsMigration',
+//      ),
 //      'events_add_res' => array(
 //        'group_name' => 'ncw',
 //        'dependencies' => array('tax_tags', 'tax_country'),
@@ -135,11 +135,11 @@ function ncw_migration_migrate_api() {
 //        'class_name' => 'NCWTaxonomyPublicationTypeMigration',
 //        'skip_ids' => array(4, 2, 3, 1, 3022),
 //      ),
-      'tax_segment' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array(),
-        'class_name' => 'NCWTaxonomySegmentationMigration',
-      ),
+//      'tax_segment' => array(
+//        'group_name' => 'ncw',
+//        'dependencies' => array(),
+//        'class_name' => 'NCWTaxonomySegmentationMigration',
+//      ),
       'tax_tags' => array(
         'group_name' => 'ncw',
         'dependencies' => array(),
@@ -1080,9 +1080,7 @@ function osha_migration_normalize_migrated_term_reference(&$original, $source_mi
 
 
 function ncw_migration_find_additional_resource($source_nid) {
-  $migrations = array(
-    'news_add_res', 'highlights_add_res', 'events_add_res',
-  );
+  $migrations = array();
   foreach($migrations as $machine_name) {
     $migration = Migration::getInstance($machine_name);
     /** @var MigrateMap $map */
