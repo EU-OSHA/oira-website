@@ -152,6 +152,9 @@ function osha_news_strongarm() {
       'osha_resources' => array(
         'custom_settings' => TRUE,
       ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -174,7 +177,14 @@ function osha_news_strongarm() {
           'weight' => '16',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'share_widget' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__news'] = $strongarm;

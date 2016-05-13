@@ -40,45 +40,50 @@ function osha_news_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'field_publication_date',
-        1 => 'title_field',
-        2 => 'share_widget',
-        3 => 'field_summary',
-        4 => 'field_image',
-        5 => 'field_image_caption',
-        6 => 'body',
-        7 => 'field_aditional_resources',
-        8 => 'top_anchor',
+      'left' => array(
+        0 => 'field_image',
+      ),
+      'right' => array(
+        1 => 'share_widget',
+        2 => 'field_publication_date',
+        3 => 'title_field',
+        4 => 'field_summary',
+        5 => 'body',
       ),
     ),
     'fields' => array(
-      'field_publication_date' => 'ds_content',
-      'title_field' => 'ds_content',
-      'share_widget' => 'ds_content',
-      'field_summary' => 'ds_content',
-      'field_image' => 'ds_content',
-      'field_image_caption' => 'ds_content',
-      'body' => 'ds_content',
-      'field_aditional_resources' => 'ds_content',
-      'top_anchor' => 'ds_content',
+      'field_image' => 'left',
+      'share_widget' => 'right',
+      'field_publication_date' => 'right',
+      'title_field' => 'right',
+      'field_summary' => 'right',
+      'body' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
-        'container' => 'container',
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-sm-3' => 'col-sm-3',
+      ),
+      'right' => array(
+        '' => '',
+        'col-sm-9' => 'col-sm-9',
       ),
     ),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'right' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|news|default'] = $ds_layout;
 
