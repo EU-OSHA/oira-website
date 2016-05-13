@@ -42,7 +42,16 @@ function oira_blocks_block_view($delta = '') {
     case 'oira_print_friendly':
       $block['subject'] = '<none>';
       $block['content'] = array(
-        '#markup' => '<a href="javascript:if(window.print)window.print();" class="printfriendly" title="Print page"></a>'
+        '#attached' => array(
+          'js' => array(
+            array(
+              'data' => drupal_get_path('module', 'oira_blocks') . '/js/oira_print_friendly.js',
+              'type' => 'file',
+              'weight' => 10,
+            )
+          ),
+        ),
+        '#markup' => '<a href="javascript:if(window.print)window.print();" class="printfriendly" title="Print page"><span class="glyphicon glyphicon-print gly-2x"></span></a>'
       );
       break;
   }

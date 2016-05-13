@@ -6287,6 +6287,9 @@ button.close {
 .pull-right {
   float: right !important;
 }
+.gly-2x {
+  font-size: 2em;
+}
 .pull-left {
   float: left !important;
 }

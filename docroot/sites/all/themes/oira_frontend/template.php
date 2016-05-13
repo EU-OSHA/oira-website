@@ -118,7 +118,11 @@ function oira_frontend_preprocess_page(&$vars) {
   }
 }
 
-
+function oira_frontend_preprocess_region(&$variables, $hook) {
+  if($variables['region'] == "header_block"){
+    $variables['classes_array'][] = 'clearfix';
+  }
+}
 
 function oira_frontend_preprocess_field(&$variables) {
   // Add theme suggestion for field based on field name and view mode.
