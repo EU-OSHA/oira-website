@@ -24,7 +24,7 @@ while getopts b:a:f opt; do
 done
 
 # Sync from edw staging
-drush downsync_sql @staging @local -y
+drush downsync_sql @staging @self -y
 ecode=$?
 if [ ${ecode} != 0 ]; then
   echo "downsync_sql has returned an error"
