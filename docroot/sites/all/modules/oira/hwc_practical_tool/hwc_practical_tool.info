@@ -17,6 +17,7 @@ dependencies[] = list
 dependencies[] = metatag
 dependencies[] = multiple_selects
 dependencies[] = nodequeue
+dependencies[] = oira
 dependencies[] = options
 dependencies[] = osha
 dependencies[] = osha_press_release

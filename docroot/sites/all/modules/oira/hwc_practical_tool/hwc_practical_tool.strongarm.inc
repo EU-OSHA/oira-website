@@ -187,7 +187,18 @@ function hwc_practical_tool_strongarm() {
           'weight' => '16',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'share_widget' => array(
+          'teaser' => array(
+            'weight' => '14',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__practical_tool'] = $strongarm;
@@ -228,7 +239,7 @@ function hwc_practical_tool_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_practical_tool';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_practical_tool'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -54,7 +54,7 @@ function hwc_practical_tool_ds_layout_settings_info() {
         0 => 'field_image',
       ),
       'right' => array(
-        1 => 'title',
+        1 => 'title_field',
         2 => 'body',
         3 => 'field_sector',
         4 => 'field_language',
@@ -63,7 +63,7 @@ function hwc_practical_tool_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_image' => 'left',
-      'title' => 'right',
+      'title_field' => 'right',
       'body' => 'right',
       'field_sector' => 'right',
       'field_language' => 'right',

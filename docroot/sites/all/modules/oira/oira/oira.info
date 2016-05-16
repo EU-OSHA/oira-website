@@ -9,4 +9,6 @@ dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = ds_classes_regions
+features[variable][] = ds_extras_fields_extra
+features[variable][] = ds_extras_fields_extra_list
 features[variable][] = text_resize_scope

@@ -26,6 +26,20 @@ row';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ds_extras_fields_extra';
+  $strongarm->value = 1;
+  $export['ds_extras_fields_extra'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ds_extras_fields_extra_list';
+  $strongarm->value = 'title_field';
+  $export['ds_extras_fields_extra_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'text_resize_scope';
   $strongarm->value = 'body';
   $export['text_resize_scope'] = $strongarm;
