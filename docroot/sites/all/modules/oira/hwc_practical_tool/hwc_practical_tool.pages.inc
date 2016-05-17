@@ -156,7 +156,8 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   $nids = array();
   if (!empty($response['results'])) {
     foreach ($response['results'] as $row) {
-      $nids[] = $row['fields']['nid'];
+      list($lng, $nid) = explode('_', $row['id'], 2);
+      $nids[] = $nid;
     }
 
     $nodes = node_load_multiple($nids);
