@@ -132,23 +132,22 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
       foreach ($facets[$field_name] as $facet_value) {
         if (!empty($values_list[$facet_value['filter']])) {
           $options[$facet_value['filter']] = $values_list[$facet_value['filter']] . ' ' . strtr('(@no)', array('@no' => $facet_value['count']));
-        }
-      }
-      $form['left-column'][$field_name] = array(
-        '#type' => 'checkboxes',
-        '#options' => $options,
-        '#default_value' => _hwc_practical_tool_get_req_param($form_state, $field_name, array()),
-        '#title' => t('Country'),
-      );
-      if (!empty($form['left-column'][$field_name]['#default_value'])) {
-        foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
-          $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
-          $form['left-column']['search']['filters'][] = array(
-            '#type' => 'markup',
-            '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
+          $form['left-column'][$field_name] = array(
+            '#type' => 'checkboxes',
+            '#options' => $options,
+            '#default_value' => _hwc_practical_tool_get_req_param($form_state, $field_name, array()),
+            '#title' => $facet_def['label'],
           );
+          if (!empty($form['left-column'][$field_name]['#default_value'])) {
+            foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
+              $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
+              $form['left-column']['search']['filters'][] = array(
+                '#type' => 'markup',
+                '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
+              );
+            }
+          }
         }
-
       }
     }
   }
