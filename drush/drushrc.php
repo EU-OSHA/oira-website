@@ -489,7 +489,6 @@ $options['init-modules'] = array(
 
   'osha_taxonomies',
   'osh_image_gallery',
-  'hwc_feeds',
   'osha_search',
   'osha',
   'osha_workflow',
