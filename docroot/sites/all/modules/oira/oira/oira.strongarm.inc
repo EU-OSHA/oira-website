@@ -34,7 +34,7 @@ row';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_extras_fields_extra_list';
-  $strongarm->value = 'title_field';
+  $strongarm->value = 'node|practical_tool|title_field';
   $export['ds_extras_fields_extra_list'] = $strongarm;
 
   $strongarm = new stdClass();
