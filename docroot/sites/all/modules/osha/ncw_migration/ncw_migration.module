@@ -37,7 +37,7 @@ function ncw_migration_cron() {
  */
 function ncw_migration_get_migrated_bundles() {
   return array(
-    'events', 'news', 'highlights',
+    'news', 'highlights', 'wiki_pages',
   );
 }
 
