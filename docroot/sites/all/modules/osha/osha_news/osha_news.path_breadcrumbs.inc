@@ -17,13 +17,13 @@ function osha_news_path_breadcrumbs_settings_info() {
   $path_breadcrumb->path = 'node/%node';
   $path_breadcrumb->data = array(
     'titles' => array(
-      0 => 'Media centre',
+      0 => 'What\'s new',
       1 => 'News',
       2 => '!page_title',
     ),
     'paths' => array(
       0 => '<none>',
-      1 => '<none>',
+      1 => 'news',
       2 => '<none>',
     ),
     'home' => 1,
