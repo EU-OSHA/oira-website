@@ -935,7 +935,7 @@ function hwc_practical_tool_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'oira',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
@@ -983,7 +983,7 @@ function hwc_practical_tool_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'oira',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',

@@ -9,6 +9,7 @@ dependencies[] = image
 dependencies[] = link
 dependencies[] = media
 dependencies[] = multiple_selects
+dependencies[] = oira
 dependencies[] = options
 dependencies[] = osha_press_release
 dependencies[] = strongarm

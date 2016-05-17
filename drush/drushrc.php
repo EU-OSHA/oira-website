@@ -564,7 +564,7 @@ $command_specific['devify'] = array(
     'reroute_email',
     'simpletest',
     'devel',
-    'devel_node_access',
+//    'devel_node_access',
     'stage_file_proxy',
   ),
   'delete-variables' => array(

@@ -502,7 +502,47 @@ function osha_field_formatter_info_alter(&$info) {
   if (isset($info['date_default'])) {
     $info['date_default']['settings'] += array('osha_date_theme' => '');
   }
+  $info['title_linked']['module'] = 'osha';
 }
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ *
+ * Alter the settings form of title_linked formatter.
+ */
+function osha_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $form = title_field_formatter_settings_form($field, $instance, $view_mode, $form, $form_state);
+  $settings = $instance['display'][$view_mode]['settings'];
+//  $form['title_archived_label'] = array(
+//    '#type' => 'checkbox',
+//    '#title' => t('Include archived label'),
+//    '#default_value' => $settings['title_archived_label'],
+//  );
+
+  // Let other napo modules to interact with this form.
+  drupal_alter('osha_field_formatter_settings_form', $field, $instance, $view_mode, $form, $form_state);
+  return $form;
+}
+
+function osha_field_formatter_settings_summary($field, $instance, $view_mode) {
+  return title_field_formatter_settings_summary($field, $instance, $view_mode);
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function osha_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  // If is film/episode, use custom formatter.
+  if (function_exists('osha_title_formatter_' . $entity->type . '_view')) {
+    $element = call_user_func('osha_title_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+  }
+  else {
+    $element = title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+  }
+//  $settings = $display['settings'];
+  return $element;
+}
+
 
 /**
  * Implements hook_date_field_formatter_settings_summary_alter().

@@ -56,9 +56,9 @@ function hwc_practical_tool_block_view($delta = '') {
 }
 
 /**
- * Implements hook_field_formatter_view().
+ * Use of osha_title_formatter_' . $entity->type . '_view'.
  */
-function hwc_practical_tool_title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+function osha_title_formatter_practical_tool_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   global $language;
   $settings = $display['settings'];
   $output = isset($items[0]) ? $items[0]['safe_value'] : '';

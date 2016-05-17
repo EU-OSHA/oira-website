@@ -1727,7 +1727,7 @@ function osha_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'title',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
@@ -1745,7 +1745,7 @@ function osha_field_default_field_instances() {
       ),
       'newsletter_item' => array(
         'label' => 'hidden',
-        'module' => 'title',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
@@ -1757,7 +1757,7 @@ function osha_field_default_field_instances() {
       ),
       'osha_resources' => array(
         'label' => 'hidden',
-        'module' => 'title',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
@@ -1793,7 +1793,7 @@ function osha_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'title',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
@@ -1805,7 +1805,7 @@ function osha_field_default_field_instances() {
       ),
       'title_body' => array(
         'label' => 'hidden',
-        'module' => 'title',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
@@ -2218,7 +2218,7 @@ function osha_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'title',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
@@ -2614,7 +2614,7 @@ function osha_field_default_field_instances() {
       ),
       'newsletter_item' => array(
         'label' => 'hidden',
-        'module' => 'title',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',

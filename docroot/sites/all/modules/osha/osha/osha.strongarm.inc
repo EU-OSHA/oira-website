@@ -1236,8 +1236,7 @@ el.remove();
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_article';
   $strongarm->value = array(
-    0 => 'menu-footer-menu',
-    1 => 'main-menu',
+    0 => 'main-menu',
   );
   $export['menu_options_article'] = $strongarm;
 
@@ -1364,8 +1363,7 @@ el.remove();
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_article';
   $strongarm->value = array(
-    0 => 'moderation',
-    1 => 'revision',
+    0 => 'status',
   );
   $export['node_options_article'] = $strongarm;
 

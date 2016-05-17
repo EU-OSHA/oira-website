@@ -78,56 +78,6 @@ function oira_node_view($node, $view_mode, $langcode) {
   }
 }
 
-
-/**
- * Implements hook_field_formatter_info_alter().
- */
-function oira_field_formatter_info_alter(&$info) {
-  // Alter the title_linked formatter by assing this module to it.
-  $info['title_linked']['module'] = 'oira';
-  // Add custom settings default.
-//  $info['title_linked']['settings']['title_archived_label'] = FALSE;
-}
-
-/**
- * Implements hook_field_formatter_settings_form().
- *
- * Alter the settings form of title_linked formatter.
- */
-function oira_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
-  $form = title_field_formatter_settings_form($field, $instance, $view_mode, $form, $form_state);
-  $settings = $instance['display'][$view_mode]['settings'];
-//  $form['title_archived_label'] = array(
-//    '#type' => 'checkbox',
-//    '#title' => t('Include archived label'),
-//    '#default_value' => $settings['title_archived_label'],
-//  );
-
-  // Let other napo modules to interact with this form.
-  drupal_alter('oira_field_formatter_settings_form', $field, $instance, $view_mode, $form, $form_state);
-  return $form;
-}
-
-function oira_field_formatter_settings_summary($field, $instance, $view_mode) {
-  return title_field_formatter_settings_summary($field, $instance, $view_mode);
-}
-
-/**
- * Implements hook_field_formatter_view().
- */
-function oira_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-  // If is film/episode, use custom formatter.
-  if ($entity_type == 'node' && $entity->type == 'practical_tool') {
-    $element = hwc_practical_tool_title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
-  }
-  else {
-    $element = title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
-  }
-//  $settings = $display['settings'];
-  return $element;
-}
-
-
 function oira_news_share_widget($node, $options = array()) {
   global $language;
   /** @var stdClass $wrapper */
