@@ -111,6 +111,12 @@ function hwc_feeds_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['style_options']['description'] = 'OiRA latest tools';
   $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Revised date (field_revised_date) */
+  $handler->display->display_options['sorts']['field_revised_date_value']['id'] = 'field_revised_date_value';
+  $handler->display->display_options['sorts']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
+  $handler->display->display_options['sorts']['field_revised_date_value']['field'] = 'field_revised_date_value';
+  $handler->display->display_options['sorts']['field_revised_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
