@@ -507,6 +507,7 @@ $options['init-modules'] = array(
 
   'oira_partner',
   'hwc_practical_tool',
+  'hwc_feeds',
   'shorten',
   'oira',
   'oira_blocks',
