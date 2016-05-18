@@ -190,11 +190,17 @@ function hwc_practical_tool_strongarm() {
       'display' => array(
         'share_widget' => array(
           'teaser' => array(
-            'weight' => '14',
+            'weight' => '17',
             'visible' => FALSE,
           ),
           'default' => array(
             'weight' => '2',
+            'visible' => TRUE,
+          ),
+        ),
+        'title_field' => array(
+          'teaser' => array(
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),

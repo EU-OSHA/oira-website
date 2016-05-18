@@ -57,46 +57,53 @@ function hwc_practical_tool_block_view($delta = '') {
 
 /**
  * Use of osha_title_formatter_' . $entity->type . '_view'.
+ *
+ * Show the title alt when it's the case.
  */
 function osha_title_formatter_practical_tool_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   global $language;
-  $settings = $display['settings'];
-  $output = isset($items[0]) ? $items[0]['safe_value'] : '';
-
-  if (!empty($entity->field_language[LANGUAGE_NONE][0]['value'])
+  if (($field['field_name'] == 'title' || $field['field_name'] == 'title_field')
+    &&!empty($entity->field_language[LANGUAGE_NONE][0]['value'])
     && $entity->field_language[LANGUAGE_NONE][0]['value'] == $language->language
     && !empty($entity->field_alternative_title[LANGUAGE_NONE][0]['value'])) {
-    $output = $entity->field_alternative_title[LANGUAGE_NONE][0]['value'];
+    $items[0]['value'] = $entity->field_alternative_title[LANGUAGE_NONE][0]['value'];
+    $items[0]['safe_value'] = $entity->field_alternative_title[LANGUAGE_NONE][0]['safe_value'];
   }
-  if (!empty($output) && $settings['title_link'] == 'content') {
-    $uri = entity_uri($entity_type, $entity);
-    $output = l($output, $uri['path'], array('html' => TRUE));
+  return title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+}
+
+/**
+ * Use of osha_smart_trim_formatter_' . $entity->type . '_view'.
+ *
+ * Show the body alt when it's the case.
+ */
+function osha_smart_trim_formatter_practical_tool_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  global $language;
+  if ($field['field_name'] == 'body'
+    &&!empty($entity->field_language[LANGUAGE_NONE][0]['value'])
+    && $entity->field_language[LANGUAGE_NONE][0]['value'] == $language->language
+    && !empty($entity->field_alternative_body[LANGUAGE_NONE][0]['value'])) {
+    $items[0]['value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['value'];
+    $items[0]['safe_value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['safe_value'];
   }
+  return smart_trim_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+}
 
-  $wrap_tag = empty($settings['title_style']) ? '_none' : $settings['title_style'];
-
-  if ($wrap_tag != '_none') {
-    $element = array(
-      'element' => array(
-        '#tag' => $wrap_tag,
-        '#value' => $output,
-      ),
-    );
-
-    if (!empty($settings['title_class'])) {
-      $element['#attributes'] = array('class' => $settings['title_class']);
-    }
-
-    $output = theme('html_tag', $element);
+/**
+ * Use of osha_smart_trim_formatter_' . $entity->type . '_view'.
+ *
+ * Show the body alt when it's the case.
+ */
+function osha_text_formatter_practical_tool_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  global $language;
+  if ($field['field_name'] == 'body'
+    &&!empty($entity->field_language[LANGUAGE_NONE][0]['value'])
+    && $entity->field_language[LANGUAGE_NONE][0]['value'] == $language->language
+    && !empty($entity->field_alternative_body[LANGUAGE_NONE][0]['value'])) {
+    $items[0]['value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['value'];
+    $items[0]['safe_value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['safe_value'];
   }
-
-  $element = array(
-    array(
-      '#markup' => $output,
-    ),
-  );
-
-  return $element;
+  return text_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
 }
 
 
@@ -189,4 +196,44 @@ function hwc_practical_tool_field_formatter_view($entity_type, $entity, $field, 
 
   }
   return $element;
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function hwc_practical_tool_token_info() {
+  // Add as token the alternative title.
+  $info['tokens']['node']['title-alt'] = array(
+    'name' => t('Title or title alt'),
+    'description' => t("Bullshit"),
+    'type' => 'node',
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function hwc_practical_tool_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  global $language;
+  $replacements = array();
+  $sanitize = !empty($options['sanitize']);
+  if ($type == 'node' && !empty($data['node'])) {
+    $node = $data['node'];
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'title-alt':
+          $title = $node->title;
+          $replacements[$original] = $sanitize ? filter_xss($title) : $title;
+          if ($node->type == 'practical_tool'
+            && !empty($node->field_language[LANGUAGE_NONE][0]['value'])
+            && $node->field_language[LANGUAGE_NONE][0]['value'] == $language->language
+            && !empty($node->field_alternative_title[LANGUAGE_NONE][0]['value'])) {
+            $replacements[$original] = $node->field_alternative_title[LANGUAGE_NONE][0]['safe_value'];
+          }
+          break;
+      }
+    }
+  }
+  return $replacements;
 }

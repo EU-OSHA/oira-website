@@ -55,19 +55,23 @@ function hwc_practical_tool_ds_layout_settings_info() {
       ),
       'right' => array(
         1 => 'title_field',
-        2 => 'body',
-        3 => 'field_sector',
-        4 => 'field_language',
-        5 => 'field_country',
+        2 => 'field_revised_date',
+        3 => 'body',
+        4 => 'field_sector',
+        5 => 'field_language',
+        6 => 'field_country',
+        7 => 'field_tool_link',
       ),
     ),
     'fields' => array(
       'field_image' => 'left',
       'title_field' => 'right',
+      'field_revised_date' => 'right',
       'body' => 'right',
       'field_sector' => 'right',
       'field_language' => 'right',
       'field_country' => 'right',
+      'field_tool_link' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(

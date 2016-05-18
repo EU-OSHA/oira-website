@@ -46,7 +46,7 @@ function hwc_practical_tool_default_page_manager_handlers() {
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'OiRA & tools
-%node:title-field',
+%node:title-alt',
     'panels_breadcrumbs_paths' => 'oira-tools
 <none>',
     'panels_breadcrumbs_home' => 1,
@@ -141,7 +141,7 @@ function hwc_practical_tool_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = '%node:title-alt';
   $display->uuid = '545f69dd-e116-42e2-84f3-054360f7be44';
   $display->content = array();
   $display->panels = array();

@@ -503,6 +503,8 @@ function osha_field_formatter_info_alter(&$info) {
     $info['date_default']['settings'] += array('osha_date_theme' => '');
   }
   $info['title_linked']['module'] = 'osha';
+  $info['smart_trim_format']['module'] = 'osha';
+  $info['text_default']['module'] = 'osha';
 }
 
 /**
@@ -511,35 +513,72 @@ function osha_field_formatter_info_alter(&$info) {
  * Alter the settings form of title_linked formatter.
  */
 function osha_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
-  $form = title_field_formatter_settings_form($field, $instance, $view_mode, $form, $form_state);
-  $settings = $instance['display'][$view_mode]['settings'];
-//  $form['title_archived_label'] = array(
-//    '#type' => 'checkbox',
-//    '#title' => t('Include archived label'),
-//    '#default_value' => $settings['title_archived_label'],
-//  );
+  $display = $instance['display'][$view_mode];
+  switch ($display['type']) {
+    case 'title_linked':
+      $form = title_field_formatter_settings_form($field, $instance, $view_mode, $form, $form_state);
+      break;
 
-  // Let other napo modules to interact with this form.
+    case 'smart_trim_format':
+      $form = smart_trim_field_formatter_settings_form($field, $instance, $view_mode, $form, $form_state);
+      break;
+
+    case 'text_default':
+      $form = text_field_formatter_settings_form($field, $instance, $view_mode, $form, $form_state);
+      break;
+  }
+
+  // Let other modules to interact with this form.
   drupal_alter('osha_field_formatter_settings_form', $field, $instance, $view_mode, $form, $form_state);
   return $form;
 }
 
 function osha_field_formatter_settings_summary($field, $instance, $view_mode) {
-  return title_field_formatter_settings_summary($field, $instance, $view_mode);
+  $display = $instance['display'][$view_mode];
+  switch ($display['type']) {
+    case 'title_linked':
+      return title_field_formatter_settings_summary($field, $instance, $view_mode);
+
+    case 'smart_trim_format':
+      return smart_trim_field_formatter_settings_summary($field, $instance, $view_mode);
+
+    case 'text_default':
+      return text_field_formatter_settings_summary($field, $instance, $view_mode);
+  }
 }
 
 /**
  * Implements hook_field_formatter_view().
  */
 function osha_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-  // If is film/episode, use custom formatter.
-  if (function_exists('osha_title_formatter_' . $entity->type . '_view')) {
-    $element = call_user_func('osha_title_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+  switch ($display['type']) {
+    case 'title_linked':
+      if (function_exists('osha_title_formatter_' . $entity->type . '_view')) {
+        $element = call_user_func('osha_title_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      }
+      else {
+        $element = title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      }
+      break;
+
+    case 'smart_trim_format':
+      if (function_exists('osha_smart_trim_formatter_' . $entity->type . '_view')) {
+        $element = call_user_func('osha_smart_trim_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      }
+      else {
+        $element = smart_trim_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      }
+      break;
+
+    case 'text_default':
+      if (function_exists('osha_text_formatter_' . $entity->type . '_view')) {
+        $element = call_user_func('osha_text_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      }
+      else {
+        $element = text_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      }
+      break;
   }
-  else {
-    $element = title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
-  }
-//  $settings = $display['settings'];
   return $element;
 }
 

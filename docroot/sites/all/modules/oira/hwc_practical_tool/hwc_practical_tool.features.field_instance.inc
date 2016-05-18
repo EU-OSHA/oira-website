@@ -15,7 +15,7 @@ function hwc_practical_tool_field_default_field_instances() {
     'bundle' => 'practical_tool',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The English tool description',
     'display' => array(
       'body' => array(
         'label' => 'above',
@@ -25,7 +25,7 @@ function hwc_practical_tool_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
         ),
@@ -70,7 +70,7 @@ function hwc_practical_tool_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'smart_trim',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
           'more_link' => 1,
@@ -86,7 +86,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -128,11 +128,11 @@ function hwc_practical_tool_field_default_field_instances() {
     'bundle' => 'practical_tool',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This description will be shown when user is navigating the site in tool\'s language',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
         ),
@@ -155,7 +155,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -191,11 +191,11 @@ function hwc_practical_tool_field_default_field_instances() {
     'bundle' => 'practical_tool',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This title will be shown when user is navigating the website in tool\'s language',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
         ),
@@ -218,7 +218,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -243,6 +243,59 @@ function hwc_practical_tool_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-practical_tool-field_co_author'.
+  $field_instances['node-practical_tool-field_co_author'] = array(
+    'bundle' => 'practical_tool',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_co_author',
+    'label' => 'Co-author',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'multiple_selects',
+      'settings' => array(),
+      'type' => 'multiple_selects',
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -312,7 +365,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -481,7 +534,7 @@ function hwc_practical_tool_field_default_field_instances() {
           ),
         ),
         'type' => 'language_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -586,7 +639,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -658,10 +711,19 @@ function hwc_practical_tool_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'format_type' => 'osha_day_only',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'osha_date_theme' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -728,7 +790,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -780,10 +842,13 @@ function hwc_practical_tool_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'link_url',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -891,7 +956,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -925,7 +990,7 @@ function hwc_practical_tool_field_default_field_instances() {
     'bundle' => 'practical_tool',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The English tool name',
     'display' => array(
       'body' => array(
         'label' => 'above',
@@ -1111,6 +1176,7 @@ function hwc_practical_tool_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Alternative description');
   t('Alternative title');
+  t('Co-author');
   t('Country');
   t('Description');
   t('Image');
@@ -1119,6 +1185,10 @@ function hwc_practical_tool_field_default_field_instances() {
   t('Publication date');
   t('Revised date');
   t('Sector');
+  t('The English tool description');
+  t('The English tool name');
+  t('This description will be shown when user is navigating the site in tool\'s language');
+  t('This title will be shown when user is navigating the website in tool\'s language');
   t('Tool link');
   t('Tool name');
   t('Type');
