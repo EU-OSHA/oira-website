@@ -36,7 +36,6 @@ dependencies[] = multiple_selects
 dependencies[] = nodequeue
 dependencies[] = number
 dependencies[] = oira
-dependencies[] = on_the_web
 dependencies[] = options
 dependencies[] = osha_resources
 dependencies[] = osha_taxonomies
