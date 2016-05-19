@@ -25,7 +25,7 @@ function oira_frontend_menu_link__menu_block($variables) {
   }*/
   // Render or not the Menu Image.
   // Get the variable provided by osha_menu module.
-  $render_img = variable_get('menu_block_' . $delta . '_' . HWC_MENU_RENDER_IMG_VAR_NAME, 0);
+  $render_img = variable_get('menu_block_' . $delta . '_' . OSHA_MENU_RENDER_IMG_VAR_NAME, 0);
   if (!$render_img) {
     return theme_menu_link($variables);
   }
