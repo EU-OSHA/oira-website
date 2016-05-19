@@ -460,8 +460,6 @@ $options['init-modules'] = array(
   'manualcrop',
   'panels_breadcrumbs',
 
-  // Social share
-  'on_the_web',
   'text_resize',
 
   // Link content types with main menu items
