@@ -25,7 +25,7 @@ function osha_resources_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
         ),
@@ -40,7 +40,7 @@ function osha_resources_field_default_field_instances() {
       ),
       'osha_resources' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
         ),

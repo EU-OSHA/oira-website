@@ -19,7 +19,7 @@ function napo_contact_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
         ),
