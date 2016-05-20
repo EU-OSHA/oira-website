@@ -28,7 +28,8 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
    * Overrides views_handler_field::query().
    */
   function query() {
-    $term = reset(taxonomy_get_term_by_name('E-tools', 'wiki_categories'));
+    $term = taxonomy_get_term_by_name('E-tools', 'wiki_categories');
+    $term = reset($term);
     $operator = empty($this->value) ? 'NOT IN' : 'IN';
 
     // Get latest 4 E-tools WIKI PAGES
