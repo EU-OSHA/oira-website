@@ -429,10 +429,10 @@ function osha_default_page_manager_handlers() {
     $display->content['new-9706d71f-b449-4cbc-bce9-1ef664dd5ed2'] = $pane;
     $display->panels['sidebar_right'][1] = 'new-9706d71f-b449-4cbc-bce9-1ef664dd5ed2';
     $pane = new stdClass();
-    $pane->pid = 'new-0d9595b4-5757-448c-8422-cfc43e6f774f';
+    $pane->pid = 'new-ef6a8192-bd29-4888-b277-6fcb48240144';
     $pane->panel = 'sidebar_right';
     $pane->type = 'views';
-    $pane->subtype = 'related_content';
+    $pane->subtype = 'news';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -447,11 +447,9 @@ function osha_default_page_manager_handlers() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block_1',
+      'display' => 'block_2',
       'context' => array(
         0 => '',
-        1 => '',
-        2 => '',
       ),
       'override_title' => 1,
       'override_title_text' => 'News',
@@ -465,9 +463,9 @@ function osha_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '0d9595b4-5757-448c-8422-cfc43e6f774f';
-    $display->content['new-0d9595b4-5757-448c-8422-cfc43e6f774f'] = $pane;
-    $display->panels['sidebar_right'][2] = 'new-0d9595b4-5757-448c-8422-cfc43e6f774f';
+    $pane->uuid = 'ef6a8192-bd29-4888-b277-6fcb48240144';
+    $display->content['new-ef6a8192-bd29-4888-b277-6fcb48240144'] = $pane;
+    $display->panels['sidebar_right'][2] = 'new-ef6a8192-bd29-4888-b277-6fcb48240144';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-f749e93d-4e1d-46f4-a93a-87cb660d63dc';
   $handler->conf['display'] = $display;

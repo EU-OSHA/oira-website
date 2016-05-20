@@ -365,6 +365,68 @@ function osha_news_views_default_views() {
 [body]
 </div>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+
+  /* Display: Related news */
+  $handler = $view->new_display('block', 'Related news', 'block_2');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View all';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'large',
+    'image_link' => 'content',
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Tags (field_tags) */
+  $handler->display->display_options['arguments']['field_tags_tid']['id'] = 'field_tags_tid';
+  $handler->display->display_options['arguments']['field_tags_tid']['table'] = 'field_data_field_tags';
+  $handler->display->display_options['arguments']['field_tags_tid']['field'] = 'field_tags_tid';
+  $handler->display->display_options['arguments']['field_tags_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_tags_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_tags_tid']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['field_tags_tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['field_tags_tid']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['field_tags_tid']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['field_tags_tid']['default_argument_options']['vocabularies'] = array(
+    'tags' => 'tags',
+  );
+  $handler->display->display_options['arguments']['field_tags_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_tags_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_tags_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_tags_tid']['break_phrase'] = TRUE;
+  $handler->display->display_options['block_caching'] = '4';
   $translatables['news'] = array(
     t('Master'),
     t('News'),
@@ -397,6 +459,9 @@ function osha_news_views_default_views() {
 [field_publication_date]
 [body]
 </div>'),
+    t('Related news'),
+    t('View all'),
+    t('All'),
   );
   $export['news'] = $view;
 

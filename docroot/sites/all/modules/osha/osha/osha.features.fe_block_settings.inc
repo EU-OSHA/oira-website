@@ -24,10 +24,10 @@ function osha_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'header_block',
+        'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => 0,
+        'weight' => -38,
       ),
       'osha_admin' => array(
         'region' => '',
@@ -55,7 +55,7 @@ function osha_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'oira_frontend',
-        'weight' => 0,
+        'weight' => -23,
       ),
       'osha_admin' => array(
         'region' => '',
