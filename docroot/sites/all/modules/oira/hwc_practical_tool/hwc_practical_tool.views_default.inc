@@ -317,8 +317,8 @@ function hwc_practical_tool_views_default_views() {
     'trim_length' => '250',
     'trim_type' => 'chars',
     'trim_suffix' => '...',
-    'more_link' => '0',
-    'more_text' => 'Read more',
+    'more_link' => '1',
+    'more_text' => 'Continue reading',
     'summary_handler' => 'ignore',
     'trim_options' => array(
       'text' => 'text',
