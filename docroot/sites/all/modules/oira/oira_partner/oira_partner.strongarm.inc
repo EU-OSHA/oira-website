@@ -228,6 +228,9 @@ function oira_partner_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'osha_wiki' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -256,6 +259,22 @@ function oira_partner_strongarm() {
           'teaser' => array(
             'weight' => '0',
             'visible' => TRUE,
+          ),
+        ),
+        'partner_content_count' => array(
+          'teaser' => array(
+            'weight' => '4',
+            'label' => 'hidden',
+            'type' => 'partner_content_count',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+          'default' => array(
+            'weight' => '21',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
           ),
         ),
       ),

@@ -27,7 +27,7 @@ function oira_promotional_material_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'oira_frontend',
-        'weight' => 0,
+        'weight' => 11,
       ),
       'osha_admin' => array(
         'region' => '',

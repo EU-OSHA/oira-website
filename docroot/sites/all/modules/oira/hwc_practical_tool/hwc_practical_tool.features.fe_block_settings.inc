@@ -12,61 +12,33 @@ function hwc_practical_tool_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['hwc_practical_tool-hwc_practical_tool_language_list'] = array(
+  $export['views-related_partner-block'] = array(
     'cache' => -1,
-    'css_class' => '',
     'custom' => 0,
-    'delta' => 'hwc_practical_tool_language_list',
+    'delta' => 'related_partner-block',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'module' => 'hwc_practical_tool',
-    'node_types' => array(),
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'practical_tool',
+    ),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'hwc_frontend' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'hwc_frontend',
-        'weight' => 0,
+      'oira_frontend' => array(
+        'region' => 'sidebar_second',
+        'status' => 1,
+        'theme' => 'oira_frontend',
+        'weight' => -42,
       ),
-      'seven' => array(
+      'osha_admin' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['hwc_practical_tool-hwc_practical_tool_listing'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => 0,
-    'delta' => 'hwc_practical_tool_listing',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'hwc_practical_tool',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'hwc_frontend' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'hwc_frontend',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'osha_admin',
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
