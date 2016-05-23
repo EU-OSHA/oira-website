@@ -100,6 +100,196 @@ function osha_wiki_block_content() {
 }
 
 /**
+ * Use of osha_title_formatter_' . $entity->type . '_view.
+ */
+function osha_title_formatter_wiki_page_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $settings = $display['settings'];
+  $output = isset($items[0]) ? $items[0]['safe_value'] : '';
+
+  $entity_wrapper = entity_metadata_wrapper('node', $entity);
+  if (!empty($output) && $settings['title_link'] == 'content'
+    && !empty($entity->field_wiki_page_url)) {
+    $uri = $entity_wrapper->field_wiki_page_url->value();
+    $output = l($output, $uri['url'], array('html' => TRUE, 'attributes' => array('target' => '_blank')));
+  }
+
+  $wrap_tag = empty($settings['title_style']) ? '_none' : $settings['title_style'];
+
+  if ($wrap_tag != '_none') {
+    $element = array(
+      'element' => array(
+        '#tag' => $wrap_tag,
+        '#value' => $output,
+      ),
+    );
+
+    if (!empty($settings['title_class'])) {
+      $element['#attributes'] = array('class' => $settings['title_class']);
+    }
+
+    $output = theme('html_tag', $element);
+  }
+
+  $element = array(
+    array(
+      '#markup' => $output,
+    ),
+  );
+
+  return $element;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function osha_wiki_node_view($node, $view_mode, $langcode) {
+  // Redirect all wiki pages to thei full page on wiki site.
+  if ($node->type == 'wiki_page'
+    && $view_mode == 'full'
+    && !empty($node->field_wiki_page_url)) {
+    $entity_wrapper = entity_metadata_wrapper('node', $node);
+    drupal_goto($entity_wrapper->field_wiki_page_url->value()['url'], array(), 301);
+  }
+}
+
+/**
+ * Use of osha_smart_trim_formatter_' . $entity->type . '_view
+ */
+function osha_smart_trim_formatter_wiki_page_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  $settings = $display['settings'];
+  switch ($display['type']) {
+    case 'smart_trim_format':
+      $entity_wrapper = entity_metadata_wrapper('node', $entity);
+      if (!empty($entity->field_wiki_page_url)) {
+        $uri = $entity_wrapper->field_wiki_page_url->value();
+        $uri['path'] = $uri['url'];
+      }
+      else {
+        $uri = entity_uri($entity_type, $entity);
+      }
+      foreach ($items as $delta => $item) {
+        // Check if the formatter involves a link.
+        // The default behaviour is to use the main body field, but the summary
+        // option allows users to use the summary field IFF it is not empty.
+        $output = '';
+
+        // Replace item with field_summary.
+        if (!empty($entity->field_summary)) {
+          $item = $entity_wrapper->field_summary->value();
+        }
+
+        if (!empty($settings['summary_handler']) && $settings['summary_handler'] != 'ignore' && !empty($item['summary'])) {
+          $output = _text_sanitize($instance, $langcode, $item, 'summary');
+        }
+        else {
+          $output = _text_sanitize($instance, $langcode, $item, 'value');
+        }
+
+        // Process additional options (currently only HTML on/off)
+        if (!empty($settings['trim_options'])) {
+          if (!empty($settings['trim_options']['text'])) {
+            // Strip tags
+            $preserve_tags = !empty($settings['trim_preserve_tags']) ? $settings['trim_preserve_tags'] : '';
+            $output = strip_tags(str_replace('<', ' <', $output), $preserve_tags);
+
+            // Strip out line breaks
+            $output = preg_replace('/\n|\r|\t/m', ' ', $output);
+
+            // Strip out non-breaking spaces
+            $output = str_replace('&nbsp;', ' ', $output);
+            $output = str_replace("\xc2\xa0", ' ', $output);
+
+            // Strip out extra spaces
+            $output = trim(preg_replace('/\s\s+/', ' ', $output));
+          }
+        }
+
+        // Make the trim, provided we're not showing a full summary
+        $shortened = FALSE;
+        if ($settings['summary_handler'] != 'full' || empty($item['summary'])) {
+          if ($settings['trim_type'] == 'words') {
+            //only bother with this is we have to
+            if ($settings['trim_length'] < str_word_count($output)) {
+              //use \s or use PREG_CLASS_UNICODE_WORD_BOUNDARY?
+              $words = preg_split('/\s/', $output, NULL, PREG_SPLIT_NO_EMPTY);
+              $output2 = implode(" ", array_slice($words, 0,  $settings['trim_length']));
+              $output2 = _filter_htmlcorrector($output2);
+            }
+            //field contained fewer words than we're trimming at, so do nothing
+            else {
+              $output2 = $output;
+            }
+          }
+          else {
+            // Use views_trim_text() if available.
+            if (module_exists('views')) {
+              $output2 = views_trim_text(array(
+                'max_length' => $settings['trim_length'],
+                'word_boundary' => TRUE,
+                'ellipsis' => FALSE,
+                'html' => TRUE,
+              ), $output);
+            }
+            else {
+              //See http://api.drupal.org/api/drupal/modules%21field%21modules%21text%21text.module/function/text_summary/7
+              //text_summary is smart about looking for paragraphs, sentences,
+              //etc, not strictly just length. Uses truncate_utf8 as well
+              $output2 = text_summary($output, $instance['settings']['text_processing'] ? $item['format'] : NULL, $settings['trim_length']);
+            }
+          }
+
+          //verify if we actually performed any shortening
+          if (drupal_strlen($output) != drupal_strlen($output2)) {
+            $shortened = TRUE;
+          }
+          $output = $output2;
+        }
+
+        // Only include the extension if the text was truncated
+        $extension = '';
+        if ($shortened) {
+          $extension = filter_xss($settings['trim_suffix']);
+        }
+        // Don't duplicate period at end of text and beginning of extension
+        if (substr($output, -1, 1) == '.' && substr($extension, 0, 1) == '.') {
+          $extension = substr($extension, 1);
+        }
+
+        // Add the link, if there is one!
+        // But wait! Don't add a more link if the field ends in <!--break-->
+        if ($settings['more_link'] && strpos(strrev($output), strrev('<!--break-->')) !== 0) {
+          $extension .= l(t($settings['more_text']), $uri['path'], array('html' => TRUE, 'attributes' => array('class' => array('more-link'), 'target' => '_blank')));
+        }
+
+        $output_appended = preg_replace('#^(.*)(\s?)(</[^>]+>)$#Us', '$1' . $extension . '$3', $output);
+
+        //check if the regex did anything. if not, append manually
+        if ($output_appended == $output) $output_appended = $output . $extension;
+
+        // If linking to content is selected the trimmed text will have tags
+        // removed from the trimmed text. Need to find a more elegant way of
+        // doing this without conflicting the other settings.
+        if ($settings['trim_link'] != 0 && !empty($uri['path'])) {
+          $output_appended = strip_tags($output_appended);
+          $output = l($output_appended, $uri['path'], array('attributes' => array('target' => '_blank')));
+          $element[$delta] = array(
+            '#markup' => $output,
+          );
+          return $element;
+        }
+        $element[$delta] = array(
+          '#markup' => $output_appended,
+        );
+      }
+      break;
+  }
+  return $element;
+}
+
+
+/**
  * Generates content for the related wiki articles block without a specific wiki category.
  *
  * @return string

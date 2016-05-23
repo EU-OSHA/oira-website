@@ -45,7 +45,7 @@ function osha_wiki_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'scs' => array(
         'label' => 'above',
@@ -122,11 +122,8 @@ function osha_wiki_field_default_field_instances() {
       ),
       'osha_wiki' => array(
         'label' => 'hidden',
-        'module' => 'osha',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'text_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -199,7 +196,7 @@ function osha_wiki_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'scs' => array(
         'label' => 'above',
@@ -269,7 +266,7 @@ function osha_wiki_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -344,7 +341,7 @@ function osha_wiki_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -410,11 +407,8 @@ function osha_wiki_field_default_field_instances() {
       ),
       'osha_wiki' => array(
         'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'link_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'scs' => array(
@@ -510,11 +504,14 @@ function osha_wiki_field_default_field_instances() {
       ),
       'osha_wiki' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
+          'title_class' => '',
+          'title_link' => 'content',
+          'title_style' => '_none',
         ),
-        'type' => 'text_plain',
+        'type' => 'title_linked',
         'weight' => 0,
       ),
       'scs' => array(
