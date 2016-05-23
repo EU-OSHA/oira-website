@@ -54,7 +54,6 @@ function osha_search_strongarm() {
     'article' => 'article',
     'campaign_materials' => 'campaign_materials',
     'press_contact' => 'press_contact',
-    'events' => 'events',
     'infographic' => 'infographic',
     'news' => 'news',
     'partner' => 'partner',

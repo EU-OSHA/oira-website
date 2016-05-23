@@ -173,17 +173,6 @@ function oira_frontend_pager($variables) {
   return theme_pager($variables);
 }
 
-function oira_frontend_on_the_web_image($variables) {
-  $service = $variables['service'];
-  $title   = $variables['title'];
-  $size    = variable_get('on_the_web_size', 'sm');
-  $variables = array(
-    'alt'   => $title,
-    'path'  => drupal_get_path('theme', 'oira_frontend') . '/images/social_icons/' . $size . '/' . $service . '.png',
-    'title' => $title,
-  );
-  return theme('image', $variables);
-}
 /**
  * Colorbox theme function to add support for image field caption.
  *

@@ -710,7 +710,6 @@ function osha_workflow_create_section($title, $partner_guid) {
 function osha_workflow_bundle_section_map() {
   return array(
     'news' => 'AWRACT',
-    'events' => 'AWRACT',
     'publication' => 'PUBLIC',
     'job_vacancies' => 'CAREER',
     'press_release' => 'PROOM',
