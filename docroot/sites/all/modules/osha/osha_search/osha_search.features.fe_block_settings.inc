@@ -115,8 +115,8 @@ legislation/guidelines/*',
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'header_block',
+        'status' => 1,
         'theme' => 'oira_frontend',
         'weight' => 0,
       ),
