@@ -39,7 +39,7 @@ function oira_partner_node_info() {
     'partner' => array(
       'name' => 'Partner',
       'base' => 'node_content',
-      'description' => 'Content type to store info about Official Campaign Partners and Media Partners',
+      'description' => 'Content type to store info about OiRA partners',
       'has_title' => '1',
       'title_label' => 'Title',
       'help' => '',
