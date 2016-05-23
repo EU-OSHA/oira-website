@@ -263,7 +263,7 @@ function oira_partner_strongarm() {
         ),
         'partner_content_count' => array(
           'teaser' => array(
-            'weight' => '4',
+            'weight' => '2',
             'label' => 'hidden',
             'type' => 'partner_content_count',
             'visible' => TRUE,
