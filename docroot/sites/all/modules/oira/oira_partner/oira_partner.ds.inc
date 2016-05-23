@@ -60,7 +60,16 @@ function oira_partner_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        '' => '',
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-sm-4' => 'col-sm-4',
+      ),
+      'right' => array(
+        'col-sm-8' => 'col-sm-8',
+      ),
+      'center' => array(
+        'col-md-12' => 'col-md-12',
       ),
     ),
     'wrappers' => array(
