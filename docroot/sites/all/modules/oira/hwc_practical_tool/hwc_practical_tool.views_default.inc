@@ -398,8 +398,8 @@ function hwc_practical_tool_views_default_views() {
     'trim_length' => '250',
     'trim_type' => 'chars',
     'trim_suffix' => '...',
-    'more_link' => '0',
-    'more_text' => 'Read more',
+    'more_link' => '1',
+    'more_text' => 'Continue reading',
     'summary_handler' => 'ignore',
     'trim_options' => array(
       'text' => 'text',
@@ -407,6 +407,48 @@ function hwc_practical_tool_views_default_views() {
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'practical_tool' => 'practical_tool',
+    'wiki_page' => 'wiki_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: HWC practical tool: If node is within latest 4 tools. (OiRA tools or E-tools) */
+  $handler->display->display_options['filters']['latest_tools']['id'] = 'latest_tools';
+  $handler->display->display_options['filters']['latest_tools']['table'] = 'hwc_practical_tool';
+  $handler->display->display_options['filters']['latest_tools']['field'] = 'latest_tools';
+  $handler->display->display_options['filters']['latest_tools']['value'] = '1';
+  $handler->display->display_options['filters']['latest_tools']['group'] = 1;
+  /* Filter criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['filters']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_publication_date_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_text';
+  $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['filters']['field_publication_date_value_1']['id'] = 'field_publication_date_value_1';
+  $handler->display->display_options['filters']['field_publication_date_value_1']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['filters']['field_publication_date_value_1']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_publication_date_value_1']['group'] = 2;
   $translatables['tools'] = array(
     t('Master'),
     t('OiRA tools'),
