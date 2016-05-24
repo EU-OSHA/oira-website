@@ -159,6 +159,11 @@
 
   </div>
 </div>
+<?php if (!empty($page['contact_form_widget'])): ?>
+  <div class="contact_form_widget">
+    <?php print render($page['contact_form_widget']); ?>
+  </div>
+<?php endif; ?>
 <footer class="footer container-fluid">
   <p>
     <?php print t("European Agency for Safety and Health at Work | an agency of the European Union"); ?>
