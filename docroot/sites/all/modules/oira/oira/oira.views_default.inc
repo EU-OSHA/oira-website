@@ -32,17 +32,6 @@ function oira_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Nodequeue: Queue */
-  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
-  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
-  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
-  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
-    'whats_new_article' => 'whats_new_article',
-    'featured_press_release' => 0,
-    'press_contacts_queue' => 0,
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -66,50 +55,22 @@ function oira_views_default_views() {
   $handler->display->display_options['fields']['field_summary']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['field_summary']['settings'] = array(
     'trim_link' => '0',
-    'trim_length' => '300',
-    'trim_type' => 'chars',
-    'trim_suffix' => '...',
-    'more_link' => '0',
-    'more_text' => 'Read more',
-    'trim_options' => array(
-      'text' => 'text',
-    ),
-    'trim_preserve_tags' => '',
-    'field_formatter_class' => '',
-  );
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'article_image',
-    'image_link' => 'content',
-    'field_formatter_class' => '',
-  );
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_link' => '0',
     'trim_length' => '600',
     'trim_type' => 'chars',
     'trim_suffix' => '...',
-    'more_link' => '1',
+    'more_link' => '0',
     'more_text' => 'Continue reading',
-    'summary_handler' => 'ignore',
     'trim_options' => array(
       'text' => 'text',
     ),
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
   );
+  /* Sort criterion: Content: Updated (field_updated) */
+  $handler->display->display_options['sorts']['field_updated_value']['id'] = 'field_updated_value';
+  $handler->display->display_options['sorts']['field_updated_value']['table'] = 'field_data_field_updated';
+  $handler->display->display_options['sorts']['field_updated_value']['field'] = 'field_updated_value';
+  $handler->display->display_options['sorts']['field_updated_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -117,6 +78,22 @@ function oira_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'wiki_page' => 'wiki_page',
+  );
+  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['value'] = array(
+    0 => '112',
+  );
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['vocabulary'] = 'wiki_categories';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -129,7 +106,6 @@ function oira_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('queue'),
     t('Block'),
   );
   $export['what_s_new_article'] = $view;
