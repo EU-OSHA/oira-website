@@ -16,6 +16,16 @@ function napo_contact_menu_alter(&$items) {
 }
 
 /**
+ * Implements hook_node_view().
+ */
+function napo_contact_node_view($node, $view_mode, $langcode) {
+  // Redirect all wiki pages to thei full page on wiki site.
+  if ($node->type == 'faq' && $view_mode == 'full') {
+    drupal_goto('faq', array(), 301);
+  }
+}
+
+/**
  * Access callback for Reorder episodes tab.
  */
 function napo_contact_reoder_faq_access_callback($options) {

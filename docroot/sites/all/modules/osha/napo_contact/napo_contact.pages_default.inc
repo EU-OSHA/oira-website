@@ -15,7 +15,7 @@ function napo_contact_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Contact us';
   $page->admin_description = '';
-  $page->path = 'contact-us';
+  $page->path = 'faq';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -45,6 +45,10 @@ function napo_contact_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_titles' => 'FAQ',
+    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
