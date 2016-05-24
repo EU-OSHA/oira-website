@@ -45,7 +45,7 @@ function napo_contact_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
-    'panels_breadcrumbs_state' => 0,
+    'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'FAQ',
     'panels_breadcrumbs_paths' => '<none>',
     'panels_breadcrumbs_home' => 1,
@@ -97,7 +97,7 @@ function napo_contact_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Contact us';
+  $display->title = 'FAQ';
   $display->uuid = '09f4eb3a-d953-42a2-b462-034023030f5a';
   $display->content = array();
   $display->panels = array();

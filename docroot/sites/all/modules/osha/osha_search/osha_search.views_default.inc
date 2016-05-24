@@ -321,17 +321,8 @@ function osha_search_views_default_views() {
     10 => 0,
   );
   $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
-    'attachments_field_file' => 'attachments_field_file',
-    'attachments_field_publication_related_res' => 'attachments_field_publication_related_res',
-    'attachments_field_related_documents' => 'attachments_field_related_documents',
     'body:summary' => 'body:summary',
     'body:value' => 'body:value',
-    'field_aditional_resources:body:summary' => 'field_aditional_resources:body:summary',
-    'field_aditional_resources:body:value' => 'field_aditional_resources:body:value',
-    'field_aditional_resources:field_summary' => 'field_aditional_resources:field_summary',
-    'field_aditional_resources:title' => 'field_aditional_resources:title',
-    'field_aditional_resources:title_field' => 'field_aditional_resources:title_field',
-    'field_summary' => 'field_summary',
     'title_field' => 'title_field',
   );
   /* Filter criterion: Indexed Multilingual Content: Status */

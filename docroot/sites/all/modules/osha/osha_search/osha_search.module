@@ -103,6 +103,7 @@ function osha_search_form_alter(&$form, &$form_state, $form_id) {
     unset($form['#submit']);
     unset($form['form_build_id']);
     unset($form['form_id']);
+    unset($form['form_token']);
   }
 
   /*
