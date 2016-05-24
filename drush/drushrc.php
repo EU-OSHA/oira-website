@@ -365,7 +365,7 @@ $options['init-modules'] = array(
 
   'taxonomy_manager',
   'term_reference_tree',
-  'node_export',
+//  'node_export',
   'mpac',
   'linkit',
   'pathologic',
@@ -487,6 +487,7 @@ $options['init-modules'] = array(
 
 
   'osha_taxonomies',
+  'oira_country',
   'osh_image_gallery',
   'osha_search',
   'osha',
