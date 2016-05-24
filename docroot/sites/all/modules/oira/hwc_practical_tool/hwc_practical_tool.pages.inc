@@ -138,16 +138,16 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
             '#default_value' => _hwc_practical_tool_get_req_param($form_state, $field_name, array()),
             '#title' => $facet_def['label'],
           );
-          if (!empty($form['left-column'][$field_name]['#default_value'])) {
-            foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
-              if (!empty($options[$val])) {
-                $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
-                $form['left-column']['search']['filters'][] = array(
-                  '#type' => 'markup',
-                  '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
-                );
-              }
-            }
+        }
+      }
+      if (!empty($form['left-column'][$field_name]['#default_value'])) {
+        foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
+          if (!empty($options[$val])) {
+            $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
+            $form['left-column']['search']['filters'][] = array(
+              '#type' => 'markup',
+              '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
+            );
           }
         }
       }
