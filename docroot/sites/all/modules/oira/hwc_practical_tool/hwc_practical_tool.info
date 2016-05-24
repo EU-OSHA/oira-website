@@ -21,7 +21,6 @@ dependencies[] = nodequeue
 dependencies[] = oira
 dependencies[] = options
 dependencies[] = osha
-dependencies[] = osha_press_release
 dependencies[] = page_manager
 dependencies[] = path_breadcrumbs
 dependencies[] = shs
