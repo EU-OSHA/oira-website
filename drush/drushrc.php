@@ -493,7 +493,7 @@ $options['init-modules'] = array(
   'osha',
   'osha_workflow',
   'osha_tmgmt',
-  'osha_press_release',
+//  'osha_press_release',
   'osha_news',
   'osha_menu',
   'osha_wiki',
