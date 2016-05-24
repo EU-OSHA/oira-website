@@ -47,6 +47,7 @@ function oira_fe_nodequeue_export_fields() {
     'subqueues' => 1,
     'types' => array(
       0 => 'article',
+      1 => 'wiki_page',
     ),
     'roles' => array(),
     'count' => 0,
