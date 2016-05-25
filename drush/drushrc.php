@@ -474,6 +474,7 @@ $options['init-modules'] = array(
   'webform',
   'webform_localization',
   'webform_references',
+  'webform_block',
   'fapi_validation',
 
   'facetapi',
