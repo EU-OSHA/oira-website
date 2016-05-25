@@ -160,7 +160,7 @@
   </div>
 </div>
 <?php if (!empty($page['contact_form_widget'])): ?>
-  <div class="contact_form_widget">
+  <div class="contact-form-widget-container">
     <?php print render($page['contact_form_widget']); ?>
   </div>
 <?php endif; ?>
