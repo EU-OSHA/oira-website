@@ -473,6 +473,7 @@ $options['init-modules'] = array(
   'field_collection',
   'webform',
   'webform_localization',
+  'webform_references',
   'fapi_validation',
 
   'facetapi',
