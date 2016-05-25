@@ -17,6 +17,7 @@ features[field_instance][] = node-promotional_material-body
 features[field_instance][] = node-promotional_material-field_file
 features[field_instance][] = node-promotional_material-field_image
 features[field_instance][] = node-promotional_material-field_promotional_material_type
+features[field_instance][] = node-promotional_material-field_publication_date
 features[field_instance][] = node-promotional_material-title_field
 features[node][] = promotional_material
 features[taxonomy][] = promotional_material_type
