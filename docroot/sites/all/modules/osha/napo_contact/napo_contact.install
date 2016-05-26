@@ -26,3 +26,14 @@ function napo_contact_update_7002() {
 function napo_contact_update_7003() {
   features_revert_module('napo_contact');
 }
+
+
+/**
+ * Set napo_contact's weight over views module.
+ */
+function napo_contact_update_7004() {
+  db_update('system')
+    ->fields(array('weight' => 11))
+    ->condition('name', 'napo_contact')
+    ->execute();
+}
