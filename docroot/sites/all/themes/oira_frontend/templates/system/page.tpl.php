@@ -81,6 +81,9 @@
             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
           </a>
         <?php endif; ?>
+        <?php if ($eu_logo): ?>
+          <img class="eu-logo" src="<?php print $eu_logo; ?>" alt="<?php print t('European Union'); ?>" />
+        <?php endif; ?>
       </div>
       <div class="header-sitename col-sm-4">
         <?php if (!empty($site_name)): ?>

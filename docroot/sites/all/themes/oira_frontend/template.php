@@ -116,6 +116,10 @@ function oira_frontend_preprocess_page(&$vars) {
     unset($vars['page']['content']['system_main']['default_message']);
     drupal_set_title('');
   }
+
+  global $language;
+  $vars['logo'] = 'sites/all/themes/oira_frontend/images/eu-osha-logo/EU-OSHA-'.($language->language).'.png';
+  $vars['eu_logo'] = 'sites/all/themes/oira_frontend/images/europeLogo.png';
 }
 
 function oira_frontend_preprocess_region(&$variables, $hook) {
