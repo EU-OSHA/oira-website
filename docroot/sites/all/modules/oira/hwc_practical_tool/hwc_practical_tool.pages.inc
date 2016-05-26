@@ -132,7 +132,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   if ($try_native && empty($response['result count'])) {
     // If no results are available for current language
     // perform the search with no lang.
-    unset($_GET['field_language:value']);
+    $_GET['field_language:value'] = array('en');
     $response = hwc_practical_tool_search($form_state, $per_page);
   }
   $facets = array();
