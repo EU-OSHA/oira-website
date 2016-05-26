@@ -106,6 +106,18 @@ function osha_text_formatter_practical_tool_view($entity_type, $entity, $field, 
   return text_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
 }
 
+/**
+ * Implements hook_views_pre_render().
+ */
+function hwc_practical_tool_views_pre_render(&$view) {
+  if ($view->name == 'tools' && $view->current_display == 'block_1') {
+    $view->display_handler->set_option('use_more', TRUE);
+    $view->display_handler->set_option('use_more_text', t('Discover more OiRA tools'));
+    $view->display_handler->set_option('link_display', 'custom_url');
+    $view->display_handler->set_option('use_more_always', TRUE);
+    $view->display_handler->set_option('link_url', 'oira-tools');
+  }
+}
 
 /**
  * Implements hook_field_formatter_info().
