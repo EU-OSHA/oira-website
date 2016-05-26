@@ -5,7 +5,7 @@
             $form.find('input[type=checkbox]').click(function(){
                 $form.submit();
             });
-            $form.find('input[type=select]').change(function(){
+            $form.find('select').change(function(){
                 $form.submit();
             });
             $form.find('input[type=text]').focusout(function(){
