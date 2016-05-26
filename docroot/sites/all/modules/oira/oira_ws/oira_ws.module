@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OIRA WS feature.
+ */
+
+include_once 'oira_ws.features.inc';

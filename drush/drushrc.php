@@ -487,6 +487,10 @@ $options['init-modules'] = array(
   'search_api_attachments',
   'search_api_title2',
 
+  // serrvices
+  'services',
+  'rest_server',
+  'services_views',
 
   'osha_taxonomies',
   'oira_country',
@@ -531,6 +535,7 @@ $options['init-modules'] = array(
 
   'oira_promotional_material',
   'oira_homepage',
+  'oira_ws',
 
 );
 
