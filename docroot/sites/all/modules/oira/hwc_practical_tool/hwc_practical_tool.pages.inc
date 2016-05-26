@@ -116,8 +116,25 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
-  $response = hwc_practical_tool_search($form_state, $per_page);
   $facets_def = hwc_practical_tool_get_facets_def();
+
+  // Find if any of this form params are set on GET.
+  $is_searched = !empty(array_intersect(array_keys($_GET), array_merge(array_keys($facets_def), array('text', 'sort'))));
+  $try_native = FALSE;
+  if (!$is_searched) {
+    // When no search performed by user, try to filter by current language.
+    $try_native = TRUE;
+    $_GET['field_language:value'][] = $language->language;
+  }
+
+  $response = hwc_practical_tool_search($form_state, $per_page);
+
+  if ($try_native && empty($response['result count'])) {
+    // If no results are available for current language
+    // perform the search with no lang.
+    unset($_GET['field_language:value']);
+    $response = hwc_practical_tool_search($form_state, $per_page);
+  }
   $facets = array();
   if (!empty($response['search_api_facets'])) {
     $facets = $response['search_api_facets'];
