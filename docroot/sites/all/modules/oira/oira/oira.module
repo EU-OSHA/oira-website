@@ -5,6 +5,20 @@ include_once 'oira.features.inc';
 define('SOLR_SEARCH_INDEX', 'default_multilingual_node_index');
 
 /**
+ * Implements hook_menu().
+ */
+function oira_menu() {
+  $items['admin/config/system/oira_config'] = array(
+    'title' => 'OiRA configuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('oira_configuration_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
  * Implements hook_theme().
  */
 function oira_theme() {
@@ -139,3 +153,9 @@ function oira_form_chosen_admin_settings_alter(&$form, $form_state) {
   $form['chosen_minimum_multiple']['#options']['30'] = '30';
 }
 
+function oira_configuration_form($form, &$form_state) {
+  $form = array();
+
+  $form = system_settings_form($form);
+  return $form;
+}

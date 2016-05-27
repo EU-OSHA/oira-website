@@ -357,6 +357,7 @@ function osha_wiki_field_default_field_instances() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
+      'options_list_callback' => 'osha_wiki_category_option_list',
     ),
     'widget' => array(
       'active' => 0,
