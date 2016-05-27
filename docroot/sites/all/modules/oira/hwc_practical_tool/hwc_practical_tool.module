@@ -144,6 +144,16 @@ function hwc_practical_tool_field_formatter_info() {
 }
 
 /**
+ * Implements hook_date_combo_process_alter().
+ */
+function hwc_practical_tool_date_combo_process_alter(&$element, $form_state, $context) {
+  // Revised date max date now.
+  if ($element['#field_name'] == 'field_revised_date') {
+    $element['value']['#datepicker_options']['maxDate'] = date($element['value']['#date_format']);
+  }
+}
+
+/**
  * Implements hook_theme().
  */
 function hwc_practical_tool_theme() {
