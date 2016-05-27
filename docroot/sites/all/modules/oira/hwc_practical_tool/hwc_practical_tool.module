@@ -39,6 +39,9 @@ function hwc_practical_tool_form_views_exposed_form_alter(&$form, &$form_state, 
       $form['field_language_value']['#options'] = array('' => 'Any') + osha_language_list_options();
       $form['field_language_value']['#chosen'] = TRUE;
     }
+    if (!empty($form['access_id'])) {
+      $form['access_id']['#chosen'] = TRUE;
+    }
   }
 }
 
