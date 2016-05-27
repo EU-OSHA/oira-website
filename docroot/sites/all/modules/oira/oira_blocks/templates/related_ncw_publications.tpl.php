@@ -2,7 +2,7 @@
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <?php foreach ($publications as $publication): ?>
   <div class="publication-item">
-    <a href="<?php print $publication['url']; ?>">
+    <a href="<?php print $publication['url']; ?>" target="_blank">
       <?php print $publication['title']; ?>
     </a>
   </div>
