@@ -32,6 +32,10 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: File Usage: File */
+  $handler->display->display_options['relationships']['node_to_file']['id'] = 'node_to_file';
+  $handler->display->display_options['relationships']['node_to_file']['table'] = 'file_usage';
+  $handler->display->display_options['relationships']['node_to_file']['field'] = 'node_to_file';
   /* Field: Content: Content UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'node';
@@ -83,18 +87,13 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['fields']['field_tool_type']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = 'image';
-  $handler->display->display_options['fields']['field_image']['alter']['text'] = '[field_image-fid]';
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => '',
-    'field_formatter_class' => '',
-  );
+  /* Field: File: Path */
+  $handler->display->display_options['fields']['uri']['id'] = 'uri';
+  $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['uri']['field'] = 'uri';
+  $handler->display->display_options['fields']['uri']['relationship'] = 'node_to_file';
+  $handler->display->display_options['fields']['uri']['label'] = 'image';
+  $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -214,6 +213,7 @@ function oira_ws_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('File'),
     t('tool_id'),
     t('tool_url'),
     t('title'),
@@ -221,7 +221,6 @@ function oira_ws_views_default_views() {
     t('revised_date'),
     t('tool_type'),
     t('image'),
-    t('[field_image-fid]'),
     t('body'),
     t('body_alt'),
     t('country_name'),
