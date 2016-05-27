@@ -6,6 +6,7 @@ version = 7.x-1.0
 dependencies[] = rest_server
 dependencies[] = services
 dependencies[] = views
+dependencies[] = oira_partner
 features[ctools][] = services:services:3
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2

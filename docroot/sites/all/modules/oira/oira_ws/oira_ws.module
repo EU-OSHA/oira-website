@@ -5,3 +5,27 @@
  */
 
 include_once 'oira_ws.features.inc';
+
+/**
+ * Implements hook_services_request_postprocess_alter($controller, $args, &$result)
+ */
+function oira_ws_services_request_postprocess_alter($controller, $args, &$result) {
+  foreach ($result as $item) {
+    $node =  node_load($item->nid);
+    $section_id = array_keys($node->workbench_access);
+    $partner = oira_partner_by_section_id_load($section_id[0]);
+    unset($item->nid);
+
+    if ($partner) {
+      $item->author_id = $partner->uuid;
+      $item->author_name = $partner->title;
+
+      if(isset($partner->field_logo[LANGUAGE_NONE][0][uri])){
+        $url = file_create_url($partner->field_logo[LANGUAGE_NONE][0][uri]);
+        if ($url) {
+          $item->author_logo = $url;
+        }
+      }
+    }
+  }
+}
