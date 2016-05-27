@@ -10,7 +10,7 @@
 function hwc_practical_tool_taxonomy_default_vocabularies() {
   return array(
     'practical_tool_types' => array(
-      'name' => 'Practical tool types',
+      'name' => 'Type of tool',
       'machine_name' => 'practical_tool_types',
       'description' => '',
       'hierarchy' => 0,
