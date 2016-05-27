@@ -747,7 +747,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'text_parts' => array(),
-        'year_range' => '-3:+3',
+        'year_range' => '-1:+0',
       ),
       'type' => 'date_popup',
       'weight' => 3,

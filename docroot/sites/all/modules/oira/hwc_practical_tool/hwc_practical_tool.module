@@ -29,6 +29,20 @@ function hwc_practical_tool_block_info() {
 }
 
 /**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function hwc_practical_tool_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  // Add lang options to language field filter on admin page.
+  if ($form['#id'] == 'views-exposed-form-administrate-oira-tools-page') {
+    if (!empty($form['field_language_value'])) {
+      $form['field_language_value']['#type'] = 'select';
+      $form['field_language_value']['#options'] = array('' => 'Any') + osha_language_list_options();
+      $form['field_language_value']['#chosen'] = TRUE;
+    }
+  }
+}
+
+/**
  * Implements hook_block_view().
  */
 function hwc_practical_tool_block_view($delta = '') {

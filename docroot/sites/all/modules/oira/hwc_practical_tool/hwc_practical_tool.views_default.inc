@@ -33,7 +33,10 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
@@ -128,6 +131,16 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Operations';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[edit_node] [delete_node]';
+  /* Field: Content: Alternative title */
+  $handler->display->display_options['fields']['field_alternative_title']['id'] = 'field_alternative_title';
+  $handler->display->display_options['fields']['field_alternative_title']['table'] = 'field_data_field_alternative_title';
+  $handler->display->display_options['fields']['field_alternative_title']['field'] = 'field_alternative_title';
+  $handler->display->display_options['fields']['field_alternative_title']['label'] = '';
+  $handler->display->display_options['fields']['field_alternative_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_alternative_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_alternative_title']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Sort criterion: Content: Revised date (field_revised_date) */
   $handler->display->display_options['sorts']['field_revised_date_value']['id'] = 'field_revised_date_value';
   $handler->display->display_options['sorts']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
@@ -148,18 +161,17 @@ function hwc_practical_tool_views_default_views() {
     'practical_tool' => 'practical_tool',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title (title_field) */
-  $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
-  $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['operator'] = 'word';
-  $handler->display->display_options['filters']['title_field_value']['group'] = 1;
-  $handler->display->display_options['filters']['title_field_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title_field_value']['expose']['operator_id'] = 'title_field_value_op';
-  $handler->display->display_options['filters']['title_field_value']['expose']['label'] = 'Title';
-  $handler->display->display_options['filters']['title_field_value']['expose']['operator'] = 'title_field_value_op';
-  $handler->display->display_options['filters']['title_field_value']['expose']['identifier'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -170,6 +182,10 @@ function hwc_practical_tool_views_default_views() {
     8 => 0,
     9 => 0,
     10 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'field_alternative_title' => 'field_alternative_title',
   );
   /* Filter criterion: Content: Country (field_country) */
   $handler->display->display_options['filters']['field_country_tid']['id'] = 'field_country_tid';
@@ -227,7 +243,6 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_language_value']['id'] = 'field_language_value';
   $handler->display->display_options['filters']['field_language_value']['table'] = 'field_data_field_language';
   $handler->display->display_options['filters']['field_language_value']['field'] = 'field_language_value';
-  $handler->display->display_options['filters']['field_language_value']['operator'] = 'word';
   $handler->display->display_options['filters']['field_language_value']['group'] = 1;
   $handler->display->display_options['filters']['field_language_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_language_value']['expose']['operator_id'] = 'field_language_value_op';
@@ -250,7 +265,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
   $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
   $handler->display->display_options['filters']['field_publication_date_value']['field'] = 'field_publication_date_value';
-  $handler->display->display_options['filters']['field_publication_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_publication_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_publication_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_publication_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_publication_date_value']['expose']['operator_id'] = 'field_publication_date_value_op';
@@ -269,11 +284,13 @@ function hwc_practical_tool_views_default_views() {
     9 => 0,
     10 => 0,
   );
+  $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_publication_date_value']['year_range'] = '-10:+3';
   /* Filter criterion: Content: Revised date (field_revised_date) */
   $handler->display->display_options['filters']['field_revised_date_value']['id'] = 'field_revised_date_value';
   $handler->display->display_options['filters']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
   $handler->display->display_options['filters']['field_revised_date_value']['field'] = 'field_revised_date_value';
-  $handler->display->display_options['filters']['field_revised_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_revised_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_revised_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_revised_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_revised_date_value']['expose']['operator_id'] = 'field_revised_date_value_op';
@@ -292,10 +309,13 @@ function hwc_practical_tool_views_default_views() {
     9 => 0,
     10 => 0,
   );
+  $handler->display->display_options['filters']['field_revised_date_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_revised_date_value']['year_range'] = '-10:+3';
   /* Filter criterion: Workbench Access: Access filter */
   $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
   $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
   $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['group'] = 1;
   $handler->display->display_options['filters']['access_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['access_id']['expose']['operator_id'] = 'access_id_op';
   $handler->display->display_options['filters']['access_id']['expose']['label'] = 'Author/Partner';
@@ -323,7 +343,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'OIRA Tools';
   $handler->display->display_options['menu']['description'] = 'Administrate OIRA Tools';
-  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['weight'] = '-1';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['administrate_oira_tools'] = array(
