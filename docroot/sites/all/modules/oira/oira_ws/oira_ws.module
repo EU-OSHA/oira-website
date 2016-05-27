@@ -31,5 +31,11 @@ function oira_ws_services_request_postprocess_alter($controller, $args, &$result
       $item->author_name = NULL;
       $item->author_logo = NULL;
     }
+
+    if (!empty($item->co_authors)) {
+      // todo: add co-authors
+    } else {
+      unset($item->co_authors);
+    }
   }
 }
