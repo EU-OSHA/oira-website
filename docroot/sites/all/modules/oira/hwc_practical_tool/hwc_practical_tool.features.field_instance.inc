@@ -897,7 +897,11 @@ function hwc_practical_tool_field_default_field_instances() {
   // Exported field_instance: 'node-practical_tool-field_tool_type'.
   $field_instances['node-practical_tool-field_tool_type'] = array(
     'bundle' => 'practical_tool',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 279,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
