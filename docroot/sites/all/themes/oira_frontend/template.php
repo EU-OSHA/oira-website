@@ -118,8 +118,8 @@ function oira_frontend_preprocess_page(&$vars) {
   }
 
   global $language;
-  $vars['logo'] = 'sites/all/themes/oira_frontend/images/eu-osha-logo/EU-OSHA-'.($language->language).'.png';
-  $vars['eu_logo'] = 'sites/all/themes/oira_frontend/images/europeLogo.png';
+  $vars['logo'] = '/sites/all/themes/oira_frontend/images/eu-osha-logo/EU-OSHA-'.($language->language).'.png';
+  $vars['eu_logo'] = '/sites/all/themes/oira_frontend/images/europeLogo.png';
 }
 
 function oira_frontend_preprocess_region(&$variables, $hook) {
