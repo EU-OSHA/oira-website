@@ -86,8 +86,11 @@
         <?php endif; ?>
       </div>
       <div class="header-sitename col-sm-4">
+        <a class="oira-logo" href="<?php print $front_page; ?>" title="<?php print $site_name; ?>">
+          <img src="<?php print $oira_logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
         <?php if (!empty($site_name)): ?>
-          <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
+          <a class="sitename" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_slogan; ?></a>
         <?php endif; ?>
       </div>
       <div class="header-blocks col-sm-4">
