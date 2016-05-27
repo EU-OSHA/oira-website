@@ -77,8 +77,8 @@
   <div class="top-header row">
       <div class="header-logo col-sm-4">
         <?php if ($logo): ?>
-          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          <a class="logo navbar-btn pull-left" href="https://osha.europa.eu/" title="<?php print t('EU-OSHA corporate website'); ?>">
+            <img src="<?php print $logo; ?>" alt="<?php print t('EU-OSHA logo'); ?>" />
           </a>
         <?php endif; ?>
         <?php if ($eu_logo): ?>
