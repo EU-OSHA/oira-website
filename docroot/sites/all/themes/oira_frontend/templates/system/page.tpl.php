@@ -169,7 +169,7 @@
 <?php endif; ?>
 <footer class="footer container-fluid">
   <p>
-    <?php print t("European Agency for Safety and Health at Work | an agency of the European Union"); ?>
+    <?php print t("© @yyyy EU-OSHA | an agency of the European Union", array('@yyyy' => date("Y"))); ?>
   </p>
   <div class="col-sm-12">
     <?php print render($page['footer']); ?>
