@@ -24,6 +24,8 @@ function oira_ws_services_request_postprocess_alter($controller, $args, &$result
         $url = file_create_url($partner->field_logo[LANGUAGE_NONE][0]['uri']);
         if ($url) {
           $item->author_logo = $url;
+        } else {
+          $item->author_logo = NULL;
         }
       }
     } else {
@@ -33,7 +35,35 @@ function oira_ws_services_request_postprocess_alter($controller, $args, &$result
     }
 
     if (!empty($item->co_authors)) {
-      // todo: add co-authors
+      $co_authors = [];
+      $co_authors_section_ids = explode(',', $item->co_authors);
+
+      foreach ($co_authors_section_ids as $id) {
+        $co_author_partner = oira_partner_by_section_id_load($id);
+
+        if ($co_author_partner) {
+          $co_author = new stdClass();
+          $co_author->author_id = $co_author_partner->uuid;
+          $co_author->author_name = $co_author_partner->title;
+
+          if(isset($co_author_partner->field_logo[LANGUAGE_NONE][0]['uri'])){
+            $url = file_create_url($co_author_partner->field_logo[LANGUAGE_NONE][0]['uri']);
+            if ($url) {
+              $co_author->author_logo = $url;
+            } else {
+              $co_author->author_logo = NULL;
+            }
+          }
+
+          $co_authors[] = $co_author;
+        }
+      }
+
+      if (!empty($co_authors)){
+        $item->co_authors = $co_authors;
+      } else {
+        unset($item->co_authors);
+      }
     } else {
       unset($item->co_authors);
     }
