@@ -26,6 +26,10 @@ function oira_ws_services_request_postprocess_alter($controller, $args, &$result
           $item->author_logo = $url;
         }
       }
+    } else {
+      $item->author_id = NULL;
+      $item->author_name = NULL;
+      $item->author_logo = NULL;
     }
   }
 }
