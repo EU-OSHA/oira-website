@@ -66,6 +66,7 @@ function osha_default_page_manager_handlers() {
           1 => 2,
           2 => 1,
           3 => 'main-row',
+          4 => 8,
         ),
         'parent' => 'canvas',
       ),
@@ -175,6 +176,25 @@ function osha_default_page_manager_handlers() {
         'class' => '',
         'hide_empty' => 1,
       ),
+      8 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'additional_resources',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'additional_resources' => array(
+        'type' => 'region',
+        'title' => 'Additional resources',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '8',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -184,6 +204,7 @@ function osha_default_page_manager_handlers() {
       'cover_image' => NULL,
       'content' => NULL,
       'sidebar_right' => NULL,
+      'additional_resources' => NULL,
     ),
   );
   $display->cache = array();
@@ -191,6 +212,45 @@ function osha_default_page_manager_handlers() {
   $display->uuid = 'db1cb231-615f-487a-bcd1-a23e8e9361ee';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-50b196c1-b46e-47dd-83cf-0a7b269310f4';
+    $pane->panel = 'additional_resources';
+    $pane->type = 'views';
+    $pane->subtype = 'additional_resources';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'context' => array(
+        0 => '',
+        1 => '',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '50b196c1-b46e-47dd-83cf-0a7b269310f4';
+    $display->content['new-50b196c1-b46e-47dd-83cf-0a7b269310f4'] = $pane;
+    $display->panels['additional_resources'][0] = 'new-50b196c1-b46e-47dd-83cf-0a7b269310f4';
     $pane = new stdClass();
     $pane->pid = 'new-f749e93d-4e1d-46f4-a93a-87cb660d63dc';
     $pane->panel = 'content';
