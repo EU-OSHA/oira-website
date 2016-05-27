@@ -176,11 +176,19 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['fields']['field_co_author']['table'] = 'field_data_field_co_author';
   $handler->display->display_options['fields']['field_co_author']['field'] = 'field_co_author';
   $handler->display->display_options['fields']['field_co_author']['label'] = 'co_authors';
-  $handler->display->display_options['fields']['field_co_author']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_co_author']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_co_author']['alter']['text'] = '[field_co_author-tid]';
+  $handler->display->display_options['fields']['field_co_author']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_co_author']['type'] = 'ds_taxonomy_view_mode';
   $handler->display->display_options['fields']['field_co_author']['settings'] = array(
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_co_author']['delta_offset'] = '0';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = 'nid';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -230,6 +238,8 @@ function oira_ws_views_default_views() {
     t('tool_link'),
     t('author_name'),
     t('co_authors'),
+    t('[field_co_author-tid]'),
+    t('nid'),
     t('Tools'),
   );
   $export['oira_ws'] = $view;
