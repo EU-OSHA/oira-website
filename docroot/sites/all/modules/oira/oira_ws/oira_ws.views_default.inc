@@ -113,6 +113,22 @@ function oira_ws_views_default_views() {
     'field_formatter_class' => '',
   );
   /* Field: Content: Country */
+  $handler->display->display_options['fields']['field_country_1']['id'] = 'field_country_1';
+  $handler->display->display_options['fields']['field_country_1']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country_1']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country_1']['label'] = 'country_code';
+  $handler->display->display_options['fields']['field_country_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country_1']['alter']['text'] = '[field_country_1-tid]';
+  $handler->display->display_options['fields']['field_country_1']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_country_1']['type'] = 'services';
+  $handler->display->display_options['fields']['field_country_1']['settings'] = array(
+    'data_element_key' => '',
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+    'term_name' => 0,
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
@@ -236,6 +252,8 @@ function oira_ws_views_default_views() {
     t('image'),
     t('body'),
     t('body_alt'),
+    t('country_code'),
+    t('[field_country_1-tid]'),
     t('country_name'),
     t('language_code'),
     t('language_name'),

@@ -35,6 +35,16 @@ function oira_ws_services_request_postprocess_alter($controller, $args, &$result
         $item->author_logo = NULL;
       }
 
+      if (!empty($item->country_code)) {
+        $term = taxonomy_term_load($item->country_code['tid']);
+
+        if (!empty($term->field_iso2[LANGUAGE_NONE])) {
+          $item->country_code = strtoupper($term->field_iso2[LANGUAGE_NONE][0]['safe_value']);
+        } else {
+          $item->country_code = NULL;
+        }
+      }
+
       if (!empty($item->co_authors)) {
         $co_authors = [];
 
