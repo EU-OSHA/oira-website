@@ -156,6 +156,10 @@ function hwc_practical_tool_field_formatter_info() {
         'label_2' => t('Available in:'),
       ),
     ),
+    'external_tool_link' => array(
+      'label' => t('Link with icon'),
+      'field types' => array('link_field'),
+    ),
   );
   return $info;
 }
@@ -201,6 +205,9 @@ function hwc_practical_tool_theme() {
     ),
     'path' => $path . '/templates',
   );
+  $theme['tool_link_formatter_icon_link'] = array(
+    'variables' => array('element' => NULL, 'field' => NULL),
+  );
   return $theme;
 }
 
@@ -233,8 +240,32 @@ function hwc_practical_tool_field_formatter_view($entity_type, $entity, $field, 
       );
       break;
 
+    case 'external_tool_link':
+      foreach ($items as $delta => $item) {
+        $element[$delta] = array(
+          '#theme' => 'tool_link_formatter_icon_link',
+          '#element' => $item,
+          '#field' => $instance,
+          '#display' => $display,
+        );
+      }
+      break;
+
   }
   return $element;
+}
+
+/**
+ * Formats a link using "Link" as the link text.
+ */
+function theme_tool_link_formatter_icon_link($vars) {
+  $link_options = $vars['element'];
+  $link_options['external'] = TRUE;
+  $link_options['attributes']['target'] = '_blank';
+  $link_options['html'] = TRUE;
+  unset($link_options['title']);
+  unset($link_options['url']);
+  return $vars['element']['url'] ? l('<span class="glyphicon glyphicon-new-window"></span>', $vars['element']['url'], $link_options) : '';
 }
 
 /**

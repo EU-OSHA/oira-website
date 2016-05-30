@@ -191,7 +191,10 @@ function hwc_practical_tool_strongarm() {
         'share_widget' => array(
           'teaser' => array(
             'weight' => '17',
+            'label' => 'above',
+            'type' => 'hidden',
             'visible' => FALSE,
+            'settings' => array(),
           ),
           'default' => array(
             'weight' => '2',
@@ -201,7 +204,10 @@ function hwc_practical_tool_strongarm() {
         'title_field' => array(
           'teaser' => array(
             'weight' => '1',
+            'label' => 'hidden',
+            'type' => 'visible',
             'visible' => TRUE,
+            'settings' => array(),
           ),
         ),
       ),

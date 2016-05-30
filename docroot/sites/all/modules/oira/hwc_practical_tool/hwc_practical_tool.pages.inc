@@ -103,6 +103,14 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     '#type' => 'submit',
     '#value' => t('Search'),
   );
+
+  if (!empty($text)) {
+    $form['content']['search_phrase'] = array(
+      '#type' => 'markup',
+      '#markup' => t('Results for !text', array('!text' => '<span class="searched-text"> ' . check_plain($text) .'</span>')),
+    );
+  }
+
   $form['content']['sort_fieldset'] = array(
     /* Needed so that the page passes Web Accessibility test */
     '#type' => 'fieldset',
@@ -112,6 +120,8 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     '#type' => 'select',
     '#title' => t('Order'),
     '#default_value' => $sort,
+    '#prefix' => '<div class="sort-container col-xs-3">',
+    '#suffix' => '</div>',
     '#options' => array('date' => t('Latest first'), 'alphabetically' => t('Alphabetically')),
   );
 
@@ -182,6 +192,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
 
     pager_default_initialize($response['result count'], $per_page);
     $pager_params = $_GET;
+    $page_no = isset($pager_params['page']) ? (int) $pager_params['page'] : 0;
     unset($pager_params['page']);
     $form['content']['results'] = array(
       '#nids' => $nids,
@@ -191,6 +202,14 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
         'quantity' => 9,
         'parameters' => $pager_params,
       )),
+    );
+
+    $start = $page_no * $per_page;
+    $form['content']['sort_fieldset']['search_summary'] = array(
+      '#prefix' => '<span class="count-container pull-right">',
+      '#suffix' => '</span>',
+      '#type' => 'markup',
+      '#markup' => t('Showing @start - @limit from @total tools', array('@start' => $start + 1, '@limit' => $start + count($nids), '@total' => $response['result count'])),
     );
   }
   else {
