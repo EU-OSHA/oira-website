@@ -15,7 +15,7 @@ function oira_ws_default_services_endpoint() {
   $endpoint->api_version = 3;
   $endpoint->name = 'oiraws';
   $endpoint->server = 'rest_server';
-  $endpoint->path = 'api';
+  $endpoint->path = 'oira-ws';
   $endpoint->authentication = array();
   $endpoint->server_settings = array(
     'formatters' => array(
@@ -35,9 +35,9 @@ function oira_ws_default_services_endpoint() {
     ),
   );
   $endpoint->resources = array(
-    'views' => array(
+    'tools' => array(
       'operations' => array(
-        'retrieve' => array(
+        'index' => array(
           'enabled' => '1',
         ),
       ),

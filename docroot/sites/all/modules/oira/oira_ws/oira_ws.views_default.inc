@@ -179,8 +179,13 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['fields']['field_co_author']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_co_author']['alter']['text'] = '[field_co_author-tid]';
   $handler->display->display_options['fields']['field_co_author']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_co_author']['type'] = 'ds_taxonomy_view_mode';
+  $handler->display->display_options['fields']['field_co_author']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_co_author']['type'] = 'services';
   $handler->display->display_options['fields']['field_co_author']['settings'] = array(
+    'data_element_key' => '',
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+    'term_name' => 1,
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_co_author']['delta_offset'] = '0';
@@ -209,9 +214,9 @@ function oira_ws_views_default_views() {
     'practical_tool' => 'practical_tool',
   );
 
-  /* Display: Tools */
-  $handler = $view->new_display('page', 'Tools', 'page');
-  $handler->display->display_options['path'] = 'oira-ws/tools';
+  /* Display: Tools WS */
+  $handler = $view->new_display('services', 'Tools WS', 'tools_ws');
+  $handler->display->display_options['path'] = 'tools';
   $translatables['oira_ws'] = array(
     t('Master'),
     t('<none>'),
@@ -240,7 +245,7 @@ function oira_ws_views_default_views() {
     t('co_authors'),
     t('[field_co_author-tid]'),
     t('nid'),
-    t('Tools'),
+    t('Tools WS'),
   );
   $export['oira_ws'] = $view;
 
