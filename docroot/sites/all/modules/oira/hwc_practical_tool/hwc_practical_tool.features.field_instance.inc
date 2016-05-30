@@ -359,7 +359,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'weight' => 7,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(
           'field_formatter_class' => '',
@@ -525,7 +525,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'languagefield',
         'settings' => array(
           'field_formatter_class' => '',
@@ -784,7 +784,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(
           'field_formatter_class' => '',
@@ -1055,8 +1055,11 @@ function hwc_practical_tool_field_default_field_instances() {
         'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
+          'title_class' => '',
+          'title_link' => 'content',
+          'title_style' => 'h3',
         ),
-        'type' => 'text_default',
+        'type' => 'title_linked',
         'weight' => 1,
       ),
       'title_body' => array(
