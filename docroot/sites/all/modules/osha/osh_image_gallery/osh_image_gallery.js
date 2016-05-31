@@ -1,5 +1,4 @@
-(function ($) {
-    console.log('sss');
+(function($){
     Drupal.behaviors.osh_image_gallery = {
         attach: function (context, settings) {
             $('body').once('osh_image_gallery', function(){
@@ -9,4 +8,4 @@
             });
         }
     };
-}(jQuery));
+})(jQuery);

@@ -22,7 +22,7 @@ function osh_image_gallery_menu_alter(&$items) {
  */
 function osh_image_gallery_admin_page_callback() {
   // Render our custom view for files.
-  drupal_add_library ( 'system' , 'ui.tabs' );
+  drupal_add_library('system', 'ui.tabs');
   $media_path = drupal_get_path('module', 'media');
   drupal_add_js($media_path . '/js/media.core.js');
   drupal_add_js($media_path . '/js/media.browser.js');
