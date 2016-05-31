@@ -112,15 +112,26 @@ function oira_frontend_panels_flexible($vars) {
 }
 
 function oira_frontend_preprocess_page(&$vars) {
+  global $language;
   if (drupal_is_front_page()) {
     unset($vars['page']['content']['system_main']['default_message']);
     drupal_set_title('');
   }
-
-  global $language;
   $vars['logo'] = '/sites/all/themes/oira_frontend/images/eu-osha-logo/EU-OSHA-'.($language->language).'.png';
   $vars['eu_logo'] = '/sites/all/themes/oira_frontend/images/europeLogo.png';
   $vars['oira_logo'] = '/sites/all/themes/oira_frontend/images/oiraLogo.gif';
+
+  // Add information about the number of sidebars.
+  if (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
+    $vars['content_column_class'] = ' class="col-sm-6"';
+  }
+  elseif (!empty($vars['page']['sidebar_first']) || !empty($vars['page']['sidebar_second'])) {
+    $vars['content_column_class'] = ' class="col-sm-9"';
+  }
+  else {
+    $vars['content_column_class'] = '';
+  }
+
 }
 
 function oira_frontend_preprocess_region(&$variables, $hook) {
