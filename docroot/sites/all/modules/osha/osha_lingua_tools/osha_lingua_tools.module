@@ -34,7 +34,7 @@ function _osha_lingua_tools_translatable_field_instances($bundle) {
     $transfield = istranslatable($field['field_id']);
     $info = field_info_field($fieldname);
     if ($transfield == 1
-      && $field['widget']['module'] == 'file'
+      && $info['type'] == 'file'
       && ($info['cardinality'] > 1 || $info['cardinality'] == FIELD_CARDINALITY_UNLIMITED)) {
       $translatable_fields[] = $field;
     }
