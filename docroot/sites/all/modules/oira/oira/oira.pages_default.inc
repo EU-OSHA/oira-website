@@ -78,43 +78,22 @@ function oira_default_page_manager_pages() {
       2 => array(
         'type' => 'row',
         'contains' => 'region',
-        'children' => array(),
+        'children' => array(
+          0 => 'top_row',
+        ),
         'parent' => '1',
-        'class' => '',
+        'class' => 'container-fluid',
         'hide_empty' => 1,
       ),
       3 => array(
         'type' => 'row',
-        'contains' => 'column',
+        'contains' => 'region',
         'children' => array(
-          0 => 4,
-          1 => 5,
+          0 => 'latest_news',
         ),
         'parent' => '1',
-        'class' => 'row',
+        'class' => 'container-fluid',
         'hide_empty' => 0,
-      ),
-      4 => array(
-        'type' => 'column',
-        'width' => 50,
-        'width_type' => '%',
-        'parent' => '3',
-        'children' => array(
-          0 => 7,
-        ),
-        'class' => 'col-sm-8',
-        'hide_empty' => 1,
-      ),
-      5 => array(
-        'type' => 'column',
-        'width' => 50,
-        'width_type' => '%',
-        'parent' => '3',
-        'children' => array(
-          0 => 8,
-        ),
-        'class' => 'col-sm-4',
-        'hide_empty' => 1,
       ),
       6 => array(
         'type' => 'row',
@@ -123,7 +102,7 @@ function oira_default_page_manager_pages() {
           0 => 'new_tools',
         ),
         'parent' => '1',
-        'class' => 'container',
+        'class' => 'container-fluid',
         'hide_empty' => 1,
       ),
       'new_tools' => array(
@@ -132,46 +111,26 @@ function oira_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '6',
-        'class' => '',
+        'class' => 'container',
         'hide_empty' => 1,
       ),
-      7 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'left',
-        ),
-        'parent' => '4',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      8 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'right',
-        ),
-        'parent' => '5',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      'right' => array(
+      'top_row' => array(
         'type' => 'region',
-        'title' => 'Right',
+        'title' => 'Top row',
         'width' => 100,
         'width_type' => '%',
-        'parent' => '8',
-        'class' => '',
-        'hide_empty' => 1,
+        'parent' => '2',
+        'class' => 'container',
+        'hide_empty' => 0,
       ),
-      'left' => array(
+      'latest_news' => array(
         'type' => 'region',
-        'title' => 'Left',
+        'title' => 'Latest News',
         'width' => 100,
         'width_type' => '%',
-        'parent' => '7',
-        'class' => '',
-        'hide_empty' => 1,
+        'parent' => '3',
+        'class' => 'container',
+        'hide_empty' => 0,
       ),
     ),
   );
@@ -179,9 +138,47 @@ function oira_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
-      'new_tools' => NULL,
+      'new_tools' => array(
+        'content' => array(
+          'element' => 'div',
+          'attributes' => array(
+            'id' => '',
+            'class' => 'row',
+          ),
+        ),
+        'theme' => 0,
+      ),
       'right' => NULL,
       'left' => NULL,
+      'top_row' => array(
+        'content' => array(
+          'element' => 'div',
+          'attributes' => array(
+            'id' => '',
+            'class' => 'row',
+          ),
+        ),
+        'theme' => 0,
+      ),
+      'latest_news' => array(
+        'content' => array(
+          'element' => 'div',
+          'attributes' => array(
+            'id' => '',
+            'class' => 'row',
+          ),
+        ),
+        'theme' => 0,
+      ),
+    ),
+    'new_tools' => array(
+      'style' => 'wrapper_element',
+    ),
+    'top_row' => array(
+      'style' => 'wrapper_element',
+    ),
+    'latest_news' => array(
+      'style' => 'wrapper_element',
     ),
   );
   $display->cache = array();
@@ -190,16 +187,16 @@ function oira_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
-    $pane->panel = 'left';
+    $pane->pid = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
+    $pane->panel = 'latest_news';
     $pane->type = 'views';
-    $pane->subtype = 'what_s_new_article';
+    $pane->subtype = 'news';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
-      'nodes_per_page' => '1',
+      'nodes_per_page' => '3',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,
@@ -208,22 +205,25 @@ function oira_default_page_manager_pages() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block',
+      'display' => 'block_1',
       'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'span',
+      'override_title_text' => 'Latest news',
+      'override_title_heading' => 'h3',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-12',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'bbcfc306-8f03-494e-953e-e36d106d0d09';
-    $display->content['new-bbcfc306-8f03-494e-953e-e36d106d0d09'] = $pane;
-    $display->panels['left'][0] = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
+    $pane->uuid = 'c2927d13-7604-4d82-836e-95d33a90155e';
+    $display->content['new-c2927d13-7604-4d82-836e-95d33a90155e'] = $pane;
+    $display->panels['latest_news'][0] = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
     $pane = new stdClass();
     $pane->pid = 'new-bad84030-52a4-423b-aea9-dd389a07853b';
     $pane->panel = 'new_tools';
@@ -252,7 +252,10 @@ function oira_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-12',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -260,16 +263,16 @@ function oira_default_page_manager_pages() {
     $display->content['new-bad84030-52a4-423b-aea9-dd389a07853b'] = $pane;
     $display->panels['new_tools'][0] = 'new-bad84030-52a4-423b-aea9-dd389a07853b';
     $pane = new stdClass();
-    $pane->pid = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
-    $pane->panel = 'right';
+    $pane->pid = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
+    $pane->panel = 'top_row';
     $pane->type = 'views';
-    $pane->subtype = 'news';
+    $pane->subtype = 'what_s_new_article';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
-      'nodes_per_page' => '3',
+      'nodes_per_page' => '1',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,
@@ -278,22 +281,25 @@ function oira_default_page_manager_pages() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block_1',
+      'display' => 'block',
       'override_title' => 1,
-      'override_title_text' => 'Latest news',
-      'override_title_heading' => 'h3',
+      'override_title_text' => '',
+      'override_title_heading' => 'span',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-xs-12',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c2927d13-7604-4d82-836e-95d33a90155e';
-    $display->content['new-c2927d13-7604-4d82-836e-95d33a90155e'] = $pane;
-    $display->panels['right'][0] = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
+    $pane->uuid = 'bbcfc306-8f03-494e-953e-e36d106d0d09';
+    $display->content['new-bbcfc306-8f03-494e-953e-e36d106d0d09'] = $pane;
+    $display->panels['top_row'][0] = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
   $handler->conf['display'] = $display;
