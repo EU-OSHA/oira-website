@@ -26,10 +26,10 @@ function oira_partner_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'oira_frontend',
-        'weight' => -42,
+        'weight' => -40,
       ),
       'osha_admin' => array(
         'region' => '',
@@ -56,8 +56,8 @@ function oira_partner_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => 'sidebar_second',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'oira_frontend',
         'weight' => 0,
       ),
