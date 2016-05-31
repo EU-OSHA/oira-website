@@ -174,18 +174,22 @@ example.org';
   $strongarm->name = 'linkchecker_scan_nodetypes';
   $strongarm->value = array(
     'article' => 'article',
-    'consortium_partner' => 'consortium_partner',
+    'external_url' => 'external_url',
     'faq' => 'faq',
-    'lesson' => 'lesson',
-    'lesson_toolkit' => 'lesson_toolkit',
-    'lesson_video' => 'lesson_video',
-    'napo_friend' => 'napo_friend',
-    'napo_video' => 'napo_video',
-    'home_video' => 0,
-    'napo_album' => 0,
-    'napo_image' => 0,
-    'panel' => 0,
+    'file' => 'file',
+    'flickr' => 'flickr',
+    'news' => 'news',
+    'press_contact' => 'press_contact',
+    'press_release' => 'press_release',
+    'slideshare' => 'slideshare',
+    'youtube' => 'youtube',
+    'collaborator' => 0,
+    'internal_url' => 0,
+    'practical_tool' => 0,
+    'partner' => 0,
+    'promotional_material' => 0,
     'webform' => 0,
+    'wiki_page' => 0,
   );
   $export['linkchecker_scan_nodetypes'] = $strongarm;
 
