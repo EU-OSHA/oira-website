@@ -73,100 +73,113 @@
  * @ingroup themeable
  */
 ?>
-<header class="container-fluid"><?php // print $navbar_classes; ?>
-  <div class="top-header row">
-      <div class="header-logo col-sm-4">
-        <?php if ($logo): ?>
-          <a class="logo navbar-btn pull-left" href="https://osha.europa.eu/" title="<?php print t('EU-OSHA corporate website'); ?>">
-            <img src="<?php print $logo; ?>" alt="<?php print t('EU-OSHA logo'); ?>" />
-          </a>
-        <?php endif; ?>
-        <?php if ($eu_logo): ?>
-          <img class="eu-logo" src="<?php print $eu_logo; ?>" alt="<?php print t('European Union'); ?>" />
-        <?php endif; ?>
-      </div>
-      <div class="header-sitename col-sm-4">
-        <a class="oira-logo" href="<?php print $front_page; ?>" title="<?php print $site_name; ?>"><img src="<?php print $oira_logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-        <?php if (!empty($site_name)): ?>
-          <a class="sitename" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_slogan; ?></a>
-        <?php endif; ?>
-      </div>
-      <div class="header-blocks col-sm-4">
-        <?php print render($page['header_block']); ?>
-      </div>
-  </div>
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div id="navbar" class="navbar navbar-default row">
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="navbar-collapse collapse">
-          <nav role="navigation">
-            <?php if (!empty($primary_nav)): ?>
-              <?php print render($primary_nav); ?>
-            <?php endif; ?>
-<!--            --><?php //if (!empty($secondary_nav)): ?>
-<!--              --><?php //print render($secondary_nav); ?>
-<!--            --><?php //endif; ?>
-<!--            --><?php //if (!empty($page['navigation'])): ?>
-<!--              --><?php //print render($page['navigation']); ?>
-<!--            --><?php //endif; ?>
-          </nav>
+<header class="site-header"><?php // print $navbar_classes; ?>
+  <div class="top-header">
+    <div class="top-header-container container">
+      <div class="top-header-content row">
+        <div class="header-logo col-sm-4">
+          <?php if ($logo): ?>
+            <a class="logo navbar-btn pull-left" href="https://osha.europa.eu/" title="<?php print t('EU-OSHA corporate website'); ?>">
+              <img src="<?php print $logo; ?>" alt="<?php print t('EU-OSHA logo'); ?>" />
+            </a>
+          <?php endif; ?>
+          <?php if ($eu_logo): ?>
+            <img class="eu-logo" src="<?php print $eu_logo; ?>" alt="<?php print t('European Union'); ?>" />
+          <?php endif; ?>
         </div>
-        <?php endif; ?>
+        <div class="header-sitename col-sm-4">
+          <a class="oira-logo" href="<?php print $front_page; ?>" title="<?php print $site_name; ?>"><img src="<?php print $oira_logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+          <?php if (!empty($site_name)): ?>
+            <a class="sitename" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_slogan; ?></a>
+          <?php endif; ?>
+        </div>
+        <div class="header-blocks col-sm-4">
+          <?php print render($page['header_block']); ?>
+        </div>
       </div>
+    </div>
+  </div>
+  <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+    <div class="menu-header">
+      <div class="navbar-header-container container">
+        <div class="navbar-header-content">
+          <div id="navbar" class="navbar navbar-default">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+              <nav role="navigation">
+                <?php if (!empty($primary_nav)): ?>
+                  <?php print render($primary_nav); ?>
+                <?php endif; ?>
+                <?php /*
+                <?php if (!empty($secondary_nav)): ?>
+                  <?php print render($secondary_nav); ?>
+                <?php endif; ?>
+                <?php if (!empty($page['navigation'])): ?>
+                  <?php print render($page['navigation']); ?>
+                <?php endif; ?>
+                */ ?>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
 </header>
-
-<div class="main-container container-fluid">
-  <div class="row">
-    <section class="container-fluid">
+<div class="page-content">
+  <section class="page-content-header">
+    <div class="page-content-header-container">
+      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
         <h1 class="page-header"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
-    </section>
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
+    </div>
+  </section>
+  <?php /*
+  <?php if (!empty($page['sidebar_first'])): ?>
+    <aside class="col-sm-3" role="complementary">
+      <?php print render($page['sidebar_first']); ?>
+    </aside>  <!-- /#sidebar-first -->
+  <?php endif; ?>
+  */ ?>
+  <section<?php print $content_column_class; ?>>
+    <?php print $messages; ?>
+    <?php if (!empty($tabs)): ?>
+      <?php print render($tabs); ?>
     <?php endif; ?>
-
-    <section<?php print $content_column_class; ?>>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-    </section>
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
+    <?php if (!empty($page['help'])): ?>
+      <?php print render($page['help']); ?>
     <?php endif; ?>
+    <?php if (!empty($action_links)): ?>
+      <ul class="action-links"><?php print render($action_links); ?></ul>
+    <?php endif; ?>
+    <?php print render($page['content']); ?>
+  </section>
 
-  </div>
+  <?php /*
+  <?php if (!empty($page['sidebar_second'])): ?>
+    <aside class="col-sm-3" role="complementary">
+      <?php print render($page['sidebar_second']); ?>
+    </aside>  <!-- /#sidebar-second -->
+  <?php endif; ?>
+  */ ?>
 </div>
 <?php if (!empty($page['contact_form_widget'])): ?>
-  <div class="contact-form-widget-container">
+  <section class="contact-form-widget-container">
     <?php print render($page['contact_form_widget']); ?>
-  </div>
+  </section>
 <?php endif; ?>
 <footer class="footer container-fluid">
   <p>
