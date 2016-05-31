@@ -111,7 +111,7 @@ function oira_blocks_default_fe_block_settings() {
         'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -37,
+        'weight' => -36,
       ),
       'osha_admin' => array(
         'region' => '',
