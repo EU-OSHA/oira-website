@@ -917,7 +917,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_wiki_page_url']['label'] = '';
   $handler->display->display_options['fields']['field_wiki_page_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_wiki_page_url']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_wiki_page_url']['type'] = 'external_url_link';
+  $handler->display->display_options['fields']['field_wiki_page_url']['type'] = 'external_tool_link';
   $handler->display->display_options['fields']['field_wiki_page_url']['settings'] = array(
     'field_formatter_class' => '',
   );
@@ -928,7 +928,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_tool_link']['label'] = '';
   $handler->display->display_options['fields']['field_tool_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tool_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_tool_link']['type'] = 'external_url_link';
+  $handler->display->display_options['fields']['field_tool_link']['type'] = 'external_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['settings'] = array(
     'field_formatter_class' => '',
   );
