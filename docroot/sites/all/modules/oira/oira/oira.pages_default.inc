@@ -92,7 +92,7 @@ function oira_default_page_manager_pages() {
           0 => 'latest_news',
         ),
         'parent' => '1',
-        'class' => 'container-fluid',
+        'class' => '',
         'hide_empty' => 0,
       ),
       6 => array(
@@ -102,7 +102,7 @@ function oira_default_page_manager_pages() {
           0 => 'new_tools',
         ),
         'parent' => '1',
-        'class' => 'container-fluid',
+        'class' => '',
         'hide_empty' => 1,
       ),
       'new_tools' => array(
@@ -138,47 +138,20 @@ function oira_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
-      'new_tools' => array(
-        'content' => array(
-          'element' => 'div',
-          'attributes' => array(
-            'id' => '',
-            'class' => 'row',
-          ),
-        ),
-        'theme' => 0,
-      ),
       'right' => NULL,
       'left' => NULL,
-      'top_row' => array(
-        'content' => array(
-          'element' => 'div',
-          'attributes' => array(
-            'id' => '',
-            'class' => 'row',
-          ),
-        ),
-        'theme' => 0,
-      ),
-      'latest_news' => array(
-        'content' => array(
-          'element' => 'div',
-          'attributes' => array(
-            'id' => '',
-            'class' => 'row',
-          ),
-        ),
-        'theme' => 0,
-      ),
+      'new_tools' => NULL,
+      'top_row' => NULL,
+      'latest_news' => NULL,
     ),
     'new_tools' => array(
-      'style' => 'wrapper_element',
+      'style' => '-1',
     ),
     'top_row' => array(
-      'style' => 'wrapper_element',
+      'style' => '-1',
     ),
     'latest_news' => array(
-      'style' => 'wrapper_element',
+      'style' => '-1',
     ),
   );
   $display->cache = array();
@@ -216,7 +189,7 @@ function oira_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -254,7 +227,7 @@ function oira_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -292,7 +265,7 @@ function oira_default_page_manager_pages() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-xs-12',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;

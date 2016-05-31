@@ -450,7 +450,6 @@ $options['init-modules'] = array(
 //  'spamspan',
 
   'panels',
-  'panels_extra_styles',
   'page_manager',
   'views_content',
   'i18n_panels',
