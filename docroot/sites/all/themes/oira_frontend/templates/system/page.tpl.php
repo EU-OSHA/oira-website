@@ -147,13 +147,11 @@
       <?php print render($title_suffix); ?>
     </div>
   </section>
-  <?php /*
   <?php if (!empty($page['sidebar_first'])): ?>
     <aside class="col-sm-3" role="complementary">
       <?php print render($page['sidebar_first']); ?>
     </aside>  <!-- /#sidebar-first -->
   <?php endif; ?>
-  */ ?>
   <section<?php print $content_column_class; ?>>
     <?php print $messages; ?>
     <?php if (!empty($tabs)): ?>
@@ -168,13 +166,11 @@
     <?php print render($page['content']); ?>
   </section>
 
-  <?php /*
   <?php if (!empty($page['sidebar_second'])): ?>
     <aside class="col-sm-3" role="complementary">
       <?php print render($page['sidebar_second']); ?>
     </aside>  <!-- /#sidebar-second -->
   <?php endif; ?>
-  */ ?>
 </div>
 <?php if (!empty($page['contact_form_widget'])): ?>
   <section class="contact-form-widget-container">
