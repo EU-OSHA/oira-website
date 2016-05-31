@@ -415,6 +415,8 @@ $options['init-modules'] = array(
   'flickrfield',
   'chosen',
 
+  'owlcarousel',
+
   // cookie privacy
   'eu_cookie_compliance',
   'piwik',
