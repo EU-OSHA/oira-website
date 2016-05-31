@@ -191,7 +191,9 @@ function form_lingua_form($form, &$form_state) {
   $languages = tmgmt_available_languages();
   unset($languages[$node->translations->original]);
   foreach ($node->translations->data as $lang => $translation) {
-    $translated_in[$lang] = $languages[$lang];
+    if (!empty($languages[$lang])) {
+      $translated_in[$lang] = $languages[$lang];
+    }
     unset($languages[$lang]);
   }
   unset($translated_in['en']);
@@ -425,8 +427,12 @@ function osha_lingua_tools_create_translations($form, &$form_state) {
   $translation_handler = entity_translation_get_handler('node', $node);
   $type = $node->type;
   $fields = _osha_lingua_tools_translatable_field_instances($type);
+  if (empty($source_lang)) {
+    $translation_handler->initTranslations();
+    $source_lang = $translation_handler->getTranslations()->original;
+  }
   foreach ($languages as $lang_code => $value) {
-    if ($value) {
+    if ($value && $lang_code != $source_lang) {
       $translation_handler->setTranslation(
         array(
           'translate' => 0,
@@ -452,7 +458,9 @@ function osha_lingua_tools_create_translations($form, &$form_state) {
     if ($value) {
       foreach ($fields as $field) {
         // MC-73 Copy values for translatable file fields
-        $new_node->{$field['field_name']}[$lang_code] = $node->{$field['field_name']}[$source_lang];
+        if (!empty($node->{$field['field_name']}[$source_lang])) {
+          $new_node->{$field['field_name']}[$lang_code] = $node->{$field['field_name']}[$source_lang];
+        }
       }
     }
   }
@@ -460,7 +468,7 @@ function osha_lingua_tools_create_translations($form, &$form_state) {
 
   // clone url_aliases
   foreach ($languages as $lang_code => $value) {
-    if ($value) {
+    if ($value && !empty($node->path)) {
       $args = array(
         'source' => 'node/' . $node->nid,
         'alias' => $node->path['alias'],
