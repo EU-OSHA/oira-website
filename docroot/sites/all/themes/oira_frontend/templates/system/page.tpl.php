@@ -181,11 +181,13 @@
     <?php print render($page['contact_form_widget']); ?>
   </section>
 <?php endif; ?>
-<footer class="footer container-fluid">
-  <p>
-    <?php print t("© @yyyy EU-OSHA | an agency of the European Union", array('@yyyy' => date("Y"))); ?>
-  </p>
-  <div class="col-sm-12">
-    <?php print render($page['footer']); ?>
+<footer class="site-footer">
+  <div class="site-footer-container container">
+    <div class="footer-copyright">
+      <?php print t("© @yyyy EU-OSHA | an agency of the European Union", array('@yyyy' => date("Y"))); ?>
+    </div>
+    <div class="footer-blocks">
+      <?php print render($page['footer']); ?>
+    </div>
   </div>
 </footer>
