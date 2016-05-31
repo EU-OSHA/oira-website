@@ -21,7 +21,7 @@ function oira_homepage_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_auto_height_owlcarousel_settings_oira-homepage';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['owlcarousel_auto_height_owlcarousel_settings_oira-homepage'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -269,7 +269,7 @@ function oira_homepage_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'owlcarousel_single_item_owlcarousel_settings_oira-homepage';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['owlcarousel_single_item_owlcarousel_settings_oira-homepage'] = $strongarm;
 
   $strongarm = new stdClass();
