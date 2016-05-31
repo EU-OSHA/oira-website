@@ -242,19 +242,21 @@ function form_lingua_form($form, &$form_state) {
   foreach ($fields as $field) {
     $files_to_copy = array();
     $selected_files = array();
-    foreach ($node->{$field['field_name']}['en'] as $item) {
-      $files_to_copy[$item['fid']] = $item['filename'];
-      foreach ($translated_in as $lang => $language) {
-        $found = FALSE;
-        foreach ($node->{$field['field_name']}[$lang] as $translated_item) {
-          if ($translated_item['fid'] == $item['fid']) {
-            $found = TRUE;
+    if (!empty($node->{$field['field_name']})) {
+      foreach ($node->{$field['field_name']}['en'] as $item) {
+        $files_to_copy[$item['fid']] = $item['filename'];
+        foreach ($translated_in as $lang => $language) {
+          $found = FALSE;
+          foreach ($node->{$field['field_name']}[$lang] as $translated_item) {
+            if ($translated_item['fid'] == $item['fid']) {
+              $found = TRUE;
+              break;
+            }
+          }
+          if (!$found) {
+            $selected_files[$item['fid']] = [$item['fid']];
             break;
           }
-        }
-        if (!$found) {
-          $selected_files[$item['fid']] = [$item['fid']];
-          break;
         }
       }
     }
