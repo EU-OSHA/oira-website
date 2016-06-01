@@ -381,6 +381,7 @@ function oira_frontend_flickr_photoset($variables) {
   $wrapper_class = $settings['image_class'];
   $variables['wrapper_class'] = $settings['image_class'];
   $output = '';
+  $attribs['class'] = (!empty($attribs['class'])) ? $attribs['class'] . ' img-responsive' : 'img-responsive';
   if (module_exists('flickr_sets')) {
     $output = "<div class='flickr-photoset'>\n";
     $per_page = $settings['images_shown'];

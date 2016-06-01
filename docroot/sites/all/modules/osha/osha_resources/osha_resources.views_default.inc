@@ -31,7 +31,8 @@ function osha_resources_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'osha_resources';
   $handler->display->display_options['row_options']['links'] = FALSE;
@@ -84,6 +85,22 @@ function osha_resources_views_default_views() {
 
   /* Display: Add res view mode */
   $handler = $view->new_display('block', 'Add res view mode', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Grid Additional resources';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Row additional resources';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'osha_resources';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $translatables['additional_resources'] = array(
     t('Master'),
     t('Additional resources'),
@@ -97,6 +114,9 @@ function osha_resources_views_default_views() {
     t('Content referencing Content from field_aditional_resources'),
     t('All'),
     t('Add res view mode'),
+    t('Grid Additional resources'),
+    t('Block'),
+    t('Row additional resources'),
   );
   $export['additional_resources'] = $view;
 

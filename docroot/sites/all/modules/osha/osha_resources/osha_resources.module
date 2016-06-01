@@ -34,6 +34,54 @@ function osha_resources_node_view_alter(&$build){
 }
 
 /**
+ * Use of osha_title_formatter_' . $entity->type . '_view'.
+ *
+ * Show the title alt when it's the case.
+ */
+function osha_title_formatter_external_url_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $settings = $display['settings'];
+  $output = isset($items[0]) ? $items[0]['safe_value'] : '';
+  $entity_wrapper = entity_metadata_wrapper('node', $entity);
+
+  if (!empty($output) && $settings['title_link'] == 'content') {
+    if (!empty($entity->field_external_url)) {
+      $url = $entity_wrapper->field_external_url->value();
+      $uri['path'] = $url['url'];
+    }
+    else {
+      $uri = entity_uri($entity_type, $entity);
+    }
+
+    $output = l($output, $uri['path'], array('html' => TRUE, 'attributes' => array('target' => '_blank')));
+  }
+
+  $wrap_tag = empty($settings['title_style']) ? '_none' : $settings['title_style'];
+
+  if ($wrap_tag != '_none') {
+    $element = array(
+      'element' => array(
+        '#tag' => $wrap_tag,
+        '#value' => $output,
+      ),
+    );
+
+    if (!empty($settings['title_class'])) {
+      $element['#attributes'] = array('class' => $settings['title_class']);
+    }
+
+    $output = theme('html_tag', $element);
+  }
+
+  $element = array(
+    array(
+      '#markup' => $output,
+    ),
+  );
+
+  return $element;
+}
+
+/**
  * Implements hook_osha_tmgmt_i18n_string_list().
  */
 function osha_resources_osha_tmgmt_i18n_string_list() {
@@ -63,6 +111,41 @@ function osha_resources_field_formatter_info() {
     ),
   );
   return $info;
+}
+
+/**
+ * Implements hook_field_formatter_info_alter().
+ */
+function osha_resources_field_formatter_info_alter(&$info) {
+  // Define extra fields for settings form to save them.
+  foreach ($info as &$formatter) {
+    if ($formatter['module'] == 'flickrfield') {
+      $formatter['settings']['image_class'] = '';
+      $formatter['settings']['images_shown'] = 4;
+    }
+  }
+}
+
+/**
+ * Implements hook_field_formatter_settings_form_alter().
+ */
+function osha_resources_field_formatter_settings_form_alter(array &$settings_form, array $context) {
+  if ($context['module'] == 'flickrfield') {
+    $instance = $context['instance'];
+    $view_mode = $context['view_mode'];
+    $display = $instance['display'][$view_mode];
+    $settings = $display['settings'];
+    $settings_form['image_class'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Image css class'),
+      '#default_value' => $settings['image_class'],
+    );
+    $settings_form['images_shown'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Number of images'),
+      '#default_value' => $settings['images_shown'],
+    );
+  }
 }
 
 /**
