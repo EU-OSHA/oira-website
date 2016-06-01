@@ -7,10 +7,12 @@
     </a>
   </div>
   <?php endforeach; ?>
+  <?php if (!empty($view_all_url)): ?>
   <div class="view-all-url">
     <a href="<?php print $view_all_url; ?>">
       <?php print t('View all'); ?>
     </a>
   </div>
+  <?php endif; ?>
 </div>
 <?php endif; ?>
