@@ -6593,3 +6593,8 @@ button.close {
 body {
   font-size: 16px;
 }
+/*FOOTER
+********************************************/
+.site-footer {
+  background-color: #b934a2;
+}
