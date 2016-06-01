@@ -6613,14 +6613,14 @@ body {
   padding-bottom: 20px;
 }
 .site-footer .footer-copyright {
-  color: #ffffff;
+  color: white;
   margin-bottom: 15px;
 }
 .site-footer #block-menu-menu-footer-menu {
   display: inline-block;
 }
 .site-footer #block-menu-menu-footer-menu li a {
-  color: #ffffff;
+  color: white;
   padding: 0px;
   padding-left: 10px;
   padding-right: 10px;
