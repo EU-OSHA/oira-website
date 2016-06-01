@@ -6562,6 +6562,10 @@ button.close {
 .top-header .header-blocks #block-menu-block-1 .menu-name-menu-social-menu ul li .introduction-title {
   display: none;
 }
+.top-header .header-blocks #block-search-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .top-header .header-blocks #block-menu-block-3 {
   display: inline-block;
 }
