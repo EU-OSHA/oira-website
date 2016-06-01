@@ -212,9 +212,12 @@ function osha_slideshare_field_formatter_view($entity_type, $entity, $field, $in
           $path = 'public://slideshare/' . $file_name;
           $image = '';
           if (file_exists($path)) {
-            $image = theme_image_style(array('style_name' => $settings['image_style'], 'path' => $path));
+            $vars = image_get_info($path);
+            $vars['style_name'] = $settings['image_style'];
+            $vars['path'] = $path;
+            $image = theme('image_style', $vars);
           }
-          $element[$delta]['#markup'] = theme('slideshare_display',array(
+          $element[$delta]['#markup'] = theme('slideshare_display', array(
             'path' => $item['slide_url'],
             'image' => $image,
           ));
@@ -247,38 +250,30 @@ function osha_slideshare_theme(){
 /**
  * Save Slide Thumbnail
  */
-function saveThumbnail($api_key, $secret_key, $slideshow_id){
-  $files = variable_get('file_public_path', conf_path() . '/files');
+function saveThumbnail($api_key, $secret_key, $slideshow_id) {
   $file_name = $slideshow_id . '.jpg';
-  $dest = $files . '/slideshare/' . $file_name;
-
-  if(!file_exists($dest)){
+  $dir = 'public://slideshare';
+  $file_path = $dir . '/' . $file_name;
+  if (!file_exists(drupal_realpath($file_path))) {
+    if (!file_prepare_directory($dir, FILE_CREATE_DIRECTORY)) {
+      watchdog('slideshare', 'Could not create directory @dir', array('@dir' => $dir), WATCHDOG_ERROR);
+      return;
+    }
     $url = 'https://www.slideshare.net/api/2/get_slideshow';
     $ts = time();
-    $hash = sha1($secret_key.$ts);
-    $params = 'api_key='.$api_key.'&ts='.$ts.'&hash='.$hash.'&slideshow_id='.$slideshow_id;
-
-    $url = $url.'?'.$params;
-
+    $hash = sha1($secret_key . $ts);
+    $params = 'api_key=' . $api_key . '&ts=' . $ts . '&hash=' . $hash . '&slideshow_id=' . $slideshow_id;
+    $url = $url . '?' . $params;
     $request = drupal_http_request($url);
-    $xml = simplexml_load_string($request->data);
-
-    //save image on disk
-    if(!empty($xml->URL)){
-      //remove first slashes (//cdn.slidesharecdn.com/ss_thumbnails/hwcesener-...)
-      $thumbnail = substr($xml->ThumbnailURL, 2);
-      $ch = curl_init($thumbnail);
-      if($ch){
-        $fp = fopen($dest, 'wb');
-        curl_setopt($ch, CURLOPT_FILE, $fp);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_exec($ch);
-        curl_close($ch);
-        fclose($fp);
+    if (!empty($request->data) && $xml = simplexml_load_string($request->data)) {
+      // Remove first slashes (//cdn.slidesharecdn.com/ss_thumbnails/hwcesener-...).
+      $thumbnail = substr($xml->ThumbnailXXLargeURL, 2);
+      $file_content = file_get_contents('http://' . $thumbnail);
+      if ($file_content === FALSE) {
+        watchdog('slideshare', 'Could not get file @file', array('@file' => $thumbnail), WATCHDOG_ERROR);
+        return;
       }
+      file_save_data($file_content, $file_path, FILE_EXISTS_REPLACE);
     }
   }
 }
-
-

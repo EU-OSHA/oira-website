@@ -413,6 +413,7 @@ $options['init-modules'] = array(
   'flickr',
 //  'flickr_block',
   'flickrfield',
+  'flickr_sets',
   'chosen',
 
   'owlcarousel',

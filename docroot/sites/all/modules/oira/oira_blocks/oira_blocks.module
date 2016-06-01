@@ -163,6 +163,7 @@ function related_ncw_publications_block_view() {
   global $language;
   $related_publications = array();
   $view_all_url = '';
+  $limit = variable_get('related_publication_limit', 3);
   if ($node = menu_get_object()) {
     if ($node->type == 'article' && !empty($node->field_tags)) {
       $tags = array();
@@ -182,7 +183,7 @@ function related_ncw_publications_block_view() {
         'base_url' => $ncw_url,
         'absolute' => TRUE,
         'query' => [
-          'limit' => 3,
+          'limit' => $limit,
         ],
       ]);
       $view_all_url = url($view_all_url, [
@@ -227,6 +228,9 @@ function related_ncw_publications_block_view() {
   }
   if (empty($related_publications)) {
     return NULL;
+  }
+  if ($limit > count($related_publications)) {
+    $view_all_url = '';
   }
   return theme('related_ncw_publications', array(
     'publications' => $related_publications,

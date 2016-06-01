@@ -1,0 +1,19 @@
+/* Related content */
+
+#mini-panel-related_content {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+#mini-panel-related_content > div {
+    display: table-row;
+}
+#mini-panel-related_content > div  .panels-flexible-column {
+    display: table-cell;
+    padding: 0 15px;
+}
+
+.article-content-container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
