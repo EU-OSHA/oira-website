@@ -6596,8 +6596,31 @@ body {
 /*FOOTER
 ********************************************/
 .site-footer {
-  background-color: #b934a2;
+  background-color: #10b2e4;
+}
+.site-footer .site-footer-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .site-footer .footer-copyright {
   color: #ffffff;
+}
+.site-footer #block-menu-menu-footer-menu {
+  display: inline-block;
+}
+.site-footer #block-menu-menu-footer-menu li a {
+  color: #ffffff;
+  padding: 10px 10px 0px 0px;
+}
+.site-footer #block-menu-block-2 {
+  width: 200px;
+  float: right;
+  margin-top: 9px;
+}
+.site-footer .menu-block-2 .menu .introduction-title {
+  display: none;
+}
+.site-footer .menu-block-2 .menu li {
+  display: inline-block;
+  margin-left: 10px;
 }
