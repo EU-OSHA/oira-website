@@ -12,3 +12,8 @@
     display: table-cell;
     padding: 0 15px;
 }
+
+.article-content-container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
