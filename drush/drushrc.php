@@ -417,6 +417,7 @@ $options['init-modules'] = array(
 
   'owlcarousel',
   'owlcarousel_views',
+  'owlcarousel_ui',
 
   // cookie privacy
   'eu_cookie_compliance',

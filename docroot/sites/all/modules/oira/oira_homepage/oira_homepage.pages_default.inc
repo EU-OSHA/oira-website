@@ -16,7 +16,10 @@ function oira_homepage_default_page_manager_pages() {
   $page->admin_title = 'Homepage';
   $page->admin_description = '';
   $page->path = 'hp';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -63,6 +66,7 @@ function oira_homepage_default_page_manager_pages() {
           0 => 1,
           1 => 6,
           2 => 9,
+          3 => 16,
         ),
         'parent' => 'canvas',
       ),
@@ -70,70 +74,9 @@ function oira_homepage_default_page_manager_pages() {
         'type' => 'row',
         'contains' => 'column',
         'children' => array(
-          0 => 3,
-          1 => 2,
+          0 => 14,
         ),
         'parent' => 'main',
-        'class' => 'row',
-        'hide_empty' => 0,
-      ),
-      2 => array(
-        'type' => 'column',
-        'width' => 50,
-        'width_type' => '%',
-        'parent' => '1',
-        'children' => array(
-          0 => 5,
-        ),
-        'class' => 'col-xs-12 col-sm-6',
-        'hide_empty' => 0,
-      ),
-      3 => array(
-        'type' => 'column',
-        'width' => 50,
-        'width_type' => '%',
-        'parent' => '1',
-        'children' => array(
-          0 => 4,
-        ),
-        'class' => 'col-xs-12 col-sm-6',
-        'hide_empty' => 0,
-      ),
-      4 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'top_left_article',
-        ),
-        'parent' => '3',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      5 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'top_right_article',
-        ),
-        'parent' => '2',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'top_left_article' => array(
-        'type' => 'region',
-        'title' => 'Top left article',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '4',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'top_right_article' => array(
-        'type' => 'region',
-        'title' => 'Top right article',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '5',
         'class' => '',
         'hide_empty' => 0,
       ),
@@ -155,7 +98,7 @@ function oira_homepage_default_page_manager_pages() {
         'children' => array(
           0 => 8,
         ),
-        'class' => 'col-xs-12',
+        'class' => '',
         'hide_empty' => 0,
       ),
       8 => array(
@@ -174,58 +117,27 @@ function oira_homepage_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '8',
-        'class' => '',
+        'class' => 'container',
         'hide_empty' => 0,
       ),
       9 => array(
         'type' => 'row',
         'contains' => 'column',
         'children' => array(
-          0 => 11,
-          1 => 10,
+          0 => 10,
         ),
         'parent' => 'main',
-        'class' => 'row',
+        'class' => '',
         'hide_empty' => 0,
       ),
       10 => array(
         'type' => 'column',
-        'width' => 50,
+        'width' => 100,
         'width_type' => '%',
         'parent' => '9',
         'children' => array(
           0 => 13,
         ),
-        'class' => 'col-xs-12 col-sm-6',
-        'hide_empty' => 0,
-      ),
-      11 => array(
-        'type' => 'column',
-        'width' => 50,
-        'width_type' => '%',
-        'parent' => '9',
-        'children' => array(
-          0 => 12,
-        ),
-        'class' => 'col-xs-12 col-sm-6',
-        'hide_empty' => 0,
-      ),
-      12 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'oira_tools',
-        ),
-        'parent' => '11',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'oira_tools' => array(
-        'type' => 'region',
-        'title' => 'OiRA tools',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '12',
         'class' => '',
         'hide_empty' => 0,
       ),
@@ -245,7 +157,77 @@ function oira_homepage_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '13',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+      14 => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'children' => array(
+          0 => 15,
+        ),
         'class' => '',
+        'hide_empty' => 0,
+      ),
+      15 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'slider',
+        ),
+        'parent' => '14',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'slider' => array(
+        'type' => 'region',
+        'title' => 'Slider',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '15',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      16 => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 17,
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      17 => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '16',
+        'children' => array(
+          0 => 18,
+        ),
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      18 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'tools',
+        ),
+        'parent' => '17',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'tools' => array(
+        'type' => 'region',
+        'title' => 'Tools',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '18',
+        'class' => 'container',
         'hide_empty' => 0,
       ),
     ),
@@ -259,6 +241,8 @@ function oira_homepage_default_page_manager_pages() {
       'news_section' => NULL,
       'oira_tools' => NULL,
       'promotional_materials' => NULL,
+      'slider' => NULL,
+      'tools' => NULL,
     ),
   );
   $display->cache = array();
@@ -302,29 +286,6 @@ function oira_homepage_default_page_manager_pages() {
     $display->content['new-c12890d8-4a82-4186-a28b-3cd716cab9d4'] = $pane;
     $display->panels['news_section'][0] = 'new-c12890d8-4a82-4186-a28b-3cd716cab9d4';
     $pane = new stdClass();
-    $pane->pid = 'new-d4c0411c-81b7-4995-92e6-d59d490f9372';
-    $pane->panel = 'oira_tools';
-    $pane->type = 'panels_mini';
-    $pane->subtype = 'oira_tools';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'OiRA tools',
-      'override_title_heading' => 'h3',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd4c0411c-81b7-4995-92e6-d59d490f9372';
-    $display->content['new-d4c0411c-81b7-4995-92e6-d59d490f9372'] = $pane;
-    $display->panels['oira_tools'][0] = 'new-d4c0411c-81b7-4995-92e6-d59d490f9372';
-    $pane = new stdClass();
     $pane->pid = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
     $pane->panel = 'promotional_materials';
     $pane->type = 'panels_mini';
@@ -347,6 +308,64 @@ function oira_homepage_default_page_manager_pages() {
     $pane->uuid = 'a0b06c34-2e96-42d4-89cf-be424671d2e4';
     $display->content['new-a0b06c34-2e96-42d4-89cf-be424671d2e4'] = $pane;
     $display->panels['promotional_materials'][0] = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
+    $pane = new stdClass();
+    $pane->pid = 'new-9b522aa6-b427-4a86-9367-2d0381e4a273';
+    $pane->panel = 'slider';
+    $pane->type = 'views';
+    $pane->subtype = 'slideshow';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '10',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'div',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9b522aa6-b427-4a86-9367-2d0381e4a273';
+    $display->content['new-9b522aa6-b427-4a86-9367-2d0381e4a273'] = $pane;
+    $display->panels['slider'][0] = 'new-9b522aa6-b427-4a86-9367-2d0381e4a273';
+    $pane = new stdClass();
+    $pane->pid = 'new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
+    $pane->panel = 'tools';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'oira_tools';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'OiRA tools',
+      'override_title_heading' => 'h3',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
+    $display->content['new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac'] = $pane;
+    $display->panels['tools'][0] = 'new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
