@@ -6598,3 +6598,6 @@ body {
 .site-footer {
   background-color: #b934a2;
 }
+.site-footer .footer-copyright {
+  color: #ffffff;
+}
