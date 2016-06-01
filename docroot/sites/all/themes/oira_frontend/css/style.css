@@ -6562,6 +6562,16 @@ button.close {
 .top-header .header-blocks #block-menu-block-1 .menu-name-menu-social-menu ul li .introduction-title {
   display: none;
 }
+.top-header .header-blocks #block-menu-block-3 {
+  display: inline-block;
+}
+.top-header .header-blocks #block-menu-block-3 .introduction-title {
+  background-color: #003399;
+  padding: 4px 4px;
+}
+.top-header .header-blocks #block-lang-dropdown-language {
+  display: inline-block;
+}
 .top-header .header-blocks #block-lang-dropdown-language #lang-dropdown-select-language {
   border: 2px solid #003399;
   outline: none;
