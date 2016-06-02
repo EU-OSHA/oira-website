@@ -30,9 +30,25 @@
 		margin-top: 50px;
 		#block-oira-blocks-oira-print-friendly{
 			display: inline-block;
+			float: left;
 		}
 		#block-text-resize-0{
 			display: inline-block;
+			float: left;
+			#text_resize_decrease{
+				margin: 0px;
+				float: left;
+				width: 25px;
+				height: initial;
+				margin-right: 5px;
+			}
+			#text_resize_increase{
+				margin: 0px;
+				float: left;
+				width: 25px;
+				height: initial;
+				margin-right: 10px;
+			}
 		}
 		#block-menu-block-1{
 			display: inline-block;
@@ -57,22 +73,45 @@
 		#block-search-form{
 			margin-top: 10px;
 			margin-bottom: 10px;
+			clear: both;
+			display: inline-block;
 			#search-block-form{
-				
+				input{
+					border-radius: 0px;
+					border: 2px solid @color-menu-icons;
+					width: 100%;
+				}
+				input[placeholder]{
+					color: @color-menu-icons !important;
+				}
+				.input-group-btn{
+					button{
+						border-radius: 0px;
+						width: 35px;
+						color: white;
+						background-color: @color-menu-icons;
+    					border: 1px solid @color-menu-icons;
+					}
+				}
 			}
 		}
 		#block-menu-block-3{
 			display: inline-block;
-			.introduction-title
-{				background-color: @color-menu-icons;
-    			padding: 4px 4px;
+			.introduction-title{				
+				background-color: @color-menu-icons;
+    			padding: 4px 10px;
 				a{
-
+					color: @color-white;
+					&:before{
+						content: "\a003";
+						margin-right: 10px;
+					}
 				}
 			}
 		}
 		#block-lang-dropdown-language{
 			display: inline-block;
+			float: right;
 			#lang-dropdown-select-language{
 				border: 2px solid @color-menu-icons;
     			outline: none;
@@ -80,7 +119,8 @@
     			height: initial;
     			padding: 3px 3px;
     			background-color: @color-icon-purple;
-    			color: white;
+    			color: @color-white;
+    			width: 220px !important;
 			}
 		}
 	}
@@ -89,15 +129,70 @@
 
 /*Menu
 **************************************************/
-#navbar{
-	margin-top: 40px;
+.menu-header{
+	margin-top: 35px;
+    margin-bottom: 25px;
+    background-color: @color-menu;
+	#navbar{
+		margin-top: 0px;
+		margin-bottom: 0px;
+		background-color: rgba(0,0,0,0) !important;
+    	border: none;
+    	.navbar-nav{
+    		width: 100%;
+    		display: table;
+    		margin-top: 14px;
+    		li{
+    			float: initial;
+    			display: table-cell;
+    			text-align: center;
+    			padding: 0px;
+    			color: @color-white;
+				a{
+					padding: 0px;
+					padding-left: 0px;
+					padding-right: 10px;
+				}
+				span{
+					padding-left: 0px;
+					padding-right: 35px;
+					padding-top: 2px;
+    				padding-bottom: 3px;
+					.caret{
+	    				display: none;
+	    			}
+				}
+    			a, span{
+    				color: @color-white;
+    				background-color: rgba(0,0,0,0);
+	    			border-right: 2px solid @color-white;
+    			}
+    			.dropdown-menu{
+    				background-color: @color-menu;
+    				border: none;
+    				top: 35px;
+    				padding: 0px;
+   					border-radius: 0px;
+    				li{
+    					display: block !important;
+    					a{
+    						border: none;
+    						padding: 5px 15px;
+    						border-bottom: 2px solid white;
+    					}
+    				}
+    			}
+    		}
+    	}
+	}
 }
+
 
 /*Iconos
 **************************************************/
 //print icon
 .gly-2x {
-  font-size: 1.5em;
+  font-size: 1.35em;
 }
 .glyphicon-print:before {
     content: "\e045";

@@ -6547,9 +6547,25 @@ button.close {
 }
 .top-header .header-blocks #block-oira-blocks-oira-print-friendly {
   display: inline-block;
+  float: left;
 }
 .top-header .header-blocks #block-text-resize-0 {
   display: inline-block;
+  float: left;
+}
+.top-header .header-blocks #block-text-resize-0 #text_resize_decrease {
+  margin: 0px;
+  float: left;
+  width: 25px;
+  height: initial;
+  margin-right: 5px;
+}
+.top-header .header-blocks #block-text-resize-0 #text_resize_increase {
+  margin: 0px;
+  float: left;
+  width: 25px;
+  height: initial;
+  margin-right: 10px;
 }
 .top-header .header-blocks #block-menu-block-1 {
   display: inline-block;
@@ -6565,16 +6581,41 @@ button.close {
 .top-header .header-blocks #block-search-form {
   margin-top: 10px;
   margin-bottom: 10px;
+  clear: both;
+  display: inline-block;
+}
+.top-header .header-blocks #block-search-form #search-block-form input {
+  border-radius: 0px;
+  border: 2px solid #003399;
+  width: 100%;
+}
+.top-header .header-blocks #block-search-form #search-block-form input[placeholder] {
+  color: #003399 !important;
+}
+.top-header .header-blocks #block-search-form #search-block-form .input-group-btn button {
+  border-radius: 0px;
+  width: 35px;
+  color: white;
+  background-color: #003399;
+  border: 1px solid #003399;
 }
 .top-header .header-blocks #block-menu-block-3 {
   display: inline-block;
 }
 .top-header .header-blocks #block-menu-block-3 .introduction-title {
   background-color: #003399;
-  padding: 4px 4px;
+  padding: 4px 10px;
+}
+.top-header .header-blocks #block-menu-block-3 .introduction-title a {
+  color: #ffffff;
+}
+.top-header .header-blocks #block-menu-block-3 .introduction-title a:before {
+  content: "\a003";
+  margin-right: 10px;
 }
 .top-header .header-blocks #block-lang-dropdown-language {
   display: inline-block;
+  float: right;
 }
 .top-header .header-blocks #block-lang-dropdown-language #lang-dropdown-select-language {
   border: 2px solid #003399;
@@ -6583,17 +6624,73 @@ button.close {
   height: initial;
   padding: 3px 3px;
   background-color: #907aa0;
-  color: white;
+  color: #ffffff;
+  width: 220px !important;
 }
 /*Menu
 **************************************************/
-#navbar {
-  margin-top: 40px;
+.menu-header {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  background-color: #10b2e4;
+}
+.menu-header #navbar {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: none;
+}
+.menu-header #navbar .navbar-nav {
+  width: 100%;
+  display: table;
+  margin-top: 14px;
+}
+.menu-header #navbar .navbar-nav li {
+  float: initial;
+  display: table-cell;
+  text-align: center;
+  padding: 0px;
+  color: #ffffff;
+}
+.menu-header #navbar .navbar-nav li a {
+  padding: 0px;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+.menu-header #navbar .navbar-nav li span {
+  padding-left: 0px;
+  padding-right: 35px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+.menu-header #navbar .navbar-nav li span .caret {
+  display: none;
+}
+.menu-header #navbar .navbar-nav li a,
+.menu-header #navbar .navbar-nav li span {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  border-right: 2px solid #ffffff;
+}
+.menu-header #navbar .navbar-nav li .dropdown-menu {
+  background-color: #10b2e4;
+  border: none;
+  top: 35px;
+  padding: 0px;
+  border-radius: 0px;
+}
+.menu-header #navbar .navbar-nav li .dropdown-menu li {
+  display: block !important;
+}
+.menu-header #navbar .navbar-nav li .dropdown-menu li a {
+  border: none;
+  padding: 5px 15px;
+  border-bottom: 2px solid white;
 }
 /*Iconos
 **************************************************/
 .gly-2x {
-  font-size: 1.5em;
+  font-size: 1.35em;
 }
 .glyphicon-print:before {
   content: "\e045";
@@ -6607,6 +6704,10 @@ button.close {
 body {
   font-size: 16px;
 }
+input,
+select {
+  box-shadow: none !important;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
@@ -6617,14 +6718,14 @@ body {
   padding-bottom: 20px;
 }
 .site-footer .footer-copyright {
-  color: white;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 .site-footer #block-menu-menu-footer-menu {
   display: inline-block;
 }
 .site-footer #block-menu-menu-footer-menu li a {
-  color: white;
+  color: #ffffff;
   padding: 0px;
   padding-left: 10px;
   padding-right: 10px;
