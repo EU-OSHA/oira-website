@@ -133,6 +133,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['name_field']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['name_field']['field_api_classes'] = TRUE;
   $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -146,6 +147,7 @@ function oira_promotional_material_views_default_views() {
     'image_link' => '',
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
   /* Field: Taxonomy term: Description */
   $handler->display->display_options['fields']['description_field']['id'] = 'description_field';
   $handler->display->display_options['fields']['description_field']['table'] = 'field_data_description_field';
@@ -155,7 +157,12 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['description_field']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['description_field']['field_api_classes'] = TRUE;
   $handler->display->display_options['fields']['description_field']['link_to_entity'] = 0;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
