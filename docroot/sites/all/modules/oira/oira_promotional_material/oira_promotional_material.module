@@ -46,3 +46,29 @@ function oira_promotional_material_taxonomy_term_view($term, $view_mode, $langco
     drupal_goto('promotional-materials/search', ['query' => ['category' => $term->tid]]);
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function oira_promotional_material_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'promotional_material_node_form':
+      unset($form['field_country']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_node_submit().
+ */
+function oira_promotional_material_node_submit($node, $form, &$form_state) {
+  if ($node->type == 'promotional_material') {
+    if (!empty($node->workbench_access)) {
+      $partner = oira_partner_by_section_id_load($node->workbench_access);
+      if (!empty($partner)) {
+        $node->field_country = $partner->field_country;
+        node_save($node);
+      }
+    }
+  }
+}

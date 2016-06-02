@@ -130,7 +130,7 @@ function oira_promotional_material_field_default_field_instances() {
       'module' => 'multiple_selects',
       'settings' => array(),
       'type' => 'multiple_selects',
-      'weight' => 7,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -191,7 +191,7 @@ function oira_promotional_material_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
