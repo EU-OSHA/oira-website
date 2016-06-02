@@ -72,3 +72,28 @@ function oira_promotional_material_node_submit($node, $form, &$form_state) {
     }
   }
 }
+
+/**
+ * Implements hook_node_presave().
+ */
+function oira_promotional_material_node_presave($node) {
+  if ($node->type == 'partner') {
+    $old_country = !empty($node->original->field_country) ? $node->original->field_country[LANGUAGE_NONE][0]['tid'] : NULL;
+    $new_country = !empty($node->field_country) ? $node->field_country[LANGUAGE_NONE][0]['tid'] : NULL;
+    if ($old_country !== $new_country) {
+      $q = db_select('workbench_access_node', 'w');
+      $q->innerJoin('node', 'n', 'w.nid = n.nid');
+      $q->fields('n', ['nid'])
+        ->condition('n.type', 'promotional_material')
+        ->condition('w.access_id', $node->workbench_access);
+      $pm_nids = $q->execute()->fetchCol();
+      foreach ($pm_nids as $nid) {
+        field_attach_update('node', (object) [
+          'nid' => $nid,
+          'type' => 'promotional_material',
+          'field_country' => $node->field_country,
+        ]);
+      }
+    }
+  }
+}
