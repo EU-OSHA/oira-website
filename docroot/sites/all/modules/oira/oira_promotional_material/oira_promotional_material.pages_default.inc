@@ -16,7 +16,10 @@ function oira_promotional_material_default_page_manager_pages() {
   $page->admin_title = 'Promotional materials';
   $page->admin_description = '';
   $page->path = 'promotional-materials';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -193,7 +196,10 @@ function oira_promotional_material_default_page_manager_pages() {
   $page->admin_title = 'Promotional materials search';
   $page->admin_description = '';
   $page->path = 'promotional-materials/search';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
