@@ -19,6 +19,7 @@ features[fe_block_settings][] = views-promotional_materials-block
 features[features_api][] = api:2
 features[field_base][] = field_promotional_material_type
 features[field_instance][] = node-promotional_material-body
+features[field_instance][] = node-promotional_material-field_co_author
 features[field_instance][] = node-promotional_material-field_country
 features[field_instance][] = node-promotional_material-field_external_url
 features[field_instance][] = node-promotional_material-field_file
