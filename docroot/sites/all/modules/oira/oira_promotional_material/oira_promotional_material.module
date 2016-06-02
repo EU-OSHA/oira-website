@@ -29,6 +29,8 @@ function oira_promotional_material_block_view($delta = '') {
   switch ($delta) {
     case 'oira_promotional_listing':
       module_load_include('inc', 'oira_promotional_material', 'oira_promotional_material.pages');
+      // Re-use some functions from hwc_practical_tool module
+      module_load_include('inc', 'hwc_practical_tool', 'hwc_practical_tool.pages');
       $block['content'] = drupal_get_form('oira_promotional_material_search_form');
       break;
   }

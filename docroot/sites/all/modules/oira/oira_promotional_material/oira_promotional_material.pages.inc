@@ -2,10 +2,12 @@
 
 function oira_promotional_material_search_form($form, $form_state) {
   global $language;
-  drupal_set_title(t('OiRA tools'));
+
+  $text = _hwc_practical_tool_get_req_param($form_state, 'text');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
 
   $form = array(
-    '#action' => 'promotional-materials',
+    '#action' => "search",
     '#method' => 'GET',
     '#token' => FALSE,
     'top' => array(
@@ -43,4 +45,13 @@ function oira_promotional_material_search_form($form, $form_state) {
   }
 
   return $form;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oira_promotional_material_form_oira_promotional_material_search_form_alter(&$form, $form_state) {
+  // Unset the form_id and build_id in order not to have nasty urls.
+  unset($form['form_id']);
+  unset($form['form_build_id']);
 }
