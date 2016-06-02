@@ -1037,7 +1037,7 @@ function osha_resources_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'flickr_css';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['flickr_css'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1070,7 +1070,7 @@ function osha_resources_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'flickr_license';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['flickr_license'] = $strongarm;
 
   $strongarm = new stdClass();
