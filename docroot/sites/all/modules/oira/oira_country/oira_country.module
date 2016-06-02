@@ -1,0 +1,169 @@
+<?php
+/**
+ * @file
+ * Code for the Oira country feature.
+ */
+
+include_once 'oira_country.features.inc';
+
+
+function oira_country_field_extra_fields_formatter_info() {
+  return [
+    'country_content_count' => [
+      'label' => t('Country content count'),
+      'description' => t('Format country content count.'),
+      'extra field types' => ['country_content_count'],
+//      'settings' => ['format' => 'medium'],
+    ],
+  ];
+}
+
+function oira_country_field_extra_fields_formatter_settings_form($extra_field_name, $view_mode, $display, $form, &$form_state) {
+  $settings = $display['settings'];
+  $element = [];
+  switch ($display['type']) {
+    case 'country_content_count':
+      break;
+  }
+  return $element;
+}
+
+function oira_country_field_extra_fields_formatter_settings_summary($extra_field_name, $view_mode, $display) {
+  $settings = $display['settings'];
+  switch ($display['type']) {
+    case 'country_content_count':
+      return t('Display counts');
+  }
+}
+
+function oira_country_field_extra_fields_formatter_view($entity_type, $entity, $extra_field_name, $langcode, $items, $display) {
+  $element = [];
+//  $settings = $display['settings'];
+  switch ($display['type']) {
+    case 'country_content_count':
+      $labels = array(
+        'sectors' => t('Sectors'),
+        'tools' => t('Tools'),
+        'languages' => t('Languages'),
+      );
+      foreach ($items as $delta => $item) {
+        $element[$delta] = array(
+          '#type' => 'item',
+          '#title' => $labels[$delta],
+          '#prefix' => '<div class="country-content-count-label country-content-count-' . $delta . '">',
+          '#suffix' => '</div>',
+          '#markup' => '<span class="country-content-counter">' . $item . '</span>',
+        );
+      }
+      break;
+  }
+  return $element;
+}
+
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function oira_country_field_extra_fields() {
+  $content_count = array(
+    'display' => array(
+      'country_content_count' => array(
+        'label' => t('Content count'),
+        'description' => t('The bar with links to social websites'),
+        'extra field type' => 'country_content_count',
+        'weight' => 0,
+      ),
+    ),
+  );
+  $extra['taxonomy_term']['country'] = $content_count;
+  return $extra;
+}
+
+/**
+ * Implements hook_taxonomy_term_view().
+ */
+function oira_country_taxonomy_term_view($term, $view_mode, $langcode) {
+  if ($term->vocabulary_machine_name == 'country') {
+    $extra_fields = field_info_extra_fields('taxonomy_term', 'country', 'display');
+    $extra_field_pc = $extra_fields['country_content_count'];
+    if (!empty($extra_field_pc['display'][$view_mode]['visible'])) {
+      $display = $extra_fields['country_content_count']['display'];
+      $term->content['country_content_count'] = [
+        '#theme' => 'field',
+        '#label_display' => $extra_field_pc['label'],
+        '#title' => $extra_field_pc['label'],
+        '#items' => _oira_country_compute_content_count($term),
+        '#field_type' => 'extra_field',
+        '#field_name' => 'country_content_count',
+        '#entity_type' => 'taxonomy_term',
+        '#bundle' => 'country',
+        '#weight' => (int) $display[$view_mode]['weight'],
+      ];
+      _oira_country_compute_content_count($term);
+    }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function oira_country_node_presave($node) {
+  // Invalidate content count cache.
+  if ($node->type == 'practical_tool' && !empty($node->field_country)) {
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $term = $node_wrapper->field_country->value();
+    if (is_object($term)) {
+      cache_clear_all(_oira_country_compute_count_cid($term), 'cache');
+    }
+  }
+}
+
+/**
+ * Get label of the content count cache.
+ */
+function _oira_country_compute_count_cid($term) {
+  return 'country_content_count:' . $term->tid;
+}
+
+/**
+ * Compute and cache content counts for country.
+ */
+function _oira_country_compute_content_count($term) {
+  $cid = _oira_country_compute_count_cid($term);
+  $cache = cache_get($cid);
+  if (!empty($cache)) {
+    return $cache->data;
+  }
+  $count_labels = array('sectors', 'tools', 'languages');
+  $return = array();
+  foreach ($count_labels as $label) {
+    $return[$label] = 0;
+  }
+
+  $query = db_select('field_data_field_country', 'fc')
+    ->condition('fc.bundle', 'practical_tool');
+  $query->addExpression('DISTINCT(fc.field_country_tid)', 'field_country_tid');
+  $query->addExpression('COUNT(DISTINCT(sector.field_sector_tid))', 'sectors_count');
+  $query->addExpression('COUNT(DISTINCT(lang.field_language_value))', 'languages_count');
+  $query->addExpression('COUNT(DISTINCT(node.nid))', 'tools_count');
+  $query->leftJoin('node', 'node', 'fc.entity_id = node.nid');
+  $query->leftJoin('field_data_field_sector', 'sector', 'node.nid = sector.entity_id');
+  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
+  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
+  $query->leftJoin('field_data_field_publication_date', 'pd', 'node.nid = pd.entity_id');
+  $query->where('pd.field_publication_date_value <= NOW()');
+  $query->condition('node.status', 1);
+  $query->condition('fc.field_country_tid', $term->tid);
+  $query->groupBy('field_country_tid');
+  $result = $query->execute();
+  if (!empty($result)) {
+    foreach ($result as $res) {
+      $return['sectors'] = $res->sectors_count;
+      $return['tools'] = $res->tools_count;
+      $return['languages'] = $res->languages_count;
+    }
+  }
+  cache_set($cid, $return, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
+  return $return;
+}
+
