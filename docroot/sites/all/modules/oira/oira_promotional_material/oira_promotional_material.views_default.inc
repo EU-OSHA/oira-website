@@ -134,7 +134,7 @@ function oira_promotional_material_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['name_field']['field_api_classes'] = TRUE;
-  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 1;
   /* Field: Field: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -144,7 +144,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'large',
-    'image_link' => '',
+    'image_link' => 'content',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
