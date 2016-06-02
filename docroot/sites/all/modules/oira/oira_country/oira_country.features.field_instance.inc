@@ -17,7 +17,19 @@ function oira_country_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_listing' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -56,7 +68,25 @@ function oira_country_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_listing' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(
@@ -91,7 +121,29 @@ function oira_country_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_listing' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
@@ -151,7 +203,25 @@ function oira_country_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_listing' => array(
+        'label' => 'above',
+        'module' => 'osha',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'default' => array(
+        'label' => 'hidden',
+        'module' => 'osha',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'full' => array(
         'label' => 'above',
         'module' => 'osha',
         'settings' => array(
@@ -193,7 +263,19 @@ function oira_country_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'country_listing' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

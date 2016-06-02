@@ -551,10 +551,15 @@ function osha_field_formatter_settings_summary($field, $instance, $view_mode) {
  * Implements hook_field_formatter_view().
  */
 function osha_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $entity_info = entity_get_info($entity_type);
+  $bundle_field = 'type';
+  if (!empty($entity_info['entity keys']['bundle'])) {
+    $bundle_field = $entity_info['entity keys']['bundle'];
+  }
   switch ($display['type']) {
     case 'title_linked':
-      if (function_exists('osha_title_formatter_' . $entity->type . '_view')) {
-        $element = call_user_func('osha_title_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      if (function_exists('osha_title_formatter_' . $entity->{$bundle_field} . '_view')) {
+        $element = call_user_func('osha_title_formatter_' . $entity->{$bundle_field} . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
       }
       else {
         $element = title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
@@ -562,8 +567,8 @@ function osha_field_formatter_view($entity_type, $entity, $field, $instance, $la
       break;
 
     case 'smart_trim_format':
-      if (function_exists('osha_smart_trim_formatter_' . $entity->type . '_view')) {
-        $element = call_user_func('osha_smart_trim_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      if (function_exists('osha_smart_trim_formatter_' . $entity->{$bundle_field} . '_view')) {
+        $element = call_user_func('osha_smart_trim_formatter_' . $entity->{$bundle_field} . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
       }
       else {
         $element = smart_trim_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
@@ -571,8 +576,8 @@ function osha_field_formatter_view($entity_type, $entity, $field, $instance, $la
       break;
 
     case 'text_default':
-      if (function_exists('osha_text_formatter_' . $entity->type . '_view')) {
-        $element = call_user_func('osha_text_formatter_' . $entity->type . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
+      if (function_exists('osha_text_formatter_' . $entity->{$bundle_field} . '_view')) {
+        $element = call_user_func('osha_text_formatter_' . $entity->{$bundle_field} . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
       }
       else {
         $element = text_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
