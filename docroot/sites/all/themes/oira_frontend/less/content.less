@@ -9,8 +9,28 @@ body{
 	font-size: 16px;
 }
 
+
 input, select{
 	box-shadow: none !important;
+}
+.h3purple{
+	color: #967ea6;
+    border-bottom: 2px solid @color-text-purple;
+    font-size: 2.2em;
+    padding-bottom: 3px;
+    font-weight: bold;
+ }
+ .h3image-promotional-materials{
+    background-image: @image-map-white;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.h3image-oira-tools{
+    background-image: @image-bag-purple;
+    background-position: right;
+    background-repeat: no-repeat;
+
 }
 
 
@@ -22,3 +42,53 @@ input, select{
 
 /*End menu
 ************************************************************************************/
+
+
+/*ESTILOS HOME
+********************************************************/
+
+/*PROMOTIONAL MATERIALS
+********************************************************/
+#block-system-main{
+	.panels-flexible-region-new-promotional_materials{
+		.pane-promotional-materials{
+			.pane-title{
+				color: @color-text-purple;
+	    		font-size: 1.2em;
+	    		font-weight: bold;
+	    		margin-bottom: 14px;
+	    		font-style: italic;
+			}
+			.view-promotional-materials{
+				.col-md-4{
+					.views-item-columns-container{
+						background-color: @color-background-light-purple; 	
+					}
+					.views-field-title-field{
+						h4{
+							padding: 5px 0px 10px 15px;
+							a{
+								color: @color-text-grey;
+								font-size: @font-size0-75;
+	    						font-weight: bold;	
+							}
+							
+						}
+					}
+					
+				}
+			}
+		}
+
+	}
+	.panels-flexible-row-new-16{
+		background-color: @color-background-light-purple;
+	}
+}
+
+/*END PROMOTIONAL MATERIALS*/
+
+
+
+
+/*END HOME*/
