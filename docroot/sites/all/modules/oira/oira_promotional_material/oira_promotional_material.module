@@ -36,3 +36,13 @@ function oira_promotional_material_block_view($delta = '') {
   }
   return $block;
 }
+
+/**
+ * Implements hook_taxonomy_term_view().
+ */
+function oira_promotional_material_taxonomy_term_view($term, $view_mode, $langcode) {
+  $voc = taxonomy_vocabulary_machine_name_load('promotional_material_type');
+  if ($term->vid == $voc->vid && $view_mode == 'full') {
+    drupal_goto('promotional-materials/search', ['query' => ['category' => $term->tid]]);
+  }
+}
