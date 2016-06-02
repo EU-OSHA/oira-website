@@ -65,14 +65,21 @@ function oira_promotional_material_search_form($form, $form_state) {
     $_GET['field_language:value'][] = $language->language;
   }
 
-  $response = hwc_practical_tool_search($form_state, $per_page);
+  $response = oira_promotional_material_search($form_state, $per_page);
 
   if ($try_native && empty($response['result count'])) {
     // If no results are available for current language
     // perform the search with no lang.
     $_GET['field_language:value'] = array('en');
-    $response = hwc_practical_tool_search($form_state, $per_page);
+    $response = oira_promotional_material_search($form_state, $per_page);
   }
+  
+  $facets = array();
+  if (!empty($response['search_api_facets'])) {
+    $facets = $response['search_api_facets'];
+    _hwc_practical_tool_facet_value_clear($facets);
+  }
+  $query_params = drupal_get_query_parameters();
 
   foreach ($facets_def as $field_name => $facet_def) {
     if (!empty($facets[$field_name])) {
@@ -103,6 +110,45 @@ function oira_promotional_material_search_form($form, $form_state) {
     }
   }
 
+  $nids = array();
+  if (!empty($response['results'])) {
+    foreach ($response['results'] as $row) {
+      list($lng, $nid) = explode('_', $row['id'], 2);
+      $nids[] = $nid;
+    }
+
+    $nodes = node_load_multiple($nids);
+
+    pager_default_initialize($response['result count'], $per_page);
+    $pager_params = $_GET;
+    $page_no = isset($pager_params['page']) ? (int) $pager_params['page'] : 0;
+    unset($pager_params['page']);
+    $form['content']['results'] = array(
+      '#nids' => $nids,
+      'results-native' => node_view_multiple($nodes, 'teaser', 0, $language->language),
+      '#suffix' => theme('pager', array(
+        'tags' => array('<', '<', '', '>', '>'),
+        'quantity' => 9,
+        'parameters' => $pager_params,
+      )),
+    );
+
+    $start = $page_no * $per_page;
+    $form['content']['sort_fieldset']['search_summary'] = array(
+      '#prefix' => '<span class="count-container pull-right">',
+      '#suffix' => '</span>',
+      '#type' => 'markup',
+      '#markup' => t('Showing @start - @limit from @total tools', array('@start' => $start + 1, '@limit' => $start + count($nids), '@total' => $response['result count'])),
+    );
+  }
+  else {
+    $form['content']['results']['#markup'] = '<p class="no-results">' . t('No results found to match your search.') . '</p>';
+  }
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'hwc_practical_tool') . '/js/checkbox-submit.js',
+  );
+
   return $form;
 }
 
@@ -128,4 +174,44 @@ function _oira_oira_promotional_material_search_form_get_facets() {
       'options_callback_args' => array('country'),
     ),
   ];
+}
+
+function oira_promotional_material_search($form_state, $per_page = 10) {
+  $facets_def = _oira_oira_promotional_material_search_form_get_facets();
+
+  $page = _hwc_practical_tool_get_req_param($form_state, 'page', 0);
+  $text = _hwc_practical_tool_get_req_param($form_state, 'text');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
+  /** @var SearchApiQuery $query */
+  /** @var SearchApiSolrService $server */
+  list($server, $query) = hwc_practical_tool_menu_tools_get_query();
+  $query->condition('status', 1);
+  $query->condition('type', 'promotional_material');
+  $query->keys($text);
+  $query->fields(array('title_field', 'body:value',
+    'field_alternative_title', 'field_alternative_body:value'));
+  $query->setOption('search_api_facets', $facets_def);
+  foreach ($facets_def as $field_name => $facet_def) {
+    $selected_values = _hwc_practical_tool_get_req_param($form_state, $field_name, array());
+    if (!empty($selected_values) && is_array($selected_values)) {
+      $filter = $query->createFilter($facet_def['operator'], ['facet:' . $field_name]);
+      foreach ($selected_values as $value) {
+        $filter->condition($field_name, $value);
+        $query->filter($filter);
+      }
+    }
+  }
+  switch ($sort) {
+    case 'alphabetically':
+      $query->sort('title2', 'ASC');
+      break;
+
+    default:
+      $query->sort('field_revised_date', 'DESC');
+      break;
+  }
+  $query->range($page * $per_page, $per_page);
+
+  $response = $server->search($query);
+  return $response;
 }
