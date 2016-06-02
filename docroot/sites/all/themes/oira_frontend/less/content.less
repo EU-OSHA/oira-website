@@ -13,13 +13,23 @@ body{
 input, select{
 	box-shadow: none !important;
 }
-.h3purple{
+h3.pane-title{
 	color: #967ea6;
-    border-bottom: 2px solid @color-text-purple;
-    font-size: 2.2em;
-    padding-bottom: 3px;
-    font-weight: bold;
+	border-bottom: 2px solid @color-text-purple;
+	font-size: 2.2em;
+	padding-bottom: 3px;
+	font-weight: bold;
+
  }
+h4{
+	//padding: 5px 0px 10px 15px;
+	a{
+		color: @color-text-grey;
+		font-size: @font-size0-75;
+	    font-weight: bold;	
+	}
+}
+
  .h3image-promotional-materials{
     background-image: @image-map-white;
     background-position: right;
@@ -32,6 +42,32 @@ input, select{
     background-repeat: no-repeat;
 
 }
+
+.more-link{
+	a{
+		color: @color-see-more;
+		font-weight: bold;
+		font-style: italic;
+		display: block;
+		text-align: right;
+		&:before{
+			content:'>';
+		}
+	}
+}
+
+a.more-link{
+	color: @color-see-more;
+	font-weight: bold;
+	font-style: italic;
+	display: block;
+	text-align: right;
+	&:before{
+		content:'>';
+		}
+	
+}
+
 
 
 /*END estilos comunes
@@ -52,7 +88,7 @@ input, select{
 #block-system-main{
 	.panels-flexible-region-new-promotional_materials{
 		.pane-promotional-materials{
-			.pane-title{
+			div.pane-title{
 				color: @color-text-purple;
 	    		font-size: 1.2em;
 	    		font-weight: bold;
@@ -64,18 +100,6 @@ input, select{
 					.views-item-columns-container{
 						background-color: @color-background-light-purple; 	
 					}
-					.views-field-title-field{
-						h4{
-							padding: 5px 0px 10px 15px;
-							a{
-								color: @color-text-grey;
-								font-size: @font-size0-75;
-	    						font-weight: bold;	
-							}
-							
-						}
-					}
-					
 				}
 			}
 		}
@@ -83,6 +107,29 @@ input, select{
 	}
 	.panels-flexible-row-new-16{
 		background-color: @color-background-light-purple;
+		.view-display-id-block{
+			border-bottom: 2px solid @color-text-purple;
+			padding-bottom: 30px;
+    		padding-top: 20px;
+    		margin-bottom: 20px;
+		}
+		.view-display-id-block_1{
+			.views-item-columns-container{
+				background-color: @color-white;
+				padding: 5px 0px 10px 10px;
+			}	
+		}
+		
+		.pane-views.pane-tools{
+			.pane-title{
+				color: @color-text-purple;
+	    		font-size: 1.2em;
+	    		font-weight: bold;
+	    		margin-bottom: 14px;
+	    		font-style: italic;
+			}
+
+		}
 	}
 }
 

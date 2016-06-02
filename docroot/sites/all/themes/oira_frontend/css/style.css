@@ -6708,11 +6708,16 @@ input,
 select {
   box-shadow: none !important;
 }
-.h3purple {
+h3.pane-title {
   color: #967ea6;
   border-bottom: 2px solid #967ea6;
   font-size: 2.2em;
   padding-bottom: 3px;
+  font-weight: bold;
+}
+h4 a {
+  color: #58585a;
+  font-size: 0.75em;
   font-weight: bold;
 }
 .h3image-promotional-materials {
@@ -6725,6 +6730,26 @@ select {
   background-position: right;
   background-repeat: no-repeat;
 }
+.more-link a {
+  color: #10b2e4;
+  font-weight: bold;
+  font-style: italic;
+  display: block;
+  text-align: right;
+}
+.more-link a:before {
+  content: '>';
+}
+a.more-link {
+  color: #10b2e4;
+  font-weight: bold;
+  font-style: italic;
+  display: block;
+  text-align: right;
+}
+a.more-link:before {
+  content: '>';
+}
 /*END estilos comunes
 ************************************************************************************/
 /*Menu
@@ -6735,7 +6760,7 @@ select {
 ********************************************************/
 /*PROMOTIONAL MATERIALS
 ********************************************************/
-#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .pane-title {
+#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials div.pane-title {
   color: #967ea6;
   font-size: 1.2em;
   font-weight: bold;
@@ -6745,16 +6770,25 @@ select {
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .col-md-4 .views-item-columns-container {
   background-color: #dfd8e4;
 }
-#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .col-md-4 .views-field-title-field h4 {
-  padding: 5px 0px 10px 15px;
-}
-#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .col-md-4 .views-field-title-field h4 a {
-  color: #58585a;
-  font-size: 0.75em;
-  font-weight: bold;
-}
 #block-system-main .panels-flexible-row-new-16 {
   background-color: #dfd8e4;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block {
+  border-bottom: 2px solid #967ea6;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container {
+  background-color: #ffffff;
+  padding: 5px 0px 10px 10px;
+}
+#block-system-main .panels-flexible-row-new-16 .pane-views.pane-tools .pane-title {
+  color: #967ea6;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 14px;
+  font-style: italic;
 }
 /*FOOTER
 ********************************************/
