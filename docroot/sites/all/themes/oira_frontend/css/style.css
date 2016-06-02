@@ -6736,6 +6736,7 @@ h4 a {
   font-style: italic;
   display: block;
   text-align: right;
+  font-size: 0.85em;
 }
 .more-link a:before {
   content: '>';
@@ -6746,6 +6747,7 @@ a.more-link {
   font-style: italic;
   display: block;
   text-align: right;
+  font-size: 0.85em;
 }
 a.more-link:before {
   content: '>';
@@ -6779,9 +6781,17 @@ a.more-link:before {
   padding-top: 20px;
   margin-bottom: 20px;
 }
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-title-field a {
+  font-size: 2em;
+}
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container {
   background-color: #ffffff;
-  padding: 5px 0px 10px 10px;
+  padding: 5px 0px 5px 10px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container a {
+  display: block;
+  text-align: right;
+  margin-right: 10px;
 }
 #block-system-main .panels-flexible-row-new-16 .pane-views.pane-tools .pane-title {
   color: #967ea6;

@@ -50,6 +50,7 @@ h4{
 		font-style: italic;
 		display: block;
 		text-align: right;
+		font-size: @font-size0-85;
 		&:before{
 			content:'>';
 		}
@@ -62,6 +63,7 @@ a.more-link{
 	font-style: italic;
 	display: block;
 	text-align: right;
+	font-size: @font-size0-85;
 	&:before{
 		content:'>';
 		}
@@ -112,12 +114,23 @@ a.more-link{
 			padding-bottom: 30px;
     		padding-top: 20px;
     		margin-bottom: 20px;
+    		.field-name-title-field{
+    			a{
+    				font-size: @font-size2;	
+    			}
+    			
+    		}
 		}
 		.view-display-id-block_1{
 			.views-item-columns-container{
 				background-color: @color-white;
-				padding: 5px 0px 10px 10px;
-			}	
+				padding: 5px 0px 5px 10px;
+				a{
+					display: block;
+    				text-align: right;
+    				margin-right: 10px
+				}
+			}
 		}
 		
 		.pane-views.pane-tools{
