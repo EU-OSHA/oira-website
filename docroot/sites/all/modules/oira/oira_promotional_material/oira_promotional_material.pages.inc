@@ -163,6 +163,16 @@ function oira_promotional_material_form_oira_promotional_material_search_form_al
 
 function _oira_oira_promotional_material_search_form_get_facets() {
   return [
+    'field_country' => array(
+      'label' => t('Country'),
+      'field' => 'field_country',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => '_hwc_taxonomy_filter_options_list',
+      'options_callback_args' => array('country'),
+    ),
     'field_language:value' => array(
       'label' => t('Language'),
       'field' => 'field_language:value',
@@ -173,15 +183,15 @@ function _oira_oira_promotional_material_search_form_get_facets() {
       'options_callback' => 'osha_language_list_options',
       'options_callback_args' => array(TRUE),
     ),
-    'field_country' => array(
-      'label' => t('Country'),
-      'field' => 'field_country',
+    'field_promotional_material_type' => array(
+      'label' => t('Category'),
+      'field' => 'field_promotional_material_type',
       'limit' => 50,
       'operator' => 'or',
       'min_count' => 1,
       'missing' => 0,
       'options_callback' => '_hwc_taxonomy_filter_options_list',
-      'options_callback_args' => array('country'),
+      'options_callback_args' => array('promotional_material_type'),
     ),
   ];
 }
