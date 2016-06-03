@@ -111,7 +111,7 @@ function oira_partner_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'EU/National Social Partners';
   $display->uuid = '47b47281-c299-48fd-9a54-2e3c7de4c9a5';
   $display->content = array();
   $display->panels = array();
