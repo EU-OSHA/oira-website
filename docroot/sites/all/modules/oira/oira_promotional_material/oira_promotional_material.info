@@ -24,6 +24,7 @@ features[field_instance][] = node-promotional_material-field_country
 features[field_instance][] = node-promotional_material-field_external_url
 features[field_instance][] = node-promotional_material-field_file
 features[field_instance][] = node-promotional_material-field_image
+features[field_instance][] = node-promotional_material-field_language
 features[field_instance][] = node-promotional_material-field_promotional_material_type
 features[field_instance][] = node-promotional_material-field_publication_date
 features[field_instance][] = node-promotional_material-title_field
