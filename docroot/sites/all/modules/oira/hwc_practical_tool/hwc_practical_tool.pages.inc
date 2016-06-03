@@ -55,7 +55,7 @@ function _hwc_practical_tool_strip_param_value($params, $name, $value = NULL) {
     }
     else {
       $flipped = array_flip($params[$name]);
-      if (!empty($flipped[$value])) {
+      if (array_key_exists($value, $flipped)) {
         unset($params[$name][$flipped[$value]]);
         if (empty($params[$name])) {
           unset($params[$name]);
