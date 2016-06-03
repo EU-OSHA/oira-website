@@ -6723,6 +6723,19 @@ h4 a {
   font-size: 0.75em;
   font-weight: bold;
 }
+h4.pane-title {
+  color: #967ea6;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+h5 {
+  color: #58585a;
+  font-weight: bold;
+}
+h5 a {
+  color: #58585a;
+  font-weight: bold;
+}
 .h3image-promotional-materials {
   background-image: url('../images/promotional.png');
   background-position: right;
@@ -6862,6 +6875,59 @@ a.more-link:before {
   font-weight: bold;
   margin-bottom: 14px;
   font-style: italic;
+}
+/*END PROMOTIONAL MATERIALS*/
+/*END HOME*/
+/*ESTILOS ARTICLES
+****************************************************************/
+.node-type-article .panels-flexible-row-new-10 {
+  background-color: #907aa0;
+}
+.node-type-article .panels-flexible-row-new-10 .panels-flexible-column-new-main {
+  border-right: 7px solid #ffffff;
+  height: 244px;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications h3.pane-title {
+  color: #ffffff;
+  font-size: 2em;
+  border-bottom: 2px solid #ffffff;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications .pane-content {
+  border-bottom: 2px solid #ffffff;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications .pane-content a {
+  color: #ffffff;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications .pane-content a:before {
+  content: '>';
+}
+.node-type-article .panels-flexible-row-new-10 .pane-views h3.pane-title {
+  color: #ffffff;
+  font-size: 2em;
+  border-bottom: 2px solid #ffffff;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-views .pane-content {
+  border-bottom: 2px solid #ffffff;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-views .pane-content a {
+  color: #ffffff;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-views .pane-content a:before {
+  content: '>';
+}
+.node-type-article .panels-flexible-row-new-13 {
+  background-color: #dfd8e4;
+}
+.node-type-article .panels-flexible-row-new-13 .pane-additional-resources {
+  border-bottom: 2px solid #967ea6;
+  padding-bottom: 23px;
+  margin-bottom: 20px;
+}
+.node-type-article .panels-flexible-row-new-13 .pane-additional-resources .view-id-additional_resources .content {
+  background-color: #ffffff;
+}
+.node-type-article .panels-flexible-row-new-13 .pane-additional-resources .view-id-additional_resources .content .field-name-title-field {
+  padding: 10px 10px 10px 20px;
 }
 /*FOOTER
 ********************************************/

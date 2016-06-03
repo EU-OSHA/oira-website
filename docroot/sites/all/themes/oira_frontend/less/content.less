@@ -14,9 +14,9 @@ input, select{
 }
 
 h3.pane-title{
-	color: #967ea6;
+	color: @color-text-purple;
 	border-bottom: 2px solid @color-text-purple;
-	font-size: 2.2em;
+	font-size: @font-size2-2;
 	padding-bottom: 3px;
 	font-weight: bold;
  }
@@ -26,6 +26,24 @@ h4{
 		color: @color-text-grey;
 		font-size: @font-size0-75;
 	    font-weight: bold;	
+	}
+}
+
+h4.pane-title{
+	color: @color-text-purple;
+	font-size: @font-size1-7;
+	font-weight: bold;
+}
+
+h5{
+	color: @color-text-grey;
+	font-weight: bold;
+}
+
+h5{
+	a{
+		color: @color-text-grey;
+		font-weight: bold;
 	}
 }
 
@@ -215,4 +233,79 @@ a.more-link{
 	}
 }
 
+<<<<<<< 9098a9c47239ea41f75ece72aed18fad3241f8d3
 /*END HOME*/
+=======
+/*END PROMOTIONAL MATERIALS*/
+
+
+
+
+/*END HOME*/
+
+/*ESTILOS ARTICLES
+****************************************************************/
+.node-type-article{
+	.panels-flexible-row-new-10{
+		background-color: @color-primary-dark;
+		.panels-flexible-column-new-main{
+			border-right: 7px solid @color-white;
+			height: 244px;
+		}
+		.pane-oira-blocks-related-ncw-publications{
+			h3.pane-title{
+				color: @color-white;
+		    	font-size: @font-size2;
+		    	border-bottom: 2px solid @color-white;
+		    }
+		    .pane-content{
+		    	border-bottom: 2px solid @color-white;
+		    	a{
+		    		color: @color-white;
+		    		&:before{
+					content:'>';
+					}
+		    	}
+		    }
+		}
+		.pane-views{
+			h3.pane-title{
+				color: @color-white;
+		    	font-size: @font-size2;
+		    	border-bottom: 2px solid @color-white;
+		    }
+		    .pane-content{
+		    	border-bottom: 2px solid @color-white;
+		    	a{
+		    		color: @color-white;
+		    		&:before{
+					content:'>';
+					}
+		    	}
+		    }
+		}
+	}
+	.panels-flexible-row-new-13{
+		background-color: @color-background-light-purple;
+		.pane-additional-resources{
+			border-bottom: 2px solid @color-text-purple;
+			padding-bottom: 23px;
+			margin-bottom: 20px;
+			.view-id-additional_resources{
+				.content{
+					background-color: @color-white;
+					.field-name-title-field{
+						padding: 10px 10px 10px 20px;
+					}
+				}
+			}
+
+		}
+	}
+
+}
+
+
+
+/*END ARTICLES*/
+>>>>>>> Css articles v1
