@@ -171,9 +171,10 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
         foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
           if (!empty($options[$val])) {
             $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
+            $query = _hwc_practical_tool_strip_param_value($query_params, $field_name, $val) ?: ['text' => ''];
             $form['left-column']['search']['filters'][] = array(
               '#type' => 'markup',
-              '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
+              '#markup' => l($filter_label, 'oira-tools', array('query' => $query, 'html' => TRUE)),
             );
           }
         }
