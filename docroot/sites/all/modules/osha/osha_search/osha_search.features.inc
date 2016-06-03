@@ -90,6 +90,7 @@ function osha_search_default_search_api_index() {
         "field_press_contact_job_title" : { "type" : "text" },
         "field_press_contact_location" : { "type" : "text" },
         "field_press_contact_organization" : { "type" : "text" },
+        "field_promotional_material_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_publication_date" : { "type" : "date" },
         "field_quote" : { "type" : "text" },
         "field_recommended_articles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
@@ -125,13 +126,12 @@ function osha_search_default_search_api_index() {
             "default" : "0",
             "bundles" : {
               "article" : "article",
-              "event_speaker" : "event_speaker",
-              "events" : "events",
               "faq" : "faq",
               "news" : "news",
               "practical_tool" : "practical_tool",
               "partner" : "partner",
               "press_release" : "press_release",
+              "promotional_material" : "promotional_material",
               "wiki_page" : "wiki_page"
             }
           }

@@ -465,6 +465,7 @@ $options['init-modules'] = array(
   'manualcrop',
   'panels_breadcrumbs',
   'extra_field_formatter',
+  'extrafield_views_integration',
 
   'text_resize',
 

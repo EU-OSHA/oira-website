@@ -6,6 +6,34 @@
 
 include_once 'oira_country.features.inc';
 
+/**
+ * Implements hook_block_info().
+ */
+function oira_country_block_info() {
+  $blocks = array();
+  $blocks['oira_country_count_all'] = array(
+    'info' => t('Country content count all'),
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function oira_country_block_view($delta) {
+  $block = array();
+  switch ($delta) {
+    case 'oira_country_count_all':
+      $block['subject'] = '';
+      $block['content'] = oira_country_block_count_all();
+      break;
+  }
+  return $block;
+}
+
 
 function oira_country_field_extra_fields_formatter_info() {
   return [
@@ -72,11 +100,57 @@ function oira_country_field_extra_fields() {
         'description' => t('The bar with links to social websites'),
         'extra field type' => 'country_content_count',
         'weight' => 0,
+        'callback' => 'oira_country_content_count_callback',
       ),
     ),
   );
   $extra['taxonomy_term']['country'] = $content_count;
   return $extra;
+}
+
+function oira_country_block_count_all() {
+  $content_counts = _oira_country_compute_count_all();
+
+  // Count partners.
+  $query = db_select('node', 'n')
+    ->condition('n.type', 'partner')
+    ->condition('status', 1);
+  $query->addExpression('COUNT(nid)', 'total_partners');
+  $res = $query->execute()->fetchAssoc();
+
+  $content_counts['total_partners'] = $res['total_partners'];
+
+  $labels = array(
+    'total_sectors' => t('Sectors'),
+    'total_tools' => t('Tools'),
+    'total_languages' => t('Languages'),
+    'total_partners' => t('Partners'),
+    'total_country' => t('Countries'),
+  );
+  foreach ($content_counts as $delta => $item) {
+    $element[$delta] = array(
+      '#type' => 'item',
+      '#title' => $labels[$delta],
+      '#prefix' => '<div class="country-content-count-label country-content-count-' . $delta . '">',
+      '#suffix' => '</div>',
+      '#markup' => '<span class="country-content-counter">' . $item . '</span>',
+    );
+  }
+  return $element;
+}
+
+/**
+ * Extra field callback for views.
+ */
+function oira_country_content_count_callback($term) {
+  $term->country_content_count = _oira_country_compute_content_count($term);
+  oira_country_taxonomy_term_view($term, 'full', 'en');
+  if (!empty($term->content['country_content_count'])) {
+    $content = $term->content['country_content_count'];
+    $display = array('type' => 'country_content_count');
+    $element = oira_country_field_extra_fields_formatter_view('taxonomy_term', $term, 'country_content_count', 'en', $content['#items'], $display);
+    return drupal_render($element);
+  }
 }
 
 /**
@@ -99,7 +173,6 @@ function oira_country_taxonomy_term_view($term, $view_mode, $langcode) {
         '#bundle' => 'country',
         '#weight' => (int) $display[$view_mode]['weight'],
       ];
-      _oira_country_compute_content_count($term);
     }
   }
 }
@@ -118,6 +191,34 @@ function oira_country_node_presave($node) {
   }
 }
 
+function _oira_country_compute_count_all() {
+  $cid = 'country_content_count';
+  $cache = cache_get($cid);
+  if (!empty($cache)) {
+    return $cache->data;
+  }
+  $return = array(
+    'total_country' => 0,
+    'total_languages' => 0,
+    'total_sectors' => 0,
+    'total_tools' => 0,
+  );
+  $query = _oira_country_compute_count_get_generic_query();
+  $query->addExpression('0', 'none');
+  $query->groupBy('none');
+  $query->addExpression('COUNT(DISTINCT(fc.field_country_tid))', 'countries_count');
+  $result = $query->execute()->fetchAllAssoc('none');
+  if (!empty($result[0])) {
+    $return = array(
+      'total_country' => $result[0]->countries_count,
+      'total_languages' => $result[0]->languages_count,
+      'total_sectors' => $result[0]->sectors_count,
+      'total_tools' => $result[0]->tools_count,
+    );
+  }
+  cache_set($cid, $return, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
+}
+
 /**
  * Get label of the content count cache.
  */
@@ -129,6 +230,7 @@ function _oira_country_compute_count_cid($term) {
  * Compute and cache content counts for country.
  */
 function _oira_country_compute_content_count($term) {
+  _oira_country_compute_count_all();
   $cid = _oira_country_compute_count_cid($term);
   $cache = cache_get($cid);
   if (!empty($cache)) {
@@ -140,19 +242,7 @@ function _oira_country_compute_content_count($term) {
     $return[$label] = 0;
   }
 
-  $query = db_select('field_data_field_country', 'fc')
-    ->condition('fc.bundle', 'practical_tool');
-  $query->addExpression('DISTINCT(fc.field_country_tid)', 'field_country_tid');
-  $query->addExpression('COUNT(DISTINCT(sector.field_sector_tid))', 'sectors_count');
-  $query->addExpression('COUNT(DISTINCT(lang.field_language_value))', 'languages_count');
-  $query->addExpression('COUNT(DISTINCT(node.nid))', 'tools_count');
-  $query->leftJoin('node', 'node', 'fc.entity_id = node.nid');
-  $query->leftJoin('field_data_field_sector', 'sector', 'node.nid = sector.entity_id');
-  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
-  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
-  $query->leftJoin('field_data_field_publication_date', 'pd', 'node.nid = pd.entity_id');
-  $query->where('pd.field_publication_date_value <= NOW()');
-  $query->condition('node.status', 1);
+  $query = _oira_country_compute_count_get_generic_query();
   $query->condition('fc.field_country_tid', $term->tid);
   $query->groupBy('field_country_tid');
   $result = $query->execute();
@@ -167,3 +257,19 @@ function _oira_country_compute_content_count($term) {
   return $return;
 }
 
+function _oira_country_compute_count_get_generic_query() {
+  $query = db_select('field_data_field_country', 'fc')
+    ->condition('fc.bundle', 'practical_tool');
+  $query->addExpression('DISTINCT(fc.field_country_tid)', 'field_country_tid');
+  $query->addExpression('COUNT(DISTINCT(sector.field_sector_tid))', 'sectors_count');
+  $query->addExpression('COUNT(DISTINCT(lang.field_language_value))', 'languages_count');
+  $query->addExpression('COUNT(DISTINCT(node.nid))', 'tools_count');
+  $query->leftJoin('node', 'node', 'fc.entity_id = node.nid');
+  $query->leftJoin('field_data_field_sector', 'sector', 'node.nid = sector.entity_id');
+  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
+  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
+  $query->leftJoin('field_data_field_publication_date', 'pd', 'node.nid = pd.entity_id');
+  $query->where('pd.field_publication_date_value <= NOW()');
+  $query->condition('node.status', 1);
+  return $query;
+}

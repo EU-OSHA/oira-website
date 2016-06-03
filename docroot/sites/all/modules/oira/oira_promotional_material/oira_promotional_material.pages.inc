@@ -100,9 +100,10 @@ function oira_promotional_material_search_form($form, $form_state) {
         foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
           if (!empty($options[$val])) {
             $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
+            $query = _hwc_practical_tool_strip_param_value($query_params, $field_name, $val) ?: ['text' => ''];
             $form['left-column']['search']['filters'][] = array(
               '#type' => 'markup',
-              '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
+              '#markup' => l($filter_label, 'promotional-materials/search', array('query' => $query, 'html' => TRUE)),
             );
           }
         }
@@ -173,6 +174,26 @@ function _oira_oira_promotional_material_search_form_get_facets() {
       'options_callback' => '_hwc_taxonomy_filter_options_list',
       'options_callback_args' => array('country'),
     ),
+    'field_language:value' => array(
+      'label' => t('Language'),
+      'field' => 'field_language:value',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => 'osha_language_list_options',
+      'options_callback_args' => array(TRUE),
+    ),
+    'field_promotional_material_type' => array(
+      'label' => t('Category'),
+      'field' => 'field_promotional_material_type',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => '_hwc_taxonomy_filter_options_list',
+      'options_callback_args' => array('promotional_material_type'),
+    ),
   ];
 }
 
@@ -187,9 +208,10 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
   list($server, $query) = hwc_practical_tool_menu_tools_get_query();
   $query->condition('status', 1);
   $query->condition('type', 'promotional_material');
+  $query->condition('language', 'en');
+  $query->condition('field_publication_date', time(), '<=');
   $query->keys($text);
-  $query->fields(array('title_field', 'body:value',
-    'field_alternative_title', 'field_alternative_body:value'));
+  $query->fields(array('title_field', 'body:value',));
   $query->setOption('search_api_facets', $facets_def);
   foreach ($facets_def as $field_name => $facet_def) {
     $selected_values = _hwc_practical_tool_get_req_param($form_state, $field_name, array());
@@ -203,11 +225,11 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
   }
   switch ($sort) {
     case 'alphabetically':
-      $query->sort('title2', 'ASC');
+      $query->sort('title', 'ASC');
       break;
 
     default:
-      $query->sort('field_revised_date', 'DESC');
+      $query->sort('field_publication_date', 'DESC');
       break;
   }
   $query->range($page * $per_page, $per_page);

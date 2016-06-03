@@ -43,8 +43,27 @@ function oira_promotional_material_block_view($delta = '') {
 function oira_promotional_material_taxonomy_term_view($term, $view_mode, $langcode) {
   $voc = taxonomy_vocabulary_machine_name_load('promotional_material_type');
   if ($term->vid == $voc->vid && $view_mode == 'full') {
-    drupal_goto('promotional-materials/search', ['query' => ['category' => $term->tid]]);
+    drupal_goto('promotional-materials/search', ['query' => ['field_promotional_material_type' => [$term->tid]]]);
   }
+}
+
+/**
+ * Use of osha_title_formatter_' . $entity->type . '_view'.
+ *
+ * Link the term title to promotional materials search page.
+ */
+function osha_title_formatter_promotional_material_type_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $voc = taxonomy_vocabulary_machine_name_load('promotional_material_type');
+  $return = '';
+  if (($entity_type == 'taxonomy_term')
+    && ($entity->vid == $voc->vid)
+    && ($field['field_name'] == 'name_field')) {
+    $item = reset($items);
+    $return = [
+      '#markup' => l($item['value'], 'promotional-materials/search', ['query' => ['field_promotional_material_type' => [$entity->tid]]]),
+    ];
+  }
+  return [$return];
 }
 
 /**
