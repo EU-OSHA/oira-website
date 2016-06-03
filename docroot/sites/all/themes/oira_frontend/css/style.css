@@ -6876,7 +6876,6 @@ a.more-link:before {
   margin-bottom: 14px;
   font-style: italic;
 }
-/*END PROMOTIONAL MATERIALS*/
 /*END HOME*/
 /*ESTILOS ARTICLES
 ****************************************************************/
@@ -6923,11 +6922,8 @@ a.more-link:before {
   padding-bottom: 23px;
   margin-bottom: 20px;
 }
-.node-type-article .panels-flexible-row-new-13 .pane-additional-resources .view-id-additional_resources .content {
-  background-color: #ffffff;
-}
-.node-type-article .panels-flexible-row-new-13 .pane-additional-resources .view-id-additional_resources .content .field-name-title-field {
-  padding: 10px 10px 10px 20px;
+.node-type-article .panels-flexible-row-new-13 #additional-resources-external_url-pane .view-additional-resources .views-item-columns-container {
+  padding: 10px!important;
 }
 /*FOOTER
 ********************************************/
