@@ -102,7 +102,7 @@ function oira_promotional_material_search_form($form, $form_state) {
             $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
             $form['left-column']['search']['filters'][] = array(
               '#type' => 'markup',
-              '#markup' => l($filter_label, 'oira-tools', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
+              '#markup' => l($filter_label, 'promotional-materials/search', array('query' => _hwc_practical_tool_strip_param_value($query_params, $field_name, $val), 'html' => TRUE)),
             );
           }
         }
