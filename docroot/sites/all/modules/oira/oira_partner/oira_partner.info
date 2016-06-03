@@ -122,5 +122,5 @@ features[variable][] = webform_node_collaborator
 features[variable][] = workbench_access_node_type_collaborator
 features[variable][] = workbench_moderation_default_state_collaborator
 features[variable][] = xmlsitemap_settings_node_collaborator
-features[views_view][] = related_partner
 features[views_view][] = partners_list
+features[views_view][] = related_partner
