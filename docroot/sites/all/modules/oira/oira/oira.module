@@ -159,3 +159,13 @@ function oira_configuration_form($form, &$form_state) {
   $form = system_settings_form($form);
   return $form;
 }
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function oira_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['body'] = array(
+    'label' => t('Body'),
+    'custom settings' => TRUE,
+  );
+}
