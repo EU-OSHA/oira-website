@@ -127,9 +127,9 @@ function oira_partner_default_page_manager_pages() {
       'links' => 1,
       'leave_node_title' => 0,
       'identifier' => '',
-      'build_mode' => 'full',
+      'build_mode' => 'body',
       'link_node_title' => 0,
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );

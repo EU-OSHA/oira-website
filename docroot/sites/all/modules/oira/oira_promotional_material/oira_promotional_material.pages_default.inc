@@ -130,7 +130,7 @@ function oira_promotional_material_default_page_manager_pages() {
       'links' => 0,
       'leave_node_title' => 0,
       'identifier' => '',
-      'build_mode' => 'full',
+      'build_mode' => 'body',
       'link_node_title' => 0,
       'override_title' => 1,
       'override_title_text' => '',

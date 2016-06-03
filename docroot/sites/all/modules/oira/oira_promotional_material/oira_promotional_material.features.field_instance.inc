@@ -17,6 +17,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'osha',
@@ -83,6 +89,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -142,6 +154,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -203,6 +221,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'link',
@@ -286,6 +310,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'file',
@@ -377,6 +407,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'image',
@@ -476,6 +512,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'languagefield',
@@ -541,6 +583,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -602,6 +650,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'date',
@@ -678,6 +732,12 @@ function oira_promotional_material_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),

@@ -37,7 +37,6 @@ dependencies[] = nodequeue
 dependencies[] = number
 dependencies[] = oira
 dependencies[] = options
-dependencies[] = osha
 dependencies[] = osha_resources
 dependencies[] = osha_taxonomies
 dependencies[] = page_manager
