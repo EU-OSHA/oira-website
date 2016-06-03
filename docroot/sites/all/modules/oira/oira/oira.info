@@ -19,3 +19,5 @@ features[variable][] = ds_extras_fields_extra
 features[variable][] = ds_extras_fields_extra_list
 features[variable][] = text_resize_scope
 features[views_view][] = what_s_new_article
+files[] = oira.views.inc
+files[] = includes/hwc_quicktabs_style_plugin.inc

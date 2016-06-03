@@ -111,5 +111,307 @@ function oira_partner_views_default_views() {
   );
   $export['related_partner'] = $view;
 
+  $view = new view();
+  $view->name = 'partners_list';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Partners list';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'OCP list';
+  $handler->display->display_options['css_class'] = 'hwc-alpha-pager-view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'hwc_quicktabs';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_orgtype',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['tab_title_field'] = 'field_orgtype';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-2 col-sm-3 col-xs-6';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Country (field_country) */
+  $handler->display->display_options['relationships']['field_country_tid']['id'] = 'field_country_tid';
+  $handler->display->display_options['relationships']['field_country_tid']['table'] = 'field_data_field_country';
+  $handler->display->display_options['relationships']['field_country_tid']['field'] = 'field_country_tid';
+  /* Field: Content: Organisation Type */
+  $handler->display->display_options['fields']['field_orgtype']['id'] = 'field_orgtype';
+  $handler->display->display_options['fields']['field_orgtype']['table'] = 'field_data_field_orgtype';
+  $handler->display->display_options['fields']['field_orgtype']['field'] = 'field_orgtype';
+  $handler->display->display_options['fields']['field_orgtype']['label'] = '';
+  $handler->display->display_options['fields']['field_orgtype']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_orgtype']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_orgtype']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_orgtype']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['element_wrapper_class'] = 'hwc-alpha-pager-view-title-field';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img src="[field_logo-fid]" title="[title_field]" alt="[title_field]" />';
+  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Organization (field_press_contact_organization) */
+  $handler->display->display_options['sorts']['field_press_contact_organization_value']['id'] = 'field_press_contact_organization_value';
+  $handler->display->display_options['sorts']['field_press_contact_organization_value']['table'] = 'field_data_field_press_contact_organization';
+  $handler->display->display_options['sorts']['field_press_contact_organization_value']['field'] = 'field_press_contact_organization_value';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'partner' => 'partner',
+  );
+  /* Filter criterion: Content: Type (field_partner_type) */
+  $handler->display->display_options['filters']['field_partner_type_tid']['id'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['table'] = 'field_data_field_partner_type';
+  $handler->display->display_options['filters']['field_partner_type_tid']['field'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['value'] = array(
+    0 => '185',
+  );
+  $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Organisation Type (field_orgtype) */
+  $handler->display->display_options['relationships']['field_orgtype_tid']['id'] = 'field_orgtype_tid';
+  $handler->display->display_options['relationships']['field_orgtype_tid']['table'] = 'field_data_field_orgtype';
+  $handler->display->display_options['relationships']['field_orgtype_tid']['field'] = 'field_orgtype_tid';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['relationship'] = 'field_orgtype_tid';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'fop');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'FOP list';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-2 col-sm-3 col-xs-6';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Flag */
+  $handler->display->display_options['fields']['field_flag']['id'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['table'] = 'field_data_field_flag';
+  $handler->display->display_options['fields']['field_flag']['field'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['relationship'] = 'field_country_tid';
+  $handler->display->display_options['fields']['field_flag']['label'] = '';
+  $handler->display->display_options['fields']['field_flag']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_flag']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_flag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_flag']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_flag']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['relationship'] = 'field_country_tid';
+  $handler->display->display_options['fields']['name_field']['label'] = '';
+  $handler->display->display_options['fields']['name_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name_field']['element_wrapper_class'] = 'hwc-alpha-pager-view-title-field';
+  $handler->display->display_options['fields']['name_field']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Country (field_country) */
+  $handler->display->display_options['sorts']['field_country_tid']['id'] = 'field_country_tid';
+  $handler->display->display_options['sorts']['field_country_tid']['table'] = 'field_data_field_country';
+  $handler->display->display_options['sorts']['field_country_tid']['field'] = 'field_country_tid';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'partner' => 'partner',
+  );
+  /* Filter criterion: Content: Type (field_partner_type) */
+  $handler->display->display_options['filters']['field_partner_type_tid']['id'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['table'] = 'field_data_field_partner_type';
+  $handler->display->display_options['filters']['field_partner_type_tid']['field'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['value'] = array(
+    0 => '187',
+  );
+  $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'MOP list';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-2 col-sm-3 col-xs-6';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['element_wrapper_class'] = 'hwc-alpha-pager-view-title-field';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img src="[field_logo-fid]" title="[title_field]" alt="[title_field]" />';
+  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'partner' => 'partner',
+  );
+  /* Filter criterion: Content: Type (field_partner_type) */
+  $handler->display->display_options['filters']['field_partner_type_tid']['id'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['table'] = 'field_data_field_partner_type';
+  $handler->display->display_options['filters']['field_partner_type_tid']['field'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['value'] = array(
+    0 => '186',
+  );
+  $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
+  $translatables['partners_list'] = array(
+    t('Master'),
+    t('OCP list'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('term from field_country'),
+    t('<img src="[field_logo-fid]" title="[title_field]" alt="[title_field]" />'),
+    t('[title_field]'),
+    t('Block'),
+    t('term from field_orgtype'),
+    t('FOP list'),
+    t('MOP list'),
+  );
+  $export['partners_list'] = $view;
+
   return $export;
 }
