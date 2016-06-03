@@ -9,20 +9,19 @@ body{
 	font-size: 16px;
 }
 
-
 input, select{
 	box-shadow: none !important;
 }
+
 h3.pane-title{
 	color: #967ea6;
 	border-bottom: 2px solid @color-text-purple;
 	font-size: 2.2em;
 	padding-bottom: 3px;
 	font-weight: bold;
-
  }
+
 h4{
-	//padding: 5px 0px 10px 15px;
 	a{
 		color: @color-text-grey;
 		font-size: @font-size0-75;
@@ -40,7 +39,6 @@ h4{
     background-image: @image-bag-purple;
     background-position: right;
     background-repeat: no-repeat;
-
 }
 
 .more-link{
@@ -51,6 +49,7 @@ h4{
 		display: block;
 		text-align: right;
 		font-size: @font-size0-85;
+		margin-top: 20px;
 		&:before{
 			content:'>';
 		}
@@ -66,11 +65,30 @@ a.more-link{
 	font-size: @font-size0-85;
 	&:before{
 		content:'>';
-		}
-	
+	}
 }
 
+.panels-flexible-row{
+	padding-bottom: 25px;
+}
 
+.glyphicon-new-window{
+	display: block;
+	text-align: right;
+}
+
+/*Bloques de columnas*/
+.views-item-columns-container{
+	background-color: @color-white;
+	width: 100%;
+	a{
+		display: block;
+    	.glyphicon-new-window{
+    		display: block;
+    		text-align: right;
+    	}
+	}
+}
 
 /*END estilos comunes
 ************************************************************************************/
@@ -78,12 +96,64 @@ a.more-link{
 /*ESTILOS HOME
 ********************************************************/
 
-/*PROMOTIONAL MATERIALS
-********************************************************/
 #block-system-main{
-	.panels-flexible-row-new-6{
 
+	//slider
+	.view-id-slideshow{
+		.owl-wrapper{
+			.views-field-field-image{
+				position: relative;
+			}
+			.views-field-title-field{
+				position: absolute;
+				width: 1140px;
+				top: 45%;
+				left: 10%;
+				a{
+					color: @color-white;
+				}
+			}
+			.views-field-body{
+				position: absolute;
+				width: 1140px;
+				top: 63%;
+				left: 10%;
+				color: @color-white;
+			}
+		}
+		.owl-controls.clickable{
+			position: absolute;
+			left: 50%;
+    		top: 95%;
+    		transform: translate(-50%, -95%);
+    		-webkit-transform: translate(-50%, -95%);
+    		.owl-page{
+    			span{
+				background: @color-white !important;
+				}
+    		}
+		}
 	}
+
+	//Latest news
+	.panels-flexible-row-new-6{
+		background-color: @color-background-light-purple;
+		.panels-flexible-region-new-news_section{
+			.view-display-id-attachment_1{
+				border-bottom: 2px solid @color-primary-dark;
+				padding-bottom: 30px;
+    			padding-top: 20px;
+    			margin-bottom: 20px;
+			}
+			.views-item-columns-container{
+				background-color: @color-white;
+				padding: 10px;
+				min-height: 250px;
+			}
+		}
+	}
+
+	//Promotional materials
 	.panels-flexible-region-new-promotional_materials{
 		.pane-promotional-materials{
 			div.pane-title{
@@ -94,15 +164,16 @@ a.more-link{
 	    		font-style: italic;
 			}
 			.view-promotional-materials{
-				.col-md-4{
-					.views-item-columns-container{
-						background-color: @color-background-light-purple; 	
-					}
+				.views-item-columns-container{
+					background-color: @color-background-light-purple;
+					min-height: 320px;
 				}
 			}
 		}
 
 	}
+
+	//Oira tools
 	.panels-flexible-row-new-16{
 		background-color: @color-background-light-purple;
 		.view-display-id-block{
@@ -112,7 +183,7 @@ a.more-link{
     		margin-bottom: 20px;
     		.field-name-title-field{
     			a{
-    				font-size: @font-size2;	
+    				font-size: @font-size1-2;	
     			}
     			
     		}
@@ -120,11 +191,13 @@ a.more-link{
 		.view-display-id-block_1{
 			.views-item-columns-container{
 				background-color: @color-white;
-				padding: 5px 0px 5px 10px;
+				padding: 10px;
 				a{
 					display: block;
-    				text-align: right;
-    				margin-right: 10px
+    				.glyphicon-new-window{
+    					display: block;
+    					text-align: right;
+    				}
 				}
 			}
 		}
@@ -141,10 +214,5 @@ a.more-link{
 		}
 	}
 }
-
-/*END PROMOTIONAL MATERIALS*/
-
-
-
 
 /*END HOME*/
