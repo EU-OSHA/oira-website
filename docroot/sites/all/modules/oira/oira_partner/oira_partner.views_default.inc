@@ -39,7 +39,7 @@ function oira_partner_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['tab_title_field'] = 'field_orgtype';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-2 col-sm-3 col-xs-6';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Country (field_country) */
   $handler->display->display_options['relationships']['field_country_tid']['id'] = 'field_country_tid';
