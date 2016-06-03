@@ -163,6 +163,16 @@ function oira_promotional_material_form_oira_promotional_material_search_form_al
 
 function _oira_oira_promotional_material_search_form_get_facets() {
   return [
+    'field_language:value' => array(
+      'label' => t('Language'),
+      'field' => 'field_language:value',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => 'osha_language_list_options',
+      'options_callback_args' => array(TRUE),
+    ),
     'field_country' => array(
       'label' => t('Country'),
       'field' => 'field_country',
@@ -203,11 +213,11 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
   }
   switch ($sort) {
     case 'alphabetically':
-      $query->sort('title2', 'ASC');
+      $query->sort('title', 'ASC');
       break;
 
     default:
-      $query->sort('field_revised_date', 'DESC');
+      $query->sort('field_publication_date', 'DESC');
       break;
   }
   $query->range($page * $per_page, $per_page);
