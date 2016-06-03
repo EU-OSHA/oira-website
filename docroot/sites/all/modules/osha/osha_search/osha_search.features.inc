@@ -125,13 +125,12 @@ function osha_search_default_search_api_index() {
             "default" : "0",
             "bundles" : {
               "article" : "article",
-              "event_speaker" : "event_speaker",
-              "events" : "events",
               "faq" : "faq",
               "news" : "news",
               "practical_tool" : "practical_tool",
               "partner" : "partner",
               "press_release" : "press_release",
+              "promotional_material" : "promotional_material",
               "wiki_page" : "wiki_page"
             }
           }
