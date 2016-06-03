@@ -231,7 +231,15 @@ function oira_promotional_material_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+        'entity_id' => '51',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
   );
@@ -303,25 +311,26 @@ function oira_promotional_material_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Promotional materials';
+  $display->title = '%node:title-field';
   $display->uuid = 'eee1a97d-d0a3-4ef0-8501-cbacda3efc96';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-98e71801-ad9d-48c8-82d9-9f808eeb0b59';
+    $pane->pid = 'new-b50c66f5-a042-49cc-ac8e-62f90efbb783';
     $pane->panel = 'center';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '51',
-      'links' => 1,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'full',
-      'link_node_title' => 0,
-      'override_title' => 1,
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -333,9 +342,9 @@ function oira_promotional_material_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '98e71801-ad9d-48c8-82d9-9f808eeb0b59';
-    $display->content['new-98e71801-ad9d-48c8-82d9-9f808eeb0b59'] = $pane;
-    $display->panels['center'][0] = 'new-98e71801-ad9d-48c8-82d9-9f808eeb0b59';
+    $pane->uuid = 'b50c66f5-a042-49cc-ac8e-62f90efbb783';
+    $display->content['new-b50c66f5-a042-49cc-ac8e-62f90efbb783'] = $pane;
+    $display->panels['center'][0] = 'new-b50c66f5-a042-49cc-ac8e-62f90efbb783';
     $pane = new stdClass();
     $pane->pid = 'new-f67ccc71-f867-417a-86af-9bfec9a169e1';
     $pane->panel = 'content';
@@ -360,7 +369,7 @@ function oira_promotional_material_default_page_manager_pages() {
     $display->content['new-f67ccc71-f867-417a-86af-9bfec9a169e1'] = $pane;
     $display->panels['content'][0] = 'new-f67ccc71-f867-417a-86af-9bfec9a169e1';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-98e71801-ad9d-48c8-82d9-9f808eeb0b59';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['promotional_materials_search'] = $page;
