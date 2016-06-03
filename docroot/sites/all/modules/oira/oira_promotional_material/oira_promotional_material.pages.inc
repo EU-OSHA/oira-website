@@ -198,6 +198,7 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
   $query->condition('status', 1);
   $query->condition('type', 'promotional_material');
   $query->condition('language', 'en');
+  $query->condition('field_publication_date', time(), '<=');
   $query->keys($text);
   $query->fields(array('title_field', 'body:value',
     'field_alternative_title', 'field_alternative_body:value'));
