@@ -19,6 +19,7 @@ h3.pane-title{
 	font-size: @font-size2-2;
 	padding-bottom: 3px;
 	font-weight: bold;
+	margin-top: 50px;
  }
 
 h4{
@@ -81,6 +82,9 @@ a.more-link{
 	display: block;
 	text-align: right;
 	font-size: @font-size0-85;
+	position: absolute;
+    right: 30px;
+    bottom: 15px;
 	&:before{
 		content:'>';
 	}
@@ -162,10 +166,17 @@ a.more-link{
 				padding-bottom: 30px;
     			padding-top: 20px;
     			margin-bottom: 20px;
+    			.field-name-field-image{
+    				img{
+    					width: 100%;
+    					max-height: 310px; 
+    				}
+    			}
 			}
 			.views-item-columns-container{
 				background-color: @color-white;
 				padding: 10px;
+				padding-bottom: 40px;
 				min-height: 250px;
 			}
 		}
@@ -199,6 +210,12 @@ a.more-link{
 			padding-bottom: 30px;
     		padding-top: 20px;
     		margin-bottom: 20px;
+    		.field-name-field-image{
+    			img{
+    				width: 100%;
+    				max-height: 310px; 
+    			}
+    		}
     		.field-name-title-field{
     			a{
     				font-size: @font-size1-2;	

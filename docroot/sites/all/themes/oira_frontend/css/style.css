@@ -6717,6 +6717,7 @@ h3.pane-title {
   font-size: 2.2em;
   padding-bottom: 3px;
   font-weight: bold;
+  margin-top: 50px;
 }
 h4 a {
   color: #58585a;
@@ -6765,6 +6766,9 @@ a.more-link {
   display: block;
   text-align: right;
   font-size: 0.85em;
+  position: absolute;
+  right: 30px;
+  bottom: 15px;
 }
 a.more-link:before {
   content: '>';
@@ -6830,9 +6834,14 @@ a.more-link:before {
   padding-top: 20px;
   margin-bottom: 20px;
 }
+#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .view-display-id-attachment_1 .field-name-field-image img {
+  width: 100%;
+  max-height: 310px;
+}
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container {
   background-color: #ffffff;
   padding: 10px;
+  padding-bottom: 40px;
   min-height: 250px;
 }
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials div.pane-title {
@@ -6854,6 +6863,10 @@ a.more-link:before {
   padding-bottom: 30px;
   padding-top: 20px;
   margin-bottom: 20px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-field-image img {
+  width: 100%;
+  max-height: 310px;
 }
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-title-field a {
   font-size: 1.2em;
