@@ -42,7 +42,15 @@ function oira_promotional_material_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+        'entity_id' => '50',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
   );
@@ -114,25 +122,26 @@ function oira_promotional_material_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Promotional materials';
+  $display->title = '%node:title-field';
   $display->uuid = '7dd8d375-af95-477e-8e79-6b2b32ecb776';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-8d7b9f9b-7016-48e8-8f6b-9e09a85bddc1';
+    $pane->pid = 'new-3c0a4591-79b6-47df-b1f9-b751d3c340bc';
     $pane->panel = 'center';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '50',
-      'links' => 0,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'body',
-      'link_node_title' => 0,
-      'override_title' => 1,
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -144,9 +153,9 @@ function oira_promotional_material_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '8d7b9f9b-7016-48e8-8f6b-9e09a85bddc1';
-    $display->content['new-8d7b9f9b-7016-48e8-8f6b-9e09a85bddc1'] = $pane;
-    $display->panels['center'][0] = 'new-8d7b9f9b-7016-48e8-8f6b-9e09a85bddc1';
+    $pane->uuid = '3c0a4591-79b6-47df-b1f9-b751d3c340bc';
+    $display->content['new-3c0a4591-79b6-47df-b1f9-b751d3c340bc'] = $pane;
+    $display->panels['center'][0] = 'new-3c0a4591-79b6-47df-b1f9-b751d3c340bc';
     $pane = new stdClass();
     $pane->pid = 'new-a4743c6b-60b2-4533-9a7b-f1d719d803dd';
     $pane->panel = 'promotional_materials';
