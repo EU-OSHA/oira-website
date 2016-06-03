@@ -116,6 +116,35 @@ function oira_partner_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-79bc5ceb-fdd8-4668-a131-4214f85f20ab';
+    $pane->panel = 'center';
+    $pane->type = 'node';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'nid' => '52',
+      'links' => 1,
+      'leave_node_title' => 0,
+      'identifier' => '',
+      'build_mode' => 'full',
+      'link_node_title' => 0,
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '79bc5ceb-fdd8-4668-a131-4214f85f20ab';
+    $display->content['new-79bc5ceb-fdd8-4668-a131-4214f85f20ab'] = $pane;
+    $display->panels['center'][0] = 'new-79bc5ceb-fdd8-4668-a131-4214f85f20ab';
+    $pane = new stdClass();
     $pane->pid = 'new-b9cabf9d-c26e-49c4-990d-4e3a5392419e';
     $pane->panel = 'content';
     $pane->type = 'views';
