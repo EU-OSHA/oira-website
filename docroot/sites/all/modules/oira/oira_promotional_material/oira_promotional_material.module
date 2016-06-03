@@ -5,3 +5,95 @@
  */
 
 include_once 'oira_promotional_material.features.inc';
+
+/**
+ * Implements hook_block_info().
+ */
+function oira_promotional_material_block_info() {
+  $blocks = array();
+  $blocks['oira_promotional_listing'] = array(
+    'info' => t('Promotional materials listing'),
+    'status' => 1,
+    'region' => '-1',
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function oira_promotional_material_block_view($delta = '') {
+  $block = [];
+  switch ($delta) {
+    case 'oira_promotional_listing':
+      module_load_include('inc', 'oira_promotional_material', 'oira_promotional_material.pages');
+      // Re-use some functions from hwc_practical_tool module
+      module_load_include('inc', 'hwc_practical_tool', 'hwc_practical_tool.pages');
+      $block['content'] = drupal_get_form('oira_promotional_material_search_form');
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_taxonomy_term_view().
+ */
+function oira_promotional_material_taxonomy_term_view($term, $view_mode, $langcode) {
+  $voc = taxonomy_vocabulary_machine_name_load('promotional_material_type');
+  if ($term->vid == $voc->vid && $view_mode == 'full') {
+    drupal_goto('promotional-materials/search', ['query' => ['category' => $term->tid]]);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function oira_promotional_material_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'promotional_material_node_form':
+      unset($form['field_country']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_node_submit().
+ */
+function oira_promotional_material_node_submit($node, $form, &$form_state) {
+  if ($node->type == 'promotional_material') {
+    if (!empty($node->workbench_access)) {
+      $partner = oira_partner_by_section_id_load($node->workbench_access);
+      if (!empty($partner)) {
+        $node->field_country = $partner->field_country;
+        node_save($node);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function oira_promotional_material_node_presave($node) {
+  if ($node->type == 'partner') {
+    $old_country = !empty($node->original->field_country) ? $node->original->field_country[LANGUAGE_NONE][0]['tid'] : NULL;
+    $new_country = !empty($node->field_country) ? $node->field_country[LANGUAGE_NONE][0]['tid'] : NULL;
+    if ($old_country !== $new_country) {
+      $q = db_select('workbench_access_node', 'w');
+      $q->innerJoin('node', 'n', 'w.nid = n.nid');
+      $q->fields('n', ['nid'])
+        ->condition('n.type', 'promotional_material')
+        ->condition('w.access_id', $node->workbench_access);
+      $pm_nids = $q->execute()->fetchCol();
+      foreach ($pm_nids as $nid) {
+        field_attach_update('node', (object) [
+          'nid' => $nid,
+          'type' => 'promotional_material',
+          'field_country' => $node->field_country,
+        ]);
+      }
+    }
+  }
+}

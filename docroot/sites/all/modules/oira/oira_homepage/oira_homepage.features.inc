@@ -49,11 +49,29 @@ function oira_homepage_fe_nodequeue_export_fields() {
     'i18n' => 0,
     'subqueues' => 1,
     'types' => array(
-      0 => 'article',
+      0 => 'slide',
     ),
     'roles' => array(),
     'count' => 0,
   );
 
   return $nodequeues;
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function oira_homepage_node_info() {
+  $items = array(
+    'slide' => array(
+      'name' => 'Slide',
+      'base' => 'node_content',
+      'description' => 'Custom content type used for slideshow.',
+      'has_title' => '1',
+      'title_label' => 'Title',
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
 }

@@ -68,19 +68,19 @@ function oira_promotional_material_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '12',
-        ),
-        'path' => array(
           'weight' => '11',
         ),
-        'redirect' => array(
+        'path' => array(
           'weight' => '10',
         ),
+        'redirect' => array(
+          'weight' => '9',
+        ),
         'workbench_access' => array(
-          'weight' => '8',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
       ),
       'display' => array(),
