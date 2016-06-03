@@ -169,19 +169,111 @@ function oira_homepage_field_default_field_instances() {
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
-        'manualcrop_enable' => 0,
+        'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => 0,
         'manualcrop_instant_crop' => FALSE,
         'manualcrop_instant_preview' => 1,
         'manualcrop_keyboard' => 1,
         'manualcrop_maximize_default_crop_area' => 0,
-        'manualcrop_require_cropping' => array(),
+        'manualcrop_require_cropping' => array(
+          'article_image' => 'article_image',
+        ),
         'manualcrop_styles_list' => array(),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-slide-field_link'.
+  $field_instances['node-slide-field_link'] = array(
+    'bundle' => 'slide',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link',
+    'label' => 'Link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 0,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -249,7 +341,7 @@ function oira_homepage_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
@@ -257,6 +349,7 @@ function oira_homepage_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Image');
+  t('Link');
   t('Title');
 
   return $field_instances;
