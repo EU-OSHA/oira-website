@@ -39,7 +39,15 @@ function oira_partner_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+        'entity_id' => '52',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
   );
@@ -111,25 +119,26 @@ function oira_partner_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'EU/National Social Partners';
+  $display->title = '%node:title-field';
   $display->uuid = '47b47281-c299-48fd-9a54-2e3c7de4c9a5';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-79bc5ceb-fdd8-4668-a131-4214f85f20ab';
+    $pane->pid = 'new-00d918f2-7943-4290-9a2f-b0573c60d87c';
     $pane->panel = 'center';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'nid' => '52',
-      'links' => 1,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'body',
-      'link_node_title' => 0,
-      'override_title' => 1,
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -141,9 +150,9 @@ function oira_partner_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '79bc5ceb-fdd8-4668-a131-4214f85f20ab';
-    $display->content['new-79bc5ceb-fdd8-4668-a131-4214f85f20ab'] = $pane;
-    $display->panels['center'][0] = 'new-79bc5ceb-fdd8-4668-a131-4214f85f20ab';
+    $pane->uuid = '00d918f2-7943-4290-9a2f-b0573c60d87c';
+    $display->content['new-00d918f2-7943-4290-9a2f-b0573c60d87c'] = $pane;
+    $display->panels['center'][0] = 'new-00d918f2-7943-4290-9a2f-b0573c60d87c';
     $pane = new stdClass();
     $pane->pid = 'new-b9cabf9d-c26e-49c4-990d-4e3a5392419e';
     $pane->panel = 'content';
