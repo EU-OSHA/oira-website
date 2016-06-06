@@ -181,7 +181,10 @@ function osha_news_strongarm() {
         'share_widget' => array(
           'default' => array(
             'weight' => '1',
+            'label' => 'above',
+            'type' => 'visible',
             'visible' => TRUE,
+            'settings' => array(),
           ),
         ),
       ),

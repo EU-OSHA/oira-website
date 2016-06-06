@@ -40,50 +40,43 @@ function osha_news_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'ds_1col_wrapper';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
-        0 => 'field_image',
-      ),
-      'right' => array(
+      'ds_content' => array(
+        0 => 'title_field',
         1 => 'share_widget',
-        2 => 'field_publication_date',
-        3 => 'title_field',
-        4 => 'field_summary',
+        2 => 'field_summary',
+        3 => 'field_publication_date',
+        4 => 'field_image',
         5 => 'body',
       ),
     ),
     'fields' => array(
-      'field_image' => 'left',
-      'share_widget' => 'right',
-      'field_publication_date' => 'right',
-      'title_field' => 'right',
-      'field_summary' => 'right',
-      'body' => 'right',
+      'title_field' => 'ds_content',
+      'share_widget' => 'ds_content',
+      'field_summary' => 'ds_content',
+      'field_publication_date' => 'ds_content',
+      'field_image' => 'ds_content',
+      'body' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
         'row' => 'row',
       ),
-      'left' => array(
-        'col-sm-3' => 'col-sm-3',
-      ),
-      'right' => array(
-        '' => '',
-        'col-sm-9' => 'col-sm-9',
+      'ds_content' => array(
+        'col-md-12' => 'col-md-12',
       ),
     ),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'layout_disable_css' => 1,
+    'layout_disable_css' => FALSE,
   );
   $export['node|news|default'] = $ds_layout;
 
