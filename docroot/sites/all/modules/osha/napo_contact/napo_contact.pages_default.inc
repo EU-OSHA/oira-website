@@ -76,6 +76,7 @@ function napo_contact_default_page_manager_pages() {
         'width_type' => '%',
         'children' => array(
           0 => 'main-row',
+          1 => 1,
         ),
         'parent' => 'canvas',
         'class' => 'container',
@@ -91,10 +92,31 @@ function napo_contact_default_page_manager_pages() {
       ),
       'center' => array(
         'type' => 'region',
-        'title' => 'Center',
+        'title' => 'Introduction',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'content',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'content' => array(
+        'type' => 'region',
+        'title' => 'Content',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => 'container',
+        'hide_empty' => 0,
       ),
     ),
   );
@@ -102,6 +124,7 @@ function napo_contact_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'center' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -141,7 +164,7 @@ function napo_contact_default_page_manager_pages() {
     $display->panels['center'][0] = 'new-3d25cf45-016d-46c9-bc67-6cdc8d8c8a27';
     $pane = new stdClass();
     $pane->pid = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
-    $pane->panel = 'center';
+    $pane->panel = 'content';
     $pane->type = 'views';
     $pane->subtype = 'faqs';
     $pane->shown = TRUE;
@@ -169,11 +192,11 @@ function napo_contact_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '874d4ecb-3c87-42c4-a50c-95577656a7cd';
     $display->content['new-874d4ecb-3c87-42c4-a50c-95577656a7cd'] = $pane;
-    $display->panels['center'][1] = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
+    $display->panels['content'][0] = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
   $handler->conf['display'] = $display;

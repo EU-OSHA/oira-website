@@ -173,7 +173,7 @@
   <?php endif; ?>
 </div>
 <?php if (!empty($page['contact_form_widget'])): ?>
-  <section class="contact-form-widget-container">
+  <section class="contact-form-widget-container container">
     <?php print render($page['contact_form_widget']); ?>
   </section>
 <?php endif; ?>
