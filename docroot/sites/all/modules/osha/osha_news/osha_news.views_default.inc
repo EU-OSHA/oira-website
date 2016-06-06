@@ -253,13 +253,26 @@ function osha_news_views_default_views() {
     'osha_date_theme' => '',
     'field_formatter_class' => '',
   );
-  /* Field: Content: Summary */
-  $handler->display->display_options['fields']['field_summary']['id'] = 'field_summary';
-  $handler->display->display_options['fields']['field_summary']['table'] = 'field_data_field_summary';
-  $handler->display->display_options['fields']['field_summary']['field'] = 'field_summary';
-  $handler->display->display_options['fields']['field_summary']['label'] = '';
-  $handler->display->display_options['fields']['field_summary']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_summary']['settings'] = array(
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_link' => '0',
+    'trim_length' => '300',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '1',
+    'more_text' => 'See more details',
+    'summary_handler' => 'full',
+    'trim_options' => array(
+      'use_field_summary' => 'use_field_summary',
+      'text' => 0,
+    ),
+    'trim_preserve_tags' => '',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['block_description'] = 'Latest news';
