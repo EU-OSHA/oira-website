@@ -84,8 +84,8 @@ class hwc_quicktabs_style_plugin extends quicktabs_style_plugin {
       }
     }
 
-    // Sort all results for all tab.
-    asort($all_rows);
+    // WHY sort the results by title???
+//    asort($all_rows);
 
     $contents = '';
     foreach (array_keys($all_rows) as $row_index) {
