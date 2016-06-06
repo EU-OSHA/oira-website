@@ -527,6 +527,7 @@ $options['init-modules'] = array(
 
   'osha_lingua_tools',
   'ncw_migration',
+  'oira_workflow',
 
   // Newsletter modules.
 //  'entity_collection',

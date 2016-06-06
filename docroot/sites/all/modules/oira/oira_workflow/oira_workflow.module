@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_mail_alter().
+ */
+function oira_workflow_mail_alter(&$message) {
+  if (strpos($message['key'], 'oira_workflow')) {
+    // Block mails that are send for hwc workflow if user's preference.
+    $user = user_load_by_mail($message['to']);
+    $send_notif = variable_get('osha_workflow_send_mail', FALSE);
+    // when using rereoute mail, the to address is not of an user.
+    $usr_receive_notif = empty($user) || !empty($user->field_cmw_mail_notifications[LANGUAGE_NONE][0]['value']);
+    if (!$send_notif || !$usr_receive_notif) {
+      $message['send'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function oira_workflow_node_access($node, $op, $account) {
+  $type = is_string($node) ? $node : $node->type;
+  if (($op == 'update' || $op == 'delete')
+    && in_array($node->type, ncw_migration_get_migrated_bundles())
+    && $node->uid == 0) {
+    return NODE_ACCESS_DENY;
+  }
+
+  return NODE_ACCESS_IGNORE;
+}

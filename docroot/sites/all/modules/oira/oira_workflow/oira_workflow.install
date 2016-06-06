@@ -1,0 +1,9 @@
+<?php
+
+function oira_workflow_install() {
+  // Set modules weight after wa module.
+  db_update('system')
+    ->fields(array('weight' => 10))
+    ->condition('name', 'oira_workflow', '=')
+    ->execute();
+}
