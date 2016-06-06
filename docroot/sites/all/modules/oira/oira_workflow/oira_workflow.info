@@ -1,0 +1,7 @@
+name = OiRA Workflow
+core = 7.x
+package = Oira
+version = 7.x-0.1
+project = oira_workflow
+dependencies[] = entity
+dependencies[] = workbench_moderation
