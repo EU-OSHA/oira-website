@@ -42,7 +42,15 @@ function napo_contact_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+        'entity_id' => '55',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
@@ -97,10 +105,40 @@ function napo_contact_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'FAQ';
+  $display->title = '%node:title-field';
   $display->uuid = '09f4eb3a-d953-42a2-b462-034023030f5a';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-3d25cf45-016d-46c9-bc67-6cdc8d8c8a27';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '3d25cf45-016d-46c9-bc67-6cdc8d8c8a27';
+    $display->content['new-3d25cf45-016d-46c9-bc67-6cdc8d8c8a27'] = $pane;
+    $display->panels['center'][0] = 'new-3d25cf45-016d-46c9-bc67-6cdc8d8c8a27';
     $pane = new stdClass();
     $pane->pid = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
     $pane->panel = 'center';
@@ -131,11 +169,11 @@ function napo_contact_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '874d4ecb-3c87-42c4-a50c-95577656a7cd';
     $display->content['new-874d4ecb-3c87-42c4-a50c-95577656a7cd'] = $pane;
-    $display->panels['center'][0] = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
+    $display->panels['center'][1] = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
   $handler->conf['display'] = $display;
