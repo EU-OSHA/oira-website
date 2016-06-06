@@ -37,7 +37,6 @@ function oira_promotional_material_search_form($form, $form_state) {
   $form['content']['sort_fieldset'] = array(
     /* Needed so that the page passes Web Accessibility test */
     '#type' => 'fieldset',
-    '#attributes' => array('class' => array('col-md-12')),
   );
   $form['content']['sort_fieldset']['sort'] = array(
     '#type' => 'select',
