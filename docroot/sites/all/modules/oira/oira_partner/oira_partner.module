@@ -142,18 +142,18 @@ function _oira_partner_compute_content_count($node) {
  * Implements hook_views_pre_render().
  */
 function oira_partner_views_pre_render(&$view) {
-  if ($view->name == 'partners_list' && $view->current_display == 'default') {
+  if ($view->name == 'partners_list' && $view->current_display == 'block') {
     global $language;
     $results = &$view->result;
     // Sort the results by country name (using UTF-8).
     uasort($results, function($a, $b) use ($language) {
       if(class_exists('Collator')) { // requires php-intl extension
         $collator = new \Collator($language->language);
-        return $collator->compare($a->field_name_field[0]['rendered']['#markup'], $b->field_name_field[0]['rendered']['#markup']);
+        return $collator->compare($a->field_field_country[0]['rendered']['#title'], $b->field_field_country[0]['rendered']['#title']);
       }
       else { // sorting in some languages (greek) are wrong
-        $str1 = htmlspecialchars($a->field_name_field[0]['rendered']['#markup']);
-        $str2 = htmlspecialchars($b->field_name_field[0]['rendered']['#markup']);
+        $str1 = htmlspecialchars($a->field_field_country[0]['rendered']['#title']);
+        $str2 = htmlspecialchars($b->field_field_country[0]['rendered']['#title']);
         return strcmp($str1, $str2);
       }
     });
