@@ -64,6 +64,7 @@ function oira_country_default_page_manager_handlers() {
         'children' => array(
           0 => 'main-row',
           1 => 1,
+          2 => 4,
         ),
         'parent' => 'canvas',
       ),
@@ -81,7 +82,7 @@ function oira_country_default_page_manager_handlers() {
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'country-page-top-container',
+        'class' => 'country-page-top-container container',
         'hide_empty' => 0,
       ),
       1 => array(
@@ -121,6 +122,25 @@ function oira_country_default_page_manager_handlers() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '3',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+      4 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'content',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'content' => array(
+        'type' => 'region',
+        'title' => 'Content',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '4',
         'class' => '',
         'hide_empty' => 0,
       ),
@@ -131,6 +151,7 @@ function oira_country_default_page_manager_handlers() {
       'default' => NULL,
       'center' => NULL,
       'partners' => NULL,
+      'content' => NULL,
     ),
   );
   $display->cache = array();
@@ -232,6 +253,64 @@ function oira_country_default_page_manager_handlers() {
     $pane->uuid = 'a34f8d49-e9fa-40f6-8af8-6ba0501dea20';
     $display->content['new-a34f8d49-e9fa-40f6-8af8-6ba0501dea20'] = $pane;
     $display->panels['center'][2] = 'new-a34f8d49-e9fa-40f6-8af8-6ba0501dea20';
+    $pane = new stdClass();
+    $pane->pid = 'new-f2f48ae0-5eb9-4339-94a3-be23dd97e7fe';
+    $pane->panel = 'content';
+    $pane->type = 'views';
+    $pane->subtype = 'country_partner_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f2f48ae0-5eb9-4339-94a3-be23dd97e7fe';
+    $display->content['new-f2f48ae0-5eb9-4339-94a3-be23dd97e7fe'] = $pane;
+    $display->panels['content'][0] = 'new-f2f48ae0-5eb9-4339-94a3-be23dd97e7fe';
+    $pane = new stdClass();
+    $pane->pid = 'new-84faf12d-78ca-40c9-bc09-0acc568b666b';
+    $pane->panel = 'partners';
+    $pane->type = 'block';
+    $pane->subtype = 'oira_partner-oira_partner_country';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '84faf12d-78ca-40c9-bc09-0acc568b666b';
+    $display->content['new-84faf12d-78ca-40c9-bc09-0acc568b666b'] = $pane;
+    $display->panels['partners'][0] = 'new-84faf12d-78ca-40c9-bc09-0acc568b666b';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-f6b5c56a-4011-4a7e-88e3-e3726121cfeb';
   $handler->conf['display'] = $display;
@@ -252,7 +331,10 @@ function oira_country_default_page_manager_pages() {
   $page->admin_title = 'Countries';
   $page->admin_description = '';
   $page->path = 'countries';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

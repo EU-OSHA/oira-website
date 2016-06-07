@@ -892,7 +892,10 @@ el.remove();
         'share_widget' => array(
           'default' => array(
             'weight' => '3',
+            'label' => 'above',
+            'type' => 'visible',
             'visible' => TRUE,
+            'settings' => array(),
           ),
           'body' => array(
             'weight' => '1',

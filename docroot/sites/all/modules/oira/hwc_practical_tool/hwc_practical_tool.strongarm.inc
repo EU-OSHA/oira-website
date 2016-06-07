@@ -138,6 +138,9 @@ function hwc_practical_tool_strongarm() {
       'search_index' => array(
         'custom_settings' => FALSE,
       ),
+      'country_partner_content' => array(
+        'custom_settings' => TRUE,
+      ),
       'search_result' => array(
         'custom_settings' => FALSE,
       ),

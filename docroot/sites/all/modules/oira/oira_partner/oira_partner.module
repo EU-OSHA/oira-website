@@ -22,7 +22,7 @@ function oira_partner_field_extra_fields_formatter_info() {
 function oira_partner_entity_info_alter(&$entity_info) {
   $entity_info['node']['view modes']['country_partner_content'] = array(
     'label' => t('Content in country'),
-    'custom settings' => TRUE,
+    'custom settings' => FALSE,
   );
 }
 
@@ -150,24 +150,36 @@ function oira_partner_block_view($delta) {
  */
 function _oira_partner_partner_country_minipanel() {
   $render = array();
-  $name = 'partner_in_country';
-  $panel_mini = panels_mini_load($name);
-
   $term = menu_get_object('taxonomy_term', 2);
 
   if (!empty($term)) {
     $partners = _oira_partner_get_by_country($term->tid);
     if (!empty($partners)) {
+      $count = count($partners);
+      $render = array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('country-partners-container', 'partners-no-' . $count)),
+      );
       $partners = node_load_multiple($partners);
-      reset($partners);
-      $node = current($partners);
-      ctools_include('context');
-      $context = ctools_context_create('entity:node', $node);
-      $contexts = ctools_context_match_required_contexts($panel_mini->requiredcontexts, array($context));
-      $panel_mini->context = $panel_mini->display->context = ctools_context_load_contexts($panel_mini, FALSE, $contexts);
-      $panel_mini->display->css_id = panels_mini_get_id($panel_mini->name);
-      // Here is the markup, to with with whatever you wish.
-      $render = panels_render_display($panel_mini->display);
+      $extra_class = '';
+      if ($count > 1) {
+        $render['#attributes']['class'][] = 'row';
+        $extra_class = 'col-md-6';
+      }
+      foreach ($partners as $node) {
+        $name = 'partner_in_country';
+        $panel_mini = panels_mini_load($name);
+        ctools_include('context');
+        $context = ctools_context_create('entity:node', $node);
+        $contexts = ctools_context_match_required_contexts($panel_mini->requiredcontexts, array($context));
+        $panel_mini->context = $panel_mini->display->context = ctools_context_load_contexts($panel_mini, FALSE, $contexts);
+        $panel_mini->display->css_id = panels_mini_get_id($panel_mini->name);
+        // Here is the markup, to with with whatever you wish.
+        $render[] = array(
+          '#type' => 'markup',
+          '#markup' => '<div class="country-partner-wrapper ' . $extra_class . '">' . panels_render_display($panel_mini->display) . '</div>',
+        );
+      }
     }
   }
   return $render;

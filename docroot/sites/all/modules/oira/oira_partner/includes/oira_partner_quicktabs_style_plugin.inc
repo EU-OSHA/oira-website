@@ -69,8 +69,9 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
         }
         $contents = '<div class="container"><div class="content-group-label">' . $title . '</div>';
         foreach ($rows as $row) {
-          $contents .= '<div class="quicktabs-views-group ' . $this->options['row_class'] . '">' . $row . '</div></div>';
+          $contents .= '<div class="quicktabs-views-group ' . $this->options['row_class'] . '">' . $row . '</div>';
         }
+        $contents .= '</div>';
         $tabs[] = array(
           'title' => $title . ' (' . count($records) . ')',
           'contents' => array('#markup' => $contents),

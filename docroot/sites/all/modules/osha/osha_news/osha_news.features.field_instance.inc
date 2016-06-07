@@ -23,6 +23,12 @@ function osha_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'country_partner_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'osha',
@@ -109,6 +115,12 @@ function osha_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'country_partner_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -190,6 +202,12 @@ function osha_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'country_partner_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -261,6 +279,12 @@ function osha_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'country_partner_content' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -403,6 +427,12 @@ function osha_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'country_partner_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
@@ -479,6 +509,12 @@ function osha_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'country_partner_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'date',
@@ -490,6 +526,7 @@ function osha_news_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'osha_date_theme' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -511,6 +548,7 @@ function osha_news_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'osha_date_theme' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -526,6 +564,7 @@ function osha_news_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'osha_date_theme' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -559,6 +598,7 @@ function osha_news_field_default_field_instances() {
           'multiple_number' => '',
           'multiple_to' => '',
           'osha_date_theme' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -600,6 +640,12 @@ function osha_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'country_partner_content' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -710,6 +756,12 @@ function osha_news_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'country_partner_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -787,6 +839,12 @@ function osha_news_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'country_partner_content' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
