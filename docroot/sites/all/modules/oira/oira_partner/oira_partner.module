@@ -74,7 +74,7 @@ function oira_partner_field_extra_fields() {
     'display' => array(
       'partner_content_count' => array(
         'label' => t('Content count'),
-        'description' => t('The bar with links to social websites'),
+        'description' => t('Partner content count'),
         'extra field type' => 'partner_content_count',
         'weight' => 0,
       ),
@@ -185,8 +185,22 @@ function _oira_partner_partner_country_minipanel() {
   return $render;
 }
 
+/**
+ * Implements hook_node_presave().
+ */
+function oira_partner_node_presave($node) {
+  // Invalidate content count cache.
+  if ($node->type == 'partner') {
+    cache_clear_all(_oira_partner_compute_count_cid($node), 'cache');
+  }
+}
+
+function _oira_partner_compute_count_cid($node) {
+  return 'oira_partner_count:' . $node->nid;
+}
+
 function _oira_partner_compute_content_count($node) {
-  $cache = cache_get('oira_partner_count:' . $node->nid);
+  $cache = cache_get(_oira_partner_compute_count_cid($node));
   if (!empty($cache)) {
     return $cache->data;
   }
@@ -218,7 +232,7 @@ function _oira_partner_compute_content_count($node) {
     foreach ($result as $res) {
       $return[$res->type]++;
     }
-    cache_set('oira_partner_count:' . $node->nid, $return, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
+    cache_set(_oira_partner_compute_count_cid($node), $return, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
     return $return;
   }
 }

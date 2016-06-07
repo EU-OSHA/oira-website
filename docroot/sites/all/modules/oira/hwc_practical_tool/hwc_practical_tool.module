@@ -29,6 +29,142 @@ function hwc_practical_tool_block_info() {
 }
 
 /**
+ * Implements hook_field_extra_fields().
+ */
+function hwc_practical_tool_field_extra_fields() {
+  $related = array(
+    'display' => array(
+      'related_partners' => array(
+        'label' => t('Related partners'),
+        'description' => t('Related partners'),
+        'extra field type' => 'related_partners',
+        'weight' => 0,
+        'callback' => 'hwc_practical_tool_related_partners_callback',
+      ),
+    ),
+  );
+  $extra['node']['practical_tool'] = $related;
+
+  return $extra;
+}
+
+
+/**
+ * Implements hook_node_view().
+ */
+function hwc_practical_tool_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'practical_tool') {
+    $extra_fields = field_info_extra_fields('node', $node->type, 'display');
+    $extra_field_pc = $extra_fields['related_partners'];
+    if (!empty($extra_field_pc['display'][$view_mode]['visible'])) {
+      $display = $extra_fields['related_partners']['display'];
+      $node->content['related_partners'] = [
+        '#theme' => 'field',
+        '#label_display' => $extra_field_pc['label'],
+        '#title' => $extra_field_pc['label'],
+        '#items' => _hwc_practical_tool_get_partners($node),
+        '#field_type' => 'extra_field',
+        '#field_name' => 'related_partners',
+        '#entity_type' => 'node',
+        '#bundle' => 'partner',
+        '#view_mode' => $view_mode,
+        '#weight' => (int) $display[$view_mode]['weight'],
+      ];
+    }
+  }
+}
+
+function _hwc_practical_tool_related_partners_cid($node) {
+  return 'tool_related_partners:' . $node->nid;
+}
+
+function _hwc_practical_tool_get_partners($node) {
+  $cache = cache_get(_hwc_practical_tool_related_partners_cid($node));
+  if (!empty($cache)) {
+    return $cache->data;
+  }
+  $partners = array();
+  $section = current($node->workbench_access);
+  $partner = oira_partner_by_section_id_load($section);
+  if (!empty($partner)) {
+    $partners[] = $partner;
+  }
+  if (!empty($node->field_co_author)) {
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    foreach ($node_wrapper->field_co_author->value() as $term) {
+      $co_partner = oira_partner_by_section_id_load($term->tid);
+      if (!empty($co_partner)) {
+        $partners[] = $co_partner;
+      }
+    }
+  }
+  cache_set(_hwc_practical_tool_related_partners_cid($node), $partners, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
+  return $partners;
+}
+
+
+function hwc_practical_tool_field_extra_fields_formatter_info() {
+  return [
+    'related_partners' => [
+      'label' => t('Related partners'),
+      'description' => t('Format related partners.'),
+      'extra field types' => ['related_partners'],
+//      'settings' => ['format' => 'medium'],
+    ],
+  ];
+}
+
+function hwc_practical_tool_field_extra_fields_formatter_settings_form($extra_field_name, $view_mode, $display, $form, &$form_state) {
+  $settings = $display['settings'];
+  $element = [];
+  switch ($display['type']) {
+    case 'related_partners':
+      break;
+  }
+  return $element;
+}
+
+function hwc_practical_tool_field_extra_fields_formatter_settings_summary($extra_field_name, $view_mode, $display) {
+  $settings = $display['settings'];
+  switch ($display['type']) {
+    case 'related_partners':
+      return t('Display partners');
+  }
+}
+
+function hwc_practical_tool_field_extra_fields_formatter_view($entity_type, $entity, $extra_field_name, $langcode, $items, $display) {
+  $element = [];
+//  $settings = $display['settings'];
+  switch ($display['type']) {
+    case 'related_partners':
+      foreach ($items as $delta => $item) {
+        $render = node_view($item, 'teaser');
+        $element[$delta] = array(
+          '#type' => 'markup',
+          '#markup' => drupal_render($render),
+        );
+      }
+      break;
+  }
+  return $element;
+}
+
+/**
+ * Extra field callback for views.
+ */
+function hwc_practical_tool_related_partners_callback($node) {
+  $node->related_partners = _hwc_practical_tool_get_partners($node);
+  hwc_practical_tool_node_view($node, 'full', 'en');
+  if (!empty($node->content['related_partners'])) {
+    $content = $node->content['related_partners'];
+    $display = array('type' => 'related_partners');
+    $element = hwc_practical_tool_field_extra_fields_formatter_view('node', $node, 'related_partners', 'en', $content['#items'], $display);
+    return drupal_render($element);
+  }
+}
+
+
+/**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function hwc_practical_tool_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {

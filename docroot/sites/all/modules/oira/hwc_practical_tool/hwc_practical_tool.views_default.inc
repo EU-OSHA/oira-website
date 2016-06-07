@@ -657,6 +657,13 @@ function hwc_practical_tool_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
+  /* Field: Content: Extrafield Related partners */
+  $handler->display->display_options['fields']['related_partners']['id'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['table'] = 'node';
+  $handler->display->display_options['fields']['related_partners']['field'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['label'] = '';
+  $handler->display->display_options['fields']['related_partners']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['related_partners']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
@@ -686,7 +693,7 @@ function hwc_practical_tool_views_default_views() {
 [body]
 [field_country]
 [field_language]
-[field_tool_link]
+[related_partners]
 </div>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_caching'] = '4';
@@ -996,7 +1003,7 @@ function hwc_practical_tool_views_default_views() {
 [body]
 [field_country]
 [field_language]
-[field_tool_link]
+[related_partners]
 </div>'),
     t('Latest tools'),
     t('New tools'),

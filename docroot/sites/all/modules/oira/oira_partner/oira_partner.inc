@@ -10,20 +10,26 @@
  *   Returns partner node object or FALSE if not found
  */
 function oira_partner_by_section_id_load($id) {
+  $data = &drupal_static(__FUNCTION__);
+  if (isset($data[$id])) {
+    return $data[$id];
+  }
+  $data[$id] = FALSE;
   // @todo: We could improve with direct query on node & workbench_access_node.
   $q = new EntityFieldQuery();
   $q->entityCondition('entity_type', 'node');
   $q->entityCondition('bundle', 'partner');
+  $q->entityCondition('status', 1);
   $result = $q->execute();
   if (isset($result['node'])) {
     $partners = entity_load('node', array_keys($result['node']));
-    foreach($partners as $partner) {
-      if(!empty($partner->workbench_access) && in_array($id, $partner->workbench_access)) {
-        return $partner;
+    foreach ($partners as $partner) {
+      if (!empty($partner->workbench_access) && in_array($id, $partner->workbench_access)) {
+        $data[$id] = $partner;
       }
     }
   }
-  return FALSE;
+  return $data[$id];
 }
 
 /**
