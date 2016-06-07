@@ -450,21 +450,16 @@ function drupal_get_query_parameters(array $query = NULL, array $exclude = array
  *
  * @param $query
  *   The query string to split.
- * @param $decode
- *   Defaults to TRUE. Boolean flag indicating that the return value should be
- *   URL-decoded.
  *
  * @return
  *   An array of URL decoded couples $param_name => $value.
  */
-function drupal_get_query_array($query, $decode = TRUE) {
+function drupal_get_query_array($query) {
   $result = array();
   if (!empty($query)) {
     foreach (explode('&', $query) as $param) {
       $param = explode('=', $param, 2);
-      $key = ($decode) ? rawurldecode($param[0]) : $param[0];
-      $value = isset($param[1]) ? ($decode) ? rawurldecode($param[1]) : $param[1] : ''; 
-      $result[$key] = $value;
+      $result[$param[0]] = isset($param[1]) ? rawurldecode($param[1]) : '';
     }
   }
   return $result;
@@ -478,9 +473,6 @@ function drupal_get_query_array($query, $decode = TRUE) {
  *
  * @param $query
  *   The query parameter array to be processed, e.g. $_GET.
- * @param $encode
- *   Defaults to TRUE. Boolean flag indicating that the return value should be
- *   URL-encoded.
  * @param $parent
  *   Internal use only. Used to build the $query array key for nested items.
  *
@@ -491,16 +483,15 @@ function drupal_get_query_array($query, $decode = TRUE) {
  * @see drupal_get_query_parameters()
  * @ingroup php_wrappers
  */
-function drupal_http_build_query(array $query, $encode = TRUE, $parent = '') {
+function drupal_http_build_query(array $query, $parent = '') {
   $params = array();
 
   foreach ($query as $key => $value) {
-    $raw_key = ($encode) ? rawurlencode($key) : $key;
-    $key = ($parent ? $parent . '[' . $raw_key . ']' : $raw_key);
+    $key = ($parent ? $parent . '[' . rawurlencode($key) . ']' : rawurlencode($key));
 
     // Recurse into children.
     if (is_array($value)) {
-      $params[] = drupal_http_build_query($value, $encode, $key);
+      $params[] = drupal_http_build_query($value, $key);
     }
     // If a query parameter value is NULL, only append its key.
     elseif (!isset($value)) {
@@ -508,8 +499,7 @@ function drupal_http_build_query(array $query, $encode = TRUE, $parent = '') {
     }
     else {
       // For better readability of paths in query strings, we decode slashes.
-      $raw_value = ($encode) ? rawurlencode($value) : $value;
-      $params[] = $key . '=' . str_replace('%2F', '/', $raw_value);
+      $params[] = $key . '=' . str_replace('%2F', '/', rawurlencode($value));
     }
   }
 
@@ -696,6 +686,13 @@ function drupal_goto($path = '', array $options = array(), $http_response_code =
     $path = $destination['path'];
     $options['query'] = $destination['query'];
     $options['fragment'] = $destination['fragment'];
+  }
+
+  // In some cases modules call drupal_goto(current_path()). We need to ensure
+  // that such a redirect is not to an external URL.
+  if ($path === current_path() && empty($options['external']) && url_is_external($path)) {
+    // Force url() to generate a non-external URL.
+    $options['external'] = FALSE;
   }
 
   drupal_alter('drupal_goto', $path, $options, $http_response_code);
@@ -2184,8 +2181,6 @@ function format_username($account) {
  *   elements:
  *   - 'query': An array of query key/value-pairs (without any URL-encoding) to
  *     append to the URL.
- *   - 'encode': Defaults to TRUE. Boolean flag indicating that the return value
- *     of query parameters should be URL-encoded.
  *   - 'fragment': A fragment identifier (named anchor) to append to the URL.
  *     Do not include the leading '#' character.
  *   - 'absolute': Defaults to FALSE. Whether to force the output to be an
@@ -2229,24 +2224,11 @@ function url($path = NULL, array $options = array()) {
     'query' => array(),
     'absolute' => FALSE,
     'alias' => FALSE,
-    'prefix' => '',
-    'encode' => TRUE,
+    'prefix' => ''
   );
 
-  // A duplicate of the code from url_is_external() to avoid needing another
-  // function call, since performance inside url() is critical.
   if (!isset($options['external'])) {
-    // Return an external link if $path contains an allowed absolute URL. Avoid
-    // calling drupal_strip_dangerous_protocols() if there is any slash (/),
-    // hash (#) or question_mark (?) before the colon (:) occurrence - if any -
-    // as this would clearly mean it is not a URL. If the path starts with 2
-    // slashes then it is always considered an external URL without an explicit
-    // protocol part.
-    $colonpos = strpos($path, ':');
-    $options['external'] = (strpos($path, '//') === 0)
-      || ($colonpos !== FALSE
-        && !preg_match('![/?#]!', substr($path, 0, $colonpos))
-        && drupal_strip_dangerous_protocols($path) == $path);
+    $options['external'] = url_is_external($path);
   }
 
   // Preserve the original path before altering or aliasing.
@@ -2270,7 +2252,7 @@ function url($path = NULL, array $options = array()) {
     }
     // Append the query.
     if ($options['query']) {
-      $path .= (strpos($path, '?') !== FALSE ? '&' : '?') . drupal_http_build_query($options['query'], $options['encode']);
+      $path .= (strpos($path, '?') !== FALSE ? '&' : '?') . drupal_http_build_query($options['query']);
     }
     if (isset($options['https']) && variable_get('https', FALSE)) {
       if ($options['https'] === TRUE) {
@@ -2327,7 +2309,7 @@ function url($path = NULL, array $options = array()) {
   if (!empty($GLOBALS['conf']['clean_url'])) {
     $path = drupal_encode_path($prefix . $path);
     if ($options['query']) {
-      return $base . $path . '?' . drupal_http_build_query($options['query'], $options['encode']) . $options['fragment'];
+      return $base . $path . '?' . drupal_http_build_query($options['query']) . $options['fragment'];
     }
     else {
       return $base . $path . $options['fragment'];
@@ -2366,12 +2348,18 @@ function url($path = NULL, array $options = array()) {
  */
 function url_is_external($path) {
   $colonpos = strpos($path, ':');
-  // Avoid calling drupal_strip_dangerous_protocols() if there is any slash (/),
-  // hash (#) or question_mark (?) before the colon (:) occurrence - if any - as
-  // this would clearly mean it is not a URL. If the path starts with 2 slashes
-  // then it is always considered an external URL without an explicit protocol
-  // part.
+  // Some browsers treat \ as / so normalize to forward slashes.
+  $path = str_replace('\\', '/', $path);
+  // If the path starts with 2 slashes then it is always considered an external
+  // URL without an explicit protocol part.
   return (strpos($path, '//') === 0)
+    // Leading control characters may be ignored or mishandled by browsers, so
+    // assume such a path may lead to an external location. The \p{C} character
+    // class matches all UTF-8 control, unassigned, and private characters.
+    || (preg_match('/^\p{C}/u', $path) !== 0)
+    // Avoid calling drupal_strip_dangerous_protocols() if there is any slash
+    // (/), hash (#) or question_mark (?) before the colon (:) occurrence - if
+    // any - as this would clearly mean it is not a URL.
     || ($colonpos !== FALSE
       && !preg_match('![/?#]!', substr($path, 0, $colonpos))
       && drupal_strip_dangerous_protocols($path) == $path);
