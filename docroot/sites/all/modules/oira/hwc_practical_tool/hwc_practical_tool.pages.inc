@@ -77,10 +77,6 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     '#action' => 'oira-tools',
     '#method' => 'GET',
     '#token' => FALSE,
-    'top' => array(
-      '#type' => 'container',
-      '#attributes' => array('class' => array('col-md-12')),
-    ),
     'left-column' => array(
       '#type' => 'container',
       '#attributes' => array('class' => array('col-md-3')),
@@ -114,7 +110,6 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   $form['content']['sort_fieldset'] = array(
     /* Needed so that the page passes Web Accessibility test */
     '#type' => 'fieldset',
-    '#attributes' => array('class' => array('col-md-12')),
   );
   $form['content']['sort_fieldset']['sort'] = array(
     '#type' => 'select',
