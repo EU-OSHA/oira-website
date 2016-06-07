@@ -6545,6 +6545,10 @@ button.close {
 .top-header .header-blocks {
   margin-top: 50px;
 }
+.top-header .header-blocks .region-header-block {
+  max-width: 300px;
+  float: right;
+}
 .top-header .header-blocks #block-oira-blocks-oira-print-friendly {
   display: inline-block;
   float: left;
@@ -6594,24 +6598,35 @@ button.close {
 }
 .top-header .header-blocks #block-search-form #search-block-form .input-group-btn button {
   border-radius: 0px;
-  width: 35px;
+  width: 30px;
   color: white;
   background-color: #003399;
-  border: 1px solid #003399;
+  border: 0px solid #003399;
+}
+.top-header .header-blocks #block-search-form #search-block-form .input-group-btn button:before {
+  content: "\e003";
+  margin-right: 30px;
+  margin-left: -5px;
+  font-family: 'Glyphicons Halflings';
 }
 .top-header .header-blocks #block-menu-block-3 {
   display: inline-block;
 }
 .top-header .header-blocks #block-menu-block-3 .introduction-title {
   background-color: #003399;
-  padding: 4px 10px;
+  padding: 3px 10px;
 }
 .top-header .header-blocks #block-menu-block-3 .introduction-title a {
   color: #ffffff;
 }
 .top-header .header-blocks #block-menu-block-3 .introduction-title a:before {
-  content: "\a003";
-  margin-right: 10px;
+  content: "\e033";
+  margin-right: 8px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-size: 0.9em;
+  top: 1px;
+  position: relative;
 }
 .top-header .header-blocks #block-lang-dropdown-language {
   display: inline-block;
@@ -6625,7 +6640,7 @@ button.close {
   padding: 3px 3px;
   background-color: #907aa0;
   color: #ffffff;
-  width: 220px !important;
+  width: 190px !important;
 }
 /*Menu
 **************************************************/
@@ -6684,11 +6699,11 @@ button.close {
 }
 .menu-header #navbar .navbar-nav li .dropdown-menu li {
   display: block !important;
+  border-bottom: 2px solid white;
 }
 .menu-header #navbar .navbar-nav li .dropdown-menu li a {
   border: none;
   padding: 5px 15px;
-  border-bottom: 2px solid white;
 }
 /*Iconos
 **************************************************/
@@ -6721,7 +6736,7 @@ h3.pane-title {
 }
 h4 a {
   color: #58585a;
-  font-size: 0.75em;
+  font-size: 0.7em;
   font-weight: bold;
 }
 h4.pane-title {
@@ -6757,7 +6772,7 @@ h2 {
   font-style: italic;
   display: block;
   text-align: right;
-  font-size: 0.85em;
+  font-size: 1em;
   margin-top: 20px;
 }
 .more-link a:before {
@@ -6769,10 +6784,7 @@ a.more-link {
   font-style: italic;
   display: block;
   text-align: right;
-  font-size: 0.85em;
-  position: absolute;
-  right: 30px;
-  bottom: 15px;
+  font-size: 1em;
 }
 a.more-link:before {
   content: '>';
@@ -6795,6 +6807,18 @@ a.more-link:before {
 .views-item-columns-container a .glyphicon-new-window {
   display: block;
   text-align: right;
+}
+/*Etiquetas azuler de pais e idioma*/
+.field.field-name-field-country,
+.field-type-language-field {
+  background-color: #10b2e4;
+  display: inline-block;
+  color: white;
+  padding: 3px 16px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 1em;
 }
 /*END estilos comunes
 ************************************************************************************/
@@ -6838,15 +6862,28 @@ a.more-link:before {
   padding-top: 20px;
   margin-bottom: 20px;
 }
-#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .view-display-id-attachment_1 .field-name-field-image img {
-  width: 100%;
-  max-height: 310px;
+#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .view-display-id-attachment_1 h4 a {
+  font-size: 1.2em;
 }
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container {
   background-color: #ffffff;
   padding: 10px;
   padding-bottom: 40px;
   min-height: 250px;
+}
+#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container a.more-link {
+  color: #10b2e4;
+  font-weight: bold;
+  font-style: italic;
+  display: block;
+  text-align: right;
+  font-size: 0.8em;
+  position: absolute;
+  right: 30px;
+  bottom: 15px;
+}
+#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container a.more-link:before {
+  content: '>';
 }
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials div.pane-title {
   color: #967ea6;
@@ -6867,10 +6904,6 @@ a.more-link:before {
   padding-bottom: 30px;
   padding-top: 20px;
   margin-bottom: 20px;
-}
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-field-image img {
-  width: 100%;
-  max-height: 310px;
 }
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-title-field a {
   font-size: 1.2em;

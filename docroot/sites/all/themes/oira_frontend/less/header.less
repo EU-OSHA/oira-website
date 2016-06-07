@@ -28,6 +28,10 @@
 	}
 	.header-blocks{
 		margin-top: 50px;
+		.region-header-block{
+			max-width: 300px;
+			float: right;
+		}
 		#block-oira-blocks-oira-print-friendly{
 			display: inline-block;
 			float: left;
@@ -87,10 +91,16 @@
 				.input-group-btn{
 					button{
 						border-radius: 0px;
-						width: 35px;
+						width: 30px;
 						color: white;
 						background-color: @color-menu-icons;
-    					border: 1px solid @color-menu-icons;
+    					border: 0px solid @color-menu-icons;
+    					&:before{
+    						content:"\e003";
+    						margin-right: 30px;
+    						margin-left: -5px;
+    						font-family: 'Glyphicons Halflings';
+    					}
 					}
 				}
 			}
@@ -99,12 +109,17 @@
 			display: inline-block;
 			.introduction-title{				
 				background-color: @color-menu-icons;
-    			padding: 4px 10px;
+    			padding: 3px 10px;
 				a{
 					color: @color-white;
 					&:before{
-						content: "\a003";
-						margin-right: 10px;
+						content: "\e033";
+					    margin-right: 8px;
+					    display: inline-block;
+					    font-family: 'Glyphicons Halflings';
+					    font-size: 0.9em;
+					    top: 1px;
+					    position: relative;
 					}
 				}
 			}
@@ -120,7 +135,7 @@
     			padding: 3px 3px;
     			background-color: @color-icon-purple;
     			color: @color-white;
-    			width: 220px !important;
+    			width: 190px !important;
 			}
 		}
 	}
@@ -181,10 +196,10 @@
    					border-radius: 0px;
     				li{
     					display: block !important;
+    					border-bottom: 2px solid white;
     					a{
     						border: none;
     						padding: 5px 15px;
-    						border-bottom: 2px solid white;
     					}
     				}
     			}
