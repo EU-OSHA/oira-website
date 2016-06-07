@@ -200,8 +200,9 @@ List of patches (most recent first)
   * uuid_features/uuid_features-workbench-moderation-state-support.patch
 
 * features
-  * Add support for node UUID in menu import/export
-  * features/features_menu_uuid_export.patchs
+  * t() called twice for hook_entity_info adding translations in locales_source
+  * https://www.drupal.org/node/2462991
+  * features-double-translations-2462991-1-D7.patch
 
 * menuimage
   * Modify menulink options to use image uri, not fid. Useful for features export/import
