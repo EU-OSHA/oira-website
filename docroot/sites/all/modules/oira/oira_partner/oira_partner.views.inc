@@ -1,5 +1,28 @@
 <?php
 
+
+/**
+ * Implementation of hook_views_plugins().
+ */
+function oira_partner_views_plugins() {
+  $path = drupal_get_path('module', 'oira_partner');
+
+  return array(
+    'style' => array(
+      'oira_quicktabs' => array(
+        'title' => t('OiRA Partner Quicktabs'),
+        'help' => t('Display view in Quicktabs.'),
+        'handler' => 'oira_partner_quicktabs_style_plugin',
+        'path' => "$path/includes",
+        'theme' => 'quicktabs_view',
+        'uses row plugin' => TRUE,
+        'uses options' => TRUE,
+        'type' => 'normal',
+      ),
+    ),
+  );
+}
+
 function oira_partner_views_data_alter(&$data) {
   // Define group.
   $data['oira_partner']['table']['group'] = t('Oira partner');
@@ -14,6 +37,15 @@ function oira_partner_views_data_alter(&$data) {
     'filter' => array(
       'label' => t('Node is co author of current node.'),
       'handler' => 'oira_partner_handler_is_co_author',
+    ),
+  );
+
+  $data['oira_partner']['country_partner_access'] = array(
+    'title' => t('Node has section of country partner'),
+    'help' => t('Node has section of country partner'),
+    'filter' => array(
+      'label' => t('Node has section of country partner.'),
+      'handler' => 'oira_partner_handler_country_partner_access',
     ),
   );
 }
@@ -48,6 +80,47 @@ class oira_partner_handler_is_co_author extends views_handler_filter_boolean_ope
       $subquery->distinct();
       $subquery->condition('workbench_access_node.access_id', $tids, 'IN');
       $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", $subquery, $in_operator);
+    }
+    else {
+      // Show no results.
+      $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", 0, $equal_operator);
+    }
+  }
+}
+
+/**
+ *
+ * Get the latest 4 tools. (At least one OiRA tool & one E-tool)
+ */
+class oira_partner_handler_country_partner_access extends views_handler_filter_boolean_operator {
+
+  /**
+   * Overrides views_handler_field::query().
+   */
+  function query() {
+    if (empty($this->value)) {
+      $in_operator = 'NOT IN';
+      $equal_operator = '!=';
+    }
+    else {
+      $in_operator = 'IN';
+      $equal_operator = '=';
+    }
+    $term = menu_get_object('taxonomy_term', 2);
+    if (!empty($term)) {
+      $nids = _oira_partner_get_by_country($term->tid);
+      if (!empty($nids)) {
+        $subquery = db_select('workbench_access_node', 'wa')
+          ->fields('wa', array('access_id'))
+          ->condition('wa.nid', $nids);
+
+        $query = db_select('workbench_access_node', 'wan')
+          ->fields('wan', array('nid'))
+          ->condition('access_id', $subquery, 'IN');
+
+        $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", $query, $in_operator);
+      }
+
     }
     else {
       // Show no results.

@@ -134,6 +134,13 @@ function oira_frontend_preprocess_page(&$vars) {
 
 }
 
+function oira_frontend_css_alter(&$css) {
+  global $theme_info, $base_theme_info;
+  if (isset($css['sites/all/modules/contrib/panels/css/panels.css'])) {
+    unset($css['sites/all/modules/contrib/panels/css/panels.css']);
+  }
+}
+
 function oira_frontend_preprocess_region(&$variables, $hook) {
   if($variables['region'] == "header_block"){
     $variables['classes_array'][] = 'clearfix';
