@@ -672,12 +672,11 @@ function _link_parse_url($url) {
     $url = substr($url, 0, strpos($url, '#'));
   }
   // Separate out the query string, if any.
-  // see issues: https://www.drupal.org/node/1984398 , https://www.drupal.org/node/1646360
-//  if (strpos($url, '?') !== FALSE) {
-//    $query = substr($url, strpos($url, '?') + 1);
-//    $url_parts['query'] = _link_parse_str($query);
-//    $url = substr($url, 0, strpos($url, '?'));
-//  }
+  if (strpos($url, '?') !== FALSE) {
+    $query = substr($url, strpos($url, '?') + 1);
+    $url_parts['query'] = _link_parse_str($query);
+    $url = substr($url, 0, strpos($url, '?'));
+  }
   $url_parts['url'] = $url;
   return $url_parts;
 }
