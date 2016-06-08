@@ -105,14 +105,7 @@ class MigrateLinkFieldHandler extends MigrateFieldHandler {
         }
       }
       $item['url'] = $value;
-
-      if (is_array($language)) {
-        $current_language = $language[$delta];
-      }
-      else {
-        $current_language = $language;
-      }
-      $return[$current_language][$delta] = $item;
+      $return[$language][$delta] = $item;
     }
 
     return isset($return) ? $return : NULL;
