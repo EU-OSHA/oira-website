@@ -7,10 +7,10 @@
 
 		}
 		.eu-logo{
-			width: 100px;
-			margin-left: 10px;
+			width: 90px;
+			margin-left: 5px;
     		display: initial;
-    		margin-top: 17px;
+    		margin-top: 30px;
 		}
 	}
 	.header-sitename{
@@ -21,7 +21,7 @@
 			}
 		}
 		a.sitename{
-			display: block;
+			display: none;
 			text-align: center;
 
 		}
@@ -75,8 +75,8 @@
 			}
 		}
 		#block-search-form{
-			margin-top: 10px;
-			margin-bottom: 10px;
+			margin-top: 7px;
+			margin-bottom: 7px;
 			clear: both;
 			display: inline-block;
 			#search-block-form{
@@ -84,6 +84,7 @@
 					border-radius: 0px;
 					border: 2px solid @color-menu-icons;
 					width: 100%;
+					height: 30px;
 				}
 				input[placeholder]{
 					color: @color-menu-icons !important;
@@ -95,6 +96,7 @@
 						color: white;
 						background-color: @color-menu-icons;
     					border: 0px solid @color-menu-icons;
+    					padding: 4px 0px 2px 11px;
     					&:before{
     						content:"\e003";
     						margin-right: 30px;
@@ -109,7 +111,7 @@
 			display: inline-block;
 			.introduction-title{				
 				background-color: @color-menu-icons;
-    			padding: 3px 10px;
+    			padding: 3px 10px 3px 10px;
 				a{
 					color: @color-white;
 					&:before{
@@ -132,7 +134,7 @@
     			outline: none;
     			border-radius: 0px;
     			height: initial;
-    			padding: 3px 3px;
+    			padding: 2px 3px;
     			background-color: @color-icon-purple;
     			color: @color-white;
     			width: 190px !important;
@@ -148,6 +150,8 @@
 	margin-top: 35px;
     margin-bottom: 25px;
     background-color: @color-menu;
+    font-family: @font-family-base-2;
+    font-size: 1.1em;
 	#navbar{
 		margin-top: 0px;
 		margin-bottom: 0px;
@@ -156,7 +160,7 @@
     	.navbar-nav{
     		width: 100%;
     		display: table;
-    		margin-top: 14px;
+    		margin-top: 10px;
     		li.last.leaf{
     			a{
     				border-right: none;
@@ -168,15 +172,20 @@
     			//text-align: center;
     			padding: 0px;
     			color: @color-white;
+    			text-align: center;
+    			border-right: 2px solid @color-white;
+    			&:last-child{
+    				border-right: none;
+    			}
 				a{
 					padding: 0px;
 					padding-left: 0px;
-					padding-right: 5px;
+					padding-right: 0px;
     				margin-right: 10px;
 				}
 				span{
 					padding-left: 0px;
-					padding-right: 15px;
+					padding-right: 0px;
 					padding-top: 2px;
     				padding-bottom: 3px;
 					.caret{
@@ -186,7 +195,9 @@
     			a, span{
     				color: @color-white;
     				background-color: rgba(0,0,0,0);
-	    			border-right: 2px solid @color-white;
+	    			//border-right: 2px solid @color-white;
+    				padding-top: 5px;
+    				padding-bottom: 4px;
     			}
     			.dropdown-menu{
     				background-color: @color-menu;
@@ -196,6 +207,7 @@
    					border-radius: 0px;
     				li{
     					display: block !important;
+    					border-right: none;
     					border-bottom: 2px solid white;
     					a{
     						border: none;

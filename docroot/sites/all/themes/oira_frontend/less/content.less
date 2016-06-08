@@ -18,14 +18,16 @@ h3.pane-title{
 	border-bottom: 2px solid @color-text-purple;
 	font-size: @font-size2-2;
 	padding-bottom: 3px;
-	font-weight: bold;
+	//font-weight: bold;
 	margin-top: 50px;
+	font-family: @font-family-base-2;
  }
 
 h4{
+	font-size: @font-size-base;
 	a{
 		color: @color-text-grey;
-		font-size: @font-size0-7;
+		font-size: @font-size1;
 	    font-weight: bold;	
 	}
 }
@@ -50,7 +52,8 @@ h5{
 
 h2{
 	color: @color-text-grey;
-	font-weight: bold;
+	font-family: @font-family-base-2;
+	//font-weight: bold;
 }
 
  .h3image-promotional-materials{
@@ -76,6 +79,10 @@ h2{
 		margin-top: 20px;
 		&:before{
 			content:'>';
+			margin-right: 2px;
+		    display: inline-block;
+		    position: relative;
+		    top: -1px;
 		}
 	}
 }
@@ -87,8 +94,13 @@ a.more-link{
 	display: block;
 	text-align: right;
 	font-size: @font-size1;
+	margin-top: 0.5em;
 	&:before{
 		content:'>';
+		margin-right: 5px;
+	    display: inline-block;
+	    position: relative;
+	    top: -1px;
 	}
 }
 
@@ -120,7 +132,7 @@ a.more-link{
     display: inline-block;
     color: white;
     padding: 3px 16px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: bold;
     font-style: italic;
     margin-top: 1em;
@@ -145,6 +157,8 @@ a.more-link{
 				width: 1140px;
 				top: 45%;
 				left: 10%;
+				font-family: @font-family-base-2;
+				font-weight: 300;
 				a{
 					color: @color-white;
 				}
@@ -188,7 +202,7 @@ a.more-link{
     			}
     			h4{
     				a{
-    					font-size: 1.2em;
+    					font-size: @font-size2-2;
     				}
     			}
 			}
@@ -196,14 +210,19 @@ a.more-link{
 				background-color: @color-white;
 				padding: 10px;
 				padding-bottom: 40px;
-				min-height: 250px;
+				min-height: 358px;
+				h4{
+					a{
+						font-size: @font-size1-2;
+					}
+				}
 				a.more-link{
 					color: @color-see-more;
 					font-weight: bold;
 					font-style: italic;
 					display: block;
 					text-align: right;
-					font-size: @font-size0-8;
+					font-size: @font-size1;
 					position: absolute;
 				    right: 30px;
 				    bottom: 15px;
@@ -220,7 +239,7 @@ a.more-link{
 		.pane-promotional-materials{
 			div.pane-title{
 				color: @color-text-purple;
-	    		font-size: 1.2em;
+	    		font-size: @font-size1-2;
 	    		font-weight: bold;
 	    		margin-bottom: 14px;
 	    		font-style: italic;
@@ -251,7 +270,7 @@ a.more-link{
     		}
     		.field-name-title-field{
     			a{
-    				font-size: @font-size1-2;	
+    				font-size: @font-size2-2;	
     			}
     			
     		}
@@ -273,7 +292,7 @@ a.more-link{
 		.pane-views.pane-tools{
 			.pane-title{
 				color: @color-text-purple;
-	    		font-size: 1.2em;
+	    		font-size: @font-size1-2;
 	    		font-weight: bold;
 	    		margin-bottom: 14px;
 	    		font-style: italic;
@@ -357,3 +376,11 @@ a.more-link{
 
 /*END ARTICLES*/
 
+/*WHAT'S NEW SECTION
+*********************************************************************/
+.page-what-is-new{
+	
+}
+
+
+/*END WHAT'S NEW*/

@@ -41,14 +41,22 @@
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
+@import url('//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,latin-ext');
+@import url('//fonts.googleapis.com/css?family=Roboto:700,400,700italic&subset=latin,greek,cyrillic,latin-ext');
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-base:		'Roboto';
+@font-family-semibold:	'Roboto Semibold', sans-serif;
+
+@font-family-base-2: 'Oswald';
+@font-family-semibold-2: 'Oswald Semibold';
+
+//@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+//@font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-sans-serif;
+//@font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          14px;
+@font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
@@ -888,8 +896,8 @@
 @padding15: 15px;
 
 //Colors
-@color-primary: #00FFF0;
-@color-primary-dark: #907aa0;
+@color-primary: #dfd8e4;
+@color-primary-dark: #786586;
 @color-menu: #10b2e4;
 @color-white: #FFFFFF;
  
@@ -900,7 +908,7 @@
 @color-see-more: @color-menu;
 
 @color-text-grey: #58585a;
-@color-text-purple: #967ea6;
+@color-text-purple: #967ea7;
 @color-text-white: @color-white;
 @color-red: #343434;
 @color-background-light-purple: #dfd8e4;
