@@ -285,7 +285,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -1088,7 +1088,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'highlights_item' => array(
         'label' => 'above',

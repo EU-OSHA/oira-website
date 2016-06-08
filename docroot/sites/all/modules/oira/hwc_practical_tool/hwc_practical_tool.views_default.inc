@@ -664,6 +664,13 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['related_partners']['label'] = '';
   $handler->display->display_options['fields']['related_partners']['exclude'] = TRUE;
   $handler->display->display_options['fields']['related_partners']['element_label_colon'] = FALSE;
+  /* Field: Content: Extrafield See more link */
+  $handler->display->display_options['fields']['tools_see_more']['id'] = 'tools_see_more';
+  $handler->display->display_options['fields']['tools_see_more']['table'] = 'node';
+  $handler->display->display_options['fields']['tools_see_more']['field'] = 'tools_see_more';
+  $handler->display->display_options['fields']['tools_see_more']['label'] = '';
+  $handler->display->display_options['fields']['tools_see_more']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tools_see_more']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
@@ -694,6 +701,7 @@ function hwc_practical_tool_views_default_views() {
 [field_country]
 [field_language]
 [related_partners]
+[tools_see_more]
 </div>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_caching'] = '4';
@@ -1034,6 +1042,7 @@ function hwc_practical_tool_views_default_views() {
 [field_country]
 [field_language]
 [related_partners]
+[tools_see_more]
 </div>'),
     t('Latest tools'),
     t('New tools'),
