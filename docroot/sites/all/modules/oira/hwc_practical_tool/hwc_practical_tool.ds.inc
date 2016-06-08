@@ -75,7 +75,6 @@ function hwc_practical_tool_ds_layout_settings_info() {
     ),
     'classes' => array(
       'layout_class' => array(
-        'col-md-12' => 'col-md-12',
         'row' => 'row',
       ),
       'left' => array(

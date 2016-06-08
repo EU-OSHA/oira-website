@@ -643,39 +643,34 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_link' => '0',
-    'trim_length' => '350',
+    'trim_length' => '400',
     'trim_type' => 'chars',
     'trim_suffix' => '...',
-    'more_link' => '0',
-    'more_text' => 'Read more',
+    'more_link' => '1',
+    'more_text' => 'See more',
     'summary_handler' => 'ignore',
     'trim_options' => array(
       'text' => 'text',
+      'use_field_summary' => 0,
     ),
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
-  /* Field: Content: Tool link */
-  $handler->display->display_options['fields']['field_tool_link']['id'] = 'field_tool_link';
-  $handler->display->display_options['fields']['field_tool_link']['table'] = 'field_data_field_tool_link';
-  $handler->display->display_options['fields']['field_tool_link']['field'] = 'field_tool_link';
-  $handler->display->display_options['fields']['field_tool_link']['label'] = '';
-  $handler->display->display_options['fields']['field_tool_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_tool_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_tool_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_tool_link']['type'] = 'external_tool_link';
-  $handler->display->display_options['fields']['field_tool_link']['settings'] = array(
-    'field_formatter_class' => '',
-  );
-  $handler->display->display_options['fields']['field_tool_link']['field_api_classes'] = TRUE;
+  /* Field: Content: Extrafield Related partners */
+  $handler->display->display_options['fields']['related_partners']['id'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['table'] = 'node';
+  $handler->display->display_options['fields']['related_partners']['field'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['label'] = '';
+  $handler->display->display_options['fields']['related_partners']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['related_partners']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Tool of the week';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="pane-title tool-of-the-week-label">Tool of the week</div>';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
@@ -698,7 +693,7 @@ function hwc_practical_tool_views_default_views() {
 [body]
 [field_country]
 [field_language]
-[field_tool_link]
+[related_partners]
 </div>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_caching'] = '4';
@@ -854,12 +849,15 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['element_type'] = 'div';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
@@ -868,12 +866,14 @@ function hwc_practical_tool_views_default_views() {
     'title_class' => '',
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['title_field']['field_api_classes'] = TRUE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['body']['settings'] = array(
@@ -886,15 +886,18 @@ function hwc_practical_tool_views_default_views() {
     'summary_handler' => 'ignore',
     'trim_options' => array(
       'text' => 'text',
+      'use_field_summary' => 0,
     ),
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
   /* Field: Field: Language */
   $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['label'] = '';
+  $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -904,38 +907,60 @@ function hwc_practical_tool_views_default_views() {
     ),
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_language']['field_api_classes'] = TRUE;
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['label'] = '';
+  $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_country']['field_api_classes'] = TRUE;
   /* Field: Content: URL */
   $handler->display->display_options['fields']['field_wiki_page_url']['id'] = 'field_wiki_page_url';
   $handler->display->display_options['fields']['field_wiki_page_url']['table'] = 'field_data_field_wiki_page_url';
   $handler->display->display_options['fields']['field_wiki_page_url']['field'] = 'field_wiki_page_url';
   $handler->display->display_options['fields']['field_wiki_page_url']['label'] = '';
+  $handler->display->display_options['fields']['field_wiki_page_url']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_wiki_page_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_wiki_page_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_wiki_page_url']['type'] = 'external_tool_link';
   $handler->display->display_options['fields']['field_wiki_page_url']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_wiki_page_url']['field_api_classes'] = TRUE;
   /* Field: Content: Tool link */
   $handler->display->display_options['fields']['field_tool_link']['id'] = 'field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['table'] = 'field_data_field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['field'] = 'field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['label'] = '';
+  $handler->display->display_options['fields']['field_tool_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_tool_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tool_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_tool_link']['type'] = 'external_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_tool_link']['field_api_classes'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="tool-teaser-content-wrapper">
+[type]
+[title_field]
+[body]
+[field_language] 
+[field_country]
+[field_wiki_page_url]
+[field_tool_link]
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -998,6 +1023,7 @@ function hwc_practical_tool_views_default_views() {
 </div>'),
     t('Tool of the week'),
     t('queue'),
+    t('<div class="pane-title tool-of-the-week-label">Tool of the week</div>'),
     t('<div class="col-sm-6">
 [field_image]
 </div>'),
@@ -1007,11 +1033,20 @@ function hwc_practical_tool_views_default_views() {
 [body]
 [field_country]
 [field_language]
-[field_tool_link]
+[related_partners]
 </div>'),
     t('Latest tools'),
     t('New tools'),
     t('See more tools'),
+    t('<div class="tool-teaser-content-wrapper">
+[type]
+[title_field]
+[body]
+[field_language] 
+[field_country]
+[field_wiki_page_url]
+[field_tool_link]
+</div>'),
   );
   $export['tools'] = $view;
 

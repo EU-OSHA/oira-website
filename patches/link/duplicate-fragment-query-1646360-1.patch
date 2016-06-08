@@ -1,11 +1,11 @@
-diff --git a/link.module b/link.module
-index b5a42ab..47759aa 100644
---- a/link.module
-+++ b/link.module
-@@ -351,6 +351,16 @@ function _link_load($field, $item, $instance) {
-  * Prepares the item attributes and url for storage.
+diff --git a/docroot/sites/all/modules/contrib/link/link.module b/docroot/sites/all/modules/contrib/link/link.module
+index 8afb58b..472b371 100644
+--- a/docroot/sites/all/modules/contrib/link/link.module
++++ b/docroot/sites/all/modules/contrib/link/link.module
+@@ -389,6 +389,17 @@ function _link_load($field, $item, $instance) {
+  *
   */
- function _link_process(&$item, $delta = 0, $field, $entity) {
+ function _link_process(&$item, $delta, $field, $entity, $instance) {
 +  // Unset query to prevent duplicates
 +  if (!empty($item['query'])) {
 +    $item['url'] .= '?' . http_build_query($item['query']);
@@ -16,6 +16,7 @@ index b5a42ab..47759aa 100644
 +    $item['url'] .= '#' . $item['fragment'];
 +    $item['fragment'] = '';
 +  }
++
    // Trim whitespace from URL.
-   $item['url'] = trim($item['url']);
- 
+   if (!empty($item['url'])) {
+     $item['url'] = trim($item['url']);

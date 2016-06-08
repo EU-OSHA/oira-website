@@ -110,6 +110,9 @@ function osha_news_strongarm() {
       'full' => array(
         'custom_settings' => FALSE,
       ),
+      'country_partner_content' => array(
+        'custom_settings' => TRUE,
+      ),
       'rss' => array(
         'custom_settings' => FALSE,
       ),

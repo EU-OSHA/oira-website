@@ -18,6 +18,14 @@ function oira_partner_field_extra_fields_formatter_info() {
   ];
 }
 
+
+function oira_partner_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['country_partner_content'] = array(
+    'label' => t('Content in country'),
+    'custom settings' => FALSE,
+  );
+}
+
 function oira_partner_field_extra_fields_formatter_settings_form($extra_field_name, $view_mode, $display, $form, &$form_state) {
   $settings = $display['settings'];
   $element = [];
@@ -66,7 +74,7 @@ function oira_partner_field_extra_fields() {
     'display' => array(
       'partner_content_count' => array(
         'label' => t('Content count'),
-        'description' => t('The bar with links to social websites'),
+        'description' => t('Partner content count'),
         'extra field type' => 'partner_content_count',
         'weight' => 0,
       ),
@@ -100,8 +108,99 @@ function oira_partner_node_view($node, $view_mode, $langcode) {
   }
 }
 
+
+/**
+ * Implements hook_block_info().
+ */
+function oira_partner_block_info() {
+  $blocks = array();
+  $blocks['oira_partner_country'] = array(
+    'info' => t('Oira partner in country'),
+    'status' => 1,
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'weight' => -3,
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * {@inheritdoc}
+ */
+function oira_partner_block_view($delta) {
+  $block = array();
+  switch ($delta) {
+    case 'oira_partner_country':
+      $block['subject'] = '';
+      $block['content'] = _oira_partner_partner_country_minipanel();
+      break;
+
+    case 'oira_partner_country_content':
+      $block['subject'] = '';
+      $block['content'] = _oira_partner_partner_country_minipanel();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function _oira_partner_partner_country_minipanel() {
+  $render = array();
+  $term = menu_get_object('taxonomy_term', 2);
+
+  if (!empty($term)) {
+    $partners = _oira_partner_get_by_country($term->tid);
+    if (!empty($partners)) {
+      $count = count($partners);
+      $render = array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('country-partners-container', 'partners-no-' . $count)),
+      );
+      $partners = node_load_multiple($partners);
+      $extra_class = '';
+      if ($count > 1) {
+        $render['#attributes']['class'][] = 'row';
+        $extra_class = 'col-md-6';
+      }
+      foreach ($partners as $node) {
+        $name = 'partner_in_country';
+        $panel_mini = panels_mini_load($name);
+        ctools_include('context');
+        $context = ctools_context_create('entity:node', $node);
+        $contexts = ctools_context_match_required_contexts($panel_mini->requiredcontexts, array($context));
+        $panel_mini->context = $panel_mini->display->context = ctools_context_load_contexts($panel_mini, FALSE, $contexts);
+        $panel_mini->display->css_id = panels_mini_get_id($panel_mini->name);
+        // Here is the markup, to with with whatever you wish.
+        $render[] = array(
+          '#type' => 'markup',
+          '#markup' => '<div class="country-partner-wrapper ' . $extra_class . '">' . panels_render_display($panel_mini->display) . '</div>',
+        );
+      }
+    }
+  }
+  return $render;
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function oira_partner_node_presave($node) {
+  // Invalidate content count cache.
+  if ($node->type == 'partner') {
+    cache_clear_all(_oira_partner_compute_count_cid($node), 'cache');
+  }
+}
+
+function _oira_partner_compute_count_cid($node) {
+  return 'oira_partner_count:' . $node->nid;
+}
+
 function _oira_partner_compute_content_count($node) {
-  $cache = cache_get('oira_partner_count:' . $node->nid);
+  $cache = cache_get(_oira_partner_compute_count_cid($node));
   if (!empty($cache)) {
     return $cache->data;
   }
@@ -133,7 +232,21 @@ function _oira_partner_compute_content_count($node) {
     foreach ($result as $res) {
       $return[$res->type]++;
     }
-    cache_set('oira_partner_count:' . $node->nid, $return, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
+    cache_set(_oira_partner_compute_count_cid($node), $return, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
     return $return;
   }
+}
+
+function _oira_partner_get_by_country($tid) {
+  $partners = array();
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'partner')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_country', 'tid', $tid);
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    $partners = array_keys($result['node']);
+  }
+  return $partners;
 }

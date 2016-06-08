@@ -138,6 +138,9 @@ function hwc_practical_tool_strongarm() {
       'search_index' => array(
         'custom_settings' => FALSE,
       ),
+      'country_partner_content' => array(
+        'custom_settings' => TRUE,
+      ),
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
@@ -197,8 +200,11 @@ function hwc_practical_tool_strongarm() {
             'settings' => array(),
           ),
           'default' => array(
-            'weight' => '2',
+            'weight' => '1',
+            'label' => 'above',
+            'type' => 'visible',
             'visible' => TRUE,
+            'settings' => array(),
           ),
         ),
         'title_field' => array(
@@ -206,6 +212,22 @@ function hwc_practical_tool_strongarm() {
             'weight' => '1',
             'label' => 'hidden',
             'type' => 'visible',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+          'default' => array(
+            'weight' => '14',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
+        ),
+        'related_partners' => array(
+          'default' => array(
+            'weight' => '13',
+            'label' => 'hidden',
+            'type' => 'related_partners',
             'visible' => TRUE,
             'settings' => array(),
           ),

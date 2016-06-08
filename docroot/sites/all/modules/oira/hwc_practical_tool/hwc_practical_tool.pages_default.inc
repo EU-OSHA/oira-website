@@ -341,6 +341,31 @@ function hwc_practical_tool_default_page_manager_handlers() {
     $display->content['new-a59edd2f-1c47-4e6f-bce4-8384b768f21e'] = $pane;
     $display->panels['center'][5] = 'new-a59edd2f-1c47-4e6f-bce4-8384b768f21e';
     $pane = new stdClass();
+    $pane->pid = 'new-7cc410e8-f73e-4c8d-93a7-da3c644d2b41';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:related_partners';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '7cc410e8-f73e-4c8d-93a7-da3c644d2b41';
+    $display->content['new-7cc410e8-f73e-4c8d-93a7-da3c644d2b41'] = $pane;
+    $display->panels['center'][6] = 'new-7cc410e8-f73e-4c8d-93a7-da3c644d2b41';
+    $pane = new stdClass();
     $pane->pid = 'new-b6f385ad-a21b-400d-9e56-a2144ff3324d';
     $pane->panel = 'image';
     $pane->type = 'entity_field';
