@@ -67,7 +67,7 @@ function hwc_practical_tool_node_view($node, $view_mode, $langcode) {
       $display = $extra_fields['related_partners']['display'];
       $node->content['related_partners'] = [
         '#theme' => 'field',
-        '#label_display' => $extra_field_pc['label'],
+        '#label_display' => $display[$view_mode]['label'],
         '#title' => $extra_field_pc['label'],
         '#items' => _hwc_practical_tool_get_partners($node),
         '#field_type' => 'extra_field',
@@ -84,9 +84,9 @@ function hwc_practical_tool_node_view($node, $view_mode, $langcode) {
         $display = $extra_fields['tools_see_more']['display'];
         $node->content['tools_see_more'] = [
           '#theme' => 'field',
-          '#label_display' => $extra_field_see_more['label'],
+          '#label_display' => $display[$view_mode]['label'],
           '#title' => $extra_field_see_more['label'],
-          '#items' => _hwc_practical_tool_get_partners($node),
+          '#items' => array($node->nid => 'See more'),
           '#field_type' => 'extra_field',
           '#field_name' => 'tools_see_more',
           '#entity_type' => 'node',
@@ -209,6 +209,7 @@ function hwc_practical_tool_field_extra_fields_formatter_view($entity_type, $ent
         // TODO add js and css.
         $settings['show_more_text'] = 'See more details';
         $settings['show_less_text'] = 'See less details';
+        $settings['delta'] = $entity->nid;
         $element[$delta] = array(
           '#type' => 'markup',
           '#markup' => '<span class="tools-see-more" data-nid="' . $entity->nid . '">' . t('See more details') . '</span>',
@@ -249,7 +250,7 @@ function hwc_practical_tool_related_partners_callback($node) {
  * Extra field callback for views.
  */
 function hwc_practical_tool_see_more_callback($node) {
-  $items = array($node->nid => 'See more');
+  $items = array('See more');
   $display = array('type' => 'tools_see_more');
   $element = hwc_practical_tool_field_extra_fields_formatter_view('node', $node, 'related_partners', 'en', $items, $display);
   return drupal_render($element);

@@ -640,20 +640,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_link' => '0',
-    'trim_length' => '400',
-    'trim_type' => 'chars',
-    'trim_suffix' => '...',
-    'more_link' => '1',
-    'more_text' => 'See more',
-    'summary_handler' => 'ignore',
-    'trim_options' => array(
-      'text' => 'text',
-      'use_field_summary' => 0,
-    ),
-    'trim_preserve_tags' => '',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
