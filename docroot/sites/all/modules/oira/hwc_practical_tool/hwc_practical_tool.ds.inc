@@ -61,6 +61,8 @@ function hwc_practical_tool_ds_layout_settings_info() {
         5 => 'field_sector',
         6 => 'field_language',
         7 => 'field_country',
+        8 => 'related_partners',
+        9 => 'tools_see_more',
       ),
     ),
     'fields' => array(
@@ -72,6 +74,8 @@ function hwc_practical_tool_ds_layout_settings_info() {
       'field_sector' => 'right',
       'field_language' => 'right',
       'field_country' => 'right',
+      'related_partners' => 'right',
+      'tools_see_more' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(

@@ -193,7 +193,7 @@ function hwc_practical_tool_strongarm() {
       'display' => array(
         'share_widget' => array(
           'teaser' => array(
-            'weight' => '17',
+            'weight' => '18',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
@@ -216,7 +216,7 @@ function hwc_practical_tool_strongarm() {
             'settings' => array(),
           ),
           'default' => array(
-            'weight' => '14',
+            'weight' => '15',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
@@ -225,11 +225,40 @@ function hwc_practical_tool_strongarm() {
         ),
         'related_partners' => array(
           'default' => array(
-            'weight' => '13',
+            'weight' => '14',
             'label' => 'hidden',
             'type' => 'related_partners',
             'visible' => TRUE,
             'settings' => array(),
+          ),
+          'teaser' => array(
+            'weight' => '8',
+            'label' => 'hidden',
+            'type' => 'related_partners',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+        ),
+        'tools_see_more' => array(
+          'default' => array(
+            'weight' => '12',
+            'label' => 'above',
+            'type' => 'tools_see_more',
+            'visible' => TRUE,
+            'settings' => array(
+              'slice_point' => '100',
+              'parent_selector' => '.views-row',
+            ),
+          ),
+          'teaser' => array(
+            'weight' => '9',
+            'label' => 'hidden',
+            'type' => 'tools_see_more',
+            'visible' => TRUE,
+            'settings' => array(
+              'slice_point' => '250',
+              'parent_selector' => '.view-mode-teaser',
+            ),
           ),
         ),
       ),

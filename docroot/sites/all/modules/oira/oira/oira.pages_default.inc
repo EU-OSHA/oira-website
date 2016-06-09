@@ -236,6 +236,35 @@ function oira_default_page_manager_pages() {
     $display->content['new-bad84030-52a4-423b-aea9-dd389a07853b'] = $pane;
     $display->panels['new_tools'][0] = 'new-bad84030-52a4-423b-aea9-dd389a07853b';
     $pane = new stdClass();
+    $pane->pid = 'new-70144c79-65be-4c1c-9c82-131d8f233e00';
+    $pane->panel = 'top_row';
+    $pane->type = 'node';
+    $pane->subtype = 'node';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'nid' => '57',
+      'links' => 0,
+      'leave_node_title' => 0,
+      'identifier' => '',
+      'build_mode' => 'osha_wiki',
+      'link_node_title' => 0,
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h1',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '70144c79-65be-4c1c-9c82-131d8f233e00';
+    $display->content['new-70144c79-65be-4c1c-9c82-131d8f233e00'] = $pane;
+    $display->panels['top_row'][0] = 'new-70144c79-65be-4c1c-9c82-131d8f233e00';
+    $pane = new stdClass();
     $pane->pid = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
     $pane->panel = 'top_row';
     $pane->type = 'views';
@@ -268,12 +297,12 @@ function oira_default_page_manager_pages() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'bbcfc306-8f03-494e-953e-e36d106d0d09';
     $display->content['new-bbcfc306-8f03-494e-953e-e36d106d0d09'] = $pane;
-    $display->panels['top_row'][0] = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
-  $display->hide_title = PANELS_TITLE_FIXED;
+    $display->panels['top_row'][1] = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;

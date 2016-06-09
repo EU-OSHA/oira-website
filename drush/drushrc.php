@@ -396,6 +396,7 @@ $options['init-modules'] = array(
 
   'jquery_update',
   'responsive_menus',
+  'jquery_expander',
 
   'workbench',
   'workbench_access',
