@@ -67,6 +67,7 @@ function oira_homepage_default_page_manager_pages() {
           1 => 6,
           2 => 9,
           3 => 16,
+          4 => 19,
         ),
         'parent' => 'canvas',
       ),
@@ -230,6 +231,46 @@ function oira_homepage_default_page_manager_pages() {
         'class' => 'container',
         'hide_empty' => 0,
       ),
+      19 => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 20,
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      20 => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '19',
+        'children' => array(
+          0 => 21,
+        ),
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      21 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'oira_partners',
+        ),
+        'parent' => '20',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'oira_partners' => array(
+        'type' => 'region',
+        'title' => 'OiRA Partners',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '21',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -243,6 +284,10 @@ function oira_homepage_default_page_manager_pages() {
       'promotional_materials' => NULL,
       'slider' => NULL,
       'tools' => NULL,
+      'oira_partners' => NULL,
+    ),
+    'oira_partners' => array(
+      'style' => '-1',
     ),
   );
   $display->cache = array();
@@ -285,6 +330,41 @@ function oira_homepage_default_page_manager_pages() {
     $pane->uuid = 'c12890d8-4a82-4186-a28b-3cd716cab9d4';
     $display->content['new-c12890d8-4a82-4186-a28b-3cd716cab9d4'] = $pane;
     $display->panels['news_section'][0] = 'new-c12890d8-4a82-4186-a28b-3cd716cab9d4';
+    $pane = new stdClass();
+    $pane->pid = 'new-e237c061-c218-44d2-a4be-a724bd53fb5c';
+    $pane->panel = 'oira_partners';
+    $pane->type = 'views';
+    $pane->subtype = 'oira_partners';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '6',
+      'pager_id' => '0',
+      'offset' => '1',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'oira_partners_homepage',
+      'override_title' => 1,
+      'override_title_text' => ' %title',
+      'override_title_heading' => 'h3',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e237c061-c218-44d2-a4be-a724bd53fb5c';
+    $display->content['new-e237c061-c218-44d2-a4be-a724bd53fb5c'] = $pane;
+    $display->panels['oira_partners'][0] = 'new-e237c061-c218-44d2-a4be-a724bd53fb5c';
     $pane = new stdClass();
     $pane->pid = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
     $pane->panel = 'promotional_materials';
