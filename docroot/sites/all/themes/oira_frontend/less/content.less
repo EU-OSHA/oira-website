@@ -18,14 +18,17 @@ h3.pane-title{
 	border-bottom: 2px solid @color-text-purple;
 	font-size: @font-size2-2;
 	padding-bottom: 3px;
-	font-weight: bold;
+	//font-weight: bold;
+	margin-bottom: 25px;
 	margin-top: 50px;
+	font-family: @font-family-base-2;
  }
 
 h4{
+	font-size: @font-size-base;
 	a{
 		color: @color-text-grey;
-		font-size: @font-size0-75;
+		font-size: @font-size1;
 	    font-weight: bold;	
 	}
 }
@@ -48,6 +51,18 @@ h5{
 	}
 }
 
+h2{
+	font-size: @font-size-base;
+	color: @color-text-grey;
+	font-family: @font-family-base-2;
+	//font-weight: bold;
+	a{
+		color: @color-text-purple-darker;
+		font-family: @font-family-base-2;
+		font-size: 2.6em;
+	}
+}
+
  .h3image-promotional-materials{
     background-image: @image-map-white;
     background-position: right;
@@ -67,10 +82,14 @@ h5{
 		font-style: italic;
 		display: block;
 		text-align: right;
-		font-size: @font-size0-85;
+		font-size: @font-size1;
 		margin-top: 20px;
 		&:before{
 			content:'>';
+			margin-right: 2px;
+		    display: inline-block;
+		    position: relative;
+		    top: -1px;
 		}
 	}
 }
@@ -81,12 +100,14 @@ a.more-link{
 	font-style: italic;
 	display: block;
 	text-align: right;
-	font-size: @font-size0-85;
-	position: absolute;
-    right: 30px;
-    bottom: 15px;
+	font-size: @font-size1;
+	margin-top: 0.5em;
 	&:before{
 		content:'>';
+		margin-right: 5px;
+	    display: inline-block;
+	    position: relative;
+	    top: -1px;
 	}
 }
 
@@ -112,6 +133,18 @@ a.more-link{
 	}
 }
 
+/*Etiquetas azuler de pais e idioma*/
+.field.field-name-field-country, .field-type-language-field {
+    background-color: #10b2e4;
+    display: inline-block;
+    color: white;
+    padding: 3px 16px;
+    font-size: 0.9em;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 1em;
+}
+
 /*END estilos comunes
 ************************************************************************************/
 
@@ -131,6 +164,8 @@ a.more-link{
 				width: 1140px;
 				top: 45%;
 				left: 10%;
+				font-family: @font-family-base-2;
+				font-weight: 300;
 				a{
 					color: @color-white;
 				}
@@ -168,16 +203,38 @@ a.more-link{
     			margin-bottom: 20px;
     			.field-name-field-image{
     				img{
-    					width: 100%;
-    					max-height: 310px; 
+    					//width: 100%;
+    					//max-height: 310px; 
+    				}
+    			}
+    			h4{
+    				a{
+    					font-size: @font-size2-2;
     				}
     			}
 			}
 			.views-item-columns-container{
 				background-color: @color-white;
-				padding: 10px;
-				padding-bottom: 40px;
-				min-height: 250px;
+				padding: 15px;
+				min-height: 358px;
+				h4{
+					a{
+						font-size: @font-size1-2;
+					}
+				}
+				a.more-link{
+					color: @color-see-more;
+					font-weight: bold;
+					font-style: italic;
+					display: block;
+					text-align: right;
+					font-size: @font-size1;
+				    right: 30px;
+				    bottom: 15px;
+					&:before{
+						content:'>';
+					}
+				}
 			}
 		}
 	}
@@ -187,7 +244,7 @@ a.more-link{
 		.pane-promotional-materials{
 			div.pane-title{
 				color: @color-text-purple;
-	    		font-size: 1.2em;
+	    		font-size: @font-size1-2;
 	    		font-weight: bold;
 	    		margin-bottom: 14px;
 	    		font-style: italic;
@@ -212,13 +269,13 @@ a.more-link{
     		margin-bottom: 20px;
     		.field-name-field-image{
     			img{
-    				width: 100%;
-    				max-height: 310px; 
+    				//width: 100%;
+    				//max-height: 310px; 
     			}
     		}
     		.field-name-title-field{
     			a{
-    				font-size: @font-size1-2;	
+    				font-size: @font-size2-2;	
     			}
     			
     		}
@@ -226,7 +283,7 @@ a.more-link{
 		.view-display-id-block_1{
 			.views-item-columns-container{
 				background-color: @color-white;
-				padding: 10px;
+				padding: 15px;
 				a{
 					display: block;
     				.glyphicon-new-window{
@@ -240,7 +297,7 @@ a.more-link{
 		.pane-views.pane-tools{
 			.pane-title{
 				color: @color-text-purple;
-	    		font-size: 1.2em;
+	    		font-size: @font-size1-2;
 	    		font-weight: bold;
 	    		margin-bottom: 14px;
 	    		font-style: italic;
@@ -310,7 +367,7 @@ a.more-link{
 		#additional-resources-external_url-pane{
 			.view-additional-resources{
 				.views-item-columns-container{
-						padding: 10px!important;
+						padding: 15px !important;
 					}
 				}
 			}
@@ -324,3 +381,46 @@ a.more-link{
 
 /*END ARTICLES*/
 
+/*WHAT'S NEW SECTION
+*********************************************************************/
+.page-what-is-new{
+	.panels-flexible-row-new-2{
+		padding-top: 30px;
+		background-color: @color-primary;
+	}
+	.panels-flexible-row-new-3{
+		background-color: @color-primary-dark;
+		margin-top: 10px;
+		h3.pane-title{
+			color: @color-white;
+			border-bottom: 2px solid @color-white;
+			margin-bottom: 0px;
+		}
+		.views-item-columns-container{
+			padding: 15px;
+			margin-top: 30px;
+    		min-height: 230px;
+		}
+		.more-link{
+			a{
+				color: @color-white;
+			}
+		}
+	}
+	.panels-flexible-row-new-6{
+		background-color: @color-white !important;
+		.views-item-columns-container{
+			background-color: @color-primary;
+			min-height: 515px;
+			.views-field-field-image{
+				min-height: 202px;//testing
+			}
+			.tool-teaser-content-wrapper{
+				padding: 15px;
+			}
+		}
+	}
+}
+
+
+/*END WHAT'S NEW*/
