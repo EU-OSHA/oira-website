@@ -465,6 +465,7 @@ $options['init-modules'] = array(
   'field_formatter_class',
   'manualcrop',
   'panels_breadcrumbs',
+  'panels_custom_title_tag',
   'extra_field_formatter',
   'extrafield_views_integration',
 

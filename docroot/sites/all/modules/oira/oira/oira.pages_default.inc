@@ -42,11 +42,19 @@ function oira_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+        'entity_id' => '57',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'What\'s new in OiRA?',
+    'panels_breadcrumbs_titles' => '%node:title-field',
     'panels_breadcrumbs_paths' => '<none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -68,9 +76,10 @@ function oira_default_page_manager_pages() {
         'width_type' => '%',
         'parent' => 'canvas',
         'children' => array(
-          0 => 2,
-          1 => 3,
-          2 => 6,
+          0 => 7,
+          1 => 2,
+          2 => 3,
+          3 => 6,
         ),
         'class' => '',
         'hide_empty' => 1,
@@ -132,6 +141,25 @@ function oira_default_page_manager_pages() {
         'class' => 'container',
         'hide_empty' => 0,
       ),
+      7 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'image',
+        ),
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'image' => array(
+        'type' => 'region',
+        'title' => 'Image',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '7',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -143,6 +171,7 @@ function oira_default_page_manager_pages() {
       'new_tools' => NULL,
       'top_row' => NULL,
       'latest_news' => NULL,
+      'image' => NULL,
     ),
     'new_tools' => array(
       'style' => '-1',
@@ -159,6 +188,106 @@ function oira_default_page_manager_pages() {
   $display->uuid = '67235c14-a809-4e72-957a-a2c262386280';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-85ebbe5d-0175-4deb-b3fb-fb3c1ab7d2a8';
+    $pane->panel = 'image';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_image';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'image',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'field_formatter_class' => '',
+        'image_style' => 'article_image',
+        'image_link' => '',
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'whats-new-image',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '85ebbe5d-0175-4deb-b3fb-fb3c1ab7d2a8';
+    $display->content['new-85ebbe5d-0175-4deb-b3fb-fb3c1ab7d2a8'] = $pane;
+    $display->panels['image'][0] = 'new-85ebbe5d-0175-4deb-b3fb-fb3c1ab7d2a8';
+    $pane = new stdClass();
+    $pane->pid = 'new-f40dd034-992b-48a0-96bb-9259fe5b869f';
+    $pane->panel = 'image';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:title_field';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'title_linked',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'title_style' => 'h1',
+        'title_link' => '',
+        'title_class' => '',
+        'field_formatter_class' => '',
+      ),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'whats-new-title container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'f40dd034-992b-48a0-96bb-9259fe5b869f';
+    $display->content['new-f40dd034-992b-48a0-96bb-9259fe5b869f'] = $pane;
+    $display->panels['image'][1] = 'new-f40dd034-992b-48a0-96bb-9259fe5b869f';
+    $pane = new stdClass();
+    $pane->pid = 'new-2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4';
+    $pane->panel = 'image';
+    $pane->type = 'custom_title_tag';
+    $pane->subtype = 'custom_title_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'buttons' => NULL,
+      'custom_page_title_pattern' => '%node:title-field',
+      'form_build_id' => 'form-pgsPVFG5mhMxdlcWqL_DZSclyNQjTO3AFODEgPQxtLA',
+      'form_token' => '2xYl9p4C3kOEiWl7_vgX0RWpvzbEv2N4xXRWPR_FXn0',
+      'form_id' => 'panels_custom_title_tag_edit_form',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4';
+    $display->content['new-2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4'] = $pane;
+    $display->panels['image'][2] = 'new-2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4';
     $pane = new stdClass();
     $pane->pid = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
     $pane->panel = 'latest_news';
@@ -236,35 +365,6 @@ function oira_default_page_manager_pages() {
     $display->content['new-bad84030-52a4-423b-aea9-dd389a07853b'] = $pane;
     $display->panels['new_tools'][0] = 'new-bad84030-52a4-423b-aea9-dd389a07853b';
     $pane = new stdClass();
-    $pane->pid = 'new-70144c79-65be-4c1c-9c82-131d8f233e00';
-    $pane->panel = 'top_row';
-    $pane->type = 'node';
-    $pane->subtype = 'node';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'nid' => '57',
-      'links' => 0,
-      'leave_node_title' => 0,
-      'identifier' => '',
-      'build_mode' => 'osha_wiki',
-      'link_node_title' => 0,
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h1',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '70144c79-65be-4c1c-9c82-131d8f233e00';
-    $display->content['new-70144c79-65be-4c1c-9c82-131d8f233e00'] = $pane;
-    $display->panels['top_row'][0] = 'new-70144c79-65be-4c1c-9c82-131d8f233e00';
-    $pane = new stdClass();
     $pane->pid = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
     $pane->panel = 'top_row';
     $pane->type = 'views';
@@ -297,11 +397,11 @@ function oira_default_page_manager_pages() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'bbcfc306-8f03-494e-953e-e36d106d0d09';
     $display->content['new-bbcfc306-8f03-494e-953e-e36d106d0d09'] = $pane;
-    $display->panels['top_row'][1] = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
+    $display->panels['top_row'][0] = 'new-bbcfc306-8f03-494e-953e-e36d106d0d09';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
   $handler->conf['display'] = $display;
