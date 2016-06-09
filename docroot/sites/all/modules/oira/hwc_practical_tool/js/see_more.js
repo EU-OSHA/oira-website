@@ -3,7 +3,6 @@
         attach: function(context, settings) {
             $('.tools-see-more').once('tools_see_more', function() {
                 var expander = Drupal.settings.tools_expander;
-                console.log(expander);
                 var key = $(this).attr('data-nid');
                 var expander_setting = {};
                 $.each(expander, function(idx, value) {
@@ -20,7 +19,8 @@
                     expandText:       '', // default is 'read more'
                     userCollapseText: ''
                 });
-                $(this).on('click', function(){
+                $(this).find('a').on('click', function(e){
+                    e.preventDefault();
                     var show_less = expander_setting.show_less_text;
                     var show_more = expander_setting.show_more_text;
                     if ($(this).hasClass('show-less')) {

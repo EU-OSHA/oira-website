@@ -212,7 +212,7 @@ function hwc_practical_tool_field_extra_fields_formatter_view($entity_type, $ent
         $settings['delta'] = $entity->nid;
         $element[$delta] = array(
           '#type' => 'markup',
-          '#markup' => '<span class="tools-see-more" data-nid="' . $entity->nid . '">' . t('See more details') . '</span>',
+          '#markup' => '<span class="tools-see-more" data-nid="' . $entity->nid . '"><a href="#">' . t('See more details') . '</a></span>',
           '#attached' => array(
             'css' => array(
               $path . '/css/see_more.css',
