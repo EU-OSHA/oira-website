@@ -6606,6 +6606,7 @@ button.close {
   background-color: #003399;
   border: 0px solid #003399;
   padding: 4px 0px 2px 11px;
+  overflow: hidden;
 }
 .top-header .header-blocks #block-search-form #search-block-form .input-group-btn button:before {
   content: "\e003";
