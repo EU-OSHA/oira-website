@@ -10,7 +10,7 @@
 }
 #mini-panel-related_content > div  .panels-flexible-column {
     display: table-cell;
-    padding: 0 15px;
+    padding: 15px 30px;
 }
 
 .article-content-container {

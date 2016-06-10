@@ -6651,7 +6651,6 @@ button.close {
 **************************************************/
 .menu-header {
   margin-top: 35px;
-  margin-bottom: 25px;
   background-color: #10b2e4;
   font-family: 'Oswald';
   font-size: 1.1em;
@@ -6734,27 +6733,32 @@ button.close {
   margin: 0px;
 }
 body {
-  font-size: 16px;
+  font-size: 16px !important;
+  color: #58585a;
 }
 input,
 select {
   box-shadow: none !important;
 }
+h2 {
+  color: #58585a;
+  font-family: 'Oswald';
+}
+h2 a {
+  color: #786586;
+  font-family: 'Oswald';
+  font-size: 1em;
+}
 h3.pane-title {
   color: #967ea7;
   border-bottom: 2px solid #967ea7;
   font-size: 2.2em;
-  padding-bottom: 3px;
-  margin-bottom: 25px;
-  margin-top: 50px;
+  padding-bottom: 15px;
   font-family: 'Oswald';
-}
-h4 {
-  font-size: 16px;
 }
 h4 a {
   color: #58585a;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: bold;
 }
 h4.pane-title {
@@ -6763,6 +6767,7 @@ h4.pane-title {
   font-weight: bold;
 }
 h5 {
+  font-size: 16px;
   color: #58585a;
   font-weight: bold;
 }
@@ -6770,15 +6775,9 @@ h5 a {
   color: #58585a;
   font-weight: bold;
 }
-h2 {
-  font-size: 16px;
-  color: #58585a;
-  font-family: 'Oswald';
-}
-h2 a {
-  color: #786586;
-  font-family: 'Oswald';
-  font-size: 2.6em;
+.breadcrumb {
+  margin-bottom: 0px;
+  background-color: #ffffff;
 }
 .h3image-promotional-materials {
   background-image: url('../images/promotional.png');
@@ -6843,7 +6842,8 @@ a.more-link:before {
 }
 /*Etiquetas azuler de pais e idioma*/
 .field.field-name-field-country,
-.field-type-language-field {
+.field-type-language-field,
+.field-name-field-sector {
   background-color: #10b2e4;
   display: inline-block;
   color: white;
@@ -6852,15 +6852,19 @@ a.more-link:before {
   font-weight: bold;
   font-style: italic;
   margin-top: 1em;
+  margin-right: 5px;
 }
 /*END estilos comunes
 ************************************************************************************/
 /*ESTILOS HOME
 ********************************************************/
-#block-system-main .view-id-slideshow .owl-wrapper .views-field-field-image {
+#block-system-main .panels-flexible-region-new-slider {
+  margin-top: 35px;
+}
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-image {
   position: relative;
 }
-#block-system-main .view-id-slideshow .owl-wrapper .views-field-title-field {
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-title-field {
   position: absolute;
   width: 1140px;
   top: 45%;
@@ -6868,24 +6872,25 @@ a.more-link:before {
   font-family: 'Oswald';
   font-weight: 300;
 }
-#block-system-main .view-id-slideshow .owl-wrapper .views-field-title-field a {
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-title-field a {
   color: #ffffff;
+  font-size: 1.2em;
 }
-#block-system-main .view-id-slideshow .owl-wrapper .views-field-body {
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-body {
   position: absolute;
   width: 1140px;
   top: 63%;
   left: 10%;
   color: #ffffff;
 }
-#block-system-main .view-id-slideshow .owl-controls.clickable {
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-controls.clickable {
   position: absolute;
   left: 50%;
   top: 95%;
   transform: translate(-50%, -95%);
   -webkit-transform: translate(-50%, -95%);
 }
-#block-system-main .view-id-slideshow .owl-controls.clickable .owl-page span {
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-controls.clickable .owl-page span {
   background: #ffffff !important;
 }
 #block-system-main .panels-flexible-row-new-6 {
@@ -6898,15 +6903,12 @@ a.more-link:before {
   margin-bottom: 20px;
 }
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .view-display-id-attachment_1 h4 a {
-  font-size: 2.2em;
+  font-size: 1.6em;
 }
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container {
   background-color: #ffffff;
   padding: 15px;
   min-height: 358px;
-}
-#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container h4 a {
-  font-size: 1.2em;
 }
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container a.more-link {
   color: #10b2e4;
@@ -6942,7 +6944,7 @@ a.more-link:before {
   margin-bottom: 20px;
 }
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-title-field a {
-  font-size: 2.2em;
+  font-size: 1.6em;
 }
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container {
   background-color: #ffffff;
@@ -6965,40 +6967,60 @@ a.more-link:before {
 /*END HOME*/
 /*ESTILOS ARTICLES
 ****************************************************************/
+.node-type-article .view-all-url {
+  border-top: 2px solid #ffffff;
+  text-align: right;
+  padding-top: 15px;
+}
+.node-type-article .pane-node-field-summary {
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+.node-type-article .pane-node-body ul {
+  margin-left: 30px;
+}
+.node-type-article .pane-node-share-widget {
+  margin: 25px 0px;
+}
+.node-type-article .pane-node-share-widget .hwc-share-widget ul {
+  list-style: none;
+}
+.node-type-article .pane-node-share-widget .hwc-share-widget ul li.share-this-article {
+  display: none;
+}
+.node-type-article .pane-node-share-widget .hwc-share-widget ul li {
+  display: inline-block;
+  background-color: red;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+}
 .node-type-article .panels-flexible-row-new-10 {
+  padding-bottom: 0px;
   background-color: #786586;
+  margin-bottom: 10px;
 }
 .node-type-article .panels-flexible-row-new-10 .panels-flexible-column-new-main {
-  border-right: 7px solid #ffffff;
+  border-right: 10px solid #ffffff;
   height: 244px;
 }
-.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications h3.pane-title {
+.node-type-article .panels-flexible-row-new-10 #mini-panel-related_content h3.pane-title {
   color: #ffffff;
   font-size: 2em;
   border-bottom: 2px solid #ffffff;
+  padding-bottom: 15px;
 }
-.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications .pane-content {
-  border-bottom: 2px solid #ffffff;
-}
-.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications .pane-content a {
+.node-type-article .panels-flexible-row-new-10 #mini-panel-related_content .pane-content a {
   color: #ffffff;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 15px;
+  display: block;
 }
-.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications .pane-content a:before {
+.node-type-article .panels-flexible-row-new-10 #mini-panel-related_content .pane-content a:before {
   content: '>';
-}
-.node-type-article .panels-flexible-row-new-10 .pane-views h3.pane-title {
-  color: #ffffff;
-  font-size: 2em;
-  border-bottom: 2px solid #ffffff;
-}
-.node-type-article .panels-flexible-row-new-10 .pane-views .pane-content {
-  border-bottom: 2px solid #ffffff;
-}
-.node-type-article .panels-flexible-row-new-10 .pane-views .pane-content a {
-  color: #ffffff;
-}
-.node-type-article .panels-flexible-row-new-10 .pane-views .pane-content a:before {
-  content: '>';
+  margin-right: 5px;
 }
 .node-type-article .panels-flexible-row-new-13 {
   background-color: #dfd8e4;
@@ -7014,9 +7036,23 @@ a.more-link:before {
 /*END ARTICLES*/
 /*WHAT'S NEW SECTION
 *********************************************************************/
+.page-what-is-new .panels-flexible-region-new-image {
+  position: relative;
+}
+.page-what-is-new .panels-flexible-region-new-image .pane-node-title-field {
+  margin-top: -93px;
+}
+.page-what-is-new .panels-flexible-region-new-image .pane-node-title-field h1 {
+  color: #ffffff;
+  font-size: 2.6em;
+  font-family: 'Oswald';
+}
 .page-what-is-new .panels-flexible-row-new-2 {
   padding-top: 30px;
   background-color: #dfd8e4;
+}
+.page-what-is-new .panels-flexible-row-new-2 .views-field-field-summary {
+  padding: 15px 0px 0px 0px;
 }
 .page-what-is-new .panels-flexible-row-new-3 {
   background-color: #786586;
@@ -7040,13 +7076,43 @@ a.more-link:before {
 }
 .page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container {
   background-color: #dfd8e4;
-  min-height: 515px;
+  min-height: 538px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .views-field-field-image {
   min-height: 202px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
+}
+/*END WHAT'S NEW*/
+/*OIRA TOOLS
+**************************************************************/
+.page-oira-tools .panels-flexible-row-new-1 {
+  background: url('../images/background-two-colors.png') repeat-y 50%;
+  padding-bottom: 0px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child .form-group {
+  margin-bottom: 0px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column {
+  background-color: #786586;
+  color: #ffffff;
+  padding-right: 30px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content {
+  background-color: #dfd8e4;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  border-left: 5px solid #ffffff;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .node-practical-tool {
+  border-top: 2px solid #786586;
+  padding: 30px 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .node-practical-tool .col-sm-3 {
+  padding-left: 0px;
 }
 /*FOOTER
 ********************************************/
