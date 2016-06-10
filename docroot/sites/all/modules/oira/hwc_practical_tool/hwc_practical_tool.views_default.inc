@@ -766,13 +766,33 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_tool_link']['table'] = 'field_data_field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['field'] = 'field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['label'] = '';
+  $handler->display->display_options['fields']['field_tool_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tool_link']['alter']['text'] = 'See more';
+  $handler->display->display_options['fields']['field_tool_link']['alter']['path'] = '[field_tool_link-url]';
+  $handler->display->display_options['fields']['field_tool_link']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_tool_link']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['field_tool_link']['alter']['link_class'] = 'more-link';
+  $handler->display->display_options['fields']['field_tool_link']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_tool_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tool_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_tool_link']['type'] = 'external_tool_link';
+  $handler->display->display_options['fields']['field_tool_link']['type'] = 'link_plain';
   $handler->display->display_options['fields']['field_tool_link']['settings'] = array(
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_tool_link']['field_api_classes'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'See more';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[field_tool_link]';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'more-link';
+  $handler->display->display_options['fields']['nothing']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1021,6 +1041,7 @@ function hwc_practical_tool_views_default_views() {
 [tools_see_more]
 </div>'),
     t('Latest tools'),
+    t('See more'),
     t('New tools'),
     t('See more tools'),
     t('<div class="tool-teaser-content-wrapper">
