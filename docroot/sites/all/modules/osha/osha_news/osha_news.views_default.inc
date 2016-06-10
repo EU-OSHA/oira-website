@@ -266,14 +266,15 @@ function osha_news_views_default_views() {
     'trim_type' => 'chars',
     'trim_suffix' => '...',
     'more_link' => '1',
-    'more_text' => 'See more details',
+    'more_text' => 'See more',
     'summary_handler' => 'full',
     'trim_options' => array(
+      'text' => 'text',
       'use_field_summary' => 'use_field_summary',
-      'text' => 0,
     ),
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
+    'tools_show_full' => 0,
   );
   $handler->display->display_options['block_description'] = 'Latest news';
 
@@ -345,13 +346,15 @@ function osha_news_views_default_views() {
     'trim_type' => 'chars',
     'trim_suffix' => '...',
     'more_link' => '1',
-    'more_text' => 'See more details',
+    'more_text' => 'See more',
     'summary_handler' => 'ignore',
     'trim_options' => array(
       'text' => 'text',
+      'use_field_summary' => 0,
     ),
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
+    'tools_show_full' => 0,
   );
 
   /* Display: Related news */
@@ -494,9 +497,11 @@ function osha_news_views_default_views() {
     'summary_handler' => 'ignore',
     'trim_options' => array(
       'text' => 'text',
+      'use_field_summary' => 0,
     ),
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
+    'tools_show_full' => 0,
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = TRUE;
   /* Field: Global: Custom text */

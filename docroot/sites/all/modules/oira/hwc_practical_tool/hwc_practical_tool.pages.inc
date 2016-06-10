@@ -192,7 +192,11 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     unset($pager_params['page']);
     $form['content']['results'] = array(
       '#nids' => $nids,
-      'results-native' => node_view_multiple($nodes, 'teaser', 0, $language->language),
+      'nodes' => array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('search-page-results-wrapper')),
+        'results-native' => node_view_multiple($nodes, 'teaser', 0, $language->language),
+      ),
       '#suffix' => theme('pager', array(
         'tags' => array('<', '<', '', '>', '>'),
         'quantity' => 9,

@@ -232,7 +232,7 @@ function hwc_practical_tool_strongarm() {
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '8',
+            'weight' => '7',
             'label' => 'hidden',
             'type' => 'related_partners',
             'visible' => TRUE,
@@ -251,7 +251,7 @@ function hwc_practical_tool_strongarm() {
             ),
           ),
           'teaser' => array(
-            'weight' => '9',
+            'weight' => '8',
             'label' => 'hidden',
             'type' => 'tools_see_more',
             'visible' => TRUE,

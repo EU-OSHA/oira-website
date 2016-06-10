@@ -142,7 +142,7 @@ function hwc_practical_tool_field_extra_fields_formatter_info() {
       'extra field types' => ['tools_see_more'],
       'settings' => [
         'slice_point' => 250,
-        'parent_selector' => '.views-row',
+        'parent_selector' => '.views-row, .views-view-grid',
       ],
     ],
   ];
@@ -207,12 +207,12 @@ function hwc_practical_tool_field_extra_fields_formatter_view($entity_type, $ent
       $path = drupal_get_path('module', 'hwc_practical_tool');
       foreach ($items as $delta => $item) {
         // TODO add js and css.
-        $settings['show_more_text'] = 'See more details';
-        $settings['show_less_text'] = 'See less details';
+        $settings['show_more_text'] = 'See more';
+        $settings['show_less_text'] = 'See less';
         $settings['delta'] = $entity->nid;
         $element[$delta] = array(
           '#type' => 'markup',
-          '#markup' => '<span class="tools-see-more" data-nid="' . $entity->nid . '"><a href="#">' . t('See more details') . '</a></span>',
+          '#markup' => '<span class="tools-see-more" data-nid="' . $entity->nid . '"><a class="more-link" href="#">' . t('See more') . '</a></span>',
           '#attached' => array(
             'css' => array(
               $path . '/css/see_more.css',
@@ -235,7 +235,7 @@ function hwc_practical_tool_field_extra_fields_formatter_view($entity_type, $ent
  */
 function hwc_practical_tool_related_partners_callback($node) {
   $node->related_partners = _hwc_practical_tool_get_partners($node);
-  hwc_practical_tool_node_view($node, 'full', 'en');
+  hwc_practical_tool_node_view($node, 'teaser', 'en');
   if (!empty($node->content['related_partners'])) {
     $content = $node->content['related_partners'];
     $display = array('type' => 'related_partners');
@@ -250,10 +250,12 @@ function hwc_practical_tool_related_partners_callback($node) {
  * Extra field callback for views.
  */
 function hwc_practical_tool_see_more_callback($node) {
-  $items = array('See more');
-  $display = array('type' => 'tools_see_more', 'view_mode' => 'teaser');
-  $element = hwc_practical_tool_field_extra_fields_formatter_view('node', $node, 'related_partners', 'en', $items, $display);
-  return drupal_render($element);
+  if ($node->type == 'practical_tool') {
+    $items = array('See more');
+    $display = array('type' => 'tools_see_more', 'view_mode' => 'teaser');
+    $element = hwc_practical_tool_field_extra_fields_formatter_view('node', $node, 'related_partners', 'en', $items, $display);
+    return drupal_render($element);
+  }
 }
 
 
@@ -317,8 +319,56 @@ function osha_title_formatter_practical_tool_view($entity_type, $entity, $field,
     $items[0]['value'] = $entity->field_alternative_title[LANGUAGE_NONE][0]['value'];
     $items[0]['safe_value'] = $entity->field_alternative_title[LANGUAGE_NONE][0]['safe_value'];
   }
-  return title_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+
+  $settings = $display['settings'];
+  $output = isset($items[0]) ? $items[0]['safe_value'] : '';
+
+  $entity_wrapper = entity_metadata_wrapper('node', $entity);
+  if (!empty($output) && $settings['title_link'] == 'content'
+    && !empty($entity->field_tool_link)) {
+    $uri = $entity_wrapper->field_tool_link->value();
+    $output = l($output, $uri['url'], array('html' => TRUE, 'attributes' => array('target' => '_blank')));
+  }
+
+  $wrap_tag = empty($settings['title_style']) ? '_none' : $settings['title_style'];
+
+  if ($wrap_tag != '_none') {
+    $element = array(
+      'element' => array(
+        '#tag' => $wrap_tag,
+        '#value' => $output,
+      ),
+    );
+
+    if (!empty($settings['title_class'])) {
+      $element['#attributes'] = array('class' => $settings['title_class']);
+    }
+
+    $output = theme('html_tag', $element);
+  }
+
+  $element = array(
+    array(
+      '#markup' => $output,
+    ),
+  );
+
+  return $element;
 }
+
+/**
+ * Implements hook_field_formatter_settings_form_alter().
+ */
+function hwc_practical_tool_field_formatter_settings_form_alter(array &$settings_form, array $context) {
+  if ($context['instance']['display'][$context['view_mode']]['type'] == 'smart_trim_format') {
+    $settings_form['tools_show_full'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Show full body for Tools',
+      '#default_value' => $context['instance']['display'][$context['view_mode']]['tools_show_full'],
+    );
+  }
+}
+
 
 /**
  * Use of osha_smart_trim_formatter_' . $entity->type . '_view'.
@@ -333,6 +383,10 @@ function osha_smart_trim_formatter_practical_tool_view($entity_type, $entity, $f
     && !empty($entity->field_alternative_body[LANGUAGE_NONE][0]['value'])) {
     $items[0]['value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['value'];
     $items[0]['safe_value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['safe_value'];
+  }
+  if (!empty($display['settings']['tools_show_full'])) {
+    $display['settings']['trim_length'] = 9999;
+    $display['settings']['more_link'] = FALSE;
   }
   return smart_trim_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
 }
