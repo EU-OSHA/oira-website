@@ -207,12 +207,12 @@ function hwc_practical_tool_field_extra_fields_formatter_view($entity_type, $ent
       $path = drupal_get_path('module', 'hwc_practical_tool');
       foreach ($items as $delta => $item) {
         // TODO add js and css.
-        $settings['show_more_text'] = 'See more details';
-        $settings['show_less_text'] = 'See less details';
+        $settings['show_more_text'] = 'See more';
+        $settings['show_less_text'] = 'See less';
         $settings['delta'] = $entity->nid;
         $element[$delta] = array(
           '#type' => 'markup',
-          '#markup' => '<span class="tools-see-more" data-nid="' . $entity->nid . '"><a href="#">' . t('See more details') . '</a></span>',
+          '#markup' => '<span class="tools-see-more" data-nid="' . $entity->nid . '"><a class="more-link" href="#">' . t('See more') . '</a></span>',
           '#attached' => array(
             'css' => array(
               $path . '/css/see_more.css',
