@@ -36,12 +36,16 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
     $all_rows = array();
     $all_rows_rendered = '';
     foreach ($sets as $title => $records) {
+      $has_sector = FALSE;
       if ($this->uses_row_plugin()) {
         $rows = array();
         foreach ($records as $row_index => $row) {
           if (isset($row->nid)) {
             $node = node_load($row->nid);
             $row_render = node_view($node, 'teaser');
+            if ($row->node_type == 'practical_tool') {
+              $has_sector = TRUE;
+            }
             $row_rendered = drupal_render($row_render);
           }
           else {
@@ -69,7 +73,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
         }
         $contents = '<div class="container"><div class="content-group-label">' . $title . '</div>';
         foreach ($rows as $row) {
-          $contents .= '<div class="quicktabs-views-group ' . $this->options['row_class'] . '">' . $row . '</div>';
+          $contents .= '<div class="quicktabs-views-group ' . (($has_sector) ? 'sector-filter-tab-content' : '') . $this->options['row_class'] . '">' . $row . '</div>';
         }
         $contents .= '</div>';
         $tabs[] = array(
@@ -90,7 +94,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
         }
       }
     }
-
+    drupal_add_js(drupal_get_path('module', 'oira_partner') . '/js/sector_filter.js');
     // WHY sort the results by title???
     $tabs[] = array(
       'title' => t('Show all'),
