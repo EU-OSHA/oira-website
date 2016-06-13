@@ -135,14 +135,20 @@
 <div class="page-content">
   <section class="page-content-header">
     <div class="page-content-header-container">
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+      <div class="container breadcrum-container">
+        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+      </div>
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
+        <div class="page-title-wrapper">
+          <div class="container page-title-container">
+            <h1 class="page-header"><?php print $title; ?></h1>
+          </div>
+        </div>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
     </div>
