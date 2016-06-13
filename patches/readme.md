@@ -187,6 +187,9 @@ List of patches (most recent first)
   * Added entity_translation in views (to be able to filter by language)
   * https://www.drupal.org/node/1330332
   * https://www.drupal.org/files/issues/entity_translation-filter_views-1330332-47.patch
+  * Source language prepopulated values should be also included in $form_state['field']
+  * https://www.drupal.org/node/2339315
+  * https://www.drupal.org/files/issues/entity_translation-prepopulate-form-state-2339315-14.patch
 
 * rules
   * added && if isset($data[$hook]) to avoid error when running update.sh (https://www.drupal.org/node/2161847)
