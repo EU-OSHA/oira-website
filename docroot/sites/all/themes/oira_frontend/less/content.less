@@ -6,29 +6,42 @@
 }
 
 body{
-	font-size: 16px;
+	font-size: 16px !important;//testing al finalizar quitar el important
+	color: @color-text-grey;
 }
 
 input, select{
 	box-shadow: none !important;
 }
 
+h2{
+	//font-size: @font-size-base;
+	color: @color-text-grey;
+	font-family: @font-family-base-2;
+	//font-weight: bold;
+	a{
+		color: @color-text-purple-darker;
+		font-family: @font-family-base-2;
+		font-size: @font-size1;
+	}
+}
+
 h3.pane-title{
 	color: @color-text-purple;
 	border-bottom: 2px solid @color-text-purple;
 	font-size: @font-size2-2;
-	padding-bottom: 3px;
+	padding-bottom: 15px;
 	//font-weight: bold;
-	margin-bottom: 25px;
-	margin-top: 50px;
+	//margin-bottom: 25px;
+	//margin-top: 50px;
 	font-family: @font-family-base-2;
  }
 
 h4{
-	font-size: @font-size-base;
+	//font-size: @font-size-base;
 	a{
 		color: @color-text-grey;
-		font-size: @font-size1;
+		font-size: @font-size0-9;
 	    font-weight: bold;	
 	}
 }
@@ -40,6 +53,7 @@ h4.pane-title{
 }
 
 h5{
+	font-size: @font-size-base;
 	color: @color-text-grey;
 	font-weight: bold;
 }
@@ -51,19 +65,12 @@ h5{
 	}
 }
 
-h2{
-	font-size: @font-size-base;
-	color: @color-text-grey;
-	font-family: @font-family-base-2;
-	//font-weight: bold;
-	a{
-		color: @color-text-purple-darker;
-		font-family: @font-family-base-2;
-		font-size: 2.6em;
-	}
+.breadcrumb{
+	margin-bottom: 0px;
+	background-color: @color-white;
 }
 
- .h3image-promotional-materials{
+.h3image-promotional-materials{
     background-image: @image-map-white;
     background-position: right;
     background-repeat: no-repeat;
@@ -134,7 +141,7 @@ a.more-link{
 }
 
 /*Etiquetas azuler de pais e idioma*/
-.field.field-name-field-country, .field-type-language-field {
+.field.field-name-field-country, .field-type-language-field, .field-name-field-sector {
     background-color: #10b2e4;
     display: inline-block;
     color: white;
@@ -143,6 +150,7 @@ a.more-link{
     font-weight: bold;
     font-style: italic;
     margin-top: 1em;
+    margin-right: 5px;
 }
 
 /*END estilos comunes
@@ -154,43 +162,48 @@ a.more-link{
 #block-system-main{
 
 	//slider
-	.view-id-slideshow{
-		.owl-wrapper{
-			.views-field-field-image{
-				position: relative;
-			}
-			.views-field-title-field{
-				position: absolute;
-				width: 1140px;
-				top: 45%;
-				left: 10%;
-				font-family: @font-family-base-2;
-				font-weight: 300;
-				a{
+	.panels-flexible-region-new-slider{
+		margin-top: 35px;
+		.view-id-slideshow{
+			.owl-wrapper{
+				.views-field-field-image{
+					position: relative;
+				}
+				.views-field-title-field{
+					position: absolute;
+					width: 1140px;
+					top: 45%;
+					left: 10%;
+					font-family: @font-family-base-2;
+					font-weight: 300;
+					a{
+						color: @color-white;
+						font-size: 1.2em;
+					}
+				}
+				.views-field-body{
+					position: absolute;
+					width: 1140px;
+					top: 63%;
+					left: 10%;
 					color: @color-white;
 				}
 			}
-			.views-field-body{
+			.owl-controls.clickable{
 				position: absolute;
-				width: 1140px;
-				top: 63%;
-				left: 10%;
-				color: @color-white;
+				left: 50%;
+	    		top: 95%;
+	    		transform: translate(-50%, -95%);
+	    		-webkit-transform: translate(-50%, -95%);
+	    		.owl-page{
+	    			span{
+					background: @color-white !important;
+					}
+	    		}
 			}
 		}
-		.owl-controls.clickable{
-			position: absolute;
-			left: 50%;
-    		top: 95%;
-    		transform: translate(-50%, -95%);
-    		-webkit-transform: translate(-50%, -95%);
-    		.owl-page{
-    			span{
-				background: @color-white !important;
-				}
-    		}
-		}
 	}
+	
 
 	//Latest news
 	.panels-flexible-row-new-6{
@@ -209,7 +222,7 @@ a.more-link{
     			}
     			h4{
     				a{
-    					font-size: @font-size2-2;
+    					font-size: @font-size1-6;
     				}
     			}
 			}
@@ -217,11 +230,7 @@ a.more-link{
 				background-color: @color-white;
 				padding: 15px;
 				min-height: 358px;
-				h4{
-					a{
-						font-size: @font-size1-2;
-					}
-				}
+				
 				a.more-link{
 					color: @color-see-more;
 					font-weight: bold;
@@ -275,7 +284,7 @@ a.more-link{
     		}
     		.field-name-title-field{
     			a{
-    				font-size: @font-size2-2;	
+    				font-size: @font-size1-6;	
     			}
     			
     		}
@@ -318,40 +327,65 @@ a.more-link{
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article{
+	.view-all-url{
+		border-top: 2px solid @color-white;
+		text-align: right;
+		padding-top: 15px;
+	}
+	.pane-node-field-summary{
+		font-weight: bold;
+    	font-size: 1.2em;
+    	line-height: 1.6em;
+	}
+	.pane-node-body{
+		ul{
+			margin-left: 30px;
+		}
+	}
+	.pane-node-share-widget{
+		margin: 25px 0px;
+		.hwc-share-widget{
+			ul{
+				list-style: none;
+				li.share-this-article{
+					display: none;
+				}
+				li{
+					display: inline-block;
+				    background-color: red;//testing por ahora
+				    width: 25px;
+				    height: 25px;
+				    overflow: hidden;
+				}
+			}
+		}
+	}
+
 	.panels-flexible-row-new-10{
+		padding-bottom: 0px;
 		background-color: @color-primary-dark;
+		margin-bottom: 10px;
 		.panels-flexible-column-new-main{
-			border-right: 7px solid @color-white;
+			border-right: 10px solid @color-white;
 			height: 244px;
 		}
-		.pane-oira-blocks-related-ncw-publications{
+		#mini-panel-related_content{
 			h3.pane-title{
 				color: @color-white;
 		    	font-size: @font-size2;
 		    	border-bottom: 2px solid @color-white;
+		    	padding-bottom: 15px;
 		    }
 		    .pane-content{
-		    	border-bottom: 2px solid @color-white;
 		    	a{
 		    		color: @color-white;
+		    		font-weight: bold;
+		    		font-style: italic;
+		    		margin-bottom: 15px;
+		    		display: block;
 		    		&:before{
 					content:'>';
-					}
-		    	}
-		    }
-		}
-		.pane-views{
-			h3.pane-title{
-				color: @color-white;
-		    	font-size: @font-size2;
-		    	border-bottom: 2px solid @color-white;
-		    }
-		    .pane-content{
-		    	border-bottom: 2px solid @color-white;
-		    	a{
-		    		color: @color-white;
-		    		&:before{
-					content:'>';
+					margin-right: 5px;
 					}
 		    	}
 		    }
@@ -367,14 +401,11 @@ a.more-link{
 		#additional-resources-external_url-pane{
 			.view-additional-resources{
 				.views-item-columns-container{
-						padding: 15px !important;
-					}
+					padding: 15px !important;
 				}
 			}
-
-		 
+		}
 	}
-
 }
 
 
@@ -384,9 +415,24 @@ a.more-link{
 /*WHAT'S NEW SECTION
 *********************************************************************/
 .page-what-is-new{
+	//imagen superior articulos
+	.panels-flexible-region-new-image{
+		position: relative;
+		.pane-node-title-field{
+			margin-top: -93px;
+			h1{
+				color: @color-white;
+				font-size: 2.6em;
+				font-family: @font-family-base-2;
+			}
+		}
+	}
 	.panels-flexible-row-new-2{
 		padding-top: 30px;
 		background-color: @color-primary;
+		.views-field-field-summary{
+			padding: 15px 0px 0px 0px;
+		}
 	}
 	.panels-flexible-row-new-3{
 		background-color: @color-primary-dark;
@@ -411,7 +457,7 @@ a.more-link{
 		background-color: @color-white !important;
 		.views-item-columns-container{
 			background-color: @color-primary;
-			min-height: 515px;
+			min-height: 538px;
 			.views-field-field-image{
 				min-height: 202px;//testing
 			}
@@ -424,3 +470,46 @@ a.more-link{
 
 
 /*END WHAT'S NEW*/
+
+
+/*OIRA TOOLS
+**************************************************************/
+
+.page-oira-tools{
+	.panels-flexible-row-new-1{
+		background: url('../images/background-two-colors.png') repeat-y 50%;
+		padding-bottom: 0px;
+		#hwc-practical-tool-menu-tools-form{
+			div:first-child{
+			    .form-group{
+			    	margin-bottom: 0px;
+			    }
+			    #edit-left-column{
+					background-color: @color-primary-dark;
+					color: @color-white;
+					padding-right: 30px;
+				}
+				#edit-content{
+					background-color: @color-primary;
+					padding-bottom: 50px;
+					padding-left: 30px;
+					border-left: 5px solid @color-white;
+					.node-practical-tool{
+						border-top: 2px solid @color-primary-dark;
+						padding:30px 0px;
+						margin-right: 0px;
+						margin-left: 0px;
+						.col-sm-3{
+							padding-left: 0px;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+	
+
+/*END OIRA TOOLS*/
