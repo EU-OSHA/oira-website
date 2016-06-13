@@ -37,6 +37,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
     $all_rows = array();
     $all_rows_rendered = '';
     foreach ($sets as $title => $records) {
+      usort($records, 'oira_partner_quicktabs_sort_content');
       $has_sector = FALSE;
       $all_group_counter = 0;
       if ($this->uses_row_plugin()) {
@@ -140,4 +141,23 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
 
     return $output;
   }
+}
+
+function oira_partner_quicktabs_sort_content($a, $b) {
+  if ($a->node_type == 'practical_tool') {
+    $a_time = strtotime($a->field_field_revised_date[0]['raw']['value']);
+  }
+  else {
+    $a_time = strtotime($a->field_field_publication_date[0]['raw']['value']);
+  }
+  if ($b->node_type == 'practical_tool') {
+    $b_time = strtotime($b->field_field_revised_date[0]['raw']['value']);
+  }
+  else {
+    $b_time = strtotime($a->field_field_publication_date[0]['raw']['value']);
+  }
+  if ($a_time == $b_time) {
+    return 0;
+  }
+  return ($a_time < $b_time) ? -1 : 1;
 }
