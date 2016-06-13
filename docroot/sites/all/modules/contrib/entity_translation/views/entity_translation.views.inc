@@ -194,6 +194,13 @@ function entity_translation_views_data() {
       'handler' => 'entity_translation_handler_field_label',
     ),
   );
+  $data['entity_translation']['table']['join']['node'] = array(
+    'left_field' => 'nid',
+    'field' => 'entity_id',
+    'extra' => array(
+      array('field' => 'entity_type', 'value' => 'node'),
+    ),
+  );
   return $data;
 }
 
