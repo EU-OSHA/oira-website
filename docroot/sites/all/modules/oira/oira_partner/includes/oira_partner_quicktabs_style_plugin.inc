@@ -33,10 +33,12 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
     $sets = $this->render_grouping($this->view->result, $this->options['grouping']);
     $tabs = array();
 
+    // All rows will contain 2 of each group.
     $all_rows = array();
     $all_rows_rendered = '';
     foreach ($sets as $title => $records) {
       $has_sector = FALSE;
+      $all_group_counter = 0;
       if ($this->uses_row_plugin()) {
         $rows = array();
         foreach ($records as $row_index => $row) {
@@ -52,8 +54,11 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
             $this->view->row_index = $row_index;
             $row_rendered = $this->row_plugin->render($row);
           }
-          $all_rows[$row_index] = $row->field_title_field[0]['raw']['safe_value'];
+          if ($all_group_counter < 2) {
+            $all_rows[$row_index] = $row->field_title_field[0]['raw']['safe_value'];
+          }
           $rows[] = $row_rendered;
+          $all_group_counter++;
         }
       }
       else {
@@ -72,15 +77,21 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
           $title = t('Other');
         }
         $contents = '<div class="container"><div class="content-group-label">' . $title . '</div>';
+        $all_rows_rendered .= $contents;
+        $all_group_counter = 0;
         foreach ($rows as $row) {
           $contents .= '<div class="quicktabs-views-group ' . (($has_sector) ? 'sector-filter-tab-content' : '') . $this->options['row_class'] . '">' . $row . '</div>';
+          if ($all_group_counter < 2) {
+            $all_rows_rendered .= '<div class="quicktabs-views-group ' . $this->options['row_class'] . '">' . $row . '</div>';
+          }
+          $all_group_counter++;
         }
         $contents .= '</div>';
+        $all_rows_rendered .= '</div>';
         $tabs[] = array(
           'title' => $title . ' (' . count($records) . ')',
           'contents' => array('#markup' => $contents),
         );
-        $all_rows_rendered .= $contents;
       }
 
       // If not grouped, there's just one set of rows that we loop through.
@@ -96,10 +107,12 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
     }
     drupal_add_js(drupal_get_path('module', 'oira_partner') . '/js/sector_filter.js');
     // WHY sort the results by title???
-    $tabs[] = array(
+    $all_tab = array(
       'title' => t('Show all'),
       'contents' => array('#markup' => $all_rows_rendered),
     );
+
+    array_unshift($tabs, $all_tab);
 
     $overrides = array('style' => $view->style_plugin->options['tab_style'], 'sorted' => TRUE);
     $quicktabs = quicktabs_build_quicktabs($qt_name, $overrides, $tabs);
