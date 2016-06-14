@@ -7268,6 +7268,55 @@ a.more-link:before {
   text-align: left;
   margin-top: 25px;
 }
+/*END OIRA TOOLS*/
+/*FAQ'S
+**************************************************************/
+.page-faq .panels-flexible-row-new-main-row .field-name-body {
+  font-size: 1.4em;
+}
+.page-faq .panels-flexible-row-new-1 {
+  background-color: #dfd8e4;
+  padding-top: 17px;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-even {
+  border-bottom: 2px solid #967ea7;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-odd {
+  border-bottom: 2px solid #967ea7;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-last {
+  border-bottom: 0px;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field {
+  background: rgba(0, 0, 0, 0);
+  padding-left: 0px;
+  border: none;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .ui-accordion-header-icon {
+  background-image: none;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content {
+  font-size: 1.2em;
+  color: #786586;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer {
+  font-size: 0.7em;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after {
+  content: "\e253";
+  font-family: "Glyphicons Halflings";
+  padding-left: 10px;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after {
+  content: "\e252";
+  font-family: "Glyphicons Halflings";
+  padding-left: 10px;
+}
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content {
+  border: 0px;
+  background: rgba(0, 0, 0, 0);
+  padding: 0px;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
