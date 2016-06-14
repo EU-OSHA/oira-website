@@ -28,6 +28,7 @@ regions[contact_form_widget]   = 'Contact form widget'
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/override.css
 scripts[] = js/contact-us.js
+scripts[] = js/oira-frontend.js
 files[] = theme/menu/menu.inc
 
 ;;;;;;;;;;;;;;;;;;;;;

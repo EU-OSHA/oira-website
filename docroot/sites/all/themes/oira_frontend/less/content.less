@@ -14,6 +14,16 @@ input, select{
 	box-shadow: none !important;
 }
 
+a{
+	text-decoration: none !important;
+}
+
+h1{
+	font-family: @font-family-base-2;
+	font-size: 2.6em;
+	border-bottom: none !important;
+}
+
 h2{
 	//font-size: @font-size-base;
 	color: @color-text-grey;
@@ -476,6 +486,16 @@ a.more-link{
 **************************************************************/
 
 .page-oira-tools{
+	h1{
+		color: @color-text-purple-darker;
+	}
+	.pane-node-body{
+		.field-type-text-with-summary{
+			font-family: @font-family-base-2;
+			font-size: 1.6em;
+			margin-bottom: 30px;
+		}
+	}
 	.panels-flexible-row-new-1{
 		background: url('../images/background-two-colors.png') repeat-y 50%;
 		padding-bottom: 0px;
@@ -488,25 +508,173 @@ a.more-link{
 					background-color: @color-primary-dark;
 					color: @color-white;
 					padding-right: 30px;
+					padding-top: 30px;
+					position: relative;
+					.form-type-textfield{
+						float: left;
+						margin-bottom: 15px;
+						input{
+							border: none;
+							border-radius: 0px;
+							outline: none;
+							height: auto;
+							padding-right: 35px;
+						}
+
+					}
+					#edit-submit{
+						position: absolute;
+						right: 0;
+						margin-right: 30px;
+						color: @color-text-purple-darker;
+					    border: none;
+					    border-radius: 0px;
+					    outline: none;
+					    width: 35px;
+					    line-height: 19px;
+    					font-size: 1.2em;
+    					padding-left: 7px;
+    					overflow: hidden;
+    					background-color: rgba(0,0,0,0);
+						&:before{
+							content: "\e003";
+							font-family: "Glyphicons Halflings";
+							margin-right: 30px;
+						}
+					}
+					a.active{
+						display: block;
+						color: @color-white;
+						margin-bottom: 10px;
+						font-style: italic;
+						span{
+							&:before{
+								color: @color-text-purple-darker;
+							    padding: 1px;
+							    font-size: 0.7em;
+							    margin-right: 10px;
+							    background-color: @color-white;
+							    display: block;
+							    width: 13px;
+							    height: 13px;
+							}
+						}
+					}
+					#edit-field-country, #edit-field-languagevalue, #edit-field-sector{
+						label{
+							&:after{
+								content: none;
+							}
+						}
+					}
+					.form-type-checkboxes{
+						border-top: 2px solid @color-white;
+						padding-top: 10px;
+						clear: both;
+						margin-top: 15px;
+
+						input.form-checkbox{
+							display: none;
+						}
+						label{
+							padding-left: 0px;
+							margin-bottom: 0px;
+							&:first-child{
+								font-family: @font-family-base-2;
+								font-size: @font-size1-2;
+								font-weight: normal;
+								display: block;
+								margin-bottom: 10px;
+								cursor: pointer;
+								
+							}
+							&:after{
+								content: "\e250";
+								font-family: "Glyphicons Halflings";
+								margin-left: 10px;
+							}
+						}
+						.label-row{
+							&:after{
+								content: "\e252";
+								font-family: "Glyphicons Halflings";
+								margin-left: 10px;
+							}
+						}
+
+					}
+					.form-item-field-sector{
+						border-bottom: 2px solid @color-white;
+					}
 				}
+
 				#edit-content{
 					background-color: @color-primary;
 					padding-bottom: 50px;
 					padding-left: 30px;
+					padding-top: 30px;
 					border-left: 5px solid @color-white;
-					.node-practical-tool{
-						border-top: 2px solid @color-primary-dark;
-						padding:30px 0px;
-						margin-right: 0px;
-						margin-left: 0px;
-						.col-sm-3{
+					#edit-sort-fieldset{
+						border: none;
+						border-radius: 0px;
+						background-color: rgba(0,0,0,0);
+						box-shadow: none;
+						border-top: 2px solid @color-text-purple-darker;
+						border-bottom: 2px solid @color-text-purple-darker;
+						margin-bottom: 30px;
+						.panel-body{
 							padding-left: 0px;
+							padding-right: 0px;
+						}
+						.sort-container{
+							min-width: 210px;
+							padding-left: 0px;
+							label{
+								font-weight: 100;
+								font-size: @font-size0-9;
+								&:after{
+									content: ": ";
+								}
+							}
+							#edit-sort{
+								font-size: @font-size0-9;
+								display: inline-block;
+							    width: auto;
+							    padding: 0;
+							    border: none;
+							    padding-bottom: 1px;
+							    font-weight: bold;
+							    height: initial;
+							    background-color: rgba(0,0,0,0);
+							}
+						}
+						.count-container{
+							font-size: @font-size0-9;
+						}
+					}
+					.search-page-results-wrapper{
+						background-color: @color-white;
+						padding: 30px;
+						.node-practical-tool{
+							border-top: 2px solid @color-primary-dark;
+							padding:30px 0px;
+							margin-right: 0px;
+							margin-left: 0px;
+							.col-sm-3{
+								padding-left: 0px;
+							}
+							.field-name-title-field{
+								font-size: @font-size1-4;
+							}
+							a.more-link{
+								text-align: left;
+								margin-top: 25px;
+							}
 						}
 					}
 				}
 			}
 		}
-
 	}
 }
 
