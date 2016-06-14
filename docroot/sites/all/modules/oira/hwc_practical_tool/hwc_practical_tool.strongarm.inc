@@ -209,7 +209,7 @@ function hwc_practical_tool_strongarm() {
         ),
         'title_field' => array(
           'teaser' => array(
-            'weight' => '1',
+            'weight' => '2',
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
@@ -232,7 +232,7 @@ function hwc_practical_tool_strongarm() {
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '7',
+            'weight' => '8',
             'label' => 'hidden',
             'type' => 'related_partners',
             'visible' => TRUE,
@@ -251,7 +251,7 @@ function hwc_practical_tool_strongarm() {
             ),
           ),
           'teaser' => array(
-            'weight' => '8',
+            'weight' => '9',
             'label' => 'hidden',
             'type' => 'tools_see_more',
             'visible' => TRUE,

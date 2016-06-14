@@ -127,9 +127,12 @@ function osha_wiki_strongarm() {
     'search_index' => 0,
     'search_result' => 0,
     'diff_standard' => 0,
-    'highlights_item' => 0,
-    'newsletter_item' => 0,
+    'body' => 0,
+    'country_partner_content' => 0,
+    'osha_resources' => 0,
+    'print' => 0,
     'token' => 0,
+    'revision' => 0,
     'nodeform' => 0,
   );
   $export['exclude_node_title_content_type_modes_wiki_page'] = $strongarm;
@@ -202,19 +205,25 @@ function osha_wiki_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
+        ),
+        'workbench_access' => array(
+          'weight' => '0',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '13',
         ),
       ),
       'display' => array(),

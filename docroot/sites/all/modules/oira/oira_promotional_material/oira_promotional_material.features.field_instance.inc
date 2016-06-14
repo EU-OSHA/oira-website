@@ -875,7 +875,7 @@ function oira_promotional_material_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_publication_date',
     'label' => 'Publication date',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -892,6 +892,7 @@ function oira_promotional_material_field_default_field_instances() {
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -967,7 +968,7 @@ function oira_promotional_material_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_revised_date',
     'label' => 'Revised date',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',

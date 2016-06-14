@@ -718,10 +718,6 @@ function hwc_practical_tool_views_default_views() {
     'press_contacts_queue' => 0,
     'whats_new_article' => 0,
   );
-  /* Relationship: Content: OSHwiki category (field_wiki_categories) */
-  $handler->display->display_options['relationships']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
-  $handler->display->display_options['relationships']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
-  $handler->display->display_options['relationships']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
@@ -770,7 +766,6 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_tool_link']['table'] = 'field_data_field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['field'] = 'field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['label'] = '';
-  $handler->display->display_options['fields']['field_tool_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_tool_link']['alter']['text'] = 'See more';
   $handler->display->display_options['fields']['field_tool_link']['alter']['path'] = '[field_tool_link-url]';
   $handler->display->display_options['fields']['field_tool_link']['alter']['absolute'] = TRUE;
@@ -779,35 +774,51 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_tool_link']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_tool_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tool_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_tool_link']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_tool_link']['type'] = 'external_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['settings'] = array(
+    'text' => 'Access the tool',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_tool_link']['field_api_classes'] = TRUE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'See more';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[field_tool_link]';
-  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['external'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'more-link';
-  $handler->display->display_options['fields']['nothing']['alter']['target'] = '_blank';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Extrafield Related partners */
+  $handler->display->display_options['fields']['related_partners']['id'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['table'] = 'node';
+  $handler->display->display_options['fields']['related_partners']['field'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['label'] = '';
+  $handler->display->display_options['fields']['related_partners']['element_label_colon'] = FALSE;
+  /* Field: Content: Extrafield See more link */
+  $handler->display->display_options['fields']['tools_see_more']['id'] = 'tools_see_more';
+  $handler->display->display_options['fields']['tools_see_more']['table'] = 'node';
+  $handler->display->display_options['fields']['tools_see_more']['field'] = 'tools_see_more';
+  $handler->display->display_options['fields']['tools_see_more']['label'] = '';
+  $handler->display->display_options['fields']['tools_see_more']['element_label_colon'] = FALSE;
+  /* Field: Content: URL */
+  $handler->display->display_options['fields']['field_wiki_page_url']['id'] = 'field_wiki_page_url';
+  $handler->display->display_options['fields']['field_wiki_page_url']['table'] = 'field_data_field_wiki_page_url';
+  $handler->display->display_options['fields']['field_wiki_page_url']['field'] = 'field_wiki_page_url';
+  $handler->display->display_options['fields']['field_wiki_page_url']['label'] = '';
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['text'] = 'See more';
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['path'] = '[field_wiki_page_url-url]';
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['link_class'] = 'more-link';
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['field_wiki_page_url']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_wiki_page_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_wiki_page_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_wiki_page_url']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_wiki_page_url']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Revised date (field_revised_date) */
   $handler->display->display_options['sorts']['field_revised_date_value']['id'] = 'field_revised_date_value';
   $handler->display->display_options['sorts']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
   $handler->display->display_options['sorts']['field_revised_date_value']['field'] = 'field_revised_date_value';
   $handler->display->display_options['sorts']['field_revised_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Updated (field_updated) */
-  $handler->display->display_options['sorts']['field_updated_value']['id'] = 'field_updated_value';
-  $handler->display->display_options['sorts']['field_updated_value']['table'] = 'field_data_field_updated';
-  $handler->display->display_options['sorts']['field_updated_value']['field'] = 'field_updated_value';
-  $handler->display->display_options['sorts']['field_updated_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['operator'] = 'OR';
   $handler->display->display_options['filter_groups']['groups'] = array(
@@ -845,6 +856,14 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_publication_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
+  $handler->display->display_options['filters']['field_wiki_categories_tid_1']['id'] = 'field_wiki_categories_tid_1';
+  $handler->display->display_options['filters']['field_wiki_categories_tid_1']['table'] = 'field_data_field_wiki_categories';
+  $handler->display->display_options['filters']['field_wiki_categories_tid_1']['field'] = 'field_wiki_categories_tid';
+  $handler->display->display_options['filters']['field_wiki_categories_tid_1']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_wiki_categories_tid_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_wiki_categories_tid_1']['type'] = 'select';
+  $handler->display->display_options['filters']['field_wiki_categories_tid_1']['vocabulary'] = 'wiki_categories';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
@@ -866,13 +885,16 @@ function hwc_practical_tool_views_default_views() {
     'wiki_page' => 'wiki_page',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Taxonomy term: Term ID */
-  $handler->display->display_options['filters']['tid_raw']['id'] = 'tid_raw';
-  $handler->display->display_options['filters']['tid_raw']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['filters']['tid_raw']['field'] = 'tid_raw';
-  $handler->display->display_options['filters']['tid_raw']['relationship'] = 'field_wiki_categories_tid';
-  $handler->display->display_options['filters']['tid_raw']['value']['value'] = '112';
-  $handler->display->display_options['filters']['tid_raw']['group'] = 2;
+  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['value'] = array(
+    112 => '112',
+  );
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_wiki_categories_tid']['vocabulary'] = 'wiki_categories';
   $handler->display->display_options['block_caching'] = '4';
 
   /* Display: New tools */
@@ -1092,7 +1114,6 @@ function hwc_practical_tool_views_default_views() {
 [tools_see_more]
 </div>'),
     t('Latest tools'),
-    t('term from field_wiki_categories'),
     t('See more'),
     t('New tools'),
     t('See more tools'),
