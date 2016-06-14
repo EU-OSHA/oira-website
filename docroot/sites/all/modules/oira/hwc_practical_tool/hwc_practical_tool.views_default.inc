@@ -718,6 +718,10 @@ function hwc_practical_tool_views_default_views() {
     'press_contacts_queue' => 0,
     'whats_new_article' => 0,
   );
+  /* Relationship: Content: OSHwiki category (field_wiki_categories) */
+  $handler->display->display_options['relationships']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
+  $handler->display->display_options['relationships']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
+  $handler->display->display_options['relationships']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
@@ -793,7 +797,23 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'more-link';
   $handler->display->display_options['fields']['nothing']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Revised date (field_revised_date) */
+  $handler->display->display_options['sorts']['field_revised_date_value']['id'] = 'field_revised_date_value';
+  $handler->display->display_options['sorts']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
+  $handler->display->display_options['sorts']['field_revised_date_value']['field'] = 'field_revised_date_value';
+  $handler->display->display_options['sorts']['field_revised_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Updated (field_updated) */
+  $handler->display->display_options['sorts']['field_updated_value']['id'] = 'field_updated_value';
+  $handler->display->display_options['sorts']['field_updated_value']['table'] = 'field_data_field_updated';
+  $handler->display->display_options['sorts']['field_updated_value']['field'] = 'field_updated_value';
+  $handler->display->display_options['sorts']['field_updated_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -802,6 +822,13 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '0';
+  $handler->display->display_options['filters']['in_queue']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -809,19 +836,43 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'practical_tool' => 'practical_tool',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
   $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
   $handler->display->display_options['filters']['field_publication_date_value']['field'] = 'field_publication_date_value';
   $handler->display->display_options['filters']['field_publication_date_value']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_publication_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
   /* Filter criterion: Nodequeue: In queue */
-  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
-  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
-  $handler->display->display_options['filters']['in_queue']['value'] = '0';
+  $handler->display->display_options['filters']['in_queue_1']['id'] = 'in_queue_1';
+  $handler->display->display_options['filters']['in_queue_1']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue_1']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue_1']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue_1']['value'] = '0';
+  $handler->display->display_options['filters']['in_queue_1']['group'] = 2;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'wiki_page' => 'wiki_page',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Taxonomy term: Term ID */
+  $handler->display->display_options['filters']['tid_raw']['id'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['tid_raw']['field'] = 'tid_raw';
+  $handler->display->display_options['filters']['tid_raw']['relationship'] = 'field_wiki_categories_tid';
+  $handler->display->display_options['filters']['tid_raw']['value']['value'] = '112';
+  $handler->display->display_options['filters']['tid_raw']['group'] = 2;
   $handler->display->display_options['block_caching'] = '4';
 
   /* Display: New tools */
@@ -1041,6 +1092,7 @@ function hwc_practical_tool_views_default_views() {
 [tools_see_more]
 </div>'),
     t('Latest tools'),
+    t('term from field_wiki_categories'),
     t('See more'),
     t('New tools'),
     t('See more tools'),
