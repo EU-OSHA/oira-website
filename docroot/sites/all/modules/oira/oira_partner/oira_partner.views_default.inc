@@ -75,6 +75,40 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_sector']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'osha_date_theme' => '',
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Revised date */
+  $handler->display->display_options['fields']['field_revised_date']['id'] = 'field_revised_date';
+  $handler->display->display_options['fields']['field_revised_date']['table'] = 'field_data_field_revised_date';
+  $handler->display->display_options['fields']['field_revised_date']['field'] = 'field_revised_date';
+  $handler->display->display_options['fields']['field_revised_date']['label'] = '';
+  $handler->display->display_options['fields']['field_revised_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_revised_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_revised_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'osha_date_theme' => '',
+    'field_formatter_class' => '',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
