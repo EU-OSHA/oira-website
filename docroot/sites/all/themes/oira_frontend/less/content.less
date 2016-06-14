@@ -76,8 +76,32 @@ h5{
 }
 
 .breadcrumb{
+	padding-left: 0px;
+	padding-right: 0px;
 	margin-bottom: 0px;
 	background-color: @color-white;
+	font-style: italic;
+	span, a{
+		font-style: italic;
+		color: @color-see-more;
+	}
+	.last{
+		color: @color-text-grey;
+		font-weight: normal;
+		font-style: normal;
+		a{
+			color: @color-text-grey;
+			font-weight: normal;
+			font-style: normal;
+		}
+	}
+	/*
+	.delimiter{
+		&:before{
+			content: ">";
+		}
+	}
+	*/
 }
 
 .h3image-promotional-materials{
@@ -163,6 +187,51 @@ a.more-link{
     margin-right: 5px;
 }
 
+.field-name-field-publication-date{
+	margin-bottom: 15px;
+	.date-display-single{
+		font-weight: bold;
+		color: @color-text-purple-darker;
+	}
+}
+
+//Share bar
+.pane-node-share-widget{
+	margin: 25px 0px;
+	.hwc-share-widget{
+		ul{
+			list-style: none;
+			li.share-this-article{
+				display: none;
+			}
+			li{
+				display: inline-block;
+			    background-color: red;//testing por ahora
+			    width: 25px;
+			    height: 25px;
+			    overflow: hidden;
+			}
+		}
+	}
+}
+.hwc-share-widget{
+	ul{
+		list-style: none;
+		li.share-this-article{
+			display: none;
+		}
+		li{
+			display: inline-block;
+		    background-color: red;//testing por ahora
+		    width: 25px;
+		    height: 25px;
+		    overflow: hidden;
+		}
+		.label{
+			display: none;
+		}
+	}
+}
 /*END estilos comunes
 ************************************************************************************/
 
@@ -683,6 +752,7 @@ a.more-link{
 /*END OIRA TOOLS*/
 
 
+<<<<<<< HEAD
 /*FAQ'S
 **************************************************************/
 
@@ -768,3 +838,76 @@ a.more-link{
 
 
 /*END FAQ'S*/
+=======
+/*OIRA NEWS
+*************************************************************/
+h1{
+	color: @color-text-purple-darker;
+}
+.view-display-id-oshnews_list{
+	font-size: 16px;
+	.views-row-odd{
+		background-color: @color-primary;
+	}
+	article{
+		padding-top: 30px;
+    	padding-bottom: 30px;
+    	.title_field{
+    		margin-bottom: 15px;
+    		a{
+    			font-size: 1.4em;
+    			color: @color-text-grey;
+    			font-weight: bold;
+    		}
+    	}
+    	.field-name-field-summary{
+    		margin-bottom: 15px;
+    		font-weight: bold;
+    		a{
+    			color: @color-text-purple-darker;
+    		}
+    	}
+    	.field-name-body{
+    		margin-bottom: 15px;
+			a{
+    			color: @color-text-purple-darker;
+    		}
+    		.more-link{
+    			color: @color-see-more;
+    		}
+    	}
+	}
+}
+
+/*News detail
+*****************************************************/
+.node-news{
+	h1{
+		color: @color-text-grey;
+		margin-bottom: 30px;
+	}
+	.field-name-field-summary{
+		margin-bottom: 15px;
+		font-weight: bold;
+		a{
+			color: @color-text-purple-darker;
+		}
+	}
+	.field-name-body{
+		margin-bottom: 15px;
+		a{
+			color: @color-text-purple-darker;
+		}
+		.more-link{
+			color: @color-see-more;
+		}
+	}
+	.field-name-field-image{
+		display: inline-block;
+	    float: left;
+	    margin-right: 30px;
+	    margin-bottom: 20px;
+	}
+}
+/*END OIRA NEWS*/
+>>>>>>> 28e061482bc1ceb759839e809ba3d4d4ec174ca2

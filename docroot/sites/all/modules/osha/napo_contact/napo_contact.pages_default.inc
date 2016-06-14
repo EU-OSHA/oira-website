@@ -50,6 +50,13 @@ function napo_contact_default_page_manager_pages() {
         'entity_id' => '55',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Content 2',
+        'keyword' => 'node_2',
+        'name' => 'entity:node',
+        'entity_id' => '58',
+        'id' => 2,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
@@ -77,6 +84,8 @@ function napo_contact_default_page_manager_pages() {
         'children' => array(
           0 => 'main-row',
           1 => 1,
+          2 => 2,
+          3 => 3,
         ),
         'parent' => 'canvas',
         'class' => 'container',
@@ -118,6 +127,44 @@ function napo_contact_default_page_manager_pages() {
         'class' => 'container',
         'hide_empty' => 0,
       ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'form',
+        ),
+        'parent' => 'main',
+        'class' => 'contact-content-wrapper',
+        'hide_empty' => 1,
+      ),
+      'form' => array(
+        'type' => 'region',
+        'title' => 'Contact content',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => 'container',
+        'hide_empty' => 1,
+      ),
+      3 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'form_',
+        ),
+        'parent' => 'main',
+        'class' => 'contact-form-wrapper',
+        'hide_empty' => 1,
+      ),
+      'form_' => array(
+        'type' => 'region',
+        'title' => 'Form',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '3',
+        'class' => 'container',
+        'hide_empty' => 1,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -125,6 +172,8 @@ function napo_contact_default_page_manager_pages() {
       'default' => NULL,
       'center' => NULL,
       'content' => NULL,
+      'form' => NULL,
+      'form_' => NULL,
     ),
   );
   $display->cache = array();
@@ -183,8 +232,8 @@ function napo_contact_default_page_manager_pages() {
       'url' => '',
       'display' => 'block',
       'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'div',
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'span',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -197,6 +246,94 @@ function napo_contact_default_page_manager_pages() {
     $pane->uuid = '874d4ecb-3c87-42c4-a50c-95577656a7cd';
     $display->content['new-874d4ecb-3c87-42c4-a50c-95577656a7cd'] = $pane;
     $display->panels['content'][0] = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
+    $pane = new stdClass();
+    $pane->pid = 'new-c2cb699b-7106-4e61-ad68-4dad9497d7bd';
+    $pane->panel = 'form';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:title_field';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'title_linked',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'title_style' => 'h3',
+        'title_link' => '',
+        'title_class' => '',
+        'field_formatter_class' => '',
+      ),
+      'context' => 'context_entity:node_2',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c2cb699b-7106-4e61-ad68-4dad9497d7bd';
+    $display->content['new-c2cb699b-7106-4e61-ad68-4dad9497d7bd'] = $pane;
+    $display->panels['form'][0] = 'new-c2cb699b-7106-4e61-ad68-4dad9497d7bd';
+    $pane = new stdClass();
+    $pane->pid = 'new-28ec1392-70bf-481d-99dc-a49160341f16';
+    $pane->panel = 'form';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_2',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '28ec1392-70bf-481d-99dc-a49160341f16';
+    $display->content['new-28ec1392-70bf-481d-99dc-a49160341f16'] = $pane;
+    $display->panels['form'][1] = 'new-28ec1392-70bf-481d-99dc-a49160341f16';
+    $pane = new stdClass();
+    $pane->pid = 'new-6a3a4f4b-fdef-4eda-b9a5-6a953cba0c24';
+    $pane->panel = 'form_';
+    $pane->type = 'block';
+    $pane->subtype = 'webform-client-block-43';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'div',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '6a3a4f4b-fdef-4eda-b9a5-6a953cba0c24';
+    $display->content['new-6a3a4f4b-fdef-4eda-b9a5-6a953cba0c24'] = $pane;
+    $display->panels['form_'][0] = 'new-6a3a4f4b-fdef-4eda-b9a5-6a953cba0c24';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
   $handler->conf['display'] = $display;
