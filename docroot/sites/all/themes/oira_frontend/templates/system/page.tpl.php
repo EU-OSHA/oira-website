@@ -178,11 +178,6 @@
     </aside>  <!-- /#sidebar-second -->
   <?php endif; ?>
 </div>
-<?php if (!empty($page['contact_form_widget'])): ?>
-  <section class="contact-form-widget-container container">
-    <?php print render($page['contact_form_widget']); ?>
-  </section>
-<?php endif; ?>
 <footer class="site-footer">
   <div class="site-footer-container container">
     <div class="footer-copyright">

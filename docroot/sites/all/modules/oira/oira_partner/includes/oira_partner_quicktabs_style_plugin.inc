@@ -46,6 +46,9 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
           if (isset($row->nid)) {
             $node = node_load($row->nid);
             $row_render = node_view($node, 'teaser');
+            if (!empty($row_render['links'])) {
+              unset($row_render['links']);
+            }
             if ($row->node_type == 'practical_tool') {
               $has_sector = TRUE;
             }
@@ -144,7 +147,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
 }
 
 function oira_partner_quicktabs_sort_content($a, $b) {
-  if ($a->node_type == 'practical_tool') {
+  if (in_array($a->node_type, array('practical_tool', 'promotional_material'))) {
     $a_time = strtotime($a->field_field_revised_date[0]['raw']['value']);
   }
   else {
