@@ -10,7 +10,6 @@
                         expander_setting = value;
                     }
                 });
-                console.log(Drupal.settings.tools_expander);
                 var $wrapper = $(this).closest(expander_setting.parent_selector);
                 var $body = $wrapper.find('.field-name-body');
                 var $partners = $wrapper.find('.field-name-related-partners');

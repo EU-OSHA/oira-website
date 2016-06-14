@@ -64,6 +64,17 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Sector */
+  $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
+  $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
+  $handler->display->display_options['fields']['field_sector']['label'] = '';
+  $handler->display->display_options['fields']['field_sector']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sector']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sector']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_sector']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

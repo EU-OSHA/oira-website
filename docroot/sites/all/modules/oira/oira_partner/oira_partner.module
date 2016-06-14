@@ -64,7 +64,21 @@ function oira_partner_field_extra_fields_formatter_view($entity_type, $entity, $
   return $element;
 }
 
-
+/**
+ * Implements MODULE_preprocess_HOOK().
+ */
+function oira_partner_preprocess_node(&$variables) {
+  if (!empty($variables['node'])) {
+    $node = $variables['node'];
+    if ($node->type == 'practical_tool') {
+      if (!empty($node->field_sector[LANGUAGE_NONE][0]['tid'])) {
+        $term = taxonomy_term_load($node->field_sector[LANGUAGE_NONE][0]['tid']);
+        $variables['attributes_array']['data-sector-tid'] = $term->tid;
+        $variables['attributes_array']['data-sector-label'] = $term->name;
+      }
+    }
+  }
+}
 
 /**
  * Implements hook_field_extra_fields().

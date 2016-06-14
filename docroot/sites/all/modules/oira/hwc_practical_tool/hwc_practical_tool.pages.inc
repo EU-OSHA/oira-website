@@ -77,6 +77,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     '#action' => 'oira-tools',
     '#method' => 'GET',
     '#token' => FALSE,
+    '#attributes' => array('class' => array('row')),
     'left-column' => array(
       '#type' => 'container',
       '#attributes' => array('class' => array('col-md-3')),
