@@ -70,6 +70,10 @@ function oira_country_views_default_views() {
   $handler->display->display_options['fields']['country_content_count']['field'] = 'country_content_count';
   $handler->display->display_options['fields']['country_content_count']['label'] = '';
   $handler->display->display_options['fields']['country_content_count']['element_label_colon'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Taxonomy term: Vocabulary */
   $handler->display->display_options['filters']['vid']['id'] = 'vid';
   $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
