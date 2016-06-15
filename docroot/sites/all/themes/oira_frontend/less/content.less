@@ -751,6 +751,88 @@ a.more-link{
 
 /*END OIRA TOOLS*/
 
+/*FAQ'S
+**************************************************************/
+
+.page-faq{
+	.panels-flexible-row-new-main-row{
+		.field-name-body{
+			font-size: @font-size1-4;
+		}
+	}
+	.panels-flexible-row-new-1{
+		background-color: @color-background-light-purple; 
+		padding-top: 17px;
+	
+		.view-id-faqs{
+
+			.views-row-even{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-odd{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-last{
+				border-bottom: 0px;
+			}
+			.views-field-title-field{
+			background: rgba(0, 0, 0, 0);
+			padding-left: 0px;
+			border:none;
+				.ui-accordion-header-icon{
+					background-image: none;
+				}
+				.field-content{
+					font-size: @font-size1-2;
+					color: @color-text-purple-darker;
+				}
+			}
+
+			.views-field-body{
+				.faq-answer{
+					font-size: @font-size0-7;
+					
+				}
+
+			}
+			.views-field-title-field.ui-accordion-header-active{
+				a{
+					.field-content{
+						
+						&:after{
+							content:"\e253";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+						}
+					}				
+				}	
+			}
+		
+		
+			.views-field-title-field.ui-corner-all{
+				a{
+					.field-content{
+
+						&:after{
+							content: "\e252";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+						}
+					}				
+				}	
+			}
+		
+
+			.ui-accordion-content{
+				border: 0px;
+				background: rgba(0, 0, 0, 0);
+				padding:0px;
+			}
+		}
+	}
+}
+
+/*END FAQ'S*/
 
 /*OIRA NEWS
 *************************************************************/
