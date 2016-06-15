@@ -91,6 +91,7 @@ function oira_partner_field_extra_fields() {
         'description' => t('Partner content count'),
         'extra field type' => 'partner_content_count',
         'weight' => 0,
+        'callback' => 'oira_partner_views_field_content_count_callback',
       ),
     ),
   );
@@ -120,6 +121,27 @@ function oira_partner_node_view($node, $view_mode, $langcode) {
         ];
     }
   }
+}
+
+/**
+ * Extra field callback for views.
+ */
+function oira_partner_views_field_content_count_callback($node) {
+  $extra_fields = field_info_extra_fields('node', $node->type, 'display');
+  $extra_field_pc = $extra_fields['partner_content_count'];
+  $content = [
+    '#theme' => 'field',
+    '#label_display' => $extra_field_pc['label'],
+    '#title' => $extra_field_pc['label'],
+    '#items' => _oira_partner_compute_content_count($node),
+    '#field_type' => 'extra_field',
+    '#field_name' => 'partner_content_count',
+    '#entity_type' => 'node',
+    '#bundle' => 'partner',
+  ];
+  $display = array('type' => 'partner_content_count');
+  $element = oira_partner_field_extra_fields_formatter_view('taxonomy_term', $node, 'partner_content_count', 'en', $content['#items'], $display);
+  return drupal_render($element);
 }
 
 
