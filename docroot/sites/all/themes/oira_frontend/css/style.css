@@ -7333,7 +7333,6 @@ a.more-link:before {
   margin-top: 25px;
 }
 /*END OIRA TOOLS*/
-<<<<<<< HEAD
 /*FAQ'S
 **************************************************************/
 .page-faq .panels-flexible-row-new-main-row .field-name-body {
@@ -7371,17 +7370,22 @@ a.more-link:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   padding-left: 10px;
+  position: absolute;
+  top: 9px;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   padding-left: 10px;
+  position: absolute;
+  top: 9px;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content {
   border: 0px;
   background: rgba(0, 0, 0, 0);
   padding: 0px;
-=======
+}
+/*END FAQ'S*/
 /*OIRA NEWS
 *************************************************************/
 h1 {
@@ -7448,7 +7452,6 @@ h1 {
   float: left;
   margin-right: 30px;
   margin-bottom: 20px;
->>>>>>> 28e061482bc1ceb759839e809ba3d4d4ec174ca2
 }
 /*FOOTER
 ********************************************/
