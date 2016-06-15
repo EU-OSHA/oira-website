@@ -47,7 +47,7 @@ function hwc_practical_tool_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'practical_tool';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'hwc_2col_stacked_2col';
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
@@ -61,6 +61,8 @@ function hwc_practical_tool_ds_layout_settings_info() {
         5 => 'field_language',
         6 => 'field_country',
         7 => 'field_tool_link',
+      ),
+      'center' => array(
         8 => 'related_partners',
         9 => 'tools_see_more',
       ),
@@ -74,8 +76,8 @@ function hwc_practical_tool_ds_layout_settings_info() {
       'field_language' => 'right',
       'field_country' => 'right',
       'field_tool_link' => 'right',
-      'related_partners' => 'right',
-      'tools_see_more' => 'right',
+      'related_partners' => 'center',
+      'tools_see_more' => 'center',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -87,17 +89,26 @@ function hwc_practical_tool_ds_layout_settings_info() {
       'right' => array(
         'col-sm-9' => 'col-sm-9',
       ),
+      'center' => array(
+        'col-md-12' => 'col-md-12',
+        'row' => 'row',
+      ),
     ),
     'wrappers' => array(
+      'header' => 'div',
       'left' => 'div',
       'right' => 'div',
+      'center' => 'div',
+      'left2' => 'div',
+      'right2' => 'div',
+      'footer' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'layout_disable_css' => 1,
+    'layout_disable_css' => FALSE,
   );
   $export['node|practical_tool|teaser'] = $ds_layout;
 
