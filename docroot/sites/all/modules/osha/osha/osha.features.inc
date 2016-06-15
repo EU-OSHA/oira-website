@@ -65,13 +65,13 @@ function osha_image_default_styles() {
 
   // Exported image style: generic_detail_thumbnail.
   $styles['generic_detail_thumbnail'] = array(
-    'label' => 'Generic detail image (small)',
+    'label' => 'Generic thumb image (large)',
     'effects' => array(
       1 => array(
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 600,
-          'height' => 360,
+          'height' => 350,
           'upscale' => 0,
           'respectminimum' => 1,
           'onlyscaleifcrop' => 0,
