@@ -14,6 +14,16 @@ input, select{
 	box-shadow: none !important;
 }
 
+a{
+	text-decoration: none !important;
+}
+
+h1{
+	font-family: @font-family-base-2;
+	font-size: 2.6em;
+	border-bottom: none !important;
+}
+
 h2{
 	//font-size: @font-size-base;
 	color: @color-text-grey;
@@ -66,8 +76,32 @@ h5{
 }
 
 .breadcrumb{
+	padding-left: 0px;
+	padding-right: 0px;
 	margin-bottom: 0px;
 	background-color: @color-white;
+	font-style: italic;
+	span, a{
+		font-style: italic;
+		color: @color-see-more;
+	}
+	.last{
+		color: @color-text-grey;
+		font-weight: normal;
+		font-style: normal;
+		a{
+			color: @color-text-grey;
+			font-weight: normal;
+			font-style: normal;
+		}
+	}
+	/*
+	.delimiter{
+		&:before{
+			content: ">";
+		}
+	}
+	*/
 }
 
 .h3image-promotional-materials{
@@ -153,6 +187,51 @@ a.more-link{
     margin-right: 5px;
 }
 
+.field-name-field-publication-date{
+	margin-bottom: 15px;
+	.date-display-single{
+		font-weight: bold;
+		color: @color-text-purple-darker;
+	}
+}
+
+//Share bar
+.pane-node-share-widget{
+	margin: 25px 0px;
+	.hwc-share-widget{
+		ul{
+			list-style: none;
+			li.share-this-article{
+				display: none;
+			}
+			li{
+				display: inline-block;
+			    background-color: red;//testing por ahora
+			    width: 25px;
+			    height: 25px;
+			    overflow: hidden;
+			}
+		}
+	}
+}
+.hwc-share-widget{
+	ul{
+		list-style: none;
+		li.share-this-article{
+			display: none;
+		}
+		li{
+			display: inline-block;
+		    background-color: red;//testing por ahora
+		    width: 25px;
+		    height: 25px;
+		    overflow: hidden;
+		}
+		.label{
+			display: none;
+		}
+	}
+}
 /*END estilos comunes
 ************************************************************************************/
 
@@ -315,7 +394,7 @@ a.more-link{
 		}
 	}
 }
-
+ 
 
 
 
@@ -476,6 +555,16 @@ a.more-link{
 **************************************************************/
 
 .page-oira-tools{
+	h1{
+		color: @color-text-purple-darker;
+	}
+	.pane-node-body{
+		.field-type-text-with-summary{
+			font-family: @font-family-base-2;
+			font-size: 1.6em;
+			margin-bottom: 30px;
+		}
+	}
 	.panels-flexible-row-new-1{
 		background: url('../images/background-two-colors.png') repeat-y 50%;
 		padding-bottom: 0px;
@@ -488,28 +577,340 @@ a.more-link{
 					background-color: @color-primary-dark;
 					color: @color-white;
 					padding-right: 30px;
+					padding-top: 30px;
+					position: relative;
+					.form-type-textfield{
+						float: left;
+						margin-bottom: 15px;
+						input{
+							border: none;
+							border-radius: 0px;
+							outline: none;
+							height: auto;
+							padding-right: 35px;
+						}
+
+					}
+					#edit-submit{
+						position: absolute;
+						right: 0;
+						margin-right: 30px;
+						color: @color-text-purple-darker;
+					    border: none;
+					    border-radius: 0px;
+					    outline: none;
+					    width: 35px;
+					    line-height: 19px;
+    					font-size: 1.2em;
+    					padding-left: 7px;
+    					overflow: hidden;
+    					background-color: rgba(0,0,0,0);
+						&:before{
+							content: "\e003";
+							font-family: "Glyphicons Halflings";
+							margin-right: 30px;
+						}
+					}
+					a.active{
+						display: block;
+						color: @color-white;
+						margin-bottom: 10px;
+						font-style: italic;
+						span{
+							&:before{
+								color: @color-text-purple-darker;
+							    padding: 1px;
+							    font-size: 0.7em;
+							    margin-right: 10px;
+							    background-color: @color-white;
+							    display: block;
+							    width: 13px;
+							    height: 13px;
+							}
+						}
+					}
+					#edit-field-country, #edit-field-languagevalue, #edit-field-sector{
+						label{
+							&:after{
+								content: none;
+							}
+						}
+					}
+					.form-type-checkboxes{
+						border-top: 2px solid @color-white;
+						padding-top: 10px;
+						clear: both;
+						margin-top: 15px;
+
+						input.form-checkbox{
+							display: none;
+						}
+						label{
+							padding-left: 0px;
+							margin-bottom: 0px;
+							&:first-child{
+								font-family: @font-family-base-2;
+								font-size: @font-size1-2;
+								font-weight: normal;
+								display: block;
+								margin-bottom: 10px;
+								cursor: pointer;
+								
+							}
+							&:after{
+								content: "\e250";
+								font-family: "Glyphicons Halflings";
+								margin-left: 10px;
+							}
+						}
+						.label-row{
+							&:after{
+								content: "\e252";
+								font-family: "Glyphicons Halflings";
+								margin-left: 10px;
+							}
+						}
+
+					}
+					.form-item-field-sector{
+						border-bottom: 2px solid @color-white;
+					}
 				}
+
 				#edit-content{
 					background-color: @color-primary;
 					padding-bottom: 50px;
 					padding-left: 30px;
+					padding-top: 30px;
 					border-left: 5px solid @color-white;
-					.node-practical-tool{
-						border-top: 2px solid @color-primary-dark;
-						padding:30px 0px;
-						margin-right: 0px;
-						margin-left: 0px;
-						.col-sm-3{
+					#edit-sort-fieldset{
+						border: none;
+						border-radius: 0px;
+						background-color: rgba(0,0,0,0);
+						box-shadow: none;
+						border-top: 2px solid @color-text-purple-darker;
+						border-bottom: 2px solid @color-text-purple-darker;
+						margin-bottom: 30px;
+						.panel-body{
 							padding-left: 0px;
+							padding-right: 0px;
+						}
+						.sort-container{
+							min-width: 210px;
+							padding-left: 0px;
+							label{
+								font-weight: 100;
+								font-size: @font-size0-9;
+								&:after{
+									content: ": ";
+								}
+							}
+							#edit-sort{
+								font-size: @font-size0-9;
+								display: inline-block;
+							    width: auto;
+							    padding: 0;
+							    border: none;
+							    padding-bottom: 1px;
+							    font-weight: bold;
+							    height: initial;
+							    background-color: rgba(0,0,0,0);
+							}
+						}
+						.count-container{
+							font-size: @font-size0-9;
+						}
+					}
+					.search-page-results-wrapper{
+						background-color: @color-white;
+						padding: 30px;
+						.node-practical-tool{
+							border-top: 2px solid @color-primary-dark;
+							padding:30px 0px;
+							margin-right: 0px;
+							margin-left: 0px;
+							.col-sm-3{
+								padding-left: 0px;
+							}
+							.field-name-title-field{
+								font-size: @font-size1-4;
+							}
+							a.more-link{
+								text-align: left;
+								margin-top: 25px;
+							}
 						}
 					}
 				}
 			}
 		}
-
 	}
 }
 
 	
 
 /*END OIRA TOOLS*/
+
+
+
+/*FAQ'S
+**************************************************************/
+
+.page-faq{
+	.panels-flexible-row-new-main-row{
+		.field-name-body{
+			font-size: @font-size1-4;
+		}
+	}
+	.panels-flexible-row-new-1{
+		background-color: @color-background-light-purple; 
+		padding-top: 17px;
+	
+		.view-id-faqs{
+
+			.views-row-even{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-odd{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-last{
+				border-bottom: 0px;
+			}
+			.views-field-title-field{
+			background: rgba(0, 0, 0, 0);
+			padding-left: 0px;
+			border:none;
+				.ui-accordion-header-icon{
+					background-image: none;
+				}
+				.field-content{
+					font-size: @font-size1-2;
+					color: @color-text-purple-darker;
+				}
+			}
+
+			.views-field-body{
+				.faq-answer{
+					font-size: @font-size0-7;
+					
+				}
+
+			}
+			.views-field-title-field.ui-accordion-header-active{
+				a{
+					.field-content{
+						
+						&:after{
+							content:"\e253";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+			    			position: absolute;
+			    			top: 9px;
+						}
+					}				
+				}	
+			}
+		
+		
+			.views-field-title-field.ui-corner-all{
+				a{
+					.field-content{
+
+						&:after{
+							content: "\e252";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+			    			position: absolute;
+			    			top: 9px;
+						}
+					}				
+				}	
+			}
+		
+
+			.ui-accordion-content{
+				border: 0px;
+				background: rgba(0, 0, 0, 0);
+				padding:0px;
+			}
+		}
+	}
+}
+
+/*END FAQ'S*/
+
+/*OIRA NEWS
+*************************************************************/
+h1{
+	color: @color-text-purple-darker;
+}
+.view-display-id-oshnews_list{
+	font-size: 16px;
+	.views-row-odd{
+		background-color: @color-primary;
+	}
+	article{
+		padding-top: 30px;
+    	padding-bottom: 30px; 
+    	.title_field{
+    		margin-bottom: 15px;
+    		a{
+    			font-size: 1.4em;
+    			color: @color-text-grey;
+    			font-weight: bold;
+    		}
+    	}
+    	.field-name-field-summary{
+    		margin-bottom: 15px;
+    		font-weight: bold;
+    		a{
+    			color: @color-text-purple-darker;
+    		}
+    	}
+    	.field-name-body{
+    		margin-bottom: 15px;
+			a{
+    			color: @color-text-purple-darker;
+    		}
+    		.more-link{
+    			color: @color-see-more;
+    		}
+    	}
+	}
+}
+
+/*News detail
+*****************************************************/
+.node-news{
+	h1{
+		color: @color-text-grey;
+		margin-bottom: 30px;
+	}
+	.field-name-field-summary{
+		margin-bottom: 15px;
+		font-weight: bold;
+		a{
+			color: @color-text-purple-darker;
+		}
+	}
+	.field-name-body{
+		margin-bottom: 15px;
+		a{
+			color: @color-text-purple-darker;
+		}
+		.more-link{
+			color: @color-see-more;
+		}
+	}
+	.field-name-field-image{
+		display: inline-block;
+	    float: left;
+	    margin-right: 30px;
+	    margin-bottom: 20px;
+	}
+}
+/*END OIRA NEWS*/
+
+
+
