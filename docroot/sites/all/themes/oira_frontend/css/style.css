@@ -6857,10 +6857,6 @@ a.more-link:before {
 .panels-flexible-row {
   padding-bottom: 25px;
 }
-.glyphicon-new-window {
-  display: block;
-  text-align: right;
-}
 /*Bloques de columnas*/
 .views-item-columns-container {
   background-color: #ffffff;
@@ -7259,7 +7255,7 @@ a.more-link:before {
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes .label-row:after {
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
@@ -7330,7 +7326,32 @@ a.more-link:before {
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool a.more-link {
   text-align: left;
-  margin-top: 25px;
+  margin-top: 15px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
+  color: #58585a;
+  font-weight: bold;
+  margin-top: 30px;
+  display: block;
+  margin-bottom: 15px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
+  color: #10b2e4;
+  margin-left: 10px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner {
+  background-color: #786586;
+  padding: 30px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-top: 0px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .more-link {
+  color: #ffffff;
 }
 /*END OIRA TOOLS*/
 /*FAQ'S

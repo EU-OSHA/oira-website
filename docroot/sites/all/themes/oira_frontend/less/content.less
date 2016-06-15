@@ -157,8 +157,8 @@ a.more-link{
 }
 
 .glyphicon-new-window{
-	display: block;
-	text-align: right;
+	//display: block; //testing
+	//text-align: right;
 }
 
 /*Bloques de columnas*/
@@ -655,7 +655,6 @@ a.more-link{
 								display: block;
 								margin-bottom: 10px;
 								cursor: pointer;
-								
 							}
 							&:after{
 								content: "\e250";
@@ -663,7 +662,7 @@ a.more-link{
 								margin-left: 10px;
 							}
 						}
-						.label-row{
+						.area-shown{
 							&:after{
 								content: "\e252";
 								font-family: "Glyphicons Halflings";
@@ -737,7 +736,39 @@ a.more-link{
 							}
 							a.more-link{
 								text-align: left;
-								margin-top: 25px;
+								margin-top: 15px;
+							}
+							.field-name-field-tool-link{
+								a{
+									color: @color-text-grey;
+								    font-weight: bold;
+								    margin-top: 30px;
+								    display: block;
+								    margin-bottom: 15px;
+									span.glyphicon-new-window{
+										color: @color-see-more;
+										margin-left: 10px;
+									}
+								}
+							}
+							//partners inside oira tools
+							.field-name-related-partners{
+								.node-partner{
+									background-color: @color-primary-dark;
+    								padding: 30px;
+    								margin-bottom: 15px;
+    								color: @color-white;
+    								h4{
+    									a{
+    										font-size: 1.2em;
+    										color: @color-white;
+    										margin-top: 0px;
+    									}
+    								}
+    								.more-link{
+    									color: @color-white;
+    								}
+    							}
 							}
 						}
 					}
