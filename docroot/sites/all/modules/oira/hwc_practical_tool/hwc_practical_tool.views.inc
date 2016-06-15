@@ -84,7 +84,7 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
     $form['number_of_items'] = [
       '#type' => 'textfield',
       '#title' => t('Number of items to return'),
-      '#default_value' => 3,
+      '#default_value' => !empty($this->options['number_of_items']) ? $this->options['number_of_items'] : 3;,
       '#size' => 3,
       '#maxlength' => 3,
     ];
