@@ -40,6 +40,15 @@ function oira_partner_views_data_alter(&$data) {
     ),
   );
 
+  $data['oira_partner']['random_partner'] = array(
+    'title' => t('Random partner.'),
+    'help' => t('Random partner.'),
+    'filter' => array(
+      'label' => t('Random partner.'),
+      'handler' => 'oira_partner_handler_random_partner',
+    ),
+  );
+
   $data['oira_partner']['country_partner_access'] = array(
     'title' => t('Node has section of country partner'),
     'help' => t('Node has section of country partner'),
@@ -125,6 +134,43 @@ class oira_partner_handler_country_partner_access extends views_handler_filter_b
     else {
       // Show no results.
       $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", 0, $equal_operator);
+    }
+  }
+}
+
+
+/**
+ *
+ * Get the latest 4 tools. (At least one OiRA tool & one E-tool)
+ */
+class oira_partner_handler_random_partner extends views_handler_filter_boolean_operator {
+
+  /**
+   * Overrides views_handler_field::query().
+   */
+  function query() {
+    if (empty($this->value)) {
+      $equal_operator = '!=';
+    }
+    else {
+      $equal_operator = '=';
+    }
+    static $random_partner;
+    if (empty($random_partner)) {
+      $query = db_select('node', 'n')
+        ->fields('n', array('nid'))
+        ->condition('type', 'partner')
+        ->condition('status', 1)
+        ->range(0, 1)
+        ->orderRandom()
+        ->execute();
+      $nid = $query->fetchField();
+      if (!empty($nid)) {
+        $random_partner = $nid;
+      }
+    }
+    if (!empty($random_partner)) {
+      $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", $random_partner, $equal_operator);
     }
   }
 }

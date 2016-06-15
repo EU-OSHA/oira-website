@@ -223,20 +223,6 @@ function osha_news_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
-  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
-  $handler->display->display_options['fields']['title_field']['settings'] = array(
-    'title_style' => 'h4',
-    'title_link' => 'content',
-    'title_class' => '',
-    'field_formatter_class' => '',
-  );
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Publication date */
   $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
   $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
@@ -253,6 +239,20 @@ function osha_news_views_default_views() {
     'osha_date_theme' => '',
     'field_formatter_class' => '',
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => 'h4',
+    'title_link' => 'content',
+    'title_class' => '',
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -262,7 +262,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_link' => '0',
-    'trim_length' => '300',
+    'trim_length' => '120',
     'trim_type' => 'chars',
     'trim_suffix' => '...',
     'more_link' => '1',
@@ -441,7 +441,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'large',
+    'image_style' => 'generic_detail_thumbnail',
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
@@ -489,7 +489,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['body']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_link' => '0',
-    'trim_length' => '600',
+    'trim_length' => '500',
     'trim_type' => 'chars',
     'trim_suffix' => '...',
     'more_link' => '1',
@@ -519,8 +519,8 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="col-sm-6 news-content-wrapper">
-[title_field]
 [field_publication_date]
+[title_field]
 [body]
 </div>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
@@ -574,8 +574,8 @@ function osha_news_views_default_views() {
 [field_image]
 </div>'),
     t('<div class="col-sm-6 news-content-wrapper">
-[title_field]
 [field_publication_date]
+[title_field]
 [body]
 </div>'),
   );

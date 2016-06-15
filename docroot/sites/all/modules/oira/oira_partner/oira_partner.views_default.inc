@@ -168,12 +168,12 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
-  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['style_options']['columns'] = '5';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Logo */
   $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
@@ -183,7 +183,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'medium',
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
@@ -207,6 +207,11 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'partner' => 'partner',
   );
+  /* Filter criterion: Oira partner: Random partner. */
+  $handler->display->display_options['filters']['random_partner']['id'] = 'random_partner';
+  $handler->display->display_options['filters']['random_partner']['table'] = 'oira_partner';
+  $handler->display->display_options['filters']['random_partner']['field'] = 'random_partner';
+  $handler->display->display_options['filters']['random_partner']['value'] = '1';
 
   /* Display: OiRA Partners Block */
   $handler = $view->new_display('block', 'OiRA Partners Block', 'oira_partners_homepage');
@@ -219,6 +224,27 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'partner' => 'partner',
+  );
+  /* Filter criterion: Oira partner: Random partner. */
+  $handler->display->display_options['filters']['random_partner']['id'] = 'random_partner';
+  $handler->display->display_options['filters']['random_partner']['table'] = 'oira_partner';
+  $handler->display->display_options['filters']['random_partner']['field'] = 'random_partner';
+  $handler->display->display_options['filters']['random_partner']['value'] = '0';
 
   /* Display: Attachment */
   $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
@@ -248,7 +274,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'large',
+    'image_style' => 'generic_detail_thumbnail',
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
@@ -317,10 +343,10 @@ function oira_partner_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title (title_field) */
-  $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
-  $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
-  $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['displays'] = array(
     'oira_partners_homepage' => 'oira_partners_homepage',
     'default' => 0,
