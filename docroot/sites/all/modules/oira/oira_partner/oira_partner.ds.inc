@@ -21,6 +21,25 @@ function oira_partner_ds_field_settings_info() {
       'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'h4',
+        'class' => '',
+        'exclude node title settings' => '1',
+        'field_formatter_class' => '',
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'See partner\'s profile',
+        'link class' => 'more-link',
+        'wrapper' => '',
+        'class' => '',
+        'field_formatter_class' => '',
+      ),
     ),
   );
   $export['node|partner|teaser'] = $ds_fieldsetting;
@@ -48,15 +67,13 @@ function oira_partner_ds_layout_settings_info() {
       ),
       'right' => array(
         1 => 'title',
-      ),
-      'center' => array(
-        2 => 'partner_content_count',
+        2 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_logo' => 'left',
       'title' => 'right',
-      'partner_content_count' => 'center',
+      'node_link' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(

@@ -142,7 +142,7 @@ function hwc_practical_tool_field_extra_fields_formatter_info() {
       'extra field types' => ['tools_see_more'],
       'settings' => [
         'slice_point' => 250,
-        'parent_selector' => '.views-row, .views-view-grid',
+        'parent_selector' => '.views-row, .views-item-columns-container',
       ],
     ],
   ];
@@ -444,9 +444,32 @@ function hwc_practical_tool_field_formatter_info() {
     'external_tool_link' => array(
       'label' => t('Link with icon'),
       'field types' => array('link_field'),
+      'settings' => array(
+        'text' => '',
+      ),
     ),
   );
   return $info;
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function hwc_practical_tool_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $element = array();
+  switch ($display['type']) {
+    case 'external_tool_link':
+      $element['text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Text'),
+        '#description' => t('Text'),
+        '#default_value' => $settings['text'],
+      );
+      break;
+  }
+  return $element;
 }
 
 /**
@@ -491,7 +514,7 @@ function hwc_practical_tool_theme() {
     'path' => $path . '/templates',
   );
   $theme['tool_link_formatter_icon_link'] = array(
-    'variables' => array('element' => NULL, 'field' => NULL),
+    'variables' => array('element' => NULL, 'field' => NULL, 'display' => NULL),
   );
   return $theme;
 }
@@ -547,10 +570,15 @@ function theme_tool_link_formatter_icon_link($vars) {
   $link_options = $vars['element'];
   $link_options['external'] = TRUE;
   $link_options['attributes']['target'] = '_blank';
+//  $link_options['attributes']['class'][] = '';
   $link_options['html'] = TRUE;
+  $text = '';
+  if (!empty($vars['display']['settings']['text'])) {
+    $text = t($vars['display']['settings']['text']);
+  }
   unset($link_options['title']);
   unset($link_options['url']);
-  return $vars['element']['url'] ? l('<span class="glyphicon glyphicon-new-window"></span>', $vars['element']['url'], $link_options) : '';
+  return $vars['element']['url'] ? l($text . '<span class="glyphicon glyphicon-new-window"></span>', $vars['element']['url'], $link_options) : '';
 }
 
 /**

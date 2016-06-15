@@ -263,10 +263,10 @@ function oira_partner_strongarm() {
         ),
         'partner_content_count' => array(
           'teaser' => array(
-            'weight' => '2',
+            'weight' => '8',
             'label' => 'hidden',
-            'type' => 'partner_content_count',
-            'visible' => TRUE,
+            'type' => 'hidden',
+            'visible' => FALSE,
             'settings' => array(),
           ),
           'default' => array(

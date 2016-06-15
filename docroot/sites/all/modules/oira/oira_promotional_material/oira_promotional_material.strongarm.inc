@@ -21,7 +21,7 @@ function oira_promotional_material_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_promotional_material';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_promotional_material'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -35,29 +35,52 @@ function oira_promotional_material_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_promotional_material';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_form_location_promotional_material'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_promotional_material';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_promotional_material'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_promotional_material';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['comment_promotional_material'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_promotional_material';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_promotional_material'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'exclude_node_title_content_type_modes_promotional_material';
+  $strongarm->value = array(
+    'teaser' => 'teaser',
+    'country_partner_content' => 'country_partner_content',
+    'full' => 0,
+    'rss' => 0,
+    'search_index' => 0,
+    'search_result' => 0,
+    'diff_standard' => 0,
+    'body' => 0,
+    'osha_slideshow' => 0,
+    'osha_resources' => 0,
+    'osha_wiki' => 0,
+    'print' => 0,
+    'token' => 0,
+    'revision' => 0,
+    'nodeform' => 0,
+  );
+  $export['exclude_node_title_content_type_modes_promotional_material'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -68,19 +91,19 @@ function oira_promotional_material_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '15',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '14',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '13',
         ),
         'workbench_access' => array(
-          'weight' => '8',
+          'weight' => '11',
         ),
         'xmlsitemap' => array(
-          'weight' => '9',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
@@ -124,7 +147,7 @@ function oira_promotional_material_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_promotional_material';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_promotional_material'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -133,6 +156,16 @@ function oira_promotional_material_strongarm() {
   $strongarm->name = 'node_submitted_promotional_material';
   $strongarm->value = 0;
   $export['node_submitted_promotional_material'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_promotional_material';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_promotional_material'] = $strongarm;
 
   return $export;
 }
