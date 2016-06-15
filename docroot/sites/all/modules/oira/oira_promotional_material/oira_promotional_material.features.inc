@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function oira_promotional_material_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
@@ -29,7 +32,7 @@ function oira_promotional_material_views_api($module = NULL, $api = NULL) {
 function oira_promotional_material_node_info() {
   $items = array(
     'promotional_material' => array(
-      'name' => 'Promotional material',
+      'name' => 'Promotional resources',
       'base' => 'node_content',
       'description' => 'Leaflet, poster, presentations, link to videos, etc...',
       'has_title' => '1',

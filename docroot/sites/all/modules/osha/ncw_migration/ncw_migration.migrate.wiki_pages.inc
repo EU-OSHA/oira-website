@@ -22,6 +22,7 @@ class NCWWikiPagesMigration extends AbstractNCWNodeMigration {
     $this->addFieldMapping('field_tags:source_type')->defaultValue('tid');
     $this->addFieldMapping('field_tags:create_term')->defaultValue(FALSE);
     $this->addFieldMapping('field_tags', 'field_tags');
+    $this->addFieldMapping('field_revised_date', 'field_updated');
 
     $this->ignoreMetatagMigration();
   }

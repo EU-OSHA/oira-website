@@ -160,6 +160,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
             '#options' => $options,
             '#default_value' => _hwc_practical_tool_get_req_param($form_state, $field_name, array()),
             '#title' => $facet_def['label'],
+            '#attributes' => array('class' => array('search-facet-field')),
           );
         }
       }
@@ -218,7 +219,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   }
 
   $form['#attached']['js'] = array(
-    drupal_get_path('module', 'hwc_practical_tool') . '/js/checkbox-submit.js',
+    drupal_get_path('module', 'hwc_practical_tool') . '/js/form.js',
   );
 
   return $form;

@@ -20,21 +20,22 @@ col-sm-6
 col-sm-8
 col-sm-9
 col-md-12
-row';
+row
+container';
   $export['ds_classes_regions'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_extras_fields_extra';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['ds_extras_fields_extra'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_extras_fields_extra_list';
-  $strongarm->value = 'node|practical_tool|title_field';
+  $strongarm->value = '';
   $export['ds_extras_fields_extra_list'] = $strongarm;
 
   $strongarm = new stdClass();
