@@ -6865,10 +6865,6 @@ a.more-link:before {
 .views-item-columns-container a {
   display: block;
 }
-.views-item-columns-container a .glyphicon-new-window {
-  display: block;
-  text-align: right;
-}
 /*Etiquetas azuler de pais e idioma*/
 .field.field-name-field-country,
 .field-type-language-field,
@@ -6883,10 +6879,16 @@ a.more-link:before {
   margin-top: 1em;
   margin-right: 5px;
 }
-.field-name-field-publication-date {
+.field-name-field-publication-date,
+.field-type-datetime {
   margin-bottom: 15px;
 }
-.field-name-field-publication-date .date-display-single {
+.field-name-field-publication-date .date-display-single,
+.field-type-datetime .date-display-single {
+  font-weight: bold;
+  color: #786586;
+}
+.date-display-single {
   font-weight: bold;
   color: #786586;
 }
@@ -6921,6 +6923,17 @@ a.more-link:before {
 }
 .hwc-share-widget ul .label {
   display: none;
+}
+.field-name-field-tool-link a {
+  color: #58585a;
+  font-weight: bold;
+  margin-top: 30px;
+  display: block;
+  margin-bottom: 15px;
+}
+.field-name-field-tool-link a span.glyphicon-new-window {
+  color: #10b2e4;
+  margin-left: 10px;
 }
 /*END estilos comunes
 ************************************************************************************/
@@ -6976,7 +6989,7 @@ a.more-link:before {
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container {
   background-color: #ffffff;
   padding: 15px;
-  min-height: 358px;
+  min-height: 260px;
 }
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container a.more-link {
   color: #10b2e4;
@@ -7002,6 +7015,9 @@ a.more-link:before {
   background-color: #dfd8e4;
   min-height: 320px;
 }
+#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-item-columns-container .materials-content-wrapper {
+  padding: 15px;
+}
 #block-system-main .panels-flexible-row-new-16 {
   background-color: #dfd8e4;
 }
@@ -7014,6 +7030,21 @@ a.more-link:before {
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-title-field a {
   font-size: 1.6em;
 }
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-related-partners .node-partner {
+  background-color: #786586;
+  padding: 15px;
+  color: #ffffff;
+  margin-top: 15px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-related-partners .node-partner h4 a {
+  font-size: 0.9em;
+  color: #ffffff;
+  margin-top: 0px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-related-partners .node-partner .more-link {
+  color: #ffffff;
+  text-align: left;
+}
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container {
   background-color: #ffffff;
   padding: 15px;
@@ -7021,9 +7052,20 @@ a.more-link:before {
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container a {
   display: block;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container a .glyphicon-new-window {
-  display: block;
-  text-align: right;
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner {
+  background-color: #786586;
+  padding: 15px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner h4 a {
+  font-size: 0.9em;
+  color: #ffffff;
+  margin-top: 0px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner .more-link {
+  color: #ffffff;
+  text-align: left;
 }
 #block-system-main .panels-flexible-row-new-16 .pane-views.pane-tools .pane-title {
   color: #967ea7;
@@ -7341,8 +7383,7 @@ a.more-link:before {
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner {
   background-color: #786586;
-  padding: 30px;
-  margin-bottom: 15px;
+  padding: 15px;
   color: #ffffff;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a {

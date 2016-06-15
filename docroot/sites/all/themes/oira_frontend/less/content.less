@@ -168,8 +168,7 @@ a.more-link{
 	a{
 		display: block;
     	.glyphicon-new-window{
-    		display: block;
-    		text-align: right;
+
     	}
 	}
 }
@@ -187,12 +186,16 @@ a.more-link{
     margin-right: 5px;
 }
 
-.field-name-field-publication-date{
+.field-name-field-publication-date, .field-type-datetime{
 	margin-bottom: 15px;
 	.date-display-single{
 		font-weight: bold;
 		color: @color-text-purple-darker;
 	}
+}
+.date-display-single{
+	font-weight: bold;
+	color: @color-text-purple-darker;
 }
 
 //Share bar
@@ -232,6 +235,21 @@ a.more-link{
 		}
 	}
 }
+
+.field-name-field-tool-link{
+	a{
+		color: @color-text-grey;
+	    font-weight: bold;
+	    margin-top: 30px;
+	    display: block;
+	    margin-bottom: 15px;
+		span.glyphicon-new-window{
+			color: @color-see-more;
+			margin-left: 10px;
+		}
+	}
+}
+
 /*END estilos comunes
 ************************************************************************************/
 
@@ -308,7 +326,7 @@ a.more-link{
 			.views-item-columns-container{
 				background-color: @color-white;
 				padding: 15px;
-				min-height: 358px;
+				min-height: 260px;
 				
 				a.more-link{
 					color: @color-see-more;
@@ -341,6 +359,9 @@ a.more-link{
 				.views-item-columns-container{
 					background-color: @color-background-light-purple;
 					min-height: 320px;
+					.materials-content-wrapper{
+						padding: 15px;
+					}
 				}
 			}
 		}
@@ -364,9 +385,27 @@ a.more-link{
     		.field-name-title-field{
     			a{
     				font-size: @font-size1-6;	
-    			}
-    			
+    			}	
     		}
+    		.field-name-related-partners{
+					.node-partner{
+						background-color: @color-primary-dark;
+						padding: 15px;
+						color: @color-white;
+						margin-top: 15px;
+						h4{
+							a{
+								font-size: 0.9em;
+								color: @color-white;
+								margin-top: 0px;
+							}
+						}
+						.more-link{
+							color: @color-white;
+							text-align: left;
+						}
+					}
+				}
 		}
 		.view-display-id-block_1{
 			.views-item-columns-container{
@@ -375,9 +414,27 @@ a.more-link{
 				a{
 					display: block;
     				.glyphicon-new-window{
-    					display: block;
-    					text-align: right;
+
     				}
+				}
+				.field-name-related-partners{
+					.node-partner{
+						background-color: @color-primary-dark;
+						padding: 15px;
+						color: @color-white;
+						margin-bottom: 15px;
+						h4{
+							a{
+								font-size: 0.9em;
+								color: @color-white;
+								margin-top: 0px;
+							}
+						}
+						.more-link{
+							color: @color-white;
+							text-align: left;
+						}
+					}
 				}
 			}
 		}
@@ -755,8 +812,7 @@ a.more-link{
 							.field-name-related-partners{
 								.node-partner{
 									background-color: @color-primary-dark;
-    								padding: 30px;
-    								margin-bottom: 15px;
+    								padding: 15px;
     								color: @color-white;
     								h4{
     									a{
