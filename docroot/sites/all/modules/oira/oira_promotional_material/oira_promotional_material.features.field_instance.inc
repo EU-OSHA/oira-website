@@ -58,7 +58,7 @@ function oira_promotional_material_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'ignore',
-          'trim_length' => 600,
+          'trim_length' => 250,
           'trim_link' => 0,
           'trim_options' => array(
             'text' => 'text',
@@ -89,7 +89,7 @@ function oira_promotional_material_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -138,7 +138,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 15,
       ),
     ),
     'entity_type' => 'node',
@@ -164,7 +164,7 @@ function oira_promotional_material_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -214,7 +214,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'node',
@@ -238,7 +238,7 @@ function oira_promotional_material_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -287,7 +287,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -303,7 +303,7 @@ function oira_promotional_material_field_default_field_instances() {
       'module' => 'multiple_selects',
       'settings' => array(),
       'type' => 'multiple_selects',
-      'weight' => 16,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -355,7 +355,7 @@ function oira_promotional_material_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 5,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -373,97 +373,7 @@ function oira_promotional_material_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 17,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-promotional_material-field_external_url'.
-  $field_instances['node-promotional_material-field_external_url'] = array(
-    'bundle' => 'promotional_material',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'link',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'link_default',
-        'weight' => 7,
-      ),
-      'osha_resources' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_slideshow' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_wiki' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_external_url',
-    'label' => 'URL',
-    'required' => 0,
-    'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'entity_translation_sync' => FALSE,
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_label_use_field_label' => 0,
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -511,7 +421,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 19,
       ),
     ),
     'entity_type' => 'node',
@@ -521,30 +431,30 @@ function oira_promotional_material_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'entity_translation_sync' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'txt',
+      'file_directory' => 'promotional_materials',
+      'file_extensions' => 'pdf doc docx ppt pptx html odp odt txt',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'file',
       'settings' => array(
         'allowed_schemes' => array(
           'public' => 'public',
         ),
         'allowed_types' => array(
           'audio' => 0,
-          'document' => 0,
+          'document' => 'document',
           'image' => 'image',
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_browser_osha--media_browser_osha' => 0,
-          'media_browser_osha--media_browser_osha_my_files' => 0,
+          'media_browser_osha--media_browser_osha' => 'media_browser_osha--media_browser_osha',
+          'media_browser_osha--media_browser_osha_my_files' => 'media_browser_osha--media_browser_osha_my_files',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
         ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
@@ -558,9 +468,10 @@ function oira_promotional_material_field_default_field_instances() {
         'manualcrop_styles_list' => array(),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
-      'weight' => 8,
+      'type' => 'file_generic',
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -669,7 +580,7 @@ function oira_promotional_material_field_default_field_instances() {
         'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -727,7 +638,7 @@ function oira_promotional_material_field_default_field_instances() {
           ),
         ),
         'type' => 'language_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -745,7 +656,97 @@ function oira_promotional_material_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 5,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-promotional_material-field_link'.
+  $field_instances['node-promotional_material-field_link'] = array(
+    'bundle' => 'promotional_material',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'link_default',
+        'weight' => 14,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_link',
+    'label' => 'Link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -795,7 +796,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 17,
       ),
     ),
     'entity_type' => 'node',
@@ -869,7 +870,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -897,7 +898,7 @@ function oira_promotional_material_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -990,7 +991,7 @@ function oira_promotional_material_field_default_field_instances() {
         'year_range' => '-10:+1',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -1038,7 +1039,7 @@ function oira_promotional_material_field_default_field_instances() {
         'settings' => array(
           'field_formatter_class' => '',
           'title_class' => '',
-          'title_link' => '',
+          'title_link' => 'content',
           'title_style' => 'h3',
         ),
         'type' => 'title_linked',
@@ -1232,12 +1233,12 @@ function oira_promotional_material_field_default_field_instances() {
   t('File');
   t('Image');
   t('Language');
+  t('Link');
   t('Name');
   t('Promotional material type');
   t('Publication date');
   t('Revised date');
   t('Title');
-  t('URL');
 
   return $field_instances;
 }
