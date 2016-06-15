@@ -82,6 +82,21 @@ function osha_image_default_styles() {
     ),
   );
 
+  // Exported image style: square_thumbnail_teaser.
+  $styles['square_thumbnail_teaser'] = array(
+    'label' => 'Square thumbnail teaser (500)',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 500,
+          'height' => 500,
+        ),
+        'weight' => 3,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
