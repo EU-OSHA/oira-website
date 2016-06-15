@@ -9,10 +9,10 @@ function hwc_practical_tool_views_data_alter(&$data) {
   );
   // Filters nodes that are in current users RM section.
   $data['hwc_practical_tool']['latest_tools'] = array(
-    'title' => t('If node is within latest 4 tools. (OiRA tools or E-tools)'),
-    'help' => t('If node is within latest 4 tools. (OiRA tools or E-tools)'),
+    'title' => t('If node is within latest tools. (OiRA tools or E-tools)'),
+    'help' => t('If node is within latest tools. (OiRA tools or E-tools)'),
     'filter' => array(
-      'label' => t('Node is within latest 4 tools. (OiRA tools or E-tools)'),
+      'label' => t('Node is within latest tools. (OiRA tools or E-tools)'),
       'handler' => 'Hwc_practical_tool_handler_latest_tools',
     ),
   );
@@ -28,7 +28,7 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
    * Overrides views_handler_field::query().
    */
   function query() {
-    $limit = 3;
+    $limit = !empty($this->options['number_of_items']) ? $this->options['number_of_items'] : 3;
     $term = taxonomy_get_term_by_name('E-tools', 'wiki_categories');
     $term = reset($term);
     $operator = empty($this->value) ? 'NOT IN' : 'IN';
@@ -71,5 +71,22 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
     }
 
     $this->query->add_where(1, "{$this->query->base_table}.nid", $items, $operator);
+  }
+
+  function option_definition() {
+    $options = parent::option_definition();
+    $options['number_of_items'] = array('default' => '3');
+    return $options;
+  }
+
+  function options_form(&$form, &$form_state) {
+    parent::options_form($form, $form_state);
+    $form['number_of_items'] = [
+      '#type' => 'textfield',
+      '#title' => t('Number of items to return'),
+      '#default_value' => !empty($this->options['number_of_items']) ? $this->options['number_of_items'] : 3,
+      '#size' => 3,
+      '#maxlength' => 3,
+    ];
   }
 }
