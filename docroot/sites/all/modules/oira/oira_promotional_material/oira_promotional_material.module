@@ -22,6 +22,159 @@ function oira_promotional_material_block_info() {
 }
 
 /**
+ * Implements hook_field_extra_fields().
+ */
+function oira_promotional_material_field_extra_fields() {
+  $extra = array(
+    'display' => array(
+      'materials_see_more' => array(
+        'label' => t('See more link for materials'),
+        'description' => t('Opens material resource'),
+        'extra field type' => 'materials_see_more',
+        'weight' => 0,
+        'callback' => 'oira_promotional_material_see_more_callback',
+      ),
+    ),
+  );
+  $extra['node']['promotional_material'] = $extra;
+
+  return $extra;
+}
+
+/**
+ * Extra field callback for views.
+ */
+function oira_promotional_material_see_more_callback($node) {
+  if ($node->type == 'promotional_material') {
+    $items = array('See more');
+    $display = array('type' => 'materials_see_more', 'view_mode' => 'teaser');
+    $element = oira_promotional_material_field_extra_fields_formatter_view('node', $node, 'related_partners', 'en', $items, $display);
+    return drupal_render($element);
+  }
+}
+
+
+
+function oira_promotional_material_field_extra_fields_formatter_info() {
+  return [
+    'materials_see_more' => [
+      'label' => t('See more link for materials'),
+      'description' => t('Opens material resource'),
+      'extra field types' => ['materials_see_more'],
+      'settings' => [],
+    ],
+  ];
+}
+
+function _oira_promotional_material_get_url($entity) {
+  $url = '';
+  $wrapper = entity_metadata_wrapper('node', $entity);
+  if (!empty($entity->field_link)) {
+    $url = $wrapper->field_link->value()['url'];
+  }
+  elseif (!empty($entity->field_file)) {
+    $file = $wrapper->field_file->value();
+    $url = file_create_url($file['uri']);
+  }
+  return $url;
+}
+
+function oira_promotional_material_field_extra_fields_formatter_view($entity_type, $entity, $extra_field_name, $langcode, $items, $display) {
+  $element = [];
+//  $settings = $display['settings'];
+  switch ($display['type']) {
+    case 'materials_see_more':
+      foreach ($items as $delta => $item) {
+        $url = _oira_promotional_material_get_url($entity);
+        $markup = '';
+        if (!empty($url)) {
+          $markup = '<a class="more-link" href="' . $url . '" target="_blank">' . t('See more') . '</a>';
+        }
+        $element[$delta] = array(
+          '#type' => 'markup',
+          '#markup' => $markup,
+        );
+      }
+      break;
+  }
+  return $element;
+}
+
+/**
+ * Use of osha_title_formatter_' . $entity->type . '_view'.
+ *
+ * Show the title alt when it's the case.
+ */
+function osha_title_formatter_promotional_material_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  global $language;
+
+  $settings = $display['settings'];
+  $output = isset($items[0]) ? $items[0]['safe_value'] : '';
+
+  $entity_wrapper = entity_metadata_wrapper('node', $entity);
+  if (!empty($output) && $settings['title_link'] == 'content') {
+    $uri['url'] = _oira_promotional_material_get_url($entity);
+    if (empty($uri)) {
+      $uri = entity_uri($entity_type, $entity);
+    }
+    $output = l($output, $uri['url'], array('html' => TRUE, 'attributes' => array('target' => '_blank')));
+  }
+
+  $wrap_tag = empty($settings['title_style']) ? '_none' : $settings['title_style'];
+
+  if ($wrap_tag != '_none') {
+    $element = array(
+      'element' => array(
+        '#tag' => $wrap_tag,
+        '#value' => $output,
+      ),
+    );
+
+    if (!empty($settings['title_class'])) {
+      $element['#attributes'] = array('class' => $settings['title_class']);
+    }
+
+    $output = theme('html_tag', $element);
+  }
+
+  $element = array(
+    array(
+      '#markup' => $output,
+    ),
+  );
+
+  return $element;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function oira_promotional_material_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'promotional_material') {
+    $extra_fields = field_info_extra_fields('node', $node->type, 'display');
+    if (!empty($extra_fields['materials_see_more'])) {
+      $extra_field_see_more = $extra_fields['materials_see_more'];
+      if (!empty($extra_field_see_more['display'][$view_mode]['visible'])) {
+        $display = $extra_fields['materials_see_more']['display'];
+        $node->content['materials_see_more'] = [
+          '#theme' => 'field',
+          '#label_display' => isset($display[$view_mode]['label']) ? $display[$view_mode]['label'] : 'hidden',
+          '#title' => $extra_field_see_more['label'],
+          '#items' => array($node->nid => 'See more'),
+          '#field_type' => 'extra_field',
+          '#field_name' => 'tools_see_more',
+          '#entity_type' => 'node',
+          '#bundle' => 'partner',
+          '#view_mode' => $view_mode,
+          '#weight' => (int) $display[$view_mode]['weight'],
+        ];
+      }
+    }
+  }
+}
+
+
+/**
  * Implements hook_block_view().
  */
 function oira_promotional_material_block_view($delta = '') {
@@ -72,7 +225,7 @@ function osha_title_formatter_promotional_material_type_view($entity_type, $enti
 function oira_promotional_material_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
     case 'promotional_material_node_form':
-      unset($form['field_country']);
+      $form['field_country']['#access'] = FALSE;
       break;
   }
 }

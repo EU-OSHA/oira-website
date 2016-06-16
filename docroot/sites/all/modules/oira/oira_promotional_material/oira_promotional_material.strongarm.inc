@@ -91,22 +91,32 @@ function oira_promotional_material_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '15',
+          'weight' => '17',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '13',
+          'weight' => '15',
         ),
         'workbench_access' => array(
-          'weight' => '11',
+          'weight' => '1',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '14',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'materials_see_more' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'label' => 'hidden',
+            'type' => 'materials_see_more',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__promotional_material'] = $strongarm;

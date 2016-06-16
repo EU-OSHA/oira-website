@@ -396,7 +396,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -577,7 +577,7 @@ function hwc_practical_tool_field_default_field_instances() {
           ),
         ),
         'type' => 'language_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',

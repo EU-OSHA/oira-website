@@ -1060,7 +1060,7 @@ function hwc_practical_tool_views_default_views() {
     'wiki_page' => 'wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: HWC practical tool: If node is within latest 4 tools. (OiRA tools or E-tools) */
+  /* Filter criterion: HWC practical tool: If node is within latest tools. (OiRA tools or E-tools) */
   $handler->display->display_options['filters']['latest_tools']['id'] = 'latest_tools';
   $handler->display->display_options['filters']['latest_tools']['table'] = 'hwc_practical_tool';
   $handler->display->display_options['filters']['latest_tools']['field'] = 'latest_tools';

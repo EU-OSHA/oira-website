@@ -115,7 +115,43 @@ function oira_promotional_material_views_default_views() {
     'title_class' => '',
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['title_field']['field_api_classes'] = TRUE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Field: Language */
+  $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
+  $handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
+  $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
+  $handler->display->display_options['fields']['field_language']['label'] = '';
+  $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_language']['settings'] = array(
+    'format' => array(
+      'name' => 'name',
+      'iso' => 0,
+      'name_native' => 0,
+    ),
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_language']['field_api_classes'] = TRUE;
+  /* Field: Content: Country */
+  $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['label'] = '';
+  $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_country']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_country']['field_api_classes'] = TRUE;
+  /* Field: Content: Extrafield See more link for materials */
+  $handler->display->display_options['fields']['materials_see_more']['id'] = 'materials_see_more';
+  $handler->display->display_options['fields']['materials_see_more']['table'] = 'node';
+  $handler->display->display_options['fields']['materials_see_more']['field'] = 'materials_see_more';
+  $handler->display->display_options['fields']['materials_see_more']['label'] = '';
+  $handler->display->display_options['fields']['materials_see_more']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['materials_see_more']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -123,6 +159,9 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'materials-content-wrapper\'>
 [title_field]
+[field_country] 
+[field_language]
+[materials_see_more]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $translatables['promotional_materials'] = array(
@@ -137,6 +176,9 @@ function oira_promotional_material_views_default_views() {
     t('Promotional materials frontpage block'),
     t('<div class=\'materials-content-wrapper\'>
 [title_field]
+[field_country] 
+[field_language]
+[materials_see_more]
 </div>'),
   );
   $export['promotional_materials'] = $view;

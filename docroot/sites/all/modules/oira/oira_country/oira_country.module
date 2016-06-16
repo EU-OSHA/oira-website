@@ -217,6 +217,7 @@ function _oira_country_compute_count_all() {
     );
   }
   cache_set($cid, $return, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
+  return $return;
 }
 
 /**
@@ -230,7 +231,6 @@ function _oira_country_compute_count_cid($term) {
  * Compute and cache content counts for country.
  */
 function _oira_country_compute_content_count($term) {
-  _oira_country_compute_count_all();
   $cid = _oira_country_compute_count_cid($term);
   $cache = cache_get($cid);
   if (!empty($cache)) {
