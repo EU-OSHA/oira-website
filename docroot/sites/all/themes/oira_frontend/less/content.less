@@ -75,6 +75,10 @@ h5{
 	}
 }
 
+.strong-background{
+	background-color: @color-primary-dark;
+}
+
 .breadcrumb{
 	padding-left: 0px;
 	padding-right: 0px;
@@ -124,7 +128,7 @@ h5{
 		display: block;
 		text-align: right;
 		font-size: @font-size1;
-		margin-top: 20px;
+		margin-top: 15px;
 		&:before{
 			content:'>';
 			margin-right: 2px;
@@ -142,7 +146,7 @@ a.more-link{
 	display: block;
 	text-align: right;
 	font-size: @font-size1;
-	margin-top: 0.5em;
+	margin-top: 15px;
 	&:before{
 		content:'>';
 		margin-right: 5px;
@@ -388,24 +392,41 @@ a.more-link{
     			}	
     		}
     		.field-name-related-partners{
-					.node-partner{
-						background-color: @color-primary-dark;
-						padding: 15px;
-						color: @color-white;
-						margin-top: 15px;
-						h4{
-							a{
-								font-size: 0.9em;
-								color: @color-white;
-								margin-top: 0px;
-							}
-						}
-						.more-link{
+				.node-partner{
+					background-color: @color-primary-dark;
+					padding: 15px;
+					color: @color-white;
+					margin-top: 15px;
+					h4{
+						a{
+							font-size: 0.9em;
 							color: @color-white;
-							text-align: left;
+							margin-top: 0px;
 						}
 					}
+					.more-link{
+						color: @color-white;
+						text-align: left;
+					}
 				}
+			}
+			a.more-link{
+				text-align: left;
+			}
+			a.show-less{
+				text-align: right !important;
+				width: 20px;
+				height: 12px;
+			    float: right;
+			    overflow: hidden;
+			    font-style: normal;
+				&:before{
+					content: "\e253";
+					font-family: "Glyphicons Halflings";
+					font-size: 1.2em;
+					line-height: 0;
+				}
+			}
 		}
 		.view-display-id-block_1{
 			.views-item-columns-container{
@@ -417,6 +438,23 @@ a.more-link{
 
     				}
 				}
+				a.show-less{
+							text-align: right !important;
+							width: 20px;
+							height: 12px;
+						    float: right;
+						    overflow: hidden;
+						    font-style: normal;
+						    position: relative;
+						    top: -5px;
+						    margin-top: 0px;
+							&:before{
+								content: "\e253";
+								font-family: "Glyphicons Halflings";
+								font-size: 1.2em;
+								line-height: 0;
+							}
+						}
 				.field-name-related-partners{
 					.node-partner{
 						background-color: @color-primary-dark;
@@ -463,6 +501,9 @@ a.more-link{
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article{
+	h2{
+		font-size: 3em;
+	}
 	.view-all-url{
 		border-top: 2px solid @color-white;
 		text-align: right;
@@ -791,9 +832,26 @@ a.more-link{
 							.field-name-title-field{
 								font-size: @font-size1-4;
 							}
-							a.more-link{
-								text-align: left;
-								margin-top: 15px;
+							.field-name-tools-see-more{
+								margin-left: 207px;
+								a.more-link{
+									text-align: left;
+									margin-top: 15px;
+								}
+								a.show-less{
+									text-align: right !important;
+									width: 20px;
+    								height: 12px;
+								    float: right;
+								    overflow: hidden;
+								    font-style: normal;
+									&:before{
+										content: "\e253";
+										font-family: "Glyphicons Halflings";
+										font-size: 1.2em;
+    									line-height: 0;
+									}
+								}
 							}
 							.field-name-field-tool-link{
 								a{
@@ -823,8 +881,24 @@ a.more-link{
     								}
     								.more-link{
     									color: @color-white;
+    									text-align: left;
     								}
     							}
+							}
+							.related-partners-1 > div{
+								margin-left: 222px;
+							}
+							.related-partners-2 > div{
+								display: table;
+								border-collapse: collapse;
+								& > .even, & > .odd{
+									&:first-child{
+										display: table-cell;
+									}
+								}
+								& > .even:first-child{
+									border-right: 10px solid white;
+								}
 							}
 						}
 					}
@@ -1000,4 +1074,99 @@ h1{
 /*END OIRA NEWS*/
 
 
+/*COUNTRIES LIST
+*********************************************************/
 
+.page-countries{
+	h1{
+		color: @color-text-grey;
+	}
+	.pane-oira-country-oira-country-count-all{
+		.pane-content{
+			display: table;
+			width: 100%;
+			margin-top: 25px;
+			.country-content-count-label{
+				display: table-cell;
+				color: @color-white;
+				text-align: center;
+				border-left: 2px solid @color-white;
+				width: 20%;
+				&:last-child{
+					border-right: 2px solid @color-white;
+				}
+				.form-group{
+					margin-bottom: 0px;
+				}
+				.form-item{
+					label{
+						display: block;
+						font-size: 1.2em;
+						margin-bottom: 0px;
+					}
+					span{
+						display: block;
+						font-size: 2.8em;
+					    font-weight: bold;
+					    line-height: 31px;
+					    margin-top: 15px;
+					}
+				}
+			}
+		}
+	}
+	.view-id-countries{
+		margin-top: 30px;
+		.views-item-columns-container{
+			background-color: @color-primary;
+			overflow: auto;
+			margin-bottom: 30px;
+			.views-field-field-flag{
+				margin: 30px 30px 0px 30px;
+				img{
+					max-height: 67px;
+				}
+			}
+			.views-field-name-field{
+				margin: 30px 30px 30px 30px;
+				h2{
+					a{
+						color: @color-text-grey;
+						font-family: "Roboto";
+						font-weight: bold;
+					}
+				}
+			}
+			.views-field-country-content-count{
+				margin: 0px 30px 30px 30px;
+				.form-group{
+					margin-bottom: 0px;
+				}
+				.field-content{
+					display: table;
+    				width: 100%;
+    				text-align: center;
+    				.country-content-count-label{
+    					display: table-cell;
+    					width: 33%;
+    					label{
+							display: block;
+							font-weight: normal;
+    					}
+    					span{
+							display: block;
+							font-weight: bold;
+							font-size: @font-size1-8;
+    					}
+    					&:first-child{
+							border-right: 2px solid @color-text-grey;
+    					}
+    					&:last-child{
+							border-left: 2px solid @color-text-grey;
+    					}
+    				}
+				}
+			}
+		}
+	}
+}
