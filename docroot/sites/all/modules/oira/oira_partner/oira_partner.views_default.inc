@@ -15,14 +15,14 @@ function oira_partner_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Country partner content';
+  $view->human_name = 'Partner content tabs';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Country partner content';
+  $handler->display->display_options['title'] = 'Partner content - country page';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -133,9 +133,42 @@ function oira_partner_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Partner content - profile page';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Workbench Access: Access filter */
+  $handler->display->display_options['arguments']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['arguments']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['arguments']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['arguments']['access_id']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['access_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['access_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['access_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['access_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+    'practical_tool' => 'practical_tool',
+    'promotional_material' => 'promotional_material',
+  );
   $translatables['country_partner_content'] = array(
     t('Master'),
-    t('Country partner content'),
+    t('Partner content - country page'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -143,6 +176,8 @@ function oira_partner_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Block'),
+    t('Partner content - profile page'),
+    t('All'),
   );
   $export['country_partner_content'] = $view;
 
