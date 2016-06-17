@@ -16,23 +16,23 @@
                     });
                     $(this).append($pagination);
                     var $lis = $pagination.find('li');
-                    $lis.hide();
-                    $lis.eq(1).show();
+                    var $next = $('<span class="pagination-next-label"></span>').text(Drupal.t('Next'));
+                    var $prev = $('<span class="pagination-prev-label"></span>').text(Drupal.t('Previous'));
+                    oira_heading_pagination_set_next_prev($lis, $lis.eq(1), $lis.eq($lis.length - 1), $next, $prev);
                     $lis.click(function(){
                         var $this = $(this);
                         var index = $this.index();
-                        $lis.hide().removeClass('pagination-next').removeClass('pagination-prev');
                         switch(index) {
                             case 0:
-                                $lis.eq(index + 1).show().addClass('pagination-next');
+                                oira_heading_pagination_set_next_prev($lis, $lis.eq(index + 1), $lis.eq($lis.length - 1), $next, $prev);
                                 break;
 
-                            case $pagination.length:
-                                $lis.eq(index - 1).show().addClass('pagination-prev');
+                            case $lis.length - 1:
+                                oira_heading_pagination_set_next_prev($lis, $lis.eq(0), $lis.eq(index - 1), $next, $prev);
+                                break;
 
                             default:
-                                $lis.eq(index + 1).show().addClass('pagination-next');
-                                $lis.eq(index - 1).show().addClass('pagination-prev');
+                                oira_heading_pagination_set_next_prev($lis, $lis.eq(index + 1), $lis.eq(index - 1), $next, $prev);
                                 break;
                         }
                         $h2.each(function(idx) {
@@ -45,6 +45,12 @@
                             scrollTop: $body.offset().top
                         }, 400);
                     });
+
+                    function oira_heading_pagination_set_next_prev($lis, $li_next, $li_prev, $next, $prev) {
+                        $lis.hide().removeClass('pagination-next').removeClass('pagination-prev');
+                        $li_next.show().addClass('pagination-next').prepend($next);
+                        $li_prev.show().addClass('pagination-prev').prepend($prev);
+                    }
 
                 }
             });
