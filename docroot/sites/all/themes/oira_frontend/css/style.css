@@ -6747,6 +6747,7 @@ h1 {
   font-family: 'Oswald';
   font-size: 2.6em;
   border-bottom: none !important;
+  color: #786586;
 }
 h2 {
   color: #58585a;
@@ -6814,6 +6815,14 @@ h5 a {
   color: #58585a;
   font-weight: normal;
   font-style: normal;
+}
+.breadcrumb .first.last {
+  font-style: italic;
+  color: #10b2e4;
+}
+.breadcrumb .first.last a {
+  font-style: italic;
+  color: #10b2e4;
 }
 .h3image-promotional-materials {
   background-image: url('../images/promotional.png');
@@ -7242,7 +7251,7 @@ a.more-link:before {
 }
 .page-oira-tools .pane-node-body .field-type-text-with-summary {
   font-family: 'Oswald';
-  font-size: 1.6em;
+  font-size: 1.4em;
   margin-bottom: 30px;
 }
 .page-oira-tools .panels-flexible-row-new-1 {
@@ -7522,9 +7531,6 @@ a.more-link:before {
 /*END FAQ'S*/
 /*OIRA NEWS
 *************************************************************/
-h1 {
-  color: #786586;
-}
 .view-display-id-oshnews_list {
   font-size: 16px;
 }
@@ -7535,13 +7541,20 @@ h1 {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.view-display-id-oshnews_list article .title_field {
+.view-display-id-oshnews_list article .field-type-datetime {
+  margin-bottom: 0px;
+}
+.view-display-id-oshnews_list article .field-name-title-field {
   margin-bottom: 15px;
 }
-.view-display-id-oshnews_list article .title_field a {
-  font-size: 1.4em;
+.view-display-id-oshnews_list article .field-name-title-field h2 {
+  margin-top: 5px;
+}
+.view-display-id-oshnews_list article .field-name-title-field h2 a {
+  font-size: .7em;
   color: #58585a;
   font-weight: bold;
+  font-family: "Roboto";
 }
 .view-display-id-oshnews_list article .field-name-field-summary {
   margin-bottom: 15px;
@@ -7561,6 +7574,9 @@ h1 {
 }
 /*News detail
 *****************************************************/
+.node-news .field-name-field-publication-date {
+  margin-top: 50px;
+}
 .node-news h1 {
   color: #58585a;
   margin-bottom: 30px;
@@ -7573,7 +7589,7 @@ h1 {
   color: #786586;
 }
 .node-news .field-name-body {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .node-news .field-name-body a {
   color: #786586;
@@ -7674,6 +7690,279 @@ h1 {
 }
 .page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:last-child {
   border-left: 2px solid #58585a;
+}
+/*PROMOTIONAL MATERIALS
+********************************************************************/
+.page-promotional-materials .pane-node-body .field-type-text-with-summary {
+  font-family: 'Oswald';
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+.page-promotional-materials .panels-flexible-row-new-1 {
+  background-color: #dfd8e4;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.page-promotional-materials .panels-flexible-row-new-1 .views-item-columns-container {
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.page-promotional-materials .panels-flexible-row-new-1 .views-item-columns-container .views-field-name-field a {
+  color: #786586;
+  font-size: 1.6em;
+  border-bottom: 2px solid #786586;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  font-family: "Oswald";
+}
+.page-promotional-materials .panels-flexible-row-new-1 .views-item-columns-container .views-field-description-field {
+  padding-top: 15px;
+}
+.page-promotional-materials-search h1 {
+  color: #786586;
+}
+.page-promotional-materials-search .pane-node-body .field-type-text-with-summary {
+  font-family: 'Oswald';
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 {
+  background: url('../images/background-two-colors.png') repeat-y 50%;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child .form-group {
+  margin-bottom: 0px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column {
+  background-color: #786586;
+  color: #ffffff;
+  padding-right: 30px;
+  padding-top: 30px;
+  position: relative;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-textfield {
+  float: left;
+  margin-bottom: 15px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-textfield input {
+  border: none;
+  border-radius: 0px;
+  outline: none;
+  height: auto;
+  padding-right: 35px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-submit {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  color: #786586;
+  border: none;
+  border-radius: 0px;
+  outline: none;
+  width: 35px;
+  line-height: 19px;
+  font-size: 1.2em;
+  padding-left: 7px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-submit:before {
+  content: "\e003";
+  font-family: "Glyphicons Halflings";
+  margin-right: 30px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column a.active {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column a.active span:before {
+  color: #786586;
+  padding: 1px;
+  font-size: 0.7em;
+  margin-right: 10px;
+  background-color: #ffffff;
+  display: block;
+  width: 13px;
+  height: 13px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-country label:after,
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-sector label:after {
+  content: none;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes {
+  border-top: 2px solid #ffffff;
+  padding-top: 10px;
+  clear: both;
+  margin-top: 15px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
+  display: none;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
+  font-family: 'Oswald';
+  font-size: 1.2em;
+  font-weight: normal;
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label:after {
+  content: "\e250";
+  font-family: "Glyphicons Halflings";
+  margin-left: 10px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
+  content: "\e252";
+  font-family: "Glyphicons Halflings";
+  margin-left: 10px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-item-field-sector {
+  border-bottom: 2px solid #ffffff;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content {
+  background-color: #dfd8e4;
+  padding-bottom: 50px;
+  padding-left: 30px;
+  padding-top: 30px;
+  border-left: 5px solid #ffffff;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset {
+  border: none;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  border-top: 2px solid #786586;
+  border-bottom: 2px solid #786586;
+  margin-bottom: 30px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .panel-body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container {
+  min-width: 210px;
+  padding-left: 0px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container label {
+  font-weight: 100;
+  font-size: 0.9em;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after {
+  content: ": ";
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort {
+  font-size: 0.9em;
+  display: inline-block;
+  width: auto;
+  padding: 0;
+  border: none;
+  padding-bottom: 1px;
+  font-weight: bold;
+  height: initial;
+  background-color: rgba(0, 0, 0, 0);
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .count-container {
+  font-size: 0.9em;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper {
+  background-color: #ffffff;
+  padding: 30px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool {
+  border-top: 2px solid #786586;
+  padding: 30px 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  /*
+							//partners inside oira tools
+							.field-name-related-partners{
+								.node-partner{
+									background-color: @color-primary-dark;
+    								padding: 15px;
+    								color: @color-white;
+    								h4{
+    									a{
+    										font-size: 1.2em;
+    										color: @color-white;
+    										margin-top: 0px;
+    									}
+    								}
+    								.more-link{
+    									color: @color-white;
+    									text-align: left;
+    								}
+    							}
+							}
+							.related-partners-1 > div{
+								margin-left: 222px;
+							}
+							.related-partners-2 > div{
+								display: table;
+								border-collapse: collapse;
+								& > .even, & > .odd{
+									&:first-child{
+										display: table-cell;
+									}
+								}
+								& > .even:first-child{
+									border-right: 10px solid white;
+								}
+							}*/
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 {
+  padding-left: 0px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field {
+  font-size: 1.4em;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
+  margin-left: 207px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.more-link {
+  text-align: left;
+  margin-top: 15px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less {
+  text-align: right !important;
+  width: 20px;
+  height: 12px;
+  float: right;
+  overflow: hidden;
+  font-style: normal;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less:before {
+  content: "\e253";
+  font-family: "Glyphicons Halflings";
+  font-size: 1.2em;
+  line-height: 0;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
+  color: #58585a;
+  font-weight: bold;
+  margin-top: 30px;
+  display: block;
+  margin-bottom: 15px;
+}
+.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
+  color: #10b2e4;
+  margin-left: 10px;
+}
+/*END Promotional materials*/
+/*NATIONAL SOCIAL PARTNERS
+*************************************************************/
+.page-national-social-partners h1 {
+  color: #58585a;
+}
+.page-national-social-partners .pane-node-body {
+  font-weight: bold;
 }
 /*FOOTER
 ********************************************/
