@@ -3,9 +3,10 @@
         attach: function (context, settings) {
             $('.oira-heading-pagination-container').once('oira_heading_pagination', function() {
                 var $body = $(this).closest('.field-name-body');
+                $(this).appendTo($body);
                 if ($body.find('h2').length) {
                     var $h2 = $body.find('h2');
-                    var $pagination = $('<ul></ul>');
+                    var $pagination = $('<ul class="oira-heading-pagination-container"></ul>');
                     $h2.each(function(idx, value) {
                         var $li = $('<li></li>').text($(this).text());
                         $pagination.append($li);
@@ -13,6 +14,7 @@
                             $(this).nextUntil($h2[idx + 1]).andSelf().hide();
                         }
                     });
+                    $(this).append($pagination);
                     var $lis = $pagination.find('li');
                     $lis.hide();
                     $lis.eq(1).show();
@@ -43,7 +45,7 @@
                             scrollTop: $body.offset().top
                         }, 400);
                     });
-                    $body.append($pagination);
+
                 }
             });
         }
