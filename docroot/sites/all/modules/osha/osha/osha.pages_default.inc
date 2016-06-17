@@ -285,15 +285,15 @@ function osha_default_page_manager_handlers() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'title_style' => 'h2',
+        'title_style' => 'h1',
         'title_link' => '',
         'title_class' => '',
         'field_formatter_class' => '',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title_text' => '%title',
+      'override_title_heading' => 'h1',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -429,6 +429,31 @@ function osha_default_page_manager_handlers() {
     $display->content['new-eda7eb04-85ad-4452-bdf6-9ae7f7df14d5'] = $pane;
     $display->panels['content'][4] = 'new-eda7eb04-85ad-4452-bdf6-9ae7f7df14d5';
     $pane = new stdClass();
+    $pane->pid = 'new-ff3cd60d-1108-4d82-9128-7ec183a2384f';
+    $pane->panel = 'cover_image';
+    $pane->type = 'custom_title_tag';
+    $pane->subtype = 'custom_title_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'buttons' => NULL,
+      'custom_page_title_pattern' => '%node:title-field',
+      'form_build_id' => 'form-YN5XmpPlSEll1_ZESuM_YloARQWrW9UwXII3gkZsBMM',
+      'form_token' => 'rymw48L-ewH3pRKyOpiiZAaHotdDgniATlirr-2SfrI',
+      'form_id' => 'panels_custom_title_tag_edit_form',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'ff3cd60d-1108-4d82-9128-7ec183a2384f';
+    $display->content['new-ff3cd60d-1108-4d82-9128-7ec183a2384f'] = $pane;
+    $display->panels['cover_image'][0] = 'new-ff3cd60d-1108-4d82-9128-7ec183a2384f';
+    $pane = new stdClass();
     $pane->pid = 'new-6b1ef6a3-dbb3-40f1-bedc-dff916260412';
     $pane->panel = 'cover_image';
     $pane->type = 'entity_field';
@@ -457,11 +482,11 @@ function osha_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '6b1ef6a3-dbb3-40f1-bedc-dff916260412';
     $display->content['new-6b1ef6a3-dbb3-40f1-bedc-dff916260412'] = $pane;
-    $display->panels['cover_image'][0] = 'new-6b1ef6a3-dbb3-40f1-bedc-dff916260412';
+    $display->panels['cover_image'][1] = 'new-6b1ef6a3-dbb3-40f1-bedc-dff916260412';
     $pane = new stdClass();
     $pane->pid = 'new-3a5ef1dd-f2eb-4a58-8885-a7c0a037d769';
     $pane->panel = 'related_content';

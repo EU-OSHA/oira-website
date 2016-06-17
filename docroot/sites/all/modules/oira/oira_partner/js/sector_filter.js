@@ -1,7 +1,7 @@
 (function($){
     Drupal.behaviors.tool_sector_filter = {
         attach: function (context, settings) {
-            $('#quicktabs-view__country_partner_content__block').once('tool_sector_filter', function() {
+            $('.view-id-country_partner_content').once('tool_sector_filter', function() {
                 var sectors = [];
                 var used = [];
                 $('.sector-filter-tab-content > .node-teaser').each(function(){
@@ -18,7 +18,7 @@
                     $ul.append('<li data-filter="' + value.sector_tid + '">' + value.sector_label + '</li>');
                 });
                 var tab = $('.sector-filter-tab-content').closest('.quicktabs-tabpage');
-                var index = tab.index('#quicktabs-container-view__country_partner_content__block > div');
+                var index = tab.index('.view-id-country_partner_content .quicktabs_main > div');
                 $('ul.quicktabs-tabs > li').eq(index).append($ul);
                 $('.partner-content-sector-filter > li').on('click', function(e){
                     e.preventDefault();

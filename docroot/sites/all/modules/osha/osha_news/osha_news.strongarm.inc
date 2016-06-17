@@ -190,6 +190,13 @@ function osha_news_strongarm() {
             'visible' => TRUE,
             'settings' => array(),
           ),
+          'teaser' => array(
+            'weight' => '13',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
         ),
       ),
     ),
