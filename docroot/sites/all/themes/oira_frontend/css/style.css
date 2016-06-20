@@ -7243,6 +7243,42 @@ a.more-link:before {
 .page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
 }
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
+  background-color: #786586;
+  padding: 15px;
+  color: #ffffff;
+  margin-top: 15px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 a {
+  font-size: 0.9em;
+  color: #ffffff;
+  margin-top: 0px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner .more-link {
+  color: #ffffff;
+  text-align: left;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed {
+  margin-left: 207px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
+  text-align: right;
+  margin-top: 15px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less {
+  text-align: right !important;
+  width: 20px;
+  height: 12px;
+  float: right;
+  overflow: hidden;
+  font-style: normal;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less:before {
+  content: "\e253";
+  font-family: "Glyphicons Halflings";
+  font-size: 1.2em;
+  line-height: 0;
+}
 /*END WHAT'S NEW*/
 /*OIRA TOOLS
 **************************************************************/
