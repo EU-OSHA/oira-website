@@ -10,18 +10,57 @@
 function oira_partner_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-collaborator-field_logo'.
-  $field_instances['node-collaborator-field_logo'] = array(
-    'bundle' => 'collaborator',
+  // Exported field_instance:
+  // 'field_collection_item-field_collaborator-field_collaborator_name'.
+  $field_instances['field_collection_item-field_collaborator-field_collaborator_name'] = array(
+    'bundle' => 'field_collaborator',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'body' => array(
+      'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'osha',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
         'weight' => 0,
       ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_collaborator_name',
+    'label' => 'Collaborator',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 31,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_collaborator-field_logo'.
+  $field_instances['field_collection_item-field_collaborator-field_logo'] = array(
+    'bundle' => 'field_collaborator',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'image',
@@ -31,34 +70,10 @@ function oira_partner_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 0,
-      ),
-      'osha_resources' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_slideshow' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_wiki' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
-    'entity_type' => 'node',
+    'entity_type' => 'field_collection_item',
     'field_name' => 'field_logo',
     'label' => 'Logo',
     'required' => 0,
@@ -79,11 +94,27 @@ function oira_partner_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_browser_osha--media_browser_osha' => 0,
+          'media_browser_osha--media_browser_osha_my_files' => 0,
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 0,
+        ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 0,
         'manualcrop_inline_crop' => 0,
-        'manualcrop_instant_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
         'manualcrop_instant_preview' => 1,
         'manualcrop_keyboard' => 1,
         'manualcrop_maximize_default_crop_area' => 0,
@@ -95,7 +126,7 @@ function oira_partner_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 42,
+      'weight' => 33,
     ),
     'workbench_access_field' => 0,
   );
@@ -232,6 +263,58 @@ function oira_partner_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 12,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-partner-field_collaborator'.
+  $field_instances['node-partner-field_collaborator'] = array(
+    'bundle' => 'partner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'field_formatter_class' => '',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 23,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_collaborator',
+    'label' => 'Collaborator',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_hidden',
+      'weight' => 33,
     ),
     'workbench_access_field' => 0,
   );
@@ -2017,6 +2100,7 @@ function oira_partner_field_default_field_instances() {
   t('Appform status');
   t('City');
   t('Code');
+  t('Collaborator');
   t('Country');
   t('Description');
   t('Facebook profile');
