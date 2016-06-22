@@ -190,11 +190,10 @@ function osha_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = 'Author';
-  /* Field: Workbench Access: Section */
+  /* Field: Workbench Access: Partner */
   $handler->display->display_options['fields']['section']['id'] = 'section';
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
-  $handler->display->display_options['fields']['section']['label'] = 'Partner';
   /* Field: Content: Published */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';

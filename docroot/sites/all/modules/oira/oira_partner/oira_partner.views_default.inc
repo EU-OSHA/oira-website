@@ -345,7 +345,7 @@ function oira_partner_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Mission Statement */
+  /* Field: Content: Contribution to OiRA */
   $handler->display->display_options['fields']['field_mission_statement']['id'] = 'field_mission_statement';
   $handler->display->display_options['fields']['field_mission_statement']['table'] = 'field_data_field_mission_statement';
   $handler->display->display_options['fields']['field_mission_statement']['field'] = 'field_mission_statement';

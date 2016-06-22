@@ -19,12 +19,12 @@ function oira_partner_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'osha',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(
           'field_formatter_class' => '',
         ),
-        'type' => 'text_default',
+        'type' => 'text_plain',
         'weight' => 0,
       ),
     ),
@@ -62,12 +62,12 @@ function oira_partner_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'thumbnail',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -195,7 +195,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 24,
     ),
     'workbench_access_field' => 0,
   );
@@ -262,7 +262,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -313,8 +313,8 @@ function oira_partner_field_default_field_instances() {
       'active' => 0,
       'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'field_collection_hidden',
-      'weight' => 33,
+      'type' => 'field_collection_embed',
+      'weight' => 26,
     ),
     'workbench_access_field' => 0,
   );
@@ -375,7 +375,7 @@ function oira_partner_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 18,
     ),
     'workbench_access_field' => 0,
   );
@@ -622,7 +622,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -707,7 +707,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 17,
     ),
     'workbench_access_field' => 0,
   );
@@ -828,7 +828,7 @@ function oira_partner_field_default_field_instances() {
         'manualcrop_thumblist' => FALSE,
       ),
       'type' => 'media_generic',
-      'weight' => 11,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -913,7 +913,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 21,
     ),
     'workbench_access_field' => 0,
   );
@@ -992,7 +992,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 19,
+      'weight' => 22,
     ),
     'workbench_access_field' => 0,
   );
@@ -1058,7 +1058,7 @@ function oira_partner_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_mission_statement',
-    'label' => 'Mission Statement',
+    'label' => 'Contribution to OiRA',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1077,7 +1077,7 @@ function oira_partner_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -1179,7 +1179,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 12,
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -1316,7 +1316,7 @@ function oira_partner_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -1401,7 +1401,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -1486,7 +1486,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -1571,7 +1571,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -1640,7 +1640,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 23,
     ),
     'workbench_access_field' => 0,
   );
@@ -1689,7 +1689,7 @@ function oira_partner_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 32,
+      'weight' => 25,
     ),
     'workbench_access_field' => 0,
   );
@@ -1737,7 +1737,7 @@ function oira_partner_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_social_profile',
-    'label' => 'Facebook profile',
+    'label' => 'Social profile',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -1773,7 +1773,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 20,
     ),
     'workbench_access_field' => 0,
   );
@@ -1875,7 +1875,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -1967,7 +1967,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -2101,16 +2101,15 @@ function oira_partner_field_default_field_instances() {
   t('City');
   t('Code');
   t('Collaborator');
+  t('Contribution to OiRA');
   t('Country');
   t('Description');
-  t('Facebook profile');
   t('General email');
   t('General phone');
   t('Guid Main Contact');
   t('Logo');
   t('Main Contact');
   t('Main Contact Email');
-  t('Mission Statement');
   t('Name');
   t('Oira website');
   t('Organisation');
@@ -2120,6 +2119,7 @@ function oira_partner_field_default_field_instances() {
   t('Ph Address Extra');
   t('Ph CP');
   t('Sector');
+  t('Social profile');
   t('Type');
   t('Website');
 

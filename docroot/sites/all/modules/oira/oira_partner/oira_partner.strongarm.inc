@@ -154,19 +154,19 @@ function oira_partner_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '4',
         ),
         'path' => array(
           'weight' => '1',
         ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '27',
         ),
       ),
       'display' => array(
@@ -287,7 +287,7 @@ function oira_partner_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_partner_pattern';
-  $strongarm->value = 'partners/[node:title]';
+  $strongarm->value = 'oira-community/[node:title]';
   $export['pathauto_node_partner_pattern'] = $strongarm;
 
   return $export;

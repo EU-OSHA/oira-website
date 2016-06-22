@@ -484,7 +484,7 @@ function oira_partner_default_panels_mini() {
         'width_type' => '%',
         'parent' => '7',
         'class' => '',
-        'hide_empty' => 0,
+        'hide_empty' => 1,
       ),
       8 => array(
         'type' => 'row',
@@ -604,6 +604,39 @@ function oira_partner_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-8d085abd-9be9-4547-96ed-50de019e2d69';
+    $pane->panel = 'colaborators';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_collaborator';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'field_collection_fields',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'field_formatter_class' => '',
+        'view_mode' => 'full',
+      ),
+      'context' => 'requiredcontext_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Other collaborators',
+      'override_title_heading' => 'div',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8d085abd-9be9-4547-96ed-50de019e2d69';
+    $display->content['new-8d085abd-9be9-4547-96ed-50de019e2d69'] = $pane;
+    $display->panels['colaborators'][0] = 'new-8d085abd-9be9-4547-96ed-50de019e2d69';
+    $pane = new stdClass();
     $pane->pid = 'new-be7ed5b0-3946-49ea-91d7-c95d78f1018c';
     $pane->panel = 'contact';
     $pane->type = 'panels_mini';
@@ -664,18 +697,25 @@ function oira_partner_default_panels_mini() {
     $display->content['new-376ee057-6f14-4def-9bd3-8ae8f1aaa92c'] = $pane;
     $display->panels['image'][0] = 'new-376ee057-6f14-4def-9bd3-8ae8f1aaa92c';
     $pane = new stdClass();
-    $pane->pid = 'new-60d8551c-48cf-48c8-9eda-c62e1fa0bea6';
+    $pane->pid = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
     $pane->panel = 'social';
-    $pane->type = 'panels_mini';
-    $pane->subtype = 'social_networks';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_social_profile';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'requiredcontext_entity:node_1',
+      'label' => 'hidden',
+      'formatter' => 'link_plain',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'text' => '',
+        'field_formatter_class' => '',
       ),
+      'context' => 'requiredcontext_entity:node_1',
       'override_title' => 1,
-      'override_title_text' => '%title',
+      'override_title_text' => 'Social profiles',
       'override_title_heading' => 'div',
     );
     $pane->cache = array();
@@ -686,9 +726,9 @@ function oira_partner_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '60d8551c-48cf-48c8-9eda-c62e1fa0bea6';
-    $display->content['new-60d8551c-48cf-48c8-9eda-c62e1fa0bea6'] = $pane;
-    $display->panels['social'][0] = 'new-60d8551c-48cf-48c8-9eda-c62e1fa0bea6';
+    $pane->uuid = '626e9816-cb3a-41cb-a36d-01d9067ec143';
+    $display->content['new-626e9816-cb3a-41cb-a36d-01d9067ec143'] = $pane;
+    $display->panels['social'][0] = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
     $pane = new stdClass();
     $pane->pid = 'new-b82fb197-4f24-4f68-90ee-05d83089aad9';
     $pane->panel = 'text_';
@@ -758,125 +798,6 @@ function oira_partner_default_panels_mini() {
   $display->title_pane = '0';
   $mini->display = $display;
   $export['partner_in_country'] = $mini;
-
-  $mini = new stdClass();
-  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
-  $mini->api_version = 1;
-  $mini->name = 'social_networks';
-  $mini->category = 'oira';
-  $mini->admin_title = 'Social networks partner';
-  $mini->admin_description = '';
-  $mini->requiredcontexts = array(
-    0 => array(
-      'identifier' => 'Content',
-      'keyword' => 'node',
-      'name' => 'entity:node',
-      'entity_id' => '',
-      'optional' => 1,
-      'id' => 1,
-    ),
-  );
-  $mini->contexts = array();
-  $mini->relationships = array();
-  $display = new panels_display();
-  $display->layout = 'flexible';
-  $display->layout_settings = array(
-    'items' => array(
-      'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
-        'children' => array(
-          0 => 'main',
-        ),
-        'parent' => NULL,
-        'class' => '',
-        'column_class' => '',
-        'row_class' => '',
-        'region_class' => '',
-        'no_scale' => FALSE,
-        'fixed_width' => '',
-        'column_separation' => '0.5em',
-        'region_separation' => '0.5em',
-        'row_separation' => '0.5em',
-        'hide_empty' => 1,
-      ),
-      'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
-        'children' => array(
-          0 => 'main-row',
-        ),
-        'parent' => 'canvas',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'center',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-      'center' => array(
-        'type' => 'region',
-        'title' => 'Center',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 1,
-      ),
-    ),
-  );
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'center' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = 'Social networks';
-  $display->uuid = 'e6679431-ad4c-4cb0-908b-18e8d43ed026';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-650b01d6-0c30-4a71-a413-1916c03c41ee';
-    $pane->panel = 'center';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_social_profile';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'link_url',
-      'delta_limit' => '0',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(),
-      'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '650b01d6-0c30-4a71-a413-1916c03c41ee';
-    $display->content['new-650b01d6-0c30-4a71-a413-1916c03c41ee'] = $pane;
-    $display->panels['center'][0] = 'new-650b01d6-0c30-4a71-a413-1916c03c41ee';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $mini->display = $display;
-  $export['social_networks'] = $mini;
 
   return $export;
 }
