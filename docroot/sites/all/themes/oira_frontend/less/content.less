@@ -46,7 +46,7 @@ h3.pane-title{
 	//margin-bottom: 25px;
 	//margin-top: 50px;
 	font-family: @font-family-base-2;
- }
+}
 
 h4{
 	//font-size: @font-size-base;
@@ -669,26 +669,26 @@ a.more-link{
 					}
 				}
 				.tools_see_more-processed{
-								margin-left: 207px;
-								a.more-link{
-									text-align: right;
-									margin-top: 15px;
-								}
-								a.show-less{
-									text-align: right !important;
-									width: 20px;
-    								height: 12px;
-								    float: right;
-								    overflow: hidden;
-								    font-style: normal;
-									&:before{
-										content: "\e253";
-										font-family: "Glyphicons Halflings";
-										font-size: 1.2em;
-    									line-height: 0;
-									}
-								}
-							}
+					margin-left: 207px;
+					a.more-link{
+						text-align: right;
+						margin-top: 15px;
+					}
+					a.show-less{
+						text-align: right !important;
+						width: 20px;
+						height: 12px;
+					    float: right;
+					    overflow: hidden;
+					    font-style: normal;
+						&:before{
+							content: "\e253";
+							font-family: "Glyphicons Halflings";
+							font-size: 1.2em;
+							line-height: 0;
+						}
+					}
+				}
 			}
 
 		}
@@ -971,14 +971,14 @@ a.more-link{
 	.panels-flexible-row-new-main-row{
 		.field-name-body{
 			font-size: @font-size1-4;
+			font-family: "Oswald";
 		}
 	}
 	.panels-flexible-row-new-1{
 		background-color: @color-background-light-purple; 
 		padding-top: 17px;
-	
+		margin-bottom: 20px;
 		.view-id-faqs{
-
 			.views-row-even{
 				border-bottom: 2px solid @color-text-purple;
 			}
@@ -998,53 +998,116 @@ a.more-link{
 				.field-content{
 					font-size: @font-size1-2;
 					color: @color-text-purple-darker;
+					font-family: "Oswald";
 				}
 			}
-
 			.views-field-body{
 				.faq-answer{
-					font-size: @font-size0-7;
-					
+					font-size: @font-size0-8;
+					margin-bottom: 25px;
+					color: @color-text-grey;
 				}
-
 			}
 			.views-field-title-field.ui-accordion-header-active{
 				a{
 					.field-content{
-						
 						&:after{
 							content:"\e253";
 			    			font-family: "Glyphicons Halflings";
 			    			padding-left: 10px;
-			    			position: absolute;
-			    			top: 9px;
 						}
 					}				
 				}	
 			}
-		
-		
 			.views-field-title-field.ui-corner-all{
 				a{
 					.field-content{
-
 						&:after{
 							content: "\e252";
 			    			font-family: "Glyphicons Halflings";
 			    			padding-left: 10px;
-			    			position: absolute;
-			    			top: 9px;
 						}
 					}				
 				}	
 			}
-		
-
 			.ui-accordion-content{
 				border: 0px;
 				background: rgba(0, 0, 0, 0);
 				padding:0px;
 			}
+		}
+	}
+	.panels-flexible-region-new-form-inside{
+		h3{
+			color: @color-text-purple;
+			border-bottom: 2px solid @color-text-purple;
+			font-size: @font-size2-2;
+			padding-bottom: 15px;
+			//font-weight: bold;
+			//margin-bottom: 25px;
+			//margin-top: 50px;
+			font-family: @font-family-base-2;
+		}
+	}
+	.contact-form-wrapper{
+		background-color: @color-primary-dark;
+		margin-bottom: 45px;
+		padding-bottom: 10px;
+		padding-top: 30px;
+		.container{
+			max-width: 600px;
+			position: relative;
+		}
+		label{
+			color: @color-white;
+			display: block;
+		}
+		select, input, textarea{
+			border-radius: 0;
+			border: none;
+			width: 100%;
+			padding: 6px 12px;
+		}
+		fieldset{
+			margin-top: 35px;
+			background-color: rgba(0, 0, 0, 0);
+			border-radius: 0;
+			border: none;
+			width: 100%;
+			legend{
+				display: none;
+			}
+			.panel-body{
+				padding: 0px;
+				.help-block{
+					display: none;
+				}
+				.form-item-security-code{
+					margin-top: 20px;
+					#security_code{
+						width: 213px;
+					}
+				}
+			}
+		}
+		.grippie{
+			display: none;
+		}
+		.webform-component{
+			margin-bottom: 25px;
+		}
+		button.form-submit{
+			position: absolute;
+			bottom: 37px;
+		    left: 235px;
+		    border-radius: 0px;
+		    background-color: white;
+		    color: @color-see-more;
+		    font-style: italic;
+		    border: 1px solid white;
+		    &:before{
+		    	content: "> ";
+		    }
 		}
 	}
 }
@@ -1533,7 +1596,6 @@ a.more-link{
 
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-
 .page-national-social-partners{
 	h1{
 		color: @color-text-grey;
@@ -1542,5 +1604,42 @@ a.more-link{
 		font-weight: bold;
 	}
 }
-
 /*END National social partners*/
+
+
+/*SITE MAP
+********************************************************/
+.page-sitemap{
+	#block-system-main{
+		background-color: @color-primary;
+		margin-bottom: 50px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	ul.site-map-menu{
+		list-style: none;
+		font-style: italic;
+		a{
+			color: @color-text-purple-darker;
+			&:hover{
+				text-decoration: underline !important;
+			}
+		}
+		li{
+			margin-bottom: 10px;
+			margin-top: 10px;
+			
+				&:before{
+					content: "> ";
+				}
+			&.expanded{
+				li{
+					&:before{
+						content: "- ";
+					}
+				}
+			}
+		}
+	}
+}
+/*END SITE MAP*/
