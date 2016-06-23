@@ -3874,16 +3874,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
 }
 .nav > li.disabled > a {
   color: #777777;
 }
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
-  color: #777777;
   text-decoration: none;
-  background-color: transparent;
   cursor: not-allowed;
 }
 .nav .open > a,
@@ -3978,12 +3975,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-pills > li + li {
   margin-left: 2px;
-}
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:hover,
-.nav-pills > li.active > a:focus {
-  color: #ffffff;
-  background-color: #337ab7;
 }
 .nav-stacked > li {
   float: none;
@@ -6699,20 +6690,26 @@ button.close {
 .menu-header #navbar .navbar-nav li span {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0);
-  padding-top: 5px;
-  padding-bottom: 4px;
+  padding-top: 6px;
+  padding-bottom: 0px;
 }
 .menu-header #navbar .navbar-nav li .dropdown-menu {
   background-color: #10b2e4;
   border: none;
-  top: 35px;
+  top: 30px;
   padding: 0px;
+  padding-top: 10px;
   border-radius: 0px;
 }
 .menu-header #navbar .navbar-nav li .dropdown-menu li {
   display: block !important;
   border-right: none;
   border-bottom: 2px solid white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.menu-header #navbar .navbar-nav li .dropdown-menu li:hover {
+  background-color: #0e98c3;
 }
 .menu-header #navbar .navbar-nav li .dropdown-menu li a {
   border: none;
@@ -7243,6 +7240,42 @@ a.more-link:before {
 .page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
 }
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
+  background-color: #786586;
+  padding: 15px;
+  color: #ffffff;
+  margin-top: 15px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 a {
+  font-size: 0.9em;
+  color: #ffffff;
+  margin-top: 0px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner .more-link {
+  color: #ffffff;
+  text-align: left;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed {
+  margin-left: 207px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
+  text-align: right;
+  margin-top: 15px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less {
+  text-align: right !important;
+  width: 20px;
+  height: 12px;
+  float: right;
+  overflow: hidden;
+  font-style: normal;
+}
+.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less:before {
+  content: "\e253";
+  font-family: "Glyphicons Halflings";
+  font-size: 1.2em;
+  line-height: 0;
+}
 /*END WHAT'S NEW*/
 /*OIRA TOOLS
 **************************************************************/
@@ -7480,10 +7513,12 @@ a.more-link:before {
 **************************************************************/
 .page-faq .panels-flexible-row-new-main-row .field-name-body {
   font-size: 1.4em;
+  font-family: "Oswald";
 }
 .page-faq .panels-flexible-row-new-1 {
   background-color: #dfd8e4;
   padding-top: 17px;
+  margin-bottom: 20px;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-even {
   border-bottom: 2px solid #967ea7;
@@ -7505,28 +7540,97 @@ a.more-link:before {
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content {
   font-size: 1.2em;
   color: #786586;
+  font-family: "Oswald";
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer {
-  font-size: 0.7em;
+  font-size: 0.8em;
+  margin-bottom: 25px;
+  color: #58585a;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   padding-left: 10px;
-  position: absolute;
-  top: 9px;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   padding-left: 10px;
-  position: absolute;
-  top: 9px;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content {
   border: 0px;
   background: rgba(0, 0, 0, 0);
   padding: 0px;
+}
+.page-faq .panels-flexible-region-new-form-inside h3 {
+  color: #967ea7;
+  border-bottom: 2px solid #967ea7;
+  font-size: 2.2em;
+  padding-bottom: 15px;
+  font-family: 'Oswald';
+}
+.page-faq .contact-form-wrapper {
+  background-color: #786586;
+  margin-bottom: 45px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+}
+.page-faq .contact-form-wrapper .container {
+  max-width: 600px;
+  position: relative;
+}
+.page-faq .contact-form-wrapper label {
+  color: #ffffff;
+  display: block;
+}
+.page-faq .contact-form-wrapper select,
+.page-faq .contact-form-wrapper input,
+.page-faq .contact-form-wrapper textarea {
+  border-radius: 0;
+  border: none;
+  width: 100%;
+  padding: 6px 12px;
+}
+.page-faq .contact-form-wrapper fieldset {
+  margin-top: 35px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0;
+  border: none;
+  width: 100%;
+}
+.page-faq .contact-form-wrapper fieldset legend {
+  display: none;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body {
+  padding: 0px;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body .help-block {
+  display: none;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code {
+  margin-top: 20px;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code #security_code {
+  width: 213px;
+}
+.page-faq .contact-form-wrapper .grippie {
+  display: none;
+}
+.page-faq .contact-form-wrapper .webform-component {
+  margin-bottom: 25px;
+}
+.page-faq .contact-form-wrapper button.form-submit {
+  position: absolute;
+  bottom: 37px;
+  left: 235px;
+  border-radius: 0px;
+  background-color: white;
+  color: #10b2e4;
+  font-style: italic;
+  border: 1px solid white;
+}
+.page-faq .contact-form-wrapper button.form-submit:before {
+  content: "> ";
 }
 /*END FAQ'S*/
 /*OIRA NEWS
@@ -7963,6 +8067,35 @@ a.more-link:before {
 }
 .page-national-social-partners .pane-node-body {
   font-weight: bold;
+}
+/*END National social partners*/
+/*SITE MAP
+********************************************************/
+.page-sitemap #block-system-main {
+  background-color: #dfd8e4;
+  margin-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.page-sitemap ul.site-map-menu {
+  list-style: none;
+  font-style: italic;
+}
+.page-sitemap ul.site-map-menu a {
+  color: #786586;
+}
+.page-sitemap ul.site-map-menu a:hover {
+  text-decoration: underline !important;
+}
+.page-sitemap ul.site-map-menu li {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.page-sitemap ul.site-map-menu li:before {
+  content: "> ";
+}
+.page-sitemap ul.site-map-menu li.expanded li:before {
+  content: "- ";
 }
 /*FOOTER
 ********************************************/
