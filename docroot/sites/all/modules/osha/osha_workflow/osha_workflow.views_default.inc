@@ -118,11 +118,10 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Field: Workbench Access: Section */
+  /* Field: Workbench Access: Partner */
   $handler->display->display_options['fields']['section']['id'] = 'section';
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
-  $handler->display->display_options['fields']['section']['label'] = 'Partner';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -486,11 +485,10 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['fields']['state']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['fields']['state']['field'] = 'state';
   $handler->display->display_options['fields']['state']['machine_name'] = 0;
-  /* Field: Workbench Access: Section */
+  /* Field: Workbench Access: Partner */
   $handler->display->display_options['fields']['section']['id'] = 'section';
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
-  $handler->display->display_options['fields']['section']['label'] = 'Partner';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';

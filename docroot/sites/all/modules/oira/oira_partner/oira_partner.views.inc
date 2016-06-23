@@ -129,7 +129,10 @@ class oira_partner_handler_country_partner_access extends views_handler_filter_b
 
         $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", $query, $in_operator);
       }
-
+      else {
+        // Show no results.
+        $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", 0, $equal_operator);
+      }
     }
     else {
       // Show no results.

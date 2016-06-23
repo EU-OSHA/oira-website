@@ -328,9 +328,9 @@ function oira_country_default_page_manager_pages() {
   $page->api_version = 1;
   $page->name = 'countries';
   $page->task = 'page';
-  $page->admin_title = 'Countries';
+  $page->admin_title = 'EU and national partners';
   $page->admin_description = '';
-  $page->path = 'countries';
+  $page->path = 'eu-national-partners';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -360,6 +360,10 @@ function oira_country_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'EU and national partners',
+    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -429,7 +433,7 @@ function oira_country_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Countries';
+  $display->title = 'EU and national partners';
   $display->uuid = '6ec3c1d0-4f3f-4249-9470-bd1917d4750a';
   $display->content = array();
   $display->panels = array();

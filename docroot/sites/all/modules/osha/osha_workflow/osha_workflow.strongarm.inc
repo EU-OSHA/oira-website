@@ -42,7 +42,7 @@ function osha_workflow_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_label';
-  $strongarm->value = 'Section';
+  $strongarm->value = 'Partner';
   $export['workbench_access_label'] = $strongarm;
 
   $strongarm = new stdClass();
