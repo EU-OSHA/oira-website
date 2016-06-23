@@ -6739,6 +6739,7 @@ select {
 }
 a {
   text-decoration: none !important;
+  color: #786586;
 }
 h1 {
   font-family: 'Oswald';
@@ -7121,7 +7122,11 @@ a.more-link:before {
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article h2 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1.4em !important;
+}
+.node-type-article h3 {
+  font-size: 1.4em;
 }
 .node-type-article .view-all-url {
   border-top: 2px solid #ffffff;
@@ -7188,6 +7193,50 @@ a.more-link:before {
 }
 .node-type-article .panels-flexible-row-new-13 #additional-resources-external_url-pane .view-additional-resources .views-item-columns-container {
   padding: 15px !important;
+}
+.node-type-article .oira-heading-pagination-container {
+  overflow: hidden;
+  background-color: #dfd8e4;
+  padding: 10px;
+}
+.node-type-article .oira-heading-pagination-container ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: "Oswald";
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-next {
+  float: right;
+  cursor: pointer;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-next span {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  color: #10b2e4;
+  font-family: "Roboto";
+  margin-bottom: 5px;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-next span:after {
+  content: " >";
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-prev {
+  float: left;
+  cursor: pointer;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-prev span {
+  display: block;
+  text-align: left;
+  font-style: italic;
+  color: #10b2e4;
+  font-family: "Roboto";
+  margin-bottom: 5px;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-prev span:before {
+  content: "< ";
+}
+.node-type-article .accesibility_table {
+  width: 100% !important;
 }
 /*END ARTICLES*/
 /*WHAT'S NEW SECTION
@@ -7710,89 +7759,89 @@ a.more-link:before {
 /*END OIRA NEWS*/
 /*COUNTRIES LIST
 *********************************************************/
-.page-countries h1 {
+.page-eu-national-partners h1 {
   color: #58585a;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content {
   display: table;
   width: 100%;
   margin-top: 25px;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label {
   display: table-cell;
   color: #ffffff;
   text-align: center;
   border-left: 2px solid #ffffff;
   width: 20%;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label:last-child {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label:last-child {
   border-right: 2px solid #ffffff;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-group {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-group {
   margin-bottom: 0px;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item label {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item label {
   display: block;
   font-size: 1.2em;
   margin-bottom: 0px;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item span {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item span {
   display: block;
   font-size: 2.8em;
   font-weight: bold;
   line-height: 31px;
   margin-top: 15px;
 }
-.page-countries .view-id-countries {
+.page-eu-national-partners .view-id-countries {
   margin-top: 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container {
+.page-eu-national-partners .view-id-countries .views-item-columns-container {
   background-color: #dfd8e4;
   overflow: auto;
   margin-bottom: 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-field-flag {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
   margin: 30px 30px 0px 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-field-flag img {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag img {
   max-height: 67px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-name-field {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field {
   margin: 30px 30px 30px 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-name-field h2 a {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field h2 a {
   color: #58585a;
   font-family: "Roboto";
   font-weight: bold;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count {
   margin: 0px 30px 30px 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .form-group {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .form-group {
   margin-bottom: 0px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content {
   display: table;
   width: 100%;
   text-align: center;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label {
   display: table-cell;
   width: 33%;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label label {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label label {
   display: block;
   font-weight: normal;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label span {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label span {
   display: block;
   font-weight: bold;
   font-size: 1.8em;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:first-child {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:first-child {
   border-right: 2px solid #58585a;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:last-child {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:last-child {
   border-left: 2px solid #58585a;
 }
 /*PROMOTIONAL MATERIALS
@@ -8062,10 +8111,10 @@ a.more-link:before {
 /*END Promotional materials*/
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-.page-national-social-partners h1 {
+.page-sectorial-social-partners h1 {
   color: #58585a;
 }
-.page-national-social-partners .pane-node-body {
+.page-sectorial-social-partners .pane-node-body {
   font-weight: bold;
 }
 /*END National social partners*/
@@ -8096,6 +8145,59 @@ a.more-link:before {
 }
 .page-sitemap ul.site-map-menu li.expanded li:before {
   content: "- ";
+}
+/*END SITE MAP*/
+/* OIRA COMMUNITY
+**********************************************************/
+.page-oira-community .pane-node-field-summary {
+  font-family: 'Oswald';
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+.page-oira-community .oira-community-partners-block {
+  margin-bottom: 20px;
+}
+.page-oira-community .oira-community-partners-block h2.pane-title {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+  font-size: 2.2em;
+  font-family: 'Oswald';
+}
+.page-oira-community .oira-community-partners-block .menu {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.page-oira-community .oira-community-partners-block .menu li {
+  display: table-cell;
+  width: 33%;
+}
+.page-oira-community .oira-community-partners-block .menu li a {
+  color: #ffffff;
+  font-style: italic;
+}
+.page-oira-community .oira-community-partners-block .menu li a:before {
+  content: "Icon";
+  color: #786586;
+  display: block;
+  background-color: #ffffff;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  line-height: 150px;
+}
+.page-oira-community .panels-flexible-row-new-2 h2 {
+  font-size: 1.6em;
+  color: #786586;
+  margin-bottom: 20px;
+}
+.page-oira-community .panels-flexible-row-new-2 hr {
+  border-top: 2px solid #786586;
+  margin-top: 35px;
+  margin-bottom: 40px;
 }
 /*FOOTER
 ********************************************/

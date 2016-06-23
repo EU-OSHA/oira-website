@@ -16,11 +16,12 @@ input, select{
 
 a{
 	text-decoration: none !important;
+	color: @color-text-purple-darker;
 }
 
 h1{
 	font-family: @font-family-base-2;
-	font-size: 2.6em;
+	font-size: @font-size2-6;
 	border-bottom: none !important;
 	color: @color-text-purple-darker;
 }
@@ -53,7 +54,7 @@ h4{
 	a{
 		color: @color-text-grey;
 		font-size: @font-size0-9;
-	    font-weight: bold;	
+	    font-weight: bold;
 	}
 }
 
@@ -485,7 +486,6 @@ a.more-link{
 				}
 			}
 		}
-		
 		.pane-views.pane-tools{
 			.pane-title{
 				color: @color-text-purple;
@@ -494,24 +494,20 @@ a.more-link{
 	    		margin-bottom: 14px;
 	    		font-style: italic;
 			}
-
 		}
 	}
 }
- 
-
-
-
-
-
-
 /*END HOME*/
 
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article{
 	h2{
-		font-size: 3em;
+		font-size: @font-size2;
+		line-height: 1.4em !important;//testing quitar cuando se introduzcan bien los contenidos
+	}
+	h3{
+		font-size: @font-size1-4;
 	}
 	.view-all-url{
 		border-top: 2px solid @color-white;
@@ -591,6 +587,53 @@ a.more-link{
 				}
 			}
 		}
+	}
+
+	.oira-heading-pagination-container{
+		overflow: hidden;
+		background-color: @color-primary;
+		padding: 10px;
+		ul{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			font-family: "Oswald";
+			li.pagination-next{
+				float: right;
+				cursor: pointer;
+				span{
+					display: block;
+    				text-align: right;
+    				font-style: italic;
+    				color: @color-label;
+    				font-family: "Roboto";
+    				margin-bottom: 5px;
+    				&:after{
+    					content: " >";
+    				}
+				}
+			}
+			li.pagination-prev{
+				float: left;
+				cursor: pointer;
+				span{
+					display: block;
+    				text-align: left;
+    				font-style: italic;
+    				color: @color-label;
+    				font-family: "Roboto";
+    				margin-bottom: 5px;
+    				&:before{
+    					content: "< ";
+    				}
+				}
+			}
+		}
+	}
+
+	//estilo pagina accesibility que es del tipo article, igual que rss y provate notices
+	.accesibility_table{
+		width: 100% !important;
 	}
 }
 
@@ -1197,7 +1240,7 @@ a.more-link{
 /*COUNTRIES LIST
 *********************************************************/
 
-.page-countries{
+.page-eu-national-partners{
 	h1{
 		color: @color-text-grey;
 	}
@@ -1596,7 +1639,7 @@ a.more-link{
 
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-.page-national-social-partners{
+.page-sectorial-social-partners{
 	h1{
 		color: @color-text-grey;
 	}
@@ -1643,3 +1686,61 @@ a.more-link{
 	}
 }
 /*END SITE MAP*/
+
+/* OIRA COMMUNITY
+**********************************************************/
+.page-oira-community{
+	.pane-node-field-summary {
+    	font-family: 'Oswald';
+    	font-size: 1.4em;
+    	margin-bottom: 30px;
+	}
+	.oira-community-partners-block{
+		margin-bottom: 20px;
+		h2.pane-title{
+			color: @color-white;
+			border-bottom: 2px solid @color-white;
+			margin-bottom: 50px;
+			padding-bottom: 15px;
+			font-size: 2.2em;
+	    	font-family: 'Oswald';
+		}
+		.menu{
+			display: table;
+			width: 100%;
+			text-align: center;
+			li{
+				display: table-cell;
+				width: 33%;
+				a{
+					color: @color-white;
+					font-style: italic;
+					&:before{
+						content: "Icon";
+						color: @color-text-purple-darker;
+						display: block;
+						background-color: @color-white;
+						width: 150px;
+						height: 150px;
+						border-radius: 50%;
+						margin: 0 auto 15px auto;
+						line-height: 150px;
+					}
+				}
+			}
+		}
+	}
+	.panels-flexible-row-new-2{
+		h2{
+			font-size: @font-size1-6;
+			color: @color-text-purple-darker;
+			margin-bottom: 20px;
+		}
+		hr{
+			border-top: 2px solid @color-text-purple-darker;
+    		margin-top: 35px;
+    		margin-bottom: 40px;
+		}
+	}
+}
+/*END OIRA COMMUNITY*/
