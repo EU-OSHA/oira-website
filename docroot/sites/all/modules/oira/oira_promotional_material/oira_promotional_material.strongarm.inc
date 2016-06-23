@@ -91,19 +91,19 @@ function oira_promotional_material_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '17',
-        ),
-        'path' => array(
           'weight' => '16',
         ),
-        'redirect' => array(
+        'path' => array(
           'weight' => '15',
+        ),
+        'redirect' => array(
+          'weight' => '14',
         ),
         'workbench_access' => array(
           'weight' => '1',
         ),
         'xmlsitemap' => array(
-          'weight' => '14',
+          'weight' => '13',
         ),
       ),
       'display' => array(

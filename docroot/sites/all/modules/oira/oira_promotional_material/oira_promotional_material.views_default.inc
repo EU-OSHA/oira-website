@@ -111,7 +111,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'title_style' => 'h4',
-    'title_link' => 'content',
+    'title_link' => '',
     'title_class' => '',
     'field_formatter_class' => '',
   );
@@ -145,6 +145,13 @@ function oira_promotional_material_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_country']['field_api_classes'] = TRUE;
+  /* Field: Content: Extrafield Related partners */
+  $handler->display->display_options['fields']['related_partners']['id'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['table'] = 'node';
+  $handler->display->display_options['fields']['related_partners']['field'] = 'related_partners';
+  $handler->display->display_options['fields']['related_partners']['label'] = '';
+  $handler->display->display_options['fields']['related_partners']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['related_partners']['element_label_colon'] = FALSE;
   /* Field: Content: Extrafield See more link for materials */
   $handler->display->display_options['fields']['materials_see_more']['id'] = 'materials_see_more';
   $handler->display->display_options['fields']['materials_see_more']['table'] = 'node';
@@ -161,6 +168,7 @@ function oira_promotional_material_views_default_views() {
 [title_field]
 [field_country] 
 [field_language]
+[related_partners] 
 [materials_see_more]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -178,6 +186,7 @@ function oira_promotional_material_views_default_views() {
 [title_field]
 [field_country] 
 [field_language]
+[related_partners] 
 [materials_see_more]
 </div>'),
   );
