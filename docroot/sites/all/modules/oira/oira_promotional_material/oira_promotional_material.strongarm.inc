@@ -116,6 +116,27 @@ function oira_promotional_material_strongarm() {
             'settings' => array(),
           ),
         ),
+        'related_partners' => array(
+          'teaser' => array(
+            'weight' => '5',
+            'label' => 'hidden',
+            'type' => 'related_partners',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+        ),
+        'tools_see_more' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'label' => 'hidden',
+            'type' => 'tools_see_more',
+            'visible' => TRUE,
+            'settings' => array(
+              'slice_point' => '250',
+              'parent_selector' => '.view-mode-teaser',
+            ),
+          ),
+        ),
       ),
     ),
   );

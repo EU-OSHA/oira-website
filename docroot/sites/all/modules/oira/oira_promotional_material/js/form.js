@@ -1,8 +1,8 @@
 (function($){
     Drupal.behaviors.tool_form_submit = {
         attach: function(context, settings) {
-            $('.oira-custom-faceted-search-form').once('tool_form_submit', function(){
-                var $form = $('.oira-custom-faceted-search-form');
+            $('#hwc-practical-tool-menu-tools-form').once('tool_form_submit', function(){
+                var $form = $('#hwc-practical-tool-menu-tools-form');
                 $form.find('input[type=checkbox]').click(function(){
                     $form.submit();
                 });
@@ -17,7 +17,7 @@
     }
     Drupal.behaviors.tool_form_toggle_facets = {
         attach: function(context, settings) {
-            $('.oira-custom-faceted-search-form').once('tool_form_toggle_facets', function(){
+            $('#hwc-practical-tool-menu-tools-form').once('tool_form_toggle_facets', function(){
                 $('.form-checkboxes.search-facet-field').hide();
                 $('.form-checkboxes.search-facet-field').has('input:checked').show();
                 $('.form-checkboxes.search-facet-field').siblings('label').on('click', function() {
