@@ -6723,6 +6723,9 @@ button.close {
 .glyphicon-print:before {
   content: "\e045";
 }
+/*MIXINS
+*****************************************/
+/*END MIXINS*/
 /*Estilos comunes
 *****************************************/
 * {
@@ -6739,6 +6742,7 @@ select {
 }
 a {
   text-decoration: none !important;
+  color: #786586;
 }
 h1 {
   font-family: 'Oswald';
@@ -6986,8 +6990,16 @@ a.more-link:before {
 #block-system-main .panels-flexible-row-new-6 {
   background-color: #dfd8e4;
 }
+#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section h3:after {
+  content: "";
+  background: url("../images/icons/005.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .view-display-id-attachment_1 {
-  border-bottom: 2px solid #786586;
+  border-bottom: 2px solid #967ea7;
   padding-bottom: 30px;
   padding-top: 20px;
   margin-bottom: 20px;
@@ -7013,6 +7025,16 @@ a.more-link:before {
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container a.more-link:before {
   content: '>';
 }
+#block-system-main .panels-flexible-region-new-promotional_materials h3:after {
+  content: "";
+  background: url("../images/icons/083.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+  width: 45px;
+  height: 45px;
+}
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials div.pane-title {
   color: #967ea7;
   font-size: 1.2em;
@@ -7030,34 +7052,42 @@ a.more-link:before {
 #block-system-main .panels-flexible-row-new-16 {
   background-color: #dfd8e4;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools h3:after {
+  content: "";
+  background: url("../images/icons/018.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block {
   border-bottom: 2px solid #967ea7;
   padding-bottom: 30px;
   padding-top: 20px;
   margin-bottom: 20px;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-title-field a {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block .field-name-title-field a {
   font-size: 1.6em;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-related-partners .node-partner {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block .field-name-related-partners .node-partner {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
   margin-top: 15px;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-related-partners .node-partner h4 a {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
   color: #ffffff;
   margin-top: 0px;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block .field-name-related-partners .node-partner .more-link {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block .field-name-related-partners .node-partner .more-link {
   color: #ffffff;
   text-align: left;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block a.more-link {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block a.more-link {
   text-align: left;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block a.show-less {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block a.show-less {
   text-align: right !important;
   width: 20px;
   height: 12px;
@@ -7065,7 +7095,7 @@ a.more-link:before {
   overflow: hidden;
   font-style: normal;
 }
-#block-system-main .panels-flexible-row-new-16 .view-display-id-block a.show-less:before {
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block a.show-less:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
@@ -7117,11 +7147,38 @@ a.more-link:before {
   margin-bottom: 14px;
   font-style: italic;
 }
+#block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside h3:after {
+  content: "";
+  background: url("../images/icons/123.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
+#block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside .view-display-id-oira_partners_homepage {
+  padding-top: 20px;
+}
+#block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside .view-display-id-oira_partners_homepage h4 {
+  font-size: 2em;
+  font-weight: bold;
+}
+#block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside .view-display-id-oira_partners_homepage .views-view-grid {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 2px solid #967ea7;
+  border-top: 2px solid #967ea7;
+}
 /*END HOME*/
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article h2 {
-  font-size: 3em;
+  font-size: 2em;
+  line-height: 1.4em !important;
+}
+.node-type-article h3 {
+  font-size: 1.4em;
 }
 .node-type-article .view-all-url {
   border-top: 2px solid #ffffff;
@@ -7157,9 +7214,11 @@ a.more-link:before {
   background-color: #786586;
   margin-bottom: 10px;
 }
-.node-type-article .panels-flexible-row-new-10 .panels-flexible-column-new-main {
-  border-right: 10px solid #ffffff;
-  height: 244px;
+.node-type-article .panels-flexible-row-new-10 .panels-flexible-column-new-2 {
+  border-left: 10px solid #ffffff;
+}
+.node-type-article .panels-flexible-row-new-10 .panels-flexible-column-new-3 {
+  border-left: 10px solid #ffffff;
 }
 .node-type-article .panels-flexible-row-new-10 #mini-panel-related_content h3.pane-title {
   color: #ffffff;
@@ -7189,6 +7248,50 @@ a.more-link:before {
 .node-type-article .panels-flexible-row-new-13 #additional-resources-external_url-pane .view-additional-resources .views-item-columns-container {
   padding: 15px !important;
 }
+.node-type-article .oira-heading-pagination-container {
+  overflow: hidden;
+  background-color: #dfd8e4;
+  padding: 10px;
+}
+.node-type-article .oira-heading-pagination-container ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: "Oswald";
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-next {
+  float: right;
+  cursor: pointer;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-next span {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  color: #10b2e4;
+  font-family: "Roboto";
+  margin-bottom: 5px;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-next span:after {
+  content: " >";
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-prev {
+  float: left;
+  cursor: pointer;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-prev span {
+  display: block;
+  text-align: left;
+  font-style: italic;
+  color: #10b2e4;
+  font-family: "Roboto";
+  margin-bottom: 5px;
+}
+.node-type-article .oira-heading-pagination-container ul li.pagination-prev span:before {
+  content: "< ";
+}
+.node-type-article .accesibility_table {
+  width: 100% !important;
+}
 /*END ARTICLES*/
 /*WHAT'S NEW SECTION
 *********************************************************************/
@@ -7214,55 +7317,74 @@ a.more-link:before {
   background-color: #786586;
   margin-top: 10px;
 }
-.page-what-is-new .panels-flexible-row-new-3 h3.pane-title {
+.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news h3.pane-title {
   color: #ffffff;
   border-bottom: 2px solid #ffffff;
   margin-bottom: 0px;
 }
-.page-what-is-new .panels-flexible-row-new-3 .views-item-columns-container {
+.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news h3.pane-title:after {
+  content: "";
+  background: url("../images/icons/004.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
+.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news .views-item-columns-container {
   padding: 15px;
   margin-top: 30px;
   min-height: 230px;
 }
-.page-what-is-new .panels-flexible-row-new-3 .more-link a {
+.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news .more-link a {
   color: #ffffff;
 }
 .page-what-is-new .panels-flexible-row-new-6 {
   background-color: #ffffff !important;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools h3:after {
+  content: "";
+  background: url("../images/icons/018.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools {
+  padding-top: 20px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container {
   background-color: #dfd8e4;
   min-height: 538px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .views-field-field-image {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image {
   min-height: 202px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
   margin-top: 15px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 a {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
   color: #ffffff;
   margin-top: 0px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner .more-link {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner .more-link {
   color: #ffffff;
   text-align: left;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed {
   margin-left: 207px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
   text-align: right;
   margin-top: 15px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less {
   text-align: right !important;
   width: 20px;
   height: 12px;
@@ -7270,7 +7392,7 @@ a.more-link:before {
   overflow: hidden;
   font-style: normal;
 }
-.page-what-is-new .panels-flexible-row-new-6 .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less:before {
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
@@ -7710,108 +7832,108 @@ a.more-link:before {
 /*END OIRA NEWS*/
 /*COUNTRIES LIST
 *********************************************************/
-.page-countries h1 {
+.page-eu-national-partners h1 {
   color: #58585a;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content {
   display: table;
   width: 100%;
   margin-top: 25px;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label {
   display: table-cell;
   color: #ffffff;
   text-align: center;
   border-left: 2px solid #ffffff;
   width: 20%;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label:last-child {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label:last-child {
   border-right: 2px solid #ffffff;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-group {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-group {
   margin-bottom: 0px;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item label {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item label {
   display: block;
   font-size: 1.2em;
   margin-bottom: 0px;
 }
-.page-countries .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item span {
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label .form-item span {
   display: block;
   font-size: 2.8em;
   font-weight: bold;
   line-height: 31px;
   margin-top: 15px;
 }
-.page-countries .view-id-countries {
+.page-eu-national-partners .view-id-countries {
   margin-top: 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container {
+.page-eu-national-partners .view-id-countries .views-item-columns-container {
   background-color: #dfd8e4;
   overflow: auto;
   margin-bottom: 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-field-flag {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
   margin: 30px 30px 0px 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-field-flag img {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag img {
   max-height: 67px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-name-field {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field {
   margin: 30px 30px 30px 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-name-field h2 a {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field h2 a {
   color: #58585a;
   font-family: "Roboto";
   font-weight: bold;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count {
   margin: 0px 30px 30px 30px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .form-group {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .form-group {
   margin-bottom: 0px;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content {
   display: table;
   width: 100%;
   text-align: center;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label {
   display: table-cell;
   width: 33%;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label label {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label label {
   display: block;
   font-weight: normal;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label span {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label span {
   display: block;
   font-weight: bold;
   font-size: 1.8em;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:first-child {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:first-child {
   border-right: 2px solid #58585a;
 }
-.page-countries .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:last-child {
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:last-child {
   border-left: 2px solid #58585a;
 }
 /*PROMOTIONAL MATERIALS
 ********************************************************************/
-.page-promotional-materials .pane-node-body .field-type-text-with-summary {
+.page-promotional-resources .pane-node-body .field-type-text-with-summary {
   font-family: 'Oswald';
   font-size: 1.4em;
   margin-bottom: 30px;
 }
-.page-promotional-materials .panels-flexible-row-new-1 {
+.page-promotional-resources .panels-flexible-row-page-promotional-materials-1 {
   background-color: #dfd8e4;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.page-promotional-materials .panels-flexible-row-new-1 .views-item-columns-container {
+.page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .views-item-columns-container {
   margin-bottom: 15px;
   background-color: rgba(0, 0, 0, 0);
 }
-.page-promotional-materials .panels-flexible-row-new-1 .views-item-columns-container .views-field-name-field a {
+.page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .views-item-columns-container .views-field-name-field a {
   color: #786586;
   font-size: 1.6em;
   border-bottom: 2px solid #786586;
@@ -7819,44 +7941,44 @@ a.more-link:before {
   padding-bottom: 5px;
   font-family: "Oswald";
 }
-.page-promotional-materials .panels-flexible-row-new-1 .views-item-columns-container .views-field-description-field {
+.page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .views-item-columns-container .views-field-description-field {
   padding-top: 15px;
 }
-.page-promotional-materials-search h1 {
+.page-promotional-resources-search h1 {
   color: #786586;
 }
-.page-promotional-materials-search .pane-node-body .field-type-text-with-summary {
+.page-promotional-resources-search .pane-node-body .field-type-text-with-summary {
   font-family: 'Oswald';
   font-size: 1.4em;
   margin-bottom: 30px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last {
   background: url('../images/background-two-colors.png') repeat-y 50%;
   padding-bottom: 0px;
   padding-top: 0px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child .form-group {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child .form-group {
   margin-bottom: 0px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column {
   background-color: #786586;
   color: #ffffff;
   padding-right: 30px;
   padding-top: 30px;
   position: relative;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-textfield {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-textfield {
   float: left;
   margin-bottom: 15px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-textfield input {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-textfield input {
   border: none;
   border-radius: 0px;
   outline: none;
   height: auto;
   padding-right: 35px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-submit {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column #edit-submit {
   position: absolute;
   right: 0;
   margin-right: 30px;
@@ -7871,18 +7993,18 @@ a.more-link:before {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0);
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-submit:before {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column #edit-submit:before {
   content: "\e003";
   font-family: "Glyphicons Halflings";
   margin-right: 30px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column a.active {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column a.active {
   display: block;
   color: #ffffff;
   margin-bottom: 10px;
   font-style: italic;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column a.active span:before {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column a.active span:before {
   color: #786586;
   padding: 1px;
   font-size: 0.7em;
@@ -7892,25 +8014,25 @@ a.more-link:before {
   width: 13px;
   height: 13px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-country label:after,
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-sector label:after {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-country label:after,
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column #edit-field-sector label:after {
   content: none;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes {
   border-top: 2px solid #ffffff;
   padding-top: 10px;
   clear: both;
   margin-top: 15px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
   display: none;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label {
   padding-left: 0px;
   margin-bottom: 0px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
   font-family: 'Oswald';
   font-size: 1.2em;
   font-weight: normal;
@@ -7918,27 +8040,27 @@ a.more-link:before {
   margin-bottom: 10px;
   cursor: pointer;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label:after {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes label:after {
   content: "\e250";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-left-column .form-item-field-sector {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-item-field-sector {
   border-bottom: 2px solid #ffffff;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content {
   background-color: #dfd8e4;
   padding-bottom: 50px;
   padding-left: 30px;
   padding-top: 30px;
   border-left: 5px solid #ffffff;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset {
   border: none;
   border-radius: 0px;
   background-color: rgba(0, 0, 0, 0);
@@ -7947,22 +8069,22 @@ a.more-link:before {
   border-bottom: 2px solid #786586;
   margin-bottom: 30px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .panel-body {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .panel-body {
   padding-left: 0px;
   padding-right: 0px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container {
   min-width: 210px;
   padding-left: 0px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container label {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container label {
   font-weight: 100;
   font-size: 0.9em;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after {
   content: ": ";
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort {
   font-size: 0.9em;
   display: inline-block;
   width: auto;
@@ -7973,68 +8095,30 @@ a.more-link:before {
   height: initial;
   background-color: rgba(0, 0, 0, 0);
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .count-container {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset .count-container {
   font-size: 0.9em;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper {
   background-color: #ffffff;
   padding: 30px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material {
   border-top: 2px solid #786586;
   padding: 30px 0px;
   margin-right: 0px;
   margin-left: 0px;
-  /*
-							//partners inside oira tools
-							.field-name-related-partners{
-								.node-partner{
-									background-color: @color-primary-dark;
-    								padding: 15px;
-    								color: @color-white;
-    								h4{
-    									a{
-    										font-size: 1.2em;
-    										color: @color-white;
-    										margin-top: 0px;
-    									}
-    								}
-    								.more-link{
-    									color: @color-white;
-    									text-align: left;
-    								}
-    							}
-							}
-							.related-partners-1 > div{
-								margin-left: 222px;
-							}
-							.related-partners-2 > div{
-								display: table;
-								border-collapse: collapse;
-								& > .even, & > .odd{
-									&:first-child{
-										display: table-cell;
-									}
-								}
-								& > .even:first-child{
-									border-right: 10px solid white;
-								}
-							}*/
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .col-sm-3 {
   padding-left: 0px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-title-field {
   font-size: 1.4em;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
-  margin-left: 207px;
-}
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.more-link {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.more-link {
   text-align: left;
   margin-top: 15px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.show-less {
   text-align: right !important;
   width: 20px;
   height: 12px;
@@ -8042,30 +8126,56 @@ a.more-link:before {
   overflow: hidden;
   font-style: normal;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less:before {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.show-less:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
   line-height: 0;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-field-tool-link a {
   color: #58585a;
   font-weight: bold;
   margin-top: 30px;
   display: block;
   margin-bottom: 15px;
 }
-.page-promotional-materials-search .panels-flexible-row-new-1 #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-field-tool-link a span.glyphicon-new-window {
   color: #10b2e4;
   margin-left: 10px;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-related-partners .node-partner {
+  background-color: #786586;
+  padding: 15px;
+  color: #ffffff;
+  margin-top: 20px;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-related-partners .node-partner h4 a {
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-top: 0px;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-related-partners .node-partner .more-link {
+  color: #ffffff;
+  text-align: left;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .related-partners-2 > div {
+  display: table;
+  border-collapse: collapse;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .related-partners-2 > div > .even:first-child,
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .related-partners-2 > div > .odd:first-child {
+  display: table-cell;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .related-partners-2 > div > .even:first-child {
+  border-right: 10px solid white;
 }
 /*END Promotional materials*/
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-.page-national-social-partners h1 {
+.page-sectorial-social-partners h1 {
   color: #58585a;
 }
-.page-national-social-partners .pane-node-body {
+.page-sectorial-social-partners .pane-node-body {
   font-weight: bold;
 }
 /*END National social partners*/
@@ -8096,6 +8206,79 @@ a.more-link:before {
 }
 .page-sitemap ul.site-map-menu li.expanded li:before {
   content: "- ";
+}
+/*END SITE MAP*/
+/* OIRA COMMUNITY
+**********************************************************/
+.page-oira-community .pane-node-field-summary {
+  font-family: 'Oswald';
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+.page-oira-community .oira-community-partners-block {
+  margin-bottom: 20px;
+}
+.page-oira-community .oira-community-partners-block h2.pane-title {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  margin-bottom: 50px;
+  padding-bottom: 15px;
+  font-size: 2.2em;
+  font-family: 'Oswald';
+}
+.page-oira-community .oira-community-partners-block h2.pane-title:after {
+  content: "";
+  background: url("../images/icons/122.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
+.page-oira-community .oira-community-partners-block .menu {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.page-oira-community .oira-community-partners-block .menu li {
+  display: table-cell;
+  width: 33%;
+}
+.page-oira-community .oira-community-partners-block .menu li a {
+  color: #ffffff;
+  font-style: italic;
+}
+.page-oira-community .oira-community-partners-block .menu li a:before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+}
+.page-oira-community .oira-community-partners-block .menu li:nth-child(1) a:before {
+  background: url(../images/icons/096.png) no-repeat white;
+  background-size: 65%;
+  background-position: 50% 50%;
+}
+.page-oira-community .oira-community-partners-block .menu li:nth-child(2) a:before {
+  background: url(../images/icons/105.png) no-repeat white;
+  background-size: 65%;
+  background-position: 50% 50%;
+}
+.page-oira-community .oira-community-partners-block .menu li:nth-child(3) a:before {
+  background: url(../images/icons/114.png) no-repeat white;
+  background-size: 65%;
+  background-position: 50% 50%;
+}
+.page-oira-community .panels-flexible-row-new-2 h2 {
+  font-size: 1.6em;
+  color: #786586;
+  margin-bottom: 20px;
+}
+.page-oira-community .panels-flexible-row-new-2 hr {
+  border-top: 2px solid #786586;
+  margin-top: 35px;
+  margin-bottom: 40px;
 }
 /*FOOTER
 ********************************************/
