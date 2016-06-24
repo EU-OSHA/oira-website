@@ -53,6 +53,10 @@ function oira_promotional_material_default_page_manager_pages() {
     ),
     'relationships' => array(),
     'name' => 'panel',
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => '%node:title-field',
+    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -252,6 +256,10 @@ function oira_promotional_material_default_page_manager_pages() {
     ),
     'relationships' => array(),
     'name' => 'panel',
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => '%node:title-field',
+    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';

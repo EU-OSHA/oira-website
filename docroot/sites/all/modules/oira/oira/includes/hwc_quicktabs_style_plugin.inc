@@ -99,6 +99,10 @@ class hwc_quicktabs_style_plugin extends quicktabs_style_plugin {
 
     $overrides = array('style' => $view->style_plugin->options['tab_style'], 'sorted' => TRUE);
     $quicktabs = quicktabs_build_quicktabs($qt_name, $overrides, $tabs);
+    if (!empty($quicktabs['content']['content']['container']['#prefix'])) {
+      $quicktabs['content']['content']['container']['#prefix'] = '<div class="container quicktab-container">' . $quicktabs['content']['content']['container']['#prefix'];
+      $quicktabs['content']['content']['container']['#suffix'] = $quicktabs['content']['content']['container']['#suffix'] . '</div>';
+    }
 
     $output = drupal_render($quicktabs);
 
