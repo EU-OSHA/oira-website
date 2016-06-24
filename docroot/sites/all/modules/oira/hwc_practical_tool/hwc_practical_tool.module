@@ -250,8 +250,12 @@ function hwc_practical_tool_related_partners_callback($node) {
 function hwc_practical_tool_see_more_callback($node) {
   $items = array('See more');
   $display = array('type' => 'tools_see_more', 'view_mode' => 'teaser');
-  $element = hwc_practical_tool_field_extra_fields_formatter_view('node', $node, 'related_partners', 'en', $items, $display);
-  return drupal_render($element);
+  $extra_fields = field_info_extra_fields('node', $node->type, 'display');
+  if (!empty($extra_fields['tools_see_more'])) {
+    $element = hwc_practical_tool_field_extra_fields_formatter_view('node', $node, 'tools_see_more', 'en', $items, $display);
+    return drupal_render($element);
+  }
+  return;
 }
 
 
