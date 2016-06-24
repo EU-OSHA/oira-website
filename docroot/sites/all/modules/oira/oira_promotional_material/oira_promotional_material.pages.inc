@@ -2,7 +2,7 @@
 
 function oira_promotional_material_search_form($form, $form_state) {
   $variables['form_state'] = $form_state;
-  $variables['action'] = 'promotional-resources/search';
+  $variables['action'] = 'promotional-resources-search';
   $variables['facet_callback'] = '_oira_promotional_material_search_form_get_facets';
   $variables['search_callback'] = 'oira_promotional_material_search';
   $variables['language_field'] = 'field_resource_fc:field_language:value';

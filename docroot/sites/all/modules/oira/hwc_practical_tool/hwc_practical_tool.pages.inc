@@ -94,7 +94,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
 
   $form = array(
-    '#action' => 'oira-tools',
+    '#action' => $action,
     '#method' => 'GET',
     '#token' => FALSE,
     '#attributes' => array('class' => array('row', 'oira-custom-faceted-search-form')),

@@ -38,11 +38,13 @@ function osha_search_default_search_api_index() {
     "server" : "solr_server",
     "item_type" : "search_api_et_node",
     "options" : {
+      "datasource" : { "bundles" : [] },
       "index_directly" : 1,
       "cron_limit" : "10",
       "search_api_et" : { "include" : "incomplete", "fallback language" : "" },
       "fields" : {
         "attachments_field_file" : { "type" : "text" },
+        "attachments_field_related_resources" : { "type" : "text" },
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
@@ -153,7 +155,9 @@ function osha_search_default_search_api_index() {
           "weight" : "-47",
           "settings" : {
             "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
-            "number_indexed" : "0"
+            "number_indexed" : "0",
+            "max_file_size" : "0",
+            "excluded_private" : 1
           }
         },
         "search_api_alter_language_control" : {
@@ -165,7 +169,17 @@ function osha_search_default_search_api_index() {
         "search_api_alter_add_url" : { "status" : 1, "weight" : "-44", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "-43", "settings" : [] },
         "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "-42", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "-41", "settings" : { "fields" : [] } }
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "-41", "settings" : { "fields" : [] } },
+        "search_api_attachments_field_collections_alter_settings" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : {
+            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
+            "number_indexed" : "0",
+            "max_file_size" : "0",
+            "excluded_private" : 1
+          }
+        }
       },
       "processors" : {
         "search_api_et_remove_language" : { "status" : 0, "weight" : "0", "settings" : [] },

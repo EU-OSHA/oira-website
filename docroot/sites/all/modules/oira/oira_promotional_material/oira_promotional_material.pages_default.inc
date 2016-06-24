@@ -214,7 +214,7 @@ function oira_promotional_material_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Promotional materials search';
   $page->admin_description = '';
-  $page->path = 'promotional-resources/search';
+  $page->path = 'promotional-resources-search';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
