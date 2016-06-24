@@ -493,6 +493,7 @@ $options['init-modules'] = array(
   'search_api_et_solr',
   'search_api_views',
   'search_api_attachments',
+  'search_api_attachments_field_collections',
   'search_api_title2',
 
   // serrvices

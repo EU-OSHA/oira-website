@@ -5,12 +5,13 @@
  * Search API data alteration callback.
  */
 
-class SearchApiAttachmentsFieldCollectionsAlterSettings extends SearchApiAttachmentsAlterSettings {
+class SearchApiAttachmentsMultifieldAlterSettings extends SearchApiAttachmentsAlterSettings {
 
   /**
    * {@inheritdoc}
    */
   public function alterItems(array &$items) {
+
     // Extension restriction.
     $exclude = array();
     foreach (explode(' ', $this->options['excluded_extensions']) as $ext) {
@@ -20,18 +21,19 @@ class SearchApiAttachmentsFieldCollectionsAlterSettings extends SearchApiAttachm
     // File size restriction.
     $max_file_size = parse_size($this->options['max_file_size']);
 
-    // Get the field collection bundles.
-    $field_collections_instances = field_info_instances('field_collection_item');
-    $field_collections = array_keys($field_collections_instances);
-    if (!empty($field_collections_instances)) {
+    // Get the multifield bundles.
+    $multifields_instances = field_info_instances('multifield');
+    $multifields = array_keys($multifields_instances);
+    if (!empty($multifields_instances)) {
       foreach ($items as $id => &$item) {
-        // Case of field collection fields.
-        foreach ($field_collections as $field_collection) {
-          if (isset($item->{$field_collection})) {
-            // Get the file fields of the field collection item.
+        // Case of multifield fields.
+        foreach ($multifields as $multifield) {
+          if (isset($item->{$multifield})) {
+            // Get the file fields of the multifield item.
             $file_fields = array();
-            foreach (array_keys($field_collections_instances[$field_collection]) as $field_name) {
+            foreach (array_keys($multifields_instances[$multifield]) as $field_name) {
               $field_info = field_info_field($field_name);
+              // Only if the field is file and should be indexed.
               if ($field_info['type'] == 'file') {
                 $file_fields[] = $field_name;
               }
@@ -39,20 +41,23 @@ class SearchApiAttachmentsFieldCollectionsAlterSettings extends SearchApiAttachm
             if (empty($file_fields)) {
               return;
             }
-            $collections = field_get_items($this->index->getEntityType(), $item, $field_collection);
-            if ($collections) {
-              $collection_item_ids = array();
-              foreach ($collections as $field_collection_id) {
-                $collection_item_ids[] = $field_collection_id['value'];
-              }
-              $collection_items = entity_load_multiple_by_name('field_collection_item', $collection_item_ids);
-
+            $multifield_items = field_get_items($this->index->getEntityType(), $item, $multifield);
+            if ($multifield_items) {
               // Index the files content.
               foreach ($file_fields as $file_field) {
-                foreach ($collection_items as $collection_item) {
-                  $field_collection_name = $collection_item->field_name;
-                  if (isset($item->{$field_collection_name}) && !empty($item->{$field_collection_name})) {
-                    $files = field_get_items('field_collection_item', $collection_item, $file_field);
+                foreach ($multifield_items as $multifield_item) {
+                  if (isset($multifield_item[$file_field]) && !empty($multifield_item[$file_field])) {
+                    $files = array();
+                    // Get the entity wrapper that have multifield with file fields.
+                    $item_wrapper = entity_metadata_wrapper($this->index->getEntityType(), $item);
+                    if (is_array($item_wrapper->{$multifield}->value())) {
+                      foreach ($item_wrapper->{$multifield} as $delta => $multifield_wrapper) {
+                        $files[] = $multifield_wrapper->{$file_field}->value();
+                      }
+                    }
+                    else {
+                      $files = array($item_wrapper->{$multifield}->{$file_field}->value());
+                    }
                     if (!empty($files)) {
                       // Limit to the max number of value per field.
                       if (isset($this->options['number_indexed']) && $this->options['number_indexed'] != '0' && count($files) > $this->options['number_indexed']) {

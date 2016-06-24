@@ -15,7 +15,7 @@ function oira_promotional_material_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Promotional materials';
   $page->admin_description = '';
-  $page->path = 'promotional-materials';
+  $page->path = 'promotional-resources';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -65,6 +65,16 @@ function oira_promotional_material_default_page_manager_pages() {
           0 => 'main',
         ),
         'parent' => NULL,
+        'class' => 'page-promotional-materials',
+        'column_class' => '',
+        'row_class' => '',
+        'region_class' => '',
+        'no_scale' => FALSE,
+        'fixed_width' => '',
+        'column_separation' => '0.5em',
+        'region_separation' => '0.5em',
+        'row_separation' => '0.5em',
+        'hide_empty' => 0,
       ),
       'main' => array(
         'type' => 'column',
@@ -204,7 +214,7 @@ function oira_promotional_material_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Promotional materials search';
   $page->admin_description = '';
-  $page->path = 'promotional-materials/search';
+  $page->path = 'promotional-resources-search';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -228,7 +238,7 @@ function oira_promotional_material_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'page-promotional-materials',
     'css_id' => '',
     'css' => '',
     'contexts' => array(
@@ -254,6 +264,16 @@ function oira_promotional_material_default_page_manager_pages() {
           0 => 'main',
         ),
         'parent' => NULL,
+        'class' => 'page-promotional-materials-search ',
+        'column_class' => '',
+        'row_class' => '',
+        'region_class' => '',
+        'no_scale' => FALSE,
+        'fixed_width' => '',
+        'column_separation' => '0.5em',
+        'region_separation' => '0.5em',
+        'row_separation' => '0.5em',
+        'hide_empty' => 0,
       ),
       'main' => array(
         'type' => 'column',

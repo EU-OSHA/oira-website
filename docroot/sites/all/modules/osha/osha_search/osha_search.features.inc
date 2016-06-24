@@ -38,11 +38,13 @@ function osha_search_default_search_api_index() {
     "server" : "solr_server",
     "item_type" : "search_api_et_node",
     "options" : {
+      "datasource" : { "bundles" : [] },
       "index_directly" : 1,
       "cron_limit" : "10",
       "search_api_et" : { "include" : "incomplete", "fallback language" : "" },
       "fields" : {
         "attachments_field_file" : { "type" : "text" },
+        "attachments_field_related_resources" : { "type" : "text" },
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
@@ -75,6 +77,8 @@ function osha_search_default_search_api_index() {
         "field_guid_main_contact" : { "type" : "text" },
         "field_language:safe_value" : { "type" : "text" },
         "field_language:value" : { "type" : "string" },
+        "field_link:title" : { "type" : "text" },
+        "field_link:url" : { "type" : "uri" },
         "field_main_contact" : { "type" : "text" },
         "field_main_contact_email" : { "type" : "text" },
         "field_mission_statement" : { "type" : "text" },
@@ -95,6 +99,13 @@ function osha_search_default_search_api_index() {
         "field_quote" : { "type" : "text" },
         "field_recommended_articles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_recommended_resources" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "field_resource_fc" : {
+          "type" : "list\\u003Cinteger\\u003E",
+          "entity_type" : "field_collection_item"
+        },
+        "field_resource_fc:field_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" },
+        "field_resource_fc:field_language:safe_value" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_resource_fc:field_language:value" : { "type" : "list\\u003Cstring\\u003E" },
         "field_revised_date" : { "type" : "date" },
         "field_sector" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -121,40 +132,54 @@ function osha_search_default_search_api_index() {
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
-          "weight" : "-10",
+          "weight" : "-50",
           "settings" : {
-            "default" : "0",
+            "default" : "1",
             "bundles" : {
-              "article" : "article",
-              "faq" : "faq",
-              "news" : "news",
-              "practical_tool" : "practical_tool",
-              "partner" : "partner",
+              "external_url" : "external_url",
+              "file" : "file",
+              "flickr" : "flickr",
+              "internal_url" : "internal_url",
               "press_release" : "press_release",
-              "promotional_material" : "promotional_material",
-              "wiki_page" : "wiki_page"
+              "slide" : "slide",
+              "slideshare" : "slideshare",
+              "webform" : "webform",
+              "youtube" : "youtube"
             }
           }
         },
-        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "-49", "settings" : [] },
+        "search_api_alter_node_access" : { "status" : 0, "weight" : "-48", "settings" : [] },
         "search_api_attachments_alter_settings" : {
           "status" : 1,
-          "weight" : "0",
+          "weight" : "-47",
           "settings" : {
             "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
-            "number_indexed" : "0"
+            "number_indexed" : "0",
+            "max_file_size" : "0",
+            "excluded_private" : 1
           }
         },
         "search_api_alter_language_control" : {
           "status" : 1,
-          "weight" : "0",
+          "weight" : "-46",
           "settings" : { "lang_field" : "", "languages" : [] }
         },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
-        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } }
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "-45", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_url" : { "status" : 1, "weight" : "-44", "settings" : [] },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "-43", "settings" : [] },
+        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "-42", "settings" : [] },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "-41", "settings" : { "fields" : [] } },
+        "search_api_attachments_field_collections_alter_settings" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : {
+            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
+            "number_indexed" : "0",
+            "max_file_size" : "0",
+            "excluded_private" : 1
+          }
+        }
       },
       "processors" : {
         "search_api_et_remove_language" : { "status" : 0, "weight" : "0", "settings" : [] },
@@ -195,7 +220,8 @@ function osha_search_default_search_api_index() {
             "highlight" : "always"
           }
         }
-      }
+      },
+      "additional fields" : { "field_resource_fc:field_file:file" : "field_resource_fc:field_file:file" }
     },
     "enabled" : "1",
     "read_only" : "0",

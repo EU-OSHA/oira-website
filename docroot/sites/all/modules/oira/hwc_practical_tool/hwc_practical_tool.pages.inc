@@ -67,17 +67,37 @@ function _hwc_practical_tool_strip_param_value($params, $name, $value = NULL) {
 }
 
 function hwc_practical_tool_menu_tools_form($form, $form_state) {
+  $variables['form_state'] = $form_state;
+  $variables['action'] = 'oira-tools';
+  $variables['facet_callback'] = 'hwc_practical_tool_get_facets_def';
+  $variables['search_callback'] = 'hwc_practical_tool_search';
+  $variables['language_field'] = 'field_language:value';
+
+  return _hwc_practical_tool_get_generic_faceted_form($variables);
+}
+
+/**
+ * @param $variables
+ * form_state
+ * action
+ *
+ */
+function _hwc_practical_tool_get_generic_faceted_form($variables) {
   global $language;
-  drupal_set_title(t('OiRA tools'));
+  $form_state = $variables['form_state'];
+  $action = $variables['action'];
+  $facet_callback = $variables['facet_callback'];
+  $search_callback = $variables['search_callback'];
+  $lang_field = $variables['language_field'];
 
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
   $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
 
   $form = array(
-    '#action' => 'oira-tools',
+    '#action' => $action,
     '#method' => 'GET',
     '#token' => FALSE,
-    '#attributes' => array('class' => array('row')),
+    '#attributes' => array('class' => array('row', 'oira-custom-faceted-search-form')),
     'left-column' => array(
       '#type' => 'container',
       '#attributes' => array('class' => array('col-md-3')),
@@ -94,7 +114,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
     '#maxlength' => 200,
     '#default_value' => $text,
     '#title_display' => 'invisible',
-    '#attributes' => array('placeholder' => t('Search OiRA tools')),
+    '#attributes' => array('placeholder' => t('Search')),
   );
   $form['left-column']['search']['submit'] = array(
     '#type' => 'submit',
@@ -122,7 +142,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
-  $facets_def = hwc_practical_tool_get_facets_def();
+  $facets_def = call_user_func($facet_callback);
 
   // Find if any of this form params are set on GET.
   $is_searched = !empty(array_intersect(array_keys($_GET), array_merge(array_keys($facets_def), array('text', 'sort'))));
@@ -130,16 +150,16 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
   if (!$is_searched) {
     // When no search performed by user, try to filter by current language.
     $try_native = TRUE;
-    $_GET['field_language:value'][] = $language->language;
+    $_GET[$lang_field][] = $language->language;
   }
 
-  $response = hwc_practical_tool_search($form_state, $per_page);
+  $response = call_user_func($search_callback, $form_state, $per_page);
 
   if ($try_native && empty($response['result count'])) {
     // If no results are available for current language
     // perform the search with no lang.
-    $_GET['field_language:value'] = array('en');
-    $response = hwc_practical_tool_search($form_state, $per_page);
+    $_GET[$lang_field] = array('en');
+    $response = call_user_func($search_callback, $form_state, $per_page);
   }
   $facets = array();
   if (!empty($response['search_api_facets'])) {
@@ -171,7 +191,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
             $query = _hwc_practical_tool_strip_param_value($query_params, $field_name, $val) ?: ['text' => ''];
             $form['left-column']['search']['filters'][] = array(
               '#type' => 'markup',
-              '#markup' => l($filter_label, 'oira-tools', array('query' => $query, 'html' => TRUE)),
+              '#markup' => l($filter_label, $action, array('query' => $query, 'html' => TRUE)),
             );
           }
         }
@@ -211,7 +231,7 @@ function hwc_practical_tool_menu_tools_form($form, $form_state) {
       '#prefix' => '<span class="count-container pull-right">',
       '#suffix' => '</span>',
       '#type' => 'markup',
-      '#markup' => t('Showing @start - @limit from @total tools', array('@start' => $start + 1, '@limit' => $start + count($nids), '@total' => $response['result count'])),
+      '#markup' => t('Showing @start - @limit from @total', array('@start' => $start + 1, '@limit' => $start + count($nids), '@total' => $response['result count'])),
     );
   }
   else {
