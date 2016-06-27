@@ -385,7 +385,7 @@ function oira_country_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'page-country-lising',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -425,6 +425,8 @@ function oira_country_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
+        'class' => 'country-partners-lising',
+        'hide_empty' => 0,
       ),
       'center' => array(
         'type' => 'region',

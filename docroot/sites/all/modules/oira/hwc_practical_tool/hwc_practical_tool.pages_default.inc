@@ -442,7 +442,7 @@ function hwc_practical_tool_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'oira-tools-search-page',
     'css_id' => '',
     'css' => '',
     'contexts' => array(
@@ -472,6 +472,16 @@ function hwc_practical_tool_default_page_manager_pages() {
           0 => 'main',
         ),
         'parent' => NULL,
+        'class' => '',
+        'column_class' => '',
+        'row_class' => '',
+        'region_class' => '',
+        'no_scale' => FALSE,
+        'fixed_width' => '',
+        'column_separation' => '0.5em',
+        'region_separation' => '0.5em',
+        'row_separation' => '0.5em',
+        'hide_empty' => 0,
       ),
       'main' => array(
         'type' => 'column',
@@ -490,6 +500,8 @@ function hwc_practical_tool_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
+        'class' => 'panel-page-introduction-text',
+        'hide_empty' => 0,
       ),
       'center' => array(
         'type' => 'region',
@@ -507,7 +519,7 @@ function hwc_practical_tool_default_page_manager_pages() {
           0 => 'content',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'oira-search-form-container',
         'hide_empty' => 0,
       ),
       'content' => array(

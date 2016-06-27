@@ -255,7 +255,15 @@ function oira_partner_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+        'entity_id' => '69',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
@@ -294,7 +302,7 @@ function oira_partner_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
-        'class' => 'container',
+        'class' => 'panel-page-introduction-text',
         'hide_empty' => 0,
       ),
       'center' => array(
@@ -303,6 +311,8 @@ function oira_partner_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
+        'class' => 'container',
+        'hide_empty' => 0,
       ),
       1 => array(
         'type' => 'row',
@@ -337,6 +347,36 @@ function oira_partner_default_page_manager_pages() {
   $display->uuid = 'c1fc1590-4876-41f3-873f-953d5a594e2c';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-b67b8bd9-3890-44da-9a34-3d002cb61e46';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b67b8bd9-3890-44da-9a34-3d002cb61e46';
+    $display->content['new-b67b8bd9-3890-44da-9a34-3d002cb61e46'] = $pane;
+    $display->panels['center'][0] = 'new-b67b8bd9-3890-44da-9a34-3d002cb61e46';
     $pane = new stdClass();
     $pane->pid = 'new-063d71d4-5c7e-458f-a925-c7b31d0e489a';
     $pane->panel = 'list';
@@ -386,7 +426,10 @@ function oira_partner_default_page_manager_pages() {
   $page->admin_title = 'National Partners';
   $page->admin_description = '';
   $page->path = 'national-partners';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -406,7 +449,7 @@ function oira_partner_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'page-national-partners',
     'css_id' => '',
     'css' => '',
     'contexts' => array(
@@ -456,7 +499,7 @@ function oira_partner_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'panel-page-introduction-text',
         'hide_empty' => 1,
       ),
       'center' => array(
@@ -475,7 +518,7 @@ function oira_partner_default_page_manager_pages() {
           0 => 'content',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'partners-listing-tabs-container',
         'hide_empty' => 1,
       ),
       'content' => array(
@@ -603,7 +646,7 @@ function oira_partner_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
+    'body_classes_to_add' => 'page-sectorial-social-partners',
     'css_id' => '',
     'css' => '',
     'contexts' => array(
@@ -653,6 +696,8 @@ function oira_partner_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
+        'class' => 'panel-page-introduction-text',
+        'hide_empty' => 0,
       ),
       'center' => array(
         'type' => 'region',
@@ -670,7 +715,7 @@ function oira_partner_default_page_manager_pages() {
           0 => 'content',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'partners-listing-tabs-container',
         'hide_empty' => 0,
       ),
       'content' => array(
