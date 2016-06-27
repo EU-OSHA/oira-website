@@ -78,7 +78,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Workbench Access: Section */
+  /* Field: Workbench Access: Partner */
   $handler->display->display_options['fields']['section']['id'] = 'section';
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';

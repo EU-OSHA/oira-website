@@ -138,7 +138,10 @@ function osha_resources_default_panels_mini() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'additional-resources-flickr-pane',
+      'css_class' => 'additional-resources-pane',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();

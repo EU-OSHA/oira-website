@@ -38,8 +38,8 @@ function oira_frontend_menu_link__menu_block($variables) {
     $output_image = l($image, $element['#href'], array('html' => TRUE));
   }
   return '<li' . drupal_attributes($element['#attributes']) . '>
-    <div class="introduction-title">' . $output_link . '</div>
     <div class="introduction-image">' . $output_image . '</div>
+    <div class="introduction-title">' . $output_link . '</div>
     </li>';
 }
 /**
@@ -447,4 +447,26 @@ function oira_frontend_top_anchor(&$vars) {
     'html' => TRUE,
   );
   $vars['top_anchor'] = l('<img alt="Anchor to top" src="'.file_create_url(path_to_theme().'/images/anchor-top.png').'" />', '', $options);
+}
+
+function oira_frontend_qt_quicktabs_tabset($vars) {
+  $variables = array(
+    'attributes' => array(
+      'class' => 'quicktabs-tabs quicktabs-style-' . $vars['tabset']['#options']['style'],
+    ),
+    'items' => array(),
+  );
+  foreach (element_children($vars['tabset']['tablinks']) as $key) {
+    $item = array();
+    if (is_array($vars['tabset']['tablinks'][$key])) {
+      $tab = $vars['tabset']['tablinks'][$key];
+      if ($key == $vars['tabset']['#options']['active']) {
+        $item['class'] = array('active');
+      }
+      $item['data'] = drupal_render($tab);
+      $variables['items'][] = $item;
+    }
+  }
+  $ul = theme('item_list', $variables);
+  return '<div class="quicktabs-tabs-container container">' . $ul . '</div>';
 }
