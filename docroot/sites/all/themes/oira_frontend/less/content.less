@@ -634,13 +634,93 @@ a.more-link{
 		    }
 		}
 	}
-	.panels-flexible-row-new-13{
+	//ADITIONAL RESOURCES
+	.panels-flexible-region-new-add_res-inside{
 		background-color: @color-background-light-purple;
-		.pane-additional-resources{
-			border-bottom: 2px solid @color-text-purple;
-			padding-bottom: 23px;
-			margin-bottom: 20px;
+		.pane-node-field-aditional-resources{
+			h3{
+				font-size: @font-size2-2;
+				margin-bottom: 25px;
+				&:after{
+					.section-icons("../images/icons/133.png");
+				}
+			}
+			.pane-additional-resources{
+				border-bottom: 2px solid @color-text-purple;
+				padding-bottom: 23px;
+				margin-bottom: 20px;
+				h4{
+					font-family: "Oswald";
+					font-size: @font-size1-4;
+					font-weight: normal;
+					margin-bottom: 15px;
+				}
+			}
+			#additional-resources-youtube-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/155.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+				.node-youtube{
+					.field-name-title-field{
+						padding: 15px;
+					}
+				}
+			}
+			#additional-resources-slideshare-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/150.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+				.node-slideshare{
+					.field-name-title-field{
+						padding: 15px;
+					}
+				}
+			}
+			#additional-resources-news-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/005.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+			}
+			#additional-resources-external_url-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/175.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+				.node-external-url{
+					.field-name-field-external-url{
+						a{
+							text-align: right;
+							color: @color-see-more;
+						}
+					}
+				}
+			}
+			#additional-resources-flickr-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/160.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+			}
 		}
+		
 		#additional-resources-external_url-pane{
 			.view-additional-resources{
 				.views-item-columns-container{
@@ -649,6 +729,7 @@ a.more-link{
 			}
 		}
 	}
+	//END ADITIONAL RESOURCES
 
 	.oira-heading-pagination-container{
 		overflow: hidden;
@@ -1488,7 +1569,6 @@ a.more-link{
 							height: auto;
 							padding-right: 35px;
 						}
-
 					}
 					#edit-submit{
 						position: absolute;
@@ -1540,21 +1620,20 @@ a.more-link{
 						padding-top: 10px;
 						clear: both;
 						margin-top: 15px;
-
 						input.form-checkbox{
 							display: none;
 						}
 						label{
 							padding-left: 0px;
 							margin-bottom: 0px;
-							&:first-child{
-								font-family: @font-family-base-2;
-								font-size: @font-size1-2;
-								font-weight: normal;
-								display: block;
-								margin-bottom: 10px;
-								cursor: pointer;
-							}
+						}
+						label:first-child{
+							font-family: @font-family-base-2;
+							font-size: @font-size1-2;
+							font-weight: normal;
+							display: block;
+							margin-bottom: 10px;
+							cursor: pointer;
 							&:after{
 								content: "\e250";
 								font-family: "Glyphicons Halflings";
@@ -1563,7 +1642,7 @@ a.more-link{
 						}
 						.area-shown{
 							&:after{
-								content: "\e252";
+								content: "\e252" !important;
 								font-family: "Glyphicons Halflings";
 								margin-left: 10px;
 							}
@@ -1720,6 +1799,89 @@ a.more-link{
 	}
 	.pane-node-body{
 		font-weight: bold;
+	}
+	.quicktabs-tabs{
+		background-color: @color-primary-dark;
+		display: table;
+		width: 100%;
+		li{
+			display: table-cell;
+			a{
+				color: @color-white;
+			}
+		}
+	}
+	.quicktabs-tabpage {
+		.hwc-alphabet-container{
+			margin-right: 15px;
+			margin-left: 15px;
+			text-transform: uppercase;
+			.hwc-char-link{
+				margin: 0px 10px;
+			}
+		}
+		div[id ^= "hwc-char-0"]{
+			color:@color-text-purple-darker;
+			font-family: "Oswald";
+			font-size: @font-size2-2;
+			text-transform: uppercase;
+			background-color: @color-primary;
+			margin: 30px 15px 0px 15px;
+    		padding: 15px 30px 0px 30px;
+		}
+		.quicktabs-views-group{
+			background-color: @color-primary;
+			padding: 0px 30px;
+			margin: 0px 15px;
+			
+			.views-field.views-field-nothing{
+				border-top: 2px solid @color-primary-dark;
+				padding: 30px 15px;
+				padding-left: 0px;
+				overflow: hidden;
+				.col-sm-2{
+					padding-left: 0px;
+				}
+				.field-name-field-country{
+					background-color: inherit;
+					margin: 0px;
+					padding: 0px;
+					font-style: normal !important;
+					font-size: 1em;
+				}
+				.hwc-alpha-pager-view-title-field{
+					h3{
+						margin-top: 10px;
+						a{
+							color: @color-text-grey;
+							font-weight: bold;
+						}
+					}
+				}
+				.partner-content-label{
+					display: table-cell;
+				    text-align: center;
+				    width: 25%;
+				    margin-top: 25px;
+				    border-left: 2px solid @color-primary-dark;
+
+					label{
+						display: block;
+						color: @color-text-purple-darker;
+						min-height: 40px;
+					    line-height: 16px;
+					    font-weight: normal;
+					}
+					span{
+						display: block;
+						color: @color-text-purple-darker;
+						font-size: @font-size2-2;
+					    line-height: 16px;
+					    font-weight: bold;
+					}
+				}
+			}
+		}
 	}
 }
 /*END National social partners*/
