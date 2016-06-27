@@ -444,7 +444,7 @@ function oira_country_default_page_manager_pages() {
           0 => 'top',
         ),
         'parent' => 'main',
-        'class' => 'strong-background',
+        'class' => 'strong-background country-listing-header',
         'hide_empty' => 1,
       ),
       'top' => array(
