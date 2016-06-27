@@ -16,7 +16,48 @@ function hwc_practical_tool_views_data_alter(&$data) {
       'handler' => 'Hwc_practical_tool_handler_latest_tools',
     ),
   );
+  $data['hwc_practical_tool']['tool_type_field'] = array(
+    'title' => 'Tool type',
+    'help' => 'Oira tool or e-tool.',
+    'field' => array(
+      'handler' => 'tool_handler_tool_type',
+    ),
+  );
 }
+
+/**
+ * Provides a custom views field.
+ */
+class tool_handler_tool_type extends views_handler_field {
+  function option_definition() {
+    $options = parent::option_definition();
+    return $options;
+  }
+
+  function options_form(&$form, &$form_state) {
+    parent::options_form($form, $form_state);
+  }
+
+  function query() {
+    // do nothing -- to override the parent query.
+  }
+
+  function render($data) {
+    $output = NULL;
+    $field = current($data->_field_data);
+    if (!empty($field['entity'])) {
+      $node = $field['entity'];
+      if ($node->type == 'wiki_page') {
+        $output = t('E-tool');
+      }
+      else {
+        $output = t('OiRA tool');
+      }
+    }
+    return $output;
+  }
+}
+
 
 /**
  *
