@@ -38,8 +38,8 @@ function oira_frontend_menu_link__menu_block($variables) {
     $output_image = l($image, $element['#href'], array('html' => TRUE));
   }
   return '<li' . drupal_attributes($element['#attributes']) . '>
-    <div class="introduction-title">' . $output_link . '</div>
     <div class="introduction-image">' . $output_image . '</div>
+    <div class="introduction-title">' . $output_link . '</div>
     </li>';
 }
 /**
