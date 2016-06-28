@@ -932,14 +932,6 @@ function hwc_practical_tool_views_default_views() {
     'image_link' => '',
     'field_formatter_class' => '',
   );
-  /* Field: Content: Type */
-  $handler->display->display_options['fields']['type']['id'] = 'type';
-  $handler->display->display_options['fields']['type']['table'] = 'node';
-  $handler->display->display_options['fields']['type']['field'] = 'type';
-  $handler->display->display_options['fields']['type']['label'] = '';
-  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['type']['element_type'] = 'div';
-  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -1023,13 +1015,20 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['tools_see_more']['label'] = '';
   $handler->display->display_options['fields']['tools_see_more']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tools_see_more']['element_label_colon'] = FALSE;
+  /* Field: HWC practical tool: Tool type */
+  $handler->display->display_options['fields']['tool_type_field']['id'] = 'tool_type_field';
+  $handler->display->display_options['fields']['tool_type_field']['table'] = 'hwc_practical_tool';
+  $handler->display->display_options['fields']['tool_type_field']['field'] = 'tool_type_field';
+  $handler->display->display_options['fields']['tool_type_field']['label'] = '';
+  $handler->display->display_options['fields']['tool_type_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tool_type_field']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="tool-teaser-content-wrapper">
-[type]
+[tool_type_field]
 [title_field]
 [body]
 [field_language] 
@@ -1118,7 +1117,7 @@ function hwc_practical_tool_views_default_views() {
     t('New tools'),
     t('See more tools'),
     t('<div class="tool-teaser-content-wrapper">
-[type]
+[tool_type_field]
 [title_field]
 [body]
 [field_language] 
