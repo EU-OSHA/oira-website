@@ -235,14 +235,30 @@ a.more-link{
 			}
 			li{
 				display: inline-block;
-			    background-color: red;//testing por ahora
-			    width: 25px;
-			    height: 25px;
+			    width: 23px;
+			    height: 23px;
 			    overflow: hidden;
+			    margin-right: 7px;
+			    a{
+			    	padding-left: 30px;
+			    }
+			}
+			li.hwc-share-widget-facebook{
+				background: url('../images/icons/189b.png') no-repeat;
+				background-size: 23px;
+			}
+			li.hwc-share-widget-twitter{
+				background: url('../images/icons/195b.png') no-repeat;
+				background-size: 23px;
+			}
+			li.napo-share-widget-linkedin{
+				background: url('../images/icons/201b.png') no-repeat;
+				background-size: 23px;
 			}
 		}
 	}
 }
+
 .hwc-share-widget{
 	ul{
 		list-style: none;
@@ -251,13 +267,28 @@ a.more-link{
 		}
 		li{
 			display: inline-block;
-		    background-color: red;//testing por ahora
-		    width: 25px;
-		    height: 25px;
+		    width: 23px;
+		    height: 23px;
 		    overflow: hidden;
+		    margin-right: 7px;
+		    a{
+		    	padding-left: 30px;
+		    }
 		}
 		.label{
 			display: none;
+		}
+		li.hwc-share-widget-facebook{
+			background: url('../images/icons/189b.png') no-repeat;
+			background-size: 23px;
+		}
+		li.hwc-share-widget-twitter{
+			background: url('../images/icons/195b.png') no-repeat;
+			background-size: 23px;
+		}
+		li.napo-share-widget-linkedin{
+			background: url('../images/icons/201b.png') no-repeat;
+			background-size: 23px;
 		}
 	}
 }
@@ -276,8 +307,81 @@ a.more-link{
 	}
 }
 
+.searched-text{
+	font-family: "Oswald";
+	font-size: @font-size2-6;
+	color: @color-text-purple-darker;
+	&:before{
+		content: "\"";
+	}
+	&:after{
+		content: " \"";
+	}
+}
+
 /*END estilos comunes
 ************************************************************************************/
+
+/*ESTILOS LOGIN
+********************************************************/
+.page-user{
+	h1.page-header{
+		display: block;
+		width: 400px;
+		margin: 30px auto;
+	}
+	ul.tabs--primary.nav.nav-tabs{
+		display: block;
+		width: 400px;
+		margin: 0 auto;
+		li{
+			a{
+				background-color: @color-text-grey;
+				opacity: 0.1;
+				color: @color-white;
+				&:hover{
+					opacity: 0.5;
+				}
+			}
+		}
+		.active{
+			a{
+				background-color: @color-text-purple-darker;
+				opacity: 1;
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.region.region-content{
+		display: block;
+		width: 400px;
+		margin: 0 auto;
+		margin-bottom: 50px;
+		padding: 20px 0px;
+		#user-login{
+			label{
+				color: @color-text-purple-darker;
+			}
+			input{
+				-webkit-box-shadow: 0 0 0px 1000px white inset;
+			}
+			button{
+				color: @color-white;
+				background-color: @color-see-more;
+				outline: none;
+				border: none;
+				width: 100%;
+				margin-top: 10px;
+				&:hover{
+					background-color: @color-text-grey;
+				}
+			}
+		}
+	}
+}
+/*END ESTILOS LOGIN*/
 
 /*ESTILOS HOME
 ********************************************************/
@@ -558,6 +662,9 @@ a.more-link{
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article{
+	h1{
+		color: @color-text-grey;
+	}
 	h2{
 		font-size: @font-size2;
 		line-height: 1.4em !important;//testing quitar cuando se introduzcan bien los contenidos
@@ -579,23 +686,12 @@ a.more-link{
 		ul{
 			margin-left: 30px;
 		}
-	}
-	.pane-node-share-widget{
-		margin: 25px 0px;
-		.hwc-share-widget{
-			ul{
-				list-style: none;
-				li.share-this-article{
-					display: none;
-				}
-				li{
-					display: inline-block;
-				    background-color: red;//testing por ahora
-				    width: 25px;
-				    height: 25px;
-				    overflow: hidden;
-				}
-			}
+		a.article-link{
+			font-style: italic;
+			text-decoration: underline !important;
+		}
+		.highlighted-text{
+			font-weight: bold;
 		}
 	}
 
@@ -1826,13 +1922,13 @@ a.more-link{
 			font-size: @font-size2-2;
 			text-transform: uppercase;
 			background-color: @color-primary;
-			margin: 30px 15px 0px 15px;
+			margin: 30px 15px 0px 0px;
     		padding: 15px 30px 0px 30px;
 		}
 		.quicktabs-views-group{
 			background-color: @color-primary;
 			padding: 0px 30px;
-			margin: 0px 15px;
+			margin: 0px 0px;
 			
 			.views-field.views-field-nothing{
 				border-top: 2px solid @color-primary-dark;
@@ -1934,10 +2030,11 @@ a.more-link{
 	}
 	.oira-community-partners-block{
 		margin-bottom: 20px;
+		padding-bottom: 40px;
 		h2.pane-title{
 			color: @color-white;
 			border-bottom: 2px solid @color-white;
-			margin-bottom: 50px;
+			margin-bottom: 40px;
 			padding-bottom: 15px;
 			font-size: 2.2em;
 	    	font-family: 'Oswald';
@@ -1952,45 +2049,18 @@ a.more-link{
 			li{
 				display: table-cell;
 				width: 33%;
-				a{
-					color: @color-white;
-					font-style: italic;
-					&:before{
-						content: "";
-					    display: block;
-					    width: 150px;
-					    height: 150px;
-					    border-radius: 50%;
-					    margin: 0 auto 15px auto;
+				.introduction-image{
+					img{
+						margin-bottom: 15px;
 					}
 				}
-			}
-			li:nth-child(1){
-				a{
-					&:before{
-						background: url(../images/icons/096.png) no-repeat white;
-						background-size: 65%;
-					    background-position: 50% 50%;
+				.introduction-title{
+					a{
+						color: @color-white;
+						font-style: italic;
 					}
 				}
-			}
-			li:nth-child(2){
-				a{
-					&:before{
-						background: url(../images/icons/105.png) no-repeat white;
-						background-size: 65%;
-					    background-position: 50% 50%;
-					}
-				}
-			}
-			li:nth-child(3){
-				a{
-					&:before{
-						background: url(../images/icons/114.png) no-repeat white;
-						background-size: 65%;
-					    background-position: 50% 50%;
-					}
-				}
+				
 			}
 		}
 	}

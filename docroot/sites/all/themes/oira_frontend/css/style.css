@@ -6916,10 +6916,25 @@ a.more-link:before {
 }
 .pane-node-share-widget .hwc-share-widget ul li {
   display: inline-block;
-  background-color: red;
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   overflow: hidden;
+  margin-right: 7px;
+}
+.pane-node-share-widget .hwc-share-widget ul li a {
+  padding-left: 30px;
+}
+.pane-node-share-widget .hwc-share-widget ul li.hwc-share-widget-facebook {
+  background: url('../images/icons/189b.png') no-repeat;
+  background-size: 23px;
+}
+.pane-node-share-widget .hwc-share-widget ul li.hwc-share-widget-twitter {
+  background: url('../images/icons/195b.png') no-repeat;
+  background-size: 23px;
+}
+.pane-node-share-widget .hwc-share-widget ul li.napo-share-widget-linkedin {
+  background: url('../images/icons/201b.png') no-repeat;
+  background-size: 23px;
 }
 .hwc-share-widget ul {
   list-style: none;
@@ -6929,13 +6944,28 @@ a.more-link:before {
 }
 .hwc-share-widget ul li {
   display: inline-block;
-  background-color: red;
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   overflow: hidden;
+  margin-right: 7px;
+}
+.hwc-share-widget ul li a {
+  padding-left: 30px;
 }
 .hwc-share-widget ul .label {
   display: none;
+}
+.hwc-share-widget ul li.hwc-share-widget-facebook {
+  background: url('../images/icons/189b.png') no-repeat;
+  background-size: 23px;
+}
+.hwc-share-widget ul li.hwc-share-widget-twitter {
+  background: url('../images/icons/195b.png') no-repeat;
+  background-size: 23px;
+}
+.hwc-share-widget ul li.napo-share-widget-linkedin {
+  background: url('../images/icons/201b.png') no-repeat;
+  background-size: 23px;
 }
 .field-name-field-tool-link a {
   color: #58585a;
@@ -6948,8 +6978,71 @@ a.more-link:before {
   color: #10b2e4;
   margin-left: 10px;
 }
+.searched-text {
+  font-family: "Oswald";
+  font-size: 2.6em;
+  color: #786586;
+}
+.searched-text:before {
+  content: "\"";
+}
+.searched-text:after {
+  content: " \"";
+}
 /*END estilos comunes
 ************************************************************************************/
+/*ESTILOS LOGIN
+********************************************************/
+.page-user h1.page-header {
+  display: block;
+  width: 400px;
+  margin: 30px auto;
+}
+.page-user ul.tabs--primary.nav.nav-tabs {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+.page-user ul.tabs--primary.nav.nav-tabs li a {
+  background-color: #58585a;
+  opacity: 0.1;
+  color: #ffffff;
+}
+.page-user ul.tabs--primary.nav.nav-tabs li a:hover {
+  opacity: 0.5;
+}
+.page-user ul.tabs--primary.nav.nav-tabs .active a {
+  background-color: #786586;
+  opacity: 1;
+}
+.page-user ul.tabs--primary.nav.nav-tabs .active a:hover {
+  opacity: 1;
+}
+.page-user .region.region-content {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 20px 0px;
+}
+.page-user .region.region-content #user-login label {
+  color: #786586;
+}
+.page-user .region.region-content #user-login input {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.page-user .region.region-content #user-login button {
+  color: #ffffff;
+  background-color: #10b2e4;
+  outline: none;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+}
+.page-user .region.region-content #user-login button:hover {
+  background-color: #58585a;
+}
+/*END ESTILOS LOGIN*/
 /*ESTILOS HOME
 ********************************************************/
 #block-system-main .panels-flexible-region-new-slider {
@@ -7173,6 +7266,9 @@ a.more-link:before {
 /*END HOME*/
 /*ESTILOS ARTICLES
 ****************************************************************/
+.node-type-article h1 {
+  color: #58585a;
+}
 .node-type-article h2 {
   font-size: 2em;
   line-height: 1.4em !important;
@@ -7193,21 +7289,12 @@ a.more-link:before {
 .node-type-article .pane-node-body ul {
   margin-left: 30px;
 }
-.node-type-article .pane-node-share-widget {
-  margin: 25px 0px;
+.node-type-article .pane-node-body a.article-link {
+  font-style: italic;
+  text-decoration: underline !important;
 }
-.node-type-article .pane-node-share-widget .hwc-share-widget ul {
-  list-style: none;
-}
-.node-type-article .pane-node-share-widget .hwc-share-widget ul li.share-this-article {
-  display: none;
-}
-.node-type-article .pane-node-share-widget .hwc-share-widget ul li {
-  display: inline-block;
-  background-color: red;
-  width: 25px;
-  height: 25px;
-  overflow: hidden;
+.node-type-article .pane-node-body .highlighted-text {
+  font-weight: bold;
 }
 .node-type-article .panels-flexible-row-new-10 {
   padding-bottom: 0px;
@@ -8281,13 +8368,13 @@ a.more-link:before {
   font-size: 2.2em;
   text-transform: uppercase;
   background-color: #dfd8e4;
-  margin: 30px 15px 0px 15px;
+  margin: 30px 15px 0px 0px;
   padding: 15px 30px 0px 30px;
 }
 .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group {
   background-color: #dfd8e4;
   padding: 0px 30px;
-  margin: 0px 15px;
+  margin: 0px 0px;
 }
 .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing {
   border-top: 2px solid #786586;
@@ -8372,11 +8459,12 @@ a.more-link:before {
 }
 .page-oira-community .oira-community-partners-block {
   margin-bottom: 20px;
+  padding-bottom: 40px;
 }
 .page-oira-community .oira-community-partners-block h2.pane-title {
   color: #ffffff;
   border-bottom: 2px solid #ffffff;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   padding-bottom: 15px;
   font-size: 2.2em;
   font-family: 'Oswald';
@@ -8398,32 +8486,12 @@ a.more-link:before {
   display: table-cell;
   width: 33%;
 }
-.page-oira-community .oira-community-partners-block .menu li a {
+.page-oira-community .oira-community-partners-block .menu li .introduction-image img {
+  margin-bottom: 15px;
+}
+.page-oira-community .oira-community-partners-block .menu li .introduction-title a {
   color: #ffffff;
   font-style: italic;
-}
-.page-oira-community .oira-community-partners-block .menu li a:before {
-  content: "";
-  display: block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 auto 15px auto;
-}
-.page-oira-community .oira-community-partners-block .menu li:nth-child(1) a:before {
-  background: url(../images/icons/096.png) no-repeat white;
-  background-size: 65%;
-  background-position: 50% 50%;
-}
-.page-oira-community .oira-community-partners-block .menu li:nth-child(2) a:before {
-  background: url(../images/icons/105.png) no-repeat white;
-  background-size: 65%;
-  background-position: 50% 50%;
-}
-.page-oira-community .oira-community-partners-block .menu li:nth-child(3) a:before {
-  background: url(../images/icons/114.png) no-repeat white;
-  background-size: 65%;
-  background-position: 50% 50%;
 }
 .page-oira-community .panels-flexible-row-new-2 h2 {
   font-size: 1.6em;
