@@ -327,12 +327,12 @@ a.more-link{
 .page-user{
 	h1.page-header{
 		display: block;
-		width: 400px;
+		width: 500px;
 		margin: 30px auto;
 	}
 	ul.tabs--primary.nav.nav-tabs{
 		display: block;
-		width: 400px;
+		width: 500px;
 		margin: 0 auto;
 		li{
 			a{
@@ -356,7 +356,7 @@ a.more-link{
 	}
 	.region.region-content{
 		display: block;
-		width: 400px;
+		width: 500px;
 		margin: 0 auto;
 		margin-bottom: 50px;
 		padding: 20px 0px;
@@ -699,14 +699,29 @@ a.more-link{
 		padding-bottom: 0px;
 		background-color: @color-primary-dark;
 		margin-bottom: 10px;
-		.panels-flexible-column-new-main{
-			//height: 244px;
+		.pane-oira-blocks-oshwiki-featured-articles{
+			h3{
+				&:after{
+					.section-icons("../images/icons/164.png");
+					width: 35px;
+				}
+			}
 		}
-		.panels-flexible-column-new-2{
-			border-left: 10px solid @color-white;
+		.pane-oira-blocks-related-ncw-publications{
+			h3{
+				&:after{
+					.section-icons("../images/icons/169.png");
+					width: 35px;
+				}
+			}
 		}
-		.panels-flexible-column-new-3{
-			border-left: 10px solid @color-white;
+		.pane-news{
+			h3{
+				&:after{
+					.section-icons("../images/icons/004.png");
+					width: 35px;
+				}
+			}
 		}
 		#mini-panel-related_content{
 			h3.pane-title{
@@ -1747,6 +1762,9 @@ a.more-link{
 					.form-item-field-sector{
 						border-bottom: 2px solid @color-white;
 					}
+					.form-type-checkboxes:last-child{
+						border-bottom: 2px solid @color-white;
+					}
 				}
 
 				#edit-content{
@@ -1922,7 +1940,7 @@ a.more-link{
 			font-size: @font-size2-2;
 			text-transform: uppercase;
 			background-color: @color-primary;
-			margin: 30px 15px 0px 0px;
+			margin: 30px 0px 0px 0px;
     		padding: 15px 30px 0px 30px;
 		}
 		.quicktabs-views-group{

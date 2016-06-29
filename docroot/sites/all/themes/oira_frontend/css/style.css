@@ -6546,6 +6546,12 @@ button.close {
   display: inline-block;
   float: left;
 }
+.top-header .header-blocks #block-oira-blocks-oira-print-friendly a.printfriendly:before {
+  content: url("../images/icons/220r.png");
+}
+.top-header .header-blocks #block-oira-blocks-oira-print-friendly a.printfriendly .glyphicon-print {
+  display: none;
+}
 .top-header .header-blocks #block-text-resize-0 {
   display: inline-block;
   float: left;
@@ -6553,16 +6559,34 @@ button.close {
 .top-header .header-blocks #block-text-resize-0 #text_resize_decrease {
   margin: 0px;
   float: left;
-  width: 25px;
+  width: 17px;
   height: initial;
-  margin-right: 5px;
+  margin-right: 0px;
+  text-transform: lowercase;
+  font-size: 1.4em;
+  text-indent: 0;
+  background: none;
+  line-height: 30px;
+  color: #003399;
+}
+.top-header .header-blocks #block-text-resize-0 #text_resize_decrease sup {
+  display: none;
 }
 .top-header .header-blocks #block-text-resize-0 #text_resize_increase {
   margin: 0px;
   float: left;
-  width: 25px;
+  width: 20px;
   height: initial;
   margin-right: 10px;
+  text-transform: lowercase;
+  font-size: 2em;
+  text-indent: 0;
+  background: none;
+  line-height: 25px;
+  color: #003399;
+}
+.top-header .header-blocks #block-text-resize-0 #text_resize_increase sup {
+  display: none;
 }
 .top-header .header-blocks #block-menu-block-1 {
   display: inline-block;
@@ -6580,6 +6604,12 @@ button.close {
   margin-bottom: 7px;
   clear: both;
   display: inline-block;
+}
+.top-header .header-blocks #block-search-form .ui-theme-basic-green.ui-autocomplete-input {
+  background-position: 99% 7px;
+}
+.top-header .header-blocks #block-search-form .ui-theme-basic-green.ui-autocomplete-loading {
+  background-position: 99% -13px;
 }
 .top-header .header-blocks #block-search-form #search-block-form input {
   border-radius: 0px;
@@ -6995,12 +7025,12 @@ a.more-link:before {
 ********************************************************/
 .page-user h1.page-header {
   display: block;
-  width: 400px;
+  width: 500px;
   margin: 30px auto;
 }
 .page-user ul.tabs--primary.nav.nav-tabs {
   display: block;
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
 }
 .page-user ul.tabs--primary.nav.nav-tabs li a {
@@ -7020,7 +7050,7 @@ a.more-link:before {
 }
 .page-user .region.region-content {
   display: block;
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   margin-bottom: 50px;
   padding: 20px 0px;
@@ -7301,11 +7331,32 @@ a.more-link:before {
   background-color: #786586;
   margin-bottom: 10px;
 }
-.node-type-article .panels-flexible-row-new-10 .panels-flexible-column-new-2 {
-  border-left: 10px solid #ffffff;
+.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-oshwiki-featured-articles h3:after {
+  content: "";
+  background: url("../images/icons/164.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+  width: 35px;
 }
-.node-type-article .panels-flexible-row-new-10 .panels-flexible-column-new-3 {
-  border-left: 10px solid #ffffff;
+.node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-related-ncw-publications h3:after {
+  content: "";
+  background: url("../images/icons/169.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+  width: 35px;
+}
+.node-type-article .panels-flexible-row-new-10 .pane-news h3:after {
+  content: "";
+  background: url("../images/icons/004.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+  width: 35px;
 }
 .node-type-article .panels-flexible-row-new-10 #mini-panel-related_content h3.pane-title {
   color: #ffffff;
@@ -8218,6 +8269,9 @@ a.more-link:before {
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-item-field-sector {
   border-bottom: 2px solid #ffffff;
 }
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-checkboxes:last-child {
+  border-bottom: 2px solid #ffffff;
+}
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content {
   background-color: #dfd8e4;
   padding-bottom: 50px;
@@ -8368,7 +8422,7 @@ a.more-link:before {
   font-size: 2.2em;
   text-transform: uppercase;
   background-color: #dfd8e4;
-  margin: 30px 15px 0px 0px;
+  margin: 30px 0px 0px 0px;
   padding: 15px 30px 0px 30px;
 }
 .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group {
