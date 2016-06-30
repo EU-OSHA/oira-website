@@ -452,7 +452,7 @@ function oira_frontend_top_anchor(&$vars) {
 function oira_frontend_qt_quicktabs_tabset($vars) {
   $variables = array(
     'attributes' => array(
-      'class' => 'quicktabs-tabs quicktabs-style-' . $vars['tabset']['#options']['style'],
+      'class' => array('quicktabs-tabs quicktabs-style-' . $vars['tabset']['#options']['style'], 'container'),
     ),
     'items' => array(),
   );
@@ -468,5 +468,5 @@ function oira_frontend_qt_quicktabs_tabset($vars) {
     }
   }
   $ul = theme('item_list', $variables);
-  return '<div class="quicktabs-tabs-container container">' . $ul . '</div>';
+  return '<div class="quicktabs-tabs-container">' . $ul . '</div>';
 }
