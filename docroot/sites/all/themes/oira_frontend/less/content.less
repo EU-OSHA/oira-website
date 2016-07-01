@@ -235,14 +235,30 @@ a.more-link{
 			}
 			li{
 				display: inline-block;
-			    background-color: red;//testing por ahora
-			    width: 25px;
-			    height: 25px;
+			    width: 23px;
+			    height: 23px;
 			    overflow: hidden;
+			    margin-right: 7px;
+			    a{
+			    	padding-left: 30px;
+			    }
+			}
+			li.hwc-share-widget-facebook{
+				background: url('../images/icons/189b.png') no-repeat;
+				background-size: 23px;
+			}
+			li.hwc-share-widget-twitter{
+				background: url('../images/icons/195b.png') no-repeat;
+				background-size: 23px;
+			}
+			li.napo-share-widget-linkedin{
+				background: url('../images/icons/201b.png') no-repeat;
+				background-size: 23px;
 			}
 		}
 	}
 }
+
 .hwc-share-widget{
 	ul{
 		list-style: none;
@@ -251,13 +267,28 @@ a.more-link{
 		}
 		li{
 			display: inline-block;
-		    background-color: red;//testing por ahora
-		    width: 25px;
-		    height: 25px;
+		    width: 23px;
+		    height: 23px;
 		    overflow: hidden;
+		    margin-right: 7px;
+		    a{
+		    	padding-left: 30px;
+		    }
 		}
 		.label{
 			display: none;
+		}
+		li.hwc-share-widget-facebook{
+			background: url('../images/icons/189b.png') no-repeat;
+			background-size: 23px;
+		}
+		li.hwc-share-widget-twitter{
+			background: url('../images/icons/195b.png') no-repeat;
+			background-size: 23px;
+		}
+		li.napo-share-widget-linkedin{
+			background: url('../images/icons/201b.png') no-repeat;
+			background-size: 23px;
 		}
 	}
 }
@@ -276,8 +307,81 @@ a.more-link{
 	}
 }
 
+.searched-text{
+	font-family: "Oswald";
+	font-size: @font-size2-6;
+	color: @color-text-purple-darker;
+	&:before{
+		content: "\"";
+	}
+	&:after{
+		content: " \"";
+	}
+}
+
 /*END estilos comunes
 ************************************************************************************/
+
+/*ESTILOS LOGIN
+********************************************************/
+.page-user{
+	h1.page-header{
+		display: block;
+		width: 500px;
+		margin: 30px auto;
+	}
+	ul.tabs--primary.nav.nav-tabs{
+		display: block;
+		width: 500px;
+		margin: 0 auto;
+		li{
+			a{
+				background-color: @color-text-grey;
+				opacity: 0.1;
+				color: @color-white;
+				&:hover{
+					opacity: 0.5;
+				}
+			}
+		}
+		.active{
+			a{
+				background-color: @color-text-purple-darker;
+				opacity: 1;
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.region.region-content{
+		display: block;
+		width: 500px;
+		margin: 0 auto;
+		margin-bottom: 50px;
+		padding: 20px 0px;
+		#user-login{
+			label{
+				color: @color-text-purple-darker;
+			}
+			input{
+				-webkit-box-shadow: 0 0 0px 1000px white inset;
+			}
+			button{
+				color: @color-white;
+				background-color: @color-see-more;
+				outline: none;
+				border: none;
+				width: 100%;
+				margin-top: 10px;
+				&:hover{
+					background-color: @color-text-grey;
+				}
+			}
+		}
+	}
+}
+/*END ESTILOS LOGIN*/
 
 /*ESTILOS HOME
 ********************************************************/
@@ -558,6 +662,9 @@ a.more-link{
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article{
+	h1{
+		color: @color-text-grey;
+	}
 	h2{
 		font-size: @font-size2;
 		line-height: 1.4em !important;//testing quitar cuando se introduzcan bien los contenidos
@@ -579,23 +686,12 @@ a.more-link{
 		ul{
 			margin-left: 30px;
 		}
-	}
-	.pane-node-share-widget{
-		margin: 25px 0px;
-		.hwc-share-widget{
-			ul{
-				list-style: none;
-				li.share-this-article{
-					display: none;
-				}
-				li{
-					display: inline-block;
-				    background-color: red;//testing por ahora
-				    width: 25px;
-				    height: 25px;
-				    overflow: hidden;
-				}
-			}
+		a.article-link{
+			font-style: italic;
+			text-decoration: underline !important;
+		}
+		.highlighted-text{
+			font-weight: bold;
 		}
 	}
 
@@ -603,14 +699,29 @@ a.more-link{
 		padding-bottom: 0px;
 		background-color: @color-primary-dark;
 		margin-bottom: 10px;
-		.panels-flexible-column-new-main{
-			//height: 244px;
+		.pane-oira-blocks-oshwiki-featured-articles{
+			h3{
+				&:after{
+					.section-icons("../images/icons/164.png");
+					width: 35px;
+				}
+			}
 		}
-		.panels-flexible-column-new-2{
-			border-left: 10px solid @color-white;
+		.pane-oira-blocks-related-ncw-publications{
+			h3{
+				&:after{
+					.section-icons("../images/icons/169.png");
+					width: 35px;
+				}
+			}
 		}
-		.panels-flexible-column-new-3{
-			border-left: 10px solid @color-white;
+		.pane-news{
+			h3{
+				&:after{
+					.section-icons("../images/icons/004.png");
+					width: 35px;
+				}
+			}
 		}
 		#mini-panel-related_content{
 			h3.pane-title{
@@ -634,13 +745,93 @@ a.more-link{
 		    }
 		}
 	}
-	.panels-flexible-row-new-13{
+	//ADITIONAL RESOURCES
+	.panels-flexible-region-new-add_res-inside{
 		background-color: @color-background-light-purple;
-		.pane-additional-resources{
-			border-bottom: 2px solid @color-text-purple;
-			padding-bottom: 23px;
-			margin-bottom: 20px;
+		.pane-node-field-aditional-resources{
+			h3{
+				font-size: @font-size2-2;
+				margin-bottom: 25px;
+				&:after{
+					.section-icons("../images/icons/133.png");
+				}
+			}
+			.pane-additional-resources{
+				border-bottom: 2px solid @color-text-purple;
+				padding-bottom: 23px;
+				margin-bottom: 20px;
+				h4{
+					font-family: "Oswald";
+					font-size: @font-size1-4;
+					font-weight: normal;
+					margin-bottom: 15px;
+				}
+			}
+			#additional-resources-youtube-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/155.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+				.node-youtube{
+					.field-name-title-field{
+						padding: 15px;
+					}
+				}
+			}
+			#additional-resources-slideshare-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/150.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+				.node-slideshare{
+					.field-name-title-field{
+						padding: 15px;
+					}
+				}
+			}
+			#additional-resources-news-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/005.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+			}
+			#additional-resources-external_url-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/175.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+				.node-external-url{
+					.field-name-field-external-url{
+						a{
+							text-align: right;
+							color: @color-see-more;
+						}
+					}
+				}
+			}
+			#additional-resources-flickr-pane{
+				h4{
+					&:after{
+						.section-icons("../images/icons/160.png");
+						width: 25px;
+						height: 25px;
+					}
+				}
+			}
 		}
+		
 		#additional-resources-external_url-pane{
 			.view-additional-resources{
 				.views-item-columns-container{
@@ -649,6 +840,7 @@ a.more-link{
 			}
 		}
 	}
+	//END ADITIONAL RESOURCES
 
 	.oira-heading-pagination-container{
 		overflow: hidden;
@@ -1488,7 +1680,6 @@ a.more-link{
 							height: auto;
 							padding-right: 35px;
 						}
-
 					}
 					#edit-submit{
 						position: absolute;
@@ -1540,21 +1731,20 @@ a.more-link{
 						padding-top: 10px;
 						clear: both;
 						margin-top: 15px;
-
 						input.form-checkbox{
 							display: none;
 						}
 						label{
 							padding-left: 0px;
 							margin-bottom: 0px;
-							&:first-child{
-								font-family: @font-family-base-2;
-								font-size: @font-size1-2;
-								font-weight: normal;
-								display: block;
-								margin-bottom: 10px;
-								cursor: pointer;
-							}
+						}
+						label:first-child{
+							font-family: @font-family-base-2;
+							font-size: @font-size1-2;
+							font-weight: normal;
+							display: block;
+							margin-bottom: 10px;
+							cursor: pointer;
 							&:after{
 								content: "\e250";
 								font-family: "Glyphicons Halflings";
@@ -1563,13 +1753,16 @@ a.more-link{
 						}
 						.area-shown{
 							&:after{
-								content: "\e252";
+								content: "\e252" !important;
 								font-family: "Glyphicons Halflings";
 								margin-left: 10px;
 							}
 						}
 					}
 					.form-item-field-sector{
+						border-bottom: 2px solid @color-white;
+					}
+					.form-type-checkboxes:last-child{
 						border-bottom: 2px solid @color-white;
 					}
 				}
@@ -1721,6 +1914,89 @@ a.more-link{
 	.pane-node-body{
 		font-weight: bold;
 	}
+	.quicktabs-tabs{
+		background-color: @color-primary-dark;
+		display: table;
+		width: 100%;
+		li{
+			display: table-cell;
+			a{
+				color: @color-white;
+			}
+		}
+	}
+	.quicktabs-tabpage {
+		.hwc-alphabet-container{
+			margin-right: 15px;
+			margin-left: 15px;
+			text-transform: uppercase;
+			.hwc-char-link{
+				margin: 0px 10px;
+			}
+		}
+		div[id ^= "hwc-char-0"]{
+			color:@color-text-purple-darker;
+			font-family: "Oswald";
+			font-size: @font-size2-2;
+			text-transform: uppercase;
+			background-color: @color-primary;
+			margin: 30px 0px 0px 0px;
+    		padding: 15px 30px 0px 30px;
+		}
+		.quicktabs-views-group{
+			background-color: @color-primary;
+			padding: 0px 30px;
+			margin: 0px 0px;
+			
+			.views-field.views-field-nothing{
+				border-top: 2px solid @color-primary-dark;
+				padding: 30px 15px;
+				padding-left: 0px;
+				overflow: hidden;
+				.col-sm-2{
+					padding-left: 0px;
+				}
+				.field-name-field-country{
+					background-color: inherit;
+					margin: 0px;
+					padding: 0px;
+					font-style: normal !important;
+					font-size: 1em;
+				}
+				.hwc-alpha-pager-view-title-field{
+					h3{
+						margin-top: 10px;
+						a{
+							color: @color-text-grey;
+							font-weight: bold;
+						}
+					}
+				}
+				.partner-content-label{
+					display: table-cell;
+				    text-align: center;
+				    width: 25%;
+				    margin-top: 25px;
+				    border-left: 2px solid @color-primary-dark;
+
+					label{
+						display: block;
+						color: @color-text-purple-darker;
+						min-height: 40px;
+					    line-height: 16px;
+					    font-weight: normal;
+					}
+					span{
+						display: block;
+						color: @color-text-purple-darker;
+						font-size: @font-size2-2;
+					    line-height: 16px;
+					    font-weight: bold;
+					}
+				}
+			}
+		}
+	}
 }
 /*END National social partners*/
 
@@ -1772,10 +2048,11 @@ a.more-link{
 	}
 	.oira-community-partners-block{
 		margin-bottom: 20px;
+		padding-bottom: 40px;
 		h2.pane-title{
 			color: @color-white;
 			border-bottom: 2px solid @color-white;
-			margin-bottom: 50px;
+			margin-bottom: 40px;
 			padding-bottom: 15px;
 			font-size: 2.2em;
 	    	font-family: 'Oswald';
@@ -1790,45 +2067,18 @@ a.more-link{
 			li{
 				display: table-cell;
 				width: 33%;
-				a{
-					color: @color-white;
-					font-style: italic;
-					&:before{
-						content: "";
-					    display: block;
-					    width: 150px;
-					    height: 150px;
-					    border-radius: 50%;
-					    margin: 0 auto 15px auto;
+				.introduction-image{
+					img{
+						margin-bottom: 15px;
 					}
 				}
-			}
-			li:nth-child(1){
-				a{
-					&:before{
-						background: url(../images/icons/096.png) no-repeat white;
-						background-size: 65%;
-					    background-position: 50% 50%;
+				.introduction-title{
+					a{
+						color: @color-white;
+						font-style: italic;
 					}
 				}
-			}
-			li:nth-child(2){
-				a{
-					&:before{
-						background: url(../images/icons/105.png) no-repeat white;
-						background-size: 65%;
-					    background-position: 50% 50%;
-					}
-				}
-			}
-			li:nth-child(3){
-				a{
-					&:before{
-						background: url(../images/icons/114.png) no-repeat white;
-						background-size: 65%;
-					    background-position: 50% 50%;
-					}
-				}
+				
 			}
 		}
 	}

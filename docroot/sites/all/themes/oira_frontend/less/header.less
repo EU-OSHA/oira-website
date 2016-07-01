@@ -35,6 +35,14 @@
 		#block-oira-blocks-oira-print-friendly{
 			display: inline-block;
 			float: left;
+			a.printfriendly{
+				&:before{
+					content: url("../images/icons/220r.png");
+				}
+				.glyphicon-print{
+					display: none;
+				}
+			}
 		}
 		#block-text-resize-0{
 			display: inline-block;
@@ -42,16 +50,34 @@
 			#text_resize_decrease{
 				margin: 0px;
 				float: left;
-				width: 25px;
+				width: 17px;
 				height: initial;
-				margin-right: 5px;
+				margin-right: 0px;
+				text-transform: lowercase;
+				font-size: @font-size1-4;
+				text-indent: 0;
+				background: none;
+				line-height: 30px;
+				color: @color-menu-icons;
+				sup{
+					display: none;
+				}
 			}
 			#text_resize_increase{
 				margin: 0px;
 				float: left;
-				width: 25px;
+				width: 20px;
 				height: initial;
 				margin-right: 10px;
+				text-transform: lowercase;
+				font-size: @font-size2;
+				text-indent: 0;
+				background: none;
+				line-height: 25px;
+				color: @color-menu-icons;
+				sup{
+					display: none;
+				}
 			}
 		}
 		#block-menu-block-1{
@@ -79,6 +105,13 @@
 			margin-bottom: 7px;
 			clear: both;
 			display: inline-block;
+			.ui-theme-basic-green.ui-autocomplete-input {
+			    background-position: 99% 7px;
+
+			}
+			.ui-theme-basic-green.ui-autocomplete-loading {
+			    background-position: 99% -13px;
+			}
 			#search-block-form{
 				input{
 					border-radius: 0px;
