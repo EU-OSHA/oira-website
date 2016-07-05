@@ -44,7 +44,6 @@ function osha_search_default_search_api_index() {
       "search_api_et" : { "include" : "incomplete", "fallback language" : "" },
       "fields" : {
         "attachments_field_file" : { "type" : "text" },
-        "attachments_field_related_resources" : { "type" : "text" },
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
