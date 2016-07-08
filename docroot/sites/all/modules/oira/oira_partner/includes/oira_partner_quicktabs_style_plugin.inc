@@ -40,6 +40,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
       usort($records, 'oira_partner_quicktabs_sort_content');
       $has_sector = FALSE;
       $all_group_counter = 0;
+      $content_type = '';
       if ($this->uses_row_plugin()) {
         $rows = array();
         foreach ($records as $row_index => $row) {
@@ -52,6 +53,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
             if ($row->node_type == 'practical_tool') {
               $has_sector = TRUE;
             }
+            $content_type = $row->node_type;
             $row_rendered = drupal_render($row_render);
           }
           else {
@@ -80,7 +82,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
         if (empty($title)) {
           $title = t('Other');
         }
-        $contents = '<div class="container"><div class="content-group-label">' . $title . '</div>';
+        $contents = '<div class="container"><div class="content-group-label group-' . $content_type . '">' . $title . '</div>';
         $all_rows_rendered .= $contents;
         $all_group_counter = 0;
         foreach ($rows as $row) {
