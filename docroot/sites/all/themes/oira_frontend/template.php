@@ -463,6 +463,7 @@ function oira_frontend_qt_quicktabs_tabset($vars) {
       if ($key == $vars['tabset']['#options']['active']) {
         $item['class'] = array('active');
       }
+      $tab['#options']['html'] = TRUE;
       $item['data'] = drupal_render($tab);
       $variables['items'][] = $item;
     }

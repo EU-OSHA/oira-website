@@ -95,7 +95,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
         $contents .= '</div>';
         $all_rows_rendered .= '</div>';
         $tabs[] = array(
-          'title' => $title . ' (' . count($records) . ')',
+          'title' => '<span class="tab-title-wrap tab-title-' . $content_type . '">' . $title . ' (' . count($records) . ')' . '</span>',
           'contents' => array('#markup' => $contents),
         );
       }
@@ -105,7 +105,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
         foreach ($rows as $index => $row) {
           $title = $this->get_field($index, $this->options['tab_title_field']);
           $tabs[] = array(
-            'title' => $title,
+            'title' => '<span class="tab-title-wrap tab-title-' . $content_type . '">' . $title . '</span>',
             'contents' => array('#markup' => $row),
           );
         }
@@ -114,7 +114,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
     drupal_add_js(drupal_get_path('module', 'oira_partner') . '/js/sector_filter.js');
     // WHY sort the results by title???
     $all_tab = array(
-      'title' => t('Show all'),
+      'title' => '<span class="tab-title-wrap tab-title-show-all">' . t('Show all') . '</span>',
       'contents' => array('#markup' => $all_rows_rendered),
     );
 
