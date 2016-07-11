@@ -385,9 +385,7 @@ a.more-link{
 
 /*ESTILOS HOME
 ********************************************************/
-
 #block-system-main{
-
 	//slider
 	.panels-flexible-region-new-slider{
 		margin-top: 35px;
@@ -430,8 +428,6 @@ a.more-link{
 			}
 		}
 	}
-	
-
 	//Latest news
 	.panels-flexible-row-new-6{
 		background-color: @color-background-light-purple;
@@ -479,7 +475,6 @@ a.more-link{
 			}
 		}
 	}
-
 	//Promotional materials
 	.panels-flexible-region-new-promotional_materials{
 		h3{
@@ -503,13 +498,51 @@ a.more-link{
 					min-height: 320px;
 					.materials-content-wrapper{
 						padding: 15px;
+						overflow: hidden;
+						.field-name-title-field{
+							min-height: 45px;
+						}
+					}
+					.field-name-related-partners{
+						.node-partner{
+							background-color: @color-primary-dark;
+							padding: 15px;
+							color: @color-white;
+							margin-top: 15px;
+							h4{
+								a{
+									font-size: @font-size0-9;
+									color: @color-white;
+									margin-top: 0px;
+								}
+							}
+							.more-link{
+								color: @color-white;
+								text-align: left;
+							}
+						}
+					}
+					a.more-link{
+						text-align: left;
+					}
+					a.show-less{
+						text-align: right !important;
+						width: 20px;
+						height: 12px;
+					    float: right;
+					    overflow: hidden;
+					    font-style: normal;
+						&:before{
+							content: "\e253";
+							font-family: "Glyphicons Halflings";
+							font-size: @font-size1-2;
+							line-height: 0;
+						}
 					}
 				}
 			}
 		}
-
 	}
-
 	//Oira tools
 	.panels-flexible-row-new-16{
 		background-color: @color-background-light-purple;
@@ -1483,12 +1516,20 @@ a.more-link{
 		font-weight: bold;
 		a{
 			color: @color-text-purple-darker;
+			font-style: italic;
+			&:hover{
+				text-decoration: underline !important;
+			}
 		}
 	}
 	.field-name-body{
 		margin-bottom: 30px;
 		a{
 			color: @color-text-purple-darker;
+			font-style: italic;
+			&:hover{
+				text-decoration: underline !important;
+			}
 		}
 		.more-link{
 			color: @color-see-more;
@@ -1600,6 +1641,257 @@ a.more-link{
 		}
 	}
 }
+/*END COUNTRY LIST*/
+
+/* COUNTRY PROFILE
+********************************************************************/
+.page-country-profile{
+	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+		background-color: @color-primary-dark;
+		padding-top: 40px;
+		padding-bottom: 30px;
+		.pane-taxonomy-term-field-flag{
+			display: inline-block;
+			margin-right: 20px;
+			img{
+				max-height: 67px;
+			}
+		}
+		.panel-separator{
+			display: none;
+		}
+		.pane-taxonomy-term-name-field{
+			display: inline-block;
+			h1{
+				color: @color-white;
+			}
+		}
+		.pane-taxonomy-term-country-content-count{
+			display: inline-block;
+			float: right;
+			.field-items{
+				.field-item{
+					display: table-cell;
+					    text-align: center;
+					    width: 25%;
+					    //margin-top: 25px;
+					    border-left: 2px solid @color-white;
+					.country-content-count-label{
+						
+
+						label{
+							display: block;
+							color: @color-white;
+							min-height: 30px;
+						    line-height: 16px;
+						    font-weight: normal;
+						}
+						span{
+							display: block;
+							color: @color-white;
+							font-size: @font-size3;
+						    line-height: 16px;
+						    font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+#mini-panel-partner_in_country{
+	.panels-flexible-row-inside-first{
+		background-color: @color-white;
+		border-bottom: 2px solid @color-text-purple-darker;
+		padding-top: 10px;
+		margin-bottom: 10px;
+		padding-bottom: 30px;
+		h2{
+			margin-top: 0px;
+		}
+	}
+	.partner-contact-container,
+	.partner-social-container,
+	.partner-colaborators-container,
+	.partner-text2-container{
+		.pane-title{
+			color: @color-text-purple;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+	}
+	.partner-contact-container{
+		.field-name-field-country{
+			background-color: @color-white;
+		    display: block;
+		    color: @color-text-grey;
+		    padding: 0px;
+		    font-size: 1em;
+		    font-weight: normal;
+		    font-style: normal;
+		    margin-top: 0em;
+		    margin-right: 0px;
+		    margin-bottom: 15px;
+		}
+	}
+	.partner-social-container{
+
+	}
+	.partner-colaborators-container{
+		.field-name-field-collaborator{
+			>div.field-items{
+				>div.field-item{
+					display: inline-block;
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	.partner-text2-container{
+
+	}
+}
+//partners and countries resources
+#quicktabs-container-view__country_partner_content__block, #quicktabs-container-view__country_partner_content__block_1{
+	background-color: @color-primary;
+	padding-bottom: 30px;
+	.quicktabs-tabpage {
+		.content-group-label{
+			color: #967ea7;
+		    border-bottom: 2px solid #967ea7;
+		    font-size: 2.2em;
+		    padding-bottom: 15px;
+		    font-family: 'Oswald';
+		    margin-top: 30px;
+		}
+		.quicktabs-views-group {
+			border-bottom: 2px solid @color-text-purple;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			h3{
+				font-size: @font-size2-2;
+				font-weight: bold;
+			}
+			.more-link{
+				text-align: left;
+			}
+			a.show-less{
+				text-align: right !important;
+				width: 20px;
+				height: 12px;
+			    float: right;
+			    overflow: hidden;
+			    font-style: normal;
+				&:before{
+					content: "\e253";
+					font-family: "Glyphicons Halflings";
+					font-size: 1.2em;
+					line-height: 0;
+				}
+			}
+			.field-name-field-tool-link a{
+				
+			}
+			//partners inside oira tools and promotional
+			.field-name-related-partners{
+				.node-partner{
+					background-color: @color-primary-dark;
+					padding: 15px;
+					color: @color-white;
+					margin-top: 20px;
+					h4{
+						a{
+							font-size: 1.2em;
+							color: @color-white;
+							margin-top: 0px;
+						}
+					}
+					.more-link{
+						color: @color-white;
+						text-align: left;
+					}
+
+				}
+			}
+			.related-partners-1 > div{
+				//margin-left: 222px;
+			}
+			.related-partners-2 > div{
+				display: table;
+				border-collapse: collapse;
+				& > .even, & > .odd{
+					&:first-child{
+						display: table-cell;
+					}
+				}
+				& > .even:first-child{
+					border-right: 10px solid @color-primary;
+				}
+			}
+		}
+		.quicktabs-views-group:last-child {
+			border-bottom: 0px solid @color-text-purple-darker;
+		}
+	}
+}
+//partners and countries nav-bar
+.quicktabs-tabs-container{
+	background-color: @color-primary-dark;
+	color: @color-white;
+	ul.quicktabs-tabs > li{
+		display: inline-block;
+		margin-right: 20px;
+		padding: 0px;
+		&:hover{
+			ul{
+				display: block !important;
+			}
+		}
+		a{
+			padding: 15px;
+			color: @color-white;
+			font-style: italic;
+			display: block;
+			&:hover{
+				background-color: rgba(255,255,255,0.8);
+				color: @color-text-purple-darker;
+				color: @color-text-purple-darker;
+				ul{
+					display: block !important;
+				}
+			}
+			
+		}
+		ul{
+			position: absolute;
+			color: @color-text-grey;
+			background-color: @color-white;
+			z-index: 100;
+			min-width: 123px;
+			display: none;
+			li{
+				display: block;
+				padding: 10px 15px;
+				cursor: pointer;
+					&:hover{
+						background-color: @color-primary-dark;
+						color: @color-white;
+					}
+				a{
+					color: @color-text-grey;
+					font-style: normal;
+					display: block;
+					padding: 10px 15px;
+					&:hover{
+						background-color: @color-primary-dark;
+						color: @color-white;
+					}
+				}
+			}
+		}
+	}
+}
+/*END COUNTRY PROFILE*/
 
 /*PROMOTIONAL MATERIALS
 ********************************************************************/
@@ -1670,6 +1962,7 @@ a.more-link{
 					padding-right: 30px;
 					padding-top: 30px;
 					position: relative;
+
 					.form-type-textfield{
 						float: left;
 						margin-bottom: 15px;
@@ -1916,8 +2209,6 @@ a.more-link{
 	}
 	.quicktabs-tabs{
 		background-color: @color-primary-dark;
-		display: table;
-		width: 100%;
 		li{
 			display: table-cell;
 			a{
@@ -1934,7 +2225,7 @@ a.more-link{
 				margin: 0px 10px;
 			}
 		}
-		div[id ^= "hwc-char-0"]{
+		div[id ^= "hwc-char-"]{
 			color:@color-text-purple-darker;
 			font-family: "Oswald";
 			font-size: @font-size2-2;

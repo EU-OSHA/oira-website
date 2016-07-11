@@ -77,7 +77,7 @@
   <div class="top-header">
     <div class="top-header-container container">
       <div class="top-header-content row">
-        <div class="header-logo col-sm-4">
+        <div class="header-logo col-xs-6 col-sm-5 col-md-4">
           <?php if ($logo): ?>
             <a class="logo navbar-btn pull-left" href="https://osha.europa.eu/" title="<?php print t('EU-OSHA corporate website'); ?>">
               <img src="<?php print $logo; ?>" alt="<?php print t('EU-OSHA logo'); ?>" />
@@ -87,13 +87,13 @@
             <img class="eu-logo" src="<?php print $eu_logo; ?>" alt="<?php print t('European Union'); ?>" />
           <?php endif; ?>
         </div>
-        <div class="header-sitename col-sm-4">
+        <div class="header-sitename col-xs-6 col-sm-4">
           <a class="oira-logo" href="<?php print $front_page; ?>" title="<?php print $site_name; ?>"><img src="<?php print $oira_logo; ?>" alt="<?php print t('Home'); ?>" /></a>
           <?php if (!empty($site_name)): ?>
             <a class="sitename" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_slogan; ?></a>
           <?php endif; ?>
         </div>
-        <div class="header-blocks col-sm-4">
+        <div class="header-blocks col-xs-12 col-sm-3 col-md-4">
           <?php print render($page['header_block']); ?>
         </div>
       </div>
