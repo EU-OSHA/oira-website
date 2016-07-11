@@ -385,9 +385,7 @@ a.more-link{
 
 /*ESTILOS HOME
 ********************************************************/
-
 #block-system-main{
-
 	//slider
 	.panels-flexible-region-new-slider{
 		margin-top: 35px;
@@ -430,8 +428,6 @@ a.more-link{
 			}
 		}
 	}
-	
-
 	//Latest news
 	.panels-flexible-row-new-6{
 		background-color: @color-background-light-purple;
@@ -479,7 +475,6 @@ a.more-link{
 			}
 		}
 	}
-
 	//Promotional materials
 	.panels-flexible-region-new-promotional_materials{
 		h3{
@@ -503,13 +498,51 @@ a.more-link{
 					min-height: 320px;
 					.materials-content-wrapper{
 						padding: 15px;
+						overflow: hidden;
+						.field-name-title-field{
+							min-height: 45px;
+						}
+					}
+					.field-name-related-partners{
+						.node-partner{
+							background-color: @color-primary-dark;
+							padding: 15px;
+							color: @color-white;
+							margin-top: 15px;
+							h4{
+								a{
+									font-size: @font-size0-9;
+									color: @color-white;
+									margin-top: 0px;
+								}
+							}
+							.more-link{
+								color: @color-white;
+								text-align: left;
+							}
+						}
+					}
+					a.more-link{
+						text-align: left;
+					}
+					a.show-less{
+						text-align: right !important;
+						width: 20px;
+						height: 12px;
+					    float: right;
+					    overflow: hidden;
+					    font-style: normal;
+						&:before{
+							content: "\e253";
+							font-family: "Glyphicons Halflings";
+							font-size: @font-size1-2;
+							line-height: 0;
+						}
 					}
 				}
 			}
 		}
-
 	}
-
 	//Oira tools
 	.panels-flexible-row-new-16{
 		background-color: @color-background-light-purple;
@@ -1483,12 +1516,20 @@ a.more-link{
 		font-weight: bold;
 		a{
 			color: @color-text-purple-darker;
+			font-style: italic;
+			&:hover{
+				text-decoration: underline !important;
+			}
 		}
 	}
 	.field-name-body{
 		margin-bottom: 30px;
 		a{
 			color: @color-text-purple-darker;
+			font-style: italic;
+			&:hover{
+				text-decoration: underline !important;
+			}
 		}
 		.more-link{
 			color: @color-see-more;
@@ -1801,6 +1842,11 @@ a.more-link{
 		display: inline-block;
 		margin-right: 20px;
 		padding: 0px;
+		&:hover{
+			ul{
+				display: block !important;
+			}
+		}
 		a{
 			padding: 15px;
 			color: @color-white;
@@ -1810,6 +1856,9 @@ a.more-link{
 				background-color: rgba(255,255,255,0.8);
 				color: @color-text-purple-darker;
 				color: @color-text-purple-darker;
+				ul{
+					display: block !important;
+				}
 			}
 			
 		}
@@ -1819,9 +1868,11 @@ a.more-link{
 			background-color: @color-white;
 			z-index: 100;
 			min-width: 123px;
+			display: none;
 			li{
 				display: block;
 				padding: 10px 15px;
+				cursor: pointer;
 					&:hover{
 						background-color: @color-primary-dark;
 						color: @color-white;
@@ -2158,8 +2209,6 @@ a.more-link{
 	}
 	.quicktabs-tabs{
 		background-color: @color-primary-dark;
-		display: table;
-		width: 100%;
 		li{
 			display: table-cell;
 			a{
@@ -2176,7 +2225,7 @@ a.more-link{
 				margin: 0px 10px;
 			}
 		}
-		div[id ^= "hwc-char-0"]{
+		div[id ^= "hwc-char-"]{
 			color:@color-text-purple-darker;
 			font-family: "Oswald";
 			font-size: @font-size2-2;
