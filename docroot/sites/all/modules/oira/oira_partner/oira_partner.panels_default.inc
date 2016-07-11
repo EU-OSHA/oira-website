@@ -412,7 +412,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 8,
         ),
-        'class' => 'col-sm-3 partner-colaborators-container',
+        'class' => 'col-sm-4 partner-colaborators-container',
         'hide_empty' => 0,
       ),
       3 => array(
@@ -445,7 +445,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 9,
         ),
-        'class' => 'col-sm-3 partner-text2-container',
+        'class' => 'col-sm-2 partner-text2-container',
         'hide_empty' => 0,
       ),
       6 => array(
@@ -729,6 +729,36 @@ function oira_partner_default_panels_mini() {
     $pane->uuid = '626e9816-cb3a-41cb-a36d-01d9067ec143';
     $display->content['new-626e9816-cb3a-41cb-a36d-01d9067ec143'] = $pane;
     $display->panels['social'][0] = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
+    $pane = new stdClass();
+    $pane->pid = 'new-234a31ce-df16-47f2-acd6-ca92e4bebc64';
+    $pane->panel = 'text';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_country';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'i18n_taxonomy_term_reference_link',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'requiredcontext_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Focal point',
+      'override_title_heading' => 'div',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '234a31ce-df16-47f2-acd6-ca92e4bebc64';
+    $display->content['new-234a31ce-df16-47f2-acd6-ca92e4bebc64'] = $pane;
+    $display->panels['text'][0] = 'new-234a31ce-df16-47f2-acd6-ca92e4bebc64';
     $pane = new stdClass();
     $pane->pid = 'new-b82fb197-4f24-4f68-90ee-05d83089aad9';
     $pane->panel = 'text_';
