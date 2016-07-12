@@ -58,6 +58,15 @@ jQuery(document).ready(function () {
 				jQuery("#block-search-form input").stop().hide({direction: 'left'}, 500);
 			});
 
+
+			//menu dropdown
+			jQuery(".dropdown-menu").hide();
+			jQuery(".expanded.dropdown").click(function(){
+				jQuery(".dropdown-menu").slideUp();
+				jQuery(".dropdown-menu", this).slideToggle();
+				jQuery(".dropdown-menu > .dropdown-toggle", this).addClass("down-arrow")
+			});
+
 		}//<-----End: functions for tablet and/or mobile
 	}
 
