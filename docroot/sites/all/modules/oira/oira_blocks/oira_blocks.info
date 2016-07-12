@@ -11,6 +11,7 @@ features[fe_block_settings][] = locale-language
 features[fe_block_settings][] = menu_block-1
 features[fe_block_settings][] = menu_block-2
 features[fe_block_settings][] = menu_block-3
+features[fe_block_settings][] = menu_block-5
 features[fe_block_settings][] = oira_blocks-oira_print_friendly
 features[fe_block_settings][] = text_resize-0
 features[features_api][] = api:2

@@ -680,10 +680,13 @@ function oira_promotional_material_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
+        'label' => 'hidden',
+        'module' => 'oira_promotional_material',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'oira_promotional_resources_row',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',

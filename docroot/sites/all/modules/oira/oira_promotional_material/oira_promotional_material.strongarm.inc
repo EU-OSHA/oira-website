@@ -127,7 +127,7 @@ function oira_promotional_material_strongarm() {
         ),
         'tools_see_more' => array(
           'teaser' => array(
-            'weight' => '6',
+            'weight' => '7',
             'label' => 'hidden',
             'type' => 'tools_see_more',
             'visible' => TRUE,

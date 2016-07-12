@@ -22,6 +22,99 @@ function oira_promotional_material_block_info() {
 }
 
 /**
+ * Implements hook_field_formatter_info().
+ */
+function oira_promotional_material_field_formatter_info() {
+  return array(
+    'oira_promotional_resources_row' => array(
+      'label' => t('Promotional Resources Row'),
+      'field types' => array('field_collection'),
+    )
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function oira_promotional_material_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  switch ($display['type']) {
+    case 'oira_promotional_resources_row':
+      foreach ($items as $delta => $item) {
+        if ($field_collection = field_collection_field_get_entity($item)) {
+          $element[$delta] = array(
+            '#theme' => 'oira_promotional_material_resources_format',
+            '#entity' => $entity,
+            '#item' => $item,
+            '#delta' => $delta,
+          );
+        }
+      }
+      break;
+  }
+
+  return $element;
+}
+
+/**
+ * Formats the promotional material's resources (language and attached file or external links)
+ */
+function theme_oira_promotional_material_resources_format($element) {
+  $field_collection = field_collection_field_get_entity($element['item']);
+
+  $output = '<div id="promotional-material-resources">';
+  $output .= '<ul>';
+  if (!empty($field_collection->field_language)) {
+    $langcode = $field_collection->field_language[LANGUAGE_NONE][0]['value'];
+
+    if (!empty($field_collection->field_file)) {
+      $output .= '<li>';
+      $title = strtoupper($langcode) . '&nbsp;<span class="glyphicon glyphicon-circle-arrow-down"></span>';
+      $link = l($title, file_create_url($field_collection->field_file[LANGUAGE_NONE][0]['uri']), array(
+        'absolute' => TRUE,
+        'html' => TRUE,
+        'attributes' => array(
+          'title' => $field_collection->field_file[LANGUAGE_NONE][0]['filename'],
+          'target' => '_blank',
+        ))
+      );
+      $output .= $link;
+      $output .= '</li>';
+    } else if (!empty($field_collection->field_link)) {
+      $output .= '<li>';
+      $title = strtoupper($langcode) . '&nbsp;<span class="glyphicon glyphicon-new-window"></span>';
+      $link = l($title, $field_collection->field_link[LANGUAGE_NONE][0]['url'], array(
+          'absolute' => TRUE,
+          'html' => TRUE,
+          'attributes' => array(
+            'title' => $field_collection->field_link[LANGUAGE_NONE][0]['title'],
+            'target' => '_blank',
+          ))
+      );
+      $output .= $link;
+      $output .= '</li>';
+    }
+  }
+
+  $output .= '</ul>';
+  $output .= '</div>';
+
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function oira_promotional_material_theme() {
+  return array(
+    'oira_promotional_material_resources_format' => array(
+      'variables' => array('entity' => NULL, 'item' => NULL, 'delta' => NULL),
+    ),
+  );
+}
+
+/**
  * Implements hook_field_extra_fields_alter().
  */
 function oira_promotional_material_field_extra_fields_alter(&$info) {
@@ -164,7 +257,25 @@ function oira_promotional_material_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
     case 'promotional_material_node_form':
       $form['field_country']['#access'] = FALSE;
+      $form['#validate'][] = 'oira_promotional_material_form_validate';
       break;
+  }
+}
+
+/**
+ * Node form custom validation
+ */
+function oira_promotional_material_form_validate($form, &$form_state) {
+  if (!empty($form_state['values']['field_resource_fc'])) {
+    $resources = $form_state['values']['field_resource_fc'][LANGUAGE_NONE];
+
+    foreach ($resources as $key => $resource){
+      if (isset($resource['field_file']) && isset($resource['field_link'])) {
+        if ($resource['field_file'][LANGUAGE_NONE][0]['fid'] == 0 && empty($resource['field_link'][LANGUAGE_NONE][0]['url'])) {
+          form_set_error('field_resource_fc][' . LANGUAGE_NONE . ']['. $key, t('For a resource item you must enter either a link or upload a document.'));
+        }
+      }
+    }
   }
 }
 
