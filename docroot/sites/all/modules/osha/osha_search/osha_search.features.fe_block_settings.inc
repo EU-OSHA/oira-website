@@ -118,7 +118,7 @@ legislation/guidelines/*',
         'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -37,
+        'weight' => -47,
       ),
       'osha_admin' => array(
         'region' => 'dashboard_inactive',

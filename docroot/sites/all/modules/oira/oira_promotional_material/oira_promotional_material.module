@@ -41,16 +41,11 @@ function oira_promotional_material_field_formatter_view($entity_type, $entity, $
 
   switch ($display['type']) {
     case 'oira_promotional_resources_row':
-      foreach ($items as $delta => $item) {
-        if ($field_collection = field_collection_field_get_entity($item)) {
-          $element[$delta] = array(
-            '#theme' => 'oira_promotional_material_resources_format',
-            '#entity' => $entity,
-            '#item' => $item,
-            '#delta' => $delta,
-          );
-        }
-      }
+      $element[0] = array(
+        '#theme' => 'item_list',
+        '#items' => oira_promotional_material_resources_formatter($items),
+      );
+
       break;
   }
 
@@ -60,58 +55,59 @@ function oira_promotional_material_field_formatter_view($entity_type, $entity, $
 /**
  * Formats the promotional material's resources (language and attached file or external links)
  */
-function theme_oira_promotional_material_resources_format($element) {
-  $field_collection = field_collection_field_get_entity($element['item']);
+function oira_promotional_material_resources_formatter($items){
+  $result = array();
+  $resources = array();
 
-  $output = '<div id="promotional-material-resources">';
-  $output .= '<ul>';
-  if (!empty($field_collection->field_language)) {
-    $langcode = $field_collection->field_language[LANGUAGE_NONE][0]['value'];
+  foreach ($items as $delta => $item) {
+    $field_collection = field_collection_field_get_entity($item);
 
-    if (!empty($field_collection->field_file)) {
-      $output .= '<li>';
-      $title = strtoupper($langcode) . '&nbsp;<span class="glyphicon glyphicon-circle-arrow-down"></span>';
-      $link = l($title, file_create_url($field_collection->field_file[LANGUAGE_NONE][0]['uri']), array(
-        'absolute' => TRUE,
-        'html' => TRUE,
-        'attributes' => array(
-          'title' => $field_collection->field_file[LANGUAGE_NONE][0]['filename'],
-          'target' => '_blank',
-        ))
-      );
-      $output .= $link;
-      $output .= '</li>';
-    } else if (!empty($field_collection->field_link)) {
-      $output .= '<li>';
-      $title = strtoupper($langcode) . '&nbsp;<span class="glyphicon glyphicon-new-window"></span>';
-      $link = l($title, $field_collection->field_link[LANGUAGE_NONE][0]['url'], array(
-          'absolute' => TRUE,
-          'html' => TRUE,
-          'attributes' => array(
-            'title' => $field_collection->field_link[LANGUAGE_NONE][0]['title'],
-            'target' => '_blank',
-          ))
-      );
-      $output .= $link;
-      $output .= '</li>';
+    if (!empty($field_collection->field_language)) {
+      $langcode = $field_collection->field_language[LANGUAGE_NONE][0]['value'];
+
+      if (!empty($field_collection->field_file)) {
+        $title = strtoupper($langcode);
+        $link = l($title, file_create_url($field_collection->field_file[LANGUAGE_NONE][0]['uri']), array(
+            'absolute' => TRUE,
+            'html' => TRUE,
+            'attributes' => array(
+              'title' => $field_collection->field_file[LANGUAGE_NONE][0]['filename'],
+              'target' => '_blank',
+            ))
+        );
+        $resources[] = $link;
+      } else if (!empty($field_collection->field_link)) {
+        $title = strtoupper($langcode);
+        $link = l($title, $field_collection->field_link[LANGUAGE_NONE][0]['url'], array(
+            'absolute' => TRUE,
+            'html' => TRUE,
+            'attributes' => array(
+              'title' => $field_collection->field_link[LANGUAGE_NONE][0]['title'],
+              'target' => '_blank',
+            ))
+        );
+        $resources[] = $link;
+      }
     }
   }
 
-  $output .= '</ul>';
-  $output .= '</div>';
-
-  return $output;
-}
-
-/**
- * Implements hook_theme().
- */
-function oira_promotional_material_theme() {
-  return array(
-    'oira_promotional_material_resources_format' => array(
-      'variables' => array('entity' => NULL, 'item' => NULL, 'delta' => NULL),
+  $render = array(
+    'title' => array(
+      '#prefix' => '<div class="promotional-material-resource-label">',
+      '#suffix' => '</div>',
+      '#type' => 'item',
+      '#markup' => t('Download <span class="promotional-material-resource-file-icon"></span> in'),
+    ),
+    'resources' => array(
+      '#prefix' => '<div class="promotional-material-resource-items">',
+      '#suffix' => '</div>',
+      '#type' => 'item',
+      '#markup' => theme('item_list', array('items' => $resources))
     ),
   );
+  $result[] = drupal_render($render);
+
+  return $result;
 }
 
 /**
