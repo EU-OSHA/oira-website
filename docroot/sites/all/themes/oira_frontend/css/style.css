@@ -8968,6 +8968,7 @@ a.more-link:before {
   .top-header .region-header-block #block-lang-dropdown-language #lang-dropdown-select-language {
     width: 117px !important;
   }
+  /*END HEADER*/
   .navbar-header {
     float: none;
   }
@@ -9129,8 +9130,50 @@ a.more-link:before {
     color: #05465a;
   }
   /*END MENU*/
+  /*FOOTER
+********************************************/
+  .site-footer #block-menu-menu-footer-menu {
+    display: block;
+  }
+  .site-footer #block-menu-menu-footer-menu li {
+    margin-bottom: 10px;
+  }
+  .site-footer #block-menu-menu-footer-menu li a {
+    color: #ffffff;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: 2px solid;
+    border-radius: 0px;
+  }
+  .site-footer #block-menu-menu-footer-menu .first a {
+    padding-left: 0px;
+    border-left: none;
+  }
+  .site-footer #block-menu-block-2 {
+    width: 200px;
+    float: inherit;
+  }
+  .site-footer .menu-block-2 {
+    float: left;
+  }
+  .site-footer .menu-block-2 .menu .introduction-title {
+    display: none;
+  }
+  .site-footer .menu-block-2 .menu li {
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+  /*END FOOTER*/
   /*HOME
 ****************************************************************/
+  .front .views-item-columns-container {
+    margin-bottom: 30px;
+  }
+  .front .more-link a {
+    margin-top: 0px;
+  }
   /*END HOME*/
 }
 @media only screen and (max-width: 767px) {

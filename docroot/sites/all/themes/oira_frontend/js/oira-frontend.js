@@ -63,8 +63,14 @@ jQuery(document).ready(function () {
 			jQuery(".dropdown-menu").hide();
 			jQuery(".expanded.dropdown").click(function(){
 				jQuery(".dropdown-menu").slideUp();
-				jQuery(".dropdown-menu", this).slideToggle();
-				jQuery(".dropdown-menu > .dropdown-toggle", this).addClass("down-arrow")
+				if(jQuery(".dropdown-menu", this).is(":visible")){
+					jQuery(".dropdown-menu", this).slideUp();
+					jQuery(".dropdown-toggle").removeClass("down-arrow");
+				}
+				else{
+					jQuery(".dropdown-menu", this).slideDown();
+					jQuery(".dropdown-toggle", this).addClass("down-arrow");
+				};
 			});
 
 		}//<-----End: functions for tablet and/or mobile
