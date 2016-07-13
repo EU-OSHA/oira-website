@@ -6605,11 +6605,25 @@ button.close {
 .top-header .header-blocks #block-menu-block-1 .menu-name-menu-social-menu ul li .introduction-title {
   display: none;
 }
+.top-header .header-blocks #block-menu-block-5 {
+  width: 95px;
+  display: inline-block;
+  position: absolute;
+  top: 41px;
+  z-index: 3;
+}
 .top-header .header-blocks #block-menu-block-5 .introduction-image {
   display: inline-block;
 }
+.top-header .header-blocks #block-menu-block-5 .introduction-image img {
+  width: 29px;
+}
 .top-header .header-blocks #block-menu-block-5 .introduction-title {
   display: inline-block;
+}
+.top-header .header-blocks #block-menu-block-5 .introduction-title a {
+  color: #003399;
+  margin-left: 5px;
 }
 .top-header .header-blocks #block-search-form {
   margin-top: 7px;
@@ -6626,8 +6640,9 @@ button.close {
 .top-header .header-blocks #block-search-form #search-block-form input {
   border-radius: 0px;
   border: 2px solid #003399;
-  width: 100%;
+  width: 160px;
   height: 30px;
+  float: right;
 }
 .top-header .header-blocks #block-search-form #search-block-form input[placeholder] {
   color: #003399 !important;
@@ -6703,6 +6718,7 @@ button.close {
 }
 .menu-header #navbar .navbar-nav > li.first.leaf {
   top: -3px;
+  padding-right: 5px;
 }
 .menu-header #navbar .navbar-nav li {
   float: initial;
@@ -6719,7 +6735,6 @@ button.close {
   padding: 0px;
   padding-left: 0px;
   padding-right: 0px;
-  margin-right: 10px;
 }
 .menu-header #navbar .navbar-nav li span {
   padding-left: 0px;
@@ -7109,7 +7124,7 @@ a.more-link:before {
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-body {
   position: absolute;
   width: 1140px;
-  top: 63%;
+  top: 66%;
   left: 10%;
   color: #ffffff;
 }
@@ -7205,7 +7220,7 @@ a.more-link:before {
   text-align: left;
 }
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-item-columns-container a.more-link {
-  text-align: left;
+  text-align: right;
 }
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-item-columns-container a.show-less {
   text-align: right !important;
@@ -7364,6 +7379,9 @@ a.more-link:before {
   font-weight: bold;
   font-size: 1.2em;
   line-height: 1.6em;
+}
+.node-type-article .panels-flexible-row {
+  padding-bottom: 0px;
 }
 .node-type-article .pane-node-body ul {
   margin-left: 30px;
@@ -7557,6 +7575,21 @@ a.more-link:before {
 .node-type-article .accesibility_table {
   width: 100% !important;
 }
+.node-type-article ul ul {
+  list-style: disc;
+}
+.margin-left {
+  list-style: none;
+}
+.margin-left ul {
+  list-style: disc;
+}
+.margin-15px {
+  margin-left: 15px !important;
+}
+.margin-15px ul {
+  list-style: disc;
+}
 /*END ARTICLES*/
 /*WHAT'S NEW SECTION
 *********************************************************************/
@@ -7619,7 +7652,7 @@ a.more-link:before {
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container {
   background-color: #dfd8e4;
-  min-height: 538px;
+  min-height: 571px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image {
   min-height: 202px;
@@ -8935,6 +8968,8 @@ a.more-link:before {
     bottom: 0px;
     right: 0px;
     margin-right: 15px;
+    width: inherit;
+    top: 46px;
   }
   .top-header .region-header-block #block-menu-block-5 .introduction-image img {
     width: 29px;
@@ -8951,6 +8986,7 @@ a.more-link:before {
   .top-header .region-header-block #block-search-form input {
     display: none;
     height: 29px !important;
+    width: 127px !important;
   }
   .top-header .region-header-block #block-search-form button {
     height: 29px;
@@ -9227,7 +9263,7 @@ a.more-link:before {
   .top-header .header-blocks .region-header-block #block-search-form input {
     display: none;
     height: 29px !important;
-    width: 80%;
+    width: 80% !important;
   }
   .top-header .header-blocks .region-header-block #block-search-form button {
     height: 29px;

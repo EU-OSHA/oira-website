@@ -104,11 +104,23 @@
 			}
 		}
 		#block-menu-block-5{
+			width: 95px;
+		    display: inline-block;
+		    position: absolute;
+		    top: 41px;
+		    z-index: 3;
 			.introduction-image{
 				display: inline-block;
+				img{
+					width: 29px;
+				}
 			}
 			.introduction-title{
 				display: inline-block;
+				a{
+					color: @color-menu-icons;
+					margin-left: 5px;
+				}
 			}
 		}
 		#block-search-form{
@@ -127,8 +139,9 @@
 				input{
 					border-radius: 0px;
 					border: 2px solid @color-menu-icons;
-					width: 100%;
+					width: 160px;
 					height: 30px;
+					float: right;
 				}
 				input[placeholder]{
 					color: @color-menu-icons !important;
@@ -213,6 +226,7 @@
     		}
     		&>li.first.leaf{
 				top:-3px;
+				padding-right: 5px;
     		}
     		li{
     			float: initial;
@@ -229,7 +243,7 @@
 					padding: 0px;
 					padding-left: 0px;
 					padding-right: 0px;
-    				margin-right: 10px;
+    				//margin-right: 10px;
 				}
 				span{
 					padding-left: 0px;
