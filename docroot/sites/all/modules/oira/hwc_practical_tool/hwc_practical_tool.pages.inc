@@ -91,7 +91,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   $lang_field = $variables['language_field'];
 
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
 
   $form = array(
     '#action' => $action,
@@ -138,7 +138,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
     '#default_value' => $sort,
     '#prefix' => '<div class="sort-container col-xs-3">',
     '#suffix' => '</div>',
-    '#options' => array('date' => t('Latest first'), 'alphabetically' => t('Alphabetically')),
+    '#options' => array('alphabetically' => t('Alphabetically'),'date' => t('Latest first')),
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
@@ -264,7 +264,7 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
 
   $page = _hwc_practical_tool_get_req_param($form_state, 'page', 0);
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
   list($server, $query) = hwc_practical_tool_menu_tools_get_query();
   $query->condition('status', 1);
   $query->condition('type', 'practical_tool');
@@ -285,12 +285,12 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
     }
   }
   switch ($sort) {
-    case 'alphabetically':
-      $query->sort('title2', 'ASC');
+    case 'date':
+      $query->sort('field_revised_date', 'DESC');
       break;
 
     default:
-      $query->sort('field_revised_date', 'DESC');
+      $query->sort('title2', 'ASC');
       break;
   }
   $query->range($page * $per_page, $per_page);
