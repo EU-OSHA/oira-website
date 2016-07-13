@@ -96,7 +96,7 @@ function oira_promotional_material_resources_formatter($items){
       '#prefix' => '<div class="promotional-material-resource-label">',
       '#suffix' => '</div>',
       '#type' => 'item',
-      '#markup' => t('Download <span></span> in'),
+      '#markup' => t('Download <span class="promotional-material-resource-file-icon"></span> in'),
     ),
     'resources' => array(
       '#prefix' => '<div class="promotional-material-resource-items">',
