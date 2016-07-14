@@ -112,6 +112,26 @@ function osha_search_search_form($form, $form_state) {
   if (!empty($response['results'])) {
     foreach ($response['results'] as $row) {
       list($lng, $nid) = explode('_', $row['id'], 2);
+      if (!empty($row['fields']['body:value'])) {
+        $excerpt = $row['fields']['body:value'][0];
+        $regexstr = "'<strong>(.*?)</strong>'si";
+        $current_hits = preg_match_all($regexstr, $excerpt, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
+
+        $snippet_offset = 180;
+        if ($current_hits > 0) {
+          $match = $matches[0][0];
+          $word_length = strlen($match[0]);
+          // Calculate offsets before and after for substr.
+          $pos = $match[1];
+          $start = $pos - $snippet_offset >= 0 ? $pos - $snippet_offset : 0;
+          $length = $pos + $word_length + $snippet_offset - $start;
+          if (isset($matches[1][0][1]) && $start + $length > $matches[1][0][1]) {
+            $length = $matches[1][0][1] - $start;
+          }
+          $snippet = substr($excerpt, $start, $length);
+          $excerpts[$nid] = '...' . $snippet . '...';
+        }
+      }
       $nids[] = $nid;
     }
 
@@ -126,7 +146,7 @@ function osha_search_search_form($form, $form_state) {
       'nodes' => array(
         '#type' => 'container',
         '#attributes' => array('class' => array('search-page-results-wrapper')),
-        'results-native' => node_view_multiple($nodes, 'teaser', 0, $language->language),
+        'results-native' => node_view_multiple($nodes, 'search_result', 0, $language->language),
       ),
       '#suffix' => theme('pager', array(
         'tags' => array('<', '<', '', '>', '>'),
@@ -134,6 +154,12 @@ function osha_search_search_form($form, $form_state) {
         'parameters' => $pager_params,
       )),
     );
+
+    foreach ($form['content']['results']['nodes']['results-native']['nodes'] as $nid => &$renderable_node) {
+      if (!empty($excerpts[$nid]) && !empty($renderable_node['body'][0]['#markup'])) {
+        $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
+      }
+    }
 
     $start = $page_no * $per_page;
     $form['content']['sort_fieldset']['search_summary'] = array(
@@ -213,8 +239,8 @@ function osha_search_callback_search($form_state, $per_page = 10) {
   $type_filter = $query->createFilter('or');
   foreach (array_keys($types_options) as $type_name) {
     $type_filter->condition('type', $type_name);
-    $query->filter($type_filter);
   }
+  $query->filter($type_filter);
 
   $query->condition('language', 'en');
   $query->keys($text);
@@ -240,6 +266,8 @@ function osha_search_callback_search($form_state, $per_page = 10) {
       break;
   }
   $query->range($page * $per_page, $per_page);
+
+  $query->setOption('hl.fragsize', 30);
 
   $response = $server->search($query);
   return $response;
