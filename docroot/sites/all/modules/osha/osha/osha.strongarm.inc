@@ -812,7 +812,7 @@ el.remove();
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
@@ -907,6 +907,13 @@ el.remove();
           ),
           'osha_wiki' => array(
             'weight' => '7',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
+          'search_result' => array(
+            'weight' => '11',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
