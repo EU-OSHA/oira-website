@@ -5,7 +5,7 @@ function osha_search_search_form($form, $form_state) {
 
   module_load_include('inc', 'hwc_practical_tool', 'hwc_practical_tool.pages');
 
-  $action = 'search';
+  $action = 'search-site';
   $facet_callback = '_osha_search_form_get_facets';
   $search_callback = 'osha_search_callback_search';
 
