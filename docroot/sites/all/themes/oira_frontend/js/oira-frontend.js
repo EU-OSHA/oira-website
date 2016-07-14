@@ -58,6 +58,21 @@ jQuery(document).ready(function () {
 				jQuery("#block-search-form input").stop().hide({direction: 'left'}, 500);
 			});
 
+
+			//menu dropdown
+			jQuery(".dropdown-menu").hide();
+			jQuery(".expanded.dropdown").click(function(){
+				jQuery(".dropdown-menu").slideUp();
+				if(jQuery(".dropdown-menu", this).is(":visible")){
+					jQuery(".dropdown-menu", this).slideUp();
+					jQuery(".dropdown-toggle").removeClass("down-arrow");
+				}
+				else{
+					jQuery(".dropdown-menu", this).slideDown();
+					jQuery(".dropdown-toggle", this).addClass("down-arrow");
+				};
+			});
+
 		}//<-----End: functions for tablet and/or mobile
 	}
 
