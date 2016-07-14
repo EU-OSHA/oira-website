@@ -20,14 +20,15 @@ function osha_search_default_fe_block_settings() {
     'i18n_mode' => 0,
     'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'search
+search/*',
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_first',
+        'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => 0,
+        'weight' => -50,
       ),
       'osha_admin' => array(
         'region' => '',
@@ -36,8 +37,8 @@ function osha_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
+    'title' => '<none>',
+    'visibility' => 1,
   );
 
   $export['menu-menu-search'] = array(
@@ -129,34 +130,6 @@ legislation/guidelines/*',
     ),
     'title' => '<none>',
     'visibility' => 0,
-  );
-
-  $export['views--exp-search-site'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => '-exp-search-site',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => 'search',
-    'roles' => array(),
-    'themes' => array(
-      'oira_frontend' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'oira_frontend',
-        'weight' => 0,
-      ),
-      'osha_admin' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'osha_admin',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 1,
   );
 
   return $export;
