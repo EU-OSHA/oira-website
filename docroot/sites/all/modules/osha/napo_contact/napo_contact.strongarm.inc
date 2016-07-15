@@ -240,22 +240,25 @@ function napo_contact_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '6',
         ),
         'title' => array(
           'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '3',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'language' => array(
           'weight' => '5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '2',
         ),
       ),
       'display' => array(
@@ -265,6 +268,13 @@ function napo_contact_strongarm() {
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
+            'settings' => array(),
+          ),
+          'default' => array(
+            'weight' => '2',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
             'settings' => array(),
           ),
         ),
