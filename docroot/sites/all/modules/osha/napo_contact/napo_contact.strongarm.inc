@@ -207,7 +207,7 @@ function napo_contact_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -258,7 +258,17 @@ function napo_contact_strongarm() {
           'weight' => '5',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'node_type' => array(
+          'search_result' => array(
+            'weight' => '0',
+            'label' => 'hidden',
+            'type' => 'visible',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__faq'] = $strongarm;

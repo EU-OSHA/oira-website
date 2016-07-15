@@ -12,6 +12,28 @@ function hwc_practical_tool_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|practical_tool|search_result';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'practical_tool';
+  $ds_fieldsetting->view_mode = 'search_result';
+  $ds_fieldsetting->settings = array(
+    'node_link' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'See more',
+        'link class' => 'more-llink',
+        'wrapper' => '',
+        'class' => '',
+        'field_formatter_class' => '',
+      ),
+    ),
+  );
+  $export['node|practical_tool|search_result'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|practical_tool|teaser';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'practical_tool';
@@ -40,6 +62,60 @@ function hwc_practical_tool_ds_field_settings_info() {
  */
 function hwc_practical_tool_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|practical_tool|search_result';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'practical_tool';
+  $ds_layout->view_mode = 'search_result';
+  $ds_layout->layout = 'ds_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_image',
+      ),
+      'right' => array(
+        1 => 'title_field',
+        2 => 'field_revised_date',
+        3 => 'body',
+        4 => 'field_country',
+        5 => 'field_sector',
+        6 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'left',
+      'title_field' => 'right',
+      'field_revised_date' => 'right',
+      'body' => 'right',
+      'field_country' => 'right',
+      'field_sector' => 'right',
+      'node_link' => 'right',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'row' => 'row',
+      ),
+      'left' => array(
+        'col-sm-3' => 'col-sm-3',
+      ),
+      'right' => array(
+        'col-sm-9' => 'col-sm-9',
+      ),
+    ),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => 1,
+  );
+  $export['node|practical_tool|search_result'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

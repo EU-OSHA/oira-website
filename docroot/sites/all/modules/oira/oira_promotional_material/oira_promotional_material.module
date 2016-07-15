@@ -29,7 +29,7 @@ function oira_promotional_material_field_formatter_info() {
     'oira_promotional_resources_row' => array(
       'label' => t('Promotional Resources Row'),
       'field types' => array('field_collection'),
-    )
+    ),
   );
 }
 

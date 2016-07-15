@@ -14,7 +14,7 @@ function osha_search_path_breadcrumbs_settings_info() {
   $path_breadcrumb->api_version = 1;
   $path_breadcrumb->machine_name = 'search';
   $path_breadcrumb->name = 'Search';
-  $path_breadcrumb->path = 'search';
+  $path_breadcrumb->path = 'search-site';
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => '!page_title',
