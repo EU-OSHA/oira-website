@@ -148,7 +148,7 @@ function oira_promotional_material_views_pre_render(&$view) {
     $view->display_handler->set_option('use_more_text', t('View all'));
     $view->display_handler->set_option('link_display', 'custom_url');
     $view->display_handler->set_option('use_more_always', TRUE);
-    $view->display_handler->set_option('link_url', 'promotional-resources-search');
+    $view->display_handler->set_option('link_url', 'promotional-resources');
   }
 }
 
