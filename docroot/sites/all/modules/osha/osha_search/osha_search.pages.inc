@@ -1,103 +1,27 @@
 <?php
 
-function _hwc_taxonomy_filter_options_list($vocabulary, $default = array()) {
-  $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary);
-  if (!empty($vocabulary)) {
-    $terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
-    foreach($terms as $key => $term) {
-      $default[$term->tid] = $term->name;
-    }
-  }
-  return $default;
-}
-
-
-// We need this function because it is used within modules from hwc website.
-function _hwc_practical_tool_get_req_param($form_state, $name, $default = NULL) {
-  if (!empty($form_state['values'][$name])) {
-    $ret = $form_state['values'][$name];
-  }
-  if (!empty($_GET[$name])) {
-    if (is_array($_GET[$name])) {
-      $ret = array();
-      foreach($_GET[$name] as $v) {
-        $ret[] = check_plain($v);
-      }
-    }
-    else {
-      $ret = check_plain($_GET[$name]);
-    }
-  }
-  if (!empty($ret)) {
-    if (is_array($ret)) {
-      $ret = array_filter($ret);
-    }
-    return $ret;
-  }
-  return $default;
-}
-
-function _hwc_practical_tool_facet_value_clear(&$facets) {
-  if (!empty($facets)) {
-    foreach ($facets as &$facet_field) {
-      foreach ($facet_field as &$facet_value) {
-        // The filters come wrapped in ".
-        $facet_value['filter'] = trim($facet_value['filter'], '"');
-      }
-    }
-  }
-}
-
-function _hwc_practical_tool_strip_param_value($params, $name, $value = NULL) {
-  if (!empty($params[$name])) {
-    if (!is_array($params[$name])) {
-      unset($params[$name]);
-    }
-    else {
-      $flipped = array_flip($params[$name]);
-      if (array_key_exists($value, $flipped)) {
-        unset($params[$name][$flipped[$value]]);
-        if (empty($params[$name])) {
-          unset($params[$name]);
-        }
-      }
-    }
-  }
-  return $params;
-}
-
-function hwc_practical_tool_menu_tools_form($form, $form_state) {
-  $variables['form_state'] = $form_state;
-  $variables['action'] = 'oira-tools';
-  $variables['facet_callback'] = 'hwc_practical_tool_get_facets_def';
-  $variables['search_callback'] = 'hwc_practical_tool_search';
-  $variables['language_field'] = 'field_language:value';
-
-  return _hwc_practical_tool_get_generic_faceted_form($variables);
-}
-
-/**
- * @param $variables
- * form_state
- * action
- *
- */
-function _hwc_practical_tool_get_generic_faceted_form($variables) {
+function osha_search_search_form($form, $form_state) {
   global $language;
-  $form_state = $variables['form_state'];
-  $action = $variables['action'];
-  $facet_callback = $variables['facet_callback'];
-  $search_callback = $variables['search_callback'];
-  $lang_field = $variables['language_field'];
 
-  $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
+  module_load_include('inc', 'hwc_practical_tool', 'hwc_practical_tool.pages');
+
+  $action = 'search-site';
+  $facet_callback = '_osha_search_form_get_facets';
+  $search_callback = 'osha_search_callback_search';
+
+  $text = _hwc_practical_tool_get_req_param($form_state, 'search_block_form');
+  if (empty($text)) {
+    $_GET['sort'] = 'alphabetically';
+  }
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'score');
 
   $form = array(
     '#action' => $action,
     '#method' => 'GET',
     '#token' => FALSE,
     '#attributes' => array('class' => array('row', 'oira-custom-faceted-search-form')),
+    '#prefix' => '<div class="oira-search-form-container"><div class="container">',
+    '#suffix' => '</div></div>',
     'left-column' => array(
       '#type' => 'container',
       '#attributes' => array('class' => array('col-md-3')),
@@ -107,7 +31,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
       '#attributes' => array('class' => array('col-md-9')),
     ),
   );
-  $form['left-column']['search']['text'] = array(
+  $form['left-column']['search']['search_block_form'] = array(
     '#type' => 'textfield',
     '#size' => 30,
     '#title' => t('Search'),
@@ -138,29 +62,14 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
     '#default_value' => $sort,
     '#prefix' => '<div class="sort-container col-xs-3">',
     '#suffix' => '</div>',
-    '#options' => array('alphabetically' => t('Alphabetically'),'date' => t('Latest first')),
+    '#options' => array('alphabetically' => t('Alphabetically'), 'score' => t('Relevance')),
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
   $facets_def = call_user_func($facet_callback);
 
-  // Find if any of this form params are set on GET.
-  $is_searched = !empty(array_intersect(array_keys($_GET), array_merge(array_keys($facets_def), array('text', 'sort'))));
-  $try_native = FALSE;
-  if (!$is_searched) {
-    // When no search performed by user, try to filter by current language.
-    $try_native = TRUE;
-    $_GET[$lang_field][] = $language->language;
-  }
-
   $response = call_user_func($search_callback, $form_state, $per_page);
 
-  if ($try_native && empty($response['result count'])) {
-    // If no results are available for current language
-    // perform the search with no lang.
-    $_GET[$lang_field] = array('en');
-    $response = call_user_func($search_callback, $form_state, $per_page);
-  }
   $facets = array();
   if (!empty($response['search_api_facets'])) {
     $facets = $response['search_api_facets'];
@@ -203,6 +112,26 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   if (!empty($response['results'])) {
     foreach ($response['results'] as $row) {
       list($lng, $nid) = explode('_', $row['id'], 2);
+      if (!empty($row['fields']['body:value'])) {
+        $excerpt = $row['fields']['body:value'][0];
+        $regexstr = "'<strong>(.*?)</strong>'si";
+        $current_hits = preg_match_all($regexstr, $excerpt, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
+
+        $snippet_offset = 180;
+        if ($current_hits > 0) {
+          $match = $matches[0][0];
+          $word_length = strlen($match[0]);
+          // Calculate offsets before and after for substr.
+          $pos = $match[1];
+          $start = $pos - $snippet_offset >= 0 ? $pos - $snippet_offset : 0;
+          $length = $pos + $word_length + $snippet_offset - $start;
+          if (isset($matches[1][0][1]) && $start + $length > $matches[1][0][1]) {
+            $length = $matches[1][0][1] - $start;
+          }
+          $snippet = substr($excerpt, $start, $length);
+          $excerpts[$nid] = '...' . $snippet . '...';
+        }
+      }
       $nids[] = $nid;
     }
 
@@ -217,7 +146,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
       'nodes' => array(
         '#type' => 'container',
         '#attributes' => array('class' => array('search-page-results-wrapper')),
-        'results-native' => node_view_multiple($nodes, 'teaser', 0, $language->language),
+        'results-native' => node_view_multiple($nodes, 'search_result', 0, $language->language),
       ),
       '#suffix' => theme('pager', array(
         'tags' => array('<', '<', '', '>', '>'),
@@ -225,6 +154,12 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
         'parameters' => $pager_params,
       )),
     );
+
+    foreach ($form['content']['results']['nodes']['results-native']['nodes'] as $nid => &$renderable_node) {
+      if (!empty($excerpts[$nid]) && !empty($renderable_node['body'][0]['#markup'])) {
+        $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
+      }
+    }
 
     $start = $page_no * $per_page;
     $form['content']['sort_fieldset']['search_summary'] = array(
@@ -248,31 +183,68 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function hwc_practical_tool_form_hwc_practical_tool_menu_tools_form_alter(&$form, $form_state) {
+function oira_promotional_material_form_oira_promotional_material_search_form_alter(&$form, $form_state) {
   // Unset the form_id and build_id in order not to have nasty urls.
   unset($form['form_id']);
   unset($form['form_build_id']);
 }
 
-function hwc_practical_tool_menu_tools_form_submit($form, &$form_state) {
-  $form_state['rebuild'] = TRUE;
-  $form_state['redirect'] = FALSE;
+function _osha_search_form_get_facets() {
+  return [
+    'type' => array(
+      'label' => t('Type'),
+      'field' => 'type',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => '_osha_search_get_bundles_filters',
+      'options_callback_args' => array(),
+    ),
+    'field_country' => array(
+      'label' => t('Country'),
+      'field' => 'field_country',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => '_hwc_taxonomy_filter_options_list',
+      'options_callback_args' => array('country'),
+    ),
+    'field_sector' => array(
+      'label' => t('Category'),
+      'field' => 'field_promotional_material_type',
+      'limit' => 50,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => '_hwc_taxonomy_filter_options_list',
+      'options_callback_args' => array('promotional_material_type'),
+    ),
+  ];
 }
 
-function hwc_practical_tool_search($form_state, $per_page = 10) {
-  $facets_def = hwc_practical_tool_get_facets_def();
-
+function osha_search_callback_search($form_state, $per_page = 10) {
+  $facets_def =_osha_search_form_get_facets();
   $page = _hwc_practical_tool_get_req_param($form_state, 'page', 0);
-  $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
+  $text = _hwc_practical_tool_get_req_param($form_state, 'search_block_form');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
+  /** @var SearchApiQuery $query */
+  /** @var SearchApiSolrService $server */
   list($server, $query) = hwc_practical_tool_menu_tools_get_query();
   $query->condition('status', 1);
-  $query->condition('type', 'practical_tool');
+  $types_options = _osha_search_get_bundles_filters();
+
+  // Bundle filter.
+  $type_filter = $query->createFilter('or');
+  foreach (array_keys($types_options) as $type_name) {
+    $type_filter->condition('type', $type_name);
+  }
+  $query->filter($type_filter);
+
   $query->condition('language', 'en');
-  $query->condition('field_publication_date', time(), '<=');
   $query->keys($text);
-  $query->fields(array('title_field', 'body:value',
-    'field_alternative_title', 'field_alternative_body:value'));
+  $query->fields(array('title_field', 'body:value', 'attachments_field_file'));
   $query->setOption('search_api_facets', $facets_def);
   foreach ($facets_def as $field_name => $facet_def) {
     $selected_values = _hwc_practical_tool_get_req_param($form_state, $field_name, array());
@@ -285,60 +257,31 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
     }
   }
   switch ($sort) {
-    case 'date':
-      $query->sort('field_revised_date', 'DESC');
+    case 'alphabetically':
+      $query->sort('title2', 'ASC');
       break;
 
     default:
-      $query->sort('title2', 'ASC');
+      $query->sort('search_api_relevance', 'DESC');
       break;
   }
   $query->range($page * $per_page, $per_page);
+
+  $query->setOption('hl.fragsize', 30);
 
   $response = $server->search($query);
   return $response;
 }
 
-function hwc_practical_tool_get_facets_def() {
-  return array(
-    'field_country' => array(
-      'label' => t('Country'),
-      'field' => 'field_country',
-      'limit' => 50,
-      'operator' => 'or',
-      'min_count' => 1,
-      'missing' => 0,
-      'options_callback' => '_hwc_taxonomy_filter_options_list',
-      'options_callback_args' => array('country'),
-    ),
-    'field_language:value' => array(
-      'label' => t('Language'),
-      'field' => 'field_language:value',
-      'limit' => 50,
-      'operator' => 'or',
-      'min_count' => 1,
-      'missing' => 0,
-      'options_callback' => 'osha_language_list_options',
-      'options_callback_args' => array(TRUE),
-    ),
-    'field_sector' => array(
-      'label' => t('Sector'),
-      'field' => 'field_sector',
-      'limit' => 50,
-      'operator' => 'or',
-      'min_count' => 1,
-      'missing' => 0,
-      'options_callback' => '_hwc_taxonomy_filter_options_list',
-      'options_callback_args' => array('sector'),
-    ),
-  );
-}
+function _osha_search_get_bundles_filters() {
+  $options = array();
+  $allowed = array('article', 'news', 'practical_tool', 'partner', 'promotional_material', 'wiki_page', 'faq');
+  $types = node_type_get_types();
+  foreach ($allowed as $type) {
+    if (!empty($types[$type])) {
+      $options[$type] = $types[$type]->name;
+    }
+  }
 
-function hwc_practical_tool_menu_tools_get_query() {
-  $server = search_api_server_load('solr_server');
-  $index = search_api_index_load(SOLR_SEARCH_INDEX);
-  $query = new SearchApiQuery($index);
-  $query->fields(array()); // Avoid PHP notice
-  $solr = new SearchApiSolrService($server);
-  return array($solr, $query);
+  return $options;
 }

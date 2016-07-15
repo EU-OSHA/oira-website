@@ -59,7 +59,7 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
 
   $page = _hwc_practical_tool_get_req_param($form_state, 'page', 0);
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
   /** @var SearchApiQuery $query */
   /** @var SearchApiSolrService $server */
   list($server, $query) = hwc_practical_tool_menu_tools_get_query();
@@ -81,12 +81,12 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
     }
   }
   switch ($sort) {
-    case 'alphabetically':
-      $query->sort('title', 'ASC');
+    case 'date':
+      $query->sort('field_revised_date', 'DESC');
       break;
 
     default:
-      $query->sort('field_revised_date', 'DESC');
+      $query->sort('title2', 'ASC');
       break;
   }
   $query->range($page * $per_page, $per_page);

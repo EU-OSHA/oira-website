@@ -24,8 +24,29 @@ function osha_search_menu() {
     'page arguments' => array('osha_search_admin_form'),
     'access arguments' => array('administer site configuration'),
   );
+  $items['search-site'] = array(
+    'title' => 'Search',
+    'description' => 'Search',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('osha_search_search_form'),
+    'access callback' => TRUE,
+    'access arguments' => TRUE,
+    'file' => 'osha_search.pages.inc',
+  );
   return $items;
 }
+
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function osha_search_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['search_result'] = array(
+    'label' => t('Search result'),
+    'custom settings' => FALSE,
+  );
+}
+
 
 /**
  * Implements hook_block_info().
@@ -98,7 +119,7 @@ function osha_search_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
     // Overwrite the search page default url.
     // Unset the form elements - the search view needs just the search param.
-    $form['#action'] = url('search');
+    $form['#action'] = url('search-site');
     $form['#method'] = 'get';
     unset($form['#submit']);
     unset($form['form_build_id']);
@@ -346,8 +367,8 @@ function osha_search_facetapi_widgets() {
  * Implements hook_ENTITY_TYPE_defaults_rebuild().
  */
 function osha_search_search_api_index_defaults_rebuild() {
-  // Ugly Fix a hard to replicate error - summary fields get unchecked in index and breaks the search page.
   return;
+  // Ugly Fix a hard to replicate error - summary fields get unchecked in index and breaks the search page.
   $indexes = osha_search_default_search_api_index();
   if (!empty($indexes['default_multilingual_node_index'])) {
     $index = search_api_index_load('default_multilingual_node_index');

@@ -55,7 +55,7 @@ function oira_blocks_default_fe_block_settings() {
         'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -50,
+        'weight' => -49,
       ),
       'osha_admin' => array(
         'region' => '',
@@ -111,7 +111,7 @@ function oira_blocks_default_fe_block_settings() {
         'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -47,
+        'weight' => -46,
       ),
       'osha_admin' => array(
         'region' => '',
@@ -139,7 +139,7 @@ function oira_blocks_default_fe_block_settings() {
         'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -49,
+        'weight' => -48,
       ),
       'osha_admin' => array(
         'region' => '',
@@ -167,7 +167,7 @@ function oira_blocks_default_fe_block_settings() {
         'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -51,
+        'weight' => -50,
       ),
       'osha_admin' => array(
         'region' => '',
@@ -195,7 +195,7 @@ function oira_blocks_default_fe_block_settings() {
         'region' => 'header_block',
         'status' => 1,
         'theme' => 'oira_frontend',
-        'weight' => -52,
+        'weight' => -51,
       ),
       'osha_admin' => array(
         'region' => '',

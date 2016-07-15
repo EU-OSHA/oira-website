@@ -121,7 +121,7 @@ function osha_news_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -191,6 +191,13 @@ function osha_news_strongarm() {
             'settings' => array(),
           ),
           'teaser' => array(
+            'weight' => '13',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
+          'search_result' => array(
             'weight' => '13',
             'label' => 'above',
             'type' => 'hidden',
