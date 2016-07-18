@@ -51,15 +51,15 @@ function napo_contact_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'node_type',
-        1 => 'title_field',
+        0 => 'title_field',
+        1 => 'node_type',
         2 => 'body',
         3 => 'node_link',
       ),
     ),
     'fields' => array(
-      'node_type' => 'ds_content',
       'title_field' => 'ds_content',
+      'node_type' => 'ds_content',
       'body' => 'ds_content',
       'node_link' => 'ds_content',
     ),

@@ -180,10 +180,10 @@ function oira_promotional_material_strongarm() {
             'settings' => array(),
           ),
           'search_result' => array(
-            'weight' => '14',
+            'weight' => '6',
             'label' => 'hidden',
-            'type' => 'hidden',
-            'visible' => FALSE,
+            'type' => 'related_partners',
+            'visible' => TRUE,
             'settings' => array(),
           ),
         ),
@@ -199,11 +199,14 @@ function oira_promotional_material_strongarm() {
             ),
           ),
           'search_result' => array(
-            'weight' => '15',
+            'weight' => '8',
             'label' => 'hidden',
-            'type' => 'hidden',
-            'visible' => FALSE,
-            'settings' => array(),
+            'type' => 'tools_see_more',
+            'visible' => TRUE,
+            'settings' => array(
+              'slice_point' => '250',
+              'parent_selector' => '.view-mode-search_result',
+            ),
           ),
         ),
         'node_type' => array(

@@ -348,7 +348,10 @@ function napo_contact_default_page_manager_pages() {
   $page->admin_title = 'OiRA FAQs';
   $page->admin_description = 'OiRA FAQs';
   $page->path = 'oira-faqs';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -386,6 +389,16 @@ function napo_contact_default_page_manager_pages() {
           0 => 'main',
         ),
         'parent' => NULL,
+        'class' => 'oira-faqs-page container',
+        'column_class' => '',
+        'row_class' => '',
+        'region_class' => '',
+        'no_scale' => FALSE,
+        'fixed_width' => '',
+        'column_separation' => '0.5em',
+        'region_separation' => '0.5em',
+        'row_separation' => '0.5em',
+        'hide_empty' => 0,
       ),
       'main' => array(
         'type' => 'column',
@@ -395,6 +408,8 @@ function napo_contact_default_page_manager_pages() {
           0 => 'main-row',
         ),
         'parent' => 'canvas',
+        'class' => '',
+        'hide_empty' => 0,
       ),
       'main-row' => array(
         'type' => 'row',
@@ -403,6 +418,8 @@ function napo_contact_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
       ),
       'center' => array(
         'type' => 'region',

@@ -264,7 +264,7 @@ function napo_contact_strongarm() {
       'display' => array(
         'node_type' => array(
           'search_result' => array(
-            'weight' => '0',
+            'weight' => '1',
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
