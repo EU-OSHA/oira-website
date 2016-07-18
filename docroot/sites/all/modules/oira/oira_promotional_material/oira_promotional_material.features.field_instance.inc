@@ -201,7 +201,7 @@ function oira_promotional_material_field_default_field_instances() {
           'more_link' => 0,
           'more_text' => 'Read more',
           'summary_handler' => 'ignore',
-          'trim_length' => 180,
+          'trim_length' => 9999,
           'trim_link' => 0,
           'trim_options' => array(
             'text' => 'text',
@@ -745,7 +745,7 @@ function oira_promotional_material_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'oira_promotional_resources_row',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',

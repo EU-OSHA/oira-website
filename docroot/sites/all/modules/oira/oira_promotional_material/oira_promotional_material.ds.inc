@@ -28,7 +28,9 @@ function oira_promotional_material_ds_layout_settings_info() {
         3 => 'node_type',
         4 => 'body',
         5 => 'field_country',
-        6 => 'field_resource_fc',
+        6 => 'related_partners',
+        7 => 'field_resource_fc',
+        8 => 'tools_see_more',
       ),
     ),
     'fields' => array(
@@ -38,7 +40,9 @@ function oira_promotional_material_ds_layout_settings_info() {
       'node_type' => 'right',
       'body' => 'right',
       'field_country' => 'right',
+      'related_partners' => 'right',
       'field_resource_fc' => 'right',
+      'tools_see_more' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(

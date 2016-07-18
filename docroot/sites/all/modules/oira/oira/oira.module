@@ -106,7 +106,7 @@ function oira_node_view($node, $view_mode, $langcode) {
     $display = $extra_fields['node_type']['display'];
     $node->content['node_type'] = [
       '#type' => 'markup',
-      '#markup' => t($types[$node->type]->name),
+      '#markup' => '<span class="custom-field-node-type">' . t($types[$node->type]->name) . '</span>',
       '#weight' => (int) $display[$view_mode]['weight'],
     ];
   }
