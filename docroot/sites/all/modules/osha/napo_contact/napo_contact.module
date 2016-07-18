@@ -21,7 +21,12 @@ function napo_contact_menu_alter(&$items) {
 function napo_contact_node_view($node, $view_mode, $langcode) {
   // Redirect all wiki pages to thei full page on wiki site.
   if ($node->type == 'faq' && $view_mode == 'full' && user_is_anonymous()) {
-    drupal_goto('faq', array(), 301);
+    if (!empty($node->field_oira)) {
+      drupal_goto('oira-faqs', array(), 301);
+    }
+    else {
+      drupal_goto('faq', array(), 301);
+    }
   }
 }
 
