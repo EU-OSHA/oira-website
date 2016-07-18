@@ -41,8 +41,7 @@ function osha_search_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = '›';
   $handler->display->display_options['pager']['options']['tags']['last'] = '»';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Footer: Global: Result summary */
   $handler->display->display_options['footer']['result']['id'] = 'result';
   $handler->display->display_options['footer']['result']['table'] = 'views';

@@ -169,7 +169,7 @@ function osha_wiki_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -226,7 +226,17 @@ function osha_wiki_strongarm() {
           'weight' => '13',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'node_type' => array(
+          'search_result' => array(
+            'weight' => '1',
+            'label' => 'hidden',
+            'type' => 'visible',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__wiki_page'] = $strongarm;

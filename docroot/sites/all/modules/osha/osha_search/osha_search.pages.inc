@@ -97,7 +97,7 @@ function osha_search_search_form($form, $form_state) {
         foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
           if (!empty($options[$val])) {
             $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
-            $query = _hwc_practical_tool_strip_param_value($query_params, $field_name, $val) ?: ['text' => ''];
+            $query = _hwc_practical_tool_strip_param_value($query_params, $field_name, $val) ?: ['search_block_form' => ''];
             $form['left-column']['search']['filters'][] = array(
               '#type' => 'markup',
               '#markup' => l($filter_label, $action, array('query' => $query, 'html' => TRUE)),
@@ -117,7 +117,7 @@ function osha_search_search_form($form, $form_state) {
         $regexstr = "'<strong>(.*?)</strong>'si";
         $current_hits = preg_match_all($regexstr, $excerpt, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
 
-        $snippet_offset = 180;
+        $snippet_offset = 150;
         if ($current_hits > 0) {
           $match = $matches[0][0];
           $word_length = strlen($match[0]);
@@ -275,7 +275,7 @@ function osha_search_callback_search($form_state, $per_page = 10) {
 
 function _osha_search_get_bundles_filters() {
   $options = array();
-  $allowed = array('article', 'news', 'practical_tool', 'partner', 'promotional_material', 'wiki_page', 'faq');
+  $allowed = array('article', 'news', 'practical_tool', 'promotional_material', 'wiki_page', 'faq');
   $types = node_type_get_types();
   foreach ($allowed as $type) {
     if (!empty($types[$type])) {

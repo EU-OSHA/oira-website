@@ -913,10 +913,19 @@ el.remove();
             'settings' => array(),
           ),
           'search_result' => array(
-            'weight' => '11',
+            'weight' => '12',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
+            'settings' => array(),
+          ),
+        ),
+        'node_type' => array(
+          'search_result' => array(
+            'weight' => '2',
+            'label' => 'hidden',
+            'type' => 'visible',
+            'visible' => TRUE,
             'settings' => array(),
           ),
         ),

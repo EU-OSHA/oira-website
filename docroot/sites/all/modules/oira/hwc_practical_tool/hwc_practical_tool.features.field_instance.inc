@@ -74,6 +74,27 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'osha',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'more_link' => 0,
+          'more_text' => 'Read more',
+          'summary_handler' => 'full',
+          'trim_length' => 180,
+          'trim_link' => 0,
+          'trim_options' => array(
+            'text' => 'text',
+            'use_field_summary' => 0,
+          ),
+          'trim_preserve_tags' => '',
+          'trim_suffix' => '...',
+          'trim_type' => 'chars',
+        ),
+        'type' => 'smart_trim_format',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'osha',
@@ -164,6 +185,12 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -233,6 +260,12 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -299,6 +332,12 @@ function hwc_practical_tool_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -389,6 +428,15 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 7,
       ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
@@ -458,6 +506,17 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'image_link' => '',
+          'image_style' => 'generic_detail_thumbnail',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -566,6 +625,12 @@ function hwc_practical_tool_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -686,6 +751,12 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -768,6 +839,22 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'osha_date_theme' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'date',
@@ -848,6 +935,15 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 5,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
@@ -911,6 +1007,12 @@ function hwc_practical_tool_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1034,6 +1136,12 @@ function hwc_practical_tool_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'teaser' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -1127,6 +1235,18 @@ function hwc_practical_tool_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'module' => 'osha',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => '',
+        ),
+        'type' => 'title_linked',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',

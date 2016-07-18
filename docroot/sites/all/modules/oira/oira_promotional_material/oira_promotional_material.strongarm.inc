@@ -87,7 +87,62 @@ function oira_promotional_material_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__promotional_material';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'osha_slideshow' => array(
+        'custom_settings' => FALSE,
+      ),
+      'highlights_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'newsletter_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'pub_teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'osha_resources' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'country_partner_content' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'title_body' => array(
+        'custom_settings' => FALSE,
+      ),
+      'body' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'osha_wiki' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
@@ -124,6 +179,13 @@ function oira_promotional_material_strongarm() {
             'visible' => TRUE,
             'settings' => array(),
           ),
+          'search_result' => array(
+            'weight' => '14',
+            'label' => 'hidden',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
         ),
         'tools_see_more' => array(
           'teaser' => array(
@@ -135,6 +197,22 @@ function oira_promotional_material_strongarm() {
               'slice_point' => '250',
               'parent_selector' => '.view-mode-teaser',
             ),
+          ),
+          'search_result' => array(
+            'weight' => '15',
+            'label' => 'hidden',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
+        ),
+        'node_type' => array(
+          'search_result' => array(
+            'weight' => '3',
+            'label' => 'hidden',
+            'type' => 'visible',
+            'visible' => TRUE,
+            'settings' => array(),
           ),
         ),
       ),

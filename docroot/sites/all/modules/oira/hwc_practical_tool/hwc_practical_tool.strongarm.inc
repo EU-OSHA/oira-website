@@ -142,7 +142,7 @@ function hwc_practical_tool_strongarm() {
         'custom_settings' => TRUE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
@@ -206,6 +206,13 @@ function hwc_practical_tool_strongarm() {
             'visible' => TRUE,
             'settings' => array(),
           ),
+          'search_result' => array(
+            'weight' => '8',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
         ),
         'title_field' => array(
           'teaser' => array(
@@ -238,6 +245,13 @@ function hwc_practical_tool_strongarm() {
             'visible' => TRUE,
             'settings' => array(),
           ),
+          'search_result' => array(
+            'weight' => '10',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
         ),
         'tools_see_more' => array(
           'default' => array(
@@ -259,6 +273,13 @@ function hwc_practical_tool_strongarm() {
               'slice_point' => '250',
               'parent_selector' => '.view-mode-teaser',
             ),
+          ),
+          'search_result' => array(
+            'weight' => '9',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
           ),
         ),
       ),

@@ -1,5 +1,9 @@
 <?php
 
+
+define('ROLE_OIRA_PARTNER', 'partner');
+define('ROLE_OIRA_PROJECT_MANAGER', 'Oira Project Manager');
+
 /**
  * Implements hook_mail_alter().
  */

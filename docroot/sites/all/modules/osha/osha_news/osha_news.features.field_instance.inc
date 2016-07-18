@@ -79,10 +79,10 @@ function osha_news_field_default_field_instances() {
         'module' => 'osha',
         'settings' => array(
           'field_formatter_class' => '',
-          'more_link' => 1,
+          'more_link' => 0,
           'more_text' => 'See more',
           'summary_handler' => 'ignore',
-          'trim_length' => 250,
+          'trim_length' => 180,
           'trim_link' => 0,
           'trim_options' => array(
             'text' => 'text',
@@ -93,7 +93,7 @@ function osha_news_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -197,7 +197,7 @@ function osha_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -290,7 +290,7 @@ function osha_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -532,7 +532,7 @@ function osha_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -787,7 +787,7 @@ function osha_news_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -881,7 +881,7 @@ function osha_news_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',

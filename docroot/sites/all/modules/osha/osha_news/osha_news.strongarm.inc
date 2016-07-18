@@ -198,10 +198,19 @@ function osha_news_strongarm() {
             'settings' => array(),
           ),
           'search_result' => array(
-            'weight' => '13',
+            'weight' => '15',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
+            'settings' => array(),
+          ),
+        ),
+        'node_type' => array(
+          'search_result' => array(
+            'weight' => '3',
+            'label' => 'hidden',
+            'type' => 'visible',
+            'visible' => TRUE,
             'settings' => array(),
           ),
         ),
