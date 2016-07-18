@@ -319,6 +319,53 @@ a.more-link{
 	}
 }
 
+//PDF FILES promotional resources
+.field-name-field-resource-fc{
+	margin-top: 25px;
+	ul{
+		list-style: none;
+	}
+	.form-group{
+		margin-bottom: 0px;
+	}
+	.promotional-material-resource-label{
+		display: inline-block;
+		font-weight: bold;
+		font-style: italic;
+		.promotional-material-resource-file-icon{
+			width: 21px;
+		    height: 27px;
+		    background: url(../images/icons/pdf-file.png) no-repeat;
+		    display: inline-block;
+		    margin-left: 5px;
+		    background-size: 100%;
+		    margin-right: 5px;
+		}
+	}
+	.promotional-material-resource-items{
+		display: inline-block;
+		font-weight: bold;
+		font-style: italic;
+		li{
+			display: inline-block;
+			a{
+				border-right: 1px solid @color-primary-dark;
+				padding-right: 8px;
+				padding-left: 5px;
+				color: @color-see-more;
+				&:hover{
+					color: @color-text-purple;
+				}
+			}
+		}
+		li:last-child{
+			a{
+				border-right: none;
+			}
+		}
+	}
+}
+
 /*END estilos comunes
 ************************************************************************************/
 
@@ -1285,9 +1332,10 @@ a.more-link{
 									background-color: @color-primary-dark;
     								padding: 15px;
     								color: @color-white;
+    								
     								h4{
     									a{
-    										font-size: 1.2em;
+    										font-size: 1.1em;
     										color: @color-white;
     										margin-top: 0px;
     									}
@@ -1301,16 +1349,26 @@ a.more-link{
 							.related-partners-1 > div{
 								margin-left: 222px;
 							}
+							.related-partners-2{
+								.node-partner{
+										  margin-left: 0px;
+									}
+							}
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
+								
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
 									}
 								}
 								& > .even:first-child{
-									border-right: 10px solid white;
+									//border-right: 10px solid white;
+									.node-partner{
+										  margin-right: 10px;
+										  margin-left: 0px;
+									}
 								}
 							}
 						}
@@ -1768,7 +1826,11 @@ a.more-link{
 		}
 	}
 	.partner-text2-container{
-
+		.field-type-taxonomy-term-reference{
+			a{
+				color: @color-white;
+			}
+		}
 	}
 }
 //partners and countries resources
@@ -1776,11 +1838,23 @@ a.more-link{
 	background-color: @color-primary;
 	padding-bottom: 30px;
 	.quicktabs-tabpage {
+		.group-practical_tool{
+			&:after{
+    		    .section-icons("../images/icons/018.png");
+    		}
+		}
+		.group-promotional_material{
+			&:after{
+    		    .section-icons("../images/icons/083.png");
+    		    width: 45px;
+    		    height: 45px;
+    		}
+		}
 		.content-group-label{
 			color: #967ea7;
 		    border-bottom: 2px solid #967ea7;
 		    font-size: 2.2em;
-		    padding-bottom: 15px;
+		    padding-bottom: 5px;
 		    font-family: 'Oswald';
 		    margin-top: 30px;
 		}
@@ -1812,6 +1886,27 @@ a.more-link{
 			.field-name-field-tool-link a{
 				
 			}
+			.field-name-tools-see-more{
+				margin-left: 0px;
+				a.more-link{
+					text-align: left;
+					margin-top: 15px;
+				}
+				a.show-less{
+					text-align: right !important;
+					width: 20px;
+					height: 12px;
+				    float: right;
+				    overflow: hidden;
+				    font-style: normal;
+					&:before{
+						content: "\e253";
+						font-family: "Glyphicons Halflings";
+						font-size: 1.2em;
+						line-height: 0;
+					}
+				}
+			}
 			//partners inside oira tools and promotional
 			.field-name-related-partners{
 				.node-partner{
@@ -1821,7 +1916,7 @@ a.more-link{
 					margin-top: 20px;
 					h4{
 						a{
-							font-size: 1.2em;
+							font-size: 1.1em;
 							color: @color-white;
 							margin-top: 0px;
 						}
@@ -1834,7 +1929,12 @@ a.more-link{
 				}
 			}
 			.related-partners-1 > div{
-				//margin-left: 222px;
+				margin-left: 0px;
+			}
+			.related-partners-2{
+				.node-partner{
+					margin-left: 0px;
+				}
 			}
 			.related-partners-2 > div{
 				display: table;
@@ -1845,12 +1945,25 @@ a.more-link{
 					}
 				}
 				& > .even:first-child{
-					border-right: 10px solid @color-primary;
+					//border-right: 10px solid @color-primary;
+					.node-partner{
+						margin-right: 10px;
+						margin-left: 0px;
+					}
 				}
 			}
 		}
 		.quicktabs-views-group:last-child {
 			border-bottom: 0px solid @color-text-purple-darker;
+		}
+		
+		.node-practical-tool{
+			.field-name-tools-see-more{
+				margin-left: 310px;
+			}
+			.related-partners-1 > div{
+				margin-left: 323px !important;
+			}
 		}
 	}
 }
@@ -1866,6 +1979,24 @@ a.more-link{
 			ul{
 				display: block !important;
 			}
+		}
+		.tab-title-show-all{
+			
+		}
+		.tab-title-practical_tool{
+			&:before{
+				content: "";
+				background: url("../images/icons/017.png") no-repeat;
+				background-size: 100%;
+			    display: inline-block;
+			    width: 22px;
+			    height: 21px;
+			    vertical-align: middle;
+			    margin-right: 10px;
+			}
+		}
+		.tab-title-promotional_material{
+
 		}
 		a{
 			padding: 15px;
