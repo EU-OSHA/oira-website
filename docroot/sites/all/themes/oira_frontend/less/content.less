@@ -500,6 +500,9 @@ a.more-link{
     					font-size: @font-size1-6;
     				}
     			}
+    			.more-link{
+    				text-align: left;
+    			}
 			}
 			.views-item-columns-container{
 				background-color: @color-white;
@@ -732,6 +735,9 @@ a.more-link{
 					padding-top: 20px;
 					border-bottom: 2px solid @color-text-purple;
 					border-top: 2px solid @color-text-purple;
+					.col-md-2.col-sm-6.col-xs-12{
+						width: 20%;
+					} 
 				}
 			}
 		}
@@ -1533,6 +1539,74 @@ a.more-link{
 	}
 }
 
+
+//page oira pags
+.page-oira-faqs{
+	#block-system-main{
+		background-color: @color-background-light-purple; 
+		padding-top: 17px;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		.view-id-faqs_oira{
+			.views-row-even{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-odd{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-last{
+				border-bottom: 0px;
+			}
+			.views-field-title-field{
+			background: rgba(0, 0, 0, 0);
+			padding-left: 0px;
+			border:none;
+				.ui-accordion-header-icon{
+					background-image: none;
+				}
+				.field-content{
+					font-size: @font-size1-2;
+					color: @color-text-purple-darker;
+					font-family: "Oswald";
+				}
+			}
+			.views-field-body{
+				.faq-answer{
+					font-size: @font-size0-8;
+					margin-bottom: 25px;
+					color: @color-text-grey;
+				}
+			}
+			.views-field-title-field.ui-accordion-header-active{
+				a{
+					.field-content{
+						&:after{
+							content:"\e253";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+						}
+					}				
+				}	
+			}
+			.views-field-title-field.ui-corner-all{
+				a{
+					.field-content{
+						&:after{
+							content: "\e252";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+						}
+					}				
+				}	
+			}
+			.ui-accordion-content{
+				border: 0px;
+				background: rgba(0, 0, 0, 0);
+				padding:0px;
+			}
+		}
+	}
+}
 /*END FAQ'S*/
 
 /*OIRA NEWS
@@ -1571,9 +1645,14 @@ a.more-link{
     		margin-bottom: 15px;
 			a{
     			color: @color-text-purple-darker;
+    			font-style: italic;
+    			&:hover{
+    				text-decoration: underline !important;
+    			}
     		}
     		.more-link{
     			color: @color-see-more;
+    			text-align: left;
     		}
     	}
 	}
@@ -2545,7 +2624,6 @@ a.more-link{
 						font-style: italic;
 					}
 				}
-				
 			}
 		}
 	}
@@ -2559,6 +2637,15 @@ a.more-link{
 			border-top: 2px solid @color-text-purple-darker;
     		margin-top: 35px;
     		margin-bottom: 40px;
+		}
+		ul{
+			margin-left: 20px;
+		}
+		p{
+			a{
+				font-style: italic;
+				text-decoration: underline !important;
+			}
 		}
 	}
 }
@@ -2759,14 +2846,30 @@ a.more-link{
 								padding-left: 0px;
 							}
 							.field-name-title-field{
-								font-size: @font-size1-4;
-								h3{
+								
+								h3, h2{
+									font-size: @font-size1-8;
 									margin-top: 0px;
+									a{
+										font-family: "Roboto" !important;
+										color: @color-text-grey;
+										&:hover{
+											text-decoration: underline !important;
+										}
+									}
 								}
+							}
+							span.custom-field-node-type{
+								font-style: italic;
+								color: @color-primary-dark;
 							}
 							.field-name-field-publication-date{
 								margin-top: 0px;
 							}
+							a.more-link{
+									text-align: left;
+									margin-top: 15px;
+								}
 							.field-name-tools-see-more{
 								//margin-left: 207px;
 								a.more-link{
@@ -2845,3 +2948,59 @@ a.more-link{
 	}
 }
 /*END SEARCH*/
+
+/*Pagination styles*/
+.pager{
+	li{
+		color: @color-see-more;
+		font-weight: bold;
+		font-size: @font-size1;
+		a{
+			background-color: inherit;
+			color: @color-see-more;
+			border: none;
+			border-radius: 4px;
+			padding: 5px 10px;
+			&:hover{
+
+			}
+		}
+	}
+	.pager-current {
+	    margin-left: 8px;
+	}
+	.pager-item{
+		a{
+			padding-left: 0px;
+			&:hover{
+				background-color: inherit;
+				color: @color-primary-dark;
+			}
+		}
+	}
+	.pager-first{
+		a{
+			background: url('../images/icons/pager-first.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+	.pager-previous{
+		a{
+			background: url('../images/icons/pager-previous.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+	.pager-next{
+		a{
+			background: url('../images/icons/pager-next.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+	.pager-last{
+		a{
+			background: url('../images/icons/pager-last.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+}
+/*End pagination styles*/

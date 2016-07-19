@@ -6525,10 +6525,10 @@ button.close {
   margin-top: 50px;
 }
 .top-header .header-logo .eu-logo {
-  width: 90px;
-  margin-left: 5px;
+  width: 75px;
+  margin-left: 30px;
   display: initial;
-  margin-top: 30px;
+  margin-top: 41px;
 }
 .top-header .header-sitename .oira-logo img {
   display: block;
@@ -7201,6 +7201,9 @@ a.more-link:before {
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .view-display-id-attachment_1 h4 a {
   font-size: 1.6em;
 }
+#block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .view-display-id-attachment_1 .more-link {
+  text-align: left;
+}
 #block-system-main .panels-flexible-row-new-6 .panels-flexible-region-new-news_section .views-item-columns-container {
   background-color: #ffffff;
   padding: 15px;
@@ -7399,6 +7402,9 @@ a.more-link:before {
   padding-top: 20px;
   border-bottom: 2px solid #967ea7;
   border-top: 2px solid #967ea7;
+}
+#block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside .view-display-id-oira_partners_homepage .views-view-grid .col-md-2.col-sm-6.col-xs-12 {
+  width: 20%;
 }
 /*END HOME*/
 /*ESTILOS ARTICLES
@@ -8099,6 +8105,54 @@ a.more-link:before {
 .page-faq .contact-form-wrapper button.form-submit:before {
   content: "> ";
 }
+.page-oira-faqs #block-system-main {
+  background-color: #dfd8e4;
+  padding-top: 17px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-row-even {
+  border-bottom: 2px solid #967ea7;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-row-odd {
+  border-bottom: 2px solid #967ea7;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-row-last {
+  border-bottom: 0px;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-field-title-field {
+  background: rgba(0, 0, 0, 0);
+  padding-left: 0px;
+  border: none;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-field-title-field .ui-accordion-header-icon {
+  background-image: none;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-field-title-field .field-content {
+  font-size: 1.2em;
+  color: #786586;
+  font-family: "Oswald";
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-field-body .faq-answer {
+  font-size: 0.8em;
+  margin-bottom: 25px;
+  color: #58585a;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-field-title-field.ui-accordion-header-active a .field-content:after {
+  content: "\e253";
+  font-family: "Glyphicons Halflings";
+  padding-left: 10px;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .views-field-title-field.ui-corner-all a .field-content:after {
+  content: "\e252";
+  font-family: "Glyphicons Halflings";
+  padding-left: 10px;
+}
+.page-oira-faqs #block-system-main .view-id-faqs_oira .ui-accordion-content {
+  border: 0px;
+  background: rgba(0, 0, 0, 0);
+  padding: 0px;
+}
 /*END FAQ'S*/
 /*OIRA NEWS
 *************************************************************/
@@ -8139,9 +8193,14 @@ a.more-link:before {
 }
 .view-display-id-oshnews_list article .field-name-body a {
   color: #786586;
+  font-style: italic;
+}
+.view-display-id-oshnews_list article .field-name-body a:hover {
+  text-decoration: underline !important;
 }
 .view-display-id-oshnews_list article .field-name-body .more-link {
   color: #10b2e4;
+  text-align: left;
 }
 /*News detail
 *****************************************************/
@@ -9008,6 +9067,13 @@ a.more-link:before {
   margin-top: 35px;
   margin-bottom: 40px;
 }
+.page-oira-community .panels-flexible-row-new-2 ul {
+  margin-left: 20px;
+}
+.page-oira-community .panels-flexible-row-new-2 p a {
+  font-style: italic;
+  text-decoration: underline !important;
+}
 /*END OIRA COMMUNITY*/
 /*SEARCH*/
 #ui-theme-basic-green.ui-menu {
@@ -9193,14 +9259,30 @@ a.more-link:before {
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .col-sm-3 {
   padding-left: 0px;
 }
-.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field {
-  font-size: 1.4em;
-}
-.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field h3 {
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field h3,
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field h2 {
+  font-size: 1.8em;
   margin-top: 0px;
+}
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field h3 a,
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field h2 a {
+  font-family: "Roboto" !important;
+  color: #58585a;
+}
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field h3 a:hover,
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-title-field h2 a:hover {
+  text-decoration: underline !important;
+}
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result span.custom-field-node-type {
+  font-style: italic;
+  color: #786586;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-field-publication-date {
   margin-top: 0px;
+}
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result a.more-link {
+  text-align: left;
+  margin-top: 15px;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-tools-see-more a.more-link {
   text-align: left;
@@ -9257,6 +9339,46 @@ a.more-link:before {
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .related-partners-2 > div > .even:first-child {
   border-right: 10px solid white;
 }
+/*END SEARCH*/
+/*Pagination styles*/
+.pager li {
+  color: #10b2e4;
+  font-weight: bold;
+  font-size: 1em;
+}
+.pager li a {
+  background-color: inherit;
+  color: #10b2e4;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.pager .pager-current {
+  margin-left: 8px;
+}
+.pager .pager-item a {
+  padding-left: 0px;
+}
+.pager .pager-item a:hover {
+  background-color: inherit;
+  color: #786586;
+}
+.pager .pager-first a {
+  background: url('../images/icons/pager-first.png') no-repeat 50%;
+  background-size: 21px;
+}
+.pager .pager-previous a {
+  background: url('../images/icons/pager-previous.png') no-repeat 50%;
+  background-size: 21px;
+}
+.pager .pager-next a {
+  background: url('../images/icons/pager-next.png') no-repeat 50%;
+  background-size: 21px;
+}
+.pager .pager-last a {
+  background: url('../images/icons/pager-last.png') no-repeat 50%;
+  background-size: 21px;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
@@ -9299,7 +9421,7 @@ a.more-link:before {
   display: inline-block;
   margin-left: 10px;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1199px) {
   /*HEADER
 ***********************************************/
   .top-header .header-logo {
@@ -9309,7 +9431,9 @@ a.more-link:before {
     width: 213px;
   }
   .top-header .header-logo img.eu-logo {
-    width: 75px;
+    width: 65px;
+    margin-left: 15px;
+    margin-top: 36px;
   }
   .menu-header #navbar .navbar-nav {
     font-size: 0.9em;
@@ -9332,7 +9456,7 @@ a.more-link:before {
 ********************************************/
   /*END HOME*/
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   /*HEADER
 ***********************************************/
   .top-header .header-logo {
