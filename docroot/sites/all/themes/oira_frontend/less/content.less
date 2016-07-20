@@ -1856,9 +1856,9 @@ a.more-link{
 		}
 	}
 }
-#mini-panel-partner_in_country{
+div[id ^= "mini-panel-partner_in_country"]{
 	.panels-flexible-row-inside-first{
-		background-color: @color-white;
+		background-color: @color-white !important;
 		border-bottom: 2px solid @color-text-purple-darker;
 		padding-top: 10px;
 		margin-bottom: 10px;
@@ -1912,6 +1912,45 @@ a.more-link{
 		}
 	}
 }
+//when have 2 partners in a country
+.partners-no-2{
+	.country-partner-wrapper{
+		&:last-child{
+			border-left: 2px solid @color-primary-dark;
+		}
+		div[id ^= "mini-panel-partner_in_country"]{
+			margin: 0px 30px;
+
+			.panels-flexible-row-inside-first{
+				padding-top: 0px;
+				.partner-image-container{
+					width: 100%;
+					img{
+						margin: 0 auto;
+					}
+				}
+				.partner-text-container{
+					width: 100%;
+					h2{
+						text-align: center;
+					}
+				}
+			}
+			.panels-flexible-row-new-1-inside{
+				> div{
+					width: 50%;
+				}
+				.partner-contact-container, .partner-social-container{
+					min-height: 285px;
+				}
+				.partner-social-container{
+					
+				}
+			}
+		}
+	}
+}
+
 //partners and countries resources
 #quicktabs-container-view__country_partner_content__block, #quicktabs-container-view__country_partner_content__block_1{
 	background-color: @color-primary;
@@ -2013,6 +2052,7 @@ a.more-link{
 			.related-partners-2{
 				.node-partner{
 					margin-left: 0px;
+					//min-height: 153px;
 				}
 			}
 			.related-partners-2 > div{
@@ -2021,6 +2061,7 @@ a.more-link{
 				& > .even, & > .odd{
 					&:first-child{
 						display: table-cell;
+						width: 50%;
 					}
 				}
 				& > .even:first-child{
@@ -2455,7 +2496,7 @@ a.more-link{
 
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-.page-sectorial-social-partners{
+.page-sectorial-social-partners, .page-national-partners, .page-irat-network{
 	h1{
 		color: @color-text-grey;
 	}
@@ -2538,6 +2579,32 @@ a.more-link{
 						font-size: @font-size2-2;
 					    line-height: 16px;
 					    font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}
+.page-irat-network{
+	.view-id-partners_list{
+		article{
+			background-color: @color-primary;
+			margin-bottom: 30px;
+			padding: 30px 15px;
+			margin-left: 0px;
+			margin-right: 0px;
+			.col-sm-10{
+				color: @color-primary-dark;
+				font-weight: bold;
+				h3{
+					margin-top: 10px;
+					a{
+						color: @color-text-grey;
+						font-weight: bold;
+						&:hover{
+							text-decoration: underline !important;
+							color: @color-text-hover-blue;
+						}
 					}
 				}
 			}
