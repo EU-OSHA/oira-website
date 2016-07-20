@@ -27,6 +27,7 @@ features[field_base][] = field_updated
 features[field_base][] = field_wiki_categories
 features[field_base][] = field_wiki_page_url
 features[field_instance][] = node-wiki_page-body
+features[field_instance][] = node-wiki_page-field_image
 features[field_instance][] = node-wiki_page-field_revised_date
 features[field_instance][] = node-wiki_page-field_summary
 features[field_instance][] = node-wiki_page-field_tags
