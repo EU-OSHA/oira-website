@@ -922,7 +922,7 @@ el.remove();
         ),
         'node_type' => array(
           'search_result' => array(
-            'weight' => '2',
+            'weight' => '1',
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,

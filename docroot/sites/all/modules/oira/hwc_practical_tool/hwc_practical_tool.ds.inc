@@ -69,57 +69,46 @@ function hwc_practical_tool_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'practical_tool';
   $ds_layout->view_mode = 'search_result';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
-        0 => 'field_image',
-      ),
-      'right' => array(
-        1 => 'title_field',
-        2 => 'node_type',
-        3 => 'field_revised_date',
-        4 => 'body',
-        5 => 'field_country',
-        6 => 'field_sector',
-        7 => 'field_tool_link',
-        8 => 'related_partners',
-        9 => 'tools_see_more',
+      'ds_content' => array(
+        0 => 'title_field',
+        1 => 'node_type',
+        2 => 'field_revised_date',
+        3 => 'body',
+        4 => 'field_country',
+        5 => 'field_sector',
+        6 => 'field_tool_link',
+        7 => 'related_partners',
+        8 => 'tools_see_more',
       ),
     ),
     'fields' => array(
-      'field_image' => 'left',
-      'title_field' => 'right',
-      'node_type' => 'right',
-      'field_revised_date' => 'right',
-      'body' => 'right',
-      'field_country' => 'right',
-      'field_sector' => 'right',
-      'field_tool_link' => 'right',
-      'related_partners' => 'right',
-      'tools_see_more' => 'right',
+      'title_field' => 'ds_content',
+      'node_type' => 'ds_content',
+      'field_revised_date' => 'ds_content',
+      'body' => 'ds_content',
+      'field_country' => 'ds_content',
+      'field_sector' => 'ds_content',
+      'field_tool_link' => 'ds_content',
+      'related_partners' => 'ds_content',
+      'tools_see_more' => 'ds_content',
     ),
     'classes' => array(
       'layout_class' => array(
-        'row' => 'row',
-      ),
-      'left' => array(
-        'col-sm-3' => 'col-sm-3',
-      ),
-      'right' => array(
-        'col-sm-9' => 'col-sm-9',
+        '' => '',
       ),
     ),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'layout_disable_css' => 1,
+    'layout_disable_css' => FALSE,
   );
   $export['node|practical_tool|search_result'] = $ds_layout;
 
