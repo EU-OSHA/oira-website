@@ -1649,14 +1649,20 @@ a.more-link{
 			a{
     			color: @color-text-purple-darker;
     			font-style: italic;
+    			text-decoration: underline !important;
     			&:hover{
-    				text-decoration: underline !important;
+    				color: @color-text-hover-blue;
     			}
     		}
     		.more-link{
-    			color: @color-see-more;
-    			text-align: left;
-    		}
+				color: @color-see-more;
+				text-decoration: none !important;
+				text-align: left;
+				&:hover{
+		    		color: @color-see-more;
+		    		text-decoration: underline !important;
+		    	}
+			}
     	}
 	}
 }
@@ -1687,12 +1693,18 @@ a.more-link{
 		a{
 			color: @color-text-purple-darker;
 			font-style: italic;
+			text-decoration: underline !important;
 			&:hover{
-				text-decoration: underline !important;
-			}
+    			color: @color-text-hover-blue;
+    		}
 		}
 		.more-link{
 			color: @color-see-more;
+			text-decoration: none !important;
+			&:hover{
+	    		color: @color-see-more;
+	    		text-decoration: underline !important;
+	    	}
 		}
 	}
 	.field-name-field-image{
