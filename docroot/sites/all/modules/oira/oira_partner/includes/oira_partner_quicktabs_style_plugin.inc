@@ -82,7 +82,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
         if (empty($title)) {
           $title = t('Other');
         }
-        $contents = '<div class="container"><div class="content-group-label group-' . $content_type . '">' . $title . '</div>';
+        $contents = '<div class="quicktabs-group-wrapper"><div class="container"><div class="content-group-label group-' . $content_type . '">' . $title . '</div>';
         $all_rows_rendered .= $contents;
         $all_group_counter = 0;
         foreach ($rows as $row) {
@@ -92,8 +92,8 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
           }
           $all_group_counter++;
         }
-        $contents .= '</div>';
-        $all_rows_rendered .= '</div>';
+        $contents .= '</div></div>';
+        $all_rows_rendered .= '</div></div>';
         $tabs[] = array(
           'title' => '<span class="tab-title-wrap tab-title-' . $content_type . '">' . $title . ' (' . count($records) . ')' . '</span>',
           'contents' => array('#markup' => $contents),
