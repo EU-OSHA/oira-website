@@ -891,6 +891,14 @@ a.more-link{
 					font-weight: normal;
 					margin-bottom: 15px;
 				}
+				.views-item-columns-container{
+					.custom-field-node-type{
+						display: none;
+					}
+				}
+				.custom-field-node-type{
+					display: none;
+				}
 			}
 			#additional-resources-youtube-pane{
 				h4{
@@ -928,6 +936,29 @@ a.more-link{
 						height: 25px;
 					}
 				}
+				.views-item-columns-container{
+					padding: 0px !important;
+					margin-bottom: 30px;
+					.group-left{
+						display: none;
+					}
+					.group-right{
+						width: 100%;
+						padding: 15px 30px;
+						min-height: 125px;
+						.field-name-field-publication-date{
+							margin-top: 0px;
+						}
+						.field-name-title-field{
+							a{
+								font-size: @font-size1;
+								font-weight: bold;
+								color: @color-text-grey;
+							}
+						}
+					}
+					
+				}
 			}
 			#additional-resources-external_url-pane{
 				h4{
@@ -952,6 +983,18 @@ a.more-link{
 						.section-icons("../images/icons/160.png");
 						width: 25px;
 						height: 25px;
+					}
+				}
+				.flickr-wrap{
+					margin-bottom: 30px;
+					.flickr-credit{
+						background-color: rgba(255, 255, 255, 0.95);
+						position: absolute;
+					    bottom: 0;
+					    left: 15px;
+					    right: 15px;
+					    display: block;
+					    padding: 10px;
 					}
 				}
 			}
@@ -1965,6 +2008,9 @@ div[id ^= "mini-panel-partner_in_country"]{
 				>div.field-item{
 					display: inline-block;
 					margin-right: 15px;
+					.field-name-field-collaborator-name{
+						
+					}
 				}
 			}
 		}
@@ -2183,60 +2229,100 @@ div[id ^= "mini-panel-partner_in_country"]{
 		.tab-title-show-all{
 			&:before{
 				content: "";
-				background: url("../images/icons/017.png") no-repeat;
+				background: url("../images/icons/show-all-icon-w.png") no-repeat;
 				background-size: 100%;
 			    display: inline-block;
-			    width: 22px;
-			    height: 21px;
+			    width: 25px;
+			    height: 25px;
 			    vertical-align: middle;
 			    margin-right: 10px;
 			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/show-all-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
 		}
 		.tab-title-news{
 			&:before{
 				content: "";
-				background: url("../images/icons/004.png") no-repeat;
+				background: url("../images/icons/news-icon-w.png") no-repeat;
 				background-size: 100%;
 			    display: inline-block;
-			    width: 22px;
-			    height: 21px;
+			    width: 25px;
+			    height: 25px;
 			    vertical-align: middle;
 			    margin-right: 10px;
 			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/news-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
 		}
 		.tab-title-practical_tool{
 			&:before{
 				content: "";
-				background: url("../images/icons/017.png") no-repeat;
+				background: url("../images/icons/tools-icon-w.png") no-repeat;
 				background-size: 100%;
 			    display: inline-block;
-			    width: 22px;
-			    height: 21px;
+			    width: 25px;
+			    height: 25px;
 			    vertical-align: middle;
 			    margin-right: 10px;
-
 			}
 			&:hover{
-			    	&:before{
-						content: "";
-						background: url("../images/icons/017.png") no-repeat;
-					}
-			    }
+		    	&:before{
+					content: "";
+					background: url("../images/icons/tools-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
 		}
 		.tab-title-promotional_material{
 			&:before{
 				content: "";
-				background: url("../images/icons/017.png") no-repeat;
+				background: url("../images/icons/promotional-resources-icon-w.png") no-repeat;
 				background-size: 100%;
 			    display: inline-block;
-			    width: 22px;
-			    height: 21px;
+			    width: 25px;
+			    height: 25px;
 			    vertical-align: middle;
 			    margin-right: 10px;
 			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/promotional-resources-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
 		}
 		a{
-			padding: 15px;
 			color: @color-white;
 			font-style: italic;
 			display: block;
@@ -2244,18 +2330,22 @@ div[id ^= "mini-panel-partner_in_country"]{
 				background-color: rgba(255,255,255,0.8);
 				color: @color-text-purple-darker;
 				color: @color-text-purple-darker;
+				text-decoration: none !important;
 				ul{
 					display: block !important;
 				}
 			}
-			
+			span{
+				padding: 15px;
+				display: block;
+			}
 		}
 		ul{
 			position: absolute;
 			color: @color-text-grey;
 			background-color: @color-white;
 			z-index: 100;
-			min-width: 123px;
+			min-width: 140px;
 			display: none;
 			li{
 				display: block;

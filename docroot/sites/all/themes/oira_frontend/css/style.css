@@ -7578,6 +7578,12 @@ a.more-link:before {
   font-weight: normal;
   margin-bottom: 15px;
 }
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources .pane-additional-resources .views-item-columns-container .custom-field-node-type {
+  display: none;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources .pane-additional-resources .custom-field-node-type {
+  display: none;
+}
 .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-youtube-pane h4:after {
   content: "";
   background: url("../images/icons/155.png") no-repeat;
@@ -7614,6 +7620,26 @@ a.more-link:before {
   width: 25px;
   height: 25px;
 }
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-news-pane .views-item-columns-container {
+  padding: 0px !important;
+  margin-bottom: 30px;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-news-pane .views-item-columns-container .group-left {
+  display: none;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-news-pane .views-item-columns-container .group-right {
+  width: 100%;
+  padding: 15px 30px;
+  min-height: 125px;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-news-pane .views-item-columns-container .group-right .field-name-field-publication-date {
+  margin-top: 0px;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-news-pane .views-item-columns-container .group-right .field-name-title-field a {
+  font-size: 1em;
+  font-weight: bold;
+  color: #58585a;
+}
 .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-external_url-pane h4:after {
   content: "";
   background: url("../images/icons/175.png") no-repeat;
@@ -7637,6 +7663,18 @@ a.more-link:before {
   float: right;
   width: 25px;
   height: 25px;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .flickr-wrap {
+  margin-bottom: 30px;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .flickr-wrap .flickr-credit {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  display: block;
+  padding: 10px;
 }
 .node-type-article .panels-flexible-region-new-add_res-inside #additional-resources-external_url-pane .view-additional-resources .views-item-columns-container {
   padding: 15px !important;
@@ -8715,50 +8753,85 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-show-all:before {
   content: "";
-  background: url("../images/icons/017.png") no-repeat;
+  background: url("../images/icons/show-all-icon-w.png") no-repeat;
   background-size: 100%;
   display: inline-block;
-  width: 22px;
-  height: 21px;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-show-all:hover:before {
+  content: "";
+  background: url("../images/icons/show-all-icon-p.png") no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
   vertical-align: middle;
   margin-right: 10px;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-news:before {
   content: "";
-  background: url("../images/icons/004.png") no-repeat;
+  background: url("../images/icons/news-icon-w.png") no-repeat;
   background-size: 100%;
   display: inline-block;
-  width: 22px;
-  height: 21px;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-news:hover:before {
+  content: "";
+  background: url("../images/icons/news-icon-p.png") no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
   vertical-align: middle;
   margin-right: 10px;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-practical_tool:before {
   content: "";
-  background: url("../images/icons/017.png") no-repeat;
+  background: url("../images/icons/tools-icon-w.png") no-repeat;
   background-size: 100%;
   display: inline-block;
-  width: 22px;
-  height: 21px;
+  width: 25px;
+  height: 25px;
   vertical-align: middle;
   margin-right: 10px;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-practical_tool:hover:before {
   content: "";
-  background: url("../images/icons/017.png") no-repeat;
+  background: url("../images/icons/tools-icon-p.png") no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-promotional_material:before {
   content: "";
-  background: url("../images/icons/017.png") no-repeat;
+  background: url("../images/icons/promotional-resources-icon-w.png") no-repeat;
   background-size: 100%;
   display: inline-block;
-  width: 22px;
-  height: 21px;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.quicktabs-tabs-container ul.quicktabs-tabs > li .tab-title-promotional_material:hover:before {
+  content: "";
+  background: url("../images/icons/promotional-resources-icon-p.png") no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
   vertical-align: middle;
   margin-right: 10px;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li a {
-  padding: 15px;
   color: #ffffff;
   font-style: italic;
   display: block;
@@ -8766,16 +8839,21 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .quicktabs-tabs-container ul.quicktabs-tabs > li a:hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: #786586;
+  text-decoration: none !important;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li a:hover ul {
   display: block !important;
+}
+.quicktabs-tabs-container ul.quicktabs-tabs > li a span {
+  padding: 15px;
+  display: block;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li ul {
   position: absolute;
   color: #58585a;
   background-color: #ffffff;
   z-index: 100;
-  min-width: 123px;
+  min-width: 140px;
   display: none;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li ul li {
