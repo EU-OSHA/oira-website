@@ -43,8 +43,64 @@ function oira_theme() {
       ),
       'template' => 'templates/article_share_widget',
     ),
+    'oira_social_link_icon' => array(
+      'variables' => array('element' => NULL),
+    ),
   );
 }
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function oira_field_formatter_info() {
+  return array(
+    'oira_social_link_icon' => array(
+      'label' => t('Social link with icon'),
+      'field types' => array('link_field'),
+      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+      'module' => 'oira',
+      'settings' => array(),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function oira_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $settings = $display['settings'];
+
+  $elements = array();
+  foreach ($items as $delta => $item) {
+    $elements[$delta] = array(
+      '#markup' => theme('oira_social_link_icon', array('element' => $item)),
+    );
+  }
+  return $elements;
+}
+
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function oira_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $summary = '';
+  if ($display['type'] == 'oira_social_link_icon') {
+    $summary = t('An icon of the social network.');
+  }
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function oira_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $settings = $instance['display'][$view_mode]['settings'];
+  $element = array();
+  return $element;
+}
+
 
 /**
  * Implements hook_field_extra_fields().
@@ -205,3 +261,27 @@ function oira_entity_info_alter(&$entity_info) {
     'custom settings' => TRUE,
   );
 }
+
+function theme_oira_social_link_icon($element) {
+  $return = '';
+  $url = $element['element']['url'];
+  $parts = parse_url($url);
+  if ($parts) {
+    $network = preg_replace('/(.*\.|^)([^\.]+)\.com$/', '\2', $parts['host']);
+    if ($network) {
+      $return = theme('link', array(
+          'path' => $url,
+          'text' => '<span class="social-profile-icon social-profile-icon-' . $network . '">' . $parts['host'] . $parts['path'] . '</span>',
+          'options' => array(
+            'html' => TRUE,
+            'attributes' => array(
+              'class' => "social-profile-link social-profile-icon-$network",
+            ),
+          ),
+        )
+      );
+    }
+  }
+  return $return;
+}
+
