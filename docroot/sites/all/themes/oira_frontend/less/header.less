@@ -104,9 +104,9 @@
 			}
 		}
 		#block-menu-block-5{
-			width: 95px;
+			width: 90px;
 		    position: absolute;
-		    top: 41px;
+		    top: 34px;
 		    z-index: 3;
 			.introduction-image{
 				display: inline-block;
@@ -138,7 +138,7 @@
 			margin-top: 7px;
 			margin-bottom: 7px;
 			clear: both;
-			display: inline-block;
+			display: block; //firefox (inline-block)
 			.ui-theme-basic-green.ui-autocomplete-input {
 			    background-position: 99% 7px;
 
@@ -178,6 +178,8 @@
 		}
 		#block-menu-block-3{
 			display: inline-block;
+			margin-right: 10px;//firefox
+			max-width: 100px;
 			.introduction-title{				
 				a{
 					display: block;
