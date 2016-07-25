@@ -314,7 +314,7 @@ function oira_partner_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_logo']['field_api_classes'] = TRUE;
-  /* Field: Content: Abbreviation name */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_abbreviation_name']['id'] = 'field_abbreviation_name';
   $handler->display->display_options['fields']['field_abbreviation_name']['table'] = 'field_data_field_abbreviation_name';
   $handler->display->display_options['fields']['field_abbreviation_name']['field'] = 'field_abbreviation_name';
@@ -322,14 +322,6 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_abbreviation_name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_abbreviation_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_abbreviation_name']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_abbreviation_name']['type'] = 'title_linked';
-  $handler->display->display_options['fields']['field_abbreviation_name']['settings'] = array(
-    'title_style' => 'h4',
-    'title_link' => '',
-    'title_class' => '',
-    'field_formatter_class' => '',
-  );
-  $handler->display->display_options['fields']['field_abbreviation_name']['field_api_classes'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
