@@ -90,35 +90,6 @@ class PartnerMigration extends HwcCrmMigration
                 return FALSE;
             }
         }
-        if (isset($row->field_orgtype)) {
-            $tid = _hwc_crm_migration_get_term_by_code('organisation_type', $row->field_orgtype);
-            if (!empty($tid)) {
-                $term = taxonomy_term_load($tid);
-                $row->field_orgtype = $term->name;
-            } else {
-                $this->currentMigration()->displayMessage(
-                    strtr('Could not find organisation_type term with code @code for partner \'@partner\'',
-                        array('@code' => $row->field_orgtype, '@partner' => $row->title)
-                    ),
-                    'warning'
-                );
-                unset($row->field_orgtype);
-            }
-        }
-        if (isset($row->field_bussines_sector)) {
-            $tid = _hwc_crm_migration_get_term_by_code('bussines_sector', $row->field_bussines_sector);
-            if (!empty($tid)) {
-                $term = taxonomy_term_load($tid);
-                $row->field_bussines_sector = $term->name;
-            } else {
-                $this->currentMigration()->displayMessage(
-                    strtr('Could not find bussines_sector term with code @code for partner \'@partner\'',
-                        array('@code' => $row->field_bussines_sector, '@partner' => $row->title)
-                    ),
-                    'warning'
-                );
-            }
-        }
         if (!empty($row->field_country)) {
             $term = taxonomy_get_term_by_name($row->field_country);
             if (empty($term)) {
@@ -136,24 +107,6 @@ class PartnerMigration extends HwcCrmMigration
 
     public function prepare($entity, $row)
     {
-        // Unpublish partner if status is not 863680005 (MH-129) - except fop.
-        $term = taxonomy_get_term_by_name($row->field_partner_type, 'partner_types');
-        $is_fop = FALSE;
-        if (!empty($term)) {
-            $term = current($term);
-            if ($term->uuid == PARTNER_TYPE_FOP) {
-                $is_fop = TRUE;
-            }
-        }
-        if (!$is_fop && $row->field_appform_status != 863680005) {
-            $this->currentMigration()->displayMessage(
-                strtr('The partner profile "@partner" does not have app form status published; unpublishing...',
-                    array('@partner' => $row->title)
-                ),
-                'warning'
-            );
-            $entity->status = 0;
-        }
         $entity->path['pathauto'] = TRUE;
         if (!empty($row->regenerate_alias) && !empty($entity->nid)) {
             if ($existing_alias = _pathauto_existing_alias_data('node/' . $entity->nid, 'en')) {
@@ -181,7 +134,7 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml
 
     public function __construct()
     {
-        $file = variable_get('hwc_crm_data_dir', '') . '/PublicProfile.xml';
+        $file = variable_get('hwc_crm_data_dir', '') . '/OIRA_GroupPublicProfile.xml';
         parent::__construct($file);
     }
 
@@ -219,10 +172,7 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml
                 $data->field_general_email = (string)$attributes['Textbox2'];
                 $data->field_general_phone = (string)$attributes['Textbox3'];
                 $data->field_website = (string)$attributes['Textbox4'];
-                //$data->field_orgtype = '';
-                //$data->field_bussines_sector = '';
-                $data->field_mission_statement = '';
-                $data->field_abbreviation_name = '';
+//                $data->field_mission_statement = '';
 
                 $logo_image = base64_decode((string)$attributes['Textbox5']);
                 $logo_ext = (string)$attributes['Textbox6'];
@@ -252,15 +202,6 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml
                 $data->field_main_contact = trim((string)$attributes['Textbox16'] . ' ' . (string)$attributes['Textbox17']);
                 $data->field_main_contact_email = (string)$attributes['Textbox18'];
 
-                /*$data->field_ceo = trim((string) $attributes['Textbox24'] . ' ' . (string) $attributes['Textbox25']);
-                $ceo_image = base64_decode((string) $attributes['Textbox26']);
-                $ceo_image_ext = (string) $attributes['Textbox27'];
-                if (!empty($ceo_image) && !empty($ceo_image_ext)) {
-                  $data->field_ceo_photo = $ceo_image;
-                  $filename = $this->prepareFileName($data, '_ceo');
-                  $data->field_ceo_photo_file = file_munge_filename($filename . '.' . $ceo_image_ext, '');
-                }
-        */
                 // Try to assign a valid partner type term
                 $partner_type = (string)$attributes['Textbox22'];
                 $term = taxonomy_get_term_by_name($partner_type, 'partner_types');
@@ -275,20 +216,6 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml
                     continue;
                 }
 
-                /*$data->field_social_dialog_partner = (string) $attributes['Textbox29'];
-                if (strtolower($data->field_social_dialog_partner) == 'false') {
-                  $data->field_social_dialog_partner = 0;
-                }
-                else {
-                  $data->field_social_dialog_partner = 1;
-                }
-
-                $data->field_quote = (string) $attributes['Textbox30'];
-                $data->field_pledge = (string) $attributes['Textbox31'];
-                $data->field_organisation_rep = trim((string) $attributes['Textbox32'] . ' ' . (string) $attributes['Textbox33']);
-                $data->field_position_identifier = (string) $attributes['Textbox34'];
-                $data->field_appform_status = (string) $attributes['Textbox35'];
-                */
                 if (empty(self::$data[$data->field_guid_organisation])) {
                     self::$data[$data->field_guid_organisation] = $data;
                 }
