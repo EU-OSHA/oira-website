@@ -10,11 +10,9 @@
                         expander_setting = value;
                     }
                 });
-                console.log(expander_setting.parent_selector);
                 var $wrapper = $(this).closest(expander_setting.parent_selector);
                 var $body = $wrapper.find('.field-name-body');
                 var $partners = $wrapper.find('.field-name-related-partners');
-                console.log($partners);
                 var $link = $wrapper.find('.field-name-field-tool-link');
                 $body.expander({
                     slicePoint:       expander_setting.slice_point,

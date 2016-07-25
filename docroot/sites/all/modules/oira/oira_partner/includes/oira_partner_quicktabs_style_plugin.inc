@@ -36,7 +36,9 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
     // All rows will contain 2 of each group.
     $all_rows = array();
     $all_rows_rendered = '';
+    $tab_index = 0;
     foreach ($sets as $title => $records) {
+      $tab_index++;
       usort($records, 'oira_partner_quicktabs_sort_content');
       $has_sector = FALSE;
       $all_group_counter = 0;
@@ -89,6 +91,9 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
           $contents .= '<div class="quicktabs-views-group ' . (($has_sector) ? 'sector-filter-tab-content' : '') . $this->options['row_class'] . '">' . $row . '</div>';
           if ($all_group_counter < 2) {
             $all_rows_rendered .= '<div class="quicktabs-views-group ' . $this->options['row_class'] . '">' . $row . '</div>';
+          }
+          if ($all_group_counter == 2) {
+            $all_rows_rendered .= '<a class="quicktab-group-view-all" href="javascript:jQuery(\'.quicktabs-tabs li\').eq(' . $tab_index . ').find(\'a\').trigger(\'click\');">View all</a>';
           }
           $all_group_counter++;
         }
