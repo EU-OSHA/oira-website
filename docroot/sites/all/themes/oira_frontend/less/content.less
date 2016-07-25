@@ -27,8 +27,11 @@ input, select{
 }
 
 a{
-	text-decoration: none !important;
+	text-decoration: none;
 	color: @color-text-purple-darker;
+	&:hover{
+		text-decoration: underline;
+	}
 }
 
 h1{
@@ -319,6 +322,53 @@ a.more-link{
 	}
 }
 
+//PDF FILES promotional resources
+.field-name-field-resource-fc{
+	margin-top: 25px;
+	ul{
+		list-style: none;
+	}
+	.form-group{
+		margin-bottom: 0px;
+	}
+	.promotional-material-resource-label{
+		display: inline-block;
+		font-weight: bold;
+		font-style: italic;
+		.promotional-material-resource-file-icon{
+			width: 21px;
+		    height: 27px;
+		    background: url(../images/icons/pdf-file.png) no-repeat;
+		    display: inline-block;
+		    margin-left: 5px;
+		    background-size: 100%;
+		    margin-right: 5px;
+		}
+	}
+	.promotional-material-resource-items{
+		display: inline-block;
+		font-weight: bold;
+		font-style: italic;
+		li{
+			display: inline-block;
+			a{
+				border-right: 1px solid @color-primary-dark;
+				padding-right: 8px;
+				padding-left: 5px;
+				color: @color-see-more;
+				&:hover{
+					color: @color-text-purple;
+				}
+			}
+		}
+		li:last-child{
+			a{
+				border-right: none;
+			}
+		}
+	}
+}
+
 /*END estilos comunes
 ************************************************************************************/
 
@@ -393,6 +443,21 @@ a.more-link{
 			.owl-wrapper{
 				.views-field-field-image{
 					position: relative;
+					display:inline-block;
+					background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* IE10+ */
+					background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+					a{
+						img{
+						position:relative;
+						z-index:-1;
+						display:block;
+						}
+					}
 				}
 				.views-field-title-field{
 					position: absolute;
@@ -452,6 +517,9 @@ a.more-link{
     				a{
     					font-size: @font-size1-6;
     				}
+    			}
+    			.more-link{
+    				text-align: left;
     			}
 			}
 			.views-item-columns-container{
@@ -685,6 +753,9 @@ a.more-link{
 					padding-top: 20px;
 					border-bottom: 2px solid @color-text-purple;
 					border-top: 2px solid @color-text-purple;
+					.col-md-2.col-sm-6.col-xs-12{
+						width: 20%;
+					} 
 				}
 			}
 		}
@@ -695,6 +766,24 @@ a.more-link{
 /*ESTILOS ARTICLES
 ****************************************************************/
 .node-type-article{
+	.panels-flexible-region-new-cover_image{
+		.field-type-image{
+			position: relative;
+			display:inline-block;
+			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 140%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(140%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* IE10+ */
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+			img{
+				position:relative;
+				z-index:-1;
+				display:block;
+			}
+		}
+	}
 	h1{
 		color: @color-text-grey;
 	}
@@ -802,6 +891,14 @@ a.more-link{
 					font-weight: normal;
 					margin-bottom: 15px;
 				}
+				.views-item-columns-container{
+					.custom-field-node-type{
+						display: none;
+					}
+				}
+				.custom-field-node-type{
+					display: none;
+				}
 			}
 			#additional-resources-youtube-pane{
 				h4{
@@ -839,6 +936,29 @@ a.more-link{
 						height: 25px;
 					}
 				}
+				.views-item-columns-container{
+					padding: 0px !important;
+					margin-bottom: 30px;
+					.group-left{
+						display: none;
+					}
+					.group-right{
+						width: 100%;
+						padding: 15px 30px;
+						min-height: 125px;
+						.field-name-field-publication-date{
+							margin-top: 0px;
+						}
+						.field-name-title-field{
+							a{
+								font-size: @font-size1;
+								font-weight: bold;
+								color: @color-text-grey;
+							}
+						}
+					}
+					
+				}
 			}
 			#additional-resources-external_url-pane{
 				h4{
@@ -863,6 +983,18 @@ a.more-link{
 						.section-icons("../images/icons/160.png");
 						width: 25px;
 						height: 25px;
+					}
+				}
+				.flickr-wrap{
+					margin-bottom: 30px;
+					.flickr-credit{
+						background-color: rgba(255, 255, 255, 0.95);
+						position: absolute;
+					    bottom: 0;
+					    left: 15px;
+					    right: 15px;
+					    display: block;
+					    padding: 10px;
 					}
 				}
 			}
@@ -953,8 +1085,25 @@ a.more-link{
 	//imagen superior articulos
 	.panels-flexible-region-new-image{
 		position: relative;
+		.field-type-image{
+			position: relative;
+			display:inline-block;
+			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 140%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(140%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* IE10+ */
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+			img{
+				position:relative;
+				z-index:-1;
+				display:block;
+			}
+		}
 		.pane-node-title-field{
 			margin-top: -93px;
+			position: relative;
 			h1{
 				color: @color-white;
 				font-size: 2.6em;
@@ -1285,9 +1434,10 @@ a.more-link{
 									background-color: @color-primary-dark;
     								padding: 15px;
     								color: @color-white;
+    								
     								h4{
     									a{
-    										font-size: 1.2em;
+    										font-size: 1.1em;
     										color: @color-white;
     										margin-top: 0px;
     									}
@@ -1301,16 +1451,26 @@ a.more-link{
 							.related-partners-1 > div{
 								margin-left: 222px;
 							}
+							.related-partners-2{
+								.node-partner{
+										  margin-left: 0px;
+									}
+							}
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
+								
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
 									}
 								}
 								& > .even:first-child{
-									border-right: 10px solid white;
+									//border-right: 10px solid white;
+									.node-partner{
+										  margin-right: 10px;
+										  margin-left: 0px;
+									}
 								}
 							}
 						}
@@ -1475,6 +1635,74 @@ a.more-link{
 	}
 }
 
+
+//page oira pags
+.page-oira-faqs{
+	#block-system-main{
+		background-color: @color-background-light-purple; 
+		padding-top: 17px;
+		margin-bottom: 20px;
+		padding-bottom: 20px;
+		.view-id-faqs_oira{
+			.views-row-even{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-odd{
+				border-bottom: 2px solid @color-text-purple;
+			}
+			.views-row-last{
+				border-bottom: 0px;
+			}
+			.views-field-title-field{
+			background: rgba(0, 0, 0, 0);
+			padding-left: 0px;
+			border:none;
+				.ui-accordion-header-icon{
+					background-image: none;
+				}
+				.field-content{
+					font-size: @font-size1-2;
+					color: @color-text-purple-darker;
+					font-family: "Oswald";
+				}
+			}
+			.views-field-body{
+				.faq-answer{
+					font-size: @font-size0-8;
+					margin-bottom: 25px;
+					color: @color-text-grey;
+				}
+			}
+			.views-field-title-field.ui-accordion-header-active{
+				a{
+					.field-content{
+						&:after{
+							content:"\e253";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+						}
+					}				
+				}	
+			}
+			.views-field-title-field.ui-corner-all{
+				a{
+					.field-content{
+						&:after{
+							content: "\e252";
+			    			font-family: "Glyphicons Halflings";
+			    			padding-left: 10px;
+						}
+					}				
+				}	
+			}
+			.ui-accordion-content{
+				border: 0px;
+				background: rgba(0, 0, 0, 0);
+				padding:0px;
+			}
+		}
+	}
+}
 /*END FAQ'S*/
 
 /*OIRA NEWS
@@ -1513,10 +1741,21 @@ a.more-link{
     		margin-bottom: 15px;
 			a{
     			color: @color-text-purple-darker;
+    			font-style: italic;
+    			text-decoration: underline !important;
+    			&:hover{
+    				color: @color-text-hover-blue;
+    			}
     		}
     		.more-link{
-    			color: @color-see-more;
-    		}
+				color: @color-see-more;
+				text-decoration: none !important;
+				text-align: left;
+				&:hover{
+		    		color: @color-see-more;
+		    		text-decoration: underline !important;
+		    	}
+			}
     	}
 	}
 }
@@ -1543,16 +1782,22 @@ a.more-link{
 		}
 	}
 	.field-name-body{
-		margin-bottom: 30px;
+		margin-bottom: 0px;
 		a{
 			color: @color-text-purple-darker;
 			font-style: italic;
+			text-decoration: underline !important;
 			&:hover{
-				text-decoration: underline !important;
-			}
+    			color: @color-text-hover-blue;
+    		}
 		}
 		.more-link{
 			color: @color-see-more;
+			text-decoration: none !important;
+			&:hover{
+	    		color: @color-see-more;
+	    		text-decoration: underline !important;
+	    	}
 		}
 	}
 	.field-name-field-image{
@@ -1719,9 +1964,9 @@ a.more-link{
 		}
 	}
 }
-#mini-panel-partner_in_country{
+div[id ^= "mini-panel-partner_in_country"]{
 	.panels-flexible-row-inside-first{
-		background-color: @color-white;
+		background-color: @color-white !important;
 		border-bottom: 2px solid @color-text-purple-darker;
 		padding-top: 10px;
 		margin-bottom: 10px;
@@ -1763,24 +2008,97 @@ a.more-link{
 				>div.field-item{
 					display: inline-block;
 					margin-right: 15px;
+					.field-name-field-collaborator-name{
+						
+					}
 				}
 			}
 		}
 	}
 	.partner-text2-container{
-
+		.field-type-taxonomy-term-reference{
+			a{
+				color: @color-white;
+			}
+		}
 	}
 }
+//when have 2 partners in a country
+.partners-no-2{
+	.country-partner-wrapper{
+		&:last-child{
+			border-left: 2px solid @color-primary-dark;
+		}
+		div[id ^= "mini-panel-partner_in_country"]{
+			margin: 0px 30px;
+
+			.panels-flexible-row-inside-first{
+				padding-top: 0px;
+				.partner-image-container{
+					width: 100%;
+					img{
+						margin: 0 auto;
+					}
+				}
+				.partner-text-container{
+					width: 100%;
+					h2{
+						text-align: center;
+					}
+				}
+			}
+			.panels-flexible-row-new-1-inside{
+				> div{
+					width: 50%;
+				}
+				.partner-contact-container, .partner-social-container{
+					min-height: 285px;
+				}
+				.partner-social-container{
+					
+				}
+			}
+		}
+	}
+}
+
 //partners and countries resources
 #quicktabs-container-view__country_partner_content__block, #quicktabs-container-view__country_partner_content__block_1{
 	background-color: @color-primary;
 	padding-bottom: 30px;
 	.quicktabs-tabpage {
+		.group-practical_tool{
+			&:after{
+    		    .section-icons("../images/icons/018.png");
+    		}
+		}
+		.group-promotional_material{
+			&:after{
+    		    .section-icons("../images/icons/083.png");
+    		    width: 45px;
+    		    height: 45px;
+    		}
+		}
+		.group-news{
+			&:after{
+    		    .section-icons("../images/icons/005.png");
+    		}
+		}
+		.node-news{
+			.field-name-field-publication-date{
+				margin-top: 0px;
+			}
+			h3{
+				a{
+					color: @color-text-grey;
+				}
+			}
+		}
 		.content-group-label{
 			color: #967ea7;
 		    border-bottom: 2px solid #967ea7;
 		    font-size: 2.2em;
-		    padding-bottom: 15px;
+		    padding-bottom: 5px;
 		    font-family: 'Oswald';
 		    margin-top: 30px;
 		}
@@ -1812,6 +2130,27 @@ a.more-link{
 			.field-name-field-tool-link a{
 				
 			}
+			.field-name-tools-see-more{
+				margin-left: 0px;
+				a.more-link{
+					text-align: left;
+					margin-top: 15px;
+				}
+				a.show-less{
+					text-align: right !important;
+					width: 20px;
+					height: 12px;
+				    float: right;
+				    overflow: hidden;
+				    font-style: normal;
+					&:before{
+						content: "\e253";
+						font-family: "Glyphicons Halflings";
+						font-size: 1.2em;
+						line-height: 0;
+					}
+				}
+			}
 			//partners inside oira tools and promotional
 			.field-name-related-partners{
 				.node-partner{
@@ -1821,7 +2160,7 @@ a.more-link{
 					margin-top: 20px;
 					h4{
 						a{
-							font-size: 1.2em;
+							font-size: 1.1em;
 							color: @color-white;
 							margin-top: 0px;
 						}
@@ -1834,7 +2173,13 @@ a.more-link{
 				}
 			}
 			.related-partners-1 > div{
-				//margin-left: 222px;
+				margin-left: 0px;
+			}
+			.related-partners-2{
+				.node-partner{
+					margin-left: 0px;
+					//min-height: 153px;
+				}
 			}
 			.related-partners-2 > div{
 				display: table;
@@ -1842,15 +2187,29 @@ a.more-link{
 				& > .even, & > .odd{
 					&:first-child{
 						display: table-cell;
+						width: 50%;
 					}
 				}
 				& > .even:first-child{
-					border-right: 10px solid @color-primary;
+					//border-right: 10px solid @color-primary;
+					.node-partner{
+						margin-right: 10px;
+						margin-left: 0px;
+					}
 				}
 			}
 		}
 		.quicktabs-views-group:last-child {
-			border-bottom: 0px solid @color-text-purple-darker;
+			border-bottom: 2px solid @color-text-purple;
+		}
+		
+		.node-practical-tool{
+			.field-name-tools-see-more{
+				margin-left: 310px;
+			}
+			.related-partners-1 > div{
+				margin-left: 323px !important;
+			}
 		}
 	}
 }
@@ -1867,8 +2226,103 @@ a.more-link{
 				display: block !important;
 			}
 		}
+		.tab-title-show-all{
+			&:before{
+				content: "";
+				background: url("../images/icons/show-all-icon-w.png") no-repeat;
+				background-size: 100%;
+			    display: inline-block;
+			    width: 25px;
+			    height: 25px;
+			    vertical-align: middle;
+			    margin-right: 10px;
+			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/show-all-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
+		}
+		.tab-title-news{
+			&:before{
+				content: "";
+				background: url("../images/icons/news-icon-w.png") no-repeat;
+				background-size: 100%;
+			    display: inline-block;
+			    width: 25px;
+			    height: 25px;
+			    vertical-align: middle;
+			    margin-right: 10px;
+			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/news-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
+		}
+		.tab-title-practical_tool{
+			&:before{
+				content: "";
+				background: url("../images/icons/tools-icon-w.png") no-repeat;
+				background-size: 100%;
+			    display: inline-block;
+			    width: 25px;
+			    height: 25px;
+			    vertical-align: middle;
+			    margin-right: 10px;
+			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/tools-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
+		}
+		.tab-title-promotional_material{
+			&:before{
+				content: "";
+				background: url("../images/icons/promotional-resources-icon-w.png") no-repeat;
+				background-size: 100%;
+			    display: inline-block;
+			    width: 25px;
+			    height: 25px;
+			    vertical-align: middle;
+			    margin-right: 10px;
+			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/promotional-resources-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    margin-right: 10px;
+				}
+		    }
+		}
 		a{
-			padding: 15px;
 			color: @color-white;
 			font-style: italic;
 			display: block;
@@ -1876,18 +2330,22 @@ a.more-link{
 				background-color: rgba(255,255,255,0.8);
 				color: @color-text-purple-darker;
 				color: @color-text-purple-darker;
+				text-decoration: none !important;
 				ul{
 					display: block !important;
 				}
 			}
-			
+			span{
+				padding: 15px;
+				display: block;
+			}
 		}
 		ul{
 			position: absolute;
 			color: @color-text-grey;
 			background-color: @color-white;
 			z-index: 100;
-			min-width: 123px;
+			min-width: 140px;
 			display: none;
 			li{
 				display: block;
@@ -2220,7 +2678,7 @@ a.more-link{
 
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-.page-sectorial-social-partners{
+.page-sectorial-social-partners, .page-national-partners, .page-irat-network{
 	h1{
 		color: @color-text-grey;
 	}
@@ -2309,6 +2767,32 @@ a.more-link{
 		}
 	}
 }
+.page-irat-network{
+	.view-id-partners_list{
+		article{
+			background-color: @color-primary;
+			margin-bottom: 30px;
+			padding: 30px 15px;
+			margin-left: 0px;
+			margin-right: 0px;
+			.col-sm-10{
+				color: @color-primary-dark;
+				font-weight: bold;
+				h3{
+					margin-top: 10px;
+					a{
+						color: @color-text-grey;
+						font-weight: bold;
+						&:hover{
+							text-decoration: underline !important;
+							color: @color-text-hover-blue;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 /*END National social partners*/
 
 
@@ -2389,7 +2873,6 @@ a.more-link{
 						font-style: italic;
 					}
 				}
-				
 			}
 		}
 	}
@@ -2404,6 +2887,369 @@ a.more-link{
     		margin-top: 35px;
     		margin-bottom: 40px;
 		}
+		ul{
+			margin-left: 20px;
+		}
+		p{
+			a{
+				font-style: italic;
+				text-decoration: underline !important;
+			}
+		}
 	}
 }
 /*END OIRA COMMUNITY*/
+
+/*SEARCH*/
+//input search styles
+#ui-theme-basic-green.ui-menu{
+	top: 29px !important;
+	float: right;
+	min-width: inherit;
+	right: 0px !important;
+	left: inherit !important;
+	width: 100% !important;
+	border-radius: 5px 0px 5px 5px;
+    border: 2px solid #003399;
+	.ui-autocomplete-field-group{
+		color: @color-white;
+		background-color: @color-primary-dark;
+		width: 100%;
+	    right: 0px;
+	    padding-right: 5px;
+	    text-align: right;
+	}
+	.ui-menu-item-first {
+    	border-top: none;
+	}
+}
+
+//general search styles
+.page-search-site{
+	.oira-search-form-container{
+		background: url('../images/background-two-colors.png') repeat-y 50%;
+		padding-bottom: 0px;
+		padding-top: 0px;
+		#osha-search-search-form{
+			div:first-child{
+			    .form-group{
+			    	margin-bottom: 0px;
+			    }
+			    #edit-left-column{
+					background-color: @color-primary-dark;
+					color: @color-white;
+					padding-right: 30px;
+					padding-top: 30px;
+					position: relative;
+
+					.form-type-textfield{
+						float: left;
+						margin-bottom: 15px;
+						input{
+							border: none;
+							border-radius: 0px;
+							outline: none;
+							height: auto;
+							padding-right: 35px;
+						}
+					}
+					#edit-submit{
+						position: absolute;
+						right: 0;
+						margin-right: 30px;
+						color: @color-text-purple-darker;
+					    border: none;
+					    border-radius: 0px;
+					    outline: none;
+					    width: 35px;
+					    line-height: 19px;
+    					font-size: 1.2em;
+    					padding-left: 7px;
+    					overflow: hidden;
+    					background-color: rgba(0,0,0,0);
+						&:before{
+							content: "\e003";
+							font-family: "Glyphicons Halflings";
+							margin-right: 30px;
+						}
+					}
+					a.active{
+						display: block;
+						color: @color-white;
+						margin-bottom: 10px;
+						font-style: italic;
+						span{
+							&:before{
+								color: @color-text-purple-darker;
+							    padding: 1px;
+							    font-size: 0.7em;
+							    margin-right: 10px;
+							    background-color: @color-white;
+							    display: block;
+							    width: 13px;
+							    height: 13px;
+							}
+						}
+					}
+					#edit-field-country, #edit-field-languagevalue, #edit-field-sector{
+						label{
+							&:after{
+								content: none;
+							}
+						}
+					}
+					.form-type-checkboxes{
+						border-top: 2px solid @color-white;
+						padding-top: 10px;
+						clear: both;
+						margin-top: 15px;
+						input.form-checkbox{
+							display: none;
+						}
+						label{
+							padding-left: 0px;
+							margin-bottom: 0px;
+						}
+						label:first-child{
+							font-family: @font-family-base-2;
+							font-size: @font-size1-2;
+							font-weight: normal;
+							display: block;
+							margin-bottom: 10px;
+							cursor: pointer;
+							&:after{
+								content: "\e250";
+								font-family: "Glyphicons Halflings";
+								margin-left: 10px;
+							}
+						}
+						.area-shown{
+							&:after{
+								content: "\e252" !important;
+								font-family: "Glyphicons Halflings";
+								margin-left: 10px;
+							}
+						}
+					}
+					.form-item-field-sector{
+						border-bottom: 2px solid @color-white;
+					}
+					.form-type-checkboxes:last-child{
+						border-bottom: 2px solid @color-white;
+					}
+				}
+
+				#edit-content{
+					background-color: @color-primary;
+					padding-bottom: 50px;
+					padding-left: 30px;
+					padding-top: 30px;
+					border-left: 5px solid @color-white;
+					#edit-sort-fieldset{
+						border: none;
+						border-radius: 0px;
+						background-color: rgba(0,0,0,0);
+						box-shadow: none;
+						border-top: 2px solid @color-text-purple-darker;
+						border-bottom: 2px solid @color-text-purple-darker;
+						margin-bottom: 30px;
+						.panel-body{
+							padding-left: 0px;
+							padding-right: 0px;
+						}
+						.sort-container{
+							min-width: 210px;
+							padding-left: 0px;
+							label{
+								font-weight: 100;
+								font-size: @font-size0-9;
+								&:after{
+									content: ": ";
+								}
+							}
+							#edit-sort{
+								font-size: @font-size0-9;
+								display: inline-block;
+							    width: auto;
+							    padding: 0;
+							    border: none;
+							    padding-bottom: 1px;
+							    font-weight: bold;
+							    height: initial;
+							    background-color: rgba(0,0,0,0);
+							}
+						}
+						.count-container{
+							font-size: @font-size0-9;
+						}
+					}
+					.search-page-results-wrapper{
+						background-color: @color-white;
+						padding: 30px;
+						.view-mode-search_result{
+							border-top: 2px solid @color-primary-dark;
+							padding:30px 0px;
+							margin-right: 0px;
+							margin-left: 0px;
+							.col-sm-3{
+								padding-left: 0px;
+							}
+							.field-name-title-field{
+								
+								h3, h2{
+									font-size: @font-size1-8;
+									margin-top: 0px;
+									a{
+										font-family: "Roboto" !important;
+										color: @color-text-grey;
+										&:hover{
+											text-decoration: underline !important;
+										}
+									}
+								}
+							}
+							span.custom-field-node-type{
+								font-style: italic;
+								color: @color-primary-dark;
+							}
+							.field-name-field-publication-date{
+								margin-top: 0px;
+							}
+							a.more-link{
+									text-align: left;
+									margin-top: 15px;
+								}
+							.field-name-tools-see-more{
+								//margin-left: 207px;
+								a.more-link{
+									text-align: left;
+									margin-top: 15px;
+								}
+								a.show-less{
+									text-align: right !important;
+									width: 20px;
+    								height: 12px;
+								    float: right;
+								    overflow: hidden;
+								    font-style: normal;
+									&:before{
+										content: "\e253";
+										font-family: "Glyphicons Halflings";
+										font-size: 1.2em;
+    									line-height: 0;
+									}
+								}
+							}
+							.field-name-field-tool-link{
+								a{
+									color: @color-text-grey;
+								    font-weight: bold;
+								    margin-top: 30px;
+								    display: block;
+								    margin-bottom: 15px;
+									span.glyphicon-new-window{
+										color: @color-see-more;
+										margin-left: 10px;
+									}
+								}
+							}
+							
+							//partners inside oira tools
+							.field-name-related-partners{
+								.node-partner{
+									background-color: @color-primary-dark;
+    								padding: 15px;
+    								color: @color-white;
+    								margin-top: 20px;
+    								h4{
+    									a{
+    										font-size: 1.2em;
+    										color: @color-white;
+    										margin-top: 0px;
+    									}
+    								}
+    								.more-link{
+    									color: @color-white;
+    									text-align: left;
+    								}
+    							}
+							}
+							.related-partners-1 > div{
+								//margin-left: 222px;
+							}
+							.related-partners-2 > div{
+								display: table;
+								border-collapse: collapse;
+								& > .even, & > .odd{
+									&:first-child{
+										display: table-cell;
+									}
+								}
+								& > .even:first-child{
+									border-right: 10px solid white;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/*END SEARCH*/
+
+/*Pagination styles*/
+.pager{
+	li{
+		color: @color-see-more;
+		font-weight: bold;
+		font-size: @font-size1;
+		a{
+			background-color: inherit;
+			color: @color-see-more;
+			border: none;
+			border-radius: 4px;
+			padding: 5px 10px;
+			&:hover{
+
+			}
+		}
+	}
+	.pager-current {
+	    margin-left: 8px;
+	}
+	.pager-item{
+		a{
+			padding-left: 0px;
+			&:hover{
+				background-color: inherit;
+				color: @color-primary-dark;
+			}
+		}
+	}
+	.pager-first{
+		a{
+			background: url('../images/icons/pager-first.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+	.pager-previous{
+		a{
+			background: url('../images/icons/pager-previous.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+	.pager-next{
+		a{
+			background: url('../images/icons/pager-next.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+	.pager-last{
+		a{
+			background: url('../images/icons/pager-last.png') no-repeat 50%;
+		    background-size: 21px;
+		}
+	}
+}
+/*End pagination styles*/

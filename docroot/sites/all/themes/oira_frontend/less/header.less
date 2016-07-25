@@ -8,10 +8,10 @@
 
 		}
 		.eu-logo{
-			width: 90px;
-			margin-left: 5px;
+			width: 75px;
+			margin-left: 30px;
     		display: initial;
-    		margin-top: 30px;
+    		margin-top: 41px;
 		}
 	}
 	.header-sitename{
@@ -104,19 +104,30 @@
 			}
 		}
 		#block-menu-block-5{
-			width: 95px;
-		    display: inline-block;
+			width: 90px;
 		    position: absolute;
-		    top: 41px;
+		    top: 34px;
 		    z-index: 3;
 			.introduction-image{
 				display: inline-block;
-				img{
-					width: 29px;
+				float: left;
+				a{
+					display: inline-block;
+					width: 36px;
+					height: 29px;
+					background: url('../images/icons/icon-news-menu.png') no-repeat;
+					background-size: 39px;
+					margin-top: -1px;
+					margin-left: -5px;
+					img{
+						display: none;
+						width: 29px;
+					}
 				}
 			}
 			.introduction-title{
 				display: inline-block;
+				margin-top: 4px;
 				a{
 					color: @color-menu-icons;
 					margin-left: 5px;
@@ -127,7 +138,7 @@
 			margin-top: 7px;
 			margin-bottom: 7px;
 			clear: both;
-			display: inline-block;
+			display: block; //firefox (inline-block)
 			.ui-theme-basic-green.ui-autocomplete-input {
 			    background-position: 99% 7px;
 
@@ -167,12 +178,15 @@
 		}
 		#block-menu-block-3{
 			display: inline-block;
+			margin-right: 10px;//firefox
+			max-width: 100px;
 			.introduction-title{				
 				a{
 					display: block;
 					background-color: @color-menu-icons;
     				padding: 3px 12px 3px 12px;
 					color: @color-white;
+					text-decoration: none;
 					&:before{
 						content: "\e033";
 					    margin-right: 8px;
@@ -201,6 +215,24 @@
 		}
 	}
 }
+//if login-in
+// .logged-in{
+// 	#block-menu-block-3{
+// 		.introduction-title{				
+// 			a{
+// 				&:before{
+// 					content: "\e033" !important;
+// 				    margin-right: 8px;
+// 				    display: inline-block;
+// 				    font-family: 'Glyphicons Halflings';
+// 				    font-size: 0.9em;
+// 				    top: 1px;
+// 				    position: relative;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 
 /*Menu
@@ -243,6 +275,7 @@
 					padding: 0px;
 					padding-left: 0px;
 					padding-right: 0px;
+					text-decoration: none !important;
     				//margin-right: 10px;
 				}
 				span{
