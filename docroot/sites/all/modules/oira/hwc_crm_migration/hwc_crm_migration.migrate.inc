@@ -104,9 +104,8 @@ class HwcCrmMigration extends Migration {
     if (!empty($removed)) {
       foreach ($removed as $to_remove) {
         if ($node = node_load($to_remove->destid1)) {
-          if ($node->status == 1 || !empty($node->field_appform_status)) {
+          if ($node->status == 1) {
             $node->status = 0;
-            $node->field_appform_status = NULL;
             node_save($node);
             $this->currentMigration()->displayMessage(
               strtr('Unpublishing partner @partner - not found in source anymore.',
