@@ -856,7 +856,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_publication_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
+  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['id'] = 'field_wiki_categories_tid_1';
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['table'] = 'field_data_field_wiki_categories';
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['field'] = 'field_wiki_categories_tid';
@@ -885,7 +885,7 @@ function hwc_practical_tool_views_default_views() {
     'wiki_page' => 'wiki_page',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
+  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
   $handler->display->display_options['filters']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';
@@ -905,9 +905,9 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more tools';
+  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -1115,7 +1115,7 @@ function hwc_practical_tool_views_default_views() {
     t('Latest tools'),
     t('See more'),
     t('New tools'),
-    t('See more tools'),
+    t('View all'),
     t('<div class="tool-teaser-content-wrapper">
 [tool_type_field]
 [title_field]
