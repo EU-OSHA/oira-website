@@ -628,7 +628,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'generic_detail_thumbnail',
-    'image_link' => 'content',
+    'image_link' => '',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
@@ -856,7 +856,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_publication_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
+  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['id'] = 'field_wiki_categories_tid_1';
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['table'] = 'field_data_field_wiki_categories';
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['field'] = 'field_wiki_categories_tid';
@@ -885,7 +885,7 @@ function hwc_practical_tool_views_default_views() {
     'wiki_page' => 'wiki_page',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
+  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
   $handler->display->display_options['filters']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';

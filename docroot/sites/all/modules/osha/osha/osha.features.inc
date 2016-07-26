@@ -68,9 +68,9 @@ function osha_image_default_styles() {
 
   // Exported image style: generic_detail_thumbnail.
   $styles['generic_detail_thumbnail'] = array(
-    'label' => 'Generic thumb image (large)',
+    'label' => 'Generic thumb image MC (large)',
     'effects' => array(
-      1 => array(
+      10 => array(
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 600,
@@ -81,6 +81,44 @@ function osha_image_default_styles() {
           'style_name' => 'generic_detail_thumbnail',
         ),
         'weight' => 0,
+      ),
+    ),
+  );
+
+  // Exported image style: generic_thumb_image_ac.
+  $styles['generic_thumb_image_ac'] = array(
+    'label' => 'Generic thumb image (auto crop)',
+    'effects' => array(
+      11 => array(
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#FFFFFF',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => 600,
+            'height' => 350,
+            'xpos' => 'center',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => 1,
+      ),
+      12 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 600,
+          'height' => 350,
+          'upscale' => 0,
+        ),
+        'weight' => 2,
       ),
     ),
   );

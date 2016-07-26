@@ -293,6 +293,13 @@ function hwc_practical_tool_strongarm() {
             'visible' => TRUE,
             'settings' => array(),
           ),
+          'teaser' => array(
+            'weight' => '0',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
         ),
       ),
     ),

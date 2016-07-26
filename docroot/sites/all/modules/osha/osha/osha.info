@@ -138,6 +138,7 @@ features[filter][] = full_html
 features[filter][] = plain_text
 features[image][] = article_image
 features[image][] = generic_detail_thumbnail
+features[image][] = generic_thumb_image_ac
 features[image][] = square_thumbnail_teaser
 features[language][] = bg
 features[language][] = cs

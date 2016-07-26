@@ -519,7 +519,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'field_formatter_class' => '',
-          'image_link' => 'content',
+          'image_link' => '',
           'image_style' => 'generic_detail_thumbnail',
         ),
         'type' => 'image',
