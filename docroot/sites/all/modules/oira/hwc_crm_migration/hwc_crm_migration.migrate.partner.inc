@@ -22,7 +22,7 @@ class PartnerMigration extends HwcCrmMigration
 
     protected function getManuallyMigratedFields()
     {
-        return array();
+        return array('field_mission_statement');
     }
 
     public function exposedFields()
@@ -36,7 +36,6 @@ class PartnerMigration extends HwcCrmMigration
             'field_website',
             'field_orgtype',
             'field_bussines_sector',
-            'field_mission_statement',
             'field_logo',
             'field_campaign_website',
             'field_ph_address',
@@ -172,7 +171,6 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml
                 $data->field_general_email = (string)$attributes['Textbox2'];
                 $data->field_general_phone = (string)$attributes['Textbox3'];
                 $data->field_website = (string)$attributes['Textbox4'];
-//                $data->field_mission_statement = '';
 
                 $logo_image = base64_decode((string)$attributes['Textbox5']);
                 $logo_ext = (string)$attributes['Textbox6'];

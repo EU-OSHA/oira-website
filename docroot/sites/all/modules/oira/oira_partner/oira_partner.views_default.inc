@@ -197,7 +197,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more partners';
+  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -253,7 +253,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['display_description'] = 'OiRA Partners Home page Block';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'custom_url';
-  $handler->display->display_options['link_url'] = 'national-social-partners';
+  $handler->display->display_options['link_url'] = 'national-partners';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
@@ -288,7 +288,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more partners';
+  $handler->display->display_options['use_more_text'] = '';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -314,14 +314,6 @@ function oira_partner_views_default_views() {
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_logo']['field_api_classes'] = TRUE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_abbreviation_name']['id'] = 'field_abbreviation_name';
-  $handler->display->display_options['fields']['field_abbreviation_name']['table'] = 'field_data_field_abbreviation_name';
-  $handler->display->display_options['fields']['field_abbreviation_name']['field'] = 'field_abbreviation_name';
-  $handler->display->display_options['fields']['field_abbreviation_name']['label'] = '';
-  $handler->display->display_options['fields']['field_abbreviation_name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_abbreviation_name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_abbreviation_name']['hide_empty'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -364,7 +356,6 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<div class="col-sm-6 partner-content-wrapper">
-[field_abbreviation_name]
 [title_field]
 [field_mission_statement]
 </div>';
@@ -381,7 +372,7 @@ function oira_partner_views_default_views() {
   $translatables['oira_partners'] = array(
     t('Master'),
     t('OIRA Partners'),
-    t('See more partners'),
+    t('View all'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
@@ -395,7 +386,6 @@ function oira_partner_views_default_views() {
 [field_logo]
 </div>'),
     t('<div class="col-sm-6 partner-content-wrapper">
-[field_abbreviation_name]
 [title_field]
 [field_mission_statement]
 </div>'),
