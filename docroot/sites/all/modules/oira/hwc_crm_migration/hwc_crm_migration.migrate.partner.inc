@@ -1,0 +1,240 @@
+<?php
+
+/**
+ * Class MigrateOshaBlog migrates blog.txt contents. The data
+ * is stored inside the <em>Blog</em> content type.
+ */
+class PartnerMigration extends HwcCrmMigration
+{
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct($arguments)
+    {
+        $this->source = new MigrateSourceList(
+            new PartnerMigrateListXml(),
+            new PartnerContentItemXML(),
+            $this->exposedFields()
+        );
+        parent::__construct($arguments);
+    }
+
+    protected function getManuallyMigratedFields()
+    {
+        return array();
+    }
+
+    public function exposedFields()
+    {
+        return array(
+            'field_guid_organisation',
+            'title',
+            'title_field',
+            'field_general_email',
+            'field_general_phone',
+            'field_website',
+            'field_orgtype',
+            'field_bussines_sector',
+            'field_mission_statement',
+            'field_logo',
+            'field_campaign_website',
+            'field_ph_address',
+            'field_ph_cp',
+            'field_ph_town',
+            'field_country',
+            'field_guid_main_contact',
+            'field_main_contact',
+            'field_main_contact_email',
+            'field_ceo',
+            'field_ceo_photo',
+            'field_category',
+            'field_social_dialog_partner',
+            'field_pledge',
+            'field_quote',
+            'field_partner_type',
+            'field_organisation_rep',
+            'field_position_identifier',
+            'field_appform_status',
+            'field_abbreviation_name',
+            'field_social_profile',
+        );
+    }
+
+    public function prepareRow($row)
+    {
+        /** @var stdClass $term */
+        if ($term = osha_workflow_get_partner_section_by_guid($row->field_guid_organisation)) {
+            $row->workbench_access[$term->tid] = $term->tid;
+            if ($term->name != $row->title) {
+                $term->name = $row->title;
+                taxonomy_term_save($term);
+                $row->regenerate_alias = TRUE;
+            }
+        } else {
+            if ($term = osha_workflow_create_section($row->title, $row->field_guid_organisation)) {
+                $this->currentMigration()->displayMessage(
+                    strtr('Creating new section with GUID: @guid for partner \'@partner\'',
+                        array('@guid' => $row->field_guid_organisation, '@partner' => $row->title)
+                    ),
+                    'warning'
+                );
+                $row->workbench_access[$term->tid] = $term->tid;
+            } else {
+                $this->currentMigration()->displayMessage(
+                    strtr('Unable to create new section with GUID: @guid for partner \'@partner\'',
+                        array('@guid' => $row->field_guid_organisation, '@partner' => $row->title)
+                    ),
+                    'error'
+                );
+                return FALSE;
+            }
+        }
+        if (!empty($row->field_country)) {
+            $term = taxonomy_get_term_by_name($row->field_country);
+            if (empty($term)) {
+                $voc = taxonomy_vocabulary_machine_name_load('country');
+                $term = new stdClass();
+                $term->vid = $voc->vid;
+                $term->name = ucwords(strtolower($row->field_country));
+                $term->language = 'en';
+                taxonomy_term_save($term);
+                $row->field_country = $term->name;
+            }
+        }
+        return TRUE;
+    }
+
+    public function prepare($entity, $row)
+    {
+        $entity->path['pathauto'] = TRUE;
+        if (!empty($row->regenerate_alias) && !empty($entity->nid)) {
+            if ($existing_alias = _pathauto_existing_alias_data('node/' . $entity->nid, 'en')) {
+                // Remove old alias
+                path_delete($existing_alias['pid']);
+                // Redirect old alias
+                $redirect = new stdClass();
+                redirect_object_prepare($redirect);
+                $redirect->source = $existing_alias['alias'];
+                $redirect->redirect = $existing_alias['source'];
+                $redirect->language = LANGUAGE_NONE;
+                // Check if the redirect exists before saving.
+                $hash = redirect_hash($redirect);
+                if (!redirect_load_by_hash($hash)) {
+                    redirect_save($redirect);
+                }
+            }
+        }
+    }
+}
+
+
+class PartnerMigrateListXml extends AbstractCrmMigrateListXml
+{
+
+    public function __construct()
+    {
+        $file = variable_get('hwc_crm_data_dir', '') . '/OIRA_GroupPublicProfile.xml';
+        parent::__construct($file);
+    }
+
+    public function transliterateString($string)
+    {
+        if (function_exists('transliterator_transliterate')) {
+            return transliterator_transliterate('Any-Latin; Latin-ASCII; [\u0080-\u7fff] remove', $string);
+        }
+        return iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $string);
+    }
+
+    public function prepareFileName($data, $suf)
+    {
+        $filename = $this->transliterateString($data->title);
+        $short_title = trim(substr($filename, 0, 20));
+        return $short_title . $suf . '_' . $data->field_guid_organisation;
+    }
+
+
+    protected function parseSourceFile()
+    {
+        self::$data = array();
+        if (!is_readable($this->file)) {
+            watchdog('hwc_crm_migration', 'Cannot find migration files: @file (set `hwc_crm_data_dir` properly)', array('@file' => $this->file), WATCHDOG_WARNING);
+            throw new MigrateException(strtr('Cannot find migration files: @file', array('@file' => $this->file)));
+        }
+        if ($xml = simplexml_load_file($this->file, 'SimpleXMLElement', LIBXML_COMPACT | LIBXML_PARSEHUGE)) {
+            // Contact fields are attributes of Detail.
+            foreach ($xml->xpath('//Details') as $item) {
+                $data = new stdClass();
+                $attributes = $item->attributes();
+                $data->title = trim((string)$attributes['Textbox1']);
+                $data->title_field = $data->title;
+                $data->field_guid_organisation = (string)$attributes['Table0_Details1'];
+                $data->field_general_email = (string)$attributes['Textbox2'];
+                $data->field_general_phone = (string)$attributes['Textbox3'];
+                $data->field_website = (string)$attributes['Textbox4'];
+//                $data->field_mission_statement = '';
+
+                $logo_image = base64_decode((string)$attributes['Textbox5']);
+                $logo_ext = (string)$attributes['Textbox6'];
+
+                if (!empty($logo_image) && !empty($logo_ext)) {
+                    $data->field_logo = $logo_image;
+                    $filename = $this->prepareFileName($data, '_logo');
+
+                    $data->field_logo_file = file_munge_filename($filename . '.' . $logo_ext, '');
+                    $data->field_logo_mime = $logo_ext;
+                }
+
+                $data->field_social_profile[] = (string)$attributes['Textbox7'];
+                $data->field_social_profile[] = (string)$attributes['Textbox8'];
+                $data->field_social_profile[] = (string)$attributes['Textbox9'];
+                $data->field_social_profile[] = (string)$attributes['Textbox10'];
+                $data->field_social_profile[] = (string)$attributes['Textbox11'];
+
+                $data->field_social_profile[] = (string)$attributes['Textbox19'];
+                $data->field_social_profile[] = (string)$attributes['Textbox20'];
+
+                $data->field_ph_address = (string)$attributes['Textbox12'];
+                $data->field_ph_cp = (string)$attributes['Textbox13'];
+                $data->field_country = (string)$attributes['Textbox14'];
+                $data->field_ph_town = (string)$attributes['Textbox21'];
+                $data->field_guid_main_contact = (string)$attributes['Textbox15'];
+                $data->field_main_contact = trim((string)$attributes['Textbox16'] . ' ' . (string)$attributes['Textbox17']);
+                $data->field_main_contact_email = (string)$attributes['Textbox18'];
+
+                // Try to assign a valid partner type term
+                $partner_type = (string)$attributes['Textbox22'];
+                $term = taxonomy_get_term_by_name($partner_type, 'partner_types');
+                if (!empty($term)) {
+                    $data->field_partner_type = $partner_type;
+                } else {
+                    watchdog('hwc_crm_migration', 'Ignoring partner with type @type in the vocabulary for organisation @organisation',
+                        array(
+                            '@type' => $partner_type,
+                            '@organisation' => $data->title
+                        ), WATCHDOG_WARNING);
+                    continue;
+                }
+
+                if (empty(self::$data[$data->field_guid_organisation])) {
+                    self::$data[$data->field_guid_organisation] = $data;
+                }
+            }
+        }
+    }
+}
+
+class PartnerContentItemXML extends MigrateItem
+{
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getItem($item_id)
+    {
+        if (array_key_exists($item_id, PartnerMigrateListXml::$data)) {
+            return (object)PartnerMigrateListXml::$data[$item_id];
+        }
+        return NULL;
+    }
+}
