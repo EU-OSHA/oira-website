@@ -24,7 +24,6 @@ dependencies[] = options
 dependencies[] = osha
 dependencies[] = page_manager
 dependencies[] = path_breadcrumbs
-dependencies[] = shs
 dependencies[] = smart_trim
 dependencies[] = strongarm
 dependencies[] = taxonomy

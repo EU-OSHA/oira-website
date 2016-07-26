@@ -226,7 +226,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Discover what else is new in OiRA';
+  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -309,7 +309,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'More news';
+  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
@@ -582,12 +582,10 @@ function osha_news_views_default_views() {
   </div>
 </div>'),
     t('Latest News'),
-    t('Discover what else is new in OiRA'),
+    t('View all'),
     t('Latest news'),
     t('Latest news (what\'s new)'),
-    t('More news'),
     t('Related news'),
-    t('View all'),
     t('All'),
     t('Attachment'),
     t('<div class="col-sm-6 image-wrapper">

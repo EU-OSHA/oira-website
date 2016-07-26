@@ -87,7 +87,7 @@ function oira_country_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_country_node';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'practical_tool' => 'practical_tool',
+    'partner' => 'partner',
   );
 
   /* Display: Block */
