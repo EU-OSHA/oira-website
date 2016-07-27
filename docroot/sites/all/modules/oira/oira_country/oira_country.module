@@ -116,7 +116,9 @@ function oira_country_block_count_all() {
     ->condition('fc.bundle', 'partner');
   $query->addExpression('DISTINCT(fc.field_country_tid)', 'field_country_tid');
   $query->leftJoin('node', 'node', 'fc.entity_id = node.nid');
+  $query->leftJoin('field_data_field_partner_type', 'pt', 'pt.entity_id = node.nid');
   $query->condition('node.status', 1);
+  $query->condition('pt.field_partner_type_tid', array(OIRA_PARTNER_TYPE_SECTORIAL_TID, OIRA_PARTNER_TYPE_NATIONAL_TID), 'IN');
   $content_counts['total_country'] = $query->execute()->rowCount();
 
   // Count partners.
@@ -124,6 +126,8 @@ function oira_country_block_count_all() {
     ->condition('n.type', 'partner')
     ->condition('status', 1);
   $query->addExpression('COUNT(nid)', 'total_partners');
+  $query->leftJoin('field_data_field_partner_type', 'pt', 'pt.entity_id = n.nid');
+  $query->condition('pt.field_partner_type_tid', array(OIRA_PARTNER_TYPE_SECTORIAL_TID, OIRA_PARTNER_TYPE_NATIONAL_TID), 'IN');
   $res = $query->execute()->fetchAssoc();
 
   $content_counts['total_partners'] = $res['total_partners'];

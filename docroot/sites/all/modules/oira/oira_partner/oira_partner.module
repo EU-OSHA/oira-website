@@ -7,6 +7,10 @@
 include_once 'oira_partner.features.inc';
 include_once 'oira_partner.inc';
 
+define('OIRA_PARTNER_TYPE_SECTORIAL_TID', 284);
+define('OIRA_PARTNER_TYPE_NATIONAL_TID', 262);
+define('OIRA_PARTNER_TYPE_IRAT_TID', 263);
+
 function oira_partner_field_extra_fields_formatter_info() {
   return [
     'partner_content_count' => [
@@ -189,7 +193,7 @@ function _oira_partner_partner_country_minipanel() {
   $term = menu_get_object('taxonomy_term', 2);
 
   if (!empty($term)) {
-    $partners = _oira_partner_get_by_country($term->tid, 262);
+    $partners = _oira_partner_get_by_country($term->tid, array(OIRA_PARTNER_TYPE_SECTORIAL_TID, OIRA_PARTNER_TYPE_NATIONAL_TID));
     if (!empty($partners)) {
       $count = count($partners);
       $render = array(
@@ -273,7 +277,7 @@ function _oira_partner_compute_content_count($node) {
   }
 }
 
-function _oira_partner_get_by_country($tid, $type_tid = NULL) {
+function _oira_partner_get_by_country($tid, $type_tid = array()) {
   $partners = array();
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
@@ -281,7 +285,7 @@ function _oira_partner_get_by_country($tid, $type_tid = NULL) {
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_country', 'tid', $tid);
   if (!empty($type_tid)) {
-    $query->fieldCondition('field_partner_type', 'tid', $type_tid);
+    $query->fieldCondition('field_partner_type', 'tid', $type_tid, 'IN');
   }
 
   $result = $query->execute();
