@@ -225,6 +225,20 @@ function _oira_partner_partner_country_minipanel() {
   return $render;
 }
 
+
+/**
+ * Implements hook_form_alter().
+ */
+function oira_partner_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Hide the country selector if is partner content.
+  if (!empty($form['#node'])) {
+    $bundle = $form['#node']->type;
+    if (variable_get('workbench_access_node_type_' . $bundle, 0) && isset($form['field_country'])) {
+      $form['field_country']['#access'] = FALSE;
+    }
+  }
+}
+
 /**
  * Implements hook_node_presave().
  */
@@ -232,6 +246,16 @@ function oira_partner_node_presave($node) {
   // Invalidate content count cache.
   if ($node->type == 'partner') {
     cache_clear_all(_oira_partner_compute_count_cid($node), 'cache');
+  }
+
+  // For Partners content, the content with country inherit the country.
+  if (variable_get('workbench_access_node_type_' . $node->type, 0)) {
+    if (!empty($node->workbench_access)) {
+      $partner = oira_partner_by_section_id_load($node->workbench_access);
+      if (isset($node->field_country) && !empty($partner->field_country)) {
+        $node->field_country = $partner->field_country;
+      }
+    }
   }
 }
 
