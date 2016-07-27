@@ -414,7 +414,7 @@ function osha_text_formatter_practical_tool_view($entity_type, $entity, $field, 
  * Implements hook_views_pre_render().
  */
 function hwc_practical_tool_views_pre_render(&$view) {
-  if ($view->name == 'tools' && $view->current_display == 'block_1') {
+  if ($view->name == 'tools' && in_array($view->current_display, array('block_1', 'block_2'))) {
     $view->display_handler->set_option('use_more', TRUE);
     $view->display_handler->set_option('use_more_text', t('View all'));
     $view->display_handler->set_option('link_display', 'custom_url');

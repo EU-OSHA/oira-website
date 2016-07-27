@@ -59,12 +59,14 @@ function oira_views_default_views() {
     'trim_type' => 'chars',
     'trim_suffix' => '...',
     'more_link' => '1',
-    'more_text' => 'Continue reading',
+    'more_text' => 'See more',
     'trim_options' => array(
       'text' => 'text',
+      'use_field_summary' => 0,
     ),
     'trim_preserve_tags' => '',
     'field_formatter_class' => '',
+    'tools_show_full' => 0,
   );
   /* Sort criterion: Content: Updated (field_updated) */
   $handler->display->display_options['sorts']['field_updated_value']['id'] = 'field_updated_value';

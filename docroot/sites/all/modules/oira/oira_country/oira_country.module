@@ -111,6 +111,14 @@ function oira_country_field_extra_fields() {
 function oira_country_block_count_all() {
   $content_counts = _oira_country_compute_count_all();
 
+  // Count countries by partners.
+  $query = db_select('field_data_field_country', 'fc')
+    ->condition('fc.bundle', 'partner');
+  $query->addExpression('DISTINCT(fc.field_country_tid)', 'field_country_tid');
+  $query->leftJoin('node', 'node', 'fc.entity_id = node.nid');
+  $query->condition('node.status', 1);
+  $content_counts['total_country'] = $query->execute()->rowCount();
+
   // Count partners.
   $query = db_select('node', 'n')
     ->condition('n.type', 'partner')

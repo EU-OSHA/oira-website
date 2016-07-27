@@ -628,7 +628,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'generic_detail_thumbnail',
-    'image_link' => 'content',
+    'image_link' => '',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_image']['field_api_classes'] = TRUE;
@@ -905,9 +905,9 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more tools';
+  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -1115,7 +1115,7 @@ function hwc_practical_tool_views_default_views() {
     t('Latest tools'),
     t('See more'),
     t('New tools'),
-    t('See more tools'),
+    t('View all'),
     t('<div class="tool-teaser-content-wrapper">
 [tool_type_field]
 [title_field]

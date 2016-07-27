@@ -22,42 +22,32 @@ class PartnerMigration extends HwcCrmMigration
 
     protected function getManuallyMigratedFields()
     {
-        return array('field_mission_statement');
+        return array('field_mission_statement', 'field_collaborator');
     }
 
-    public function exposedFields()
-    {
-        return array(
-            'field_guid_organisation',
-            'title',
-            'title_field',
-            'field_general_email',
-            'field_general_phone',
-            'field_website',
-            'field_orgtype',
-            'field_bussines_sector',
-            'field_logo',
-            'field_campaign_website',
-            'field_ph_address',
-            'field_ph_cp',
-            'field_ph_town',
-            'field_country',
-            'field_guid_main_contact',
-            'field_main_contact',
-            'field_main_contact_email',
-            'field_ceo',
-            'field_ceo_photo',
-            'field_category',
-            'field_social_dialog_partner',
-            'field_pledge',
-            'field_quote',
-            'field_partner_type',
-            'field_organisation_rep',
-            'field_position_identifier',
-            'field_appform_status',
-            'field_abbreviation_name',
-            'field_social_profile',
-        );
+    public function exposedFields() {
+      return array(
+        'field_guid_organisation',
+        'title',
+        'title_field',
+        'field_general_email',
+        'field_general_phone',
+        'field_website',
+        'field_orgtype',
+        'field_logo',
+        'field_ph_address',
+        'field_ph_cp',
+        'field_ph_town',
+        'field_country',
+        'field_guid_main_contact',
+        'field_main_contact',
+        'field_main_contact_email',
+        'field_category',
+        'field_partner_type',
+        'field_organisation_rep',
+        'field_social_profile',
+        'field_orgtype',
+      );
     }
 
     public function prepareRow($row)
@@ -65,7 +55,7 @@ class PartnerMigration extends HwcCrmMigration
         /** @var stdClass $term */
         if ($term = osha_workflow_get_partner_section_by_guid($row->field_guid_organisation)) {
             $row->workbench_access[$term->tid] = $term->tid;
-            if ($term->name != $row->title) {
+            if (strtolower($term->name) != strtolower($row->title)) {
                 $term->name = $row->title;
                 taxonomy_term_save($term);
                 $row->regenerate_alias = TRUE;
@@ -171,6 +161,7 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml
                 $data->field_general_email = (string)$attributes['Textbox2'];
                 $data->field_general_phone = (string)$attributes['Textbox3'];
                 $data->field_website = (string)$attributes['Textbox4'];
+                $data->field_orgtype = (string)$attributes['Textbox23'];
 
                 $logo_image = base64_decode((string)$attributes['Textbox5']);
                 $logo_ext = (string)$attributes['Textbox6'];
