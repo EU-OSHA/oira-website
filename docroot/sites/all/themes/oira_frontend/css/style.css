@@ -7829,6 +7829,11 @@ a.more-link:before {
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image {
   min-height: 202px;
 }
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
+  margin: 0 auto;
+  padding: 25px;
+  max-height: 250px;
+}
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
 }
@@ -8425,6 +8430,7 @@ a.more-link:before {
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag img {
   max-height: 67px;
+  min-height: 67px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field {
   margin: 30px 30px 30px 30px;
@@ -8546,6 +8552,11 @@ div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .field-
   display: inline-block;
   margin-right: 15px;
 }
+div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  font-weight: bold;
+}
 div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-taxonomy-term-reference a {
   color: #ffffff;
 }
@@ -8557,6 +8568,8 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 }
 .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first {
   padding-top: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first .partner-image-container {
   width: 100%;
@@ -8577,10 +8590,13 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-social-container {
   min-height: 285px;
 }
-#quicktabs-container-view__country_partner_content__block,
-#quicktabs-container-view__country_partner_content__block_1 {
-  background-color: #dfd8e4;
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-group-wrapper,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper {
   padding-bottom: 30px;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-group-wrapper:nth-child(odd),
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper:nth-child(odd) {
+  background-color: #dfd8e4;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .group-practical_tool:after,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-practical_tool:after {
@@ -8714,6 +8730,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div {
   display: table;
   border-collapse: collapse;
+  width: 100%;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child,
@@ -8899,6 +8916,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   margin-bottom: 20px;
   padding-bottom: 5px;
   font-family: "Oswald";
+}
+.page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .views-item-columns-container .views-field-name-field a:hover {
+  text-decoration: none !important;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .views-item-columns-container .views-field-description-field {
   padding-top: 15px;
