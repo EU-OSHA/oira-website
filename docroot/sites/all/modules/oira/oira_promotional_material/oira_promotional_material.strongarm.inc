@@ -173,7 +173,7 @@ function oira_promotional_material_strongarm() {
         ),
         'related_partners' => array(
           'teaser' => array(
-            'weight' => '5',
+            'weight' => '6',
             'label' => 'hidden',
             'type' => 'related_partners',
             'visible' => TRUE,
@@ -215,6 +215,13 @@ function oira_promotional_material_strongarm() {
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
+            'settings' => array(),
+          ),
+          'teaser' => array(
+            'weight' => '15',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
             'settings' => array(),
           ),
         ),

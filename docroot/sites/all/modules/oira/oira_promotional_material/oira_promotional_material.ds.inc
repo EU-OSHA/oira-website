@@ -63,7 +63,7 @@ function oira_promotional_material_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'promotional_material';
   $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'hwc_2col_stacked_2col';
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
@@ -74,8 +74,10 @@ function oira_promotional_material_ds_layout_settings_info() {
         2 => 'title_field',
         3 => 'body',
         4 => 'field_country',
-        5 => 'related_partners',
-        6 => 'field_resource_fc',
+        5 => 'field_resource_fc',
+      ),
+      'center' => array(
+        6 => 'related_partners',
         7 => 'tools_see_more',
       ),
     ),
@@ -85,9 +87,9 @@ function oira_promotional_material_ds_layout_settings_info() {
       'title_field' => 'right',
       'body' => 'right',
       'field_country' => 'right',
-      'related_partners' => 'right',
       'field_resource_fc' => 'right',
-      'tools_see_more' => 'right',
+      'related_partners' => 'center',
+      'tools_see_more' => 'center',
     ),
     'classes' => array(
       'layout_class' => array(
@@ -99,17 +101,25 @@ function oira_promotional_material_ds_layout_settings_info() {
       'right' => array(
         'col-sm-9' => 'col-sm-9',
       ),
+      'center' => array(
+        'col-md-12' => 'col-md-12',
+      ),
     ),
     'wrappers' => array(
+      'header' => 'div',
       'left' => 'div',
       'right' => 'div',
+      'center' => 'div',
+      'left2' => 'div',
+      'right2' => 'div',
+      'footer' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'layout_disable_css' => 1,
+    'layout_disable_css' => FALSE,
   );
   $export['node|promotional_material|teaser'] = $ds_layout;
 
