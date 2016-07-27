@@ -126,6 +126,15 @@ function _hwc_practical_tool_get_partners($node) {
   return $partners;
 }
 
+/**
+ * Implements hook_node_presave().
+ */
+function hwc_practical_tool_node_presave($node) {
+  if ($node->type == 'practical_tool') {
+    cache_clear_all(_hwc_practical_tool_related_partners_cid($node), 'cache');
+  }
+}
+
 
 function hwc_practical_tool_field_extra_fields_formatter_info() {
   return [

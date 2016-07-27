@@ -233,7 +233,9 @@ function oira_partner_form_node_form_alter(&$form, &$form_state, $form_id) {
   // Hide the country selector if is partner content.
   if (!empty($form['#node'])) {
     $bundle = $form['#node']->type;
-    if (variable_get('workbench_access_node_type_' . $bundle, 0) && isset($form['field_country'])) {
+    if ($bundle != 'partner'
+      && variable_get('workbench_access_node_type_' . $bundle, 0)
+      && isset($form['field_country'])) {
       $form['field_country']['#access'] = FALSE;
     }
   }
@@ -246,6 +248,33 @@ function oira_partner_node_presave($node) {
   // Invalidate content count cache.
   if ($node->type == 'partner') {
     cache_clear_all(_oira_partner_compute_count_cid($node), 'cache');
+
+    // If country is caching, change to all partner content.
+    $old_country = !empty($node->original->field_country) && !empty($node->original->field_country[LANGUAGE_NONE])
+      ? $node->original->field_country[LANGUAGE_NONE][0]['tid']
+      : NULL;
+    $new_country = !empty($node->field_country) && !empty($node->field_country[LANGUAGE_NONE])
+      ? $node->field_country[LANGUAGE_NONE][0]['tid']
+      : NULL;
+    if ($old_country !== $new_country) {
+      $instance = field_info_field('field_country');
+      $q = db_select('workbench_access_node', 'w');
+      $q->innerJoin('node', 'n', 'w.nid = n.nid');
+      $q->fields('n', ['nid', 'type'])
+        ->condition('n.type', $instance['bundles']['node'], 'IN')
+        ->condition('n.type', 'partner', '!=')
+        ->condition('w.access_id', $node->workbench_access);
+      $pm_nids = $q->execute()->fetchAllKeyed(0);
+      foreach ($pm_nids as $nid => $type) {
+        field_attach_update('node', (object) [
+          'nid' => $nid,
+          'type' => $type,
+          'field_country' => $node->field_country,
+        ]);
+      }
+    }
+
+
   }
 
   // For Partners content, the content with country inherit the country.
@@ -262,6 +291,15 @@ function oira_partner_node_presave($node) {
         $node->field_country = $partner->field_country;
       }
     }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function oira_promotional_material_node_presave($node) {
+  if ($node->type == 'partner') {
+
   }
 }
 
