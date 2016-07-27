@@ -356,9 +356,11 @@ function hwc_practical_tool_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'multiple_selects',
-      'settings' => array(),
-      'type' => 'multiple_selects',
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
       'weight' => 3,
     ),
     'workbench_access_field' => 0,

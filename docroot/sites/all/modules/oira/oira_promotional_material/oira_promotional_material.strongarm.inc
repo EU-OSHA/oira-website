@@ -146,19 +146,19 @@ function oira_promotional_material_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '16',
+          'weight' => '13',
         ),
         'path' => array(
-          'weight' => '15',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '11',
         ),
         'workbench_access' => array(
           'weight' => '1',
         ),
         'xmlsitemap' => array(
-          'weight' => '13',
+          'weight' => '10',
         ),
       ),
       'display' => array(
@@ -227,7 +227,7 @@ function oira_promotional_material_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_promotional_material';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_promotional_material'] = $strongarm;
 
   $strongarm = new stdClass();
