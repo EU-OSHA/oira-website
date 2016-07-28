@@ -1451,7 +1451,7 @@ a.more-link{
     								
     								h4{
     									a{
-    										font-size: 1.1em;
+    										font-size: 1em;
     										color: @color-white;
     										margin-top: 0px;
     									}
@@ -1481,6 +1481,7 @@ a.more-link{
 								}
 								& > .even:first-child{
 									//border-right: 10px solid white;
+									width: 50%;
 									.node-partner{
 										  margin-right: 10px;
 										  margin-left: 0px;
@@ -2187,7 +2188,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					margin-top: 20px;
 					h4{
 						a{
-							font-size: 1.1em;
+							font-size: 1em;
 							color: @color-white;
 							margin-top: 0px;
 						}
@@ -2447,7 +2448,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 	}
 }
 
-//search
+//search promotional resources
 .page-promotional-resources-search{
 	h1{
 		color: @color-text-purple-darker;
@@ -2637,6 +2638,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 								a.more-link{
 									text-align: left;
 									margin-top: 15px;
+									margin-left: 193px;
 								}
 								a.show-less{
 									text-align: right !important;
@@ -2667,16 +2669,17 @@ div[id ^= "mini-panel-partner_in_country"]{
 								}
 							}
 							
-							//partners inside oira tools
+						}
+						//partners inside promotional resources
 							.field-name-related-partners{
 								.node-partner{
 									background-color: @color-primary-dark;
     								padding: 15px;
     								color: @color-white;
-    								margin-top: 20px;
+    								
     								h4{
     									a{
-    										font-size: 1.2em;
+    										font-size: 1em;
     										color: @color-white;
     										margin-top: 0px;
     									}
@@ -2688,21 +2691,31 @@ div[id ^= "mini-panel-partner_in_country"]{
     							}
 							}
 							.related-partners-1 > div{
-								//margin-left: 222px;
+								margin-left: 208px;
+							}
+							.related-partners-2{
+								.node-partner{
+										  margin-left: 0px;
+									}
 							}
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
+								
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
 									}
 								}
 								& > .even:first-child{
-									border-right: 10px solid white;
+									//border-right: 10px solid white;
+									width: 50%;
+									.node-partner{
+										  margin-right: 10px;
+										  margin-left: 0px;
+									}
 								}
 							}
-						}
 					}
 				}
 			}
@@ -3219,7 +3232,7 @@ div[id ^= "mini-panel-partner_in_country"]{
     								margin-top: 20px;
     								h4{
     									a{
-    										font-size: 1.2em;
+    										font-size: 1em;
     										color: @color-white;
     										margin-top: 0px;
     									}
@@ -3233,6 +3246,11 @@ div[id ^= "mini-panel-partner_in_country"]{
 							.related-partners-1 > div{
 								//margin-left: 222px;
 							}
+							.related-partners-2{
+								.node-partner{
+										  margin-left: 0px;
+									}
+							}
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
@@ -3242,7 +3260,11 @@ div[id ^= "mini-panel-partner_in_country"]{
 									}
 								}
 								& > .even:first-child{
-									border-right: 10px solid white;
+									width: 50%;
+									.node-partner{
+										  margin-right: 10px;
+										  margin-left: 0px;
+									}
 								}
 							}
 						}
