@@ -7667,6 +7667,9 @@ a.more-link:before {
 .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .flickr-wrap {
   margin-bottom: 30px;
 }
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .flickr-wrap img {
+  width: 100%;
+}
 .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .flickr-wrap .flickr-credit {
   background-color: rgba(255, 255, 255, 0.95);
   position: absolute;
@@ -7675,6 +7678,10 @@ a.more-link:before {
   right: 15px;
   display: block;
   padding: 10px;
+}
+.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .flickr-wrap .flickr-credit a {
+  font-size: 0.8em;
+  font-weight: bold;
 }
 .node-type-article .panels-flexible-region-new-add_res-inside #additional-resources-external_url-pane .view-additional-resources .views-item-columns-container {
   padding: 15px !important;
@@ -7896,6 +7903,7 @@ a.more-link:before {
   color: #ffffff;
   padding-right: 30px;
   padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-textfield {
@@ -7986,9 +7994,10 @@ a.more-link:before {
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content {
   background-color: #dfd8e4;
-  padding-bottom: 50px;
+  padding-bottom: 90px;
   padding-left: 30px;
   padding-top: 30px;
+  min-height: 338px;
   border-left: 5px solid #ffffff;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset {
@@ -8462,7 +8471,8 @@ a.more-link:before {
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label span {
   display: block;
   font-weight: bold;
-  font-size: 1.8em;
+  font-size: 2em;
+  line-height: 22px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:first-child {
   border-right: 2px solid #58585a;
@@ -8502,7 +8512,7 @@ a.more-link:before {
   display: table-cell;
   text-align: center;
   width: 25%;
-  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
 }
 .page-country-profile .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .pane-taxonomy-term-country-content-count .field-items .field-item .country-content-count-label label {
   display: block;
@@ -8517,6 +8527,9 @@ a.more-link:before {
   font-size: 3em;
   line-height: 16px;
   font-weight: bold;
+}
+.page-country-profile .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .pane-taxonomy-term-country-content-count .field-items .field-item:first-child {
+  border-left: 2px solid #ffffff;
 }
 div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first {
   background-color: #ffffff !important;
@@ -8644,8 +8657,8 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   font-family: 'Oswald';
   margin-top: 30px;
 }
-#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group {
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .node-teaser,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .node-teaser {
   border-bottom: 2px solid #967ea7;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -8744,8 +8757,8 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   margin-right: 10px;
   margin-left: 0px;
 }
-#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group:last-child,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group:last-child {
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group:last-child .node-teaser,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group:last-child .node-teaser {
   border-bottom: 2px solid #967ea7;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-practical-tool .field-name-tools-see-more,
@@ -8852,6 +8865,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   color: #ffffff;
   font-style: italic;
   display: block;
+  text-decoration: none !important;
 }
 .quicktabs-tabs-container ul.quicktabs-tabs > li a:hover {
   background-color: rgba(255, 255, 255, 0.8);
@@ -8944,6 +8958,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   color: #ffffff;
   padding-right: 30px;
   padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-left-column .form-type-textfield {
@@ -9037,9 +9052,10 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content {
   background-color: #dfd8e4;
-  padding-bottom: 50px;
+  padding-bottom: 90px;
   padding-left: 30px;
   padding-top: 30px;
+  min-height: 338px;
   border-left: 5px solid #ffffff;
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content #edit-sort-fieldset {
@@ -9173,11 +9189,28 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .page-national-partners .quicktabs-tabs li,
 .page-irat-network .quicktabs-tabs li {
   display: table-cell;
+  margin: 0px;
+  margin-right: 0px !important;
 }
 .page-sectorial-social-partners .quicktabs-tabs li a,
 .page-national-partners .quicktabs-tabs li a,
 .page-irat-network .quicktabs-tabs li a {
+  border-left: 2px solid #ffffff;
   color: #ffffff;
+  padding: 5px 0px 5px 20px;
+  margin: 10px 0px 10px 20px;
+  text-decoration: none !important;
+}
+.page-sectorial-social-partners .quicktabs-tabs li a:hover,
+.page-national-partners .quicktabs-tabs li a:hover,
+.page-irat-network .quicktabs-tabs li a:hover {
+  background-color: inherit !important;
+  color: #dfd8e4 !important;
+}
+.page-sectorial-social-partners .quicktabs-tabs li:first-child a,
+.page-national-partners .quicktabs-tabs li:first-child a,
+.page-irat-network .quicktabs-tabs li:first-child a {
+  border-left: none;
 }
 .page-sectorial-social-partners .quicktabs-tabpage .hwc-alphabet-container,
 .page-national-partners .quicktabs-tabpage .hwc-alphabet-container,
@@ -9249,7 +9282,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   text-align: center;
   width: 25%;
   margin-top: 25px;
-  border-left: 2px solid #786586;
+  border-right: 2px solid #786586;
 }
 .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
 .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
@@ -9268,6 +9301,11 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   font-size: 2.2em;
   line-height: 16px;
   font-weight: bold;
+}
+.page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child,
+.page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child,
+.page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child {
+  border-left: 2px solid #786586;
 }
 .page-irat-network .view-id-partners_list article {
   background-color: #dfd8e4;
@@ -9417,6 +9455,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   color: #ffffff;
   padding-right: 30px;
   padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-left-column .form-type-textfield {
@@ -9510,9 +9549,10 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content {
   background-color: #dfd8e4;
-  padding-bottom: 50px;
+  padding-bottom: 90px;
   padding-left: 30px;
   padding-top: 30px;
+  min-height: 338px;
   border-left: 5px solid #ffffff;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content #edit-sort-fieldset {
@@ -10034,8 +10074,43 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     margin-right: 10px;
   }
   /*END FOOTER*/
+  /*GENERIC STYLES
+****************************************************************/
+  .panels-flexible-row {
+    padding-bottom: 10px;
+  }
+  /*end generic styles*/
   /*HOME
 ****************************************************************/
+  .front .panels-flexible-region-new-slider .views-field-title-field {
+    position: inherit !important;
+    width: 100% !important;
+    background-color: #786586;
+    margin-top: -7px;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .front .panels-flexible-region-new-slider .views-field-title-field h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 720px;
+    display: block;
+    margin: 0 auto;
+  }
+  .front .panels-flexible-region-new-slider .views-field-body {
+    position: inherit !important;
+    width: 100% !important;
+    background-color: #786586;
+    padding-top: 25px;
+    padding-bottom: 55px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .front .panels-flexible-region-new-slider .views-field-body .field-content {
+    width: 720px;
+    margin: 0 auto;
+  }
   .front .views-item-columns-container {
     margin-bottom: 30px;
   }

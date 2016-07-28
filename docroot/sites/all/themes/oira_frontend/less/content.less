@@ -987,6 +987,9 @@ a.more-link{
 				}
 				.flickr-wrap{
 					margin-bottom: 30px;
+					img{
+						width: 100%;
+					}
 					.flickr-credit{
 						background-color: rgba(255, 255, 255, 0.95);
 						position: absolute;
@@ -995,6 +998,10 @@ a.more-link{
 					    right: 15px;
 					    display: block;
 					    padding: 10px;
+					    a{
+					    	font-size: @font-size0-8;
+					    	font-weight: bold;
+					    }
 					}
 				}
 			}
@@ -1243,6 +1250,7 @@ a.more-link{
 					color: @color-white;
 					padding-right: 30px;
 					padding-top: 30px;
+					padding-bottom: 30px;
 					position: relative;
 					.form-type-textfield{
 						float: left;
@@ -1343,9 +1351,10 @@ a.more-link{
 
 				#edit-content{
 					background-color: @color-primary;
-					padding-bottom: 50px;
+					padding-bottom: 90px;
 					padding-left: 30px;
 					padding-top: 30px;
+					min-height: 338px;
 					border-left: 5px solid @color-white;
 					#edit-sort-fieldset{
 						border: none;
@@ -1898,7 +1907,8 @@ a.more-link{
     					span{
 							display: block;
 							font-weight: bold;
-							font-size: @font-size1-8;
+							font-size: @font-size2;
+							line-height: 22px;
     					}
     					&:first-child{
 							border-right: 2px solid @color-text-grey;
@@ -1943,13 +1953,11 @@ a.more-link{
 			.field-items{
 				.field-item{
 					display: table-cell;
-					    text-align: center;
-					    width: 25%;
-					    //margin-top: 25px;
-					    border-left: 2px solid @color-white;
+					text-align: center;
+					width: 25%;
+					//margin-top: 25px;
+					border-right: 2px solid @color-white;
 					.country-content-count-label{
-						
-
 						label{
 							display: block;
 							color: @color-white;
@@ -1965,6 +1973,9 @@ a.more-link{
 						    font-weight: bold;
 						}
 					}
+				}
+				.field-item:first-child{
+					border-left: 2px solid @color-white;
 				}
 			}
 		}
@@ -2117,9 +2128,11 @@ div[id ^= "mini-panel-partner_in_country"]{
 		    margin-top: 30px;
 		}
 		.quicktabs-views-group {
-			border-bottom: 2px solid @color-text-purple;
-			padding-top: 30px;
-			padding-bottom: 30px;
+			.node-teaser{
+				border-bottom: 2px solid @color-text-purple;
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
 			h3{
 				font-size: @font-size2-2;
 				font-weight: bold;
@@ -2215,7 +2228,9 @@ div[id ^= "mini-panel-partner_in_country"]{
 			}
 		}
 		.quicktabs-views-group:last-child {
-			border-bottom: 2px solid @color-text-purple;
+			.node-teaser{
+				border-bottom: 2px solid @color-text-purple;
+			}
 		}
 		
 		.node-practical-tool{
@@ -2341,6 +2356,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 			color: @color-white;
 			font-style: italic;
 			display: block;
+			text-decoration: none !important;
 			&:hover{
 				background-color: rgba(255,255,255,0.8);
 				color: @color-text-purple-darker;
@@ -2457,6 +2473,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					color: @color-white;
 					padding-right: 30px;
 					padding-top: 30px;
+					padding-bottom: 30px;
 					position: relative;
 
 					.form-type-textfield{
@@ -2558,9 +2575,10 @@ div[id ^= "mini-panel-partner_in_country"]{
 
 				#edit-content{
 					background-color: @color-primary;
-					padding-bottom: 50px;
+					padding-bottom: 90px;
 					padding-left: 30px;
 					padding-top: 30px;
+					min-height: 338px;
 					border-left: 5px solid @color-white;
 					#edit-sort-fieldset{
 						border: none;
@@ -2707,8 +2725,23 @@ div[id ^= "mini-panel-partner_in_country"]{
 		background-color: @color-primary-dark;
 		li{
 			display: table-cell;
+			margin: 0px;
+			margin-right: 0px !important;
 			a{
+				border-left: 2px solid @color-white; 
 				color: @color-white;
+				padding: 5px 0px 5px 20px;
+				margin: 10px 0px 10px 20px;
+				text-decoration: none !important;
+				&:hover{
+					background-color: inherit !important;
+					color: @color-primary !important;
+				}
+			}
+		}
+		li:first-child{
+			a{
+				border-left: none;
 			}
 		}
 	}
@@ -2764,7 +2797,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 				    text-align: center;
 				    width: 25%;
 				    margin-top: 25px;
-				    border-left: 2px solid @color-primary-dark;
+				    border-right: 2px solid @color-primary-dark;
 
 					label{
 						display: block;
@@ -2780,6 +2813,9 @@ div[id ^= "mini-panel-partner_in_country"]{
 					    line-height: 16px;
 					    font-weight: bold;
 					}
+				}
+				.partner-content-label:first-child{
+					border-left: 2px solid @color-primary-dark;
 				}
 			}
 		}
@@ -2958,6 +2994,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					color: @color-white;
 					padding-right: 30px;
 					padding-top: 30px;
+					padding-bottom: 30px;
 					position: relative;
 
 					.form-type-textfield{
@@ -3059,9 +3096,10 @@ div[id ^= "mini-panel-partner_in_country"]{
 
 				#edit-content{
 					background-color: @color-primary;
-					padding-bottom: 50px;
+					padding-bottom: 90px;
 					padding-left: 30px;
 					padding-top: 30px;
+					min-height: 338px;
 					border-left: 5px solid @color-white;
 					#edit-sort-fieldset{
 						border: none;

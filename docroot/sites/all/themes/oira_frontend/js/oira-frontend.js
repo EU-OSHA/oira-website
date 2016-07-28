@@ -81,6 +81,9 @@ jQuery(document).ready(function () {
 
 		}
 	}
-
+	jQuery(".flickr-credit").hide();
+	jQuery(".flickr-wrap").hover(function(){
+		jQuery(".flickr-credit", this).stop().slideToggle('fast').show();
+	});
 
 });
