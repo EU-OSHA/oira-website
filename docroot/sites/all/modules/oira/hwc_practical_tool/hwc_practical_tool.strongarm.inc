@@ -63,7 +63,7 @@ function hwc_practical_tool_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_hide_translation_links_practical_tool';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['entity_translation_hide_translation_links_practical_tool'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -358,6 +358,16 @@ function hwc_practical_tool_strongarm() {
   $strongarm->name = 'pathauto_node_practical_tool_pattern';
   $strongarm->value = 'oira-tools/[node:title]';
   $export['pathauto_node_practical_tool_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_practical_tool';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_practical_tool'] = $strongarm;
 
   return $export;
 }

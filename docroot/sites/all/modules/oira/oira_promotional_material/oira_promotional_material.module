@@ -138,6 +138,15 @@ function _oira_promotional_material_get_url($entity) {
   return $url;
 }
 
+/**
+ * Implements hook_node_presave().
+ */
+function oira_promotional_node_presave($node) {
+  if ($node->type == 'promotional_material') {
+    cache_clear_all(_hwc_practical_tool_related_partners_cid($node), 'cache');
+  }
+}
+
 
 /**
  * Implements hook_views_pre_render().
@@ -270,50 +279,6 @@ function oira_promotional_material_form_validate($form, &$form_state) {
         if ($resource['field_file'][LANGUAGE_NONE][0]['fid'] == 0 && empty($resource['field_link'][LANGUAGE_NONE][0]['url'])) {
           form_set_error('field_resource_fc][' . LANGUAGE_NONE . ']['. $key, t('For a resource item you must enter either a link or upload a document.'));
         }
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_node_submit().
- */
-function oira_promotional_material_node_submit($node, $form, &$form_state) {
-  if ($node->type == 'promotional_material') {
-    if (!empty($node->workbench_access)) {
-      $partner = oira_partner_by_section_id_load($node->workbench_access);
-      if (!empty($partner)) {
-        $node->field_country = $partner->field_country;
-        node_save($node);
-      }
-    }
-  }
-}
-
-/**
- * Implements hook_node_presave().
- */
-function oira_promotional_material_node_presave($node) {
-  if ($node->type == 'partner') {
-    $old_country = !empty($node->original->field_country) && !empty($node->original->field_country[LANGUAGE_NONE])
-      ? $node->original->field_country[LANGUAGE_NONE][0]['tid']
-      : NULL;
-    $new_country = !empty($node->field_country) && !empty($node->field_country[LANGUAGE_NONE])
-      ? $node->field_country[LANGUAGE_NONE][0]['tid']
-      : NULL;
-    if ($old_country !== $new_country) {
-      $q = db_select('workbench_access_node', 'w');
-      $q->innerJoin('node', 'n', 'w.nid = n.nid');
-      $q->fields('n', ['nid'])
-        ->condition('n.type', 'promotional_material')
-        ->condition('w.access_id', $node->workbench_access);
-      $pm_nids = $q->execute()->fetchCol();
-      foreach ($pm_nids as $nid) {
-        field_attach_update('node', (object) [
-          'nid' => $nid,
-          'type' => 'promotional_material',
-          'field_country' => $node->field_country,
-        ]);
       }
     }
   }

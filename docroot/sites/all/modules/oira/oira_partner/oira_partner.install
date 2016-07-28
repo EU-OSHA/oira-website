@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Change weight of the module for hook form alter.
+ */
+function oira_partner_update_7001() {
+  db_update('system')
+    ->fields(array('weight' => 10))
+    ->condition('name', 'oira_partner', '=')
+    ->execute();
+}

@@ -349,6 +349,7 @@ features[variable][] = smtp_allowhtml
 features[variable][] = spamspan_dot_enable
 features[variable][] = workbench_access_node_type_internal_url
 features[variable][] = workbench_moderation_default_state_internal_url
+features[variable][] = xmlsitemap_settings_node_article
 features[variable][] = xmlsitemap_settings_node_webform
 features[views_view][] = administration_content
 features[views_view][] = articles

@@ -86,6 +86,7 @@ features[variable][] = node_options_practical_tool
 features[variable][] = node_preview_practical_tool
 features[variable][] = node_submitted_practical_tool
 features[variable][] = pathauto_node_practical_tool_pattern
+features[variable][] = xmlsitemap_settings_node_practical_tool
 features[views_view][] = administrate_oira_tools
 features[views_view][] = tools
 features_exclude[dependencies][image] = image

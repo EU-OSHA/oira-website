@@ -166,7 +166,7 @@ function oira_partner_strongarm() {
           'weight' => '0',
         ),
         'xmlsitemap' => array(
-          'weight' => '27',
+          'weight' => '23',
         ),
       ),
       'display' => array(

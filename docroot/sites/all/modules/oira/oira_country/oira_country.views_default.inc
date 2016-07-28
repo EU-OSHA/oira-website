@@ -89,6 +89,17 @@ function oira_country_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'partner' => 'partner',
   );
+  /* Filter criterion: Content: Type (field_partner_type) */
+  $handler->display->display_options['filters']['field_partner_type_tid']['id'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['table'] = 'field_data_field_partner_type';
+  $handler->display->display_options['filters']['field_partner_type_tid']['field'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['relationship'] = 'reverse_field_country_node';
+  $handler->display->display_options['filters']['field_partner_type_tid']['value'] = array(
+    284 => '284',
+    262 => '262',
+  );
+  $handler->display->display_options['filters']['field_partner_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

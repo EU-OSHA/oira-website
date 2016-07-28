@@ -184,7 +184,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 26,
+      'weight' => 22,
     ),
     'workbench_access_field' => 0,
   );
@@ -251,7 +251,7 @@ function oira_partner_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -516,7 +516,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -607,7 +607,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -734,7 +734,7 @@ function oira_partner_field_default_field_instances() {
         'manualcrop_thumblist' => FALSE,
       ),
       'type' => 'media_generic',
-      'weight' => 14,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -825,7 +825,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 18,
     ),
     'workbench_access_field' => 0,
   );
@@ -910,7 +910,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 22,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -1001,7 +1001,7 @@ function oira_partner_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -1246,6 +1246,67 @@ function oira_partner_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-partner-field_ph_country'.
+  $field_instances['node-partner-field_ph_country'] = array(
+    'bundle' => 'partner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'osha',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 24,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ph_country',
+    'label' => 'Country',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 21,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-partner-field_ph_cp'.
   $field_instances['node-partner-field_ph_cp'] = array(
     'bundle' => 'partner',
@@ -1332,7 +1393,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -1407,7 +1468,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 20,
     ),
     'workbench_access_field' => 0,
   );
@@ -1497,7 +1558,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 20,
+      'weight' => 17,
     ),
     'workbench_access_field' => 0,
   );

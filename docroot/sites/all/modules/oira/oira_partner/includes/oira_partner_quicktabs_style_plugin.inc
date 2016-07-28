@@ -93,7 +93,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
             $all_rows_rendered .= '<div class="quicktabs-views-group ' . $this->options['row_class'] . '">' . $row . '</div>';
           }
           if ($all_group_counter == 2) {
-            $all_rows_rendered .= '<a class="quicktab-group-view-all" href="javascript:jQuery(\'.quicktabs-tabs li\').eq(' . $tab_index . ').find(\'a\').trigger(\'click\');">View all</a>';
+            $all_rows_rendered .= '<a class="quicktab-group-view-all more-link" href="javascript:jQuery(\'.quicktabs-tabs li\').eq(' . $tab_index . ').find(\'a\').trigger(\'click\');">View all</a>';
           }
           $all_group_counter++;
         }
