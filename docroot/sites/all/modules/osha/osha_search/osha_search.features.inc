@@ -125,7 +125,6 @@ function osha_search_default_search_api_index() {
               "file" : "file",
               "flickr" : "flickr",
               "internal_url" : "internal_url",
-              "press_release" : "press_release",
               "slide" : "slide",
               "slideshare" : "slideshare",
               "webform" : "webform",
