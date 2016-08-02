@@ -2234,12 +2234,20 @@ div[id ^= "mini-panel-partner_in_country"]{
 			}
 		}
 		
-		.node-practical-tool{
+		.node-practical-tool, .node-promotional-material{
 			.field-name-tools-see-more{
 				margin-left: 310px;
 			}
 			.related-partners-1 > div{
 				margin-left: 323px !important;
+			}
+		}
+		.node-promotional-material{
+			.field-name-tools-see-more{
+				margin-left: 293px;
+			}
+			.related-partners-1 > div{
+				margin-left: 309px !important;
 			}
 		}
 	}
@@ -3331,3 +3339,44 @@ div[id ^= "mini-panel-partner_in_country"]{
 	}
 }
 /*End pagination styles*/
+
+
+//BACKEND///////////////////////////////////////////////////////
+/*Lingua tools
+******************************/
+.page-node-linguatools{
+	#form-lingua-form{
+		margin: 0px 15px;
+		.checkbox input[type="checkbox"]{
+			visibility: hidden;
+		}
+		.checkbox input[type=checkbox]:checked+label:before {
+		    content: "\2713";
+		    color: @color-see-more;
+		    padding: 0 2px;
+		    margin-right: 6px;
+		    font-weight: 400;
+		    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+		}
+		.checkbox label:before {
+		    border: 2px solid @color-see-more;
+		    content: " ";
+		    padding: 0 8px;
+		    margin-right: 10px;
+		    color: #fff;
+		    font-weight: 400;
+		    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+		}
+		button{
+			margin-bottom: 30px;
+			background-color: @color-primary-dark;
+			border: none;
+			margin-left: 0px;
+			color: @color-white;
+			&:hover{
+				background-color: @color-see-more;
+			}
+		}
+	}
+}
+/*End lingua tools*/
