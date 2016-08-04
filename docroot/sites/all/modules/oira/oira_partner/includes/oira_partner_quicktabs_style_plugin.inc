@@ -154,13 +154,13 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
 }
 
 function oira_partner_quicktabs_sort_content($a, $b) {
-  if (in_array($a->node_type, array('practical_tool', 'promotional_material'))) {
+  if (in_array($a->node_type, array('practical_tool', 'promotional_material')) && isset($a->field_field_revised_date[0]['raw']['value'])) {
     $a_time = strtotime($a->field_field_revised_date[0]['raw']['value']);
   }
   else {
     $a_time = strtotime($a->field_field_publication_date[0]['raw']['value']);
   }
-  if ($b->node_type == 'practical_tool') {
+  if ($b->node_type == 'practical_tool' && isset($b->field_field_revised_date[0]['raw']['value'])) {
     $b_time = strtotime($b->field_field_revised_date[0]['raw']['value']);
   }
   else {
