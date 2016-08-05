@@ -141,6 +141,7 @@
     		padding-left: 0px;
     		padding-top: 15px;
     		padding-bottom: 15px;
+    		clear: both;
     	}
     	.navbar-toggle{
     		border-color: @color-menu;
@@ -307,6 +308,19 @@
 	padding-bottom: 10px;
 }
 /*end generic styles*/
+.breadcrum-container{
+	width: 640px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    margin-top: -44px;
+	.breadcrumb{
+		background-color: inherit;
+		span, a{
+			color: @color-white;
+		}
+	}
+}
 
 /*HOME
 ****************************************************************/
@@ -352,9 +366,73 @@
 	}
 	
 }
-
-
 /*END HOME*/
 
+/*WHAT'S NEW SECTION
+*********************************************************************/
+.page-what-is-new{
+	.panels-flexible-region-new-image {
+		margin-top: 35px;
+		.pane-node-title-field {
+		    margin-top: -7px;
+		    position: relative;
+		    background-color: @color-primary-dark;
+		    width: 100%;
+		}
+	}
+	.panels-flexible-row-new-2{
+		padding-left: 0px;
+		padding-right: 0px;
+		.views-field-field-summary {
+    		padding: 15px 0px 0px 0px;
+		}
+	}
+	.panels-flexible-region-new-image{
+		.pane-node-title-field{
+			h1 {
+			    width: 715px;
+		    	margin: 25px auto;
+    		}
+    	}
+	}
+}
+/*END WHAT'S NEW SECTION*/
+
+
+/*ARTICLES
+****************************************************************/
+.node-type-article{
+	.article-content-container{
+		padding-left: 15px;
+		padding-right: 15px;
+		width: 750px;
+	}
+	.panels-flexible-region-new-cover_image{
+		.field-type-image {
+		    margin-top: 35px;
+		}
+	}
+	.panels-flexible-row-new-10{
+		.container{
+			padding-right: 0px;
+			padding-left: 0px;
+		}
+	}
+}
+/*END ARTICLES*/
+
+/* COUNTRY PROFILE
+********************************************************************/
+.page-country-profile{
+	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first {
+		margin-top: 50px;
+	}
+	div[id^="mini-panel-partner_in_country"]{
+		.panels-flexible-row-inside-first {
+	    margin-top: 0px !important;
+		}
+	}
+}
+/*END COUNTRY PROFILE*/
 
 }

@@ -6815,6 +6815,10 @@ body {
   font-size: 16px !important;
   color: #58585a;
 }
+section {
+  display: block;
+  overflow: hidden;
+}
 input,
 select {
   box-shadow: none !important;
@@ -7451,7 +7455,7 @@ a.more-link:before {
   width: 20%;
 }
 /*END HOME*/
-/*ESTILOS ARTICLES
+/*ARTICLES
 ****************************************************************/
 .node-type-article .panels-flexible-region-new-cover_image .field-type-image {
   position: relative;
@@ -8320,6 +8324,7 @@ a.more-link:before {
 }
 .view-display-id-oshnews_list article .field-name-title-field h2 {
   margin-top: 5px;
+  line-height: 24px;
 }
 .view-display-id-oshnews_list article .field-name-title-field h2 a {
   font-size: .7em;
@@ -10016,6 +10021,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     padding-left: 0px;
     padding-top: 15px;
     padding-bottom: 15px;
+    clear: both;
   }
   .menu-header #navbar .navbar-toggle {
     border-color: #10b2e4;
@@ -10163,6 +10169,20 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     padding-bottom: 10px;
   }
   /*end generic styles*/
+  .breadcrum-container {
+    width: 640px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    margin-top: -44px;
+  }
+  .breadcrum-container .breadcrumb {
+    background-color: inherit;
+  }
+  .breadcrum-container .breadcrumb span,
+  .breadcrum-container .breadcrumb a {
+    color: #ffffff;
+  }
   /*HOME
 ****************************************************************/
   .front .panels-flexible-region-new-slider .views-field-title-field {
@@ -10201,6 +10221,53 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     margin-top: 0px;
   }
   /*END HOME*/
+  /*WHAT'S NEW SECTION
+*********************************************************************/
+  .page-what-is-new .panels-flexible-region-new-image {
+    margin-top: 35px;
+  }
+  .page-what-is-new .panels-flexible-region-new-image .pane-node-title-field {
+    margin-top: -7px;
+    position: relative;
+    background-color: #786586;
+    width: 100%;
+  }
+  .page-what-is-new .panels-flexible-row-new-2 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .page-what-is-new .panels-flexible-row-new-2 .views-field-field-summary {
+    padding: 15px 0px 0px 0px;
+  }
+  .page-what-is-new .panels-flexible-region-new-image .pane-node-title-field h1 {
+    width: 715px;
+    margin: 25px auto;
+  }
+  /*END WHAT'S NEW SECTION*/
+  /*ARTICLES
+****************************************************************/
+  .node-type-article .article-content-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 750px;
+  }
+  .node-type-article .panels-flexible-region-new-cover_image .field-type-image {
+    margin-top: 35px;
+  }
+  .node-type-article .panels-flexible-row-new-10 .container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  /*END ARTICLES*/
+  /* COUNTRY PROFILE
+********************************************************************/
+  .page-country-profile .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first {
+    margin-top: 50px;
+  }
+  .page-country-profile div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first {
+    margin-top: 0px !important;
+  }
+  /*END COUNTRY PROFILE*/
 }
 @media only screen and (max-width: 767px) {
   /*HEADER
@@ -10287,6 +10354,12 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     border: none;
   }
   /*END HEADER*/
+  .breadcrum-container {
+    display: none;
+  }
+  .node-type-article .article-content-container {
+    width: inherit;
+  }
 }
 @media only screen and (max-width: 480px) {
   /*HEADER
