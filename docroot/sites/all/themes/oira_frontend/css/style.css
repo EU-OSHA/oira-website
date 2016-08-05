@@ -6815,10 +6815,6 @@ body {
   font-size: 16px !important;
   color: #58585a;
 }
-section {
-  display: block;
-  overflow: hidden;
-}
 input,
 select {
   box-shadow: none !important;
@@ -6880,6 +6876,10 @@ h5 a {
   margin-bottom: 0px;
   background-color: #ffffff;
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
   /*
 	.delimiter{
 		&:before{
@@ -7174,6 +7174,10 @@ a.more-link:before {
 /*END ESTILOS LOGIN*/
 /*ESTILOS HOME
 ********************************************************/
+.front section {
+  display: block;
+  overflow: hidden;
+}
 #block-system-main .panels-flexible-region-new-slider {
   margin-top: 35px;
 }
@@ -7503,10 +7507,15 @@ a.more-link:before {
 .node-type-article .panels-flexible-row {
   padding-bottom: 0px;
 }
-.node-type-article .pane-node-body ul {
+.node-type-article .pane-node-body ul,
+.node-type-article .pane-node-body ol {
   margin-left: 30px;
 }
 .node-type-article .pane-node-body a.article-link {
+  font-style: italic;
+  text-decoration: underline !important;
+}
+.node-type-article .pane-node-body a {
   font-style: italic;
   text-decoration: underline !important;
 }
@@ -8192,6 +8201,14 @@ a.more-link:before {
   padding-bottom: 15px;
   font-family: 'Oswald';
 }
+.page-faq .panels-flexible-region-new-form-inside h3:after {
+  content: "";
+  background: url("../images/icons/186.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
 .page-faq .contact-form-wrapper {
   background-color: #786586;
   margin-bottom: 45px;
@@ -8232,6 +8249,7 @@ a.more-link:before {
 }
 .page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code {
   margin-top: 20px;
+  width: 345px;
 }
 .page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code #security_code {
   width: 213px;
@@ -10131,6 +10149,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 ********************************************/
   .site-footer #block-menu-menu-footer-menu {
     display: block;
+    margin-bottom: 7px;
   }
   .site-footer #block-menu-menu-footer-menu li {
     margin-bottom: 10px;
@@ -10177,11 +10196,11 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     margin-top: -44px;
   }
   .breadcrum-container .breadcrumb {
-    background-color: inherit;
+    background-color: inherit !important;
   }
   .breadcrum-container .breadcrumb span,
   .breadcrum-container .breadcrumb a {
-    color: #ffffff;
+    color: #ffffff !important;
   }
   /*HOME
 ****************************************************************/
@@ -10268,6 +10287,12 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     margin-top: 0px !important;
   }
   /*END COUNTRY PROFILE*/
+  /*PROMOTIONAL RESOURCES
+**************************/
+  .promotional-introduction-item {
+    min-height: 475px;
+  }
+  /*END PROMOTIONAL RESOURCES*/
 }
 @media only screen and (max-width: 767px) {
   /*HEADER

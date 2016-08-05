@@ -13,6 +13,11 @@ jQuery(document).ready(function () {
 	    if(windowWidth > 992){
 	    	//jQuery("#block-search-form input").css("display", "block");
 	    };
+	    if(windowWidth <= 750){
+	    	jQuery(".breadcrum-container").hide();
+	    }else{
+	    	jQuery(".breadcrum-container").show();
+	    }
 	});
 
 	//bordes en articulos segun contenido de columnas
@@ -69,8 +74,17 @@ jQuery(document).ready(function () {
 				}
 				else{
 					jQuery(".dropdown-menu", this).slideDown();
+					jQuery(".dropdown-toggle").removeClass("down-arrow");
 					jQuery(".dropdown-toggle", this).addClass("down-arrow");
 				};
+			});
+			//hide breadbrum when click menu icon
+			jQuery(".navbar-toggle").click(function(){
+				if(jQuery(".navbar-collapse.collapse").hasClass("in")){
+					jQuery(".breadcrum-container").stop().show();
+				}else{
+					jQuery(".breadcrum-container").stop().hide();
+				}
 			});
 
 		}//<-----End: functions for tablet and/or mobile

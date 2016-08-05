@@ -21,10 +21,7 @@ body{
 	font-size: 16px !important;//testing al finalizar quitar el important
 	color: @color-text-grey;
 }
-section{
-  display: block;
-  overflow: hidden;
-}
+
 
 input, select{
 	box-shadow: none !important;
@@ -106,6 +103,10 @@ h5{
 	margin-bottom: 0px;
 	background-color: @color-white;
 	font-style: italic;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
 	span, a{
 		font-style: italic;
 		color: @color-see-more;
@@ -439,6 +440,13 @@ a.more-link{
 
 /*ESTILOS HOME
 ********************************************************/
+.front{
+	section{
+	  display: block;
+	  overflow: hidden;
+	}
+}
+
 #block-system-main{
 	//slider
 	.panels-flexible-region-new-slider{
@@ -812,10 +820,14 @@ a.more-link{
 		padding-bottom: 0px;
 	}
 	.pane-node-body{
-		ul{
+		ul, ol{
 			margin-left: 30px;
 		}
 		a.article-link{
+			font-style: italic;
+			text-decoration: underline !important;
+		}
+		a{//testing legal notice & privacy
 			font-style: italic;
 			text-decoration: underline !important;
 		}
@@ -1589,6 +1601,9 @@ a.more-link{
 			//margin-bottom: 25px;
 			//margin-top: 50px;
 			font-family: @font-family-base-2;
+			&:after{
+    		    .section-icons("../images/icons/186.png");
+    		}
 		}
 	}
 	.contact-form-wrapper{
@@ -1626,6 +1641,7 @@ a.more-link{
 				}
 				.form-item-security-code{
 					margin-top: 20px;
+					width: 345px;
 					#security_code{
 						width: 213px;
 					}
