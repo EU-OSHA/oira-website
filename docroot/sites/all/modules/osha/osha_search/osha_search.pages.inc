@@ -275,7 +275,7 @@ function osha_search_callback_search($form_state, $per_page = 10) {
 
 function _osha_search_get_bundles_filters() {
   $options = array();
-  $allowed = array('article', 'news', 'practical_tool', 'promotional_material', 'wiki_page', 'faq');
+  $allowed = array('article', 'news', 'practical_tool', 'promotional_material', 'wiki_page', 'faq', 'partner');
   $types = node_type_get_types();
   foreach ($allowed as $type) {
     if (!empty($types[$type])) {

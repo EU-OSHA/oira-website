@@ -517,7 +517,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Sort criterion: Content: Organization (field_press_contact_organization) */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['field_press_contact_organization_value']['id'] = 'field_press_contact_organization_value';
   $handler->display->display_options['sorts']['field_press_contact_organization_value']['table'] = 'field_data_field_press_contact_organization';
   $handler->display->display_options['sorts']['field_press_contact_organization_value']['field'] = 'field_press_contact_organization_value';

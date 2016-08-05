@@ -202,6 +202,22 @@ function oira_partner_strongarm() {
             'visible' => FALSE,
             'settings' => array(),
           ),
+          'search_result' => array(
+            'weight' => '16',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
+        ),
+        'node_type' => array(
+          'search_result' => array(
+            'weight' => '1',
+            'label' => 'hidden',
+            'type' => 'visible',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
         ),
       ),
     ),
