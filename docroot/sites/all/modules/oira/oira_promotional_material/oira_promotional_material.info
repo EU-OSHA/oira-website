@@ -14,7 +14,6 @@ dependencies[] = link
 dependencies[] = multiple_selects
 dependencies[] = oira_country
 dependencies[] = oira_homepage
-dependencies[] = oira_promotional_material
 dependencies[] = osha
 dependencies[] = page_manager
 dependencies[] = services_views
