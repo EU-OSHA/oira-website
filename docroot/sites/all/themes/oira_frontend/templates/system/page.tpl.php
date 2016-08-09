@@ -151,6 +151,11 @@
         </div>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
+      <?php if (!empty($page['above_title'])): ?>
+        <div class="above_title">
+          <?php print render($page['above_title']); ?>
+        </div>
+      <?php endif; ?>
     </div>
   </section>
   <?php if (!empty($page['sidebar_first'])): ?>

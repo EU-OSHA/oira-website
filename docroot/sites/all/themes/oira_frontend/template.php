@@ -132,6 +132,25 @@ function oira_frontend_preprocess_page(&$vars) {
     $vars['content_column_class'] = '';
   }
 
+  // add back to links (e.g. Back to news)
+  if (isset($vars['node'])) {
+    $node = $vars['node'];
+
+    switch ($node->type) {
+      case 'news':
+        $link_title = t('Back to news');
+        $link_href = 'news';
+        break;
+    }
+
+    if (isset($link_title)) {
+      $vars['page']['above_title']['back-to-link'] = array(
+        '#type' => 'item',
+        '#markup' => l($link_title, $link_href, array('attributes' => array('class' => array('back-to-link pull-right')))),
+        '#weight' => -1,
+      );
+    }
+  }
 }
 
 function oira_frontend_css_alter(&$css) {
