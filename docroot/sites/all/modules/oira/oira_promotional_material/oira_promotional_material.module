@@ -58,6 +58,8 @@ function oira_promotional_material_field_formatter_view($entity_type, $entity, $
 function oira_promotional_material_resources_formatter($items){
   $result = array();
   $resources = array();
+  $external_links = array();
+  $icon_directory = drupal_get_path('theme', 'oira_frontend') . '/images/file_icons';
 
   foreach ($items as $delta => $item) {
     $field_collection = field_collection_field_get_entity($item);
@@ -66,8 +68,15 @@ function oira_promotional_material_resources_formatter($items){
       $langcode = $field_collection->field_language[LANGUAGE_NONE][0]['value'];
 
       if (!empty($field_collection->field_file)) {
+        $file = (object) $field_collection->field_file[LANGUAGE_NONE][0];
+
         $title = strtoupper($langcode);
-        $link = l($title, file_create_url($field_collection->field_file[LANGUAGE_NONE][0]['uri']), array(
+        $link_title = theme('file_icon', array(
+          'file' => $file,
+          'icon_directory' => $icon_directory
+        ));
+        $link_title .= " " . $title;
+        $link = l($link_title, file_create_url($field_collection->field_file[LANGUAGE_NONE][0]['uri']), array(
             'absolute' => TRUE,
             'html' => TRUE,
             'attributes' => array(
@@ -78,7 +87,8 @@ function oira_promotional_material_resources_formatter($items){
         $resources[] = $link;
       } else if (!empty($field_collection->field_link)) {
         $title = strtoupper($langcode);
-        $link = l($title, $field_collection->field_link[LANGUAGE_NONE][0]['url'], array(
+        $link_title = "<span class='glyphicon glyphicon-new-window'></span>&nbsp;" . $title;
+        $link = l($link_title, $field_collection->field_link[LANGUAGE_NONE][0]['url'], array(
             'absolute' => TRUE,
             'html' => TRUE,
             'attributes' => array(
@@ -86,7 +96,7 @@ function oira_promotional_material_resources_formatter($items){
               'target' => '_blank',
             ))
         );
-        $resources[] = $link;
+        $external_links[] = $link;
       }
     }
   }
@@ -96,13 +106,20 @@ function oira_promotional_material_resources_formatter($items){
       '#prefix' => '<div class="promotional-material-resource-label">',
       '#suffix' => '</div>',
       '#type' => 'item',
-      '#markup' => t('Download <span class="promotional-material-resource-file-icon"></span> in'),
+      //'#markup' => t('Download <span class="promotional-material-resource-file-icon"></span> in'),
+      '#markup' => t('Download in:'),
     ),
     'resources' => array(
       '#prefix' => '<div class="promotional-material-resource-items">',
       '#suffix' => '</div>',
       '#type' => 'item',
       '#markup' => theme('item_list', array('items' => $resources))
+    ),
+    'external_links' => array(
+      '#prefix' => '<div class="promotional-material-resource-links">',
+      '#suffix' => '</div>',
+      '#type' => 'item',
+      '#markup' => theme('item_list', array('items' => $external_links))
     ),
   );
   $result[] = drupal_render($render);
