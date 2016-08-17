@@ -152,6 +152,9 @@ function oira_node_view($node, $view_mode, $langcode) {
         $options['rss_hide'] = 1;
       }
       $node->content['share_widget'] = array('#markup' => oira_news_share_widget($node, $options));
+      if (in_array($node->type, array('news'))) {
+        $node->content['share_widget_footer'] = array('#markup' => oira_news_share_widget($node, $options));
+      }
     }
   }
 
