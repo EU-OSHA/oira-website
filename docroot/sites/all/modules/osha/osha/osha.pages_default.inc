@@ -207,7 +207,7 @@ function osha_default_page_manager_handlers() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '12',
-        'class' => 'container',
+        'class' => 'col-md-offset-1 col-md-10',
         'hide_empty' => 1,
       ),
     ),
