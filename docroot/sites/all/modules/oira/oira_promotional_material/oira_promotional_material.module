@@ -288,13 +288,25 @@ function oira_promotional_material_form_alter(&$form, &$form_state, $form_id) {
  * Node form custom validation
  */
 function oira_promotional_material_form_validate($form, &$form_state) {
+  $type = '';
+  if (!empty($form_state['values']['field_promotional_material_type'][LANGUAGE_NONE][0]['tid'])) {
+    switch ($form_state['values']['field_promotional_material_type'][LANGUAGE_NONE][0]['tid']) {
+      case 290:
+        $type = 'video';
+        break;
+    }
+  }
+
   if (!empty($form_state['values']['field_resource_fc'])) {
     $resources = $form_state['values']['field_resource_fc'][LANGUAGE_NONE];
 
-    foreach ($resources as $key => $resource){
+    foreach ($resources as $key => $resource) {
       if (isset($resource['field_file']) && isset($resource['field_link'])) {
-        if ($resource['field_file'][LANGUAGE_NONE][0]['fid'] == 0 && empty($resource['field_link'][LANGUAGE_NONE][0]['url'])) {
-          form_set_error('field_resource_fc][' . LANGUAGE_NONE . ']['. $key, t('For a resource item you must enter either a link or upload a document.'));
+        if ($type == 'video' && empty($resource['field_link'][LANGUAGE_NONE][0]['url'])) {
+          form_set_error('field_resource_fc][' . LANGUAGE_NONE . '][' .  $key, t('You must provide a url for the video.'));
+        }
+        elseif ($resource['field_file'][LANGUAGE_NONE][0]['fid'] == 0 && empty($resource['field_link'][LANGUAGE_NONE][0]['url'])) {
+          form_set_error('field_resource_fc][' . LANGUAGE_NONE . '][' .  $key, t('For a resource item you must enter either a link or upload a document.'));
         }
       }
     }

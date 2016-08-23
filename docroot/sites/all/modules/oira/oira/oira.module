@@ -49,6 +49,16 @@ function oira_theme() {
   );
 }
 
+function oira_language_list_options($prefix = TRUE, $native = TRUE) {
+  $languages = osha_language_list_options($native);
+  if ($prefix) {
+    foreach ($languages as $lang_code => $value) {
+      $languages[$lang_code] = strtoupper($lang_code) . ' - ' . $value;
+    }
+  }
+  return $languages;
+}
+
 /**
  * Implements hook_field_formatter_info().
  */
@@ -152,6 +162,9 @@ function oira_node_view($node, $view_mode, $langcode) {
         $options['rss_hide'] = 1;
       }
       $node->content['share_widget'] = array('#markup' => oira_news_share_widget($node, $options));
+      if (in_array($node->type, array('news'))) {
+        $node->content['share_widget_footer'] = array('#markup' => oira_news_share_widget($node, $options));
+      }
     }
   }
 
@@ -285,3 +298,67 @@ function theme_oira_social_link_icon($element) {
   return $return;
 }
 
+/**
+ * Implements hook_panels_pane_content_alter().
+ */
+function oira_panels_pane_content_alter($content, $pane, $args,  $contexts) {
+  if($pane->type == 'panels_mini' && $pane->panel == 'related_content') {
+    $minipanel = panels_mini_load($pane->panel);
+    if (isset($minipanel->display->layout_settings['items']) && !empty($minipanel->display->content)) {
+      if (!empty($minipanel->display->renderer_handler->rendered['panes'])) {
+        $regions = array();
+        $columns = array(
+          'left' => array(
+            'parent'=> '1',
+            '1_col' => "col-xs-12 col-sm-12 col-md-12",
+            '2_col' => "col-xs-12 col-sm-6 col-md-6",
+            '3_col' => "col-xs-12 col-sm-6 col-md-4",
+          ),
+          'center' => array(
+            'parent'=> 'main',
+            '1_col' => "col-xs-12 col-sm-12 col-md-12",
+            '2_col' => "col-xs-12 col-sm-6 col-md-6",
+            '3_col' => "col-xs-12 col-sm-6 col-md-4",
+          ),
+          'right' => array(
+            'parent'=> '2',
+            '1_col' => "col-xs-12 col-sm-12 col-md-12",
+            '2_col' => "col-xs-12 col-sm-6 col-md-6",
+            '3_col' => "col-xs-12 col-sm-12 col-md-4",
+          ),
+        );
+        if (!empty($minipanel->display->renderer_handler->rendered['regions'])){
+          foreach ($minipanel->display->renderer_handler->rendered['regions'] as $region => $content){
+            if (!empty($content)) {
+              array_push($regions,$region);
+            }
+          }
+
+          switch (count($regions)) {
+            case 1:
+              foreach ($regions as $key => $r) {
+                if (isset($minipanel->display->layout_settings['items'][$columns[$r]['parent']]['class'])) {
+                  $minipanel->display->layout_settings['items'][$columns[$r]['parent']]['class'] = $columns[$r]['1_col'];
+                }
+              }
+              break;
+            case 2:
+              foreach ($regions as $key => $r) {
+                if (isset($minipanel->display->layout_settings['items'][$columns[$r]['parent']]['class'])) {
+                  $minipanel->display->layout_settings['items'][$columns[$r]['parent']]['class'] = $columns[$r]['2_col'];
+                }
+              }
+              break;
+            default:
+              foreach ($regions as $key => $r) {
+                if (isset($minipanel->display->layout_settings['items'][$columns[$r]['parent']]['class'])) {
+                  $minipanel->display->layout_settings['items'][$columns[$r]['parent']]['class'] = $columns[$r]['3_col'];
+                }
+              }
+          }
+          panels_save_display($minipanel->display);
+        }
+      }
+    }
+  }
+}

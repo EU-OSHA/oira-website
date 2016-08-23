@@ -318,8 +318,8 @@ function hwc_practical_tool_get_facets_def() {
       'operator' => 'or',
       'min_count' => 1,
       'missing' => 0,
-      'options_callback' => 'osha_language_list_options',
-      'options_callback_args' => array(TRUE),
+      'options_callback' => 'oira_language_list_options',
+      'options_callback_args' => array(TRUE, TRUE),
     ),
     'field_sector' => array(
       'label' => t('Sector'),

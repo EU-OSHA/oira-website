@@ -213,13 +213,13 @@ function _osha_search_form_get_facets() {
     ),
     'field_sector' => array(
       'label' => t('Category'),
-      'field' => 'field_promotional_material_type',
+      'field' => 'field_sector',
       'limit' => 50,
       'operator' => 'or',
       'min_count' => 1,
       'missing' => 0,
       'options_callback' => '_hwc_taxonomy_filter_options_list',
-      'options_callback_args' => array('promotional_material_type'),
+      'options_callback_args' => array('sector'),
     ),
   ];
 }

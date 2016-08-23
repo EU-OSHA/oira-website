@@ -512,6 +512,65 @@ function oira_promotional_material_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-promotional_material-field_oira'.
+  $field_instances['node-promotional_material-field_oira'] = array(
+    'bundle' => 'promotional_material',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 16,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_oira',
+    'label' => 'OIRA',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 10,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance:
   // 'node-promotional_material-field_promotional_material_type'.
   $field_instances['node-promotional_material-field_promotional_material_type'] = array(
@@ -1116,6 +1175,7 @@ function oira_promotional_material_field_default_field_instances() {
   t('Language');
   t('Link');
   t('Name');
+  t('OIRA');
   t('Promotional material type');
   t('Publication date');
   t('Resource');

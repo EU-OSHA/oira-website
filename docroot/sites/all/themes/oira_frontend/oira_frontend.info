@@ -11,7 +11,7 @@ base theme = bootstrap
 
 ;regions[above_header]   = 'Above header'
 regions[header_block]   = 'Header block'
-;regions[above_title]    = 'Above title'
+regions[above_title]    = 'Above title'
 regions[menu]           = 'Menu'
 ;regions[slider]         = 'Slider'
 regions[header]         = 'Header'

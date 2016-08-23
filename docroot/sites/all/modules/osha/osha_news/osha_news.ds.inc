@@ -17,8 +17,8 @@ function osha_news_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'news';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'top_anchor' => array(
-      'weight' => '8',
+    'share_widget_footer' => array(
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -51,6 +51,41 @@ function osha_news_ds_field_settings_info() {
 }
 
 /**
+ * Implements hook_ds_custom_fields_info().
+ */
+function osha_news_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'share_widget_footer';
+  $ds_field->label = 'Share widget footer';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'news|default';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Eg: h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['share_widget_footer'] = $ds_field;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function osha_news_ds_layout_settings_info() {
@@ -69,16 +104,20 @@ function osha_news_ds_layout_settings_info() {
         0 => 'field_publication_date',
         1 => 'title_field',
         2 => 'share_widget',
-        3 => 'field_summary',
-        4 => 'field_image',
-        5 => 'body',
+        3 => 'group_content_wrapper',
+        4 => 'field_summary',
+        5 => 'share_widget_footer',
+        6 => 'field_image',
+        7 => 'body',
       ),
     ),
     'fields' => array(
       'field_publication_date' => 'ds_content',
       'title_field' => 'ds_content',
       'share_widget' => 'ds_content',
+      'group_content_wrapper' => 'ds_content',
       'field_summary' => 'ds_content',
+      'share_widget_footer' => 'ds_content',
       'field_image' => 'ds_content',
       'body' => 'ds_content',
     ),
