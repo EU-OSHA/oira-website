@@ -38,8 +38,8 @@ function _oira_promotional_material_search_form_get_facets() {
       'operator' => 'or',
       'min_count' => 1,
       'missing' => 0,
-      'options_callback' => 'osha_language_list_options',
-      'options_callback_args' => array(TRUE),
+      'options_callback' => 'oira_language_list_options',
+      'options_callback_args' => array(TRUE, TRUE),
     ),
     'field_promotional_material_type' => array(
       'label' => t('Category'),

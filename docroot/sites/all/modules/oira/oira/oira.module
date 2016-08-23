@@ -49,6 +49,16 @@ function oira_theme() {
   );
 }
 
+function oira_language_list_options($prefix = TRUE, $native = TRUE) {
+  $languages = osha_language_list_options($native);
+  if ($prefix) {
+    foreach ($languages as $lang_code => $value) {
+      $languages[$lang_code] = strtoupper($lang_code) . ' - ' . $value;
+    }
+  }
+  return $languages;
+}
+
 /**
  * Implements hook_field_formatter_info().
  */
