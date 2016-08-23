@@ -52,7 +52,7 @@ function osha_default_panels_mini() {
           0 => 'main-row',
         ),
         'parent' => 'canvas',
-        'class' => '',
+        'class' => 'col-xs-12 col-sm-6 col-md-4',
         'hide_empty' => 1,
       ),
       'main-row' => array(
@@ -82,7 +82,7 @@ function osha_default_panels_mini() {
         'children' => array(
           0 => 3,
         ),
-        'class' => '',
+        'class' => 'col-xs-12 col-sm-6 col-md-4',
         'hide_empty' => 1,
       ),
       2 => array(
@@ -93,7 +93,7 @@ function osha_default_panels_mini() {
         'children' => array(
           0 => 4,
         ),
-        'class' => '',
+        'class' => 'col-xs-12 col-sm-12 col-md-4',
         'hide_empty' => 1,
       ),
       3 => array(
@@ -160,6 +160,7 @@ function osha_default_panels_mini() {
       'override_title' => 1,
       'override_title_text' => 'Publications',
       'override_title_heading' => 'h3',
+      'title' => 'Publications',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -183,6 +184,7 @@ function osha_default_panels_mini() {
       'override_title' => 1,
       'override_title_text' => 'OSH Wiki',
       'override_title_heading' => 'h3',
+      'title' => 'OSH Wiki',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -218,6 +220,7 @@ function osha_default_panels_mini() {
       'override_title' => 1,
       'override_title_text' => 'News',
       'override_title_heading' => 'h3',
+      'title' => 'News',
     );
     $pane->cache = array();
     $pane->style = array(
