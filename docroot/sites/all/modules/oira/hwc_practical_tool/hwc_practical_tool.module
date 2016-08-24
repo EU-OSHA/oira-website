@@ -132,6 +132,12 @@ function _hwc_practical_tool_get_partners($node) {
 function hwc_practical_tool_node_presave($node) {
   if ($node->type == 'practical_tool') {
     cache_clear_all(_hwc_practical_tool_related_partners_cid($node), 'cache');
+
+    // Set empty revised date as publication date.
+    if (!empty($node->field_publication_date[LANGUAGE_NONE][0]['value'])
+      && empty($node->field_revised_date[LANGUAGE_NONE][0]['value'])) {
+      $node->field_revised_date[LANGUAGE_NONE][0] = $node->field_publication_date[LANGUAGE_NONE][0];
+    }
   }
 }
 
