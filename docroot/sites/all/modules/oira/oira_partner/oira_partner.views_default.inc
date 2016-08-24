@@ -186,14 +186,14 @@ function oira_partner_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'OIRA Partners';
+  $view->human_name = 'OiRA Partners';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'OIRA Partners';
+  $handler->display->display_options['title'] = 'OiRA Partners';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -371,7 +371,7 @@ function oira_partner_views_default_views() {
   );
   $translatables['oira_partners'] = array(
     t('Master'),
-    t('OIRA Partners'),
+    t('OiRA Partners'),
     t('View all'),
     t('Apply'),
     t('Reset'),
