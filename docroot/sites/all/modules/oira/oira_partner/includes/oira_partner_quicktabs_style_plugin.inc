@@ -85,15 +85,22 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
           $title = t('Other');
         }
         $contents = '<div class="quicktabs-group-wrapper"><div class="container"><div class="content-group-label group-' . $content_type . '">' . $title . '</div>';
+
+        $showing_limit = 1;
+        // For tools and news we are showing 2 items. For others 1.
+        if (in_array($content_type, array('news', 'practical_tool'))) {
+          $showing_limit = 2;
+        }
+
         $all_rows_rendered .= $contents;
         $all_group_counter = 0;
         foreach ($rows as $row) {
           $contents .= '<div class="quicktabs-views-group ' . (($has_sector) ? 'sector-filter-tab-content' : '') . $this->options['row_class'] . '">' . $row . '</div>';
-          if ($all_group_counter < 2) {
+          if ($all_group_counter < $showing_limit) {
             $all_rows_rendered .= '<div class="quicktabs-views-group ' . $this->options['row_class'] . '">' . $row . '</div>';
           }
-          if ($all_group_counter == 2) {
-            $all_rows_rendered .= '<a class="quicktab-group-view-all more-link" href="javascript:jQuery(\'.quicktabs-tabs li\').eq(' . $tab_index . ').find(\'a\').trigger(\'click\');">View all</a>';
+          if ($all_group_counter == $showing_limit) {
+            $all_rows_rendered .= '<a class="quicktab-group-view-all more-link" href="javascript:jQuery(\'.quicktabs-tabs > li\').eq(' . $tab_index . ').find(\'a\').trigger(\'click\');">View all</a>';
           }
           $all_group_counter++;
         }
