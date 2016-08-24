@@ -339,6 +339,9 @@ function hwc_practical_tool_menu_tools_get_query() {
   $index = search_api_index_load(SOLR_SEARCH_INDEX);
   $query = new SearchApiQuery($index);
   $query->fields(array()); // Avoid PHP notice
+  // If the return data option on server it's not set, highlight doesn't work.
+  // So we force highlight without having to return field data.
+  $server->options['highlight_data'] = TRUE;
   $solr = new SearchApiSolrService($server);
   return array($solr, $query);
 }
