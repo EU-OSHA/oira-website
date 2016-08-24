@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Add focal point links ot NCW.
+ */
+function oira_country_update_7001() {
+  module_load_include('inc', 'pathauto', 'pathauto');
+  $voc = taxonomy_vocabulary_machine_name_load('country');
+  $terms = taxonomy_term_load_multiple(array(), array('vid' => $voc->vid));
+  foreach ($terms as $term) {
+    $url = 'https://osha.europa.eu/en/about-eu-osha/national-focal-points/' . strtolower(str_replace(' ', '-', $term->name));
+    $req = drupal_http_request($url);
+    if ($req->code == 200) {
+      $term->field_ncw_fp_link[LANGUAGE_NONE][0]['url'] = $url;
+      taxonomy_term_save($term);
+    }
+  }
+}

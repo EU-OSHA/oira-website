@@ -215,21 +215,21 @@ function oira_partner_default_panels_mini() {
     $display->content['new-dd946491-6529-4084-af81-4f9ad67375d8'] = $pane;
     $display->panels['center'][3] = 'new-dd946491-6529-4084-af81-4f9ad67375d8';
     $pane = new stdClass();
-    $pane->pid = 'new-4296d738-6e8d-4bf2-9ca5-1471e6efaf65';
+    $pane->pid = 'new-9974c2dc-0d31-4290-a1b9-104512eb0be3';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_ph_country';
+    $pane->subtype = 'node:field_country';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'text_plain',
+      'label' => 'hidden',
+      'formatter' => 'i18n_taxonomy_term_reference_plain',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -241,9 +241,9 @@ function oira_partner_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $pane->uuid = '4296d738-6e8d-4bf2-9ca5-1471e6efaf65';
-    $display->content['new-4296d738-6e8d-4bf2-9ca5-1471e6efaf65'] = $pane;
-    $display->panels['center'][4] = 'new-4296d738-6e8d-4bf2-9ca5-1471e6efaf65';
+    $pane->uuid = '9974c2dc-0d31-4290-a1b9-104512eb0be3';
+    $display->content['new-9974c2dc-0d31-4290-a1b9-104512eb0be3'] = $pane;
+    $display->panels['center'][4] = 'new-9974c2dc-0d31-4290-a1b9-104512eb0be3';
     $pane = new stdClass();
     $pane->pid = 'new-8612b9e5-6641-48d8-8131-611d8cb86568';
     $pane->panel = 'center';
@@ -357,7 +357,16 @@ function oira_partner_default_panels_mini() {
     ),
   );
   $mini->contexts = array();
-  $mini->relationships = array();
+  $mini->relationships = array(
+    0 => array(
+      'identifier' => 'Country',
+      'keyword' => 'taxonomy_term',
+      'name' => 'entity_from_field:field_country-node-taxonomy_term',
+      'delta' => 0,
+      'context' => 'requiredcontext_entity:node_1',
+      'id' => 1,
+    ),
+  );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
@@ -730,21 +739,21 @@ function oira_partner_default_panels_mini() {
     $display->content['new-626e9816-cb3a-41cb-a36d-01d9067ec143'] = $pane;
     $display->panels['social'][0] = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
     $pane = new stdClass();
-    $pane->pid = 'new-234a31ce-df16-47f2-acd6-ca92e4bebc64';
+    $pane->pid = 'new-b8abb1d8-c8f6-4430-be9e-e54b06ef093f';
     $pane->panel = 'text';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_country';
+    $pane->subtype = 'taxonomy_term:field_ncw_fp_link';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'i18n_taxonomy_term_reference_link',
+      'formatter' => 'link_default',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
-      'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 1,
+      'context' => 'relationship_entity_from_field:field_country-node-taxonomy_term_1',
+      'override_title' => 0,
       'override_title_text' => 'Focal point',
       'override_title_heading' => 'div',
     );
@@ -756,9 +765,9 @@ function oira_partner_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '234a31ce-df16-47f2-acd6-ca92e4bebc64';
-    $display->content['new-234a31ce-df16-47f2-acd6-ca92e4bebc64'] = $pane;
-    $display->panels['text'][0] = 'new-234a31ce-df16-47f2-acd6-ca92e4bebc64';
+    $pane->uuid = 'b8abb1d8-c8f6-4430-be9e-e54b06ef093f';
+    $display->content['new-b8abb1d8-c8f6-4430-be9e-e54b06ef093f'] = $pane;
+    $display->panels['text'][0] = 'new-b8abb1d8-c8f6-4430-be9e-e54b06ef093f';
     $pane = new stdClass();
     $pane->pid = 'new-b82fb197-4f24-4f68-90ee-05d83089aad9';
     $pane->panel = 'text_';
