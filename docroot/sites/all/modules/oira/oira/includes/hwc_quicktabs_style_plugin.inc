@@ -27,6 +27,12 @@ class hwc_quicktabs_style_plugin extends quicktabs_style_plugin {
     }
 
     $view = $this->view;
+    $class = $view->display_handler->get_option('css_class');
+
+    $alpha_pager = FALSE;
+    if (!empty($class) && strpos($class, 'hwc-alpha-pager-view') >= 0) {
+      $alpha_pager = TRUE;
+    }
     $qt_name = 'view__' . $view->name .'__'. $view->current_display;
 
     // Group the rows according to the grouping field, if specified.
@@ -84,8 +90,11 @@ class hwc_quicktabs_style_plugin extends quicktabs_style_plugin {
       }
     }
 
-    // WHY sort the results by title???
-//    asort($all_rows);
+    if ($alpha_pager) {
+      // Sort by title all tab.
+      $coll = collator_create('en_GB');
+      collator_sort($coll, $all_rows);
+    }
 
     $contents = '';
     foreach (array_keys($all_rows) as $row_index) {
