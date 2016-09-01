@@ -8818,7 +8818,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-practical-tool .related-partners-1 > div,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-promotional-material .related-partners-1 > div,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
-  margin-left: 323px !important;
+  margin-left: 323px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
@@ -8826,7 +8826,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-promotional-material .related-partners-1 > div,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
-  margin-left: 309px !important;
+  margin-left: 309px;
 }
 .quicktabs-tabs-container {
   background-color: #786586;
@@ -9711,6 +9711,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result span.custom-field-node-type {
   font-style: italic;
   color: #786586;
+  display: block;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-field-publication-date {
   margin-top: 0px;
@@ -9948,13 +9949,36 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
     margin-left: 170px !important;
   }
+  .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
+    margin-left: 184px !important;
+  }
   /*END OIRA TOOLS*/
   /*PROMOTIONAL RESOURCES
 ***************************************************/
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.more-link {
     margin-left: 156px !important;
   }
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .related-partners-1 > div {
+    margin-left: 170px !important;
+  }
   /*END PROMOTIONAL RESOURCES*/
+  /* QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL
+***********************************************************/
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-practical-tool .field-name-tools-see-more,
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
+    margin-left: 258px !important;
+  }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-practical-tool .related-partners-1 > div,
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
+    margin-left: 273px !important;
+  }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
+    margin-left: 243px !important;
+  }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
+    margin-left: 258px !important;
+  }
+  /*END QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL*/
 }
 @media only screen and (max-width: 991px) {
   /*HEADER
@@ -10285,7 +10309,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   .front .more-link a {
     margin-top: 0px;
   }
-  .front .views-view-grid.cols-3 .row > :nth-child(3) {
+  .front .views-view-grid.cols-3 > .row > div:nth-child(3) {
     display: none;
   }
   /*END HOME*/
@@ -10447,6 +10471,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
     margin-left: 180px !important;
   }
+  .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
+    margin-left: 195px !important;
+  }
   /*END OIRA TOOLS*/
   /*PROMOTIONAL RESOURCES
 ***************************************************/
@@ -10455,6 +10482,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   }
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.more-link {
     margin-left: 166px !important;
+  }
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .related-partners-1 > div {
+    margin-left: 180px !important;
   }
   /*END PROMOTIONAL RESOURCES*/
   /*PARTNER DETAIL PAGE
@@ -10469,8 +10499,23 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
     margin-left: 203px !important;
   }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-practical-tool .related-partners-1 > div,
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
+    margin-left: 218px !important;
+  }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-practical-tool .group-center,
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .group-center {
+    display: inline-block;
+    width: 100%;
+  }
   div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners {
     clear: both;
+  }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
+    margin-left: 190px !important;
+  }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
+    margin-left: 203px !important;
   }
   /*END QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL*/
 }
