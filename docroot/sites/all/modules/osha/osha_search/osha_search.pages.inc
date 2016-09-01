@@ -56,6 +56,11 @@ function osha_search_search_form($form, $form_state) {
     /* Needed so that the page passes Web Accessibility test */
     '#type' => 'fieldset',
   );
+  $form['content']['sort_fieldset']['toggle_filter'] = array(
+    '#type' => 'markup',
+    '#markup' => '<div class="toggle-search-sidebar visible-sm-inline visible-xs-inline"><span>' . t('Toggle search') . '</span></div>',
+  );
+
   $form['content']['sort_fieldset']['sort'] = array(
     '#type' => 'select',
     '#title' => t('Order'),
@@ -107,6 +112,8 @@ function osha_search_search_form($form, $form_state) {
       }
     }
   }
+
+  $form['left-column']['toggle_filter'] = $form['content']['sort_fieldset']['toggle_filter'];
 
   $nids = array();
   if (!empty($response['results'])) {

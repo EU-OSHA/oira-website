@@ -124,13 +124,17 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   if (!empty($text)) {
     $form['content']['search_phrase'] = array(
       '#type' => 'markup',
-      '#markup' => t('Results for !text', array('!text' => '<span class="searched-text"> ' . check_plain($text) .'</span>')),
+      '#markup' => t('Results for !text', array('!text' => '<span class="searched-text">' . check_plain($text) .'</span>')),
     );
   }
 
   $form['content']['sort_fieldset'] = array(
     /* Needed so that the page passes Web Accessibility test */
     '#type' => 'fieldset',
+  );
+  $form['content']['sort_fieldset']['toggle_filter'] = array(
+    '#type' => 'markup',
+    '#markup' => '<div class="toggle-search-sidebar visible-sm-inline visible-xs-inline"><span>' . t('Toggle search') . '</span></div>',
   );
   $form['content']['sort_fieldset']['sort'] = array(
     '#type' => 'select',
@@ -198,6 +202,8 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
       }
     }
   }
+
+  $form['left-column']['toggle_filter'] = $form['content']['sort_fieldset']['toggle_filter'];
 
   $nids = array();
   if (!empty($response['results'])) {
