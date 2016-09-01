@@ -392,8 +392,10 @@ function oira_country_default_page_manager_pages() {
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'EU and national partners',
-    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_titles' => 'Partners and OiRA Community
+EU and national partners',
+    'panels_breadcrumbs_paths' => '<none>
+<none>',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
