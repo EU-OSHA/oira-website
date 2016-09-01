@@ -1,4 +1,4 @@
-@import url('//fonts.googleapis.com/css?family=Oswald:400,700&subset=latin,latin-ext');
+@import url('//fonts.googleapis.com/css?family=Oswald:300,400,700&subset=latin,latin-ext');
 @import url('//fonts.googleapis.com/css?family=Roboto:700,400,700italic&subset=latin,greek,cyrillic,latin-ext');
 /*ENDIKA - ASIER VARIABLES
 *********************************************/
@@ -7118,6 +7118,9 @@ a.more-link:before {
 .field-name-field-resource-fc .promotional-material-resource-items li:last-child a {
   border-right: none;
 }
+.col-md-10 {
+  min-height: 0px;
+}
 /*END estilos comunes
 ************************************************************************************/
 /*ESTILOS LOGIN
@@ -7461,6 +7464,9 @@ a.more-link:before {
 /*END HOME*/
 /*ARTICLES
 ****************************************************************/
+.node-type-article .page-content {
+  margin-bottom: 10px;
+}
 .node-type-article .panels-flexible-region-new-cover_image .field-type-image {
   position: relative;
   display: inline-block;
@@ -7525,7 +7531,6 @@ a.more-link:before {
 .node-type-article .panels-flexible-row-new-10 {
   padding-bottom: 0px;
   background-color: #786586;
-  margin-bottom: 10px;
 }
 .node-type-article .panels-flexible-row-new-10 .pane-oira-blocks-oshwiki-featured-articles h3:after {
   content: "";
@@ -7908,6 +7913,7 @@ a.more-link:before {
 .page-oira-tools .pane-node-body .field-type-text-with-summary {
   font-family: 'Oswald';
   font-size: 1.4em;
+  font-weight: 300;
   margin-bottom: 30px;
 }
 .page-oira-tools .panels-flexible-row-new-1 {
@@ -8382,6 +8388,9 @@ a.more-link:before {
 }
 /*News detail
 *****************************************************/
+.node-news {
+  margin-bottom: 30px;
+}
 .node-news .field-name-field-publication-date {
   margin-top: 50px;
 }
@@ -8424,6 +8433,9 @@ a.more-link:before {
   float: left;
   margin-right: 30px;
   margin-bottom: 20px;
+}
+.node-news .group-content-wrapper.news-field-group {
+  overflow: hidden;
 }
 /*END OIRA NEWS*/
 /*COUNTRIES LIST
@@ -8959,6 +8971,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .page-promotional-resources .pane-node-body .field-type-text-with-summary {
   font-family: 'Oswald';
   font-size: 1.4em;
+  font-weight: 300;
   margin-bottom: 30px;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 {
@@ -8990,6 +9003,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .page-promotional-resources-search .pane-node-body .field-type-text-with-summary {
   font-family: 'Oswald';
   font-size: 1.4em;
+  font-weight: 300;
   margin-bottom: 30px;
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last {
@@ -9245,6 +9259,17 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .page-irat-network .quicktabs-tabs {
   background-color: #786586;
 }
+.page-sectorial-social-partners .quicktabs-tabs li.active,
+.page-national-partners .quicktabs-tabs li.active,
+.page-irat-network .quicktabs-tabs li.active {
+  background-color: #dfd8e4;
+}
+.page-sectorial-social-partners .quicktabs-tabs li.active .active,
+.page-national-partners .quicktabs-tabs li.active .active,
+.page-irat-network .quicktabs-tabs li.active .active {
+  background-color: rgba(255, 255, 255, 0);
+  color: #786586 !important;
+}
 .page-sectorial-social-partners .quicktabs-tabs li,
 .page-national-partners .quicktabs-tabs li,
 .page-irat-network .quicktabs-tabs li {
@@ -9257,15 +9282,15 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
 .page-irat-network .quicktabs-tabs li a {
   border-left: 2px solid #ffffff;
   color: #ffffff;
-  padding: 5px 0px 5px 20px;
-  margin: 10px 0px 10px 20px;
+  padding: 5px 20px 5px 20px;
+  margin: 10px -3px 10px -3px;
   text-decoration: none !important;
 }
 .page-sectorial-social-partners .quicktabs-tabs li a:hover,
 .page-national-partners .quicktabs-tabs li a:hover,
 .page-irat-network .quicktabs-tabs li a:hover {
-  background-color: inherit !important;
-  color: #dfd8e4 !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: #ffffff !important;
 }
 .page-sectorial-social-partners .quicktabs-tabs li:first-child a,
 .page-national-partners .quicktabs-tabs li:first-child a,
@@ -9918,6 +9943,18 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   /*HOME
 ********************************************/
   /*END HOME*/
+  /*OIRA TOOLS
+**************************************/
+  .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
+    margin-left: 170px !important;
+  }
+  /*END OIRA TOOLS*/
+  /*PROMOTIONAL RESOURCES
+***************************************************/
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.more-link {
+    margin-left: 156px !important;
+  }
+  /*END PROMOTIONAL RESOURCES*/
 }
 @media only screen and (max-width: 991px) {
   /*HEADER
@@ -10248,9 +10285,15 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   .front .more-link a {
     margin-top: 0px;
   }
+  .front .views-view-grid.cols-3 .row > :nth-child(3) {
+    display: none;
+  }
   /*END HOME*/
   /*WHAT'S NEW SECTION
 *********************************************************************/
+  .page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news .views-item-columns-container {
+    min-height: 297px;
+  }
   .page-what-is-new .panels-flexible-region-new-image {
     margin-top: 35px;
   }
@@ -10271,9 +10314,18 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     width: 715px;
     margin: 25px auto;
   }
+  .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-view-grid.cols-3 .row > :nth-child(3) {
+    display: none;
+  }
+  .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container {
+    min-height: 591px;
+  }
   /*END WHAT'S NEW SECTION*/
   /*ARTICLES
 ****************************************************************/
+  .node-type-article h1 {
+    margin-top: 40px;
+  }
   .node-type-article .article-content-container {
     padding-left: 15px;
     padding-right: 15px;
@@ -10286,6 +10338,33 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     padding-right: 0px;
     padding-left: 0px;
   }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources .pane-additional-resources .views-view-grid.cols-3 > .row {
+    display: none;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources .pane-additional-resources .views-view-grid.cols-3 .row:nth-child(1) {
+    display: block !important;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources .pane-additional-resources .views-view-grid.cols-3 .row > div {
+    display: none;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources .pane-additional-resources .views-view-grid.cols-3 .row > div:nth-child(1) {
+    display: block;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources .pane-additional-resources .views-view-grid.cols-3 .row > div:nth-child(2) {
+    display: block;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .view-additional-resources > div article:nth-child(2) {
+    display: none;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .view-additional-resources > div article .flickr-photoset .flickr-wrap {
+    width: 33%;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .view-additional-resources > div article .flickr-photoset .flickr-wrap:nth-child(4) {
+    display: none;
+  }
+  .node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-flickr-pane .view-additional-resources > div article .flickr-photoset .flickr-wrap:nth-child(5) {
+    display: none;
+  }
   /*END ARTICLES*/
   /* COUNTRY PROFILE
 ********************************************************************/
@@ -10296,12 +10375,104 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     margin-top: 0px !important;
   }
   /*END COUNTRY PROFILE*/
+  /*OIRA TOOLS, PROMOTIONAL RESOURCES, GENERAL SEARCH (FILTERS)
+**************************************************************************/
+  .page-oira-tools .panels-flexible-row-new-1,
+  .page-promotional-resources-search .panels-flexible-row-new-1,
+  .page-search-site .panels-flexible-row-new-1,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
+  .page-oira-tools .oira-search-form-container,
+  .page-promotional-resources-search .oira-search-form-container,
+  .page-search-site .oira-search-form-container {
+    background: none;
+    background-color: #dfd8e4;
+    padding-bottom: 0px;
+  }
+  .page-oira-tools .panels-flexible-row-new-1 #edit-left-column,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column,
+  .page-search-site .panels-flexible-row-new-1 #edit-left-column,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
+  .page-oira-tools .oira-search-form-container #edit-left-column,
+  .page-promotional-resources-search .oira-search-form-container #edit-left-column,
+  .page-search-site .oira-search-form-container #edit-left-column {
+    position: absolute !important;
+    z-index: 1;
+    padding-left: 30px;
+    margin-left: 15px;
+    margin-top: 30px;
+  }
+  .page-oira-tools .panels-flexible-row-new-1 #edit-left-column > a,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column > a,
+  .page-search-site .panels-flexible-row-new-1 #edit-left-column > a,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
+  .page-oira-tools .oira-search-form-container #edit-left-column > a,
+  .page-promotional-resources-search .oira-search-form-container #edit-left-column > a,
+  .page-search-site .oira-search-form-container #edit-left-column > a {
+    clear: both;
+  }
+  .page-oira-tools .panels-flexible-row-new-1 #edit-left-column #edit-submit,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column #edit-submit,
+  .page-search-site .panels-flexible-row-new-1 #edit-left-column #edit-submit,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column #edit-submit,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column #edit-submit,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column #edit-submit,
+  .page-oira-tools .oira-search-form-container #edit-left-column #edit-submit,
+  .page-promotional-resources-search .oira-search-form-container #edit-left-column #edit-submit,
+  .page-search-site .oira-search-form-container #edit-left-column #edit-submit {
+    left: 305px;
+    right: inherit;
+  }
+  .page-oira-tools .panels-flexible-row-new-1 #edit-content,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content,
+  .page-search-site .panels-flexible-row-new-1 #edit-content,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
+  .page-oira-tools .oira-search-form-container #edit-content,
+  .page-promotional-resources-search .oira-search-form-container #edit-content,
+  .page-search-site .oira-search-form-container #edit-content {
+    padding-left: 15px !important;
+    border-left: 0px !important;
+    padding-bottom: 40px !important;
+  }
+  /*END OIRA TOOLS, PROMOTIONAL RESOURCES, GENERAL SEARCH (FILTERS)*/
+  /*OIRA TOOLS
+**************************************/
+  .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
+    margin-left: 180px !important;
+  }
+  /*END OIRA TOOLS*/
   /*PROMOTIONAL RESOURCES
-**************************/
+***************************************************/
   .promotional-introduction-item {
     min-height: 475px;
   }
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.more-link {
+    margin-left: 166px !important;
+  }
   /*END PROMOTIONAL RESOURCES*/
+  /*PARTNER DETAIL PAGE
+**********************************/
+  .node-type-partner #block-system-main > div > div {
+    margin-top: 30px;
+  }
+  /*END PARTNER DETAIL PAGE*/
+  /* QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL
+***********************************************************/
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-practical-tool .field-name-tools-see-more,
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
+    margin-left: 203px !important;
+  }
+  div[id*="quicktabs-container-view__country_partner_content__block"] .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners {
+    clear: both;
+  }
+  /*END QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL*/
 }
 @media only screen and (max-width: 767px) {
   /*HEADER
@@ -10400,6 +10571,12 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
   .node-type-article .article-content-container {
     width: inherit;
   }
+  /*HOME
+***************************************/
+  .front .views-view-grid.cols-3 .row > :nth-child(3) {
+    display: block;
+  }
+  /*END HOME*/
 }
 @media only screen and (max-width: 480px) {
   /*HEADER
