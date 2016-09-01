@@ -374,6 +374,10 @@ a.more-link{
 	}
 }
 
+.col-md-10{
+	min-height: 0px;
+}
+
 /*END estilos comunes
 ************************************************************************************/
 
@@ -778,6 +782,9 @@ a.more-link{
 /*ARTICLES
 ****************************************************************/
 .node-type-article{
+	.page-content{
+		margin-bottom: 10px;
+	}
 	.panels-flexible-region-new-cover_image{
 		.field-type-image{
 			position: relative;
@@ -839,7 +846,7 @@ a.more-link{
 	.panels-flexible-row-new-10{
 		padding-bottom: 0px;
 		background-color: @color-primary-dark;
-		margin-bottom: 10px;
+		//margin-bottom: 10px; //testing
 		.pane-oira-blocks-oshwiki-featured-articles{
 			h3{
 				&:after{
@@ -1250,6 +1257,7 @@ a.more-link{
 		.field-type-text-with-summary{
 			font-family: @font-family-base-2;
 			font-size: 1.4em;
+			font-weight: 300;
 			margin-bottom: 30px;
 		}
 	}
@@ -1802,8 +1810,10 @@ a.more-link{
 /*News detail
 *****************************************************/
 .node-news{
+	margin-bottom: 30px;
 	.field-name-field-publication-date{
 		margin-top: 50px;
+
 	}
 	h1{
 		color: @color-text-grey;
@@ -1844,6 +1854,9 @@ a.more-link{
 	    float: left;
 	    margin-right: 30px;
 	    margin-bottom: 20px;
+	}
+	.group-content-wrapper.news-field-group{
+		overflow: hidden;
 	}
 }
 /*END OIRA NEWS*/
@@ -2263,7 +2276,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 				margin-left: 310px;
 			}
 			.related-partners-1 > div{
-				margin-left: 323px !important;
+				margin-left: 323px; //!important testing
 			}
 		}
 		.node-promotional-material{
@@ -2271,7 +2284,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 				margin-left: 293px;
 			}
 			.related-partners-1 > div{
-				margin-left: 309px !important;
+				margin-left: 309px; //!important testing
 			}
 		}
 	}
@@ -2444,6 +2457,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 		.field-type-text-with-summary {
 		    font-family: 'Oswald';
 		    font-size: 1.4em;
+		    font-weight: 300;
 		    margin-bottom: 30px;
 		}
 	}
@@ -2489,6 +2503,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 		.field-type-text-with-summary{
 			font-family: @font-family-base-2;
 			font-size: 1.4em;
+			font-weight: 300;
 			margin-bottom: 30px;
 		}
 	}
@@ -2771,6 +2786,14 @@ div[id ^= "mini-panel-partner_in_country"]{
 	}
 	.quicktabs-tabs{
 		background-color: @color-primary-dark;
+		li.active{
+			background-color: @color-primary;
+			.active{
+				//border-left: 0px !important;
+				background-color: rgba(255, 255, 255, 0);
+				color: @color-primary-dark !important;
+			}
+		}
 		li{
 			display: table-cell;
 			margin: 0px;
@@ -2778,12 +2801,12 @@ div[id ^= "mini-panel-partner_in_country"]{
 			a{
 				border-left: 2px solid @color-white; 
 				color: @color-white;
-				padding: 5px 0px 5px 20px;
-				margin: 10px 0px 10px 20px;
+				padding: 5px 20px 5px 20px;
+				margin: 10px -3px 10px -3px;
 				text-decoration: none !important;
 				&:hover{
-					background-color: inherit !important;
-					color: @color-primary !important;
+					background-color: rgba(255, 255, 255, 0) !important;
+					color: @color-white !important;
 				}
 			}
 		}
@@ -3218,6 +3241,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 							span.custom-field-node-type{
 								font-style: italic;
 								color: @color-primary-dark;
+								display: block;
 							}
 							.field-name-field-publication-date{
 								margin-top: 0px;
