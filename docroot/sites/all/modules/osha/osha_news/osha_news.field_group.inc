@@ -21,7 +21,7 @@ function osha_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content wrapper',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'body',
       1 => 'field_image',
