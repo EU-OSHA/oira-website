@@ -124,7 +124,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   if (!empty($text)) {
     $form['content']['search_phrase'] = array(
       '#type' => 'markup',
-      '#markup' => t('Results for !text', array('!text' => '<span class="searched-text">' . check_plain($text) .'</span>')),
+      '#markup' => '<div class="results-for">' . t('Results for !text', array('!text' => '<span class="searched-text">' . check_plain($text) .'</span>')) . '</div>',
     );
   }
 
