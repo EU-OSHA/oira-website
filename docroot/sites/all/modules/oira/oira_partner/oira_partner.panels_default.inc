@@ -421,7 +421,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 8,
         ),
-        'class' => 'col-sm-4 partner-colaborators-container',
+        'class' => 'col-md-4 col-sm-6 col-xs-12 partner-colaborators-container',
         'hide_empty' => 0,
       ),
       3 => array(
@@ -432,7 +432,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 7,
         ),
-        'class' => 'col-sm-3 partner-social-container',
+        'class' => 'col-md-3 col-sm-6 col-xs-12 partner-social-container',
         'hide_empty' => 0,
       ),
       4 => array(
@@ -443,7 +443,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 6,
         ),
-        'class' => 'col-sm-3 partner-contact-container',
+        'class' => 'col-md-3 col-sm-6 col-xs-12 partner-contact-container',
         'hide_empty' => 0,
       ),
       5 => array(
@@ -454,7 +454,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 9,
         ),
-        'class' => 'col-sm-2 partner-text2-container',
+        'class' => 'col-md-2 col-sm-6 col-xs-12 partner-text2-container',
         'hide_empty' => 0,
       ),
       6 => array(
