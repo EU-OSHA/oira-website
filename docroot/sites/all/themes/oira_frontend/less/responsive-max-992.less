@@ -408,7 +408,7 @@
 	.panels-flexible-row-new-6{
 		.panels-flexible-region-new-new_tools{
 			.view-id-tools{
-				.views-view-grid.cols-3 .row > :nth-child(3){
+				.views-view-grid.cols-3 > .row > div:nth-child(3){
 					display: none;
 				}
 				.views-item-columns-container{
@@ -535,7 +535,9 @@
 			z-index: 1;
 			padding-left: 30px;
 			margin-left: 15px;
-			margin-top: 30px;
+			margin-top: 20px;
+			padding-bottom: 15px !important;
+			display: none;
 			> a{
 				clear: both;
 			}
@@ -543,11 +545,54 @@
 				left: 305px;
 				right: inherit;
 			}
+			.toggle-search-sidebar{
+				display: block !important;
+				span{
+					height: 20px;
+					width: 20px;
+					overflow: hidden;
+					display: block;
+					float: right;
+					margin-top: 10px;
+					cursor: pointer;
+					&:before{
+						content: "\e253";
+					    font-family: "Glyphicons Halflings";
+					    font-size: @font-size1-2;
+					    color: @color-white;
+					    margin-left: 0px;
+					    margin-right: 20px;
+					    line-height: 0px;
+					}
+				}
+			}
     	}
     	#edit-content{
 			padding-left: 15px !important;
 			border-left: 0px !important;
 			padding-bottom: 40px !important;
+			padding-top: 80px !important;
+			.toggle-search-sidebar{
+				position: absolute;
+				top: 20px;
+				span{
+					height: 40px;
+						width: 40px;
+					overflow: hidden;
+					background-color: @color-primary-dark;
+					display: block;
+					cursor: pointer;
+					&:before{
+						content: "\e003";
+					    font-family: "Glyphicons Halflings";
+					    font-size: @font-size1-3;
+					    color: @color-white;
+					    margin-left: 10px;
+					    margin-right: 20px;
+					    line-height: 40px;
+					}
+				}
+			}
     	}
 	}
 }
