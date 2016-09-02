@@ -38,7 +38,7 @@
 
     Drupal.behaviors.tool_form_toggle_filter = {
         attach: function(context, settings) {
-            $('.oira-custom-faceted-search-form').once('tool_form_toggle_filter', function(){
+            $('.oira-custom-faceted-search-form').once('tool_form_toggle_filter', function() {
                 $toggle = $('.toggle-search-sidebar');
                 $left_col = $('#edit-left-column');
                 $right_col = $('.search-page-results-wrapper');

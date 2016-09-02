@@ -37,5 +37,5 @@ function oira_views_pre_render(view &$view) {
   }
 
   // Add JS to create a select list from tabs
-  drupal_add_js(drupal_get_path('module', 'oira') . '/js/hwc_tabs_to_select_list.js');
+  drupal_add_js(drupal_get_path('module', 'oira') . '/js/hwc_tabs_responsive.js');
 }

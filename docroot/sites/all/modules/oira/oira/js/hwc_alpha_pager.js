@@ -13,13 +13,19 @@
                         hwc_alpha_pager_parse_container(container, idx, '.views-row');
                     });
                 }
+                $('<span class="toggle-alpha-pager">Toggle pager</span>').appendTo('.quicktabs-toggle-buttons');
 
-                $('body').on('click', '.hwc-char-link', function(e) {
+                $('body').on('click', '.hwc-char-link:not(.toggle-alpha-pager)', function(e) {
                     e.preventDefault();
                     $('html, body').animate({
                         scrollTop: $($(this).attr('href')).offset().top - 60
                     }, 400);
-                })
+                });
+
+                
+                $('.toggle-alpha-pager').on('click', function() {
+                    $('.hwc-alphabet-container').toggle();
+                });
             });
         }
     };
@@ -50,13 +56,14 @@
         var output = '<div class="hwc-alphabet-container">';
         $.each(alphabet, function(idx, char) {
             if ($.inArray(char, chars) != -1) {
-                output += '<a class="hwc-char-link" href="#hwc-char-' + prefix + '-' + char + '">' + char + '</span>';
+                output += '<a class="hwc-char-link" href="#hwc-char-' + prefix + '-' + char + '">' + char + '</a>';
             }
             else {
                 //HCW-950: Only the letters with content must be shown.
                 //output += '<a class="hwc-char-link disabled" href="javascript:void(0);">' + char + '</span>';
             }
         });
+        output += '<a class="hwc-char-link toggle-alpha-pager visible-sm" href="javascript:void(0)">' + Drupal.t('Close') + '</a>';
         output += '</div>';
         return output;
     }
