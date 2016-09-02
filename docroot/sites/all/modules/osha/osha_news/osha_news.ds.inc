@@ -17,8 +17,13 @@ function osha_news_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'news';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'back_to_news' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'share_widget_footer' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -55,6 +60,32 @@ function osha_news_ds_field_settings_info() {
  */
 function osha_news_ds_custom_fields_info() {
   $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'back_to_news';
+  $ds_field->label = 'Back to news';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'news|default';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Eg: h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['back_to_news'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -102,17 +133,19 @@ function osha_news_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_publication_date',
-        1 => 'title_field',
-        2 => 'share_widget',
-        3 => 'group_content_wrapper',
-        4 => 'field_summary',
-        5 => 'share_widget_footer',
-        6 => 'field_image',
-        7 => 'body',
+        1 => 'back_to_news',
+        2 => 'title_field',
+        3 => 'share_widget',
+        4 => 'group_content_wrapper',
+        5 => 'field_summary',
+        6 => 'share_widget_footer',
+        7 => 'field_image',
+        8 => 'body',
       ),
     ),
     'fields' => array(
       'field_publication_date' => 'ds_content',
+      'back_to_news' => 'ds_content',
       'title_field' => 'ds_content',
       'share_widget' => 'ds_content',
       'group_content_wrapper' => 'ds_content',

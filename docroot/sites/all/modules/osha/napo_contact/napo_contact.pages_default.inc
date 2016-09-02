@@ -377,6 +377,12 @@ function napo_contact_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'OiRA & Tools
+OiRA FAQs',
+    'panels_breadcrumbs_paths' => '<none>
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
