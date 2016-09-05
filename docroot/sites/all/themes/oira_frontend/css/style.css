@@ -10513,6 +10513,19 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container .field-type-ta
     padding-bottom: 40px !important;
     padding-top: 80px !important;
   }
+  .page-oira-tools .panels-flexible-row-new-1 #edit-content .results-for,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .results-for,
+  .page-search-site .panels-flexible-row-new-1 #edit-content .results-for,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
+  .page-oira-tools .oira-search-form-container #edit-content .results-for,
+  .page-promotional-resources-search .oira-search-form-container #edit-content .results-for,
+  .page-search-site .oira-search-form-container #edit-content .results-for {
+    position: absolute;
+    top: 11px;
+    left: 67px;
+  }
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
   .page-search-site .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
