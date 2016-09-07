@@ -20,25 +20,6 @@ jQuery(document).ready(function () {
 	    }
 	});
 
-	// NO-70 - Articles - mini panel related content
-	var columns = jQuery("#mini-panel-related_content > div > div").length;
-
-	switch (columns) {
-		case 0:
-			break;
-		case 1:
-			jQuery("#mini-panel-related_content > div > div:eq(0)").addClass("col-xs-12 col-sm-12 col-md-12");
-		case 2:
-			jQuery("#mini-panel-related_content > div > div:eq(0)").addClass("col-xs-12 col-sm-6 col-md-6");
-			jQuery("#mini-panel-related_content > div > div:eq(1)").addClass("col-xs-12 col-sm-6 col-md-6");
-			break;
-		case 3:
-			jQuery("#mini-panel-related_content > div > div:eq(0)").addClass("col-xs-12 col-sm-6 col-md-4");
-			jQuery("#mini-panel-related_content > div > div:eq(1)").addClass("col-xs-12 col-sm-6 col-md-4");
-			jQuery("#mini-panel-related_content > div > div:eq(2)").addClass("col-xs-12 col-sm-12 col-md-4");
-			break;
-	}
-
 	//bordes en articulos segun contenido de columnas
 	var nColumnas=jQuery("#mini-panel-related_content > .panels-flexible-new-inside > div").length;
 	var nWiki=jQuery("#mini-panel-related_content > .panels-flexible-new-inside > .panels-flexible-column-new-1").length;
