@@ -512,12 +512,93 @@
 /* COUNTRY PROFILE
 ********************************************************************/
 .page-country-profile{
-	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first {
+	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
 		margin-top: 50px;
 	}
-	div[id^="mini-panel-partner_in_country"]{
-		.panels-flexible-row-inside-first {
-	    margin-top: 0px !important;
+}
+.partners-no-1{
+	margin-bottom: 40px;
+}
+div[id ^= "mini-panel-partner_in_country"]{
+	.panels-flexible-row-new-1{
+		border-bottom: 2px solid @color-text-purple-darker;
+	}
+	.panels-flexible-row-first{
+		border-bottom: 2px solid @color-text-purple-darker;
+		.panels-flexible-row-inside-first{
+			margin-top: 0px !important;
+			border-bottom: none;
+			padding-bottom: 0px;
+		}
+	}
+	.partner-contact-container{
+		margin-top: 20px;
+		min-height: 225px;
+		border-bottom: 2px solid @color-text-purple-darker;
+	}
+	.partner-social-container{
+		margin-top: 20px;
+		min-height: 225px;
+		border-bottom: 2px solid @color-text-purple-darker;
+	}
+	.partner-colaborators-container{
+		margin-top: 20px;
+		.field-name-field-collaborator{
+			>div.field-items{
+				>div.field-item{
+					.field-name-field-collaborator-name{
+						font-size: @font-size0-8;
+					}
+				}
+			}
+		}
+	}
+	.partner-text2-container{
+		margin-top: 20px;
+	}
+}
+//when have 2 partners in a country
+.partners-no-2{
+	margin-top: 30px;
+	border-bottom: 2px solid @color-primary-dark;
+	margin-bottom: 40px;
+	.country-partner-wrapper{
+		&:last-child{
+			margin-bottom: 30px;
+		}
+		div[id ^= "mini-panel-partner_in_country"]{
+			margin: 0px 20px;
+			div[class*="col-sm"]{
+				padding-right: 0px;
+				padding-left: 0px;
+			}
+			.panels-flexible-row-new-1{
+				border-bottom: none;
+			}
+			.panels-flexible-row-inside-first{
+				margin-left: 0px;
+    			margin-right: 0px;
+				.partner-text-container{
+					h2{
+						border-bottom: 2px solid @color-primary-dark;
+						padding-bottom: 20px;
+					}
+				}
+			}
+			.panels-flexible-row-new-1-inside{
+				> div{
+					width: 100%;
+				}
+				.partner-contact-container, .partner-social-container, .partner-colaborators-container, .partner-text2-container{
+					min-height: auto;
+					padding-top: 15px;
+					padding-bottom: 15px;
+					margin-top: 0px;
+				}
+				.partner-colaborators-container{
+					border-bottom: 2px solid @color-primary-dark;
+				}
+			}
 		}
 	}
 }

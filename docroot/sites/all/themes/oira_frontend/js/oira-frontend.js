@@ -17,7 +17,23 @@ jQuery(document).ready(function () {
 	    	jQuery(".breadcrum-container").hide();
 	    }else{
 	    	jQuery(".breadcrum-container").show();
+
+	    	//show partners info for tablet and pc
+	    	jQuery(".pane-contact-information-partner > .pane-content, .pane-node-field-social-profile > .pane-content, .pane-node-field-collaborator > .pane-content").show();
 	    }
+
+	});
+
+	//slidedown partners info for mobile only
+	jQuery(".partner-contact-container, .partner-social-container, .partner-colaborators-container").click(function(){
+		if(windowWidth <= 750){
+			jQuery( ".pane-contact-information-partner, .pane-node-field-social-profile, .pane-node-field-collaborator",this).children().eq(1).toggle();
+			if(jQuery( ".pane-contact-information-partner, .pane-node-field-social-profile, .pane-node-field-collaborator",this).children().eq(1).is(':visible')){
+				jQuery( ".pane-contact-information-partner, .pane-node-field-social-profile, .pane-node-field-collaborator",this).children().eq(0).addClass("arrow-up");
+			}else{
+				jQuery( ".pane-contact-information-partner, .pane-node-field-social-profile, .pane-node-field-collaborator",this).children().eq(0).removeClass("arrow-up");
+			}
+		}
 	});
 
 	//bordes en articulos segun contenido de columnas
@@ -44,6 +60,9 @@ jQuery(document).ready(function () {
 			jQuery("#mini-panel-related_content > .panels-flexible-new-inside .panels-flexible-column-new-main").css("border-right", "10px solid white");
 			break;
 	}
+
+	//add bootstrap when are 2 partners in a country
+	jQuery(".page-country-profile .pane-oira-partner-oira-partner-country .partners-no-2 > div").addClass('col-sm-6');
 
 	
 
@@ -91,8 +110,9 @@ jQuery(document).ready(function () {
 	}
 
 	function funcionesMovil () {
-		if(windowWidth <= 767){//<-----functions for mobile
-
+		if(windowWidth <= 750){//<-----functions for mobile
+			
+			
 		}
 	}
 	jQuery(".flickr-credit").hide();
