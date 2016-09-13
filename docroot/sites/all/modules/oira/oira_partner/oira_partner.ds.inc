@@ -144,11 +144,9 @@ function oira_partner_ds_layout_settings_info() {
       ),
       'left' => array(
         'col-xs-5' => 'col-xs-5',
-        'col-sm-4' => 'col-sm-4',
       ),
       'right' => array(
         'col-xs-7' => 'col-xs-7',
-        'col-sm-8' => 'col-sm-8',
       ),
       'center' => array(
         'col-md-12' => 'col-md-12',
