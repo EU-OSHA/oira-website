@@ -449,6 +449,9 @@ a.more-link{
 	  display: block;
 	  overflow: hidden;
 	}
+	.panels-flexible-row-new-6{
+		background-color: @color-background-light-purple;
+	}
 }
 
 #block-system-main{
@@ -511,7 +514,6 @@ a.more-link{
 	}
 	//Latest news
 	.panels-flexible-row-new-6{
-		background-color: @color-background-light-purple;
 		.panels-flexible-region-new-news_section{
 			h3{
 				&:after{
@@ -1085,6 +1087,15 @@ a.more-link{
 	//estilo pagina accesibility que es del tipo article, igual que rss y provate notices
 	.accesibility_table{
 		width: 100% !important;
+		caption{
+			display: none;
+		}
+		tbody{
+			> tr:first-child{
+				background-color: @color-see-more;
+				color: @color-white;
+			}
+		}
 	}
 	ul{
 		ul{
@@ -1554,9 +1565,9 @@ a.more-link{
 				border-bottom: 0px;
 			}
 			.views-field-title-field{
-			background: rgba(0, 0, 0, 0);
-			padding-left: 0px;
-			border:none;
+				background: rgba(0, 0, 0, 0);
+				padding-left: 0px;
+				border:none;
 				.ui-accordion-header-icon{
 					background-image: none;
 				}
@@ -1568,10 +1579,25 @@ a.more-link{
 			}
 			.views-field-body{
 				.faq-answer{
-					font-size: @font-size0-8;
+					
 					margin-bottom: 25px;
 					color: @color-text-grey;
+					p, span{
+						font-family: "Roboto";
+						font-size: @font-size0-9 !important;
+						line-height: initial !important;
+						a{
+							text-decoration: underline;
+							color: @color-primary-dark;
+							font-style: italic;
+							font-weight: bold;
+							&:hover{
+								color: @color-text-hover-blue;
+							}
+						}
+					}
 				}
+				
 			}
 			.views-field-title-field.ui-accordion-header-active{
 				a{
@@ -1579,7 +1605,7 @@ a.more-link{
 						&:after{
 							content:"\e253";
 			    			font-family: "Glyphicons Halflings";
-			    			padding-left: 10px;
+			    			padding-left: 9px;
 						}
 					}				
 				}	
@@ -1590,7 +1616,7 @@ a.more-link{
 						&:after{
 							content: "\e252";
 			    			font-family: "Glyphicons Halflings";
-			    			padding-left: 10px;
+			    			padding-left: 9px;
 						}
 					}				
 				}	
@@ -1682,7 +1708,7 @@ a.more-link{
 }
 
 
-//page oira pags
+//page oira faq
 .page-oira-faqs{
 	#block-system-main{
 		background-color: @color-background-light-purple; 
@@ -1813,11 +1839,32 @@ a.more-link{
 	margin-bottom: 30px;
 	.field-name-field-publication-date{
 		margin-top: 50px;
-
+		width: 50%;
+		display: inline-block;
+	}
+	.back-to-news{
+		width: 50%;
+		float: none !important;
+		display: inline-block;
+		text-align: right;
+		a{
+			color: @color-see-more;
+			&:after{
+				content: "";
+				background: url("../images/icons/back-news.png") no-repeat;
+				background-size: 100%;
+			    display: inline-block;
+			    width: 22px;
+			    height: 25px;
+			    vertical-align: middle;
+			    margin-left: 5px;
+			}
+		}
 	}
 	h1{
 		color: @color-text-grey;
 		margin-bottom: 30px;
+		line-height: 54px;
 	}
 	.field-name-field-summary{
 		margin-bottom: 15px;
@@ -1919,6 +1966,7 @@ a.more-link{
 			.views-field-name-field{
 				margin: 30px 30px 30px 30px;
 				h2{
+					font-size: @font-size2;
 					a{
 						color: @color-text-grey;
 						font-family: "Roboto";
@@ -1993,7 +2041,6 @@ a.more-link{
 					display: table-cell;
 					text-align: center;
 					width: 25%;
-					//margin-top: 25px;
 					border-right: 2px solid @color-white;
 					.country-content-count-label{
 						label{
@@ -2029,6 +2076,11 @@ div[id ^= "mini-panel-partner_in_country"]{
 		h2{
 			margin-top: 0px;
 		}
+		.partner-image-container{
+			img{
+				margin: 0 auto;
+			}
+		}
 	}
 	.partner-contact-container,
 	.partner-social-container,
@@ -2055,14 +2107,34 @@ div[id ^= "mini-panel-partner_in_country"]{
 		}
 	}
 	.partner-social-container{
-
+		a{
+			color: @color-text-grey;		
+			span{
+				margin-left: 30px;
+				margin-bottom: 5px;
+    			display: block;
+    			overflow:hidden;
+				white-space:nowrap;
+				text-overflow: ellipsis;
+			}
+			&:hover{
+				color: @color-text-hover-blue;
+			}
+			&:before{
+				content: "";
+				width: 20px;
+				height: 20px;
+				background-color: @color-see-more;
+				position: absolute;
+			}
+		}
 	}
 	.partner-colaborators-container{
 		.field-name-field-collaborator{
 			>div.field-items{
 				>div.field-item{
 					display: inline-block;
-					margin-right: 15px;
+					margin-right: 10px;
 					.field-name-field-collaborator-name{
 						margin-bottom: 15px;
 						margin-top: 5px;
@@ -2073,9 +2145,15 @@ div[id ^= "mini-panel-partner_in_country"]{
 		}
 	}
 	.partner-text2-container{
-		.field-type-taxonomy-term-reference{
-			a{
-				color: @color-white;
+		a{
+			color: @color-text-purple;
+			font-weight: bold;
+			font-style: italic;
+			&:before{
+				content: "> ";
+			}
+			&:hover{
+				color: @color-text-hover-blue;
 			}
 		}
 	}
@@ -2095,6 +2173,7 @@ div[id ^= "mini-panel-partner_in_country"]{
     			margin-right: 15px;
 				.partner-image-container{
 					width: 100%;
+					min-height: 160px;
 					img{
 						margin: 0 auto;
 					}
@@ -2103,6 +2182,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					width: 100%;
 					h2{
 						text-align: center;
+						margin-bottom: 20px;
 					}
 				}
 			}
@@ -2111,10 +2191,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					width: 50%;
 				}
 				.partner-contact-container, .partner-social-container{
-					min-height: 285px;
-				}
-				.partner-social-container{
-					
+					min-height: 250px;
 				}
 			}
 		}
