@@ -1966,6 +1966,7 @@ a.more-link{
 			.views-field-name-field{
 				margin: 30px 30px 30px 30px;
 				h2{
+					font-size: @font-size2;
 					a{
 						color: @color-text-grey;
 						font-family: "Roboto";
@@ -2112,6 +2113,9 @@ div[id ^= "mini-panel-partner_in_country"]{
 				margin-left: 30px;
 				margin-bottom: 5px;
     			display: block;
+    			overflow:hidden;
+				white-space:nowrap;
+				text-overflow: ellipsis;
 			}
 			&:hover{
 				color: @color-text-hover-blue;
@@ -2188,9 +2192,6 @@ div[id ^= "mini-panel-partner_in_country"]{
 				}
 				.partner-contact-container, .partner-social-container{
 					min-height: 250px;
-				}
-				.partner-social-container{
-					
 				}
 			}
 		}

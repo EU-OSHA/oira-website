@@ -111,7 +111,10 @@ jQuery(document).ready(function () {
 
 	function funcionesMovil () {
 		if(windowWidth <= 750){//<-----functions for mobile
-			
+
+			//change background to alphabet partners list
+			jQuery(".char-anchor:odd").css("background-color", "white");
+			jQuery(".char-anchor:odd").next().css("background-color", "white");
 			
 		}
 	}
@@ -119,5 +122,8 @@ jQuery(document).ready(function () {
 	jQuery(".flickr-wrap").hover(function(){
 		jQuery(".flickr-credit", this).stop().slideToggle('fast').show();
 	});
+
+	
+
 
 });

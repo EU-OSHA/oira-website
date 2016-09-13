@@ -835,11 +835,22 @@ h1{
 /* COUNTRY PROFILE
 ********************************************************************/
 .page-country-profile{
+	
 	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
 		margin-top: 5px;
 		padding-top: 30px;
 		.pane-taxonomy-term-country-content-count{
 			margin-top: 15px;
+		}
+	}
+	.pane-oira-partner-oira-partner-country{
+		div[class*="col-sm"]{
+			padding-right: 0px !important;
+			padding-left: 0px !important;
+		}
+		.row{
+			margin-left: 0px !important;
+			margin-right: 0px !important;
 		}
 	}
 	div[id ^= "mini-panel-partner_in_country"]{
@@ -851,6 +862,7 @@ h1{
 				}
 			}
 		}
+		
 		.partner-contact-container,
 		.partner-social-container,
 		.partner-colaborators-container{
@@ -897,7 +909,7 @@ h1{
 				border-left: none;
 			}
 			div[id ^= "mini-panel-partner_in_country"]{
-				margin: 0px 20px;
+				margin: 0px 0px;
 				div[class*="col-sm"]{
 					padding-right: 0px;
 					padding-left: 0px;
@@ -944,6 +956,7 @@ h1{
 				border-left: none;
 			}
 			div[id ^= "mini-panel-partner_in_country"]{
+				margin: 0px 0px !important;
 				.panels-flexible-row-inside-first{
 					.partner-image-container{
 						min-height: 160px;
@@ -969,10 +982,19 @@ h1{
 				margin-top: 30px;
 			}
 		}
+		.row{
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+		}
+
 		div[id ^= "mini-panel-partner_in_country"]{
 			overflow: hidden;
 			.panels-flexible-row-new-1{
 				border-bottom: none;
+			}
+			div[class*="col-sm"]{
+				padding-right: 0px !important;
+				padding-left: 0px !important;
 			}
 			.panels-flexible-row-first{
 				border-bottom: 2px solid @color-text-purple-darker;
@@ -1038,6 +1060,7 @@ h1{
 			.partner-social-container{
 				margin-top: 0px;
 				border-bottom: 2px solid @color-text-purple-darker;
+
 			}
 			.partner-colaborators-container{
 				margin-top: 0px;
@@ -1066,5 +1089,570 @@ h1{
 }
 /*END PARTNER DETAIL PAGE*/
 
+/* QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL
+***********************************************************/
+div[id*="quicktabs-container-view__country_partner_content__block"]{
+	.row{
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+		}
+		
+	.quicktabs-tabpage{
+		div[class*="col-sm"]{
+			padding-right: 0px !important;
+			padding-left: 0px !important;
+		}
+		div[class*="group-center col-md"]{
+			padding-right: 0px !important;
+			padding-left: 0px !important;
+		}
+		.node-practical-tool, .node-promotional-material{
+			.field-name-tools-see-more{
+				margin-left: 0px !important;
+			}
+			.related-partners-1 > div{
+				margin-left: 0px !important;
+			}
+			.group-center{
+				display: inline-block;
+				width: 100%;
+				margin-left: 0px !important;
+				margin-right: 0px !important;
+			}
+		}
+		.quicktabs-views-group{
+			.field-name-field-publication-date, .field-type-datetime {
+			    margin-bottom: 0px !important;
+			    margin-top: 15px;
+			}
+			h3{
+				margin-top: 0px;
+			}
+			.field-name-related-partners{
+				clear: both;
+				.field-name-field-logo{
+					padding-right: 15px;
+				}
+			}
+			.field-name-field-resource-fc{
+				ul{
+					margin-bottom: 0px !important;
+				}
+			}
+			.related-partners-2 > div{
+				display: block !important;
+				& > .even, & > .odd{
+					&:first-child{
+						display: inline !important;
+						width: 100% !important;
+					}
+				}
+				& > .even:first-child{
+					.node-partner{
+						margin-right: 0px !important;
+						margin-left: 0px;
+					}
+				}
+			}
+		}
+		.node-promotional-material{
+			.field-name-tools-see-more{
+				margin-left: 0px !important;
+			}
+			.related-partners-1 > div{
+				margin-left: 0px !important;
+			}
+		}
+	}
+}
+/*END QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL*/
 
+/* OIRA COMMUNITY
+**********************************************************/
+.page-oira-community{
+	.pane-node-field-summary {
+    	font-size: @font-size1;
+	}
+	.oira-community-partners-block{
+		.menu{
+			display: block;
+			width: 100%;
+			li{
+				display: inline-block;
+				width: 100%;
+				margin-bottom: 35px;
+				.introduction-image{
+					img{
+						width: 110px;
+					}
+				}
+				.introduction-title{
+					a{
+						font-size: @font-size1-1;
+					}
+				}
+			}
+		}
+	}
+	.panels-flexible-row-new-2{
+		h2{
+			font-size: @font-size1-2;
+		}
+		hr{
+    		margin-top: 25px;
+    		margin-bottom: 25px;
+		}
+	}
+}
+/*END OIRA COMMUNITY*/
+
+/*NATIONAL SOCIAL PARTNERS, irat-network, 	sectorial-social-partners
+****************************************************************************/
+.page-sectorial-social-partners, .page-national-partners, .page-irat-network{
+	h1{
+		color: @color-text-grey;
+	}
+	.pane-node-body{
+		font-weight: bold;
+	}
+	.quicktab-container{
+		padding-left: 0px;
+    	padding-right: 0px;
+	}
+	.quicktabs-tabs{
+		background-color: @color-primary-dark;
+		li.active{
+			background-color: @color-primary;
+			.active{
+				//border-left: 0px !important;
+				background-color: rgba(255, 255, 255, 0);
+				color: @color-primary-dark !important;
+			}
+		}
+		li{
+			display: table-cell;
+			margin: 0px;
+			margin-right: 0px !important;
+			a{
+				border-left: 2px solid @color-white; 
+				color: @color-white;
+				padding: 5px 20px 5px 20px;
+				margin: 10px -3px 10px -3px;
+				text-decoration: none !important;
+				&:hover{
+					background-color: rgba(255, 255, 255, 0) !important;
+					color: @color-white !important;
+				}
+			}
+		}
+		li:first-child{
+			a{
+				border-left: none;
+			}
+		}
+	}
+	.quicktabs-tabpage {
+		.hwc-alphabet-container{
+			margin-right: 15px;
+			margin-left: 15px;
+			text-transform: uppercase;
+			.hwc-char-link{
+				margin: 0px 10px;
+			}
+		}
+		div[id ^= "hwc-char-"]{
+			color:@color-text-purple-darker;
+			font-family: "Oswald";
+			font-size: @font-size2-2;
+			text-transform: uppercase;
+			background-color: @color-primary;
+			margin: 30px 0px 0px 0px;
+    		padding: 15px 15px 0px 15px;
+		}
+		.quicktabs-views-group{
+			background-color: @color-primary;
+			padding: 0px 15px;
+			margin: 0px 0px;
+			
+			.views-field.views-field-nothing{
+				border-top: 2px solid @color-primary-dark;
+				padding: 30px 0px;
+				padding-left: 0px;
+				overflow: hidden;
+				.col-sm-2, .col-sm-5{
+					padding-left: 0px;
+					padding-right: 0px;
+				}
+				.field-name-field-country{
+					background-color: inherit;
+					margin: 0px;
+					padding: 0px;
+					font-style: normal !important;
+					font-size: 1em;
+				}
+				.hwc-alpha-pager-view-title-field{
+					h3{
+						margin-top: 10px;
+						a{
+							color: @color-text-grey;
+							font-weight: bold;
+						}
+					}
+				}
+				.partner-content-label{
+					display: block;
+				    text-align: left;
+				    width: initial;
+				    margin-top: 0px !important;
+				    border-right: none;
+				    font-style: italic;
+
+					label{
+						display: inline-block;
+						color: @color-text-purple-darker;
+						min-height: inherit;
+					    line-height: 16px;
+					    font-weight: normal;
+					    margin-top: 0px !important;
+					    
+					}
+					.form-group{
+					    margin-bottom: 0px !important;
+					}
+					span{
+						display: inline-block;
+						color: @color-text-purple-darker;
+						font-size: @font-size1;
+					    line-height: 16px;
+					    font-weight: bold;
+					    &:before{
+					    	content: "(";
+					    }
+					    &:after{
+					    	content: ")";
+					    }
+					}
+				}
+				.partner-content-label:first-child{
+					border-left: none;
+				}
+			}
+		}
+	}
+}
+.page-irat-network{
+	.panels-flexible-region-new-list.container{
+		padding-left: 0px !important;
+    	padding-right: 0px !important;
+	}
+	.view-id-partners_list{
+		article{
+			background-color: @color-primary;
+			margin-bottom: 20px;
+			padding: 15px 0px;
+			margin-left: 0px;
+			margin-right: 0px;
+			.col-sm-10{
+				color: @color-primary-dark;
+				font-weight: bold;
+				h3{
+					margin-top: 10px;
+					a{
+						color: @color-text-grey;
+						font-weight: bold;
+						&:hover{
+							text-decoration: underline !important;
+							color: @color-text-hover-blue;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/*END National social partners*/
+
+/*promotional introduction page
+**************************************/
+.page-promotional-resources{
+	.pane-node-body{
+		.field-type-text-with-summary {
+		    font-size: 1.2em;
+    	}
+    }
+    .promotional-introduction-item{
+    	min-height: inherit;
+    }
+}
+/*end promotional introduction page*/
+
+/*OIRA TOOLS, PROMOTIONAL RESOURCES, GENERAL SEARCH (FILTERS)
+**************************************************************************/
+
+.page-oira-tools, .page-promotional-resources-search, .page-search-site {
+	.pane-node-body{
+		.field-type-text-with-summary{
+			font-size: @font-size1-2;
+			margin-bottom: 0px !important;
+		}
+	}
+	.panels-flexible-row-new-1, .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last, .oira-search-form-container {
+		background: none;
+    	background-color: @color-primary;
+    	padding-bottom: 0px;
+    	#edit-left-column{
+			position: absolute !important;
+			z-index: 1;
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+			margin-left: 15px !important;
+			margin-right: 15px !important;
+			margin-top: 20px;
+			padding-bottom: 15px !important;
+			display: none;
+			> a{
+				clear: both;
+			}
+			#edit-submit{
+				margin-right: 15px !important;
+			}
+			.toggle-search-sidebar{
+				display: block !important;
+				span{
+					height: 20px;
+					width: 20px;
+					overflow: hidden;
+					display: block;
+					float: right;
+					margin-top: 10px;
+					cursor: pointer;
+					&:before{
+						content: "\e253";
+					    font-family: "Glyphicons Halflings";
+					    font-size: @font-size1-2;
+					    color: @color-white;
+					    margin-left: 0px;
+					    margin-right: 20px;
+					    line-height: 0px;
+					}
+				}
+			}
+    	}
+    	#edit-content{
+			padding-left: 0px !important;
+			padding-right: 0px !important;
+			background-color: @color-white !important;
+			padding-top: 80px !important;
+			padding-bottom: 20px !important;
+			min-height: 220px !important;
+			.search-page-results-wrapper{
+			    background-color: @color-primary !important;
+			    padding: 15px !important;
+			    div[class*="col-sm-"]{
+			    	padding-left: 0px !important;
+			    	padding-right: 0px !important;
+			    }
+			    .node-partner{
+			    	padding-left: 15px;
+			    	padding-right: 15px;
+			    }
+			    .node-practical-tool:first-child,
+			    .node-promotional-material:first-child,
+			    .node-article:first-child,
+			    .node-news:first-child,
+			    .node-wiki-page:first-child,
+			    .node-faq:first-child{
+					border-top: none !important;
+					padding-top: 10px !important;
+			    }
+			    .group-right{
+			    	.field-name-field-publication-date, .field-type-datetime{
+			    		display: none;
+			    	}
+			    	.field-name-title-field{
+			    		//min-height: 60px; //testing wating gorka
+			    		h3{
+			    			font-size: @font-size1 !important;
+			    			font-weight: bold !important;
+			    			margin-top: 0px !important;
+			    		}
+			    	}
+			    }
+			    .node-news{
+			    	margin-bottom: 0px !important;
+			    }
+			    .view-mode-search_result{
+			    	padding: 15px 0px !important;
+			    	.field-name-field-publication-date, .field-type-datetime{
+			    		display: none;
+			    	}
+			    	.field-name-title-field{
+			    		//min-height: 60px; //testing wating gorka
+			    		h3{
+			    			font-size: @font-size1-4 !important;
+			    			font-weight: bold !important;
+			    			margin-top: 0px !important;
+			    		}
+			    		h2{
+			    			font-size: @font-size1-4 !important;
+			    			font-weight: bold !important;
+			    			margin-top: 0px !important;
+			    		}
+			    	}
+			    }
+			    .group-left{
+			    	// width: 40%; //testing wating gorka
+			    	// float: left;//testing wating gorka
+			    	// margin-right: 15px;//testing wating gorka
+			    	margin-bottom: 15px;
+			    }
+			    .group-center, .view-mode-search_result{
+			    	div[class*="related-partners-"]{
+			    		div[class*="col-sm-"]{
+			    			padding-left: 15px !important;
+			    			padding-right: 15px !important;
+			    		}
+			    	}
+			    	.related-partners-2, .related-partners-1{
+			    		.group-left.col-xs-5.col-sm-4{
+			    			padding-right: 0px !important;
+			    		}
+			    	}
+			    	.related-partners-2{
+			    		.node-partner{
+							margin-right: 0px !important;
+							margin-left: 0px !important;
+							padding-right: 0px !important;
+							padding-left: 0px !important;
+						}
+			    	}
+			    	.related-partners-2 > div > {
+			    		.even:first-child{
+			    			width: 100% !important;
+			    			display: block !important;
+				    		.node-partner{
+								margin-bottom: 15px;
+							}
+						}
+						.odd:first-child{
+			    			width: 100% !important;
+			    			display: block !important;
+						}
+			    	}
+			    }
+			}
+			.results-for{
+				position: absolute;
+			    top: 11px;
+			    left: 67px;
+			    padding-right: 15px;
+			}
+			.no-results{
+				padding-right: 15px;
+				padding-left: 15px;
+				margin-top: 30px;
+			}
+			#edit-sort-fieldset{
+				border: none !important;
+				margin-bottom: 0px !important;
+				.panel-body{
+					padding: 0px;
+				}
+				.sort-container{
+					display: none;
+				}
+				.count-container{
+					display: none;
+				}
+				.toggle-search-sidebar{
+					position: absolute;
+					top: 20px;
+					left: 15px;
+					span{
+						height: 40px;
+						width: 40px;
+						overflow: hidden;
+						background-color: @color-primary-dark;
+						display: block;
+						cursor: pointer;
+						&:before{
+							content: "\e003";
+						    font-family: "Glyphicons Halflings";
+						    font-size: @font-size1-3;
+						    color: @color-white;
+						    margin-left: 10px;
+						    margin-right: 20px;
+						    line-height: 40px;
+						}
+					}
+				}
+			}
+    	}
+	}
+}
+/*END OIRA TOOLS, PROMOTIONAL RESOURCES, GENERAL SEARCH (FILTERS)*/
+
+/*OIRA TOOLS
+**************************************/
+.page-oira-tools{
+	#hwc-practical-tool-menu-tools-form{
+		div:first-child {
+			#edit-content {
+				.search-page-results-wrapper {
+					.node-practical-tool {
+						padding-bottom: 20px!important;
+						.field-name-tools-see-more {
+    						margin-left: 0px !important;
+    					}
+    					.related-partners-1 > div{
+							margin-left: 0px !important;
+						}
+    				}
+    			}
+    		}
+    	}
+	}
+}
+/*END OIRA TOOLS*/
+
+/*PROMOTIONAL RESOURCES
+***************************************************/
+.promotional-introduction-item{
+	min-height: 475px;
+}
+.page-promotional-resources-search{
+	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last{
+    	#oira-promotional-material-search-form {
+    		div:first-child{ 
+    			#edit-content{ 
+    				.search-page-results-wrapper{
+    					.node-promotional-material{
+    						padding-bottom: 20px!important;
+    						div[class*="col-md-"]{
+    							padding-right: 0px !important;
+    							padding-left: 0px !important;
+    						}
+    						.field-name-tools-see-more{
+    							a.more-link{
+									margin-left: 0px !important;
+    							}
+    						}
+    						.related-partners-1 > div{
+								margin-left: 0px !important;
+							}
+    					}
+    				}
+    			}
+    		}
+    	}
+	}
+}
+/*END PROMOTIONAL RESOURCES*/
+
+/*general search styles
+***************************************************/
+.page-search-site{
+
+}
+/*end general search*/
 }
