@@ -560,6 +560,136 @@ function oira_promotional_material_views_default_views() {
     11 => 0,
     12 => 0,
   );
+  $handler->display->display_options['filters']['field_language_value']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_language_value']['group_info']['label'] = 'Language';
+  $handler->display->display_options['filters']['field_language_value']['group_info']['identifier'] = 'field_language_value';
+  $handler->display->display_options['filters']['field_language_value']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'English',
+      'operator' => '=',
+      'value' => 'en',
+    ),
+    2 => array(
+      'title' => 'Bulgarian',
+      'operator' => '=',
+      'value' => 'bg',
+    ),
+    3 => array(
+      'title' => 'Czech',
+      'operator' => '=',
+      'value' => 'cs',
+    ),
+    4 => array(
+      'title' => 'Danish',
+      'operator' => '=',
+      'value' => 'da',
+    ),
+    5 => array(
+      'title' => 'German',
+      'operator' => '=',
+      'value' => 'de',
+    ),
+    6 => array(
+      'title' => 'Greek',
+      'operator' => '=',
+      'value' => 'el',
+    ),
+    7 => array(
+      'title' => 'Spanish',
+      'operator' => '=',
+      'value' => 'es',
+    ),
+    8 => array(
+      'title' => 'Estonian',
+      'operator' => '=',
+      'value' => 'et',
+    ),
+    9 => array(
+      'title' => 'Finnish',
+      'operator' => '=',
+      'value' => 'fi',
+    ),
+    10 => array(
+      'title' => 'Croatian',
+      'operator' => '=',
+      'value' => 'hr',
+    ),
+    11 => array(
+      'title' => 'French',
+      'operator' => '=',
+      'value' => 'fr',
+    ),
+    12 => array(
+      'title' => 'Hungarian',
+      'operator' => '=',
+      'value' => 'hu',
+    ),
+    13 => array(
+      'title' => 'Icelandic',
+      'operator' => '=',
+      'value' => 'is',
+    ),
+    14 => array(
+      'title' => 'Italian',
+      'operator' => '=',
+      'value' => 'it',
+    ),
+    15 => array(
+      'title' => 'Latvian',
+      'operator' => '=',
+      'value' => 'lv',
+    ),
+    16 => array(
+      'title' => 'Lithuanian',
+      'operator' => '=',
+      'value' => 'lt',
+    ),
+    17 => array(
+      'title' => 'Dutch',
+      'operator' => '=',
+      'value' => 'nl',
+    ),
+    18 => array(
+      'title' => 'Maltese',
+      'operator' => '=',
+      'value' => 'mt',
+    ),
+    19 => array(
+      'title' => 'Norwegian',
+      'operator' => '=',
+      'value' => 'no',
+    ),
+    20 => array(
+      'title' => 'Polish',
+      'operator' => '=',
+      'value' => 'pl',
+    ),
+    21 => array(
+      'title' => 'Portuguese',
+      'operator' => '=',
+      'value' => 'pt',
+    ),
+    22 => array(
+      'title' => 'Romanian',
+      'operator' => '=',
+      'value' => 'ro',
+    ),
+    23 => array(
+      'title' => 'Slovenian',
+      'operator' => '=',
+      'value' => 'sl',
+    ),
+    24 => array(
+      'title' => 'Slovak',
+      'operator' => '=',
+      'value' => 'sk',
+    ),
+    25 => array(
+      'title' => 'Swedish',
+      'operator' => '=',
+      'value' => 'sv',
+    ),
+  );
   /* Filter criterion: Workbench Access: Access filter */
   $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
   $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
