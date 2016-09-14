@@ -121,6 +121,20 @@ function oira_frontend_preprocess_page(&$vars) {
   $vars['eu_logo'] = '/sites/all/themes/oira_frontend/images/europeLogo.png';
   $vars['oira_logo'] = '/sites/all/themes/oira_frontend/images/oiraLogo.gif';
 
+  // Set info status for contact confirmation submission
+  if (!empty($vars['page']['contact_form_widget']['webform_client-block-43'])) {
+    $node = node_load(43);
+    $messages = drupal_get_messages('status');
+
+    if (!empty($messages['status']) && !empty($node->webform['confirmation'])) {
+      foreach ($messages['status'] as $idx => $message) {
+        if (strcmp($message, $node->webform['confirmation']) == 0) {
+          array_splice($messages['status'], $idx, 1);
+          drupal_set_message('<div class="webform-confirmation">' . t($node->webform['confirmation']) . '</div>','info');
+        }
+      }
+    }
+  }
   // Add information about the number of sidebars.
   if (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
     $vars['content_column_class'] = ' class="col-sm-6"';
