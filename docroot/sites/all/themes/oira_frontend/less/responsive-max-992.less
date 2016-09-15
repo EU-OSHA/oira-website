@@ -443,6 +443,15 @@
 			padding-left: 0px;
 		}
 	}
+
+	#mini-panel-related_content{
+		> div > div {
+			.col-md-10{
+				width: 750px;
+    			margin: 0 auto;
+			}
+		}	
+	}
 	//ADITIONAL RESOURCES
 	.panels-flexible-region-new-add_res-inside{
 		.pane-node-field-aditional-resources{
@@ -461,24 +470,6 @@
 				}
 				.views-view-grid.cols-3 .row > div:nth-child(2){
 					display: block;
-				}
-			}
-			#additional-resources-youtube-pane{
-				.node-youtube{
-					
-				}
-			}
-			#additional-resources-slideshare-pane{
-				.node-slideshare{
-					
-				}
-			}
-			#additional-resources-news-pane{
-				
-			}
-			#additional-resources-external_url-pane{
-				.node-external-url{
-					
 				}
 			}
 			#additional-resources-flickr-pane{
@@ -606,8 +597,12 @@ div[id ^= "mini-panel-partner_in_country"]{
 
 /*OIRA TOOLS, PROMOTIONAL RESOURCES, GENERAL SEARCH (FILTERS)
 **************************************************************************/
-.page-oira-tools, .page-promotional-resources-search, .page-search-site {
-	.panels-flexible-row-new-1, .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last, .oira-search-form-container {
+.page-oira-tools,
+.page-promotional-resources-search,
+.page-search-site {
+	.panels-flexible-row-new-1,
+	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
+	.oira-search-form-container {
 		background: none;
     	background-color: @color-primary;
     	padding-bottom: 0px;
@@ -624,9 +619,6 @@ div[id ^= "mini-panel-partner_in_country"]{
 			}
 			.form-type-textfield{
 				width: 100% !important;
-			}
-			#edit-submit{
-
 			}
 			.toggle-search-sidebar{
 				display: block !important;
@@ -769,6 +761,9 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		.quicktabs-views-group{
 			.field-name-related-partners{
 				clear: both;
+			}
+			h3{
+				font-size: @font-size1-8 !important;
 			}
 		}
 		.node-promotional-material{

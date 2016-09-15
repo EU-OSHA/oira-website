@@ -222,9 +222,10 @@ a.more-link{
 
 .field-name-field-publication-date, .field-type-datetime{
 	margin-bottom: 15px;
+	color: @color-text-purple;
 	.date-display-single{
 		font-weight: bold;
-		color: @color-text-purple-darker;
+		color: @color-text-purple;
 	}
 }
 .date-display-single{
@@ -846,34 +847,40 @@ a.more-link{
 	}
 
 	.panels-flexible-row-new-10{
-		padding-bottom: 0px;
 		background-color: @color-primary-dark;
-		//margin-bottom: 10px; //testing
-		.pane-oira-blocks-oshwiki-featured-articles{
-			h3{
-				&:after{
-					.section-icons("../images/icons/164.png");
-					width: 35px;
-				}
-			}
-		}
-		.pane-oira-blocks-related-ncw-publications{
-			h3{
-				&:after{
-					.section-icons("../images/icons/169.png");
-					width: 35px;
-				}
-			}
-		}
-		.pane-news{
-			h3{
-				&:after{
-					.section-icons("../images/icons/004.png");
-					width: 35px;
-				}
-			}
-		}
 		#mini-panel-related_content{
+			> div > div {
+				border-bottom: 10px solid white;
+				padding-bottom: 15px;
+				padding-top: 5px;
+			}			
+			.pane-oira-blocks-oshwiki-featured-articles{
+				h3{
+					&:after{
+						.section-icons("../images/icons/164.png");
+						width: 35px;
+					}
+				}
+				span.custom-field-node-type{
+					display: none;
+				}
+			}
+			.pane-oira-blocks-related-ncw-publications{
+				h3{
+					&:after{
+						.section-icons("../images/icons/169.png");
+						width: 35px;
+					}
+				}
+			}
+			.pane-news{
+				h3{
+					&:after{
+						.section-icons("../images/icons/004.png");
+						width: 35px;
+					}
+				}
+			}
 			h3.pane-title{
 				color: @color-white;
 		    	font-size: @font-size2;
@@ -886,10 +893,14 @@ a.more-link{
 		    		font-weight: bold;
 		    		font-style: italic;
 		    		margin-bottom: 15px;
-		    		display: block;
+		    		display: inline-block;
 		    		&:before{
 					content:'>';
 					margin-right: 5px;
+
+					}
+					&:hover{
+						color: @color-primary;
 					}
 		    	}
 		    }
@@ -1582,7 +1593,7 @@ a.more-link{
 					
 					margin-bottom: 25px;
 					color: @color-text-grey;
-					p, span{
+					p, span, ul li{
 						font-family: "Roboto";
 						font-size: @font-size0-9 !important;
 						line-height: initial !important;
@@ -2248,9 +2259,13 @@ div[id ^= "mini-panel-partner_in_country"]{
 				padding-top: 30px;
 				padding-bottom: 30px;
 			}
+			.node-news {
+			    margin-bottom: 0px;
+			}
 			h3{
-				font-size: @font-size2-2;
+				font-size: @font-size2;
 				font-weight: bold;
+				margin-top: 0px;
 			}
 			.more-link{
 				text-align: left;
@@ -2854,7 +2869,9 @@ div[id ^= "mini-panel-partner_in_country"]{
 
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-.page-sectorial-social-partners, .page-national-partners, .page-irat-network{
+.page-sectorial-social-partners,
+.page-national-partners,
+.page-irat-network{
 	h1{
 		color: @color-text-grey;
 	}
