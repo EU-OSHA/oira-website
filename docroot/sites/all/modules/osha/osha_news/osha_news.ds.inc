@@ -64,7 +64,7 @@ function osha_news_ds_custom_fields_info() {
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'back_to_news';
-  $ds_field->label = 'Back to news';
+  $ds_field->label = 'Back';
   $ds_field->field_type = 7;
   $ds_field->entities = array(
     'node' => 'node',
