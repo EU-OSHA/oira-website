@@ -10850,6 +10850,8 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     padding-right: 0px;
     max-width: 720px;
     min-width: 290px;
+    z-index: 1;
+    margin-top: 30px;
   }
   .quicktabs-tabs-container ul.quicktabs-tabs.container {
     margin-right: inherit;
