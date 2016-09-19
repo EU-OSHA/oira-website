@@ -14,9 +14,9 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <div class="<?php print $class; ?>"<?php print $attributes; ?>>
+  <div class="row">
   <?php foreach ($rows as $row_number => $columns): ?>
     <?php $x = (int) (12 / $options['columns']); ?>
-    <div class="row <?php if ($row_classes[$row_number]) { print $row_classes[$row_number];  } ?>">
       <?php foreach ($columns as $column_number => $item): ?>
         <div class="col-md-<?php print $x; ?> col-sm-3 col-xs-6 <?php if ($column_classes[$row_number][$column_number]) { print $column_classes[$row_number][$column_number];  } ?>">
           <div class="views-item-columns-container">
@@ -24,6 +24,6 @@
           </div>
         </div>
       <?php endforeach; ?>
-    </div>
   <?php endforeach; ?>
+  </div>
 </div>
