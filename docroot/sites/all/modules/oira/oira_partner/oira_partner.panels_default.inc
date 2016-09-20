@@ -259,9 +259,9 @@ function oira_partner_default_panels_mini() {
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title' => 1,
+      'override_title_text' => 'Website:',
+      'override_title_heading' => 'span',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -274,6 +274,36 @@ function oira_partner_default_panels_mini() {
     $pane->uuid = '8612b9e5-6641-48d8-8131-611d8cb86568';
     $display->content['new-8612b9e5-6641-48d8-8131-611d8cb86568'] = $pane;
     $display->panels['center'][5] = 'new-8612b9e5-6641-48d8-8131-611d8cb86568';
+    $pane = new stdClass();
+    $pane->pid = 'new-4275886e-b6c2-4324-92ab-efb1613dc0db';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_dedicated_oira_website';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'link_absolute',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'requiredcontext_entity:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Dedicated OiRA website:',
+      'override_title_heading' => 'span',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '4275886e-b6c2-4324-92ab-efb1613dc0db';
+    $display->content['new-4275886e-b6c2-4324-92ab-efb1613dc0db'] = $pane;
+    $display->panels['center'][6] = 'new-4275886e-b6c2-4324-92ab-efb1613dc0db';
     $pane = new stdClass();
     $pane->pid = 'new-dfee6ae9-0d6d-4971-b873-c004c451aea7';
     $pane->panel = 'center';
@@ -289,9 +319,9 @@ function oira_partner_default_panels_mini() {
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title' => 1,
+      'override_title_text' => 'email:',
+      'override_title_heading' => 'span',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -299,11 +329,11 @@ function oira_partner_default_panels_mini() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 7;
     $pane->locks = array();
     $pane->uuid = 'dfee6ae9-0d6d-4971-b873-c004c451aea7';
     $display->content['new-dfee6ae9-0d6d-4971-b873-c004c451aea7'] = $pane;
-    $display->panels['center'][6] = 'new-dfee6ae9-0d6d-4971-b873-c004c451aea7';
+    $display->panels['center'][7] = 'new-dfee6ae9-0d6d-4971-b873-c004c451aea7';
     $pane = new stdClass();
     $pane->pid = 'new-0522e8b8-6f75-4626-91e8-ac8d7a0df986';
     $pane->panel = 'center';
@@ -319,9 +349,9 @@ function oira_partner_default_panels_mini() {
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'override_title' => 1,
+      'override_title_text' => 'General phone:',
+      'override_title_heading' => 'span',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -329,11 +359,11 @@ function oira_partner_default_panels_mini() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 7;
+    $pane->position = 8;
     $pane->locks = array();
     $pane->uuid = '0522e8b8-6f75-4626-91e8-ac8d7a0df986';
     $display->content['new-0522e8b8-6f75-4626-91e8-ac8d7a0df986'] = $pane;
-    $display->panels['center'][7] = 'new-0522e8b8-6f75-4626-91e8-ac8d7a0df986';
+    $display->panels['center'][8] = 'new-0522e8b8-6f75-4626-91e8-ac8d7a0df986';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
@@ -724,7 +754,7 @@ function oira_partner_default_panels_mini() {
       ),
       'context' => 'requiredcontext_entity:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Social profiles',
+      'override_title_text' => 'Social media profiles',
       'override_title_heading' => 'div',
     );
     $pane->cache = array();
