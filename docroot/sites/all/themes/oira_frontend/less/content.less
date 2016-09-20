@@ -3488,6 +3488,98 @@ div[id ^= "mini-panel-partner_in_country"]{
 }
 /*END SEARCH*/
 
+/* EU LEVEL COUNTRY
+*************************************************/
+.page-country-profile-eu{
+	.country-partners-container{
+		position: relative;
+		*{
+			box-sizing: border-box;
+		}
+		.country-partner-wrapper:nth-child(2n+1){
+			border-right: 2px solid @color-primary-dark;
+		}
+		.country-partner-wrapper{
+			
+			div[id^="mini-panel-partner_in_country"]{
+				margin: 0px 40px;
+				cursor: pointer;
+				div[class*="col-sm"]{
+					padding-left: 0px;
+					padding-right: 0px;
+				}
+				.panels-flexible-row{
+					padding-bottom: 0px;
+					.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+						padding-top: 40px;
+    					padding-bottom: 0px;
+    					margin-bottom: 0px;
+    					.partner-image-container{
+							width: 100%;
+							max-height: 125px;
+							min-height: 125px;
+    					}
+    					.partner-text-container{
+							width: 100%;
+							text-align: center;
+							margin-top: 20px;
+							h2{
+								white-space: nowrap;
+								text-overflow: ellipsis;
+								overflow: hidden;
+								min-height: 40px;
+								margin-bottom: 35px;
+							}
+    					}
+					}
+					.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
+						display: none;
+						.partner-contact-container,
+						.partner-social-container,
+						.partner-colaborators-container,
+						.partner-text2-container {
+							width: 100%;
+							clear: both;
+							.pane-contact-information-partner,
+							.pane-node-field-social-profile,
+							.pane-node-field-collaborator,
+							.pane-taxonomy-term-field-ncw-fp-link{
+								.pane-title{
+									margin: 15px 0px;
+								}
+								> .pane-content{
+									border-bottom: 2px solid @color-primary-dark;
+									padding-bottom: 15px;
+								}
+							}
+						}
+						.partner-text2-container{
+							.pane-content{
+								margin: 15px 0px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.active{
+
+			.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
+				display: block !important;
+			}
+			float: left;
+			position: absolute;
+			margin-right: 30px;
+		}
+		.has-open-partner{
+			float: right;
+			clear: both;
+			border-left: 2px solid @color-primary-dark;
+		}
+	}
+}
+/*END EU LEVEL COUNTRY*/
+
 /*Pagination styles*/
 .pager{
 	li{

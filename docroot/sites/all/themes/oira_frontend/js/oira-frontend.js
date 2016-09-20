@@ -130,7 +130,12 @@ jQuery(document).ready(function () {
 		}
 	}
 	
-
+	jQuery(".country-partner-wrapper").click(function(){
+		jQuery(".country-partner-wrapper").removeClass("active");
+		jQuery(".country-partner-wrapper").addClass("has-open-partner");
+		jQuery(this).addClass("active");
+		jQuery(this).removeClass("has-open-partner");
+	});
 	
 
 
