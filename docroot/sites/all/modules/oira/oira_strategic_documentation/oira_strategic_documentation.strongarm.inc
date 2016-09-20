@@ -89,14 +89,14 @@ function oira_strategic_documentation_strongarm() {
       'display' => array(
         'node_type' => array(
           'default' => array(
-            'weight' => '9',
+            'weight' => '17',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '6',
+            'weight' => '14',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
