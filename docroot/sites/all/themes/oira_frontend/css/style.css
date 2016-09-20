@@ -9926,6 +9926,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
 /* EU LEVEL COUNTRY
 *************************************************/
 .page-country-profile-eu .country-partners-container {
+  margin-bottom: 30px;
   position: relative;
 }
 .page-country-profile-eu .country-partners-container * {
@@ -10018,6 +10019,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   margin: 15px 0px;
 }
 .page-country-profile-eu .country-partners-container .active {
+  border-right: none !important;
   float: left;
   position: absolute;
   margin-right: 30px;
@@ -10029,6 +10031,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   float: right;
   clear: both;
   border-left: 2px solid #786586;
+  border-right: none !important;
 }
 /*END EU LEVEL COUNTRY*/
 /*Pagination styles*/
@@ -11368,6 +11371,25 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     border: none;
   }
   /*END HEADER*/
+  /*FOOTER
+********************************************/
+  .site-footer #block-menu-menu-footer-menu li {
+    margin-right: 10px;
+    margin-left: 0px;
+  }
+  .site-footer #block-menu-menu-footer-menu li a {
+    padding-left: 0px;
+    padding-right: 10px;
+    border-right: 2px solid;
+    border-left: none;
+  }
+  .site-footer #block-menu-menu-footer-menu .first a {
+    padding-left: 0px;
+  }
+  .site-footer #block-menu-menu-footer-menu .last a {
+    border-right: none;
+  }
+  /*END FOOTER*/
   h1 {
     font-size: 2.2em;
   }

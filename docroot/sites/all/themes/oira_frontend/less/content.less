@@ -3492,12 +3492,18 @@ div[id ^= "mini-panel-partner_in_country"]{
 *************************************************/
 .page-country-profile-eu{
 	.country-partners-container{
+		margin-bottom: 30px;
 		position: relative;
 		*{
 			box-sizing: border-box;
 		}
 		.country-partner-wrapper:nth-child(2n+1){
 			border-right: 2px solid @color-primary-dark;
+		}
+		.country-partner-wrapper:last-child{
+			.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+				//border-bottom: none;
+			}
 		}
 		.country-partner-wrapper{
 			
@@ -3510,6 +3516,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 				}
 				.panels-flexible-row{
 					padding-bottom: 0px;
+					
 					.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
 						padding-top: 40px;
     					padding-bottom: 0px;
@@ -3563,18 +3570,19 @@ div[id ^= "mini-panel-partner_in_country"]{
 			}
 		}
 		.active{
-
-			.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
-				display: block !important;
-			}
+			border-right: none !important;
 			float: left;
 			position: absolute;
 			margin-right: 30px;
+			.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
+				display: block !important;
+			}
 		}
 		.has-open-partner{
 			float: right;
 			clear: both;
 			border-left: 2px solid @color-primary-dark;
+			border-right: none !important;
 		}
 	}
 }

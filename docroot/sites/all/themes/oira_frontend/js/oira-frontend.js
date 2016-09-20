@@ -85,9 +85,11 @@ jQuery(document).ready(function () {
 	function funcionesTabletMovil () {
 		if(windowWidth <= 992){//<-----functions for tablet and/or mobile
 			
-			//search header al hacer hover
+			//search header al hacer click
 			jQuery("#block-search-form button").hover(function(){
+				//e.preventDefault();
 				jQuery("#block-search-form input").stop().show({direction: 'left'}, 500);
+				//return false;
 			});
 			jQuery("#block-search-form").mouseleave(function(){
 				jQuery("#block-search-form input").stop().hide({direction: 'left'}, 500);
@@ -130,11 +132,13 @@ jQuery(document).ready(function () {
 		}
 	}
 	
-	jQuery(".country-partner-wrapper").click(function(){
-		jQuery(".country-partner-wrapper").removeClass("active");
-		jQuery(".country-partner-wrapper").addClass("has-open-partner");
+	jQuery(".page-country-profile-eu .country-partner-wrapper").addClass(".col-sm-6");
+	jQuery(".page-country-profile-eu .country-partner-wrapper").click(function(){
+		jQuery(".page-country-profile-eu .country-partner-wrapper").removeClass("active");
+		jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("has-open-partner");
 		jQuery(this).addClass("active");
 		jQuery(this).removeClass("has-open-partner");
+	    jQuery("html, body").animate({ scrollTop: 290 }, 600);
 	});
 	
 
