@@ -8676,6 +8676,11 @@ div[id^="mini-panel-partner_in_country"] .partner-contact-container .field-name-
   margin-right: 0px;
   margin-bottom: 15px;
 }
+div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-contact-information-partner .pane-content .pane-title {
+  color: #58585a !important;
+  font-weight: bold !important;
+  font-size: 1em !important;
+}
 div[id^="mini-panel-partner_in_country"] .partner-social-container a {
   color: #58585a;
 }
