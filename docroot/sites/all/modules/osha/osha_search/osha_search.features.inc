@@ -95,6 +95,13 @@ function osha_search_default_search_api_index() {
         "field_resource_fc:field_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" },
         "field_resource_fc:field_language:safe_value" : { "type" : "list\\u003Ctext\\u003E" },
         "field_resource_fc:field_language:value" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_resource_sdoc" : {
+          "type" : "list\\u003Cinteger\\u003E",
+          "entity_type" : "field_collection_item"
+        },
+        "field_resource_sdoc:field_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" },
+        "field_resource_sdoc:field_language:safe_value" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_resource_sdoc:field_language:value" : { "type" : "list\\u003Cstring\\u003E" },
         "field_revised_date" : { "type" : "date" },
         "field_sector" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -204,8 +211,7 @@ function osha_search_default_search_api_index() {
             "highlight" : "always"
           }
         }
-      },
-      "additional fields" : { "field_resource_fc:field_file:file" : "field_resource_fc:field_file:file" }
+      }
     },
     "enabled" : "1",
     "read_only" : "0",
