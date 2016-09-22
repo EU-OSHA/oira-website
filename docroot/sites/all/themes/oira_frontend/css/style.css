@@ -7876,15 +7876,17 @@ a.more-link:before {
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container {
   background-color: #dfd8e4;
-  min-height: 571px;
+  min-height: 598px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image {
   min-height: 202px;
+  padding: 10px;
+  padding-bottom: 0px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
   margin: 0 auto;
   padding: 25px;
-  max-height: 250px;
+  max-height: 260px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
@@ -7905,7 +7907,7 @@ a.more-link:before {
   text-align: left;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed {
-  margin-left: 207px;
+  margin-left: 0px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
   text-align: right;
@@ -10235,6 +10237,17 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     margin-left: 258px !important;
   }
   /*END QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL*/
+  /*WHAT'S NEW SECTION
+*********************************************************************/
+  .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container {
+    min-height: 598px;
+  }
+  .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image {
+    min-height: 202px;
+  }
+  .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
+    max-height: 225px;
+  }
 }
 @media only screen and (max-width: 991px) {
   /*HEADER
@@ -11731,6 +11744,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     float: left;
     margin-right: 15px;
     margin-bottom: 7px;
+    padding: 0px !important;
   }
   .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
     margin: 0 auto;
