@@ -29,6 +29,10 @@ function oira_strategic_documentation_ds_layout_settings_info() {
         4 => 'field_country',
         5 => 'field_resource_sdoc',
       ),
+      'center' => array(
+        6 => 'related_partners',
+        7 => 'tools_see_more',
+      ),
     ),
     'fields' => array(
       'field_image' => 'left',
@@ -37,6 +41,8 @@ function oira_strategic_documentation_ds_layout_settings_info() {
       'body' => 'right',
       'field_country' => 'right',
       'field_resource_sdoc' => 'right',
+      'related_partners' => 'center',
+      'tools_see_more' => 'center',
     ),
     'classes' => array(
       'layout_class' => array(
