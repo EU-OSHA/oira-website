@@ -541,15 +541,11 @@ function oira_strategic_documentation_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'field_collection',
+        'module' => 'oira_promotional_material',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
           'field_formatter_class' => '',
         ),
-        'type' => 'field_collection_list',
+        'type' => 'oira_promotional_resources_row',
         'weight' => 5,
       ),
     ),
