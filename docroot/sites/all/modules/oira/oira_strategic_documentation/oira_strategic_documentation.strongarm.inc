@@ -96,7 +96,7 @@ function oira_strategic_documentation_strongarm() {
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '14',
+            'weight' => '16',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
@@ -108,6 +108,27 @@ function oira_strategic_documentation_strongarm() {
             'type' => 'hidden',
             'visible' => FALSE,
             'settings' => array(),
+          ),
+        ),
+        'related_partners' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'label' => 'hidden',
+            'type' => 'related_partners',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
+        ),
+        'tools_see_more' => array(
+          'teaser' => array(
+            'weight' => '7',
+            'label' => 'hidden',
+            'type' => 'tools_see_more',
+            'visible' => TRUE,
+            'settings' => array(
+              'slice_point' => '250',
+              'parent_selector' => '.view-mode-teaser',
+            ),
           ),
         ),
       ),
