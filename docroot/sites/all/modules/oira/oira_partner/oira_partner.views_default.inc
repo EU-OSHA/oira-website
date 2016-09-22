@@ -133,6 +133,30 @@ function oira_partner_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+    'practical_tool' => 'practical_tool',
+    'promotional_material' => 'promotional_material',
+    'strategic_documentation' => 'strategic_documentation',
+  );
+  /* Filter criterion: Oira partner: Node has section of country partner */
+  $handler->display->display_options['filters']['country_partner_access']['id'] = 'country_partner_access';
+  $handler->display->display_options['filters']['country_partner_access']['table'] = 'oira_partner';
+  $handler->display->display_options['filters']['country_partner_access']['field'] = 'country_partner_access';
+  $handler->display->display_options['filters']['country_partner_access']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
@@ -165,6 +189,7 @@ function oira_partner_views_default_views() {
     'news' => 'news',
     'practical_tool' => 'practical_tool',
     'promotional_material' => 'promotional_material',
+    'strategic_documentation' => 'strategic_documentation',
   );
   $translatables['country_partner_content'] = array(
     t('Master'),
