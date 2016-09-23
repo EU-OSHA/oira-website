@@ -1,8 +1,94 @@
 <?php
 
 
-define('ROLE_OIRA_PARTNER', 'partner');
+define('ROLE_OIRA_PARTNER', 'Partner');
 define('ROLE_OIRA_PROJECT_MANAGER', 'Oira Project Manager');
+define('ROLE_OIRA_SUPERVISOR', 'Oira Supervisor');
+
+
+/**
+ * Implements Elysia hook_cronapi().
+ */
+function oira_workflow_cronapi() {
+  return array('oira_workflow_partner_content_cron' => array(
+    'description' => 'Set partners content from final draft to next state.',
+    'rule' => '*/5 * * * *',
+  ));
+}
+
+/**
+ * Implements hook_cron().
+ */
+function oira_workflow_cron() {
+  oira_workflow_partner_content_cron();
+}
+
+function _oira_get_content_types_for_partners() {
+  return array('news', 'practical_tool', 'promotional_material', 'strategic_documentation');
+}
+
+/**
+ * Cron callback to auto moderate partners' content.
+ */
+function oira_workflow_partner_content_cron() {
+  // Moderate content created by a partner, that is in Final Draft for some time.
+  $users = OshaWorkflowPermissions::getUsersByRole(ROLE_OIRA_PROJECT_MANAGER);
+  $uids = array();
+  foreach ($users as $usr) {
+    $uids[] = $usr->uid;
+  }
+
+  // Getting the nids that have passed the final draft state.
+  $subquery = db_select('workbench_moderation_node_history', 'wm')
+    ->fields('wm', array('nid'))
+    ->condition('wm.state', 'final_draft')
+    ->condition('wm.current', 1);
+
+  $time_limit = _oira_workflow_partner_content_get_time_limit();
+  // Getting content that needs to be auto moderated.
+  $query = db_select('workbench_moderation_node_history', 'wmh')
+    ->fields('wmh', array('nid'))
+    ->distinct()
+    ->condition('wmh.from_state', 'draft')
+    ->condition('wmh.state', 'final_draft')
+    ->condition('wmh.nid', $subquery, 'IN')
+    ->condition('wmh.uid', $uids, 'IN')
+    ->condition('wmh.stamp', $time_limit, '<=')
+    ->orderBy('wmh.hid', 'DESC')
+    ->execute();
+
+  while ($row = $query->fetchAssoc()) {
+    $node = node_load($row['nid']);
+    if (!empty($node)) {
+      $current_node = workbench_moderation_node_current_load($node);
+      if (!empty($current_node->workbench_moderation['current'])
+        && $current_node->workbench_moderation['current']->state == 'final_draft') {
+        $next_state = OSHA_WORKFLOW_STATE_TO_BE_APPROVED;
+        // If Supervisors exists, state to be reviewed.
+        $supervisors = osha_workflow_users_get_users_from_role(ROLE_OIRA_SUPERVISOR);
+        if (!empty($supervisors)) {
+          $next_state = OSHA_WORKFLOW_STATE_TO_BE_REVIEWED;
+        }
+        // Moderate the content.
+        workbench_moderation_moderate($current_node, $next_state);
+        watchdog('hwc_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => OSHA_WORKFLOW_STATE_TO_BE_REVIEWED), WATCHDOG_INFO);
+      }
+    }
+  }
+}
+
+/**
+ * Get the relative time limit that a partner content should should be auto
+ * moderated to to be reviewed.
+ */
+function _oira_workflow_partner_content_get_time_limit() {
+  $time_gap = (int) variable_get('oira_workflow_partner_content_minutes_gap_autosubmit', 30);
+  return time() - $time_gap * 60;
+}
+
+
+
+
 
 /**
  * Implements hook_mail_alter().
@@ -31,5 +117,175 @@ function oira_workflow_node_access($node, $op, $account) {
     return NODE_ACCESS_DENY;
   }
 
+  // Workflow validations are only for partners content.
+  if (!in_array($type, _oira_get_content_types_for_partners())) {
+    return NODE_ACCESS_IGNORE;
+  }
+
+  // Administrators skip further validations
+  if (in_array(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, $account->roles)) {
+    return NODE_ACCESS_IGNORE;
+  }
+
+  // Supervisors have access based on perm
+  // skip additional validations..
+  if (in_array(ROLE_OIRA_SUPERVISOR, $account->roles)) {
+    return NODE_ACCESS_IGNORE;
+  }
+
   return NODE_ACCESS_IGNORE;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  if ($form_id == 'oira_configuration_form') {
+    $form['oira_workflow_partner_content_minutes_gap_autosubmit'] = array(
+      '#type' => 'textfield',
+      '#title' => 'How many minutes can the partner still edit the node?',
+      '#default_value' => variable_get('oira_workflow_partner_content_minutes_gap_autosubmit', 30),
+      '#attributes' => array('size' => 5),
+      '#description' => "After partner submits the content, he can still edit for this amount of time"
+    );
+  }
+  if (!empty($form['#node']) && in_array($form['type']['#value'], _oira_get_content_types_for_partners())) {
+    $node = $form_state['node'];
+    $can_delete = user_access("delete any {$node->type} content") || user_access("delete own {$node->type} content");
+    if (!empty($node->nid) && $can_delete && in_array(ROLE_OIRA_PARTNER, $user->roles)) {
+      $form['actions']['delete'] = array(
+        '#type' => 'submit',
+        '#value' => t('Delete'),
+        '#weight' => 19,
+        '#submit' => array('node_form_delete_submit')
+      );
+    }
+
+    if (in_array(ROLE_OIRA_PARTNER, $user->roles) && count($user->roles) == 2) {
+      foreach($user->workbench_access as $user_id_section => $value) {
+        foreach($form['workbench_access']['workbench_access']['#options'] as $wb_id_section => $label) {
+          if ($user_id_section == $wb_id_section) {
+            $form['workbench_access']['workbench_access']['#default_value'] = $user_id_section;
+            $form['workbench_access']['workbench_access']['#access'] = FALSE;
+            break;
+          }
+        }
+      }
+      if (empty($form['workbench_access']['workbench_access']['#default_value'])) {
+        drupal_goto('<front>');
+      }
+      $form['#after_build'][] = 'oira_workflow_node_form_after_build_hide_hints';
+
+      switch ($node->type) {
+        case 'news':
+          $form['field_aditional_resources']['#access'] = FALSE;
+          $form['field_tags']['#access'] = FALSE;
+          break;
+      }
+
+      // TODO Hide some fields.
+      $form['field_tags']['#access'] = FALSE;
+//      $form['field_wf_notification']['#access'] = FALSE;
+
+      _oira_workflow_partner_node_form_alter($form, $form_state);
+    }
+
+
+  }
+
+  // Implements permission select content section.
+  if (isset($form['#node_edit_form']) && !empty($form['workbench_access']['workbench_access'])) {
+    $form['workbench_access']['workbench_access']['#access'] = user_access('select content section');
+  }
+  if (!empty($form['workbench_access']['workbench_access']['#options']['section'])) {
+    $form['workbench_access']['workbench_access']['#title'] = 'Partner';
+    $form['workbench_access']['workbench_access']['#options']['section'] = 'General Public';
+  }
+}
+
+/**
+ * Adds and hides elements on node add/edit for partners.
+ */
+function _oira_workflow_partner_node_form_alter(&$form, &$form_state) {
+  $form['revision_information']['#access'] = FALSE;
+  if (!empty($form['workbench_moderation_state_current']['#value']) && $form['workbench_moderation_state_current']['#value'] == 'draft') {
+    $form['actions']['submit']['#access'] = FALSE;
+    $form['actions']['save_preview'] = array(
+      '#type' => 'submit',
+      '#value' => t('Save and preview this !type item', array('!type' => $form['type']['#value'])),
+      '#submit' => array('oira_workflow_node_form_submit_preview'),
+    );
+    $form['actions']['send_for_approval'] = array(
+      '#type' => 'submit',
+      '#value' => strtr('Submit !type item for validation', array('!type' => $form['type']['#value'])),
+      '#submit' => array('oira_workflow_node_form_submit_send'),
+    );
+  }
+  if (!empty($form['actions']['preview_changes'])) {
+    $form['actions']['preview_changes']['#access'] = FALSE;
+  }
+}
+
+function oira_workflow_node_form_after_build_hide_hints($form, &$form_state) {
+  $b = element_children($form['body']);
+  $key = array_pop($b);
+  if ($key && !empty($form['body'][$key][0]['format'])) {
+    $form['body'][$key][0]['format']['#attributes']['class'][] = 'hidden';
+    $form['body'][$key][0]['summary']['#access'] = FALSE;
+  }
+  if (!empty($form['field_summary'])) {
+    $sum = element_children($form['field_summary']);
+    $key = array_pop($sum);
+    if ($key && !empty($form['field_summary'][$key][0]['format'])) {
+      $form['field_summary'][$key][0]['format']['#attributes']['class'][] = 'hidden';
+    }
+  }
+
+  return ($form);
+}
+
+
+/**
+ * Submit callback for Partner's Preview button.
+ */
+function oira_workflow_node_form_submit_preview($form, &$form_state) {
+  $form_state['values']['workbench_moderation_state_new'] = 'draft';
+  $form_state['input']['workbench_moderation_state_new'] = 'draft';
+  node_form_submit($form, $form_state);
+}
+
+/**
+ * Submit callback for Partner's Send to approve button.
+ */
+function oira_workflow_node_form_submit_send($form, &$form_state) {
+  $form_state['values']['workbench_moderation_state_new'] = 'final_draft';
+  $form_state['input']['workbench_moderation_state_new'] = 'final_draft';
+  node_form_submit($form, $form_state);
+}
+
+function _oira_workflow_get_node_final_draft_time($node) {
+  $transition = db_select('workbench_moderation_node_history', 'wmh')
+    ->condition('wmh.nid', $node->nid)
+    ->condition('wmh.from_state', 'draft')
+    ->condition('wmh.state', 'final_draft')
+    ->orderBy('wmh.hid', 'DESC')
+    ->execute()
+    ->fetchAssoc();
+  if (!empty($transition)) {
+    return $transition['stamp'];
+  }
+  return FALSE;
+}
+
+function _oira_workflow_load_users_by_section($section_id) {
+  $uids = db_select('workbench_access_user', 'wau')
+    ->fields('wau', array('uid'))
+    ->condition('access_scheme', 'taxonomy')
+    ->condition('access_id', $section_id)
+    ->execute()
+    ->fetchAllKeyed();
+  $uids = array_keys($uids);
+  return user_load_multiple($uids);
 }

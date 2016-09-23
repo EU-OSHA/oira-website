@@ -7,3 +7,21 @@ function oira_workflow_install() {
     ->condition('name', 'oira_workflow', '=')
     ->execute();
 }
+
+
+/**
+ * Set workflow permissions.
+ */
+function oira_workflow_update_7001() {
+
+  module_load_include('inc', 'oira_workflow', 'oira_workflow.permissions');
+
+  $role = user_role_load_by_name(ROLE_OIRA_PARTNER);
+  user_role_grant_permissions($role->rid, _oira_workflow_partner_permission());
+
+  $role = user_role_load_by_name(ROLE_OIRA_PROJECT_MANAGER);
+  user_role_grant_permissions($role->rid, _oira_workflow_pm_permission());
+
+  $role = user_role_load_by_name(ROLE_OIRA_SUPERVISOR);
+  user_role_grant_permissions($role->rid, _oira_workflow_supervisor_permission());
+}

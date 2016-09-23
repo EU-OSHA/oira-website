@@ -254,7 +254,8 @@ function osha_news_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_news';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_news'] = $strongarm;
 
@@ -271,6 +272,16 @@ function osha_news_strongarm() {
   $strongarm->name = 'node_submitted_news';
   $strongarm->value = 0;
   $export['node_submitted_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_news';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_news'] = $strongarm;
 
   return $export;
 }

@@ -305,7 +305,8 @@ function oira_promotional_material_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_promotional_material';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_promotional_material'] = $strongarm;
 
