@@ -70,7 +70,8 @@ function oira_promotional_material_resources_formatter($items){
       if (!empty($field_collection->field_file)) {
         $file = (object) $field_collection->field_file[LANGUAGE_NONE][0];
 
-        $title = strtoupper($langcode);
+        $title = $file->filename;
+        $title .= " (" . strtoupper($langcode) . ")";
         $link_title = theme('file_icon', array(
           'file' => $file,
           'icon_directory' => $icon_directory
