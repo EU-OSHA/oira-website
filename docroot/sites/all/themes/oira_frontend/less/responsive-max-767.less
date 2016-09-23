@@ -940,30 +940,31 @@ h1.page-header {
 		.partner-contact-container,
 		.partner-social-container,
 		.partner-colaborators-container{
-			cursor: pointer;
+			
 			min-height: 0px !important;
-			.pane-title{
-				margin-bottom: 0px;
-				&:after{
-					content: "\e252";
-				    font-family: "Glyphicons Halflings";
-				    padding-left: 10px;
-				    color: @color-see-more;
-				    vertical-align: middle;
-				}
-			}
-			.arrow-up{
-				&:after{
-					content: "\e253";
-				    font-family: "Glyphicons Halflings";
-				    padding-left: 10px;
-				    color: @color-see-more;
-				    vertical-align: middle;
-				}
-			}
 			.pane-contact-information-partner,
 			.pane-node-field-social-profile,
 			.pane-node-field-collaborator{
+				>.pane-title{
+					cursor: pointer;
+					margin-bottom: 0px;
+					&:after{
+						content: "\e252";
+					    font-family: "Glyphicons Halflings";
+					    padding-left: 10px;
+					    color: @color-see-more;
+					    vertical-align: middle;
+					}
+				}
+				>.arrow-up{
+					&:after{
+						content: "\e253";
+					    font-family: "Glyphicons Halflings";
+					    padding-left: 10px;
+					    color: @color-see-more;
+					    vertical-align: middle;
+					}
+				}
 				>.pane-content{
 					display: none;
 					margin-top: 15px;
@@ -976,10 +977,9 @@ h1.page-header {
 	}
 	//when have only 1 partners in a country
 	.partners-no-1{
-		margin-bottom: 40px;
 		.country-partner-wrapper{
 			&:last-child{
-				margin-bottom: 30px;
+				margin-bottom: 0px;
 				border-left: none;
 			}
 			div[id ^= "mini-panel-partner_in_country"]{
@@ -1075,6 +1075,10 @@ h1.page-header {
 				margin-top: 0px;
 			}
 		}
+		.content-group-label{
+		    margin-left: 0px !important;
+		    margin-right: 0px !important;
+		}
 	}
 }
 /*END COUNTRY PROFILE*/
@@ -1092,7 +1096,6 @@ h1.page-header {
 			margin-left: 0px !important;
 			margin-right: 0px !important;
 		}
-
 		div[id ^= "mini-panel-partner_in_country"]{
 			overflow: hidden;
 			.panels-flexible-row-new-1{
@@ -1120,32 +1123,34 @@ h1.page-header {
 			.partner-contact-container,
 			.partner-social-container,
 			.partner-colaborators-container{
-				cursor: pointer;
+				
 				min-height: 0px !important;
 				padding-top: 15px;
 				padding-bottom: 15px;
-				.pane-title{
-					margin-bottom: 0px;
-					&:after{
-						content: "\e252";
-					    font-family: "Glyphicons Halflings";
-					    padding-left: 10px;
-					    color: @color-see-more;
-					    vertical-align: middle;
-					}
-				}
-				.arrow-up{
-					&:after{
-						content: "\e253";
-					    font-family: "Glyphicons Halflings";
-					    padding-left: 10px;
-					    color: @color-see-more;
-					    vertical-align: middle;
-					}
-				}
+				
 				.pane-contact-information-partner,
 				.pane-node-field-social-profile,
 				.pane-node-field-collaborator{
+					>.pane-title{
+						margin-bottom: 0px;
+						cursor: pointer;
+						&:after{
+							content: "\e252";
+						    font-family: "Glyphicons Halflings";
+						    padding-left: 10px;
+						    color: @color-see-more;
+						    vertical-align: middle;
+						}
+					}
+					>.arrow-up{
+						&:after{
+							content: "\e253";
+						    font-family: "Glyphicons Halflings";
+						    padding-left: 10px;
+						    color: @color-see-more;
+						    vertical-align: middle;
+						}
+					}
 					>.pane-content{
 						display: none;
 						margin-top: 15px;
@@ -1188,6 +1193,7 @@ h1.page-header {
 /* QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL
 ***********************************************************/
 div[id*="quicktabs-container-view__country_partner_content__block"]{
+	margin-top: 0px;
 	.row{
 		margin-left: 0px !important;
 		margin-right: 0px !important;
@@ -1201,7 +1207,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 			padding-right: 0px !important;
 			padding-left: 0px !important;
 		}
-		.node-practical-tool, .node-promotional-material{
+		.node-practical-tool, .node-promotional-material, .node-strategic-documentation{
 			.field-name-tools-see-more{
 				margin-left: 0px !important;
 			}
@@ -1273,6 +1279,14 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 				margin-left: 0px !important;
 			}
 		}
+	}
+}
+.quicktab-container{
+	.quicktabs-toggle-buttons{
+		margin-bottom: 15px;
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-top: 15px;
 	}
 }
 /*END QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL*/
@@ -1616,6 +1630,52 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	}
 }
 /*END PROMOTIONAL RESOURCES*/
+
+//partners and countries nav-bar
+.quicktabs-tabs-container{
+	position: inherit;
+	display: none; //testing
+	margin-right: 15px;
+    margin-left: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 720px;
+    min-width: 240px;
+    z-index: 1;
+    margin-top: 0px;
+    ul.quicktabs-tabs.container {
+    	margin-right: 0px;
+    	margin-left: 0px;
+    	>li a{
+    		margin: 0px !important;
+    		padding: 15px !important;
+    	}
+	}
+}
+.hwc-alphabet-container{
+	margin-right: 15px !important;
+	margin-left: 15px !important;
+	display: inline-block;
+	background-color: @color-primary-dark;
+	padding: 15px;
+	position: inherit !important;
+	display: none;
+	margin-bottom: 15px;
+	max-width: 340px;
+	.hwc-char-link{
+		margin: 0px 0px;
+		padding: 5px 8px;
+		color: @color-white;
+		width: 16%;
+		text-align: center;
+		display: inline-block;
+		&:hover{
+			background-color: @color-primary;
+			color: @color-primary-dark;
+			text-decoration: none;
+		}
+	}
+}
 
 /*general search styles
 ***************************************************/
