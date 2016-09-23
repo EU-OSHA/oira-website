@@ -32,7 +32,7 @@ function _oira_get_content_types_for_partners() {
  */
 function oira_workflow_partner_content_cron() {
   // Moderate content created by a partner, that is in Final Draft for some time.
-  $users = OshaWorkflowPermissions::getUsersByRole(ROLE_OIRA_PROJECT_MANAGER);
+  $users = OshaWorkflowPermissions::getUsersByRole(ROLE_OIRA_PARTNER);
   $uids = array();
   foreach ($users as $usr) {
     $uids[] = $usr->uid;
@@ -63,15 +63,19 @@ function oira_workflow_partner_content_cron() {
       $current_node = workbench_moderation_node_current_load($node);
       if (!empty($current_node->workbench_moderation['current'])
         && $current_node->workbench_moderation['current']->state == 'final_draft') {
-        $next_state = OSHA_WORKFLOW_STATE_TO_BE_APPROVED;
-        // If Supervisors exists, state to be reviewed.
-        $supervisors = osha_workflow_users_get_users_from_role(ROLE_OIRA_SUPERVISOR);
-        if (!empty($supervisors)) {
-          $next_state = OSHA_WORKFLOW_STATE_TO_BE_REVIEWED;
-        }
-        // Moderate the content.
+        $next_state = OSHA_WORKFLOW_STATE_TO_BE_REVIEWED;
         workbench_moderation_moderate($current_node, $next_state);
-        watchdog('hwc_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => OSHA_WORKFLOW_STATE_TO_BE_REVIEWED), WATCHDOG_INFO);
+        watchdog('oira_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => $next_state), WATCHDOG_INFO);
+
+        // If no supervisor exists, state to be approved.
+        $supervisors = osha_workflow_users_get_users_from_role(ROLE_OIRA_SUPERVISOR);
+        if (empty($supervisors)) {
+          $next_state = OSHA_WORKFLOW_STATE_TO_BE_APPROVED;
+          // Moderate the content.
+          workbench_moderation_moderate($current_node, $next_state);
+          watchdog('oira_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => $next_state), WATCHDOG_INFO);
+        }
+
       }
     }
   }
@@ -186,8 +190,12 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       }
 
       // TODO Hide some fields.
-      $form['field_tags']['#access'] = FALSE;
-//      $form['field_wf_notification']['#access'] = FALSE;
+      if (!empty($form['field_tags'])) {
+        $form['field_tags']['#access'] = FALSE;
+      }
+      if (!empty($form['field_wf_notification'])) {
+        $form['field_wf_notification']['#access'] = FALSE;
+      }
 
       _oira_workflow_partner_node_form_alter($form, $form_state);
     }
@@ -281,7 +289,7 @@ function _oira_workflow_get_node_final_draft_time($node) {
 
 function _oira_workflow_load_users_by_section($section_id) {
   $uids = db_select('workbench_access_user', 'wau')
-    ->fields('wau', array('uid'))
+    ->fields('wau', array('uid', 'access_id'))
     ->condition('access_scheme', 'taxonomy')
     ->condition('access_id', $section_id)
     ->execute()

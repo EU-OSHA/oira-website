@@ -13,7 +13,7 @@ function oira_workflow_default_rules_configuration() {
       "LABEL" : "Notify partner when his content published",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "oira_workflow", "workbench_moderation" ],
+      "REQUIRES" : [ "rules", "workbench_moderation" ],
       "ON" : { "workbench_moderation_after_moderation_transition" : [] },
       "IF" : [
         { "data_is" : { "data" : [ "new-state" ], "value" : "published" } },
@@ -38,7 +38,7 @@ function oira_workflow_default_rules_configuration() {
     }
   }');
   $items['rules_oira_workflow_notif_partner_to_be_reviewed'] = entity_import('rules_config', '{ "rules_oira_workflow_notif_partner_to_be_reviewed" : {
-      "LABEL" : "Notification partner when to be reviewed",
+      "LABEL" : "Notification partners users when to be reviewed",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "oira_workflow", "workbench_moderation" ],
@@ -89,7 +89,7 @@ function oira_workflow_default_rules_configuration() {
       "LABEL" : "Notification when published",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "oira_workflow", "workbench_moderation" ],
+      "REQUIRES" : [ "rules", "workbench_moderation" ],
       "ON" : { "workbench_moderation_after_moderation_transition" : [] },
       "IF" : [
         { "data_is" : { "data" : [ "new-state" ], "value" : "published" } },
@@ -112,7 +112,7 @@ function oira_workflow_default_rules_configuration() {
     }
   }');
   $items['rules_oira_workflow_notification_to_be_reviewed'] = entity_import('rules_config', '{ "rules_oira_workflow_notification_to_be_reviewed" : {
-      "LABEL" : "Notification when to be reviewed (RM_US_02, SU_US_04)",
+      "LABEL" : "Notification when to be reviewed for Project Manager.",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "workbench_moderation" ],
@@ -124,7 +124,24 @@ function oira_workflow_default_rules_configuration() {
             "subject" : "Oira Workflow: New content needs your review",
             "message" : "\\u003Cp\\u003E[node:author:name] ([node:author:mail]) has submitted a [node:type] item for validation. Please see the submitted update here: \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E"
           }
-        },
+        }
+      ]
+    }
+  }');
+  $items['rules_oira_workflow_notification_to_be_approved'] = entity_import('rules_config', '{ "rules_oira_workflow_notification_to_be_approved" : {
+      "LABEL" : "Notification when to be approved",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "workbench_moderation" ],
+      "ON" : { "workbench_moderation_after_moderation_transition" : [] },
+      "IF" : [ { "data_is" : { "data" : [ "new-state" ], "value" : "to_be_approved" } } ],
+      "DO" : [
+        { "mail_to_users_of_role" : {
+            "roles" : { "value" : { "12" : "12" } },
+            "subject" : "Oira Workflow: New content needs your review",
+            "message" : "\\u003Cp\\u003E[node:author:name] ([node:author:mail]) has submitted a [node:type] item for validation. Please see the submitted update here: \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E"
+          }
+        }
       ]
     }
   }');

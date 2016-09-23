@@ -7,7 +7,7 @@ function _oira_workflow_partner_permission() {
     'use manualcrop',
     'access content',
     'view own unpublished content',
-    'view the administration theme',
+//    'view the administration theme',
     'access workbench access by role',
     'use text format filtered_html',
     'access media browser',
@@ -68,6 +68,10 @@ function _oira_workflow_pm_permission() {
     'access toolbar',
 
     'access content overview',
+    'access dashboard',
+    'access administration pages',
+
+    'access workbench access by role',
 
     // content
     'create practical_tool content',
@@ -128,6 +132,12 @@ function _oira_workflow_supervisor_permission() {
     'access toolbar',
 
     'access content overview',
+
+    'access content overview',
+    'access dashboard',
+    'access administration pages',
+
+    'access workbench access by role',
 
     // content
 //    'create practical_tool content',
