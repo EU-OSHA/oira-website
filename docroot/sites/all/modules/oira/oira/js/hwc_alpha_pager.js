@@ -63,7 +63,7 @@
                 //output += '<a class="hwc-char-link disabled" href="javascript:void(0);">' + char + '</span>';
             }
         });
-        output += '<a class="hwc-char-link toggle-alpha-pager visible-sm" href="javascript:void(0)">' + Drupal.t('Close') + '</a>';
+        output += '<a class="hwc-char-link toggle-alpha-pager visible-xs visible-sm" href="javascript:void(0)">' + Drupal.t('Close') + '</a>';
         output += '</div>';
         return output;
     }
