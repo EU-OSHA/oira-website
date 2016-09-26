@@ -93,8 +93,8 @@ function oira_promotional_material_resources_formatter($items){
           $link_name = str_replace('https://', '', $link_name);
         }
 
-        $title = $link_name . " ("  . strtoupper($langcode) . ")";
-        $link_title = "<span class='glyphicon glyphicon-new-window'></span>&nbsp;" . $title;
+        $title = $link_name;
+        $link_title = "<span class='glyphicon glyphicon-new-window'></span><span class='link-title'>" . $title . "</span><span class='language-link'>&nbsp;("  . strtoupper($langcode) . ")</span>";
         $link = l($link_title, $field_collection->field_link[LANGUAGE_NONE][0]['url'], array(
             'absolute' => TRUE,
             'html' => TRUE,
