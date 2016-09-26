@@ -55,12 +55,19 @@ function oira_partner_field_extra_fields_formatter_view($entity_type, $entity, $
     case 'partner_content_count':
       $types = node_type_get_types();
       foreach ($items as $delta => $item) {
+        if ($item == 0) {
+          $item = '-';
+        }
+        else {
+          // Make link to node.
+          $item = l($item, 'node/' . $entity->nid, array('fragment' => $delta));
+        }
         $element[$delta] = array(
           '#type' => 'item',
           '#title' => $types[$delta]->name,
           '#prefix' => '<div class="partner-content-label partner-content-count-' . $delta . '">',
           '#suffix' => '</div>',
-          '#markup' => '<span class="partner-content-counter">' . ($item == 0 ? '-' : $item) . '</span>',
+          '#markup' => '<span class="partner-content-counter">' . $item . '</span>',
         );
       }
       break;
