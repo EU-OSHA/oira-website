@@ -67,7 +67,7 @@ function osha_search_search_form($form, $form_state) {
     '#default_value' => $sort,
     '#prefix' => '<div class="sort-container col-xs-3">',
     '#suffix' => '</div>',
-    '#options' => array('alphabetically' => t('Alphabetically'), 'score' => t('Relevance')),
+    '#options' => array('alphabetically' => t('Alphabetically'), 'score' => t('Relevance'), 'date' => t('Date')),
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
@@ -266,6 +266,10 @@ function osha_search_callback_search($form_state, $per_page = 10) {
   switch ($sort) {
     case 'alphabetically':
       $query->sort('title2', 'ASC');
+      break;
+
+    case 'date':
+      $query->sort('field_publication_date', 'DESC');
       break;
 
     default:
