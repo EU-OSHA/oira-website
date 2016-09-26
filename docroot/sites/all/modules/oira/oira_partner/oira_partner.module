@@ -60,7 +60,7 @@ function oira_partner_field_extra_fields_formatter_view($entity_type, $entity, $
           '#title' => $types[$delta]->name,
           '#prefix' => '<div class="partner-content-label partner-content-count-' . $delta . '">',
           '#suffix' => '</div>',
-          '#markup' => '<span class="partner-content-counter">' . $item . '</span>',
+          '#markup' => '<span class="partner-content-counter">' . ($item == 0 ? '-' : $item) . '</span>',
         );
       }
       break;
