@@ -40,6 +40,7 @@ define('OSHA_WORKFLOW_STATE_PUBLISHED', 'published');
  */
 function osha_workflow_menu() {
   $items = array();
+  return;
   $items['admin/config/workbench/access/managers'] = array(
     'title' => 'Project Managers',
     'description' => 'Assignment of project managers for each website section.',

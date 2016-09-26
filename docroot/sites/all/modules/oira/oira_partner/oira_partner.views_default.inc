@@ -150,7 +150,6 @@ function oira_partner_views_default_views() {
     'news' => 'news',
     'practical_tool' => 'practical_tool',
     'promotional_material' => 'promotional_material',
-    'strategic_documentation' => 'strategic_documentation',
   );
   /* Filter criterion: Oira partner: Node has section of country partner */
   $handler->display->display_options['filters']['country_partner_access']['id'] = 'country_partner_access';
@@ -189,7 +188,6 @@ function oira_partner_views_default_views() {
     'news' => 'news',
     'practical_tool' => 'practical_tool',
     'promotional_material' => 'promotional_material',
-    'strategic_documentation' => 'strategic_documentation',
   );
   $translatables['country_partner_content'] = array(
     t('Master'),
