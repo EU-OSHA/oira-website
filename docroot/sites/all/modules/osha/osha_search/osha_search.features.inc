@@ -88,13 +88,10 @@ function osha_search_default_search_api_index() {
         "field_publication_date" : { "type" : "date" },
         "field_recommended_articles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_recommended_resources" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
-        "field_resource_fc" : {
-          "type" : "list\\u003Cinteger\\u003E",
-          "entity_type" : "field_collection_item"
-        },
-        "field_resource_fc:field_file:file" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "file" },
-        "field_resource_fc:field_language:safe_value" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_resource_fc:field_language:value" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_resource_fc" : { "type" : "integer", "entity_type" : "field_collection_item" },
+        "field_resource_fc:field_file:file" : { "type" : "integer", "entity_type" : "file" },
+        "field_resource_fc:field_language:safe_value" : { "type" : "text" },
+        "field_resource_fc:field_language:value" : { "type" : "string" },
         "field_resource_sdoc" : {
           "type" : "list\\u003Cinteger\\u003E",
           "entity_type" : "field_collection_item"
