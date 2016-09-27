@@ -124,7 +124,8 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
       }
     }
     drupal_add_js(drupal_get_path('module', 'oira_partner') . '/js/sector_filter.js');
-    // WHY sort the results by title???
+    drupal_add_js(drupal_get_path('module', 'oira_partner') . '/js/tabs_hash.js');
+
     $all_tab = array(
       'title' => '<span class="tab-title-wrap tab-title-show-all">' . t('Show all') . '</span>',
       'contents' => array('#markup' => $all_rows_rendered),
