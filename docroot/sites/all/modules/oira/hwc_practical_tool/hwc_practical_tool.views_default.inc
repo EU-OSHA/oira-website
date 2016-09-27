@@ -322,7 +322,6 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['access_id']['expose']['label'] = 'Author/Partner';
   $handler->display->display_options['filters']['access_id']['expose']['operator'] = 'access_id_op';
   $handler->display->display_options['filters']['access_id']['expose']['identifier'] = 'access_id';
-  $handler->display->display_options['filters']['access_id']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['access_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -334,6 +333,10 @@ function hwc_practical_tool_views_default_views() {
     8 => 0,
     9 => 0,
     10 => 0,
+    11 => 0,
+    12 => 0,
+    14 => 0,
+    13 => 0,
   );
   $handler->display->display_options['filters']['access_id']['access_id'] = array();
   $handler->display->display_options['filters']['access_id']['size'] = '5';

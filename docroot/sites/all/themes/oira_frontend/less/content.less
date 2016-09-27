@@ -264,6 +264,10 @@ a.more-link{
 				background: url('../images/icons/201b.png') no-repeat;
 				background-size: 23px;
 			}
+			li.napo-share-widget-google-plus{
+				background: url('../images/icons/222b.png') no-repeat;
+				background-size: 23px;
+			}
 		}
 	}
 }
@@ -299,6 +303,10 @@ a.more-link{
 			background: url('../images/icons/201b.png') no-repeat;
 			background-size: 23px;
 		}
+		li.napo-share-widget-google-plus{
+			background: url('../images/icons/222b.png') no-repeat;
+			background-size: 23px;
+		}
 	}
 }
 
@@ -329,7 +337,7 @@ a.more-link{
 }
 
 //PDF FILES promotional resources
-.field-name-field-resource-fc{
+.field-name-field-resource-fc, .field-name-field-resource-sdoc{
 	margin-top: 25px;
 	ul{
 		list-style: none;
@@ -535,7 +543,7 @@ a.more-link{
     			.field-name-field-image{
     				img{
     					//width: 100%;
-    					//max-height: 310px; 
+    					//max-height: 310px;
     				}
     			}
     			h4{
@@ -1212,13 +1220,15 @@ a.more-link{
 				padding-top: 20px;
 				.views-item-columns-container{
 					background-color: @color-primary;
-					min-height: 571px;
+					min-height: 598px;
 					.views-field-field-image{
 						min-height: 202px;//testing
+						padding: 10px;
+						padding-bottom: 0px;
 						img[alt="tools_default.png"]{
 							margin: 0 auto;
 							padding: 25px;
-							max-height: 250px;//testing
+							max-height: 260px;//testing
 						}
 					}
 					.tool-teaser-content-wrapper{
@@ -1243,7 +1253,7 @@ a.more-link{
 							}
 						}
 						.tools_see_more-processed{
-							margin-left: 207px;
+							margin-left: 0px;
 							a.more-link{
 								text-align: right;
 								margin-top: 15px;
@@ -2092,6 +2102,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 		padding-bottom: 30px;
 		h2{
 			margin-top: 0px;
+			line-height: 1.3em;
 		}
 		.partner-image-container{
 			img{
@@ -2121,6 +2132,15 @@ div[id ^= "mini-panel-partner_in_country"]{
 		    margin-top: 0em;
 		    margin-right: 0px;
 		    margin-bottom: 15px;
+		}
+		.pane-contact-information-partner{
+			.pane-content{
+				.pane-title{
+					color: @color-text-grey !important;
+					font-weight: bold !important;
+					font-size: @font-size1 !important;
+				}
+			}
 		}
 	}
 	.partner-social-container{
@@ -2286,6 +2306,13 @@ div[id ^= "mini-panel-partner_in_country"]{
     		    height: 45px;
     		}
 		}
+		.group-strategic_documentation{
+			&:after{
+    		    .section-icons("../images/icons/070.png");
+    		    width: 45px;
+    		    height: 45px;
+    		}
+		}
 		.group-news{
 			&:after{
     		    .section-icons("../images/icons/005.png");
@@ -2308,6 +2335,8 @@ div[id ^= "mini-panel-partner_in_country"]{
 		    padding-bottom: 5px;
 		    font-family: 'Oswald';
 		    margin-top: 30px;
+		    margin-left: -15px;
+		    margin-right: -15px;
 		}
 		.quicktabs-views-group {
 			.node-teaser{
@@ -2419,7 +2448,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 			}
 		}
 		
-		.node-practical-tool, .node-promotional-material{
+		.node-practical-tool, .node-promotional-material, .node-strategic-documentation{
 			.field-name-tools-see-more{
 				margin-left: 310px;
 			}
@@ -2546,6 +2575,32 @@ div[id ^= "mini-panel-partner_in_country"]{
 				}
 		    }
 		}
+		.tab-title-strategic_documentation{
+			&:before{
+				content: "";
+				background: url("../images/icons/documentation-icon-w.png") no-repeat;
+				background-size: 100%;
+			    display: inline-block;
+			    width: 25px;
+			    height: 25px;
+			    vertical-align: middle;
+			    background-position: 0px -2px;
+			    margin-right: 10px;
+			}
+			&:hover{
+		    	&:before{
+					content: "";
+					background: url("../images/icons/documentation-icon-p.png") no-repeat;
+					background-size: 100%;
+				    display: inline-block;
+				    width: 25px;
+				    height: 25px;
+				    vertical-align: middle;
+				    background-position: 0px -2px;
+				    margin-right: 10px;
+				}
+		    }
+		}
 		a{
 			color: @color-white;
 			font-style: italic;
@@ -2553,8 +2608,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 			text-decoration: none !important;
 			&:hover{
 				background-color: rgba(255,255,255,0.8);
-				color: @color-text-purple-darker;
-				color: @color-text-purple-darker;
+				color: @color-text-purple;
 				text-decoration: none !important;
 				ul{
 					display: block !important;

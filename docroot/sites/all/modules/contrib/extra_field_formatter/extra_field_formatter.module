@@ -260,6 +260,9 @@ function extra_field_formatter_entity_view_alter(&$build, $entity_type) {
   }
 
   $entity = $build['#original_entity'];
+  if (empty($build['#bundle'])) {
+    return;
+  }
   $bundle = $build['#bundle'];
   $view_mode = $build['#view_mode'];
   $extra_fields_info = field_info_extra_fields($entity_type, $bundle, 'display');

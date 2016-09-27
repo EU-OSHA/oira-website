@@ -69,6 +69,8 @@ function osha_tmgmt_workflow_permissions_common() {
     // TODO checko why fails on install if access workbench permission added here.
 //    'access workbench',
 
+    //@todo: remove
+    'access devel information',
   );
 }
 
