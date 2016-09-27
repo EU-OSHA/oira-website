@@ -43,7 +43,6 @@ class PartnerMigration extends HwcCrmMigration {
       'field_organisation_rep',
       'field_social_profile',
       'field_orgtype',
-      'field_ph_country',
     );
   }
 
@@ -104,6 +103,13 @@ class PartnerMigration extends HwcCrmMigration {
   }
 
   public function prepare($entity, $row) {
+    // For some reason field collection it's lost when runing mibration update.
+    // for mission statement, the manual added value it's kept.
+    if (!empty($entity->nid)) {
+      $old_entity = node_load($entity->nid);
+      $entity->field_collaborator = $old_entity->field_collaborator;
+    }
+
     $entity->path['pathauto'] = TRUE;
     if (!empty($row->regenerate_alias) && !empty($entity->nid)) {
       if ($existing_alias = _pathauto_existing_alias_data('node/' . $entity->nid, 'en')) {

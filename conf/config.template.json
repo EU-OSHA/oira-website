@@ -53,6 +53,7 @@
         "site_name": "OIRA",
         "site_mail": "account@example.com",
         "file_temporary_path": "/tmp",
+        "hwc_crm_data_dir": "/path/to/dir",
         "smtp_on": 0,
         "smtp_queue": 0,
         "smtp_host": "some.smtp.server",

@@ -117,6 +117,9 @@ function osha_search_search_api_solr_query_alter(array &$call_args, SearchApiQue
  */
 function osha_search_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
+    $form['input_search_display'] = array(
+      '#markup' => "<div class='input-search-display'>&nbsp;</div>",
+    );
     // Overwrite the search page default url.
     // Unset the form elements - the search view needs just the search param.
     $form['#action'] = url('search-site');

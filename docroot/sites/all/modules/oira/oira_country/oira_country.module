@@ -75,6 +75,14 @@ function oira_country_field_extra_fields_formatter_view($entity_type, $entity, $
         'languages' => t('Languages'),
       );
       foreach ($items as $delta => $item) {
+        if ($item == 0) {
+          $item = '-';
+        }
+        else {
+          if ($delta == 'tools') {
+            $item = l($item, 'taxonomy/term/' . $entity->tid, array('fragment' => 'practical_tool'));
+          }
+        }
         $element[$delta] = array(
           '#type' => 'item',
           '#title' => $labels[$delta],
