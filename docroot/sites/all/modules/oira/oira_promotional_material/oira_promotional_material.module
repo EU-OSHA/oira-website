@@ -287,6 +287,22 @@ function oira_promotional_material_form_alter(&$form, &$form_state, $form_id) {
     case 'promotional_material_node_form':
       $form['field_country']['#access'] = FALSE;
       $form['#validate'][] = 'oira_promotional_material_form_validate';
+      if (!empty($form['field_resource_fc'][LANGUAGE_NONE])) {
+        // Toggle file/link elements in promotional resource.
+        $keys = element_children($form['field_resource_fc'][LANGUAGE_NONE]);
+        foreach ($keys as $key) {
+          $form['field_resource_fc'][LANGUAGE_NONE][$key]['field_link']['#states'] = array(
+            'visible' => array(
+              ':input[name$="[field_file][und][0][fid]"]' => array('value' => 0),
+            ),
+          );
+          $form['field_resource_fc'][LANGUAGE_NONE][$key]['field_file']['#states'] = array(
+            'invisible' => array(
+              ':input[name*="[field_link]"]' => array('filled' => TRUE),
+            ),
+          );
+        }
+      }
       break;
   }
 }
