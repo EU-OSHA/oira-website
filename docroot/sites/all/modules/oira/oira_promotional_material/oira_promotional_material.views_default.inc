@@ -108,12 +108,22 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['title_field']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
-    'title_style' => 'h4',
-    'title_link' => '',
-    'title_class' => '',
+    'trim_link' => '0',
+    'trim_length' => '70',
+    'trim_type' => 'chars',
+    'trim_suffix' => '...',
+    'more_link' => '0',
+    'more_text' => 'Read more',
+    'trim_options' => array(
+      'text' => 0,
+      'use_field_summary' => 0,
+    ),
+    'trim_preserve_tags' => '',
     'field_formatter_class' => '',
+    'tools_show_full' => 0,
   );
   $handler->display->display_options['fields']['title_field']['field_api_classes'] = TRUE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
@@ -165,7 +175,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'materials-content-wrapper\'>
-[title_field]
+<h4>[title_field]</h4>
 [field_country] 
 [field_language]
 [related_partners] 
@@ -183,7 +193,7 @@ function oira_promotional_material_views_default_views() {
     t('Desc'),
     t('Promotional materials frontpage block'),
     t('<div class=\'materials-content-wrapper\'>
-[title_field]
+<h4>[title_field]</h4>
 [field_country] 
 [field_language]
 [related_partners] 
@@ -782,7 +792,6 @@ function oira_promotional_material_views_default_views() {
     t('Edit'),
     t('Operations'),
     t('[edit_node] [delete_node]'),
-    t('Access filter'),
     t('Page'),
   );
   $export['promotional_resources_admin'] = $view;
