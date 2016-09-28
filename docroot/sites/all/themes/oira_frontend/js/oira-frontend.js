@@ -12,6 +12,7 @@ jQuery(document).ready(function () {
 	    windowWidth= jQuery(window).width();//window size, when resizing
 	    if(windowWidth > 992){
 	    	//jQuery("#block-search-form input").css("display", "block");
+	    	jQuery("#block-search-form input").show();
 	    };
 	    if(windowWidth <= 750){
 	    	jQuery(".breadcrum-container").hide();
@@ -86,13 +87,15 @@ jQuery(document).ready(function () {
 		if(windowWidth <= 992){//<-----functions for tablet and/or mobile
 			
 			//search header al hacer click
-			jQuery("#block-search-form button").hover(function(){
+			jQuery(".input-search-display").click(function(){
 				//e.preventDefault();
 				jQuery("#block-search-form input").stop().show({direction: 'left'}, 500);
+				jQuery(".input-search-display").css("display" , "none");
 				//return false;
 			});
 			jQuery("#block-search-form").mouseleave(function(){
 				jQuery("#block-search-form input").stop().hide({direction: 'left'}, 500);
+				jQuery(".input-search-display").css("display" , "block");
 			});
 
 
@@ -112,10 +115,12 @@ jQuery(document).ready(function () {
 			});
 			//hide breadcrum when click menu icon
 			jQuery(".navbar-toggle").click(function(){
-				if(jQuery(".navbar-collapse.collapse").hasClass("in")){
-					jQuery(".breadcrum-container").stop().show();
-				}else{
-					jQuery(".breadcrum-container").stop().hide();
+				if(windowWidth <= 992 && windowWidth >750){
+					if(jQuery(".navbar-collapse.collapse").hasClass("in")){
+						jQuery(".breadcrum-container").stop().show();
+					}else{
+						jQuery(".breadcrum-container").stop().hide();
+					}
 				}
 			});
 

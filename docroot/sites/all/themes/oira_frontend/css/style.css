@@ -6648,6 +6648,9 @@ button.close {
 .top-header .header-blocks #block-search-form .ui-theme-basic-green.ui-autocomplete-loading {
   background-position: 99% -13px;
 }
+.top-header .header-blocks #block-search-form #search-block-form {
+  position: relative;
+}
 .top-header .header-blocks #block-search-form #search-block-form input {
   border-radius: 0px;
   border: 2px solid #003399;
@@ -6801,6 +6804,14 @@ button.close {
 }
 .glyphicon-print:before {
   content: "\e045";
+}
+/*End estilos header
+**************************************************/
+/*jquery functionality for search icon*/
+@media only screen and (min-width: 993px) {
+  .input-search-display {
+    display: none;
+  }
 }
 /*MIXINS
 *****************************************/
@@ -6967,7 +6978,8 @@ a.more-link:before {
 /*Etiquetas azuler de pais e idioma*/
 .field.field-name-field-country,
 .field-type-language-field,
-.field-name-field-sector {
+.field-name-field-sector,
+.field-name-field-promotional-material-type {
   background-color: #10b2e4;
   display: inline-block;
   color: white;
@@ -10366,6 +10378,18 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     width: 29px;
     float: right;
   }
+  .top-header .region-header-block #block-search-form .input-search-display {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: block;
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+  }
   .top-header .region-header-block #block-menu-block-3 {
     display: block;
     clear: both;
@@ -11478,6 +11502,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     display: none;
     height: 29px !important;
     width: 80% !important;
+    z-index: 10;
   }
   .top-header .header-blocks .region-header-block #block-search-form button {
     height: 29px;
@@ -11485,6 +11510,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     margin-right: 10px;
     float: right;
     background-color: rgba(255, 255, 255, 0) !important;
+  }
+  .top-header .header-blocks .region-header-block #block-search-form .input-search-display {
+    right: 10px;
   }
   .top-header .header-blocks .region-header-block #block-menu-block-3 {
     display: inline-block;
