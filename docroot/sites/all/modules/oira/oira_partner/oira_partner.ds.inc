@@ -46,7 +46,7 @@ function oira_partner_ds_field_settings_info() {
       'formatter_settings' => array(
         'link' => '1',
         'wrapper' => 'h4',
-        'class' => '',
+        'class' => 'trim-title',
         'exclude node title settings' => '1',
         'field_formatter_class' => '',
       ),
