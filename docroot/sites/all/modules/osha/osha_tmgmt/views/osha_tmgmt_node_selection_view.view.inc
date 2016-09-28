@@ -261,10 +261,15 @@ $handler->display->display_options['filters']['type']['table'] = 'node';
 $handler->display->display_options['filters']['type']['field'] = 'type';
 $handler->display->display_options['filters']['type']['value'] = array(
   'article' => 'article',
+  'external_url' => 'external_url',
+  'faq' => 'faq',
+  'file' => 'file',
+  'flickr' => 'flickr',
+  'internal_url' => 'internal_url',
   'news' => 'news',
-  'note_to_editor' => 'note_to_editor',
-  'press_release' => 'press_release',
-  'publication' => 'publication',
+  'slide' => 'slide',
+  'slideshare' => 'slideshare',
+  'youtube' => 'youtube',
 );
 $handler->display->display_options['filters']['type']['group'] = 1;
 $handler->display->display_options['filters']['type']['exposed'] = TRUE;
@@ -285,7 +290,12 @@ $handler->display->display_options['filters']['type']['expose']['remember_roles'
   8 => 0,
   9 => 0,
   10 => 0,
+  11 => 0,
+  12 => 0,
+  14 => 0,
+  13 => 0,
 );
+$handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
 /* Filter criterion: Global: Combine fields filter */
 $handler->display->display_options['filters']['combine']['id'] = 'combine';
 $handler->display->display_options['filters']['combine']['table'] = 'views';

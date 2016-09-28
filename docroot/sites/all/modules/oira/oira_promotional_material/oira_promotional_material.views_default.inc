@@ -690,34 +690,6 @@ function oira_promotional_material_views_default_views() {
       'value' => 'sv',
     ),
   );
-  /* Filter criterion: Workbench Access: Access filter */
-  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
-  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
-  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
-  $handler->display->display_options['filters']['access_id']['group'] = 1;
-  $handler->display->display_options['filters']['access_id']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['access_id']['expose']['operator_id'] = 'access_id_op';
-  $handler->display->display_options['filters']['access_id']['expose']['label'] = 'Partner (Author/Partner)';
-  $handler->display->display_options['filters']['access_id']['expose']['operator'] = 'access_id_op';
-  $handler->display->display_options['filters']['access_id']['expose']['identifier'] = 'access_id';
-  $handler->display->display_options['filters']['access_id']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['access_id']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['access_id']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-    9 => 0,
-    10 => 0,
-    11 => 0,
-    12 => 0,
-  );
-  $handler->display->display_options['filters']['access_id']['access_id'] = array();
-  $handler->display->display_options['filters']['access_id']['size'] = '5';
   /* Filter criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
   $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
@@ -746,6 +718,33 @@ function oira_promotional_material_views_default_views() {
   );
   $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_publication_date_value']['year_range'] = '-10:+3';
+  /* Filter criterion: Workbench Access: Access filter */
+  $handler->display->display_options['filters']['access_id']['id'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['table'] = 'workbench_access';
+  $handler->display->display_options['filters']['access_id']['field'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['access_id']['expose']['operator_id'] = 'access_id_op';
+  $handler->display->display_options['filters']['access_id']['expose']['label'] = 'Partner (Author/Partner)';
+  $handler->display->display_options['filters']['access_id']['expose']['operator'] = 'access_id_op';
+  $handler->display->display_options['filters']['access_id']['expose']['identifier'] = 'access_id';
+  $handler->display->display_options['filters']['access_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    14 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['access_id']['access_id'] = array();
+  $handler->display->display_options['filters']['access_id']['size'] = '5';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -783,6 +782,7 @@ function oira_promotional_material_views_default_views() {
     t('Edit'),
     t('Operations'),
     t('[edit_node] [delete_node]'),
+    t('Access filter'),
     t('Page'),
   );
   $export['promotional_resources_admin'] = $view;
