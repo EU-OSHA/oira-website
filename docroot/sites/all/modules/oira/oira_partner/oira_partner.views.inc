@@ -57,6 +57,15 @@ function oira_partner_views_data_alter(&$data) {
       'handler' => 'oira_partner_handler_country_partner_access',
     ),
   );
+
+  $data['oira_partner']['partner_access_coauthor'] = array(
+    'title' => t('Node belongs to partner or is the coauthor'),
+    'help' => t('Node belongs to partner or is the coauthor'),
+    'filter' => array(
+      'label' => t('Node belongs to partner or is the coauthor'),
+      'handler' => 'oira_partner_handler_partner_author_coauthor_access',
+    ),
+  );
 }
 
 /**
@@ -99,7 +108,6 @@ class oira_partner_handler_is_co_author extends views_handler_filter_boolean_ope
 
 /**
  *
- * Get the latest 4 tools. (At least one OiRA tool & one E-tool)
  */
 class oira_partner_handler_country_partner_access extends views_handler_filter_boolean_operator {
 
@@ -133,6 +141,45 @@ class oira_partner_handler_country_partner_access extends views_handler_filter_b
         // Show no results.
         $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", 0, $equal_operator);
       }
+    }
+    else {
+      // Show no results.
+      $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", 0, $equal_operator);
+    }
+  }
+}
+
+class oira_partner_handler_partner_author_coauthor_access extends views_handler_filter_boolean_operator {
+
+  /**
+   * Overrides views_handler_field::query().
+   */
+  function query() {
+    if (empty($this->value)) {
+      $in_operator = 'NOT IN';
+      $equal_operator = '!=';
+    }
+    else {
+      $in_operator = 'IN';
+      $equal_operator = '=';
+    }
+    $partner = menu_get_object();
+    if ($partner->type == 'partner' && !empty($partner->workbench_access)) {
+      $subquery_partner = db_select('workbench_access_node', 'wa')
+        ->fields('wa', array('nid'))
+        ->condition('wa.access_id', $partner->workbench_access, 'IN');
+      $subquery_coauthor = db_select('field_data_field_co_author', 'f')
+        ->fields('f', array('entity_id'))
+        ->condition('f.field_co_author_tid', $partner->workbench_access, 'IN');
+
+      $db_or = db_or();
+      $db_or->condition('nid', $subquery_coauthor, 'IN');
+      $db_or->condition('nid', $subquery_partner, 'IN');
+      $query = db_select('node', 'n')
+        ->fields('n', array('nid'))
+        ->condition($db_or);
+
+      $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", $query, $in_operator);
     }
     else {
       // Show no results.
