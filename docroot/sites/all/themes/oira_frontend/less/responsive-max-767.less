@@ -1,4 +1,4 @@
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width : 767px){
 
 .img-responsive{
 	//width: 100%;
@@ -217,10 +217,11 @@ h1.page-header {
 		    		}
 		    	}
 		    }
-		    .owl-controls.clickable{
-				display: none !important;
-			}
 	    }
+	    .owl-controls.clickable{
+			display: none !important;
+		}
+
 	}
 	//latest news
 	.panels-flexible-region-new-news_section{
@@ -430,6 +431,24 @@ h1.page-header {
 						.more-link{
 							color: @color-white;
 							text-align: left;
+						}
+					}
+				}
+			}
+		}
+	}
+	//Oira partners
+	.panels-flexible-region-new-oira_partners{
+		.panels-flexible-region-new-oira_partners-inside{
+			.views-view-grid{
+				.col-md-2.col-sm-3.col-xs-6{
+					//max-height: 110px !important;
+					.views-field-field-logo{
+						height: auto !important;
+						padding: 0px !important;
+						img{
+							width: 100%;
+							//max-height: 110px;
 						}
 					}
 				}
@@ -868,22 +887,17 @@ h1.page-header {
 	}
 	.pane-oira-country-oira-country-count-all{
 		.pane-content{
-			margin-top: 10px;
+			margin-top: 15px;
+			margin-bottom: 0px;
 			.country-content-count-label{
-				display: inline-block;
-    			width: 33%;
-    			&:first-child{
-    				margin-bottom: 20px;
-    			}
-				&:last-child{
-					min-width: 92px;
-				}
+				min-width: 90px;
+    			margin-bottom: 20px;
 				.form-group{
 					margin-bottom: 0px;
 				}
 				.form-item{
 					label{
-						font-size: 0.9em;
+						font-size: 0.9em !important;
 						margin-bottom: 0px;
 					}
 					span{
@@ -915,7 +929,7 @@ h1.page-header {
 .page-country-profile{
 	
 	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
-		margin-top: 5px;
+		margin-top: 5px !important;
 		padding-top: 30px;
 		.pane-taxonomy-term-country-content-count{
 			margin-top: 15px;
@@ -1687,4 +1701,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 
 }
 /*end general search*/
+
+
+
 }
