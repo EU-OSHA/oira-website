@@ -28,6 +28,15 @@ function _oira_get_content_types_for_partners() {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function oira_workflow_permission() {
+  $permissions = array();
+  $permissions['select content section'] = array('title' => t("Can select section of a content"));
+  return $permissions;
+}
+
+/**
  * Cron callback to auto moderate partners' content.
  */
 function oira_workflow_partner_content_cron() {
