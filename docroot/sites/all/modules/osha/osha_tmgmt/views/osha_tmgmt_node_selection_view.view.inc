@@ -478,7 +478,7 @@ $handler->display->display_options['filters']['state']['id'] = 'state';
 $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
 $handler->display->display_options['filters']['state']['field'] = 'state';
 $handler->display->display_options['filters']['state']['value'] = array(
-  'ready_to_publish' => 'ready_to_publish',
+  'draft' => 'draft',
   'published' => 'published',
 );
 $handler->display->display_options['filters']['state']['group'] = 1;
@@ -527,12 +527,12 @@ $handler->display->display_options['filters']['state']['group_info']['group_item
     ),
   ),
   2 => array(
-    'title' => 'Ready to Publish',
+    'title' => 'Draft',
     'operator' => 'in',
     'value' => array(
-      'ready_to_publish' => 'ready_to_publish',
+      'draft' => 'draft',
       'all' => 0,
-      'draft' => 0,
+      'ready_to_publish' => 0,
       'rejected' => 0,
       'approved' => 0,
       'final_draft' => 0,

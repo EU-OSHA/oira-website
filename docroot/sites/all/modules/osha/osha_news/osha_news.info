@@ -55,6 +55,7 @@ features[field_instance][] = node-news-field_wf_notification
 features[field_instance][] = node-news-title_field
 features[node][] = news
 features[path_breadcrumbs][] = news_details
+features[path_breadcrumbs][] = news_list
 features[variable][] = comment_anonymous_news
 features[variable][] = comment_default_mode_news
 features[variable][] = comment_default_per_page_news
