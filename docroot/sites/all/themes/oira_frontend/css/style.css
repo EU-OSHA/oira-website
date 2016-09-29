@@ -10221,6 +10221,15 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
 .page-node-linguatools #form-lingua-form button:hover {
   background-color: #10b2e4;
 }
+/*End lingua tools*/
+/*retranslate*/
+.page-node-retranslate #osha-tmgmt-retranslate-ui-form {
+  margin: 0px 40px;
+}
+.page-node-retranslate #osha-tmgmt-retranslate-ui-form [type=checkbox] {
+  position: absolute !important;
+  margin-left: 0px !important;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
