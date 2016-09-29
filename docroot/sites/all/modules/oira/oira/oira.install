@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Add history for all nodes after moderation was activated.
+ */
+function oira_update_7001() {
+  $bundles = node_type_get_types();
+  foreach (array_keys($bundles) as $bundle) {
+    var_dump($bundle);
+    if (workbench_moderation_node_type_moderated($bundle)) {
+      $nodes = node_load_multiple(array(), array('type' => $bundle));
+      foreach ($nodes as $node) {
+        $node->workbench_moderation_state_new = OSHA_WORKFLOW_STATE_PUBLISHED;
+        $node->revision = TRUE;
+        node_save($node);
+      }
+    }
+  }
+}
