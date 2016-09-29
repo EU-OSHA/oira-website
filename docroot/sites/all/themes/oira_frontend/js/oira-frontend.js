@@ -6,6 +6,13 @@ jQuery(document).ready(function () {
 //     };
 //
 
+	jQuery('.trim-title').dotdotdot({
+		ellipsis: '...',
+		height: 45,
+		watch: true,
+		wrap: 'word',
+	});
+
 	var windowWidth= jQuery(window).width();//window size
 
 	jQuery(window).resize(function() {

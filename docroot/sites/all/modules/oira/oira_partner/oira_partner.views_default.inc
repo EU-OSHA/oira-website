@@ -161,16 +161,13 @@ function oira_partner_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Partner content - profile page';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Workbench Access: Access filter */
-  $handler->display->display_options['arguments']['access_id']['id'] = 'access_id';
-  $handler->display->display_options['arguments']['access_id']['table'] = 'workbench_access';
-  $handler->display->display_options['arguments']['access_id']['field'] = 'access_id';
-  $handler->display->display_options['arguments']['access_id']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['access_id']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['access_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['access_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['access_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -189,6 +186,12 @@ function oira_partner_views_default_views() {
     'practical_tool' => 'practical_tool',
     'promotional_material' => 'promotional_material',
   );
+  /* Filter criterion: Oira partner: Node belongs to partner or is the coauthor */
+  $handler->display->display_options['filters']['partner_access_coauthor']['id'] = 'partner_access_coauthor';
+  $handler->display->display_options['filters']['partner_access_coauthor']['table'] = 'oira_partner';
+  $handler->display->display_options['filters']['partner_access_coauthor']['field'] = 'partner_access_coauthor';
+  $handler->display->display_options['filters']['partner_access_coauthor']['value'] = '1';
+  $handler->display->display_options['block_caching'] = '-1';
   $translatables['country_partner_content'] = array(
     t('Master'),
     t('Partner content - country page'),
@@ -200,7 +203,6 @@ function oira_partner_views_default_views() {
     t('Desc'),
     t('Block'),
     t('Partner content - profile page'),
-    t('All'),
   );
   $export['country_partner_content'] = $view;
 
