@@ -144,7 +144,7 @@ jQuery(document).ready(function () {
 		}
 	}
 	
-	jQuery(".page-country-profile-eu .country-partner-wrapper").addClass(".col-sm-6");
+	jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("col-sm-6");
 	jQuery(".page-country-profile-eu .country-partner-wrapper").click(function(){
 		jQuery(".page-country-profile-eu .country-partner-wrapper").removeClass("active");
 		jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("has-open-partner");
