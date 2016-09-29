@@ -10065,8 +10065,10 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
 }
 .page-country-profile-eu .country-partners-container .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .partner-image-container {
   width: 100%;
-  max-height: 125px;
-  min-height: 125px;
+  max-height: 120px;
+}
+.page-country-profile-eu .country-partners-container .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .partner-image-container img {
+  max-width: 150px;
 }
 .page-country-profile-eu .country-partners-container .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .partner-text-container {
   width: 100%;
