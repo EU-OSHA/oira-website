@@ -343,7 +343,7 @@ function osha_title_formatter_practical_tool_view($entity_type, $entity, $field,
   if (!empty($output) && $settings['title_link'] == 'content'
     && !empty($entity->field_tool_link)) {
     $uri = $entity_wrapper->field_tool_link->value();
-    $output = l($output, $uri['url'], array('html' => TRUE, 'attributes' => array('target' => '_blank')));
+    $output = l($output, $uri['url'], array('html' => TRUE, 'attributes' => array('class' => 'trim-title','target' => '_blank')));
   }
 
   $wrap_tag = empty($settings['title_style']) ? '_none' : $settings['title_style'];
