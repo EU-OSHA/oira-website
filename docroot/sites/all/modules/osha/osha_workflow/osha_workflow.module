@@ -30,7 +30,8 @@ define('OSHA_WORKFLOW_STATE_REJECTED', 'rejected');
 define('OSHA_WORKFLOW_STATE_APPROVED', 'approved');
 define('OSHA_WORKFLOW_STATE_TO_BE_REVIEWED', 'needs_review');
 define('OSHA_WORKFLOW_STATE_TO_BE_APPROVED', 'to_be_approved');
-define('OSHA_WORKFLOW_STATE_READY_TO_PUBLISH', 'ready_to_publish');
+// use draft as ready to publish.
+define('OSHA_WORKFLOW_STATE_READY_TO_PUBLISH', 'draft');
 define('OSHA_WORKFLOW_STATE_PUBLISHED', 'published');
 
 /**

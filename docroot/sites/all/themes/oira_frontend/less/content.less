@@ -208,7 +208,7 @@ a.more-link{
 }
 
 /*Etiquetas azuler de pais e idioma*/
-.field.field-name-field-country, .field-type-language-field, .field-name-field-sector {
+.field.field-name-field-country, .field-type-language-field, .field-name-field-sector, .field-name-field-promotional-material-type {
     background-color: #10b2e4;
     display: inline-block;
     color: white;
@@ -307,6 +307,10 @@ a.more-link{
 			background: url('../images/icons/222b.png') no-repeat;
 			background-size: 23px;
 		}
+		li.pull-right{
+			background: url('../images/icons/rss.png') no-repeat;
+			background-size: 23px;
+		}
 	}
 }
 
@@ -336,7 +340,7 @@ a.more-link{
 	}
 }
 
-//PDF FILES promotional resources
+//PDF FILES and links promotional resources
 .field-name-field-resource-fc, .field-name-field-resource-sdoc{
 	margin-top: 25px;
 	ul{
@@ -346,21 +350,12 @@ a.more-link{
 		margin-bottom: 0px;
 	}
 	.promotional-material-resource-label{
-		display: inline-block;
+		display: none;
 		font-weight: bold;
 		font-style: italic;
-		.promotional-material-resource-file-icon{
-			width: 21px;
-		    height: 27px;
-		    background: url(../images/icons/pdf-file.png) no-repeat;
-		    display: inline-block;
-		    margin-left: 5px;
-		    background-size: 100%;
-		    margin-right: 5px;
-		}
 	}
 	.promotional-material-resource-items{
-		display: inline-block;
+		display: block;
 		font-weight: bold;
 		font-style: italic;
 		li{
@@ -373,11 +368,35 @@ a.more-link{
 				&:hover{
 					color: @color-text-purple;
 				}
+				img{
+					margin-right: 5px;
+				}
 			}
 		}
 		li:last-child{
 			a{
 				border-right: none;
+			}
+		}
+	}
+	.promotional-material-resource-links{
+		display: block;
+		font-weight: bold;
+		font-style: italic;
+		a{
+			color: @color-see-more;
+			&:hover{
+				color: @color-text-purple;
+			}
+			.glyphicon-new-window{
+				margin-right: 5px;
+				color: @color-text-purple-darker;
+			}
+			.link-title{
+				
+			}
+			.language-link{
+				
 			}
 		}
 	}
@@ -495,11 +514,12 @@ a.more-link{
 				}
 				.views-field-title-field{
 					position: absolute;
-					width: 1140px;
+					//width: 1140px;
 					top: 45%;
 					left: 10%;
 					font-family: @font-family-base-2;
 					font-weight: 300;
+					margin-right: 10%;
 					a{
 						color: @color-white;
 						font-size: 1.2em;
@@ -507,10 +527,11 @@ a.more-link{
 				}
 				.views-field-body{
 					position: absolute;
-					width: 1140px;
+					//width: 1140px;
 					top: 66%;
 					left: 10%;
 					color: @color-white;
+					margin-right: 10%;
 				}
 			}
 			.owl-controls.clickable{
@@ -782,13 +803,19 @@ a.more-link{
 				.views-view-grid{
 					margin-top: 30px;
 					margin-bottom: 15px;
-					padding-bottom: 20px;
+					padding-bottom: 40px;
 					padding-top: 20px;
 					border-bottom: 2px solid @color-text-purple;
 					border-top: 2px solid @color-text-purple;
-					.col-md-2.col-sm-6.col-xs-12{
-						width: 20%;
-					} 
+					.col-md-2.col-sm-3.col-xs-6{
+						.views-field-field-logo{
+							height: 160px;
+							padding: 10px;
+							img{
+								width: 100%;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -1516,7 +1543,7 @@ a.more-link{
     								
     								h4{
     									a{
-    										font-size: 1em;
+    										font-size: 0.9em;
     										color: @color-white;
     										margin-top: 0px;
     									}
@@ -1943,17 +1970,21 @@ a.more-link{
 	h1{
 		color: @color-text-grey;
 	}
+	.panels-flexible-row{
+		padding-bottom: 0px;
+	}
 	.pane-oira-country-oira-country-count-all{
 		.pane-content{
-			display: table;
 			width: 100%;
-			margin-top: 25px;
+			margin-top: 15px;
+			margin-bottom: 10px;
 			.country-content-count-label{
-				display: table-cell;
+				display: inline-block;
 				color: @color-white;
 				text-align: center;
 				border-left: 2px solid @color-white;
 				width: 20%;
+				margin-bottom: 0px;
 				&:last-child{
 					border-right: 2px solid @color-white;
 				}
@@ -1963,7 +1994,7 @@ a.more-link{
 				.form-item{
 					label{
 						display: block;
-						font-size: 1.2em;
+						font-size: 1.1em !important;
 						margin-bottom: 0px;
 					}
 					span{
@@ -2022,6 +2053,9 @@ a.more-link{
 							font-weight: bold;
 							font-size: @font-size2;
 							line-height: 22px;
+							a{
+								text-decoration: none;
+							}
     					}
     					&:first-child{
 							border-right: 2px solid @color-text-grey;
@@ -2083,6 +2117,13 @@ a.more-link{
 							font-size: @font-size3;
 						    line-height: 16px;
 						    font-weight: bold;
+						    a{
+						    	color: @color-background-light-purple;
+						    	&:hover{
+						    		color: @color-text-hover-blue;
+						    		text-decoration: none;
+						    	}
+						    }
 						}
 					}
 				}
@@ -2402,7 +2443,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					margin-top: 20px;
 					h4{
 						a{
-							font-size: 1em;
+							font-size: 0.9em;
 							color: @color-white;
 							margin-top: 0px;
 						}
@@ -2931,7 +2972,7 @@ div[id ^= "mini-panel-partner_in_country"]{
     								
     								h4{
     									a{
-    										font-size: 1em;
+    										font-size: 0.9em;
     										color: @color-white;
     										margin-top: 0px;
     									}
