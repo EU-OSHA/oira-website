@@ -95,10 +95,18 @@ function oira_workflow_default_rules_configuration() {
         { "entity_is_of_bundle" : {
             "entity" : [ "node" ],
             "type" : "node",
-            "bundle" : { "value" : { "news" : "news" } }
+            "bundle" : { "value" : {
+                "news" : "news",
+                "practical_tool" : "practical_tool",
+                "promotional_material" : "promotional_material",
+                "strategic_documentation" : "strategic_documentation"
+              }
+            }
           }
         },
-        { "node_has_partner_section" : { "entity" : [ "node" ] } }
+        { "node_has_partner_section" : { "entity" : [ "node" ] } },
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_wf_notification" } },
+        { "data_is_empty" : { "data" : [ "node:field-wf-notification" ] } }
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
@@ -117,7 +125,9 @@ function oira_workflow_default_rules_configuration() {
       "REQUIRES" : [ "rules", "workbench_moderation" ],
       "ON" : { "workbench_moderation_after_moderation_transition" : [] },
       "IF" : [
-        { "data_is" : { "data" : [ "new-state" ], "value" : "to_be_approved" } }
+        { "data_is" : { "data" : [ "new-state" ], "value" : "to_be_approved" } },
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_wf_notification" } },
+        { "data_is_empty" : { "data" : [ "node:field-wf-notification" ] } }
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
@@ -135,7 +145,11 @@ function oira_workflow_default_rules_configuration() {
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "workbench_moderation" ],
       "ON" : { "workbench_moderation_after_moderation_transition" : [] },
-      "IF" : [ { "data_is" : { "data" : [ "new-state" ], "value" : "needs_review" } } ],
+      "IF" : [
+        { "data_is" : { "data" : [ "new-state" ], "value" : "needs_review" } },
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_wf_notification" } },
+        { "data_is_empty" : { "data" : [ "node:field-wf-notification" ] } }
+      ],
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "14" : "14" } },
