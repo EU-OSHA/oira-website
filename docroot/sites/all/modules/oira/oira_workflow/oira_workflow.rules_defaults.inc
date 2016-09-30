@@ -13,7 +13,7 @@ function oira_workflow_default_rules_configuration() {
       "LABEL" : "Notify partner when his content published",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "workbench_moderation" ],
+      "REQUIRES" : [ "rules", "oira_workflow", "workbench_moderation" ],
       "ON" : { "workbench_moderation_after_moderation_transition" : [] },
       "IF" : [
         { "data_is" : { "data" : [ "new-state" ], "value" : "published" } },
@@ -58,7 +58,6 @@ function oira_workflow_default_rules_configuration() {
       ]
     }
   }');
-
   $items['rules_oira_workflow_notification_partner_content_created'] = entity_import('rules_config', '{ "rules_oira_workflow_notification_partner_content_created" : {
       "LABEL" : "Notification partner content created",
       "PLUGIN" : "reaction rule",
@@ -89,7 +88,7 @@ function oira_workflow_default_rules_configuration() {
       "LABEL" : "Notification when published",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "workbench_moderation" ],
+      "REQUIRES" : [ "rules", "oira_workflow", "workbench_moderation" ],
       "ON" : { "workbench_moderation_after_moderation_transition" : [] },
       "IF" : [
         { "data_is" : { "data" : [ "new-state" ], "value" : "published" } },
@@ -103,9 +102,28 @@ function oira_workflow_default_rules_configuration() {
       ],
       "DO" : [
         { "mail_to_users_of_role" : {
-            "roles" : { "value" : {} },
+            "roles" : { "value" : { "3" : "3", "12" : "12", "14" : "14" } },
             "subject" : "New content has been published",
             "message" : "This content has been published: \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_oira_workflow_notification_to_be_approved'] = entity_import('rules_config', '{ "rules_oira_workflow_notification_to_be_approved" : {
+      "LABEL" : "Notification when to be approved",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "workbench_moderation" ],
+      "ON" : { "workbench_moderation_after_moderation_transition" : [] },
+      "IF" : [
+        { "data_is" : { "data" : [ "new-state" ], "value" : "to_be_approved" } }
+      ],
+      "DO" : [
+        { "mail_to_users_of_role" : {
+            "roles" : { "value" : { "12" : "12" } },
+            "subject" : "Oira Workflow: New content needs your review",
+            "message" : "\\u003Cp\\u003E[node:author:name] ([node:author:mail]) has submitted a [node:type] item for validation. Please see the submitted update here: \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E"
           }
         }
       ]
@@ -121,23 +139,6 @@ function oira_workflow_default_rules_configuration() {
       "DO" : [
         { "mail_to_users_of_role" : {
             "roles" : { "value" : { "14" : "14" } },
-            "subject" : "Oira Workflow: New content needs your review",
-            "message" : "\\u003Cp\\u003E[node:author:name] ([node:author:mail]) has submitted a [node:type] item for validation. Please see the submitted update here: \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E"
-          }
-        }
-      ]
-    }
-  }');
-  $items['rules_oira_workflow_notification_to_be_approved'] = entity_import('rules_config', '{ "rules_oira_workflow_notification_to_be_approved" : {
-      "LABEL" : "Notification when to be approved",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "workbench_moderation" ],
-      "ON" : { "workbench_moderation_after_moderation_transition" : [] },
-      "IF" : [ { "data_is" : { "data" : [ "new-state" ], "value" : "to_be_approved" } } ],
-      "DO" : [
-        { "mail_to_users_of_role" : {
-            "roles" : { "value" : { "12" : "12" } },
             "subject" : "Oira Workflow: New content needs your review",
             "message" : "\\u003Cp\\u003E[node:author:name] ([node:author:mail]) has submitted a [node:type] item for validation. Please see the submitted update here: \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E"
           }
