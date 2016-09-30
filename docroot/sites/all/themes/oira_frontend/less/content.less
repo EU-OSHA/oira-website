@@ -632,6 +632,7 @@ a.more-link{
 							color: @color-white;
 							margin-top: 15px;
 							h4{
+								min-height: 45px;
 								a{
 									font-size: @font-size0-9;
 									color: @color-white;
@@ -697,6 +698,7 @@ a.more-link{
 						color: @color-white;
 						margin-top: 15px;
 						h4{
+							min-height: 45px;
 							a{
 								font-size: @font-size0-9;
 								color: @color-white;
@@ -762,6 +764,7 @@ a.more-link{
 						color: @color-white;
 						margin-bottom: 15px;
 						h4{
+							min-height: 45px;
 							a{
 								font-size: @font-size0-9;
 								color: @color-white;
@@ -905,6 +908,10 @@ a.more-link{
 				span.custom-field-node-type{
 					display: none;
 				}
+				.more-link{
+					border-top: 2px solid @color-white;
+					text-align: right;
+				}
 			}
 			.pane-oira-blocks-related-ncw-publications{
 				h3{
@@ -920,6 +927,10 @@ a.more-link{
 						.section-icons("../images/icons/004.png");
 						width: 35px;
 					}
+				}
+				.more-link{
+					border-top: 2px solid @color-white;
+					text-align: right;
 				}
 			}
 			h3.pane-title{
@@ -1247,19 +1258,20 @@ a.more-link{
 				padding-top: 20px;
 				.views-item-columns-container{
 					background-color: @color-primary;
-					min-height: 598px;
+					min-height: 535px;
 					.views-field-field-image{
 						min-height: 202px;//testing
 						padding: 10px;
 						padding-bottom: 0px;
 						img[alt="tools_default.png"]{
 							margin: 0 auto;
-							padding: 25px;
+							//padding: 25px;
 							max-height: 260px;//testing
 						}
 					}
 					.tool-teaser-content-wrapper{
 						padding: 15px;
+						overflow: hidden;
 						.field-name-related-partners{
 							.node-partner{
 								background-color: @color-primary-dark;
@@ -1267,6 +1279,7 @@ a.more-link{
 								color: @color-white;
 								margin-top: 15px;
 								h4{
+									min-height: 45px;
 									a{
 										font-size: 0.9em;
 										color: @color-white;
@@ -1542,6 +1555,7 @@ a.more-link{
     								color: @color-white;
     								
     								h4{
+    									min-height: 45px;
     									a{
     										font-size: 0.9em;
     										color: @color-white;
@@ -2442,6 +2456,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					color: @color-white;
 					margin-top: 20px;
 					h4{
+						min-height: 45px;
 						a{
 							font-size: 0.9em;
 							color: @color-white;
@@ -2971,6 +2986,7 @@ div[id ^= "mini-panel-partner_in_country"]{
     								color: @color-white;
     								
     								h4{
+    									min-height: 45px;
     									a{
     										font-size: 0.9em;
     										color: @color-white;
@@ -3538,6 +3554,7 @@ div[id ^= "mini-panel-partner_in_country"]{
     								color: @color-white;
     								margin-top: 20px;
     								h4{
+    									min-height: 45px;
     									a{
     										font-size: 1em;
     										color: @color-white;

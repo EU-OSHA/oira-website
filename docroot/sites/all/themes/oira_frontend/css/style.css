@@ -7362,6 +7362,9 @@ a.more-link:before {
   color: #ffffff;
   margin-top: 15px;
 }
+#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-item-columns-container .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
+}
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-item-columns-container .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
   color: #ffffff;
@@ -7413,6 +7416,9 @@ a.more-link:before {
   padding: 15px;
   color: #ffffff;
   margin-top: 15px;
+}
+#block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
 }
 #block-system-main .panels-flexible-row-new-16 .panels-flexible-region-new-tools .view-display-id-block .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
@@ -7469,6 +7475,9 @@ a.more-link:before {
   padding: 15px;
   color: #ffffff;
   margin-bottom: 15px;
+}
+#block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
 }
 #block-system-main .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
@@ -7603,6 +7612,10 @@ a.more-link:before {
 .node-type-article .panels-flexible-row-new-10 #mini-panel-related_content .pane-oira-blocks-oshwiki-featured-articles span.custom-field-node-type {
   display: none;
 }
+.node-type-article .panels-flexible-row-new-10 #mini-panel-related_content .pane-oira-blocks-oshwiki-featured-articles .more-link {
+  border-top: 2px solid #ffffff;
+  text-align: right;
+}
 .node-type-article .panels-flexible-row-new-10 #mini-panel-related_content .pane-oira-blocks-related-ncw-publications h3:after {
   content: "";
   background: url("../images/icons/169.png") no-repeat;
@@ -7620,6 +7633,10 @@ a.more-link:before {
   height: 40px;
   float: right;
   width: 35px;
+}
+.node-type-article .panels-flexible-row-new-10 #mini-panel-related_content .pane-news .more-link {
+  border-top: 2px solid #ffffff;
+  text-align: right;
 }
 .node-type-article .panels-flexible-row-new-10 #mini-panel-related_content h3.pane-title {
   color: #ffffff;
@@ -7927,7 +7944,7 @@ a.more-link:before {
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container {
   background-color: #dfd8e4;
-  min-height: 598px;
+  min-height: 535px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image {
   min-height: 202px;
@@ -7936,17 +7953,20 @@ a.more-link:before {
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
   margin: 0 auto;
-  padding: 25px;
   max-height: 260px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
+  overflow: hidden;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
   margin-top: 15px;
+}
+.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
 }
 .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
@@ -8192,6 +8212,9 @@ a.more-link:before {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
@@ -8993,6 +9016,10 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   color: #ffffff;
   margin-top: 20px;
 }
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
+}
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 a,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
@@ -9462,6 +9489,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
@@ -10006,6 +10036,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   padding: 15px;
   color: #ffffff;
   margin-top: 20px;
+}
+.page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-related-partners .node-partner h4 {
+  min-height: 45px;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-related-partners .node-partner h4 a {
   font-size: 1em;
