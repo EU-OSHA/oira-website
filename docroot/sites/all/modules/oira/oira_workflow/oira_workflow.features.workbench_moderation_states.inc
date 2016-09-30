@@ -33,7 +33,6 @@ function oira_workflow_workbench_moderation_export_states() {
       'description' => 'Web team set the content from Ready To Publish to Published',
       'weight' => -3,
     ),
-    'ready_to_publish' => FALSE,
     'to_be_approved' => array(
       'name' => 'to_be_approved',
       'label' => 'To Be Approved',
