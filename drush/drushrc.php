@@ -496,6 +496,11 @@ $options['init-modules'] = array(
   'search_api_attachments_field_collections',
   'search_api_title2',
 
+  'ldap_servers',
+  'ldap_user',
+  'ldap_authentication',
+  'ldap_authorization',
+
   // serrvices
   'services',
   'rest_server',

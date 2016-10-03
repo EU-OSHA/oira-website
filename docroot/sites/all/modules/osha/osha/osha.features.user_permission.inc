@@ -14,6 +14,7 @@ function osha_user_default_permissions() {
   $permissions['access PDF version'] = array(
     'name' => 'access PDF version',
     'roles' => array(
+      'Superadministrator' => 'Superadministrator',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -25,6 +26,7 @@ function osha_user_default_permissions() {
   $permissions['access news feeds'] = array(
     'name' => 'access news feeds',
     'roles' => array(
+      'Superadministrator' => 'Superadministrator',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -36,6 +38,7 @@ function osha_user_default_permissions() {
   $permissions['access site-wide contact form'] = array(
     'name' => 'access site-wide contact form',
     'roles' => array(
+      'Superadministrator' => 'Superadministrator',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
     ),
@@ -46,6 +49,7 @@ function osha_user_default_permissions() {
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
     'roles' => array(
+      'Superadministrator' => 'Superadministrator',
       'administrator' => 'administrator',
     ),
     'module' => 'comment',
@@ -55,6 +59,7 @@ function osha_user_default_permissions() {
   $permissions['post comments'] = array(
     'name' => 'post comments',
     'roles' => array(
+      'Superadministrator' => 'Superadministrator',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
@@ -66,6 +71,7 @@ function osha_user_default_permissions() {
   $permissions['skip comment approval'] = array(
     'name' => 'skip comment approval',
     'roles' => array(
+      'Superadministrator' => 'Superadministrator',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
