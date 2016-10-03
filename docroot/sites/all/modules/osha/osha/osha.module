@@ -586,7 +586,7 @@ function osha_field_formatter_view($entity_type, $entity, $field, $instance, $la
       break;
 
     case 'text_default':
-      if (function_exists('osha_text_formatter_' . $entity->{$bundle_field} . '_view')) {
+      if (!empty($entity->{$bundle_field}) && function_exists('osha_text_formatter_' . $entity->{$bundle_field} . '_view')) {
         $element = call_user_func('osha_text_formatter_' . $entity->{$bundle_field} . '_view', $entity_type, $entity, $field, $instance, $langcode, $items, $display);
       }
       else {
