@@ -155,6 +155,43 @@ function oira_partner_views_field_content_count_callback($node) {
   return drupal_render($element);
 }
 
+/**
+ * Implments hook_form_FORM_ID_alter().
+ */
+function oira_partner_form_user_profile_form_alter(&$form, $form_state) {
+  global $user;
+  if (in_array(ROLE_OIRA_PARTNER, $user->roles)) {
+    $form['field_cmw_mail_notifications']['#access'] = FALSE;
+    $form['#submit'][] = 'oira_partner_user_profile_form_redirect';
+  }
+  $form['field_crm_guid']['#access'] = FALSE;
+  $form['field_user_partner_guid']['#access'] = FALSE;
+
+  $form['redirect']['#access'] = FALSE;
+  $form['masquerade']['#access'] = FALSE;
+  $form['flickr']['#access'] = FALSE;
+  $form['metatags']['#access'] = FALSE;
+  $form['tmgmt_translation_skills']['#access'] = FALSE;
+  $form['contact']['#access'] = FALSE;
+  $form['contact']['contact']['#access'] = FALSE;
+  $form['mimemail']['#access'] = FALSE;
+  $form['mimemail']['mimemail_textonly']['#access'] = FALSE;
+  $form['field_flickr_tags']['#access'] = FALSE;
+  $form['locale']['#access'] = FALSE;
+  $form['locale']['language']['#access'] = FALSE;
+}
+
+/**
+ * For partners, when the user changes the password and saves changes, the system
+ * should redirect them to the Private Zone.
+ */
+function oira_partner_user_profile_form_redirect($form, &$form_state) {
+  $partner = oira_partner_get_account_partner();
+  $form_state['redirect'] = 'node/' . $partner->nid;
+  drupal_redirect_form($form_state);
+}
+
+
 
 /**
  * Implements hook_block_info().
