@@ -508,7 +508,7 @@ class LdapServer {
       if (is_array($new_val) && is_array($old_value) && count(array_diff($new_val, $old_value)) == 0) {
         unset($new_entry[$key]);
       }
-      elseif ($old_value_is_scalar && !is_array($new_val) && drupal_strtolower($old_value) == drupal_strtolower($new_val)) {
+      elseif (isset($old_value_is_scalar) && $old_value_is_scalar && !is_array($new_val) && drupal_strtolower($old_value) == drupal_strtolower($new_val)) {
         unset($new_entry[$key]); // don't change values that aren't changing to avoid false permission constraints
       }
     }
