@@ -10,10 +10,7 @@ function osha_search_search_form($form, $form_state) {
   $search_callback = 'osha_search_callback_search';
 
   $text = _hwc_practical_tool_get_req_param($form_state, 'search_block_form');
-  if (empty($text)) {
-    $_GET['sort'] = 'alphabetically';
-  }
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'score');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
 
   $form = array(
     '#action' => $action,
