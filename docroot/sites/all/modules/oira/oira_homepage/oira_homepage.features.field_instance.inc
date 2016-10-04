@@ -207,7 +207,7 @@ function oira_homepage_field_default_field_instances() {
         'settings' => array(
           'field_formatter_class' => '',
         ),
-        'type' => 'link_default',
+        'type' => 'link_absolute',
         'weight' => 3,
       ),
       'osha_resources' => array(

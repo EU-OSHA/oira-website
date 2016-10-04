@@ -109,6 +109,11 @@ function osha_resources_field_formatter_info() {
       'field types' => array('link_field'),
       'description' => 'Display link with node url.',
     ),
+    'internal_link_text' => array(
+      'label' => 'Internal link as text',
+      'field types' => array('link_field'),
+      'description' => 'Display link as text url.',
+    ),
   );
   return $info;
 }
@@ -152,7 +157,9 @@ function osha_resources_field_formatter_settings_form_alter(array &$settings_for
  * Implements hook_field_formatter_view().
  */
 function osha_resources_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  global $base_url;
   $element = array();
+
   switch ($display['type']) {
     case 'file_as_title':
       foreach ($items as $delta => $item) {
@@ -176,7 +183,20 @@ function osha_resources_field_formatter_view($entity_type, $entity, $field, $ins
     case 'internal_link_title':
       foreach($items as $delta => $item) {
         $link = l($entity->title, $item['url']);
+        if ($entity->type == 'slide' && strncasecmp('http://', $item['url'], 7) != 0 && strncasecmp('https://', $item['url'], 8) != 0) {
+          $url = $base_url . $item['url'];
+          $link = l($entity->title, $url);
+        }
         $element[$delta]['#markup'] = $link;
+      }
+      break;
+    case 'internal_link_text':
+      foreach($items as $delta => $item) {
+        $url = $item['url'];
+        if ($entity->type == 'slide' && strncasecmp('http://', $item['url'], 7) != 0 && strncasecmp('https://', $item['url'], 8) != 0) {
+          $url = $base_url . $item['url'];
+        }
+        $element[$delta]['#markup'] = $url;
       }
       break;
   }

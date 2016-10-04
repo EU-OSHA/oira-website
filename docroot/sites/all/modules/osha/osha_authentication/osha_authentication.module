@@ -145,7 +145,7 @@ function osha_authentication_user_login(&$edit, $user) {
     workbench_access_rebuild_user($user->uid, array());
     foreach($authorization as $role => $sections) {
       switch($role) {
-        case ROLE_CAMPAIGN_PARTNER:
+        case ROLE_OIRA_PARTNER:
           try {
             workbench_access_rebuild_user($user->uid, array_unique($sections));
           } catch(Exception $e) {
