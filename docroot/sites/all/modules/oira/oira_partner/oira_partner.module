@@ -317,12 +317,10 @@ function oira_partner_node_presave($node) {
         ]);
       }
     }
-
-
   }
 
   // For Partners content, the content with country inherit the country.
-  if (variable_get('workbench_access_node_type_' . $node->type, 0)) {
+  if (in_array($node->type, _oira_get_content_types_for_partners())) {
     if (!empty($node->workbench_access)) {
       if (is_array($node->workbench_access)) {
         $section_id = current($node->workbench_access);
