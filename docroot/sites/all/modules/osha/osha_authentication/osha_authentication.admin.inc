@@ -59,7 +59,7 @@ function osha_authentication_get_role_from_dn($group_dn) {
     )) {
     $role = ROLE_OIRA_PARTNER;
   }
-//  else if ($group_dn == 'cn=RVMN,ou=HWC,ou=Sites,dc=osha,dc=europa,dc=eu') {
+//  else if ($group_dn == 'cn=RVMN,ou=OiRA,ou=Sites,dc=osha,dc=europa,dc=eu') {
 //    $role = OSHA_WORKFLOW_ROLE_REVIEW_MANAGER;
 //  }
   else if ($group_dn == 'cn=TRLIAS,ou=OiRA,ou=Sites,dc=osha,dc=europa,dc=eu') {
@@ -163,7 +163,7 @@ function osha_authentication_block_disabled_ldap_accounts($ldap_server, $ldap_ac
 function osha_authentication_ldap_get_site_users($ldap_server) {
   $ret = array();
   /** @var LDAPServer $ldap_server */
-  $ldap_groups = $ldap_server->search('ou=HWC,ou=Sites,dc=osha,dc=europa,dc=eu', 'cn=*', array('dn', 'memberUid', 'cn'));
+  $ldap_groups = $ldap_server->search('ou=OiRA,ou=Sites,dc=osha,dc=europa,dc=eu', 'cn=*', array('dn', 'memberUid', 'cn'));
   if (!$ldap_groups) {
     return $ret;
   }
