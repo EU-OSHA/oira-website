@@ -20,7 +20,9 @@ jQuery(document).ready(function () {
 	    if(windowWidth > 992){
 	    	//jQuery("#block-search-form input").css("display", "block");
 	    	jQuery("#block-search-form input").show();
-	    };
+	    	jQuery(".quicktabs-tabs-container").show();
+	    	//jQuery(".hwc-alphabet-container").css("display", "block");
+	    }
 	    if(windowWidth <= 750){
 	    	jQuery(".breadcrum-container").hide();
 	    }else{
@@ -28,6 +30,7 @@ jQuery(document).ready(function () {
 	    	jQuery(".flickr-credit").show();
 	    	//show partners info for tablet and pc
 	    	jQuery(".pane-contact-information-partner > .pane-content, .pane-node-field-social-profile > .pane-content, .pane-node-field-collaborator > .pane-content").show();
+	    	//jQuery(".hwc-alphabet-container").css("display", "none");
 	    }
 
 	});
@@ -74,18 +77,35 @@ jQuery(document).ready(function () {
 
 	
 
-	/*specific functions for tablet and/or mobile */
-	funcionesPC();
+	/*specific functions for pc, tablet and mobile */
+	funcionesPc();
+
+	funcionesPcTablet();
 
 	funcionesTabletMovil();
 
 	funcionesMovil();
 
-	function funcionesPC () {
-		if(windowWidth > 992){//<-----functions for PC
+	function funcionesPc () {
+		if(windowWidth > 992){//<-----functions for Pc
 			jQuery(".flickr-credit").hide();
 			jQuery(".flickr-wrap").hover(function(){
 				jQuery(".flickr-credit", this).stop().slideToggle('fast').show();
+			});
+		}
+	}
+
+	function funcionesPcTablet () {
+		if(windowWidth > 750){//<-----functions for Pc and/or tablet
+
+			//add automatic scroll for eu partners
+			jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("col-sm-6");
+			jQuery(".page-country-profile-eu .country-partner-wrapper").click(function(){
+				jQuery(".page-country-profile-eu .country-partner-wrapper").removeClass("active");
+				jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("has-open-partner");
+				jQuery(this).addClass("active");
+				jQuery(this).removeClass("has-open-partner");
+			    jQuery("html, body").animate({ scrollTop: 290 }, 600);
 			});
 		}
 	}
@@ -138,20 +158,46 @@ jQuery(document).ready(function () {
 		if(windowWidth <= 750){//<-----functions for mobile
 
 			//change background to alphabet partners list
-			jQuery(".char-anchor:odd").css("background-color", "white");
-			jQuery(".char-anchor:odd").next().css("background-color", "white");
-			
+			//jQuery(".char-anchor:odd").css("background-color", "white");
+			//jQuery(".char-anchor:odd").next().css("background-color", "white");
+		
+			//add automatic scroll for eu partners
+			jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("col-sm-6");
+			jQuery(".page-country-profile-eu .country-partner-wrapper").click(function(){
+				jQuery(".page-country-profile-eu .country-partner-wrapper").removeClass("active");
+				jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("has-open-partner");
+				jQuery(this).addClass("active");
+				jQuery(this).removeClass("has-open-partner");
+			    jQuery("html, body").animate({ scrollTop: jQuery(this).offset().top }, 300);
+			});
+
+			//hide filters buttons on clik and show on select filter
+			jQuery(".quicktabs-toggle").click(function(){
+				jQuery(this).hide();
+				jQuery(".toggle-alpha-pager").hide();
+				jQuery(".quicktabs-filters-clear").hide();
+			});
+			jQuery(".toggle-alpha-pager").click(function(){
+				jQuery(this).hide();
+				jQuery(".quicktabs-toggle").hide();
+			});
+			jQuery(".quicktabs-tabs-container li a").click(function(){
+				jQuery(".quicktabs-toggle").show();
+				jQuery(".toggle-alpha-pager").show();
+				jQuery(".quicktabs-filters-clear").show();
+				jQuery(".quicktabs-tabs-container").hide();
+				//jQuery(".hwc-alphabet-container").hide();
+			});
+			jQuery(".hwc-alphabet-container").click(function(){
+				jQuery(".quicktabs-toggle").show();
+				jQuery(".toggle-alpha-pager").show();
+				jQuery(this).hide();
+				//jQuery(".quicktabs-tabs-container").hide();
+			});
 		}
 	}
 	
-	jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("col-sm-6");
-	jQuery(".page-country-profile-eu .country-partner-wrapper").click(function(){
-		jQuery(".page-country-profile-eu .country-partner-wrapper").removeClass("active");
-		jQuery(".page-country-profile-eu .country-partner-wrapper").addClass("has-open-partner");
-		jQuery(this).addClass("active");
-		jQuery(this).removeClass("has-open-partner");
-	    jQuery("html, body").animate({ scrollTop: 290 }, 600);
-	});
+	
 	
 
 

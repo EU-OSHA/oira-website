@@ -1101,6 +1101,77 @@ h1.page-header {
 }
 /*END COUNTRY PROFILE*/
 
+/* EU LEVEL COUNTRY
+*************************************************/
+.page-country-profile-eu{
+	.country-partners-container{
+		.country-partner-wrapper:nth-child(2n+1){
+			border-right: none !important;
+		}
+		.country-partner-wrapper:last-child{
+			.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+				//border-bottom: none;
+			}
+		}
+		.country-partner-wrapper{
+			div[id^="mini-panel-partner_in_country"]{
+				margin: 0px 0px;
+				.panels-flexible-row{
+					.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+						padding-top: 30px;
+    					border-bottom: none;
+    					.partner-image-container{
+							img{
+								max-width: 140px;
+							}
+    					}
+    					.partner-text-container{
+							h2{
+								text-align: center !important;
+								font-size: @font-size1-4;
+							}
+    					}
+					}
+					.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
+						.partner-contact-container,
+						.partner-social-container,
+						.partner-colaborators-container,
+						.partner-text2-container {
+							border-bottom: 2px solid @color-primary-dark;
+							.pane-contact-information-partner,
+							.pane-node-field-social-profile,
+							.pane-node-field-collaborator,
+							.pane-taxonomy-term-field-ncw-fp-link{
+								> .pane-content{
+									border-bottom: none;
+								}
+							}
+						}
+						.partner-text2-container{
+							border-bottom: none;
+							.pane-content{
+								border-bottom: 2px solid @color-primary-dark !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		.active{
+			float: none;
+			clear: both;
+			position: inherit;
+			margin-right: 0px !important;
+		}
+		.has-open-partner{
+			float: none;
+			border-left: none;
+			border-right: none !important;
+		}
+	}
+}
+/*END EU LEVEL COUNTRY*/
+
 /*PARTNER DETAIL PAGE
 **********************************/
 .node-type-partner{
@@ -1360,7 +1431,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	.quicktabs-tabpage {
 		div[id ^= "hwc-char-"]{
     		padding: 15px 15px 0px 15px;
-    		margin-top: 0px !important;
+    		//margin-top: 0px !important;
 		}
 		.quicktabs-views-group{
 			padding: 0px 15px;
@@ -1666,7 +1737,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
     	margin-left: 0px;
     	>li a{
     		margin: 0px !important;
-    		padding: 15px !important;
+    		//padding: 15px !important;
     	}
 	}
 }
@@ -1679,7 +1750,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	position: inherit !important;
 	display: none;
 	margin-bottom: 15px;
-	max-width: 340px;
+	//max-width: 340px;
 	.hwc-char-link{
 		margin: 0px 0px;
 		padding: 5px 8px;

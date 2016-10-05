@@ -1,6 +1,6 @@
 <?php
 
-$aliases['staging'] = array(
+$aliases['edw-staging'] = array(
   'uri' => 'osha.edw.ro',
   'db-allows-remote' => TRUE,
   'remote-host' => 'php-osha.edw.ro',
@@ -12,10 +12,12 @@ $aliases['staging'] = array(
   'command-specific' => array(
     'sql-sync' => array(
       'simulate' => '1',
-      'source-dump' => '/tmp/source-dump.sql',
+      'source-dump' => '/tmp/source-oira-dump.sql',
     ),
   ),
 );
+
+$aliases['staging'] = $aliases['edw-staging'];
 
 // This alias is used in install and update scripts.
 // Rewrite it in your aliases.local.php as you need.
