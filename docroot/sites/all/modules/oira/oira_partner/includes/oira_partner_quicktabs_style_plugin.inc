@@ -39,7 +39,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
     $tab_index = 0;
     foreach ($sets as $title => $records) {
       $tab_index++;
-      usort($records, 'oira_partner_quicktabs_sort_content');
+//      usort($records, 'oira_partner_quicktabs_sort_content');
       $has_sector = FALSE;
       $all_group_counter = 0;
       $content_type = '';

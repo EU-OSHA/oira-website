@@ -82,6 +82,7 @@ features[variable][] = owlcarousel_stop_on_hover_owlcarousel_settings_oira-homep
 features[variable][] = owlcarousel_theme_owlcarousel_settings_oira-homepage
 features[variable][] = owlcarousel_touch_drag_owlcarousel_settings_oira-homepage
 features[variable][] = owlcarousel_transition_style_owlcarousel_settings_oira-homepage
+features[variable][] = xmlsitemap_settings_node_slide
 features[views_view][] = slideshow
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][image] = image

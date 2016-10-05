@@ -109,6 +109,16 @@ function oira_partner_views_default_views() {
     'osha_date_theme' => '',
     'field_formatter_class' => '',
   );
+  /* Sort criterion: Content: Revised date (field_revised_date) */
+  $handler->display->display_options['sorts']['field_revised_date_value']['id'] = 'field_revised_date_value';
+  $handler->display->display_options['sorts']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
+  $handler->display->display_options['sorts']['field_revised_date_value']['field'] = 'field_revised_date_value';
+  $handler->display->display_options['sorts']['field_revised_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['sorts']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['sorts']['field_publication_date_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

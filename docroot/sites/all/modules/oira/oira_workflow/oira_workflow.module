@@ -209,7 +209,11 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       _oira_workflow_partner_node_form_alter($form, $form_state);
     }
 
-
+    if (_oira_content_is_in_review($node)) {
+      $form['revision_information']['log']['#default_value'] = '';
+      $form['revision_information']['log']['#element_validate'][] = '_oira_workflow_log_required_validate';
+      $form['revision_information']['log']['#states']['required'] = array(':input[name=workbench_moderation_state_new]' => array('value' => 'draft'));
+    }
   }
 
   // Implements permission select content section.
@@ -220,6 +224,102 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
     $form['workbench_access']['workbench_access']['#title'] = 'Partner';
     $form['workbench_access']['workbench_access']['#options']['section'] = 'General Public';
   }
+
+
+}
+
+function _oira_workflow_log_required_validate($element, &$form_state) {
+  $values = $form_state['values'];
+  if (in_array($values['workbench_moderation_state_current'],
+    array(OSHA_WORKFLOW_STATE_TO_BE_APPROVED, OSHA_WORKFLOW_STATE_TO_BE_REVIEWED))
+    && $values['workbench_moderation_state_new'] == OSHA_WORKFLOW_STATE_DRAFT
+    && empty($values[$element['#name']])) {
+    form_error($element, t('Please provide an explanation message why are you rejecting this content.'));
+  }
+}
+
+function _oira_content_is_in_review($node) {
+  return !empty($node->workbench_moderation['current']) &&
+    in_array(
+      $node->workbench_moderation['current']->state,
+      array(OSHA_WORKFLOW_STATE_TO_BE_APPROVED, OSHA_WORKFLOW_STATE_TO_BE_REVIEWED)
+    );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oira_workflow_form_workbench_moderation_moderate_form_alter(&$form, &$form_state, $form_id) {
+  if (_oira_content_is_in_review($form['node']['#value'])) {
+    $form['state']['#ajax'] = array(
+      'callback' => '_oira_workflow_moderation_rejecting_ajax_callback',
+      'wrapper' => $form['#id'],
+      'method' => 'replace',
+      'effect' => 'fade',
+    );
+    if (!empty($form_state['values']['state']) && $form_state['values']['state'] == OSHA_WORKFLOW_STATE_DRAFT) {
+      $form['message'] = array(
+        '#type' => 'textarea',
+        '#title' => 'Message',
+        '#required' => TRUE,
+      );
+      $form['submit']['#weight'] = 3;
+    }
+    // Hijack workbench_moderation_moderate_form_submit
+    $form['#submit'] = array('_oira_workflow_save_message_submit');
+  }
+}
+
+function _oira_workflow_moderation_rejecting_ajax_callback($form, $form_state) {
+  return $form;
+}
+
+
+/**
+ * Hijack workbench_moderation_moderate_form_submit.
+ */
+function _oira_workflow_save_message_submit($form, $form_state) {
+  if (_workbench_moderation_moderate_access($form_state['values']['node'], $form_state['values']['state'])) {
+    $node = node_load($form_state['values']['node']->nid, $form_state['values']['node']->vid);
+
+    workbench_moderation_moderate($node, $form_state['values']['state']);
+  }
+
+  // Update log revision when rejecting.
+  if (!empty($form_state['values']['message'])) {
+    $vid = db_select('workbench_moderation_node_history', 'wnh')
+      ->fields('wnh', array('vid'))
+      ->condition('nid', $form['node']['#value']->nid)
+      ->orderBy('hid', 'DESC')
+      ->execute()
+      ->fetchField(0);
+  }
+  if (!empty($vid)) {
+    db_update('node_revision')
+      ->fields(array('log' => filter_xss($form_state['values']['message'])))
+      ->condition('vid', $vid)
+      ->execute();
+  }
+
+  // This is not ideal, but if the form is invoked from a node's draft tab and
+  // used to publish the node, the draft tab will not be available after
+  // publishing, and Drupal's will throw an access denied error before it is
+  // able to redirect to the published revision.
+  if (!empty($form['#destination'])) {
+    if ($form_state['values']['state'] == workbench_moderation_state_published()) {
+      if ($uri = entity_uri('node', $form['node']['#value'])) {
+        // Disable lookup of the path alias, since the path alias might get
+        // changed by modules such as Pathauto.
+        $uri['options']['alias'] = TRUE;
+        $form_state['redirect'] = array($uri['path'], $uri['options']);
+      }
+    }
+    else {
+      $form_state['redirect'] = $form['#destination'];
+    }
+    drupal_redirect_form($form_state);
+  }
+
 }
 
 /**
