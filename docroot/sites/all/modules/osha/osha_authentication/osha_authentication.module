@@ -43,7 +43,7 @@ function osha_authentication_form_user_pass_alter(&$form, &$form_state) {
   $form['name']['#title'] = t('E-mail');
 }
 
-function hwc_frontend_menu_local_tasks_alter(&$data) {
+function osha_authentication_menu_local_tasks_alter(&$data) {
   if (!empty($data['tabs'][0]['output']) && is_array($data['tabs'][0]['output'])) {
     foreach($data['tabs'][0]['output'] as &$tab) {
       if ($tab['#link']['path'] == 'user/password') {
