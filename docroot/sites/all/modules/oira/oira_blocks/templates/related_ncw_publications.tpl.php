@@ -9,7 +9,7 @@
   <?php endforeach; ?>
   <?php if (!empty($view_all_url)): ?>
   <div class="view-all-url">
-    <a href="<?php print $view_all_url; ?>">
+    <a href="<?php print $view_all_url; ?>" target="_blank">
       <?php print t('View all'); ?>
     </a>
   </div>
