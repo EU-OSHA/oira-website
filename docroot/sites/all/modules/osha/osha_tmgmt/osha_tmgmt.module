@@ -2026,9 +2026,44 @@ function osha_tmgmt_job_items_mass_change_validate($form, $form_state) {
   }
 
   if (!empty($values['table'])) {
-    $values = array_filter(array_values($values['table']));
-    if (empty($values)) {
+    $vals = array_filter(array_values($values['table']));
+    if (empty($vals)) {
       form_set_error('nodes][table', t('Please select at least one row to mark it ready for publish'));
+      return;
+    }
+  }
+
+
+  // Check if the selected state is allowed for the selected items.
+  $selected_items = array();
+  foreach ($values['table'] as $id) {
+    if (!empty($id)) {
+      $selected_items[] = $id;
+    }
+  }
+  $job = $form_state['tmgmt_job'];
+  $publish = array();
+  foreach ($values['table'] as $nid) {
+    if (!empty($nid)) {
+      $publish[] = $nid;
+    }
+  }
+  $items = $job->getItems();
+  $new_state = $values['new_state'];
+  $string_denied_states = array(
+    OSHA_TMGMT_JOB_ITEM_STATE_TranslationValidationRequired,
+    OSHA_TMGMT_JOB_ITEM_STATE_TranslationValidated,
+    OSHA_TMGMT_JOB_ITEM_STATE_TranslatedReadyToPublish,
+  );
+  $string_types = array('menu_link');
+  foreach ($items as $job_item) {
+    $id = $job_item->item_type . '-' . $job_item->item_id;
+    if (in_array($id , $selected_items)) {
+      if (in_array($job_item->item_type, $string_types)
+        && in_array($new_state, $string_denied_states)) {
+        form_set_error('nodes][table', t('You cannot set strings and menu links to state @state. ', array('@state' => osha_tmgmt_get_job_item_state_label($new_state))));
+        return;
+      }
     }
   }
 }
@@ -2104,7 +2139,7 @@ function osha_tmgmt_get_job_item_states() {
     TMGMT_JOB_ITEM_STATE_ABORTED => t('Translation Rejected'),
     OSHA_TMGMT_JOB_ITEM_STATE_TranslationValidated => t('Translation Validated'),
 //    OSHA_TMGMT_JOB_ITEM_STATE_TranslatedReadyToPublish => t('Translated Ready to Publish'),
-    TMGMT_JOB_ITEM_STATE_ACCEPTED => t('Ready to Publish'),
+    TMGMT_JOB_ITEM_STATE_ACCEPTED => t('(Ready to) Publish'),
 //    TMGMT_JOB_ITEM_STATE_ACCEPTED => t('Published'),
   );
 }
