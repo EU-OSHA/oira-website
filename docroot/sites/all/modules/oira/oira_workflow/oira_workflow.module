@@ -164,7 +164,8 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       '#description' => "After partner submits the content, he can still edit for this amount of time"
     );
   }
-  if (!empty($form['#node']) && in_array($form['type']['#value'], _oira_get_content_types_for_partners())) {
+
+  if (!empty($form['#node']->type) && in_array($form['#node']->type, _oira_get_content_types_for_partners())) {
     $node = $form_state['node'];
     $can_delete = user_access("delete any {$node->type} content") || user_access("delete own {$node->type} content");
     if (!empty($node->nid) && $can_delete && in_array(ROLE_OIRA_PARTNER, $user->roles)) {
