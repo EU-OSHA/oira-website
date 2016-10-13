@@ -12,10 +12,12 @@
                 });
             });
             $('.view-id-country_partner_content').once('hwc_tabs_responsive', function() {
-                $('ul.quicktabs-tabs > li a').on('click', function() {
+                $('ul.quicktabs-tabs > li a').on('click', function(event) {
+                    event.preventDefault();
                     if ($('.quicktabs-toggle').is(':visible')) {
                         $('.quicktabs-tabs-container').toggle();
                     }
+                    return false;
                 });
                 $('.quicktabs-toggle').click(function(){
                     $('.quicktabs-tabs-container').toggle();
