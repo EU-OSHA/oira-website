@@ -79,7 +79,7 @@
       <div class="top-header-content row">
         <div class="header-logo col-xs-8 col-sm-5 col-md-4">
           <?php if ($logo): ?>
-            <a class="logo navbar-btn pull-left" href="https://osha.europa.eu/" title="<?php print t('EU-OSHA corporate website'); ?>">
+            <a class="logo navbar-btn pull-left" href="https://osha.europa.eu/" target="_blank" title="<?php print t('EU-OSHA corporate website'); ?>">
               <img src="<?php print $logo; ?>" alt="<?php print t('EU-OSHA logo'); ?>" />
             </a>
           <?php endif; ?>

@@ -630,7 +630,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'generic_detail_thumbnail',
+    'image_style' => 'crop_and_scale_600x350__background_dfd8e4',
     'image_link' => '',
     'field_formatter_class' => '',
   );
@@ -931,7 +931,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'generic_detail_thumbnail',
+    'image_style' => 'crop_and_scale_600x350__background_dfd8e4',
     'image_link' => '',
     'field_formatter_class' => '',
   );

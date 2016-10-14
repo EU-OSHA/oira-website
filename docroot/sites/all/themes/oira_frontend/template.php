@@ -35,7 +35,8 @@ function oira_frontend_menu_link__menu_block($variables) {
   if (!empty($element['#localized_options']['content']['image'])
     && $image_url = file_create_url($element['#localized_options']['content']['image'])) {
     $image = '<img src="' . $image_url . '"/>';
-    $output_image = l($image, $element['#href'], array('html' => TRUE));
+    $options = array_merge($element['#localized_options'], array('html' => TRUE));
+    $output_image = l($image, $element['#href'], $options);
   }
   return '<li' . drupal_attributes($element['#attributes']) . '>
     <div class="introduction-image">' . $output_image . '</div>

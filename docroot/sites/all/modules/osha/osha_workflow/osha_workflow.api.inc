@@ -529,8 +529,12 @@ class OshaWorkflowPermissions {
       if (self::userHasRole(OSHA_WORKFLOW_ROLE_REVIEW_MANAGER, $user)) {
         $node_in_rm_section = osha_workflow_node_in_rm_section($node, $user);
       }
+      $is_pm = FALSE;
+//      if (self::userHasRole(OSHA_WORKFLOW_ROLE_PROJECT_MANAGER, $user) && _osha_workflow_node_has_pm($node, $user)) {
+//        $is_pm = TRUE;
+//      }
       $is_admin = self::userHasRole(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, $user);
-      return $is_admin || $node_in_rm_section;
+      return $is_pm || $is_admin || $node_in_rm_section;
     }
     return FALSE;
   }
@@ -700,8 +704,7 @@ class OshaWorkflowNotifications {
    */
   public static function notifyOnChangeFromDraftOrFinalDraftToBeReviewed($node) {
     $users = osha_workflow_get_node_rm($node);
-    $users[] = osha_workflow_get_project_manager($node->nid);
-
+//    $users[] = _osha_workflow_get_current_pm_approver($node->nid);
     OshaWorkflowNotifications::sendEmail($users, array('node' => $node), 'osha_workflow');
   }
 
@@ -727,7 +730,11 @@ class OshaWorkflowNotifications {
    */
   public static function notifyOnNodeApproved($node) {
     $users = osha_workflow_get_node_rm($node);
-    $users[] = osha_workflow_get_project_manager($node->nid);
+//    $pms = osha_workflow_get_pms_users($node->nid);
+    $pms = array();
+    if (!empty($pms)) {
+      $users = array_merge($users, $pms);
+    }
     OshaWorkflowNotifications::sendEmail($users, array('node' => $node), 'osha_workflow');
   }
 
@@ -741,7 +748,9 @@ class OshaWorkflowNotifications {
    */
   public static function notifyOnNodeRejected($node) {
     $users = osha_workflow_get_node_rm($node);
-    $users[] = osha_workflow_get_project_manager($node->nid);
+    if (!empty($pms)) {
+      $users = array_merge($users, $pms);
+    }
     OshaWorkflowNotifications::sendEmail($users, array('node' => $node), 'osha_workflow');
   }
 
@@ -881,13 +890,21 @@ class OshaWorkflowNotifications {
   }
 
   /**
+   * CW-1766 Notify Content Validator that his action is no longer needed.
+   */
+  public static function notifyTranslationValidatorsRemoved($validator, $tmgmt_job_item) {
+    OshaWorkflowNotifications::sendEmail($validator, array('tmgmt_job_item' => $tmgmt_job_item), 'osha_tmgmt', 'osha_tmgmt_content_validator_removed');
+  }
+
+  /**
    * Notify Project Manager that translation is ready to publish..
    *
    * @param TMGMTJobItem|OshaTMGMTJobItem $tmgmt_job_item
    *   Job created
    */
   public static function notifyTranslationProjectManager($tmgmt_job_item) {
-    $project_manager = osha_workflow_get_project_manager($tmgmt_job_item->item_id);
+//    $project_manager = _osha_workflow_get_current_pm_approver($tmgmt_job_item->item_id);
+    $project_manager = array();
     if (empty($project_manager)) {
       drupal_set_message(t('The node does not have a PM assigned. Please contact an administrator!'), 'warning');
     }
@@ -923,6 +940,10 @@ class OshaWorkflowNotifications {
    *   (Optional) Identifier for email type  to allow choosing proper template.
    */
   public static function sendEmail($users, $params, $module, $key = 'osha_workflow_notification') {
+    global $osha_workflow_block_mail;
+    if ($osha_workflow_block_mail == TRUE) {
+      return;
+    }
     if (empty($users)) {
       drupal_set_message('There are no users to notify about your action. Please report this to system administrator.', 'warning');
       return;
@@ -934,6 +955,7 @@ class OshaWorkflowNotifications {
     if (!is_array($users)) {
       $users = array($users);
     }
+
     foreach ($users as $user) {
       if (self::userAllowsEmailNotifications($user) && variable_get('osha_workflow_send_mail')) {
         $params['user'] = $user;

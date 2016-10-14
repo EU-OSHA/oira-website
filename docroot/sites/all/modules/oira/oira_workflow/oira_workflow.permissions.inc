@@ -112,6 +112,8 @@ function _oira_workflow_pm_permission() {
     'moderate content from draft to published',
     'moderate content from final_draft to needs_review',
     'moderate content from needs_review to to_be_approved',
+    'moderate content from needs_review to draft',
+    'moderate content from to_be_approved to draft',
     'moderate content from to_be_approved to published',
   );
 }
