@@ -340,11 +340,12 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['field_publication_date']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_publication_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
-    'format_type' => 'short_date_eu',
+    'format_type' => 'osha_day_only',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'osha_date_theme' => '',
     'field_formatter_class' => '',
   );
@@ -474,7 +475,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'generic_detail_thumbnail',
+    'image_style' => 'crop_and_scale_600x350__background_dfd8e4',
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
