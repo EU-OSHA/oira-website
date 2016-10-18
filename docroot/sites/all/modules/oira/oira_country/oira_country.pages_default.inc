@@ -767,7 +767,15 @@ function oira_country_default_page_manager_pages() {
     'body_classes_to_add' => 'page-country-lising',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Content',
+        'keyword' => 'node',
+        'name' => 'entity:node',
+        'entity_id' => '238',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
@@ -794,8 +802,9 @@ EU and national partners',
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 1,
-          1 => 'main-row',
+          0 => 2,
+          1 => 1,
+          2 => 'main-row',
         ),
         'parent' => 'canvas',
       ),
@@ -837,6 +846,25 @@ EU and national partners',
         'class' => 'container',
         'hide_empty' => 1,
       ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'intro',
+        ),
+        'parent' => 'main',
+        'class' => 'panel-page-introduction-text',
+        'hide_empty' => 0,
+      ),
+      'intro' => array(
+        'type' => 'region',
+        'title' => 'Intro',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -844,10 +872,11 @@ EU and national partners',
       'default' => NULL,
       'center' => NULL,
       'top' => NULL,
+      'intro' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = 'EU and national partners';
+  $display->title = '%node:title-field';
   $display->uuid = '6ec3c1d0-4f3f-4249-9470-bd1917d4750a';
   $display->content = array();
   $display->panels = array();
@@ -886,6 +915,36 @@ EU and national partners',
     $pane->uuid = '9ad54adf-80b2-4266-ab64-89ec7e31655a';
     $display->content['new-9ad54adf-80b2-4266-ab64-89ec7e31655a'] = $pane;
     $display->panels['center'][0] = 'new-9ad54adf-80b2-4266-ab64-89ec7e31655a';
+    $pane = new stdClass();
+    $pane->pid = 'new-761fbbfd-b2bb-4146-988e-da576d55eaa1';
+    $pane->panel = 'intro';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'context_entity:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '761fbbfd-b2bb-4146-988e-da576d55eaa1';
+    $display->content['new-761fbbfd-b2bb-4146-988e-da576d55eaa1'] = $pane;
+    $display->panels['intro'][0] = 'new-761fbbfd-b2bb-4146-988e-da576d55eaa1';
     $pane = new stdClass();
     $pane->pid = 'new-844c1bf3-37da-4874-a32c-ed3d28aa970c';
     $pane->panel = 'top';
