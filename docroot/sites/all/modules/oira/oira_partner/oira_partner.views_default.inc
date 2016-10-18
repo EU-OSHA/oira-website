@@ -287,7 +287,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['display_description'] = 'OiRA Partners Home page Block';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'custom_url';
-  $handler->display->display_options['link_url'] = 'national-partners';
+  $handler->display->display_options['link_url'] = 'oira-community';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';

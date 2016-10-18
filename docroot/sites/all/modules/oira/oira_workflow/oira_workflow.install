@@ -25,3 +25,15 @@ function oira_workflow_update_7001() {
   $role = user_role_load_by_name(ROLE_OIRA_SUPERVISOR);
   user_role_grant_permissions($role->rid, _oira_workflow_supervisor_permission());
 }
+
+/**
+ * NO-136 - fix PM perm.
+ */
+function oira_workflow_update_7002() {
+  $perm = array(
+    'moderate content from needs_review to draft',
+    'moderate content from to_be_approved to draft',
+  );
+  $role = user_role_load_by_name(ROLE_OIRA_PROJECT_MANAGER);
+  user_role_grant_permissions($role->rid, $perm);
+}
