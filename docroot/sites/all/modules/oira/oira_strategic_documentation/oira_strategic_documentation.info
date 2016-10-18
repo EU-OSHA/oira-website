@@ -37,6 +37,7 @@ features[field_instance][] = node-strategic_documentation-field_publication_date
 features[field_instance][] = node-strategic_documentation-field_resource_sdoc
 features[field_instance][] = node-strategic_documentation-field_revised_date
 features[field_instance][] = node-strategic_documentation-field_sector
+features[field_instance][] = node-strategic_documentation-field_wf_notification
 features[field_instance][] = node-strategic_documentation-title_field
 features[node][] = strategic_documentation
 features[variable][] = comment_anonymous_strategic_documentation
