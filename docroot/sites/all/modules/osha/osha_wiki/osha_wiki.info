@@ -11,7 +11,6 @@ dependencies[] = features
 dependencies[] = hwc_practical_tool
 dependencies[] = i18n_taxonomy
 dependencies[] = link
-dependencies[] = migrate
 dependencies[] = options
 dependencies[] = osha
 dependencies[] = osha_taxonomies
