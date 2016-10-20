@@ -8,6 +8,25 @@ include_once 'osha_wiki.features.inc';
 include_once 'osha_wiki.migrate.inc';
 
 define('OSHA_WIKI_CONTENT_TYPE', 'wiki_page');
+define('OSHA_WIKI_CONTENT_TYPE_WIKI', 'wiki_pages');
+
+function osha_wiki_migrate_api() {
+  return array(
+    'api' => 2,
+    'groups' => array(
+      'wiki' => array(
+        'title' => 'Import data from WIKI',
+      ),
+    ),
+    'migrations' => array(
+      OSHA_WIKI_CONTENT_TYPE_WIKI => array(
+        'group_name' => 'wiki',
+        'class_name' => 'OshaMigrateWiki',
+        'destination' => 'wiki_page',
+      ),
+    ),
+  );
+}
 
 /**
  * Define custom view mode for entities - wiki

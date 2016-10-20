@@ -331,6 +331,7 @@ function osha_entity_info_alter(&$entity_info) {
 
 function osha_disabled_language_list() {
   $disabled = array(
+    'ca',
     'sq',
     'bs',
     'sr',
@@ -375,6 +376,10 @@ function osha_language_list_options($native = FALSE) {
     }
   }
   return $return;
+}
+
+function osha_extra_language_list() {
+  return array('ca', 'tr', 'ru');
 }
 
 //function osha_admin_languages_form($form, &$form_state) {

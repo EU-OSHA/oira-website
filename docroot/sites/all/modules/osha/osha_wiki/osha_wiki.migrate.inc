@@ -83,7 +83,7 @@ class OshaMigrateWiki extends DynamicMigration {
    * {@inheritdoc}
    */
   protected function generateMachineName() {
-    return OSHA_MIGRATION_CONTENT_TYPE_WIKI;
+    return OSHA_WIKI_CONTENT_TYPE_WIKI;
   }
 
   /**
