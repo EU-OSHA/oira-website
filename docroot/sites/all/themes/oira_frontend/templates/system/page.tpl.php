@@ -73,7 +73,8 @@
  * @ingroup themeable
  */
 ?>
-<header class="site-header"><?php // print $navbar_classes; ?>
+<header>
+  <div class="site-header">
   <div class="top-header">
     <div class="top-header-container container">
       <div class="top-header-content row">
@@ -131,6 +132,7 @@
       </div>
     </div>
   <?php endif; ?>
+  </div>
 </header>
 <div class="page-content">
   <section class="page-content-header">
