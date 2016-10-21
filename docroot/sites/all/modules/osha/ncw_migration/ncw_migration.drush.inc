@@ -24,8 +24,8 @@ function ncw_migration_drush_command() {
 function drush_ncw_migration_hwc_migrate_all() {
   /* BE AWARE OF THE MIGRATIONS ORDERING! */
   $migrations = array(
-    'tax_country_status',
-    'tax_country',
+//    'tax_country_status',
+//    'tax_country',
     'tax_tags',
     'wiki_categories',
 
