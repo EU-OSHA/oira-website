@@ -112,6 +112,17 @@ function oira_frontend_panels_flexible($vars) {
   return $output;
 }
 
+/**
+ * Implements hook_process_html_tag().
+ */
+function oira_frontend_process_html_tag(&$variables) {
+  $tag = &$variables['element'];
+
+  if ($tag['#tag'] == 'script') {
+    $tag['#attributes']['type'] = 'text/javascript';
+  }
+}
+
 function oira_frontend_preprocess_page(&$vars) {
   global $language;
   if (drupal_is_front_page()) {
