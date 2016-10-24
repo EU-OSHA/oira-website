@@ -43,6 +43,7 @@ class PartnerMigration extends HwcCrmMigration {
       'field_organisation_rep',
       'field_social_profile',
       'field_orgtype',
+      'field_dedicated_oira_website',
     );
   }
 
@@ -195,6 +196,7 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml {
         $data->field_guid_main_contact = (string) $attributes['Textbox15'];
         $data->field_main_contact = trim((string) $attributes['Textbox16'] . ' ' . (string) $attributes['Textbox17']);
         $data->field_main_contact_email = (string) $attributes['Textbox18'];
+        $data->field_dedicated_oira_website = (string) $attributes['Textbox24'];
 
         // Try to assign a valid partner type term.
         $partner_type = (string) $attributes['Textbox22'];
