@@ -95,15 +95,21 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
     $tools = $q->execute()->fetchAllKeyed();
 
     $wiki_pages_no = $tools_no = 0;
-    $items = [0];
+    $items = [];
 
     while ($limit > 0) {
-      if ((reset($wiki_pages) > reset($tools) && $wiki_pages_no < ($limit - 1)) || $tools_no >= ($limit - 1)) {
+      if (
+        !empty($wiki_pages) &&
+        (
+          !empty($tools) && (reset($wiki_pages) > reset($tools) && $wiki_pages_no < ($limit - 1))
+          || $tools_no >= ($limit - 1)
+        )
+      ) {
         $items[] = key($wiki_pages);
         unset($wiki_pages[key($wiki_pages)]);
         $wiki_pages_no++;
       }
-      else {
+      elseif (!empty($tools)) {
         $items[] = key($tools);
         unset($tools[key($tools)]);
         $tools_no++;
