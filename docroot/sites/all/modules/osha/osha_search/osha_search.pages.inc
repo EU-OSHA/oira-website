@@ -238,7 +238,7 @@ function _osha_search_form_get_facets() {
       'options_callback_args' => array('country'),
     ),
     'field_sector' => array(
-      'label' => t('Category'),
+      'label' => t('Sector'),
       'field' => 'field_sector',
       'limit' => 50,
       'operator' => 'or',
