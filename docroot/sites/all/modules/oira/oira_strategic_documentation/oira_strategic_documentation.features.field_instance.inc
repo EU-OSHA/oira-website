@@ -724,6 +724,78 @@ function oira_strategic_documentation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance:
+  // 'node-strategic_documentation-field_wf_notification'.
+  $field_instances['node-strategic_documentation-field_wf_notification'] = array(
+    'bundle' => 'strategic_documentation',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'body' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_slideshow' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_wf_notification',
+    'label' => 'Disable notifications',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 16,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-strategic_documentation-title_field'.
   $field_instances['node-strategic_documentation-title_field'] = array(
     'bundle' => 'strategic_documentation',
@@ -808,6 +880,7 @@ function oira_strategic_documentation_field_default_field_instances() {
   t('Body');
   t('Co-author');
   t('Country');
+  t('Disable notifications');
   t('File');
   t('Image');
   t('Language');

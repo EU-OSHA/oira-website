@@ -307,7 +307,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -548,7 +548,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
     ),
     'entity_type' => 'node',
@@ -705,7 +705,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -799,7 +799,7 @@ function oira_promotional_material_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'oira_promotional_resources_row',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -925,6 +925,65 @@ function oira_promotional_material_field_default_field_instances() {
       ),
       'type' => 'date_popup',
       'weight' => 6,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-promotional_material-field_wf_notification'.
+  $field_instances['node-promotional_material-field_wf_notification'] = array(
+    'bundle' => 'promotional_material',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_wf_notification',
+    'label' => 'Disable notifications',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -1173,6 +1232,7 @@ function oira_promotional_material_field_default_field_instances() {
   t('Co-author');
   t('Country');
   t('Description');
+  t('Disable notifications');
   t('File');
   t('Image');
   t('Language');

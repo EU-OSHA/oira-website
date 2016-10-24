@@ -16,35 +16,6 @@ function ncw_migration_migrate_api() {
       ),
     ),
     'migrations' => array(
-//      'events' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags', 'tax_country'),
-//        'class_name' => 'NCWEventsMigration',
-//      ),
-//      'events_add_res' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags', 'tax_country'),
-//        'class_name' => 'NCWAdditionalResourcesEventsMigration',
-//      ),
-//      'publications' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(
-//          'tax_tags', 'tax_publication_types', 'publications_add_res',
-//          'news_add_res', 'press_releases_add_res',
-//          'highlights_add_res', 'notes_to_editor', 'tax_segment',
-//        ),
-//        'class_name' => 'NCWPublicationsMigration',
-//      ),
-//      'publications_add_res' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags', 'tax_publication_types'),
-//        'class_name' => 'NCWAdditionalResourcesPublicationsMigration',
-//      ),
-      'wiki_categories' => array(
-        'group_name' => 'ncw',
-        'dependencies' => array(),
-        'class_name' => 'NCWTaxonomyWikiCategoriesMigration',
-      ),
       'wiki_pages' => array(
         'group_name' => 'ncw',
         'dependencies' => array(
@@ -52,6 +23,13 @@ function ncw_migration_migrate_api() {
           'tax_tags',
         ),
         'class_name' => 'NCWWikiPagesMigration',
+        'entity_type' => 'node',
+      ),
+      'wiki_categories' => array(
+        'group_name' => 'ncw',
+        'dependencies' => array(),
+        'class_name' => 'NCWTaxonomyWikiCategoriesMigration',
+        'entity_type' => 'taxonomy_term',
       ),
       'news' => array(
         'group_name' => 'ncw',
@@ -59,97 +37,34 @@ function ncw_migration_migrate_api() {
           'tax_tags',
         ),
         'class_name' => 'NCWNewsMigration',
+        'entity_type' => 'node',
       ),
-//      'news_add_res' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags'),
-//        'class_name' => 'NCWAdditionalResourcesNewsMigration',
-//      ),
-//      'notes_to_editor' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags'),
-//        'class_name' => 'NCWNoteMigration',
-//      ),
-//      'press_releases' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(
-//          'tax_tags', 'publications_add_res', 'news_add_res',
-//          'press_releases_add_res',
-//          'highlights_add_res', 'notes_to_editor'
-//        ),
-//        'class_name' => 'NCWPressMigration',
-//      ),
-//      'press_releases_add_res' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags'),
-//        'class_name' => 'NCWAdditionalResourcesPressReleasesMigration',
-//      ),
       'highlights' => array(
         'group_name' => 'ncw',
         'dependencies' => array(
           'tax_tags',
         ),
+        'entity_type' => 'node',
         'class_name' => 'NCWHighlightMigration',
       ),
-//      'highlights_add_res' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags'),
-//        'class_name' => 'NCWAdditionalResourcesHighlightsMigration',
-//      ),
-//      'infographics' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array('tax_tags'),
-//        'class_name' => 'NCWInfographicsMigration',
-//      ),
-//      'press_contacts' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(),
-//        'class_name' => 'NCWPressContactMigration',
-//      ),
       'tax_country' => array(
         'group_name' => 'ncw',
         'dependencies' => array('tax_country_status'),
         'class_name' => 'NCWTaxonomyCountryMigration',
+        'entity_type' => 'taxonomy_term',
       ),
       'tax_country_status' => array(
         'group_name' => 'ncw',
         'dependencies' => array(),
         'class_name' => 'NCWTaxonomyCountryStatusMigration',
+        'entity_type' => 'taxonomy_term',
       ),
-//      'tax_fop_link_sections' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(),
-//        'class_name' => 'NCWTaxonomyFOPLinkSectionsMigration',
-//      ),
-//      'tax_newsletter_sections' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(),
-//        'class_name' => 'NCWTaxonomyNewsletterSectionsMigration',
-//      ),
-      // Don't migrate some types
-      // Magazine, Annual reports and other corporate publications, Promotional Material
-      // Evaluation reports, Corporate strategies and annual management plans
-//      'tax_publication_types' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(),
-//        'class_name' => 'NCWTaxonomyPublicationTypeMigration',
-//        'skip_ids' => array(4, 2, 3, 1, 3022),
-//      ),
-//      'tax_segment' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(),
-//        'class_name' => 'NCWTaxonomySegmentationMigration',
-//      ),
       'tax_tags' => array(
         'group_name' => 'ncw',
         'dependencies' => array(),
         'class_name' => 'NCWTaxonomyTagsMigration',
+        'entity_type' => 'taxonomy_term',
       ),
-//      'article' => array(
-//        'group_name' => 'ncw',
-//        'dependencies' => array(),
-//        'class_name' => 'NCWSingleArticleMigration',
-//      ),
     ),
   );
 }
@@ -431,19 +346,18 @@ abstract class AbstractNCWNodeMigration extends Migration {
         $to_be_removed[] =$to_remove->destid1;
         $this->getMap()->delete(array($to_remove->sourceid1));
       }
-      if (strpos($this->arguments['machine_name'], 'tax_') === 0) {
+      if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'taxonomy_term') {
         foreach ($to_be_removed as $tid) {
           taxonomy_term_delete($tid);
-          watchdog('ncw_migration', 'Deleting TERMS that are not in the source anymore: !tids.',
-            array('!tids' => implode(', ', $to_be_removed)), WATCHDOG_INFO);
+          watchdog('ncw_migration', 'Deleting TERMS that are not in the source anymore (@migration): !tids.',
+            array('!tids' => implode(', ', $to_be_removed), '@migration' => $this->arguments['machine_name']), WATCHDOG_INFO);
         }
       }
-      else {
+      else if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'node') {
         node_delete_multiple($to_be_removed);
-        watchdog('ncw_migration', 'Deleting NODES that are not in the source anymore: !nids.',
-          array('!nids' => implode(', ', $to_be_removed)), WATCHDOG_INFO);
+        watchdog('ncw_migration', 'Deleting NODES that are not in the source anymore (@migration): !nids.',
+          array('!nids' => implode(', ', $to_be_removed), '@migration' => $this->arguments['machine_name']), WATCHDOG_INFO);
       }
-
     }
   }
 }
