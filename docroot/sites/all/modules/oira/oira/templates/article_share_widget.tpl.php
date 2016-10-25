@@ -21,17 +21,17 @@
     <li class="share-this-article">
       <?php print $label; ?>
     </li>
-    <li id="facebook-share-button-<?php print $node->nid; ?>"  class="hwc-share-widget-button hwc-share-widget-facebook" data-href="">
+    <li class="hwc-share-widget-button hwc-share-widget-facebook">
       <a onclick="window.open(this.href, 'hwc-share', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
         href="https://www.facebook.com/sharer/sharer.php?u=<?php print $url ?>">Facebook</a>
     </li>
-    <li id="twitter-share-button-<?php print $node->nid; ?>" class="hwc-share-widget-button hwc-share-widget-twitter">
+    <li class="hwc-share-widget-button hwc-share-widget-twitter">
       <a href="<?php print $tweet_url; ?>">Twitter</a>
     </li>
-    <li id="linked-in-<?php print $node->nid; ?>" class="napo-share-widget-button napo-share-widget-linkedin">
+    <li class="napo-share-widget-button napo-share-widget-linkedin">
       <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $url; ?>">Linked in</a>
     </li>
-    <li id="google-plus-<?php print $node->nid; ?>" class="napo-share-widget-button napo-share-widget-google-plus">
+    <li class="napo-share-widget-button napo-share-widget-google-plus">
       <a onclick="window.open(this.href, 'hwc-share', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
          href="https://plus.google.com/share?url=<?php print $url; ?>">Google+</a>
     </li>
@@ -41,7 +41,7 @@
   (function($) {
 
     $(window).ready(function(){
-        $('#twitter-share-button-<?php print $node->nid; ?> a').click(function(event) {
+        $('.hwc-share-widget-button.hwc-share-widget-twitter a').click(function(event) {
           var width  = 575,
             height = 400,
             left   = ($(window).width()  - width)  / 2,
@@ -54,7 +54,7 @@
           window.open(this.href, 'twitter', opts);
           return false;
         });
-        $('#linked-in-<?php print $node->nid; ?> a').click(function() {
+        $('.napo-share-widget-button.napo-share-widget-linkedin a').click(function() {
           var width  = 575,
             height = 400,
             left   = ($(window).width()  - width)  / 2,
