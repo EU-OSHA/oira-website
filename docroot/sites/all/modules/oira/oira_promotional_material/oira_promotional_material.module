@@ -74,6 +74,7 @@ function oira_promotional_material_resources_formatter($items){
         $title .= " (" . strtoupper($langcode) . ")";
         $link_title = theme('file_icon', array(
           'file' => $file,
+          'alt' => $file->filename,
           'icon_directory' => $icon_directory
         ));
         $link_title .= " " . $title;
