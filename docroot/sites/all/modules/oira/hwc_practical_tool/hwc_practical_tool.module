@@ -107,21 +107,24 @@ function _hwc_practical_tool_get_partners($node) {
     return $cache->data;
   }
   $partners = array();
-  $section = current($node->workbench_access);
-  $partner = oira_partner_by_section_id_load($section);
-  if (!empty($partner)) {
-    $partners[] = $partner;
-  }
-  if (!empty($node->field_co_author)) {
-    $node_wrapper = entity_metadata_wrapper('node', $node);
-    $term = $node_wrapper->field_co_author->value();
-    if (!empty($term->tid)) {
-      $co_partner = oira_partner_by_section_id_load($term->tid);
-      if (!empty($co_partner)) {
-        $partners[] = $co_partner;
+  if (!empty($node->workbench_access)) {
+    $section = current($node->workbench_access);
+    $partner = oira_partner_by_section_id_load($section);
+    if (!empty($partner)) {
+      $partners[] = $partner;
+    }
+    if (!empty($node->field_co_author)) {
+      $node_wrapper = entity_metadata_wrapper('node', $node);
+      $term = $node_wrapper->field_co_author->value();
+      if (!empty($term->tid)) {
+        $co_partner = oira_partner_by_section_id_load($term->tid);
+        if (!empty($co_partner)) {
+          $partners[] = $co_partner;
+        }
       }
     }
   }
+
   cache_set(_hwc_practical_tool_related_partners_cid($node), $partners, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
   return $partners;
 }
