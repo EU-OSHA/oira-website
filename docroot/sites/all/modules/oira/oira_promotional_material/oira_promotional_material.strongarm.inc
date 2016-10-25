@@ -227,7 +227,7 @@ function oira_promotional_material_strongarm() {
             'settings' => array(),
           ),
           'search_result' => array(
-            'weight' => '6',
+            'weight' => '7',
             'label' => 'hidden',
             'type' => 'related_partners',
             'visible' => TRUE,
@@ -258,7 +258,7 @@ function oira_promotional_material_strongarm() {
         ),
         'node_type' => array(
           'search_result' => array(
-            'weight' => '3',
+            'weight' => '2',
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
