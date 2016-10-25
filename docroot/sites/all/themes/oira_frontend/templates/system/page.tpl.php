@@ -138,7 +138,7 @@
   <section class="page-content-header">
     <div class="page-content-header-container">
       <div class="container breadcrum-container">
-        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+        <?php if (!empty($breadcrumb)): print str_replace('h2', 'span', $breadcrumb); endif;?>
       </div>
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
