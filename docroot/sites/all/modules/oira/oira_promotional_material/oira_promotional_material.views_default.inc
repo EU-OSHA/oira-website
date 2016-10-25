@@ -181,6 +181,7 @@ function oira_promotional_material_views_default_views() {
 [related_partners] 
 [tools_see_more]
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $translatables['promotional_materials'] = array(
     t('Master'),
