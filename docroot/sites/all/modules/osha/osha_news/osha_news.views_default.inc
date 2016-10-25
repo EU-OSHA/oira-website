@@ -212,6 +212,7 @@ function osha_news_views_default_views() {
     </div>
   </div>
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'news';
 
