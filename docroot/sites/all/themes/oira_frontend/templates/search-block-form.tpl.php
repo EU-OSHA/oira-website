@@ -31,7 +31,7 @@
 ?>
 <div class="container-inline">
   <?php if (empty($variables['form']['#block']->subject)): ?>
-    <h2 class="element-invisible"><?php print t('Search form'); ?></h2>
+    <span class="element-invisible"><?php print t('Search form'); ?></span>
   <?php endif; ?>
   <?php print $search_form; ?>
 </div>
