@@ -383,6 +383,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-sm-6 image-wrapper">
 [field_logo]
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -393,6 +394,7 @@ function oira_partner_views_default_views() {
 [title_field]
 [field_mission_statement]
 </div>';
+  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Global: Random */
