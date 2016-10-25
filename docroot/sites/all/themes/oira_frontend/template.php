@@ -34,7 +34,7 @@ function oira_frontend_menu_link__menu_block($variables) {
   $output_image = "";
   if (!empty($element['#localized_options']['content']['image'])
     && $image_url = file_create_url($element['#localized_options']['content']['image'])) {
-    $image = '<img src="' . $image_url . '"/>';
+    $image = '<img alt="' . $element['#title'] . '" src="' . $image_url . '"/>';
     $options = array_merge($element['#localized_options'], array('html' => TRUE));
     $output_image = l($image, $element['#href'], $options);
   }
@@ -81,7 +81,7 @@ function oira_frontend_menu_link(array $variables) {
   // Add image to Home menu item.
   if (isset($variables['element']['#href']) && $variables['element']['#href'] == '<front>' && isset($element['#localized_options']['content']['image'])) {
     $path = file_create_url($element['#localized_options']['content']['image']);
-    $link = l('<img src="' . $path . '" />', $element['#href'],
+    $link = l('<img alt="' . $element['#title'] . '" src="' . $path . '" />', $element['#href'],
       array('html' => TRUE, 'attributes' => $element['#localized_options']['attributes'])
     );
     return '<li' . drupal_attributes($element['#attributes']) . '>' . $link . "</li>\n";

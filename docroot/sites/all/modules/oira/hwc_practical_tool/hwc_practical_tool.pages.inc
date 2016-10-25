@@ -206,10 +206,39 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   $form['left-column']['toggle_filter'] = $form['content']['sort_fieldset']['toggle_filter'];
 
   $nids = array();
+  $excerpts = array();
+  $title_excerpts = array();
   if (!empty($response['results'])) {
     foreach ($response['results'] as $row) {
       list($lng, $nid) = explode('_', $row['id'], 2);
       $nids[] = $nid;
+      if (!empty($row['fields']['body:value'])) {
+        $excerpt = $row['fields']['body:value'][0];
+        $regexstr = "'<strong>(.*?)</strong>'si";
+        $current_hits = preg_match_all($regexstr, $excerpt, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
+        $snippet_offset = 150;
+        if ($current_hits > 0) {
+          $match = $matches[0][0];
+          $word_length = strlen($match[0]);
+          // Calculate offsets before and after for substr.
+          $pos = $match[1];
+          $start = $pos - $snippet_offset >= 0 ? $pos - $snippet_offset : 0;
+          $length = $pos + $word_length + $snippet_offset - $start;
+          if (isset($matches[1][0][1]) && $start + $length > $matches[1][0][1]) {
+            $length = $matches[1][0][1] - $start;
+          }
+          $snippet = substr($excerpt, $start, $length);
+          $excerpts[$nid] = '...' . $snippet . '...';
+        }
+      }
+      if (!empty($row['fields']['title_field'][0])) {
+        $matches = array();
+        $regexstr = "'<strong>(.*?)</strong>'si";
+        $current_hits = preg_match($regexstr, $row['fields']['title_field'][0], $matches);
+        if ($current_hits > 0) {
+          $title_excerpts[$nid] = $matches[1];
+        }
+      }
     }
 
     $nodes = node_load_multiple($nids);
@@ -231,6 +260,15 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
         'parameters' => $pager_params,
       )),
     );
+
+    foreach ($form['content']['results']['nodes']['results-native']['nodes'] as $nid => &$renderable_node) {
+      if (!empty($excerpts[$nid]) && !empty($renderable_node['body'][0]['#markup'])) {
+        $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
+      }
+      if (!empty($title_excerpts[$nid]) && !empty($renderable_node['title_field'][0]['#markup'])) {
+        $renderable_node['title_field'][0]['#markup'] = preg_replace('/\b('. $title_excerpts[$nid] .')\b/i', '<strong>$0</strong>', $renderable_node['title_field'][0]['#markup']);
+      }
+    }
 
     $start = $page_no * $per_page;
     $form['content']['sort_fieldset']['search_summary'] = array(

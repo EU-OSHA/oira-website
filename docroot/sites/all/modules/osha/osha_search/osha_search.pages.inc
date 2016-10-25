@@ -121,6 +121,8 @@ function osha_search_search_form($form, $form_state) {
   $form['left-column']['toggle_filter'] = $form['content']['sort_fieldset']['toggle_filter'];
 
   $nids = array();
+  $excerpts = array();
+  $title_excerpts = array();
   if (!empty($response['results'])) {
     foreach ($response['results'] as $row) {
       list($lng, $nid) = explode('_', $row['id'], 2);
@@ -143,9 +145,18 @@ function osha_search_search_form($form, $form_state) {
           $snippet = substr($excerpt, $start, $length);
           $excerpts[$nid] = '...' . $snippet . '...';
         }
+        if (!empty($row['fields']['title_field'][0])) {
+          $matches = array();
+          $regexstr = "'<strong>(.*?)</strong>'si";
+          $current_hits = preg_match($regexstr, $row['fields']['title_field'][0], $matches);
+          if ($current_hits > 0) {
+            $title_excerpts[$nid] = $matches[1];
+          }
+        }
       }
       $nids[] = $nid;
     }
+//    dpm($title_excerpts);
 
     $nodes = node_load_multiple($nids);
 
@@ -170,6 +181,9 @@ function osha_search_search_form($form, $form_state) {
     foreach ($form['content']['results']['nodes']['results-native']['nodes'] as $nid => &$renderable_node) {
       if (!empty($excerpts[$nid]) && !empty($renderable_node['body'][0]['#markup'])) {
         $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
+      }
+      if (!empty($title_excerpts[$nid]) && !empty($renderable_node['title_field'][0]['#markup'])) {
+        $renderable_node['title_field'][0]['#markup'] = preg_replace('/\b('. $title_excerpts[$nid] .')\b/i', '<strong>$0</strong>', $renderable_node['title_field'][0]['#markup']);
       }
     }
 
@@ -224,7 +238,7 @@ function _osha_search_form_get_facets() {
       'options_callback_args' => array('country'),
     ),
     'field_sector' => array(
-      'label' => t('Category'),
+      'label' => t('Sector'),
       'field' => 'field_sector',
       'limit' => 50,
       'operator' => 'or',

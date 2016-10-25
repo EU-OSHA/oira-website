@@ -6,7 +6,6 @@
 function oira_update_7001() {
   $bundles = node_type_get_types();
   foreach (array_keys($bundles) as $bundle) {
-    var_dump($bundle);
     if (workbench_moderation_node_type_moderated($bundle)) {
       $nodes = node_load_multiple(array(), array('type' => $bundle));
       foreach ($nodes as $node) {
@@ -15,5 +14,17 @@ function oira_update_7001() {
         node_save($node);
       }
     }
+  }
+}
+
+/**
+ * Set eu_cookie for all languages.
+ */
+function oira_update_7002() {
+  $languages = language_list();
+  $en_settings = variable_get('eu_cookie_compliance_en');
+  unset($languages['en']);
+  foreach (array_keys($languages) as $lang) {
+    variable_set('eu_cookie_compliance_' . $lang, $en_settings);
   }
 }
