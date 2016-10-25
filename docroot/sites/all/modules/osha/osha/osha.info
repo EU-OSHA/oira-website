@@ -40,6 +40,7 @@ dependencies[] = oira
 dependencies[] = options
 dependencies[] = osha_resources
 dependencies[] = osha_taxonomies
+dependencies[] = osha_tmgmt
 dependencies[] = page_manager
 dependencies[] = panels_mini
 dependencies[] = path_breadcrumbs
