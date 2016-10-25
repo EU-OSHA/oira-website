@@ -74,8 +74,9 @@ function oira_homepage_views_default_views() {
   $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
   $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
   $handler->display->display_options['fields']['field_link']['label'] = '';
+  $handler->display->display_options['fields']['field_link']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_link']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link']['type'] = 'internal_link_title';
   $handler->display->display_options['fields']['field_link']['settings'] = array(
@@ -90,9 +91,9 @@ function oira_homepage_views_default_views() {
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
-    'title_style' => 'h2',
+    'title_style' => 'div',
     'title_link' => 'content',
-    'title_class' => '',
+    'title_class' => 'h2',
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
