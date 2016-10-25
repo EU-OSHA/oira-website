@@ -1039,6 +1039,7 @@ function hwc_practical_tool_views_default_views() {
 [related_partners]
 [tools_see_more]
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
