@@ -64,7 +64,7 @@ function hwc_practical_tool_fe_nodequeue_export_fields() {
 function hwc_practical_tool_node_info() {
   $items = array(
     'practical_tool' => array(
-      'name' => 'OiRA Tool',
+      'name' => 'OiRA Tools',
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
