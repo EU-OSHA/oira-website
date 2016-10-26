@@ -8391,6 +8391,25 @@ a.more-link:before {
 .page-faq .contact-form-wrapper fieldset .panel-body .help-block {
   display: none;
 }
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio {
+  background: url('../images/icons/audio-form.png') no-repeat;
+  background-size: cover;
+  height: 38px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio img {
+  visibility: hidden;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh {
+  background: url('../images/icons/refresh-form.png') no-repeat;
+  height: 38px;
+  background-size: cover;
+  display: inline-block;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh img {
+  visibility: hidden;
+}
 .page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code {
   margin-top: 20px;
   width: 345px;
@@ -8398,11 +8417,28 @@ a.more-link:before {
 .page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code #security_code {
   width: 213px;
 }
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child {
+  color: #5fd9ff;
+  margin-top: 5px;
+  font-style: italic;
+  position: absolute;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child:before {
+  content: "*";
+}
 .page-faq .contact-form-wrapper .grippie {
   display: none;
 }
 .page-faq .contact-form-wrapper .webform-component {
   margin-bottom: 25px;
+}
+.page-faq .contact-form-wrapper .webform-component label:last-child {
+  color: #5fd9ff;
+  margin-top: 5px;
+  font-style: italic;
+}
+.page-faq .contact-form-wrapper .webform-component label:last-child:before {
+  content: "*";
 }
 .page-faq .contact-form-wrapper button.form-submit {
   position: absolute;

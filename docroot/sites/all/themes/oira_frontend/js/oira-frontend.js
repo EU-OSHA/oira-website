@@ -13,6 +13,7 @@ jQuery(document).ready(function () {
 		wrap: 'word',
 	});
 
+
 	var windowWidth= jQuery(window).width();//window size
 
 	jQuery(window).resize(function() {

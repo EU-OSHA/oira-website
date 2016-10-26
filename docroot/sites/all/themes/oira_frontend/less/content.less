@@ -1751,11 +1751,39 @@ a.more-link{
 				.help-block{
 					display: none;
 				}
+				.captchaReadAudio{
+					background: url('../images/icons/audio-form.png') no-repeat;
+					background-size: cover;
+					height: 38px;
+					display: inline-block;
+					margin-bottom: 4px;
+					img{
+						visibility: hidden;
+					}
+				}
+				.captchaRefresh{
+					background: url('../images/icons/refresh-form.png') no-repeat; 
+					height: 38px;
+					background-size: cover;
+					display: inline-block;
+					img{
+						visibility: hidden;
+					}
+				}
 				.form-item-security-code{
 					margin-top: 20px;
 					width: 345px;
 					#security_code{
 						width: 213px;
+					}
+					label:last-child{
+						color: @error-label;
+						margin-top: 5px;
+						font-style: italic;
+						position: absolute;
+						&:before{
+							content: "*";
+						}
 					}
 				}
 			}
@@ -1765,6 +1793,14 @@ a.more-link{
 		}
 		.webform-component{
 			margin-bottom: 25px;
+			label:last-child{
+				color: @error-label;
+				margin-top: 5px;
+				font-style: italic;
+				&:before{
+					content: "*";
+				}
+			}
 		}
 		button.form-submit{
 			position: absolute;
