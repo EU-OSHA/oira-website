@@ -6676,6 +6676,12 @@ button.close {
   margin-left: -5px;
   font-family: 'Glyphicons Halflings';
 }
+.top-header .header-blocks #block-search-form #search-block-form .input-group {
+  display: table;
+}
+.top-header .header-blocks #block-search-form #search-block-form .input-search-display {
+  display: none;
+}
 .top-header .header-blocks #block-menu-block-3 {
   display: inline-block;
   margin-right: 10px;
@@ -6710,6 +6716,9 @@ button.close {
   background-color: #786586;
   color: #ffffff;
   width: 190px !important;
+}
+.top-header .header-blocks #block-lang-dropdown-language #lang-dropdown-select-language label {
+  display: none;
 }
 /*Menu
 **************************************************/
@@ -6980,7 +6989,8 @@ a.more-link:before {
 .field.field-name-field-country,
 .field-type-language-field,
 .field-name-field-sector,
-.field-name-field-promotional-material-type {
+.field-name-field-promotional-material-type,
+.field-name-pr-language {
   background-color: #10b2e4;
   display: inline-block;
   color: white;
@@ -6990,6 +7000,13 @@ a.more-link:before {
   font-style: italic;
   margin-top: 1em;
   margin-right: 5px;
+}
+.field.field-name-field-country p,
+.field-type-language-field p,
+.field-name-field-sector p,
+.field-name-field-promotional-material-type p,
+.field-name-pr-language p {
+  margin-bottom: 0px;
 }
 .field-name-field-publication-date,
 .field-type-datetime {
