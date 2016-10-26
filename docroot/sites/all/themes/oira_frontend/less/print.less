@@ -1,0 +1,390 @@
+@media print {
+
+	h1, h2, h3, h4, h5, h6{
+		font-size: initial;
+	}
+
+	div, span, article{
+		display: block;
+		float: none !important;
+ 		width: auto !important;
+  		margin:  0 !important;
+  		padding: 0 !important;
+	}
+
+	body {
+		font-family: "Times New Roman" !important;
+	    /* IE 8 + */
+	    -ms-filter: 'progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)';
+	    -webkit-filter: grayscale(100%); 
+		filter: grayscale(100%);
+		img, a{
+			display: none !important;
+		}
+		a:after {
+			content:"" !important;
+		}
+		a[href^=http]:after {
+			content:" <" attr(href) ">" !important;
+		}
+
+		.top-header-content{
+			img, a{
+				display: block !important;
+			}
+			a:after {
+				content:"" !important;
+			}
+			.header-logo{
+				display: inline-block;
+				margin-top: 20px !important;
+				.logo{
+					img{
+						width:200px;
+					}
+					margin-right: 20px;
+				}
+				img.eu-logo{
+					width: 60px !important;
+					margin-top: 33px !important;
+				}
+			}
+			.header-sitename{
+				display: inline-block;
+				float: right !important;
+				img{
+					width: 60%;
+				}
+			}
+			.header-blocks{
+				display: none !important;
+			}
+		}
+		
+		.panels-flexible-region-new-slider{
+			display: none !important;
+		}
+		.views-item-columns-container{
+			min-height: initial !important;
+			.field-name-title-field{
+				min-height: initial !important;
+			}
+		}
+		.panels-flexible-region-new-oira_partners{
+			display: none !important;
+		}
+
+		footer{
+			margin-top: 30px;
+		}
+	}
+
+	.breadcrum-container{
+		display: none !important;
+	}
+	.views-field-field-image{
+		min-height: initial !important;
+	}
+	.page-title-container{
+		h1{
+			font-size: 1.8em;
+		}
+	}
+	.pane-node-share-widget, .hwc-share-widget{
+		display: none !important;
+	}
+	.field-name-field-sector, .field-name-field-country, .field-name-field-language{
+		margin-right: 15px !important;
+	}
+	ul.pager{
+		display: none !important;
+	}
+	.panel-page-introduction-text{
+		.field-type-text-with-summary{
+			p{
+				font-size: 14pt;
+			}
+		}
+	}
+	//whats new
+	.page-what-is-new{
+		.views-item-columns-container{
+			margin-bottom: 15px !important;
+		}
+	}
+	//articles
+	.article-content-container{
+		max-width: 100%;
+		span{
+			display: inline-block;
+		}
+	}
+	//oira faqs
+	.page-oira-faqs{
+		.pane-faqs-oira{
+			a{
+				display: inline-block !important;
+			}
+			.ui-accordion-content{
+				display: block !important;
+			}
+			.views-field-title-field a .field-content:after{
+				content: "" !important;
+			}
+		}
+	}
+	//oira tools, promotional materials, general search
+	.page-oira-tools, .page-promotional-resources-search, .page-search-site{
+		#edit-left-column{
+			display: none !important;
+		}
+		#edit-content{
+			padding-left: 15px !important;
+			border-left: 0px !important;
+			#edit-sort-fieldset{
+				display: none;
+			}
+			.search-page-results-wrapper > div{
+				padding-top: 10px !important;
+				padding-bottom: 10px !important;
+			}
+		}
+	}
+	//news
+	.page-news{
+		.view-id-news{
+			article{
+				border-top: 2px solid grey;
+				padding-top: 15px !important;
+				padding-bottom: 15px !important;
+			}
+		}
+	}
+	.node-type-news{
+		.field-name-field-publication-date{
+			margin-top: 50px !important;
+		}
+		h1{
+			margin-bottom: 0px !important;
+			margin-top: 0px !important;
+			line-height: initial;
+			padding-top: 0px !important;
+			padding-bottom: 0px !important;
+			font-size: 1.8em;
+		}
+	}
+	//eu national partners
+	.page-eu-national-partners{
+		.pane-oira-country-oira-country-count-all{
+			margin-top: 50px !important;
+			margin-bottom: 30px !important;
+			.country-content-count-label{
+				width: 20% !important;
+			}
+			border-bottom: 2px solid grey;
+			border-top: 2px solid grey;
+			padding-bottom: 15px !important;
+			padding-top: 15px !important;
+		}
+		.view-id-countries{
+			img{
+				display: block !important;
+			}
+			a{
+				display: inline-block !important;
+			}
+			.row > div{
+				display: inline-block !important;
+				width: 30% !important;
+				margin-bottom: 30px !important;
+				margin-right: 20px !important;
+			}
+			.views-item-columns-container{
+				overflow: inherit !important;
+				.views-field-name-field{
+					.field-content{
+						> a{
+							display: none !important;
+						}
+						h2{
+							margin-top: 0px !important;
+							font-size: 1.8em;
+						}
+					}
+				}
+				.country-content-count-label{
+					width: 30% !important;
+				}
+				.views-field-country-content-count{
+					border-bottom: 2px solid grey;
+					padding-bottom: 20px !important;
+				}
+			}
+		}
+	}
+	//partner and country detail
+	.page-country-profile, .node-type-partner{
+		#block-system-main{
+			img{
+				display: block !important;
+			}
+			a{
+				display: block !important;
+			}
+			.country-page-top-container{
+				border-top: 2px solid grey;
+				border-bottom: 2px solid grey;
+				padding-top: 15px !important;
+				margin-top: 50px !important;
+				padding-bottom: 15px !important;
+				margin-bottom: 40px !important;
+				h1{
+					margin-bottom: 0px !important;
+				}
+				.pane-taxonomy-term-country-content-count{
+					float: right !important;
+					.field-items{
+						.field-item{
+							width: 100px !important;
+							border-left: 2px solid grey;
+							&:last-child{
+								border-right: 2px solid grey;
+							}
+						}
+					}
+				}
+			}
+			.view-id-country_partner_content.view-display-id-block{
+				display: none !important;
+			}
+			#mini-panel-partner_in_country{
+				margin-top: 50px !important;
+				.partner-image-container{
+					width: auto !important;
+					display: inline-block !important;
+					float: left !important;
+					margin-right: 20px !important;
+				}
+				.partner-text-container{
+					display: inline-block !important;
+					float: left !important;
+				}
+				.pane-contact-information-partner,
+				.pane-node-field-social-profile,
+				.pane-node-field-collaborator,
+				.pane-taxonomy-term-field-ncw-fp-link{
+					border-bottom: 2px solid grey;
+					padding-bottom: 15px !important;
+					margin-bottom: 15px !important;
+				}
+			}
+		}
+	}
+	//oira community introduction page
+	.page-oira-community{
+		.oira-community-partners-block{
+
+			background-color: greyscale(grey, 10%) !important;
+			margin-top: 30px !important;
+			padding-bottom: 20px !important;
+			img{
+				display: block !important;
+				margin: 0 auto !important;
+			}
+			a{
+				display: block !important;
+				color: white !important;
+			}
+			h2{
+				color: white !important;
+			}
+		}
+	}
+	//sectorial social partners
+	.page-sectorial-social-partners, .page-national-partners, .page-irat-network{
+		.quicktabs-tabs-container{
+			display: none !important;
+		}
+		.hwc-alphabet-container{
+			display: none !important;
+		}
+		.quicktabs-views-group{
+			img{
+				display: block !important;
+				width: 150px;
+				margin-right: 20px;
+			}
+			a{
+				display: block !important;
+			}
+			.field-content > div{
+				display: inline-block !important;
+				&:last-child{
+					float: right !important;
+					.partner-content-label{
+						min-width: 150px !important;
+					}
+				}
+			}
+			.field-content{
+				margin-top: 20px !important;
+				margin-bottom: 20px !important;
+				.col-sm-2{
+					float: left !important;
+				}
+				.col-sm-5{
+
+				}
+			}
+		}
+		article.views-row{
+			border-top: 2px solid grey;
+			padding-top: 20px !important;
+			margin-bottom: 20px !important;
+			img{
+				display: block !important;
+				max-width: 150px !important;
+				float: left !important;
+				margin-right: 20px !important;
+			}
+			a{
+				display: block !important;
+			}
+		}
+	}
+	//page faq
+	.page-faq{
+		.contact-content-wrapper{
+			display: none !important;
+		}
+		.contact-form-wrapper{
+			display: none !important;
+		}
+		.pane-faqs{
+			.ui-accordion.ui-widget > div{
+				display: block;
+				padding-bottom: 15px !important;
+				margin-bottom: 15px !important;
+				a{
+					display: block !important;
+				}
+				.ui-accordion-content{
+					display: block !important;
+				}
+			}
+		}
+	}
+
+	//sitemap
+	.page-sitemap{
+		#block-system-main{
+			a, span{
+				display: inline-block !important;
+				color: #000;
+			}
+		}
+	}
+
+
+	
+}

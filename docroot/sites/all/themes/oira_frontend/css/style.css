@@ -6742,7 +6742,7 @@ button.close {
   padding-right: 15px;
 }
 .menu-header #navbar .navbar-nav li {
-  float: initial;
+  float: inherit;
   display: inline-block;
   padding: 0px;
   color: #ffffff;
@@ -6789,6 +6789,7 @@ button.close {
   border-bottom: 2px solid white;
   padding-top: 5px;
   padding-bottom: 5px;
+  width: 100%;
 }
 .menu-header #navbar .navbar-nav li .dropdown-menu li:hover {
   background-color: #0e98c3;
@@ -6823,7 +6824,7 @@ button.close {
   margin: 0px;
 }
 body {
-  font-size: 16px !important;
+  font-size: 16px;
   color: #58585a;
 }
 input,
@@ -7169,7 +7170,8 @@ a.more-link:before {
 .col-md-10 {
   min-height: 0px;
 }
-.view-mode-search_result strong {
+.view-mode-search_result strong,
+.view-mode-teaser strong {
   background-color: yellow;
 }
 /*END estilos comunes
