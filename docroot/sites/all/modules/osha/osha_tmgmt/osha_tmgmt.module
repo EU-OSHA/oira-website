@@ -129,7 +129,7 @@ function osha_tmgmt_filter_info() {
 function _osha_tmgmt_filter_html_id($text) {
   $html_dom = filter_dom_load($text);
   $xpath = new DOMXPath($html_dom);
-  $nodes = $xpath->query("//*[contains(@id, 'tmgmt')]");;
+  $nodes = $xpath->query("//*[contains(@id, 'tmgmt')]");
   foreach ($nodes as $node) {
     $node->removeAttribute('id');
   }

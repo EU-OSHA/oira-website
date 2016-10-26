@@ -383,6 +383,26 @@ function osha_search_search_api_index_defaults_rebuild() {
 }
 
 /**
+ * Replace an excerpt word with <strong>word</strong> in a html field.
+ * like title markup, which has <h> <a>
+ */
+function _osha_search_string_replace_highlight($html, $excerpt) {
+  $html_dom = filter_dom_load($html);
+  $content = '';
+  $xpath = new DOMXPath($html_dom);
+  $nodes = $xpath->query("//text()[contains(.,$excerpt)]");
+  foreach ($nodes as $node) {
+    $node->nodeValue = preg_replace('/\b(' . $excerpt  . ')\b/i', '<strong>$0</strong>', $node->nodeValue);
+  }
+  $body_node = $html_dom->getElementsByTagName('body')->item(0);
+  foreach ($body_node->childNodes as $child_node) {
+    $content .= $html_dom->saveXML($child_node);
+  }
+
+  return htmlspecialchars_decode($content);
+}
+
+/**
  * Widget that renders facets as a dropdown.
  *
  * This widget renders facets in the same way as FacetapiWidgetLinks but uses

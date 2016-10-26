@@ -266,7 +266,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
         $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
       }
       if (!empty($title_excerpts[$nid]) && !empty($renderable_node['title_field'][0]['#markup'])) {
-        $renderable_node['title_field'][0]['#markup'] = preg_replace('/\b('. $title_excerpts[$nid] .')\b/i', '<strong>$0</strong>', $renderable_node['title_field'][0]['#markup']);
+        $renderable_node['title_field'][0]['#markup'] = _osha_search_string_replace_highlight($renderable_node['title_field'][0]['#markup'], $title_excerpts[$nid]);
       }
     }
 
