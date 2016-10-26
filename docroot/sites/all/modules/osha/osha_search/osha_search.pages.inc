@@ -156,8 +156,6 @@ function osha_search_search_form($form, $form_state) {
       }
       $nids[] = $nid;
     }
-//    dpm($title_excerpts);
-
     $nodes = node_load_multiple($nids);
 
     pager_default_initialize($response['result count'], $per_page);
@@ -183,7 +181,7 @@ function osha_search_search_form($form, $form_state) {
         $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
       }
       if (!empty($title_excerpts[$nid]) && !empty($renderable_node['title_field'][0]['#markup'])) {
-        $renderable_node['title_field'][0]['#markup'] = preg_replace('/\b('. $title_excerpts[$nid] .')\b/i', '<strong>$0</strong>', $renderable_node['title_field'][0]['#markup']);
+        $renderable_node['title_field'][0]['#markup'] = _osha_search_string_replace_highlight($renderable_node['title_field'][0]['#markup'], $title_excerpts[$nid]);
       }
     }
 
