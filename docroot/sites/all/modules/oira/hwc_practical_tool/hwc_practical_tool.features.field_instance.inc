@@ -1315,7 +1315,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
           'title_class' => '',
           'title_link' => 'content',
-          'title_style' => 'h2',
+          'title_style' => 'h3',
         ),
         'type' => 'title_linked',
         'weight' => 1,

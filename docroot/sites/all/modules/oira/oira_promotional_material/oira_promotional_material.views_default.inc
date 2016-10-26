@@ -107,8 +107,9 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['element_type'] = 'span';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['title_field']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['title_field']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'trim_link' => '0',
@@ -125,7 +126,6 @@ function oira_promotional_material_views_default_views() {
     'field_formatter_class' => '',
     'tools_show_full' => 0,
   );
-  $handler->display->display_options['fields']['title_field']['field_api_classes'] = TRUE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Field: Language */
   $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
@@ -181,6 +181,7 @@ function oira_promotional_material_views_default_views() {
 [related_partners] 
 [tools_see_more]
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $translatables['promotional_materials'] = array(
     t('Master'),

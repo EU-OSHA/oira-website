@@ -22,7 +22,7 @@ function osha_news_path_breadcrumbs_settings_info() {
       2 => '!page_title',
     ),
     'paths' => array(
-      0 => '<none>',
+      0 => 'what-is-new',
       1 => 'news',
       2 => '<none>',
     ),

@@ -212,6 +212,7 @@ function osha_news_views_default_views() {
     </div>
   </div>
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'news';
 
@@ -473,6 +474,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => 'crop_and_scale_600x350__background_dfd8e4',
@@ -546,7 +548,9 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-sm-6 image-wrapper">
 [field_image]
 </div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -557,7 +561,9 @@ function osha_news_views_default_views() {
 [title_field]
 [body]
 </div>';
+  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['displays'] = array(
     'oshnews_latest' => 'oshnews_latest',
     'default' => 0,
