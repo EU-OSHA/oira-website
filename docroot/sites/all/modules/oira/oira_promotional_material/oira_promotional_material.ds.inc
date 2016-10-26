@@ -25,9 +25,10 @@ function oira_promotional_material_ds_layout_settings_info() {
         2 => 'node_type',
         3 => 'body',
         4 => 'field_country',
-        5 => 'related_partners',
+        5 => 'pr_language',
         6 => 'field_resource_fc',
-        7 => 'tools_see_more',
+        7 => 'related_partners',
+        8 => 'tools_see_more',
       ),
     ),
     'fields' => array(
@@ -36,8 +37,9 @@ function oira_promotional_material_ds_layout_settings_info() {
       'node_type' => 'ds_content',
       'body' => 'ds_content',
       'field_country' => 'ds_content',
-      'related_partners' => 'ds_content',
+      'pr_language' => 'ds_content',
       'field_resource_fc' => 'ds_content',
+      'related_partners' => 'ds_content',
       'tools_see_more' => 'ds_content',
     ),
     'classes' => array(

@@ -212,7 +212,7 @@ function oira_promotional_material_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -301,7 +301,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -377,7 +377,7 @@ function oira_promotional_material_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -454,7 +454,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -542,7 +542,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -616,7 +616,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -699,7 +699,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -790,7 +790,7 @@ function oira_promotional_material_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'oira_promotional_resources_row',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -880,7 +880,7 @@ function oira_promotional_material_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -959,7 +959,7 @@ function oira_promotional_material_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1035,7 +1035,7 @@ function oira_promotional_material_field_default_field_instances() {
           'title_style' => 'h3',
         ),
         'type' => 'title_linked',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
