@@ -108,6 +108,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_type'] = 'span';
+  $handler->display->display_options['fields']['title_field']['element_class'] = 'trim-title';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['title_field']['type'] = 'smart_trim_format';
