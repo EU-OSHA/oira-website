@@ -343,7 +343,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'generic_thumb_image_ac',
+    'image_style' => 'generic_thumb_image__auto_crop_-_600x300_',
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
