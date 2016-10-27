@@ -200,7 +200,7 @@ function oira_field_attach_view_alter(&$output, $context) {
     if (!empty($output['body'][0]['#markup']) && $context['entity']->type == 'article') {
       $body =& $output['body'][0]['#markup'];
       $count = 0;
-      $body = str_replace('--HEADING_PAGINATION--', '<div class="oira-heading-pagination-container"></div>', $body, $count);
+      $body = str_replace('--HEADING_PAGINATION--', '<span class="oira-heading-pagination-placeholder"></span>', $body, $count);
       if ($count) {
         drupal_add_js(drupal_get_path('module', 'oira') . '/js/article_heading_pagination.js');
       }

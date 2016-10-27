@@ -1,9 +1,10 @@
 (function($){
     Drupal.behaviors.oira_heading_pagination = {
         attach: function (context, settings) {
-            $('.oira-heading-pagination-container').once('oira_heading_pagination', function() {
+            $('.oira-heading-pagination-placeholder').once('oira_heading_pagination', function() {
                 var $body = $(this).closest('.field-name-body');
-                $(this).appendTo($body);
+                $container = $('<div class="oira-heading-pagination-container"></div>').appendTo($body);
+                $(this).appendTo($container);
                 if ($body.find('h2').length) {
                     var $h2 = $body.find('h2');
                     var $pagination = $('<ul class="oira-heading-pagination-container"></ul>');
@@ -14,7 +15,7 @@
                             $(this).nextUntil($h2[idx + 1]).andSelf().hide();
                         }
                     });
-                    $(this).append($pagination);
+                    $container.append($pagination);
                     var $lis = $pagination.find('li');
                     var $next = $('<span class="pagination-next-label"></span>').text(Drupal.t('Next'));
                     var $prev = $('<span class="pagination-prev-label"></span>').text(Drupal.t('Previous'));

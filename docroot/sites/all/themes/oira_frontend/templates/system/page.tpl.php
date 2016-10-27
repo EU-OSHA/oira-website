@@ -113,7 +113,7 @@
               <span class="icon-bar"></span>
             </button>
             <div class="navbar-collapse collapse">
-              <nav role="navigation">
+              <nav>
                 <?php if (!empty($primary_nav)): ?>
                   <?php print render($primary_nav); ?>
                 <?php endif; ?>
@@ -135,7 +135,7 @@
   </div>
 </header>
 <div class="page-content">
-  <section class="page-content-header">
+  <div class="page-content-header">
     <div class="page-content-header-container">
       <div class="container breadcrum-container">
         <?php if (!empty($breadcrumb)): print str_replace('h2', 'span', $breadcrumb); endif;?>
@@ -159,7 +159,7 @@
         </div>
       <?php endif; ?>
     </div>
-  </section>
+  </div>
   <?php if (!empty($page['sidebar_first'])): ?>
     <aside class="col-sm-3" role="complementary">
       <?php print render($page['sidebar_first']); ?>
