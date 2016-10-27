@@ -267,6 +267,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['title_field']['element_wrapper_class'] = 'trim-title';
   $handler->display->display_options['fields']['title_field']['type'] = 'smart_trim_format';
   $handler->display->display_options['fields']['title_field']['settings'] = array(
     'trim_link' => '1',
@@ -355,6 +356,7 @@ function osha_news_views_default_views() {
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_class'] = 'trim-title';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
   $handler->display->display_options['fields']['title_field']['settings'] = array(

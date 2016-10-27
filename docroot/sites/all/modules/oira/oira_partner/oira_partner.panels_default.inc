@@ -769,19 +769,13 @@ function oira_partner_default_panels_mini() {
     $display->content['new-626e9816-cb3a-41cb-a36d-01d9067ec143'] = $pane;
     $display->panels['social'][0] = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
     $pane = new stdClass();
-    $pane->pid = 'new-5f53d1bb-1441-4797-be2b-0b83f3652a26';
+    $pane->pid = 'new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d';
     $pane->panel = 'text';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->type = 'focal_point_text';
+    $pane->subtype = 'focal_point_text';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Custom text - NFP',
-      'title' => '<none>',
-      'body' => '<p>The European Agency for Safety and Health at Work is a network organisation, with a "focal point" in each Member States as well as in European Free Trade Association (EFTA) States and candidate and potential candidate countries. Here you can contact the National %taxonomy_term:field_ncw_fp_link.</p>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -790,9 +784,9 @@ function oira_partner_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5f53d1bb-1441-4797-be2b-0b83f3652a26';
-    $display->content['new-5f53d1bb-1441-4797-be2b-0b83f3652a26'] = $pane;
-    $display->panels['text'][0] = 'new-5f53d1bb-1441-4797-be2b-0b83f3652a26';
+    $pane->uuid = 'd5cf3bca-eb15-49e5-b600-84b39f10bf9d';
+    $display->content['new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d'] = $pane;
+    $display->panels['text'][0] = 'new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d';
     $pane = new stdClass();
     $pane->pid = 'new-b82fb197-4f24-4f68-90ee-05d83089aad9';
     $pane->panel = 'text_';
