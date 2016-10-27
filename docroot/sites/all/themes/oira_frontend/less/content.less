@@ -18,7 +18,7 @@
 }
 
 body{
-	font-size: 16px !important;//testing al finalizar quitar el important
+	font-size: 16px;
 	color: @color-text-grey;
 }
 
@@ -208,7 +208,11 @@ a.more-link{
 }
 
 /*Etiquetas azuler de pais e idioma*/
-.field.field-name-field-country, .field-type-language-field, .field-name-field-sector, .field-name-field-promotional-material-type {
+.field.field-name-field-country,
+.field-type-language-field,
+.field-name-field-sector,
+.field-name-field-promotional-material-type,
+.field-name-pr-language{
     background-color: #10b2e4;
     display: inline-block;
     color: white;
@@ -218,6 +222,9 @@ a.more-link{
     font-style: italic;
     margin-top: 1em;
     margin-right: 5px;
+    p{
+    	margin-bottom: 0px;
+    }
 }
 
 .field-name-field-publication-date, .field-type-datetime{
@@ -406,7 +413,7 @@ a.more-link{
 	min-height: 0px;
 }
 
-.view-mode-search_result{
+.view-mode-search_result, .view-mode-teaser{
 	strong{
 		background-color: yellow;
 	}
@@ -1744,11 +1751,39 @@ a.more-link{
 				.help-block{
 					display: none;
 				}
+				.captchaReadAudio{
+					background: url('../images/icons/audio-form.png') no-repeat;
+					background-size: cover;
+					height: 38px;
+					display: inline-block;
+					margin-bottom: 4px;
+					img{
+						visibility: hidden;
+					}
+				}
+				.captchaRefresh{
+					background: url('../images/icons/refresh-form.png') no-repeat; 
+					height: 38px;
+					background-size: cover;
+					display: inline-block;
+					img{
+						visibility: hidden;
+					}
+				}
 				.form-item-security-code{
 					margin-top: 20px;
 					width: 345px;
 					#security_code{
 						width: 213px;
+					}
+					label:last-child{
+						color: @error-label;
+						margin-top: 5px;
+						font-style: italic;
+						position: absolute;
+						&:before{
+							content: "*";
+						}
 					}
 				}
 			}
@@ -1758,6 +1793,14 @@ a.more-link{
 		}
 		.webform-component{
 			margin-bottom: 25px;
+			label:last-child{
+				color: @error-label;
+				margin-top: 5px;
+				font-style: italic;
+				&:before{
+					content: "*";
+				}
+			}
 		}
 		button.form-submit{
 			position: absolute;

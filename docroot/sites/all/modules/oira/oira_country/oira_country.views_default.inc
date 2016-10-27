@@ -63,7 +63,7 @@ function oira_country_views_default_views() {
     'title_class' => '',
     'field_formatter_class' => '',
   );
-  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
   /* Field: Taxonomy term: Extrafield Content count */
   $handler->display->display_options['fields']['country_content_count']['id'] = 'country_content_count';
   $handler->display->display_options['fields']['country_content_count']['table'] = 'taxonomy_term_data';

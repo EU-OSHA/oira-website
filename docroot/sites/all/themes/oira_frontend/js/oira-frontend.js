@@ -13,6 +13,7 @@ jQuery(document).ready(function () {
 		wrap: 'word',
 	});
 
+
 	var windowWidth= jQuery(window).width();//window size
 
 	jQuery(window).resize(function() {
@@ -21,6 +22,7 @@ jQuery(document).ready(function () {
 	    	//jQuery("#block-search-form input").css("display", "block");
 	    	jQuery("#block-search-form input").show();
 	    	jQuery(".quicktabs-tabs-container").show();
+	    	jQuery(".input-search-display").css("display" , "none");
 	    	//jQuery(".hwc-alphabet-container").css("display", "block");
 	    }
 	    if(windowWidth <= 750){
@@ -112,7 +114,7 @@ jQuery(document).ready(function () {
 
 	function funcionesTabletMovil () {
 		if(windowWidth <= 992){//<-----functions for tablet and/or mobile
-			
+			jQuery(".input-search-display").css("display" , "block");
 			//search header al hacer click
 			jQuery(".input-search-display").click(function(){
 				//e.preventDefault();
