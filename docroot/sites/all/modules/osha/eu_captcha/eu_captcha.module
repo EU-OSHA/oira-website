@@ -89,9 +89,7 @@ function eu_captcha_captcha($op, $captcha_type = '') {
           '#weight' => 0,
           '#name' => 'security_code',
           '#size' => 15,
-          '#attributes' => array(
-            'id' => 'security_code',
-          ),
+          '#id' => 'security_code',
         );
         $result['captcha_validate'] = 'eu_captcha_validation';
         $result['solution'] = '';
