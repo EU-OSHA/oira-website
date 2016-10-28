@@ -1750,13 +1750,16 @@ a.more-link{
 			width: 100%;
 			padding: 6px 12px;
 		}
-		fieldset{
+		fieldset, .captcha{
 			margin-top: 35px;
 			background-color: rgba(0, 0, 0, 0);
 			border-radius: 0;
 			border: none;
 			width: 100%;
 			legend{
+				display: none;
+			}
+			.panel-heading{
 				display: none;
 			}
 			.panel-body{
@@ -2374,6 +2377,8 @@ div[id ^= "mini-panel-partner_in_country"]{
 					min-height: 160px;
 					img{
 						margin: 0 auto;
+						height: 200px;
+						width: auto;
 					}
 				}
 				.partner-text-container{
