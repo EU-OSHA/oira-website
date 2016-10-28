@@ -15,6 +15,15 @@ $plugin = array(
 function oira_country_focal_point_pane_render($subtype, $conf, $args, $contexts) {
   $term = menu_get_object('taxonomy_term', 2);
   if (empty($term)) {
+    $node = menu_get_object();
+    if (empty($node->field_country)) {
+      return;
+    }
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $term = $wrapper->field_country->value();
+  }
+
+  if (empty($term)) {
     return;
   }
   // Render as a block.
