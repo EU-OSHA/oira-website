@@ -7260,6 +7260,7 @@ a.more-link:before {
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-image {
   position: relative;
   display: inline-block;
+  width: 100%;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.7)), color-stop(100%, rgba(0, 0, 0, 0)));
@@ -7279,8 +7280,9 @@ a.more-link:before {
   position: relative;
   z-index: -1;
   display: block;
+  width: 100%;
 }
-#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-title-field {
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link {
   position: absolute;
   top: 45%;
   left: 10%;
@@ -7288,7 +7290,7 @@ a.more-link:before {
   font-weight: 300;
   margin-right: 10%;
 }
-#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-title-field a {
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link a {
   color: #ffffff;
   font-size: 1.2em;
 }
@@ -7298,6 +7300,7 @@ a.more-link:before {
   left: 10%;
   color: #ffffff;
   margin-right: 10%;
+  font-size: 1.3em;
 }
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-controls.clickable {
   position: absolute;
@@ -7529,6 +7532,9 @@ a.more-link:before {
   font-size: 2em;
   font-weight: bold;
 }
+#block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside .view-display-id-oira_partners_homepage h5 {
+  font-size: 32px;
+}
 #block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside .view-display-id-oira_partners_homepage .views-view-grid {
   margin-top: 30px;
   margin-bottom: 15px;
@@ -7553,6 +7559,7 @@ a.more-link:before {
 .node-type-article .panels-flexible-region-new-cover_image .field-type-image {
   position: relative;
   display: inline-block;
+  width: 100%;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 140%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.7)), color-stop(140%, rgba(0, 0, 0, 0)));
@@ -7572,6 +7579,7 @@ a.more-link:before {
   position: relative;
   z-index: -1;
   display: block;
+  width: 100%;
 }
 .node-type-article h1 {
   color: #58585a;
@@ -7886,6 +7894,7 @@ a.more-link:before {
 .page-what-is-new .panels-flexible-region-new-image .field-type-image {
   position: relative;
   display: inline-block;
+  width: 100%;
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 140%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.7)), color-stop(140%, rgba(0, 0, 0, 0)));
@@ -7905,6 +7914,7 @@ a.more-link:before {
   position: relative;
   z-index: -1;
   display: block;
+  width: 100%;
 }
 .page-what-is-new .panels-flexible-region-new-image .pane-node-title-field {
   margin-top: -93px;
@@ -10758,7 +10768,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   }
   /*HOME
 ****************************************************************/
-  .front .panels-flexible-region-new-slider .views-field-title-field {
+  .front .panels-flexible-region-new-slider .views-field-field-link {
     position: inherit !important;
     width: 100% !important;
     background-color: #786586;
@@ -10767,7 +10777,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     padding-left: 15px;
     padding-right: 15px;
   }
-  .front .panels-flexible-region-new-slider .views-field-title-field h2 {
+  .front .panels-flexible-region-new-slider .views-field-field-link h2 {
     margin-top: 0px;
     margin-bottom: 0px;
     width: 720px;
@@ -10799,6 +10809,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   /*END HOME*/
   /*WHAT'S NEW SECTION
 *********************************************************************/
+  .page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news .views-view-grid .row-2 {
+    display: none;
+  }
   .page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news .views-item-columns-container {
     min-height: 297px;
   }
@@ -11849,10 +11862,10 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   .front .panels-flexible-region-new-slider .owl-wrapper .owl-item .item-1 .views-field-field-image {
     display: none !important;
   }
-  .front .panels-flexible-region-new-slider .owl-wrapper .owl-item .item-1 .views-field-title-field {
+  .front .panels-flexible-region-new-slider .owl-wrapper .owl-item .item-1 .views-field-field-link {
     background-color: inherit;
   }
-  .front .panels-flexible-region-new-slider .owl-wrapper .owl-item .item-1 .views-field-title-field h2 a {
+  .front .panels-flexible-region-new-slider .owl-wrapper .owl-item .item-1 .views-field-field-link h2 a {
     color: #786586 !important;
   }
   .front .panels-flexible-region-new-slider .owl-wrapper .owl-item .item-1 .views-field-body {
