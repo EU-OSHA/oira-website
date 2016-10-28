@@ -8388,55 +8388,71 @@ a.more-link:before {
   width: 100%;
   padding: 6px 12px;
 }
-.page-faq .contact-form-wrapper fieldset {
+.page-faq .contact-form-wrapper fieldset,
+.page-faq .contact-form-wrapper .captcha {
   margin-top: 35px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
   border: none;
   width: 100%;
 }
-.page-faq .contact-form-wrapper fieldset legend {
+.page-faq .contact-form-wrapper fieldset legend,
+.page-faq .contact-form-wrapper .captcha legend {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body {
+.page-faq .contact-form-wrapper fieldset .panel-heading,
+.page-faq .contact-form-wrapper .captcha .panel-heading {
+  display: none;
+}
+.page-faq .contact-form-wrapper fieldset .panel-body,
+.page-faq .contact-form-wrapper .captcha .panel-body {
   padding: 0px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .help-block {
+.page-faq .contact-form-wrapper fieldset .panel-body .help-block,
+.page-faq .contact-form-wrapper .captcha .panel-body .help-block {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio {
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio,
+.page-faq .contact-form-wrapper .captcha .panel-body .captchaReadAudio {
   background: url('../images/icons/audio-form.png') no-repeat;
   background-size: cover;
   height: 38px;
   display: inline-block;
   margin-bottom: 4px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio img {
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio img,
+.page-faq .contact-form-wrapper .captcha .panel-body .captchaReadAudio img {
   visibility: hidden;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh {
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh,
+.page-faq .contact-form-wrapper .captcha .panel-body .captchaRefresh {
   background: url('../images/icons/refresh-form.png') no-repeat;
   height: 38px;
   background-size: cover;
   display: inline-block;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh img {
+.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh img,
+.page-faq .contact-form-wrapper .captcha .panel-body .captchaRefresh img {
   visibility: hidden;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code {
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code,
+.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code {
   margin-top: 20px;
   width: 345px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code #security_code {
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code #security_code,
+.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code #security_code {
   width: 213px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child {
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child,
+.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
   position: absolute;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child:before {
+.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child:before,
+.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code label:last-child:before {
   content: "*";
 }
 .page-faq .contact-form-wrapper .grippie {
@@ -8934,6 +8950,8 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
 }
 .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first .partner-image-container img {
   margin: 0 auto;
+  height: 200px;
+  width: auto;
 }
 .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first .partner-text-container {
   width: 100%;
