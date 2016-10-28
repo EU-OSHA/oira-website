@@ -94,30 +94,42 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
       ->range(0, $limit);
     $tools = $q->execute()->fetchAllKeyed();
 
-    $wiki_pages_no = $tools_no = 0;
     $items = [];
 
-    while ($limit > 0) {
-      if (
-        !empty($wiki_pages) &&
-        (
-          !empty($tools) && (reset($wiki_pages) > reset($tools) && $wiki_pages_no < ($limit - 1))
-          || $tools_no >= ($limit - 1)
-        )
-      ) {
-        $items[] = key($wiki_pages);
-        unset($wiki_pages[key($wiki_pages)]);
-        $wiki_pages_no++;
-      }
-      elseif (!empty($tools)) {
-        $items[] = key($tools);
-        unset($tools[key($tools)]);
-        $tools_no++;
-      }
+    // Add first wiki.
+    if (!empty($wiki_pages)) {
+      reset($wiki_pages);
+      $nid = key($wiki_pages);
+      $items[$nid] = strtotime($wiki_pages[$nid]);
+      unset($wiki_pages[$nid]);
+    }
+    // Add first tool.
+    if (!empty($tools)) {
+      reset($tools);
+      $nid = key($tools);
+      $items[$nid] = strtotime($tools[$nid]);
+      unset($tools[$nid]);
+    }
+
+    // Get remaining items and sort them desc.
+    $all_items = array_map('strtotime', $wiki_pages + $tools);
+    arsort($all_items);
+
+    // NO-198 - event if no wiki page or tool added, we should count it, WHY?!
+    $limit -= 2;
+
+    // Add the rest of items.
+    while ($limit > 0 && !empty($all_items)) {
+      reset($all_items);
+      $nid = key($all_items);
+      $items[$nid] = strtotime($all_items[$nid]);
       $limit--;
     }
 
-    $this->query->add_where(1, "{$this->query->base_table}.nid", $items, $operator);
+    $nids = array_keys($items);
+    if (!empty($nids)) {
+      $this->query->add_where(1, "{$this->query->base_table}.nid", $nids, $operator);
+    }
   }
 
   function option_definition() {
