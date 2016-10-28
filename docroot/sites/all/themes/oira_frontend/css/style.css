@@ -8313,6 +8313,9 @@ a.more-link:before {
   margin-bottom: 25px;
   color: #58585a;
 }
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul {
+  padding-left: 20px;
+}
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li {
