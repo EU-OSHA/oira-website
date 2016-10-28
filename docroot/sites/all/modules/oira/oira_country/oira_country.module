@@ -34,6 +34,27 @@ function oira_country_block_view($delta) {
   return $block;
 }
 
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function oira_country_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oira_country_form_oira_configuration_form_alter(&$form, &$form_state, $form_id) {
+  $form['oira_config_focal_point_text'] = array(
+    '#title' => 'Focal point partner text.',
+    '#type' => 'textarea',
+    '#default_value' => variable_get('oira_config_focal_point_text'),
+    '#description' => 'Use @link as placeholder for the NCW focal point link',
+  );
+}
+
 
 function oira_country_field_extra_fields_formatter_info() {
   return [
