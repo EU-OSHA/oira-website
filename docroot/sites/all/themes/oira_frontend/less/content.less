@@ -246,6 +246,7 @@ a.more-link{
 	.hwc-share-widget{
 		ul{
 			list-style: none;
+			overflow: hidden;
 			li.share-this-article{
 				display: none;
 			}
@@ -255,6 +256,7 @@ a.more-link{
 			    height: 23px;
 			    overflow: hidden;
 			    margin-right: 7px;
+			    float: left;
 			    a{
 			    	padding-left: 30px;
 			    }
@@ -282,6 +284,7 @@ a.more-link{
 .hwc-share-widget{
 	ul{
 		list-style: none;
+		overflow: hidden;
 		li.share-this-article{
 			display: none;
 		}
@@ -291,6 +294,7 @@ a.more-link{
 		    height: 23px;
 		    overflow: hidden;
 		    margin-right: 7px;
+		    float: left;
 		    a{
 		    	padding-left: 30px;
 		    }
@@ -1596,7 +1600,14 @@ a.more-link{
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
-								
+								.group-left {
+									a{
+										 img{
+										  	width: auto;
+										  	height: 100px;
+										}
+									}
+								}
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
@@ -1870,6 +1881,15 @@ a.more-link{
 					font-size: @font-size0-8;
 					margin-bottom: 25px;
 					color: @color-text-grey;
+					.article-link{
+						color: @color-text-purple-darker;
+						font-weight: bold;
+						font-style: italic;
+						text-decoration: underline !important;
+						&:hover{
+							color: @color-text-hover-blue;
+						}
+					}
 				}
 			}
 			.views-field-title-field.ui-accordion-header-active{
@@ -2544,6 +2564,14 @@ div[id ^= "mini-panel-partner_in_country"]{
 				display: table;
 				border-collapse: collapse;
 				width: 100%;
+				.group-left {
+					a{
+						img{
+							width: auto;
+							height: 100px;
+						}
+					}
+				}
 				& > .even, & > .odd{
 					&:first-child{
 						display: table-cell;
@@ -2555,6 +2583,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					.node-partner{
 						margin-right: 10px;
 						margin-left: 0px;
+						
 					}
 				}
 			}
@@ -3071,7 +3100,14 @@ div[id ^= "mini-panel-partner_in_country"]{
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
-								
+								.group-left {
+									a{
+										img{
+											width: auto;
+											height: 100px;
+										}
+									}
+								}
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
@@ -3083,6 +3119,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 									.node-partner{
 										  margin-right: 10px;
 										  margin-left: 0px;
+
 									}
 								}
 							}
@@ -3639,6 +3676,14 @@ div[id ^= "mini-panel-partner_in_country"]{
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
+								.group-left {
+									a{
+										 img{
+										  	width: auto;
+										  	height: 100px;
+										}
+									}
+								}
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
