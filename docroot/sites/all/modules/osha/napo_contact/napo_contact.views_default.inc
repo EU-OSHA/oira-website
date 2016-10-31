@@ -146,6 +146,8 @@ function napo_contact_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Reorder FAQs';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit any faq content';
@@ -201,12 +203,15 @@ function napo_contact_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_oira_value_1']['group'] = 1;
-  $handler->display->display_options['path'] = 'node/%/reorder-faqs';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Reorder faqs';
+  $handler->display->display_options['path'] = 'admin/structure/faqs';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Reorder FAQs';
   $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['title'] = 'Reorder FAQs';
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -298,6 +303,7 @@ function napo_contact_views_default_views() {
     t('Parent'),
     t('All'),
     t('Page'),
+    t('Reorder FAQs'),
     t('Block'),
     t('[counter]. [title_field]'),
   );
@@ -439,6 +445,8 @@ function napo_contact_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Reorder OIRA FAQs';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit any faq content';
@@ -492,12 +500,14 @@ function napo_contact_views_default_views() {
   $handler->display->display_options['filters']['field_oira_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['path'] = 'node/%/reorder-oira-faqs';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Reorder faqs';
+  $handler->display->display_options['path'] = 'admin/structure/oira-faqs';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Reorder OiRA FAQs';
   $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -588,6 +598,7 @@ function napo_contact_views_default_views() {
     t('Parent'),
     t('All'),
     t('Page'),
+    t('Reorder OIRA FAQs'),
     t('Block'),
     t('[counter]. [title_field]'),
   );

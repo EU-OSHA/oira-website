@@ -112,11 +112,21 @@
   .article-content-container span {
     display: inline-block;
   }
+  .article-content-container a {
+    display: inline !important;
+  }
+  .node-type-article .panels-flexible-row-new-10,
+  .node-type-article .panels-flexible-row-new-13 {
+    display: none !important;
+  }
   .page-oira-faqs .pane-faqs-oira a {
     display: inline-block !important;
   }
   .page-oira-faqs .pane-faqs-oira .ui-accordion-content {
     display: block !important;
+  }
+  .page-oira-faqs .pane-faqs-oira .ui-accordion-content a .field-content:after {
+    content: "" !important;
   }
   .page-oira-faqs .pane-faqs-oira .views-field-title-field a .field-content:after {
     content: "" !important;
@@ -243,15 +253,15 @@
   }
   .page-country-profile #block-system-main #mini-panel-partner_in_country .partner-image-container,
   .node-type-partner #block-system-main #mini-panel-partner_in_country .partner-image-container {
-    width: auto !important;
-    display: inline-block !important;
-    float: left !important;
-    margin-right: 20px !important;
+    display: block !important;
+    float: none !important;
   }
   .page-country-profile #block-system-main #mini-panel-partner_in_country .partner-text-container,
   .node-type-partner #block-system-main #mini-panel-partner_in_country .partner-text-container {
-    display: inline-block !important;
-    float: left !important;
+    display: block !important;
+    float: none !important;
+    text-align: center;
+    margin-bottom: 20px !important;
   }
   .page-country-profile #block-system-main #mini-panel-partner_in_country .pane-contact-information-partner,
   .node-type-partner #block-system-main #mini-panel-partner_in_country .pane-contact-information-partner,
@@ -363,6 +373,9 @@
   .page-faq .pane-faqs .ui-accordion.ui-widget > div a {
     display: block !important;
   }
+  .page-faq .pane-faqs .ui-accordion.ui-widget > div a .field-content:after {
+    content: "" !important;
+  }
   .page-faq .pane-faqs .ui-accordion.ui-widget > div .ui-accordion-content {
     display: block !important;
   }
@@ -370,5 +383,8 @@
   .page-sitemap #block-system-main span {
     display: inline-block !important;
     color: #000;
+  }
+  .page-promotional-resources .promotional-materials-types-container .field-name-name-field a {
+    display: block !important;
   }
 }

@@ -534,7 +534,7 @@ function hwc_practical_tool_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 284,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'oira_tools',
       'file_extensions' => 'png gif jpg jpeg',

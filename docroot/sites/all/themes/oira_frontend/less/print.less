@@ -118,6 +118,15 @@
 		span{
 			display: inline-block;
 		}
+		a{
+			display: inline !important;
+		}
+	}
+	.node-type-article{
+		.panels-flexible-row-new-10,
+		.panels-flexible-row-new-13{
+			display: none !important;
+		}
 	}
 	//oira faqs
 	.page-oira-faqs{
@@ -127,6 +136,11 @@
 			}
 			.ui-accordion-content{
 				display: block !important;
+				a{
+					.field-content:after{
+						content: "" !important;
+					}
+				}
 			}
 			.views-field-title-field a .field-content:after{
 				content: "" !important;
@@ -225,6 +239,7 @@
 	//partner and country detail
 	.page-country-profile, .node-type-partner{
 		#block-system-main{
+
 			img{
 				display: block !important;
 			}
@@ -260,14 +275,14 @@
 			#mini-panel-partner_in_country{
 				margin-top: 50px !important;
 				.partner-image-container{
-					width: auto !important;
-					display: inline-block !important;
-					float: left !important;
-					margin-right: 20px !important;
+					display: block !important;
+					float: none !important;
 				}
 				.partner-text-container{
-					display: inline-block !important;
-					float: left !important;
+					display: block !important;
+					float: none !important;
+					text-align: center;
+					margin-bottom: 20px !important;
 				}
 				.pane-contact-information-partner,
 				.pane-node-field-social-profile,
@@ -367,6 +382,9 @@
 				margin-bottom: 15px !important;
 				a{
 					display: block !important;
+					.field-content:after{
+						content: "" !important;
+					}
 				}
 				.ui-accordion-content{
 					display: block !important;
@@ -381,6 +399,17 @@
 			a, span{
 				display: inline-block !important;
 				color: #000;
+			}
+		}
+	}
+
+	//promotional introduction page
+	.page-promotional-resources{
+		.promotional-materials-types-container{
+			.field-name-name-field{
+				a{
+					display: block !important;
+				}
 			}
 		}
 	}

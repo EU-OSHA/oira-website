@@ -246,6 +246,7 @@ a.more-link{
 	.hwc-share-widget{
 		ul{
 			list-style: none;
+			overflow: hidden;
 			li.share-this-article{
 				display: none;
 			}
@@ -255,6 +256,7 @@ a.more-link{
 			    height: 23px;
 			    overflow: hidden;
 			    margin-right: 7px;
+			    float: left;
 			    a{
 			    	padding-left: 30px;
 			    }
@@ -282,6 +284,7 @@ a.more-link{
 .hwc-share-widget{
 	ul{
 		list-style: none;
+		overflow: hidden;
 		li.share-this-article{
 			display: none;
 		}
@@ -291,6 +294,7 @@ a.more-link{
 		    height: 23px;
 		    overflow: hidden;
 		    margin-right: 7px;
+		    float: left;
 		    a{
 		    	padding-left: 30px;
 		    }
@@ -504,6 +508,7 @@ a.more-link{
 				.views-field-field-image{
 					position: relative;
 					display:inline-block;
+					width: 100%;
 					background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%); /* FF3.6+ */
 					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
 					background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%); /* Chrome10+,Safari5.1+ */
@@ -516,10 +521,11 @@ a.more-link{
 						position:relative;
 						z-index:-1;
 						display:block;
+						width: 100%;
 						}
 					}
 				}
-				.views-field-title-field{
+				.views-field-field-link{
 					position: absolute;
 					//width: 1140px;
 					top: 45%;
@@ -539,6 +545,7 @@ a.more-link{
 					left: 10%;
 					color: @color-white;
 					margin-right: 10%;
+					font-size: @font-size1-3;
 				}
 			}
 			.owl-controls.clickable{
@@ -810,6 +817,9 @@ a.more-link{
 					font-size: @font-size2;
 					font-weight: bold;
 				}
+				h5{
+					font-size: 32px;
+				}
 				.views-view-grid{
 					margin-top: 30px;
 					margin-bottom: 15px;
@@ -843,6 +853,7 @@ a.more-link{
 		.field-type-image{
 			position: relative;
 			display:inline-block;
+			width: 100%;
 			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 140%); /* FF3.6+ */
 			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(140%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
 			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* Chrome10+,Safari5.1+ */
@@ -854,6 +865,7 @@ a.more-link{
 				position:relative;
 				z-index:-1;
 				display:block;
+				width: 100%;
 			}
 		}
 	}
@@ -1199,6 +1211,7 @@ a.more-link{
 		.field-type-image{
 			position: relative;
 			display:inline-block;
+			width: 100%;
 			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 140%); /* FF3.6+ */
 			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(140%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
 			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 140%); /* Chrome10+,Safari5.1+ */
@@ -1210,6 +1223,7 @@ a.more-link{
 				position:relative;
 				z-index:-1;
 				display:block;
+				width: 100%;
 			}
 		}
 		.pane-node-title-field{
@@ -1586,7 +1600,14 @@ a.more-link{
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
-								
+								.group-left {
+									a{
+										 img{
+										  	width: auto;
+										  	height: 100px;
+										}
+									}
+								}
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
@@ -1626,7 +1647,7 @@ a.more-link{
 		}
 	}
 	.panels-flexible-row-new-1{
-		background-color: @color-background-light-purple; 
+		background-color: @color-background-light-purple;
 		padding-top: 17px;
 		margin-bottom: 20px;
 		.view-id-faqs{
@@ -1657,6 +1678,9 @@ a.more-link{
 					
 					margin-bottom: 25px;
 					color: @color-text-grey;
+					ul{
+						padding-left: 20px;
+					}
 					p, span, ul li{
 						font-family: "Roboto";
 						font-size: @font-size0-9 !important;
@@ -1737,13 +1761,16 @@ a.more-link{
 			width: 100%;
 			padding: 6px 12px;
 		}
-		fieldset{
+		fieldset, .captcha{
 			margin-top: 35px;
 			background-color: rgba(0, 0, 0, 0);
 			border-radius: 0;
 			border: none;
 			width: 100%;
 			legend{
+				display: none;
+			}
+			.panel-heading{
 				display: none;
 			}
 			.panel-body{
@@ -1854,6 +1881,15 @@ a.more-link{
 					font-size: @font-size0-8;
 					margin-bottom: 25px;
 					color: @color-text-grey;
+					.article-link{
+						color: @color-text-purple-darker;
+						font-weight: bold;
+						font-style: italic;
+						text-decoration: underline !important;
+						&:hover{
+							color: @color-text-hover-blue;
+						}
+					}
 				}
 			}
 			.views-field-title-field.ui-accordion-header-active{
@@ -2361,6 +2397,8 @@ div[id ^= "mini-panel-partner_in_country"]{
 					min-height: 160px;
 					img{
 						margin: 0 auto;
+						height: 200px;
+						width: auto;
 					}
 				}
 				.partner-text-container{
@@ -2526,6 +2564,14 @@ div[id ^= "mini-panel-partner_in_country"]{
 				display: table;
 				border-collapse: collapse;
 				width: 100%;
+				.group-left {
+					a{
+						img{
+							width: auto;
+							height: 100px;
+						}
+					}
+				}
 				& > .even, & > .odd{
 					&:first-child{
 						display: table-cell;
@@ -2537,6 +2583,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					.node-partner{
 						margin-right: 10px;
 						margin-left: 0px;
+						
 					}
 				}
 			}
@@ -3053,7 +3100,14 @@ div[id ^= "mini-panel-partner_in_country"]{
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
-								
+								.group-left {
+									a{
+										img{
+											width: auto;
+											height: 100px;
+										}
+									}
+								}
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;
@@ -3065,6 +3119,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 									.node-partner{
 										  margin-right: 10px;
 										  margin-left: 0px;
+
 									}
 								}
 							}
@@ -3621,6 +3676,14 @@ div[id ^= "mini-panel-partner_in_country"]{
 							.related-partners-2 > div{
 								display: table;
 								border-collapse: collapse;
+								.group-left {
+									a{
+										 img{
+										  	width: auto;
+										  	height: 100px;
+										}
+									}
+								}
 								& > .even, & > .odd{
 									&:first-child{
 										display: table-cell;

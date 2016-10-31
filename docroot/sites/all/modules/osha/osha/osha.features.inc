@@ -70,17 +70,39 @@ function osha_image_default_styles() {
   $styles['generic_detail_thumbnail'] = array(
     'label' => 'Generic thumb image MC (large)',
     'effects' => array(
-      10 => array(
+      8 => array(
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 600,
           'height' => 350,
           'upscale' => 0,
           'respectminimum' => 1,
-          'onlyscaleifcrop' => 0,
+          'onlyscaleifcrop' => 1,
           'style_name' => 'generic_detail_thumbnail',
         ),
-        'weight' => 0,
+        'weight' => -11,
+      ),
+      6 => array(
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#FFFFFF',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => '',
+            'height' => '',
+            'xpos' => 'center',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => -10,
       ),
     ),
   );
