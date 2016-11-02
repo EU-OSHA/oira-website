@@ -90,6 +90,7 @@ function eu_captcha_captcha($op, $captcha_type = '') {
           '#name' => 'security_code',
           '#size' => 15,
           '#id' => 'security_code',
+          '#exclude_cv' => TRUE,
         );
         $result['captcha_validate'] = 'eu_captcha_validation';
         $result['solution'] = '';
