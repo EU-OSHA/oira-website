@@ -7008,6 +7008,20 @@ a.more-link:before {
 .field-name-pr-language p {
   margin-bottom: 0px;
 }
+.alert.alert-block.alert-info {
+  border: 0px;
+  background-color: #dfd8e4;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.alert.alert-block.alert-info p {
+  margin-bottom: 0px !important;
+}
+.alert.alert-block.alert-info p span {
+  color: #786586;
+  font-style: italic;
+  font-weight: bold;
+}
 .field-name-field-publication-date,
 .field-type-datetime {
   margin-bottom: 15px;
