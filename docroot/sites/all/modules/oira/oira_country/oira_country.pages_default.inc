@@ -11,7 +11,7 @@ function oira_country_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'term_view__country-eu';
   $handler->task = 'term_view';
@@ -399,27 +399,6 @@ function oira_country_default_page_manager_handlers() {
           'context' => 'argument_term_1',
           'not' => FALSE,
         ),
-        1 => array(
-          'name' => 'entity_field_value:taxonomy_term:country:field_iso2',
-          'settings' => array(
-            'field_iso2' => array(
-              'und' => array(
-                0 => array(
-                  'value' => 'eu',
-                  'format' => '',
-                ),
-              ),
-            ),
-            'field_iso2_value' => array(
-              0 => 'eu',
-            ),
-            'field_iso2_format' => array(
-              0 => '',
-            ),
-          ),
-          'context' => 'argument_term_1',
-          'not' => TRUE,
-        ),
       ),
       'logic' => 'and',
     ),
@@ -460,6 +439,8 @@ function oira_country_default_page_manager_handlers() {
           0 => 'center',
         ),
         'parent' => 'main',
+        'class' => 'country-page-top-row',
+        'hide_empty' => 0,
       ),
       'center' => array(
         'type' => 'region',
