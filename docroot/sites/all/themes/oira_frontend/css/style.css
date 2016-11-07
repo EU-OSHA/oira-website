@@ -6552,7 +6552,7 @@ button.close {
   display: inline-block;
   float: left;
 }
-.top-header .header-blocks #block-oira-blocks-oira-print-friendly a.printfriendly:before {
+.top-header .header-blocks #block-oira-blocks-oira-print-friendly a.printfriendly {
   content: url("../images/icons/220r.png");
 }
 .top-header .header-blocks #block-oira-blocks-oira-print-friendly a.printfriendly .glyphicon-print {
