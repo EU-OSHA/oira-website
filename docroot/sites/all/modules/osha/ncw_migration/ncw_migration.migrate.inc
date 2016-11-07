@@ -645,12 +645,7 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
     if (!empty($row->field_excluded_from) && is_array($row->field_excluded_from)) {
       $whitelist = array(
         'article',
-        'page',
-        'job_vacancies',
-        'news',
-        'press_release',
-        'publication',
-        'infographic'
+//        'news',
       );
       foreach($row->field_excluded_from as $k => $v) {
         if (!in_array($v, $whitelist)) {
