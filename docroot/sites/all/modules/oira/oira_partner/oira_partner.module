@@ -282,10 +282,14 @@ function _oira_partner_partner_country_minipanel() {
           }
         }
 
+        $style = '';
+        if ($count > 2) {
+          $style = 'style="display: none;';
+        }
         // Here is the markup, to with with whatever you wish.
         $render[] = array(
           '#type' => 'markup',
-          '#markup' => '<div data-partner-nid="' . $node->nid . '" class="country-partner-wrapper ' . $extra_class . '" style="display: none;">' . panels_render_display($panel_mini->display) . '</div>',
+          '#markup' => '<div data-partner-nid="' . $node->nid . '" class="country-partner-wrapper ' . $extra_class . '"' . $style . '>' . panels_render_display($panel_mini->display) . '</div>',
         );
       }
     }
