@@ -244,9 +244,23 @@ function _oira_partner_partner_country_minipanel() {
         '#type' => 'container',
         '#attributes' => array('class' => array('country-partners-container', 'partners-no-' . $count)),
       );
+
+      if ($count > 2) {
+        // Show logo views.
+        $view = views_get_view('oira_partners');
+        $view->set_display('block_1');
+        $view->set_arguments([$term->tid]);
+        $view->execute();
+        $render['logo_block'] = array(
+          '#type' => 'markup',
+          '#markup' => $view->render(),
+        );
+        drupal_add_js(drupal_get_path('module', 'oira_partner') . '/js/partner_list.js', ['type' => 'file']);
+      }
+
       $partners = node_load_multiple($partners);
       $extra_class = '';
-      if ($count > 1) {
+      if ($count == 2) {
         $render['#attributes']['class'][] = 'row';
         $extra_class = 'col-md-6';
       }
@@ -259,8 +273,8 @@ function _oira_partner_partner_country_minipanel() {
         $panel_mini->context = $panel_mini->display->context = ctools_context_load_contexts($panel_mini, FALSE, $contexts);
         $panel_mini->display->css_id = panels_mini_get_id($panel_mini->name);
 
-        // remove the limit of title for countries with only one partner
-        if ($count == 1) {
+        // remove the limit of title for countries with only one partner.
+        if ($count == 1 || $count > 2) {
           foreach ($panel_mini->display->content as $item) {
             if ($item->subtype == 'node:title_field') {
               unset($panel_mini->display->content[$item->pid]->css['css_class']);
@@ -268,10 +282,14 @@ function _oira_partner_partner_country_minipanel() {
           }
         }
 
+        $style = '';
+        if ($count > 2) {
+          $style = 'style="display: none;';
+        }
         // Here is the markup, to with with whatever you wish.
         $render[] = array(
           '#type' => 'markup',
-          '#markup' => '<div class="country-partner-wrapper ' . $extra_class . '">' . panels_render_display($panel_mini->display) . '</div>',
+          '#markup' => '<div data-partner-nid="' . $node->nid . '" class="country-partner-wrapper ' . $extra_class . '"' . $style . '>' . panels_render_display($panel_mini->display) . '</div>',
         );
       }
     }

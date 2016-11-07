@@ -51,7 +51,7 @@ function oira_blocks_block_view($delta = '') {
 //            )
 //          ),
 //        ),
-        '#markup' => '<a href="javascript:if(window.print)window.print();" class="printfriendly" title="Print page"><span class="glyphicon glyphicon-print gly-2x"></span></a>'
+        '#markup' => '<a href="#" onclick="if(window.print)window.print();" class="printfriendly" title="Print page"><span class="glyphicon glyphicon-print gly-2x"></span></a>'
       );
       break;
   }
