@@ -9,3 +9,7 @@ function oira_partner_update_7001() {
     ->condition('name', 'oira_partner', '=')
     ->execute();
 }
+
+function oira_partner_update_7002() {
+  features_revert_module('oira_partner');
+}

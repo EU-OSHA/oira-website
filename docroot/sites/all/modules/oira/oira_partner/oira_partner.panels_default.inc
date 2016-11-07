@@ -802,7 +802,7 @@ function oira_partner_default_panels_mini() {
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
         'title_style' => 'h2',
-        'title_link' => '',
+        'title_link' => 'content',
         'title_class' => '',
         'field_formatter_class' => '',
       ),
