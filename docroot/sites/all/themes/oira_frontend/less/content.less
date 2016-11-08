@@ -512,6 +512,10 @@ a.more-link{
 	.panels-flexible-row-new-6{
 		background-color: @color-background-light-purple;
 	}
+	.view-id-oira_partners{
+		border-bottom: none !important;
+    	padding-bottom: 0px !important;
+	}
 }
 
 #block-system-main{
@@ -644,6 +648,12 @@ a.more-link{
 	    		font-style: italic;
 			}
 			.view-promotional-materials{
+				.views-field-field-image{
+					padding: 15px 15px 0px 15px;
+					img{
+						width: 100%;
+					}
+				}
 				.views-item-columns-container{
 					background-color: @color-background-light-purple;
 					min-height: 320px;
@@ -2075,10 +2085,15 @@ a.more-link{
 
 .page-eu-national-partners{
 	h1{
-		color: @color-text-grey;
+		//color: @color-text-grey;
 	}
 	.panels-flexible-row{
 		padding-bottom: 0px;
+	}
+	.field-type-text-with-summary {
+    	font-family: 'Oswald';
+    	font-size: 1.4em;
+    	margin-bottom: 30px;
 	}
 	.pane-oira-country-oira-country-count-all{
 		.pane-content{
@@ -3722,10 +3737,19 @@ div[id ^= "mini-panel-partner_in_country"]{
 
 /* EU LEVEL COUNTRY
 *************************************************/
+.view-id-oira_partners{
+	border-bottom: 2px solid @color-primary-dark;
+	padding-bottom: 30px;
+	img{
+		padding: 15px;
+		cursor: pointer;
+	}
+}
 .page-country-profile-eu{
 	.country-partners-container{
 		margin-bottom: 30px;
 		position: relative;
+		
 		*{
 			box-sizing: border-box;
 		}

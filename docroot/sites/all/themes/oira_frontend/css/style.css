@@ -7272,6 +7272,10 @@ a.more-link:before {
 .front .panels-flexible-row-new-6 {
   background-color: #dfd8e4;
 }
+.front .view-id-oira_partners {
+  border-bottom: none !important;
+  padding-bottom: 0px !important;
+}
 #block-system-main .panels-flexible-region-new-slider {
   margin-top: 35px;
 }
@@ -7384,6 +7388,12 @@ a.more-link:before {
   font-weight: bold;
   margin-bottom: 14px;
   font-style: italic;
+}
+#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-field-field-image {
+  padding: 15px 15px 0px 15px;
+}
+#block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-field-field-image img {
+  width: 100%;
 }
 #block-system-main .panels-flexible-region-new-promotional_materials .pane-promotional-materials .view-promotional-materials .views-item-columns-container {
   background-color: #dfd8e4;
@@ -7604,7 +7614,6 @@ a.more-link:before {
 }
 .node-type-article h2 {
   font-size: 2em;
-  line-height: 1.4em !important;
 }
 .node-type-article h3 {
   font-size: 1.4em;
@@ -8693,11 +8702,13 @@ a.more-link:before {
 /*END OIRA NEWS*/
 /*COUNTRIES LIST
 *********************************************************/
-.page-eu-national-partners h1 {
-  color: #58585a;
-}
 .page-eu-national-partners .panels-flexible-row {
   padding-bottom: 0px;
+}
+.page-eu-national-partners .field-type-text-with-summary {
+  font-family: 'Oswald';
+  font-size: 1.4em;
+  margin-bottom: 30px;
 }
 .page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content {
   width: 100%;
@@ -10200,6 +10211,14 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
 /*END SEARCH*/
 /* EU LEVEL COUNTRY
 *************************************************/
+.view-id-oira_partners {
+  border-bottom: 2px solid #786586;
+  padding-bottom: 30px;
+}
+.view-id-oira_partners img {
+  padding: 15px;
+  cursor: pointer;
+}
 .page-country-profile-eu .country-partners-container {
   margin-bottom: 30px;
   position: relative;
@@ -12274,7 +12293,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   }
   .node-type-article h2 {
     font-size: 1.2em;
-    line-height: auto !important;
+    line-height: inherit !important;
   }
   .node-type-article h4 {
     font-size: 1.2em;
@@ -12284,7 +12303,7 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   }
   .node-type-article .pane-node-field-summary {
     font-size: 1em;
-    line-height: auto;
+    line-height: inherit;
     color: #967ea7;
   }
   .node-type-article .pane-node-body ul,

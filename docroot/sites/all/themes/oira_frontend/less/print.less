@@ -239,12 +239,14 @@
 	//partner and country detail
 	.page-country-profile, .node-type-partner{
 		#block-system-main{
-
 			img{
 				display: block !important;
 			}
 			a{
 				display: block !important;
+			}
+			a.more-link{
+				display: none !important;
 			}
 			.country-page-top-container{
 				border-top: 2px solid grey;
@@ -269,9 +271,16 @@
 					}
 				}
 			}
-			.view-id-country_partner_content.view-display-id-block{
+			.view-id-oira_partners{
+				border: none !important;
+				.col-md-2.col-sm-6.col-xs-12{
+					display: inline-block !important;
+				}
+			}
+			.quicktabs-tabs-container{
 				display: none !important;
 			}
+
 			#mini-panel-partner_in_country{
 				margin-top: 50px !important;
 				.partner-image-container{
@@ -294,6 +303,25 @@
 				}
 			}
 		}
+		.view-id-country_partner_content.view-display-id-block{
+				//display: none !important;
+				img{
+					display: none !important;
+				}
+				.content-group-label{
+					margin-top: 15px !important;
+				}
+				.group-right{
+					padding-top:15px !important;
+					padding-bottom:15px !important;
+					h3{
+						font-size: 1.2em !important;
+					}
+				}
+				.group-left, .group-center{
+					display: none !important;
+				}
+			}
 	}
 	//oira community introduction page
 	.page-oira-community{
@@ -414,6 +442,8 @@
 		}
 	}
 
-
+	.more-link{
+		display: none !important;
+	}
 	
 }
