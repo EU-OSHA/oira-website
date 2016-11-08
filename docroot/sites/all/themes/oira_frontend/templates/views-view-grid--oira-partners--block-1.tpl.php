@@ -18,7 +18,7 @@
   <?php foreach ($rows as $row_number => $columns): ?>
     <?php $x = (int) (12 / $options['columns']); ?>
       <?php foreach ($columns as $column_number => $item): ?>
-        <div class="col-md-<?php print $x; ?> col-sm-6 col-xs-6 <?php if ($column_classes[$row_number][$column_number]) { print $column_classes[$row_number][$column_number];  } ?>">
+        <div class="col-md-<?php print $x; ?> col-sm-4 col-xs-6 <?php if ($column_classes[$row_number][$column_number]) { print $column_classes[$row_number][$column_number];  } ?>">
           <div class="views-item-columns-container">
             <?php print $item; ?>
           </div>
