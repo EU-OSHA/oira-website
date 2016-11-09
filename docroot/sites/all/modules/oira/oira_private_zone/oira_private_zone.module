@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Partner profile user manage form.
+ */
+function oira_private_zone_manage_users_form($form, &$form_state) {
+  global $user;
+
+  $partner = oira_partner_get_account_partner();
+
+  $form['users'] = array(
+
+  );
+}
