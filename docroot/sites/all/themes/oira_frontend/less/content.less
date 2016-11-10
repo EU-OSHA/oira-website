@@ -3735,90 +3735,20 @@ div[id ^= "mini-panel-partner_in_country"]{
 }
 /*END SEARCH*/
 
-/* EU LEVEL COUNTRY
+/* Countries with more than two partners
 *************************************************/
-.view-id-oira_partners{
-	border-bottom: 2px solid @color-primary-dark;
-	padding-bottom: 30px;
-	img{
-		padding: 15px;
-		cursor: pointer;
+.more-than-two-partners{
+	.view-id-oira_partners{
+		img{
+			padding: 15px;
+			cursor: pointer;
+		}
 	}
-}
-.page-country-profile-eu{
 	.country-partners-container{
 		margin-bottom: 30px;
 		position: relative;
-		
 		*{
 			box-sizing: border-box;
-		}
-		.country-partner-wrapper:nth-child(2n+1){
-			//border-right: 2px solid @color-primary-dark;
-		}
-		.country-partner-wrapper{
-			div[id^="mini-panel-partner_in_country"]{
-				margin: 0px 40px;
-				cursor: pointer;
-				div[class*="col-sm"]{
-					padding-left: 0px;
-					padding-right: 0px;
-				}
-				.panels-flexible-row{
-					padding-bottom: 0px;
-					.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
-						padding-top: 30px;
-    					padding-bottom: 0px;
-    					margin-bottom: 0px;
-    					.partner-image-container{
-							width: 100%;
-							max-height: 120px;
-							img{
-								max-width: 150px;
-							}
-    					}
-    					.partner-text-container{
-							width: 100%;
-							text-align: center;
-							margin-top: 20px;
-							h2{
-								white-space: nowrap;
-								text-overflow: ellipsis;
-								overflow: hidden;
-								margin-bottom: 25px;
-								font-size: @font-size1-8;
-							}
-    					}
-					}
-					.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
-						display: none;
-						.partner-contact-container,
-						.partner-social-container,
-						.partner-colaborators-container,
-						.partner-text2-container {
-							width: 100%;
-							clear: both;
-							.pane-contact-information-partner,
-							.pane-node-field-social-profile,
-							.pane-node-field-collaborator,
-							.pane-taxonomy-term-field-ncw-fp-link{
-								.pane-title{
-									margin: 15px 0px;
-								}
-								> .pane-content{
-									border-bottom: 2px solid @color-primary-dark;
-									padding-bottom: 15px;
-								}
-							}
-						}
-						.partner-text2-container{
-							.pane-content{
-								margin: 15px 0px;
-							}
-						}
-					}
-				}
-			}
 		}
 		.active{
 			border-right: none !important;
@@ -3834,6 +3764,13 @@ div[id ^= "mini-panel-partner_in_country"]{
 			clear: both;
 			border-left: 2px solid @color-primary-dark;
 			border-right: none !important;
+		}
+	}
+	div[id^="mini-panel-partner_in_country"]{
+		.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+			border-top: 2px solid @color-primary-dark;
+			padding-top: 15px;
+			padding-bottom: 15px;
 		}
 	}
 }
