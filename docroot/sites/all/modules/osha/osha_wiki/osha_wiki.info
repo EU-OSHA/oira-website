@@ -58,6 +58,7 @@ features[variable][] = menu_parent_wiki_page
 features[variable][] = node_options_wiki_page
 features[variable][] = node_preview_wiki_page
 features[variable][] = node_submitted_wiki_page
+features[variable][] = xmlsitemap_settings_node_wiki_page
 features_exclude[field_base][field_tags] = field_tags
 features_exclude[taxonomy][tags] = tags
 features_exclude[taxonomy][activity] = activity

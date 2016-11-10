@@ -14,7 +14,7 @@ function osha_wiki_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_wiki_page';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['comment_anonymous_wiki_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -286,6 +286,16 @@ function osha_wiki_strongarm() {
   $strongarm->name = 'node_submitted_wiki_page';
   $strongarm->value = 0;
   $export['node_submitted_wiki_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_wiki_page';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_wiki_page'] = $strongarm;
 
   return $export;
 }

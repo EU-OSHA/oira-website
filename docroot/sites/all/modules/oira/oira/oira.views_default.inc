@@ -93,7 +93,7 @@ function oira_views_default_views() {
   $handler->display->display_options['filters']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['operator'] = 'not';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['value'] = array(
-    0 => '112',
+    0 => '711',
   );
   $handler->display->display_options['filters']['field_wiki_categories_tid']['vocabulary'] = 'wiki_categories';
 

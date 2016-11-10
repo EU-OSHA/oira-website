@@ -7,10 +7,14 @@
                 $('.sector-filter-tab-content > .node-teaser').each(function(){
                     var sector_tid = $(this).attr('data-sector-tid');
                     var sector_label = $(this).attr('data-sector-label');
-                    if ($.inArray(sector_tid, used) < 0) {
+                    if (typeof sector_tid != 'undefined' && $.inArray(sector_tid, used) < 0) {
                         used.push(sector_tid);
                         sectors.push({sector_tid: sector_tid, sector_label: sector_label});
                     }
+                });
+                // Sert the sectors based on labels.
+                sectors.sort(function(a, b) {
+                   return a.sector_label.localeCompare(b.sector_label);
                 });
                 var $ul = $('<ul class="partner-content-sector-filter"></ul>');
                 $ul.append('<li class="filter-active">' + Drupal.t("Any") + '</li>');
