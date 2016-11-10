@@ -10215,28 +10215,6 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   padding: 15px;
   cursor: pointer;
 }
-.more-than-two-partners .country-partners-container {
-  margin-bottom: 30px;
-  position: relative;
-}
-.more-than-two-partners .country-partners-container * {
-  box-sizing: border-box;
-}
-.more-than-two-partners .country-partners-container .active {
-  border-right: none !important;
-  float: left;
-  position: absolute;
-  margin-right: 30px;
-}
-.more-than-two-partners .country-partners-container .active .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last {
-  display: block !important;
-}
-.more-than-two-partners .country-partners-container .has-open-partner {
-  float: right;
-  clear: both;
-  border-left: 2px solid #786586;
-  border-right: none !important;
-}
 .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first {
   border-top: 2px solid #786586;
   padding-top: 15px;
@@ -10912,12 +10890,12 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   }
   div[id^="mini-panel-partner_in_country"] .partner-contact-container {
     margin-top: 20px;
-    min-height: 280px;
+    min-height: 340px;
     border-bottom: 2px solid #786586;
   }
   div[id^="mini-panel-partner_in_country"] .partner-social-container {
     margin-top: 20px;
-    min-height: 280px;
+    min-height: 340px;
     border-bottom: 2px solid #786586;
   }
   div[id^="mini-panel-partner_in_country"] .partner-colaborators-container {
@@ -10971,38 +10949,12 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     border-bottom: 2px solid #786586;
   }
   /*END COUNTRY PROFILE*/
-  /* EU LEVEL COUNTRY
+  /* Countries with more than two partners
 *************************************************/
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] {
-    margin: 0px 25px;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1 {
-    border-bottom: none;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .partner-contact-container {
-    margin-top: 0;
-    min-height: inherit;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first {
-    padding-top: 20px;
-    border-bottom: none;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .partner-image-container img {
-    max-width: 150px;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .partner-text-container h2 {
-    font-size: 1.6em;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-contact-container {
-    border-bottom: 0px;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-contact-container,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-social-container,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-colaborators-container,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container {
-    min-height: inherit;
-    margin-top: 0px;
-    border-bottom: none;
+  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first {
+    border-top: 2px solid #786586;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   /*END EU LEVEL COUNTRY*/
   /*OIRA TOOLS, PROMOTIONAL RESOURCES, GENERAL SEARCH (FILTERS)
@@ -12562,12 +12514,19 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   .page-country-profile .partners-no-1 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-colaborators-container,
   .page-country-profile .partners-no-1 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-text2-container {
     min-height: auto;
+    margin-top: 0px;
+    border-bottom: none;
+  }
+  .page-country-profile .partners-no-1 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .pane-contact-information-partner,
+  .page-country-profile .partners-no-1 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .pane-node-field-social-profile,
+  .page-country-profile .partners-no-1 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .pane-node-field-collaborator {
+    border-bottom: 2px solid #786586;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: 0px;
   }
-  .page-country-profile .partners-no-1 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-colaborators-container {
-    border-bottom: 2px solid #786586;
+  .page-country-profile .partners-no-1 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .pane-focal-point-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .page-country-profile .partners-no-2 {
     border-bottom: none;
@@ -12623,6 +12582,9 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   .more-than-two-partners div[id^="mini-panel-partner_in_country"] {
     margin: 0px 0px;
   }
+  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row {
+    padding-bottom: 0px;
+  }
   .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first {
     padding-top: 30px;
     border-bottom: none;
@@ -12638,42 +12600,19 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-social-container,
   .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-colaborators-container,
   .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container {
+    border-bottom: none !important;
+    margin-top: 0px !important;
+  }
+  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .pane-contact-information-partner,
+  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .pane-node-field-social-profile,
+  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .pane-node-field-collaborator {
     border-bottom: 2px solid #786586;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-contact-container .pane-contact-information-partner > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-social-container .pane-contact-information-partner > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-colaborators-container .pane-contact-information-partner > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container .pane-contact-information-partner > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-contact-container .pane-node-field-social-profile > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-social-container .pane-node-field-social-profile > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-colaborators-container .pane-node-field-social-profile > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container .pane-node-field-social-profile > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-contact-container .pane-node-field-collaborator > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-social-container .pane-node-field-collaborator > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-colaborators-container .pane-node-field-collaborator > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container .pane-node-field-collaborator > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-contact-container .pane-taxonomy-term-field-ncw-fp-link > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-social-container .pane-taxonomy-term-field-ncw-fp-link > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-colaborators-container .pane-taxonomy-term-field-ncw-fp-link > .pane-content,
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container .pane-taxonomy-term-field-ncw-fp-link > .pane-content {
-    border-bottom: none;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container {
-    border-bottom: none;
-  }
-  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .partner-text2-container .pane-content {
-    border-bottom: 2px solid #786586 !important;
-  }
-  .more-than-two-partners .active {
-    float: none;
-    clear: both;
-    position: inherit;
-    margin-right: 0px !important;
-  }
-  .more-than-two-partners .has-open-partner {
-    float: none;
-    border-left: none;
-    border-right: none !important;
+  .more-than-two-partners div[id^="mini-panel-partner_in_country"] .panels-flexible-row .panels-flexible-row-new-1-inside.panels-flexible-row-inside-last .pane-focal-point-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   /*PARTNER DETAIL PAGE
 **********************************/
