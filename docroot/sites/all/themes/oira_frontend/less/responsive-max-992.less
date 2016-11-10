@@ -614,46 +614,42 @@ div[id ^= "mini-panel-partner_in_country"]{
 
 /* EU LEVEL COUNTRY
 *************************************************/
-.page-country-profile-eu{
-	.country-partners-container{
-		.country-partner-wrapper{
-			div[id^="mini-panel-partner_in_country"]{
-				margin: 0px 25px;
-				.panels-flexible-row-new-1{
-					border-bottom: none;
+.more-than-two-partners{
+	div[id^="mini-panel-partner_in_country"]{
+		margin: 0px 25px;
+		.panels-flexible-row-new-1{
+			border-bottom: none;
+		}
+		.partner-contact-container{
+			margin-top: 0;
+			min-height: inherit;
+		}
+		.panels-flexible-row{
+			.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+				padding-top: 20px;
+				border-bottom: none;
+				.partner-image-container{
+					img{
+						max-width: 150px;
+					}
 				}
+				.partner-text-container{
+					h2{
+						font-size: @font-size1-6;
+					}
+				}
+			}
+			.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
 				.partner-contact-container{
-					margin-top: 0;
-					min-height: inherit;
+					border-bottom: 0px;
 				}
-				.panels-flexible-row{
-					.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
-						padding-top: 20px;
-    					border-bottom: none;
-    					.partner-image-container{
-							img{
-								max-width: 150px;
-							}
-    					}
-    					.partner-text-container{
-							h2{
-								font-size: @font-size1-6;
-							}
-    					}
-					}
-					.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
-						.partner-contact-container{
-							border-bottom: 0px;
-						}
-						.partner-contact-container,
-						.partner-social-container,
-						.partner-colaborators-container,
-						.partner-text2-container {
-							min-height: inherit;
-							margin-top: 0px;
-							border-bottom: none;
-						}
-					}
+				.partner-contact-container,
+				.partner-social-container,
+				.partner-colaborators-container,
+				.partner-text2-container {
+					min-height: inherit;
+					margin-top: 0px;
+					border-bottom: none;
 				}
 			}
 		}

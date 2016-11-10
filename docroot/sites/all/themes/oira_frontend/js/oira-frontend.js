@@ -77,7 +77,10 @@ jQuery(document).ready(function () {
 	//add bootstrap when are 2 partners in a country
 	jQuery(".page-country-profile .pane-oira-partner-oira-partner-country .partners-no-2 > div").addClass('col-sm-6');
 
-	
+	//add generic class for pages that contains more than 2 partners
+	if ( jQuery(".country-more-partners").length ) {
+		jQuery("body").addClass("more-than-two-partners");
+	}
 
 	/*specific functions for pc, tablet and mobile */
 	funcionesPc();

@@ -240,9 +240,10 @@ function _oira_partner_partner_country_minipanel() {
     $partners = _oira_partner_get_by_country($term->tid, array(OIRA_PARTNER_TYPE_SECTORIAL_TID, OIRA_PARTNER_TYPE_NATIONAL_TID));
     if (!empty($partners)) {
       $count = count($partners);
+      $more_partners_class = ($count>2)?'country-more-partners':'';
       $render = array(
         '#type' => 'container',
-        '#attributes' => array('class' => array('country-partners-container', 'partners-no-' . $count)),
+        '#attributes' => array('class' => array('country-partners-container', 'partners-no-' . $count, $more_partners_class)),
       );
 
       if ($count > 2) {
@@ -284,12 +285,18 @@ function _oira_partner_partner_country_minipanel() {
 
         $style = '';
         if ($count > 2) {
-          $style = 'style="display: none;';
+          $style = ' display: none; ';
         }
-        // Here is the markup, to with with whatever you wish.
+        $html = '<div data-partner-nid="@nid" class="country-partner-wrapper container @extra_class" style="@style">@panel</div>';
+        $html = strtr($html, array(
+          '@extra_class' => $extra_class,
+          '@style' => $style,
+          '@panel' => panels_render_display($panel_mini->display),
+          '@nid' => $node->nid,
+        ));
         $render[] = array(
           '#type' => 'markup',
-          '#markup' => '<div data-partner-nid="' . $node->nid . '" class="country-partner-wrapper ' . $extra_class . '"' . $style . '>' . panels_render_display($panel_mini->display) . '</div>',
+          '#markup' => $html,
         );
       }
     }

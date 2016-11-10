@@ -343,19 +343,23 @@ abstract class AbstractNCWNodeMigration extends Migration {
     $to_be_removed = array();
     if (!empty($removed)) {
       foreach ($removed as $to_remove) {
-        $to_be_removed[] =$to_remove->destid1;
+        $to_be_removed[] = $to_remove->destid1;
         $this->getMap()->delete(array($to_remove->sourceid1));
       }
       if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'taxonomy_term') {
-        foreach ($to_be_removed as $tid) {
-          taxonomy_term_delete($tid);
-          watchdog('ncw_migration', 'Deleting TERMS that are not in the source anymore (@migration): !tids.',
-            array('!tids' => implode(', ', $to_be_removed), '@migration' => $this->arguments['machine_name']), WATCHDOG_INFO);
-        }
+//        foreach ($to_be_removed as $tid) {
+//          taxonomy_term_delete($tid);
+//          watchdog('ncw_migration', 'Deleting TERMS that are not in the source anymore (@migration): !tids.',
+//            array('!tids' => implode(', ', $to_be_removed), '@migration' => $this->arguments['machine_name']), WATCHDOG_INFO);
+//        }
       }
       else if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'node') {
-        node_delete_multiple($to_be_removed);
-        watchdog('ncw_migration', 'Deleting NODES that are not in the source anymore (@migration): !nids.',
+        $nodes = node_load_multiple($to_be_removed);
+        foreach ($nodes as $node) {
+          $node->status = 0;
+          node_save($node);
+        }
+        watchdog('ncw_migration', 'Unpublishing NODES that are not in the source anymore (@migration): !nids.',
           array('!nids' => implode(', ', $to_be_removed), '@migration' => $this->arguments['machine_name']), WATCHDOG_INFO);
       }
     }
@@ -641,12 +645,7 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
     if (!empty($row->field_excluded_from) && is_array($row->field_excluded_from)) {
       $whitelist = array(
         'article',
-        'page',
-        'job_vacancies',
-        'news',
-        'press_release',
-        'publication',
-        'infographic'
+//        'news',
       );
       foreach($row->field_excluded_from as $k => $v) {
         if (!in_array($v, $whitelist)) {
