@@ -227,6 +227,21 @@ a.more-link{
     }
 }
 
+.alert.alert-block.alert-info{
+	border: 0px;
+	background-color: @color-primary;
+	margin-left: 15px;
+	margin-right: 15px;
+	p{
+		margin-bottom: 0px !important;
+		span{
+			color: @color-text-purple-darker;
+			font-style: italic;
+			font-weight: bold;
+		}
+	}
+}
+
 .field-name-field-publication-date, .field-type-datetime{
 	margin-bottom: 15px;
 	color: @color-text-purple;
@@ -497,6 +512,10 @@ a.more-link{
 	.panels-flexible-row-new-6{
 		background-color: @color-background-light-purple;
 	}
+	.view-id-oira_partners{
+		border-bottom: none !important;
+    	padding-bottom: 0px !important;
+	}
 }
 
 #block-system-main{
@@ -629,6 +648,12 @@ a.more-link{
 	    		font-style: italic;
 			}
 			.view-promotional-materials{
+				.views-field-field-image{
+					padding: 15px 15px 0px 15px;
+					img{
+						width: 100%;
+					}
+				}
 				.views-item-columns-container{
 					background-color: @color-background-light-purple;
 					min-height: 320px;
@@ -874,7 +899,6 @@ a.more-link{
 	}
 	h2{
 		font-size: @font-size2;
-		line-height: 1.4em !important;//testing quitar cuando se introduzcan bien los contenidos
 	}
 	h3{
 		font-size: @font-size1-4;
@@ -2061,10 +2085,15 @@ a.more-link{
 
 .page-eu-national-partners{
 	h1{
-		color: @color-text-grey;
+		//color: @color-text-grey;
 	}
 	.panels-flexible-row{
 		padding-bottom: 0px;
+	}
+	.field-type-text-with-summary {
+    	font-family: 'Oswald';
+    	font-size: 1.4em;
+    	margin-bottom: 30px;
 	}
 	.pane-oira-country-oira-country-count-all{
 		.pane-content{
@@ -3706,81 +3735,20 @@ div[id ^= "mini-panel-partner_in_country"]{
 }
 /*END SEARCH*/
 
-/* EU LEVEL COUNTRY
+/* Countries with more than two partners
 *************************************************/
-.page-country-profile-eu{
+.more-than-two-partners{
+	.view-id-oira_partners{
+		img{
+			padding: 15px;
+			cursor: pointer;
+		}
+	}
 	.country-partners-container{
 		margin-bottom: 30px;
 		position: relative;
 		*{
 			box-sizing: border-box;
-		}
-		.country-partner-wrapper:nth-child(2n+1){
-			//border-right: 2px solid @color-primary-dark;
-		}
-		.country-partner-wrapper{
-			div[id^="mini-panel-partner_in_country"]{
-				margin: 0px 40px;
-				cursor: pointer;
-				div[class*="col-sm"]{
-					padding-left: 0px;
-					padding-right: 0px;
-				}
-				.panels-flexible-row{
-					padding-bottom: 0px;
-					.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
-						padding-top: 30px;
-    					padding-bottom: 0px;
-    					margin-bottom: 0px;
-    					.partner-image-container{
-							width: 100%;
-							max-height: 120px;
-							img{
-								max-width: 150px;
-							}
-    					}
-    					.partner-text-container{
-							width: 100%;
-							text-align: center;
-							margin-top: 20px;
-							h2{
-								white-space: nowrap;
-								text-overflow: ellipsis;
-								overflow: hidden;
-								margin-bottom: 25px;
-								font-size: @font-size1-8;
-							}
-    					}
-					}
-					.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
-						display: none;
-						.partner-contact-container,
-						.partner-social-container,
-						.partner-colaborators-container,
-						.partner-text2-container {
-							width: 100%;
-							clear: both;
-							.pane-contact-information-partner,
-							.pane-node-field-social-profile,
-							.pane-node-field-collaborator,
-							.pane-taxonomy-term-field-ncw-fp-link{
-								.pane-title{
-									margin: 15px 0px;
-								}
-								> .pane-content{
-									border-bottom: 2px solid @color-primary-dark;
-									padding-bottom: 15px;
-								}
-							}
-						}
-						.partner-text2-container{
-							.pane-content{
-								margin: 15px 0px;
-							}
-						}
-					}
-				}
-			}
 		}
 		.active{
 			border-right: none !important;
@@ -3796,6 +3764,13 @@ div[id ^= "mini-panel-partner_in_country"]{
 			clear: both;
 			border-left: 2px solid @color-primary-dark;
 			border-right: none !important;
+		}
+	}
+	div[id^="mini-panel-partner_in_country"]{
+		.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+			border-top: 2px solid @color-primary-dark;
+			padding-top: 15px;
+			padding-bottom: 15px;
 		}
 	}
 }
