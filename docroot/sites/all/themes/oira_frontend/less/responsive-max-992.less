@@ -541,12 +541,12 @@ div[id ^= "mini-panel-partner_in_country"]{
 	}
 	.partner-contact-container{
 		margin-top: 20px;
-		min-height: 280px;
+		min-height: 340px;
 		border-bottom: 2px solid @color-text-purple-darker;
 	}
 	.partner-social-container{
 		margin-top: 20px;
-		min-height: 280px;
+		min-height: 340px;
 		border-bottom: 2px solid @color-text-purple-darker;
 	}
 	.partner-colaborators-container{
@@ -612,46 +612,26 @@ div[id ^= "mini-panel-partner_in_country"]{
 }
 /*END COUNTRY PROFILE*/
 
-/* EU LEVEL COUNTRY
+/* Countries with more than two partners
 *************************************************/
 .more-than-two-partners{
 	div[id^="mini-panel-partner_in_country"]{
-		margin: 0px 25px;
-		.panels-flexible-row-new-1{
-			border-bottom: none;
+		.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+			border-top: 2px solid @color-primary-dark;
+			padding-top: 15px;
+			padding-bottom: 15px;
 		}
-		.partner-contact-container{
-			margin-top: 0;
-			min-height: inherit;
+		.partner-contact-container,
+		.partner-social-container,
+		.partner-colaborators-container,
+		.partner-text2-container {
+			
 		}
-		.panels-flexible-row{
-			.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
-				padding-top: 20px;
-				border-bottom: none;
-				.partner-image-container{
-					img{
-						max-width: 150px;
-					}
-				}
-				.partner-text-container{
-					h2{
-						font-size: @font-size1-6;
-					}
-				}
-			}
-			.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
-				.partner-contact-container{
-					border-bottom: 0px;
-				}
-				.partner-contact-container,
-				.partner-social-container,
-				.partner-colaborators-container,
-				.partner-text2-container {
-					min-height: inherit;
-					margin-top: 0px;
-					border-bottom: none;
-				}
-			}
+		.pane-contact-information-partner,
+		.pane-node-field-social-profile,
+		.pane-node-field-collaborator,
+		.pane-taxonomy-term-field-ncw-fp-link{
+
 		}
 	}
 }
