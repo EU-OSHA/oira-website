@@ -12652,8 +12652,6 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container,
   .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container {
     min-height: 0px !important;
-    padding-top: 15px;
-    padding-bottom: 15px;
   }
   .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-contact-information-partner > .pane-title,
   .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-contact-information-partner > .pane-title,
@@ -12709,26 +12707,30 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     display: none;
     margin-top: 15px;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-text2-container {
+    min-height: auto;
     margin-top: 0px;
-    border-bottom: 2px solid #786586;
+    border-bottom: none;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container {
-    margin-top: 0px;
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-contact-information-partner,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-node-field-social-profile,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-node-field-collaborator {
     border-bottom: 2px solid #786586;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-focal-point-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container {
     margin-top: 0px;
-    border-bottom: 2px solid #786586;
   }
   .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
     font-size: 0.8em;
-  }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-text2-container {
-    margin-top: 0px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #786586;
   }
   /*END PARTNER DETAIL PAGE*/
   /* QUICKTABS FOR COUNTRY DETAIL AND PARTNER DETAIL

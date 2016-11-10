@@ -1199,8 +1199,6 @@ h1.page-header {
 			.partner-colaborators-container{
 				
 				min-height: 0px !important;
-				padding-top: 15px;
-				padding-bottom: 15px;
 				
 				.pane-contact-information-partner,
 				.pane-node-field-social-profile,
@@ -1231,18 +1229,27 @@ h1.page-header {
 					}
 				}
 			}
-			.partner-contact-container{
+			.partner-contact-container, 
+			.partner-social-container, 
+			.partner-colaborators-container, 
+			.partner-text2-container{
+				min-height: auto;
 				margin-top: 0px;
-				border-bottom: 2px solid @color-text-purple-darker;
+				border-bottom: none;
 			}
-			.partner-social-container{
-				margin-top: 0px;
-				border-bottom: 2px solid @color-text-purple-darker;
-
+			.pane-contact-information-partner,
+			.pane-node-field-social-profile,
+			.pane-node-field-collaborator{
+				border-bottom: 2px solid @color-primary-dark;
+				padding-top: 15px;
+				padding-bottom: 15px;
+			}
+			.pane-focal-point-text{
+				padding-top: 15px;
+				padding-bottom: 15px;
 			}
 			.partner-colaborators-container{
 				margin-top: 0px;
-				border-bottom: 2px solid @color-text-purple-darker;
 				.field-name-field-collaborator{
 					>div.field-items{
 						>div.field-item{
@@ -1252,12 +1259,6 @@ h1.page-header {
 						}
 					}
 				}
-			}
-			.partner-text2-container{
-				margin-top: 0px;
-				padding-top: 15px;
-				padding-bottom: 15px;
-				border-bottom: 2px solid @color-text-purple-darker;
 			}
 		}
 	}
