@@ -34,7 +34,7 @@ function oira_country_focal_point_pane_render($subtype = NULL, $conf = NULL, $ar
     $link = $term_wrapper->field_ncw_fp_link->value()['url'];
     if (!empty($link)) {
       $text = variable_get('oira_config_focal_point_text', 'Focal point');
-      $block->content = '<div class="focal-poin-partner-text">' . t($text, array('@link' => $link)) . '</div>';
+      $block->content = '<div class="focal-poin-partner-text col-md-12">' . t($text, array('@link' => $link)) . '</div>';
     }
   }
   return $block;
