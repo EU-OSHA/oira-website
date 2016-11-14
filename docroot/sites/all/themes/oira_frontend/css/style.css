@@ -9009,6 +9009,20 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-social-container {
   min-height: 250px;
 }
+.partners-no-2 .focal-poin-partner-text {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+.focal-poin-partner-text {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.focal-poin-partner-text a {
+  font-style: italic;
+}
+.focal-poin-partner-text a:before {
+  content: " > ";
+}
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-group-wrapper,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper {
   padding-bottom: 30px;
@@ -10877,9 +10891,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .partners-no-1 {
     margin-bottom: 0px;
   }
-  div[id^="mini-panel-partner_in_"] .panels-flexible-row-new-1 {
-    border-bottom: 2px solid #786586;
-  }
   div[id^="mini-panel-partner_in_"] .panels-flexible-row-first {
     border-bottom: 2px solid #786586;
   }
@@ -10898,7 +10909,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     min-height: 340px;
     border-bottom: 2px solid #786586;
   }
-  div[id^="mini-panel-partner_in_"] .partner-colaborators-container {
+  div[id^="mini-panel-partner_in_"] .partner-colaborators-container .field-name-field-collaborator {
     margin-top: 20px;
   }
   div[id^="mini-panel-partner_in_"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
@@ -10925,6 +10936,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1 {
     border-bottom: none;
   }
+  .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] h2 {
+    border-bottom: none !important;
+  }
   .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first {
     margin-left: 0px;
     margin-right: 0px;
@@ -10941,12 +10955,19 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-colaborators-container,
   .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-text2-container {
     min-height: auto;
+    margin-top: 0px;
+    border-bottom: none;
+  }
+  .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .pane-contact-information-partner,
+  .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .pane-node-field-social-profile,
+  .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .pane-node-field-collaborator {
+    border-bottom: 2px solid #786586;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: 0px;
   }
-  .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside .partner-colaborators-container {
-    border-bottom: 2px solid #786586;
+  .partners-no-2 .focal-poin-partner-text {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   /*END COUNTRY PROFILE*/
   /* Countries with more than two partners
@@ -12543,6 +12564,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first .partner-text-container h2 {
     border-bottom: none;
+  }
+  .page-country-profile .partners-no-2 .focal-poin-partner-text {
+    padding-left: 0px;
+    padding-right: 0px;
   }
   #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .node-teaser,
   #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .node-teaser {

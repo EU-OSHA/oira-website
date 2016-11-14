@@ -529,7 +529,7 @@
 }
 div[id ^= "mini-panel-partner_in_"]{
 	.panels-flexible-row-new-1{
-		border-bottom: 2px solid @color-text-purple-darker;
+		//border-bottom: 2px solid @color-text-purple-darker;
 	}
 	.panels-flexible-row-first{
 		border-bottom: 2px solid @color-text-purple-darker;
@@ -550,8 +550,9 @@ div[id ^= "mini-panel-partner_in_"]{
 		border-bottom: 2px solid @color-text-purple-darker;
 	}
 	.partner-colaborators-container{
-		margin-top: 20px;
+		
 		.field-name-field-collaborator{
+			margin-top: 20px;
 			>div.field-items{
 				>div.field-item{
 					.field-name-field-collaborator-name{
@@ -583,6 +584,9 @@ div[id ^= "mini-panel-partner_in_"]{
 			.panels-flexible-row-new-1{
 				border-bottom: none;
 			}
+			h2{
+				border-bottom: none !important;
+			}
 			.panels-flexible-row-inside-first{
 				margin-left: 0px;
     			margin-right: 0px;
@@ -597,17 +601,27 @@ div[id ^= "mini-panel-partner_in_"]{
 				> div{
 					width: 100%;
 				}
-				.partner-contact-container, .partner-social-container, .partner-colaborators-container, .partner-text2-container{
+				.partner-contact-container, 
+				.partner-social-container, 
+				.partner-colaborators-container, 
+				.partner-text2-container{
 					min-height: auto;
+					margin-top: 0px;
+					border-bottom: none;
+				}
+				.pane-contact-information-partner,
+				.pane-node-field-social-profile,
+				.pane-node-field-collaborator{
+					border-bottom: 2px solid @color-primary-dark;
 					padding-top: 15px;
 					padding-bottom: 15px;
-					margin-top: 0px;
-				}
-				.partner-colaborators-container{
-					border-bottom: 2px solid @color-primary-dark;
 				}
 			}
 		}
+	}
+	.focal-poin-partner-text{
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 /*END COUNTRY PROFILE*/
