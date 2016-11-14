@@ -8859,29 +8859,29 @@ a.more-link:before {
 .page-country-profile .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .pane-taxonomy-term-country-content-count .field-items .field-item:first-child {
   border-left: 2px solid #ffffff;
 }
-div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first {
+div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first {
   background-color: #ffffff !important;
   border-bottom: 2px solid #786586;
   padding-top: 10px;
   margin-bottom: 10px;
   padding-bottom: 30px;
 }
-div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first h2 {
+div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first h2 {
   margin-top: 0px;
   line-height: 1.3em;
 }
-div[id^="mini-panel-partner_in_country"] .panels-flexible-row-inside-first .partner-image-container img {
+div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first .partner-image-container img {
   margin: 0 auto;
 }
-div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-title,
-div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-title,
-div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-title,
-div[id^="mini-panel-partner_in_country"] .partner-text2-container .pane-title {
+div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-title,
+div[id^="mini-panel-partner_in_"] .partner-social-container .pane-title,
+div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-title,
+div[id^="mini-panel-partner_in_"] .partner-text2-container .pane-title {
   color: #967ea7;
   font-weight: bold;
   margin-bottom: 15px;
 }
-div[id^="mini-panel-partner_in_country"] .partner-contact-container .field-name-field-country {
+div[id^="mini-panel-partner_in_"] .partner-contact-container .field-name-field-country {
   background-color: #ffffff;
   display: block;
   color: #58585a;
@@ -8893,15 +8893,15 @@ div[id^="mini-panel-partner_in_country"] .partner-contact-container .field-name-
   margin-right: 0px;
   margin-bottom: 15px;
 }
-div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-contact-information-partner .pane-content .pane-title {
+div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-contact-information-partner .pane-content .pane-title {
   color: #58585a !important;
   font-weight: bold !important;
   font-size: 1em !important;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a {
+div[id^="mini-panel-partner_in_"] .partner-social-container a {
   color: #58585a;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a span {
+div[id^="mini-panel-partner_in_"] .partner-social-container a span {
   margin-left: 30px;
   margin-bottom: 5px;
   display: block;
@@ -8909,10 +8909,10 @@ div[id^="mini-panel-partner_in_country"] .partner-social-container a span {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a:hover {
+div[id^="mini-panel-partner_in_"] .partner-social-container a:hover {
   color: #23527c;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a:before {
   content: "";
   background: url("../images/icons/214b.png") no-repeat;
   background-size: 100%;
@@ -8920,59 +8920,59 @@ div[id^="mini-panel-partner_in_country"] .partner-social-container a:before {
   height: 20px;
   position: absolute;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a.social-profile-icon-facebook:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a.social-profile-icon-facebook:before {
   content: "";
   background: url("../images/icons/189b.png") no-repeat;
   background-size: 100%;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a.social-profile-icon-twitter:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a.social-profile-icon-twitter:before {
   content: "";
   background: url("../images/icons/195b.png") no-repeat;
   background-size: 100%;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a.social-profile-icon-youtube:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a.social-profile-icon-youtube:before {
   content: "";
   background: url("../images/icons/207b.png") no-repeat;
   background-size: 100%;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a.social-profile-icon-slideshare:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a.social-profile-icon-slideshare:before {
   content: "";
   background: url("../images/icons/223b.png") no-repeat;
   background-size: 100%;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a.social-profile-icon-linkedin:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a.social-profile-icon-linkedin:before {
   content: "";
   background: url("../images/icons/201b.png") no-repeat;
   background-size: 100%;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a.social-profile-icon-pinterest:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a.social-profile-icon-pinterest:before {
   content: "";
   background: url("../images/icons/121b.png") no-repeat;
   background-size: 100%;
 }
-div[id^="mini-panel-partner_in_country"] .partner-social-container a.social-profile-icon-google:before {
+div[id^="mini-panel-partner_in_"] .partner-social-container a.social-profile-icon-google:before {
   content: "";
   background: url("../images/icons/222b.png") no-repeat;
   background-size: 100%;
 }
-div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item {
+div[id^="mini-panel-partner_in_"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item {
   display: inline-block;
   margin-right: 10px;
 }
-div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
+div[id^="mini-panel-partner_in_"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
   margin-bottom: 15px;
   margin-top: 5px;
   font-weight: bold;
 }
-div[id^="mini-panel-partner_in_country"] .partner-text2-container a {
+div[id^="mini-panel-partner_in_"] .partner-text2-container a {
   color: #967ea7;
   font-weight: bold;
   font-style: italic;
 }
-div[id^="mini-panel-partner_in_country"] .partner-text2-container a:before {
+div[id^="mini-panel-partner_in_"] .partner-text2-container a:before {
   content: "> ";
 }
-div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
+div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   color: #23527c;
 }
 .partners-no-2 .country-partner-wrapper:last-child {
@@ -10877,34 +10877,34 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
   .partners-no-1 {
     margin-bottom: 0px;
   }
-  div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1 {
+  div[id^="mini-panel-partner_in_"] .panels-flexible-row-new-1 {
     border-bottom: 2px solid #786586;
   }
-  div[id^="mini-panel-partner_in_country"] .panels-flexible-row-first {
+  div[id^="mini-panel-partner_in_"] .panels-flexible-row-first {
     border-bottom: 2px solid #786586;
   }
-  div[id^="mini-panel-partner_in_country"] .panels-flexible-row-first .panels-flexible-row-inside-first {
+  div[id^="mini-panel-partner_in_"] .panels-flexible-row-first .panels-flexible-row-inside-first {
     margin-top: 0px !important;
     border-bottom: none;
     padding-bottom: 0px;
   }
-  div[id^="mini-panel-partner_in_country"] .partner-contact-container {
+  div[id^="mini-panel-partner_in_"] .partner-contact-container {
     margin-top: 20px;
     min-height: 340px;
     border-bottom: 2px solid #786586;
   }
-  div[id^="mini-panel-partner_in_country"] .partner-social-container {
+  div[id^="mini-panel-partner_in_"] .partner-social-container {
     margin-top: 20px;
     min-height: 340px;
     border-bottom: 2px solid #786586;
   }
-  div[id^="mini-panel-partner_in_country"] .partner-colaborators-container {
+  div[id^="mini-panel-partner_in_"] .partner-colaborators-container {
     margin-top: 20px;
   }
-  div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
+  div[id^="mini-panel-partner_in_"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
     font-size: 0.8em;
   }
-  div[id^="mini-panel-partner_in_country"] .partner-text2-container {
+  div[id^="mini-panel-partner_in_"] .partner-text2-container {
     margin-top: 20px;
   }
   .partners-no-2 {
@@ -12623,113 +12623,113 @@ div[id^="mini-panel-partner_in_country"] .partner-text2-container a:hover {
     margin-left: 0px !important;
     margin-right: 0px !important;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] {
     overflow: hidden;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1 {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .panels-flexible-row-new-1 {
     border-bottom: none;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] div[class*="col-sm"] {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] div[class*="col-sm"] {
     padding-right: 0px !important;
     padding-left: 0px !important;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .panels-flexible-row-first {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .panels-flexible-row-first {
     border-bottom: 2px solid #786586;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .panels-flexible-row-first .panels-flexible-row-inside-first {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .panels-flexible-row-first .panels-flexible-row-inside-first {
     margin-top: 0px !important;
     border-bottom: none;
     padding-bottom: 0px;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .panels-flexible-row-first .panels-flexible-row-inside-first .partner-image-container {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .panels-flexible-row-first .panels-flexible-row-inside-first .partner-image-container {
     min-height: 160px;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .panels-flexible-row-first .panels-flexible-row-inside-first h2 {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .panels-flexible-row-first .panels-flexible-row-inside-first h2 {
     font-size: 1.6em;
     text-align: left !important;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container {
     min-height: 0px !important;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-contact-information-partner > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-contact-information-partner > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-contact-information-partner > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-social-profile > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-social-profile > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-social-profile > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-collaborator > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-collaborator > .pane-title,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-collaborator > .pane-title {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-contact-information-partner > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-contact-information-partner > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-contact-information-partner > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-social-profile > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-social-profile > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-social-profile > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-collaborator > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-collaborator > .pane-title,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-collaborator > .pane-title {
     margin-bottom: 0px;
     cursor: pointer;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-contact-information-partner > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-contact-information-partner > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-contact-information-partner > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-social-profile > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-social-profile > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-social-profile > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-collaborator > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-collaborator > .pane-title:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-collaborator > .pane-title:after {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-contact-information-partner > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-contact-information-partner > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-contact-information-partner > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-social-profile > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-social-profile > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-social-profile > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-collaborator > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-collaborator > .pane-title:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-collaborator > .pane-title:after {
     content: "\e252";
     font-family: "Glyphicons Halflings";
     padding-left: 10px;
     color: #10b2e4;
     vertical-align: middle;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-contact-information-partner > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-contact-information-partner > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-contact-information-partner > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-social-profile > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-social-profile > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-social-profile > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-collaborator > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-collaborator > .arrow-up:after,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-collaborator > .arrow-up:after {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-contact-information-partner > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-contact-information-partner > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-contact-information-partner > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-social-profile > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-social-profile > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-social-profile > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-collaborator > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-collaborator > .arrow-up:after,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-collaborator > .arrow-up:after {
     content: "\e253";
     font-family: "Glyphicons Halflings";
     padding-left: 10px;
     color: #10b2e4;
     vertical-align: middle;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-contact-information-partner > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-contact-information-partner > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-contact-information-partner > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-social-profile > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-social-profile > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-social-profile > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container .pane-node-field-collaborator > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container .pane-node-field-collaborator > .pane-content,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .pane-node-field-collaborator > .pane-content {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-contact-information-partner > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-contact-information-partner > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-contact-information-partner > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-social-profile > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-social-profile > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-social-profile > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container .pane-node-field-collaborator > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container .pane-node-field-collaborator > .pane-content,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .pane-node-field-collaborator > .pane-content {
     display: none;
     margin-top: 15px;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-contact-container,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-social-container,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-text2-container {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-contact-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-social-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-text2-container {
     min-height: auto;
     margin-top: 0px;
     border-bottom: none;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-contact-information-partner,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-node-field-social-profile,
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-node-field-collaborator {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .pane-contact-information-partner,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .pane-node-field-social-profile,
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .pane-node-field-collaborator {
     border-bottom: 2px solid #786586;
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .pane-focal-point-text {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .pane-focal-point-text {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container {
     margin-top: 0px;
   }
-  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_country"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
+  .node-type-partner #block-system-main div[id^="mini-panel-partner_in_"] .partner-colaborators-container .field-name-field-collaborator > div.field-items > div.field-item .field-name-field-collaborator-name {
     font-size: 0.8em;
   }
   /*END PARTNER DETAIL PAGE*/
