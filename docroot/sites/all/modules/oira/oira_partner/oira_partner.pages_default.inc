@@ -152,7 +152,7 @@ function oira_partner_default_page_manager_handlers() {
     $pane->pid = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
     $pane->panel = 'center';
     $pane->type = 'panels_mini';
-    $pane->subtype = 'partner_in_country';
+    $pane->subtype = 'partner_in_profile';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

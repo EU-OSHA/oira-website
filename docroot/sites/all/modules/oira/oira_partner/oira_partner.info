@@ -72,6 +72,7 @@ features[page_manager_pages][] = national_social_partners
 features[page_manager_pages][] = oira_community
 features[panels_mini][] = contact_information_partner
 features[panels_mini][] = partner_in_country
+features[panels_mini][] = partner_in_profile
 features[taxonomy][] = organisation_type
 features[taxonomy][] = partner_types
 features[variable][] = comment_anonymous_partner
