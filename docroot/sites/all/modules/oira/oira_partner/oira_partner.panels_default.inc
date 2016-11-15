@@ -857,6 +857,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 'main-row',
           1 => 1,
+          2 => 14,
         ),
         'parent' => 'canvas',
       ),
@@ -878,7 +879,6 @@ function oira_partner_default_panels_mini() {
           0 => 4,
           1 => 3,
           2 => 2,
-          3 => 5,
         ),
         'parent' => 'main',
         'class' => 'row',
@@ -886,7 +886,7 @@ function oira_partner_default_panels_mini() {
       ),
       2 => array(
         'type' => 'column',
-        'width' => 25,
+        'width' => 50,
         'width_type' => '%',
         'parent' => '1',
         'children' => array(
@@ -915,17 +915,6 @@ function oira_partner_default_panels_mini() {
           0 => 6,
         ),
         'class' => 'col-md-3 col-sm-6 col-xs-12 partner-contact-container',
-        'hide_empty' => 0,
-      ),
-      5 => array(
-        'type' => 'column',
-        'width' => 25,
-        'width_type' => '%',
-        'parent' => '1',
-        'children' => array(
-          0 => 9,
-        ),
-        'class' => 'col-md-2 col-sm-6 col-xs-12 partner-text2-container',
         'hide_empty' => 0,
       ),
       6 => array(
@@ -982,25 +971,6 @@ function oira_partner_default_panels_mini() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '8',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      9 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'text',
-        ),
-        'parent' => '5',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'text' => array(
-        'type' => 'region',
-        'title' => 'Text',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '9',
         'class' => '',
         'hide_empty' => 0,
       ),
@@ -1064,6 +1034,25 @@ function oira_partner_default_panels_mini() {
         'class' => '',
         'hide_empty' => 0,
       ),
+      14 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'text_focal_point',
+        ),
+        'parent' => 'main',
+        'class' => 'row',
+        'hide_empty' => 0,
+      ),
+      'text_focal_point' => array(
+        'type' => 'region',
+        'title' => 'Text Focal Point',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '14',
+        'class' => 'col-md-12',
+        'hide_empty' => 0,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -1076,6 +1065,7 @@ function oira_partner_default_panels_mini() {
       'text' => NULL,
       'image' => NULL,
       'text_' => NULL,
+      'text_focal_point' => NULL,
     ),
   );
   $display->cache = array();
@@ -1210,25 +1200,6 @@ function oira_partner_default_panels_mini() {
     $display->content['new-626e9816-cb3a-41cb-a36d-01d9067ec143'] = $pane;
     $display->panels['social'][0] = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
     $pane = new stdClass();
-    $pane->pid = 'new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d';
-    $pane->panel = 'text';
-    $pane->type = 'focal_point_text';
-    $pane->subtype = 'focal_point_text';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd5cf3bca-eb15-49e5-b600-84b39f10bf9d';
-    $display->content['new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d'] = $pane;
-    $display->panels['text'][0] = 'new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d';
-    $pane = new stdClass();
     $pane->pid = 'new-b82fb197-4f24-4f68-90ee-05d83089aad9';
     $pane->panel = 'text_';
     $pane->type = 'entity_field';
@@ -1296,6 +1267,25 @@ function oira_partner_default_panels_mini() {
     $pane->uuid = '8e512882-295b-4326-8d8a-660e22e121a3';
     $display->content['new-8e512882-295b-4326-8d8a-660e22e121a3'] = $pane;
     $display->panels['text_'][1] = 'new-8e512882-295b-4326-8d8a-660e22e121a3';
+    $pane = new stdClass();
+    $pane->pid = 'new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d';
+    $pane->panel = 'text_focal_point';
+    $pane->type = 'focal_point_text';
+    $pane->subtype = 'focal_point_text';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd5cf3bca-eb15-49e5-b600-84b39f10bf9d';
+    $display->content['new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d'] = $pane;
+    $display->panels['text_focal_point'][0] = 'new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;
