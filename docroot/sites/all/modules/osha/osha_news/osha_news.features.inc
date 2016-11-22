@@ -30,6 +30,53 @@ function osha_news_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function osha_news_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: scale_600x350__background__dfd8e4__align_to_left_.
+  $styles['scale_600x350__background__dfd8e4__align_to_left_'] = array(
+    'label' => 'Scale 600x350 (background #dfd8e4, align to left)',
+    'effects' => array(
+      14 => array(
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#dfd8e4',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => 600,
+            'height' => 350,
+            'xpos' => 'left',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => 1,
+      ),
+      15 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 600,
+          'height' => 350,
+          'upscale' => 0,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function osha_news_node_info() {
