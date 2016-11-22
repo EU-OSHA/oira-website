@@ -101,7 +101,7 @@ function oira_country_field_extra_fields_formatter_view($entity_type, $entity, $
         }
         else {
           if ($delta == 'tools') {
-            $item = l($item, 'taxonomy/term/' . $entity->tid, array('fragment' => 'practical_tool'));
+            $item = l($item, 'taxonomy/term/' . $entity->tid, array('fragment' => 'practical_tool', 'attributes' => array('class' => array('open-group-button'))));
           }
         }
         $element[$delta] = array(
