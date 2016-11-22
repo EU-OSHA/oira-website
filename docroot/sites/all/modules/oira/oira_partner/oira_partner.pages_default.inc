@@ -861,7 +861,7 @@ function oira_partner_default_page_manager_pages() {
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'EU and national partners
+    'panels_breadcrumbs_titles' => 'Partners and OiRA Community
 %node:title-field',
     'panels_breadcrumbs_paths' => '<none>
 <none>',
