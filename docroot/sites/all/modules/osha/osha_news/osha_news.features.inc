@@ -73,6 +73,44 @@ function osha_news_image_default_styles() {
     ),
   );
 
+  // Exported image style: scale_600x350__background__ffffff__align_to_left_.
+  $styles['scale_600x350__background__ffffff__align_to_left_'] = array(
+    'label' => 'Scale 600x350 (background #ffffff, align to left)',
+    'effects' => array(
+      10 => array(
+        'name' => 'canvasactions_definecanvas',
+        'data' => array(
+          'RGB' => array(
+            'HEX' => '#ffffff',
+          ),
+          'under' => 1,
+          'exact' => array(
+            'width' => 600,
+            'height' => 350,
+            'xpos' => 'left',
+            'ypos' => 'center',
+          ),
+          'relative' => array(
+            'leftdiff' => '',
+            'rightdiff' => '',
+            'topdiff' => '',
+            'bottomdiff' => '',
+          ),
+        ),
+        'weight' => 1,
+      ),
+      11 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 600,
+          'height' => 350,
+          'upscale' => 0,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
