@@ -7495,6 +7495,9 @@ a.more-link:before {
   font-size: 1.2em;
   line-height: 0;
 }
+#block-system-main .panels-flexible-row-new-6 .view-display-id-block_1 .more-link a {
+  font-size: 1.3em;
+}
 #block-system-main .view-display-id-block_1 .views-item-columns-container {
   background-color: #FFFFFF;
   padding: 15px;
