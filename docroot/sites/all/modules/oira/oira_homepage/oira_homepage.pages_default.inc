@@ -114,7 +114,7 @@ function oira_homepage_default_page_manager_pages() {
       ),
       'news_section' => array(
         'type' => 'region',
-        'title' => 'News section',
+        'title' => 'Tools',
         'width' => 100,
         'width_type' => '%',
         'parent' => '8',
@@ -154,7 +154,7 @@ function oira_homepage_default_page_manager_pages() {
       ),
       'promotional_materials' => array(
         'type' => 'region',
-        'title' => 'Promotional materials',
+        'title' => 'News',
         'width' => 100,
         'width_type' => '%',
         'parent' => '13',
@@ -224,7 +224,7 @@ function oira_homepage_default_page_manager_pages() {
       ),
       'tools' => array(
         'type' => 'region',
-        'title' => 'Tools',
+        'title' => 'Promotional materials',
         'width' => 100,
         'width_type' => '%',
         'parent' => '18',
@@ -296,27 +296,15 @@ function oira_homepage_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-c12890d8-4a82-4186-a28b-3cd716cab9d4';
+    $pane->pid = 'new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
     $pane->panel = 'news_section';
-    $pane->type = 'views';
-    $pane->subtype = 'news';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'oira_tools';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '3',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'oshnews_latest',
       'override_title' => 1,
-      'override_title_text' => 'Latest news',
+      'override_title_text' => 'OiRA tools',
       'override_title_heading' => 'h3',
     );
     $pane->cache = array();
@@ -327,9 +315,9 @@ function oira_homepage_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c12890d8-4a82-4186-a28b-3cd716cab9d4';
-    $display->content['new-c12890d8-4a82-4186-a28b-3cd716cab9d4'] = $pane;
-    $display->panels['news_section'][0] = 'new-c12890d8-4a82-4186-a28b-3cd716cab9d4';
+    $pane->uuid = 'a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
+    $display->content['new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac'] = $pane;
+    $display->panels['news_section'][0] = 'new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
     $pane = new stdClass();
     $pane->pid = 'new-e237c061-c218-44d2-a4be-a724bd53fb5c';
     $pane->panel = 'oira_partners';
@@ -366,15 +354,27 @@ function oira_homepage_default_page_manager_pages() {
     $display->content['new-e237c061-c218-44d2-a4be-a724bd53fb5c'] = $pane;
     $display->panels['oira_partners'][0] = 'new-e237c061-c218-44d2-a4be-a724bd53fb5c';
     $pane = new stdClass();
-    $pane->pid = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
+    $pane->pid = 'new-c12890d8-4a82-4186-a28b-3cd716cab9d4';
     $pane->panel = 'promotional_materials';
-    $pane->type = 'panels_mini';
-    $pane->subtype = 'promotional_materials';
+    $pane->type = 'views';
+    $pane->subtype = 'news';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '3',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'oshnews_latest',
       'override_title' => 1,
-      'override_title_text' => 'Promotional materials',
+      'override_title_text' => 'Latest news',
       'override_title_heading' => 'h3',
     );
     $pane->cache = array();
@@ -385,9 +385,9 @@ function oira_homepage_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a0b06c34-2e96-42d4-89cf-be424671d2e4';
-    $display->content['new-a0b06c34-2e96-42d4-89cf-be424671d2e4'] = $pane;
-    $display->panels['promotional_materials'][0] = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
+    $pane->uuid = 'c12890d8-4a82-4186-a28b-3cd716cab9d4';
+    $display->content['new-c12890d8-4a82-4186-a28b-3cd716cab9d4'] = $pane;
+    $display->panels['promotional_materials'][0] = 'new-c12890d8-4a82-4186-a28b-3cd716cab9d4';
     $pane = new stdClass();
     $pane->pid = 'new-9b522aa6-b427-4a86-9367-2d0381e4a273';
     $pane->panel = 'slider';
@@ -424,15 +424,15 @@ function oira_homepage_default_page_manager_pages() {
     $display->content['new-9b522aa6-b427-4a86-9367-2d0381e4a273'] = $pane;
     $display->panels['slider'][0] = 'new-9b522aa6-b427-4a86-9367-2d0381e4a273';
     $pane = new stdClass();
-    $pane->pid = 'new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
+    $pane->pid = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
     $pane->panel = 'tools';
     $pane->type = 'panels_mini';
-    $pane->subtype = 'oira_tools';
+    $pane->subtype = 'promotional_materials';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'OiRA tools',
+      'override_title_text' => 'Promotional materials',
       'override_title_heading' => 'h3',
     );
     $pane->cache = array();
@@ -443,9 +443,9 @@ function oira_homepage_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
-    $display->content['new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac'] = $pane;
-    $display->panels['tools'][0] = 'new-a6d58695-70ab-4bc2-8bbd-bd9ecf063aac';
+    $pane->uuid = 'a0b06c34-2e96-42d4-89cf-be424671d2e4';
+    $display->content['new-a0b06c34-2e96-42d4-89cf-be424671d2e4'] = $pane;
+    $display->panels['tools'][0] = 'new-a0b06c34-2e96-42d4-89cf-be424671d2e4';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

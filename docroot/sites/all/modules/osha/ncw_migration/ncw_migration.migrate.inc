@@ -972,18 +972,25 @@ function osha_migration_normalize_migrated_term_reference(&$original, $source_mi
   }
   $ret = array();
   if ($migration = Migration::getInstance($source_migration_name)) {
-    foreach ($original as $term) {
-      $tid = NULL;
-      if(is_numeric($term)) {
-        $tid = $term;
-        if ($tid && $dest = $migration->getMap()->getRowBySource(array($tid))) {
-          $ret = $dest['destid1'];
-        }
+    if (!empty($original['tid'])) {
+      $tid = $original['tid'];
+      if ($tid && $dest = $migration->getMap()->getRowBySource(array($tid))) {
+        $ret = $dest['destid1'];
       }
-      else if (!empty($term['tid'])) {
-        $tid = $term['tid'];
-        if ($tid && $dest = $migration->getMap()->getRowBySource(array($tid))) {
-          $ret[] = $dest['destid1'];
+    } else {
+      foreach ($original as $term) {
+        $tid = NULL;
+        if(is_numeric($term)) {
+          $tid = $term;
+          if ($tid && $dest = $migration->getMap()->getRowBySource(array($tid))) {
+            $ret = $dest['destid1'];
+          }
+        }
+        else if (!empty($term['tid'])) {
+          $tid = $term['tid'];
+          if ($tid && $dest = $migration->getMap()->getRowBySource(array($tid))) {
+            $ret[] = $dest['destid1'];
+          }
         }
       }
     }

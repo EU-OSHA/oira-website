@@ -148,23 +148,8 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   $per_page = variable_get('hwc_tools_per_page', 10);
   $facets_def = call_user_func($facet_callback);
 
-  // Find if any of this form params are set on GET.
-  $is_searched = !empty(array_intersect(array_keys($_GET), array_merge(array_keys($facets_def), array('text', 'sort'))));
-  $try_native = FALSE;
-  if (!$is_searched) {
-    // When no search performed by user, try to filter by current language.
-    $try_native = TRUE;
-    $_GET[$lang_field][] = $language->language;
-  }
-
   $response = call_user_func($search_callback, $form_state, $per_page);
 
-  if ($try_native && empty($response['result count'])) {
-    // If no results are available for current language
-    // perform the search with no lang.
-    $_GET[$lang_field] = array('en');
-    $response = call_user_func($search_callback, $form_state, $per_page);
-  }
   $facets = array();
   if (!empty($response['search_api_facets'])) {
     $facets = $response['search_api_facets'];

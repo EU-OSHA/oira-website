@@ -509,7 +509,7 @@ a.more-link{
 	  display: block;
 	  overflow: hidden;
 	}
-	.panels-flexible-row-new-6{
+	.panels-flexible-row-new-6, .panels-flexible-row-new-16{
 		background-color: @color-background-light-purple;
 	}
 	.view-id-oira_partners{
@@ -582,56 +582,54 @@ a.more-link{
 		}
 	}
 	//Latest news
-	.panels-flexible-row-new-6{
-		.panels-flexible-region-new-news_section{
-			h3{
-				&:after{
-	    		    .section-icons("../images/icons/005.png");
-	    		}
+	.panels-flexible-row-new-9{
+		h3{
+			&:after{
+				.section-icons("../images/icons/005.png");
 			}
-			.view-display-id-attachment_1{
-				border-bottom: 2px solid @color-text-purple;
-				padding-bottom: 30px;
-    			padding-top: 20px;
-    			margin-bottom: 20px;
-    			.field-name-field-image{
-    				img{
-    					//width: 100%;
-    					//max-height: 310px;
-    				}
-    			}
-    			h4{
-    				a{
-    					font-size: @font-size1-6;
-    				}
-    			}
-    			.more-link{
-    				text-align: left;
-    			}
+		}
+		.view-display-id-attachment_1{
+			border-bottom: 2px solid @color-text-purple;
+			padding-bottom: 30px;
+			padding-top: 20px;
+			margin-bottom: 20px;
+			.field-name-field-image{
+				img{
+					//width: 100%;
+					//max-height: 310px;
+				}
 			}
-			.views-item-columns-container{
-				background-color: @color-white;
-				padding: 15px;
-				min-height: 260px;
-				
-				a.more-link{
-					color: @color-see-more;
-					font-weight: bold;
-					font-style: italic;
-					display: block;
-					text-align: right;
-					font-size: @font-size1;
-				    right: 30px;
-				    bottom: 15px;
-					&:before{
-						content:'>';
-					}
+			h4{
+				a{
+					font-size: @font-size1-6;
+				}
+			}
+			.more-link{
+				text-align: left;
+			}
+		}
+		.views-item-columns-container{
+			background-color: @color-white;
+			padding: 15px;
+			min-height: 260px;
+
+			a.more-link{
+				color: @color-see-more;
+				font-weight: bold;
+				font-style: italic;
+				display: block;
+				text-align: right;
+				font-size: @font-size1;
+				right: 30px;
+				bottom: 15px;
+				&:before{
+					content:'>';
 				}
 			}
 		}
 	}
 	//Promotional materials
-	.panels-flexible-region-new-promotional_materials{
+	.panels-flexible-row-new-16{
 		h3{
 			&:after{
 	    		.section-icons("../images/icons/083.png");
@@ -706,126 +704,130 @@ a.more-link{
 		}
 	}
 	//Oira tools
-	.panels-flexible-row-new-16{
-		background-color: @color-background-light-purple;
-		.panels-flexible-region-new-tools{
-			h3{
-				&:after{
-		    		.section-icons("../images/icons/018.png");
-		    	}
+	.panels-flexible-row-new-6{
+		h3{
+			&:after{
+				.section-icons("../images/icons/018.png");
 			}
-			.view-display-id-block{
-				border-bottom: 2px solid @color-text-purple;
-				padding-bottom: 30px;
-	    		padding-top: 20px;
-	    		margin-bottom: 20px;
-	    		.field-name-field-image{
-	    			img{
-	    				//width: 100%;
-	    				//max-height: 310px; 
-	    			}
-	    		}
-	    		.field-name-title-field{
-	    			a{
-	    				font-size: @font-size1-6;	
-	    			}	
-	    		}
-	    		.field-name-related-partners{
-					.node-partner{
-						background-color: @color-primary-dark;
-						padding: 15px;
-						color: @color-white;
-						margin-top: 15px;
-						h4{
-							min-height: 45px;
-							a{
-								font-size: @font-size0-9;
-								color: @color-white;
-								margin-top: 0px;
-							}
-						}
-						.more-link{
+		}
+		.view-display-id-block{
+			border-bottom: 2px solid @color-text-purple;
+			padding-bottom: 30px;
+			padding-top: 20px;
+			margin-bottom: 20px;
+			.field-name-field-image{
+				img{
+					//width: 100%;
+					//max-height: 310px;
+				}
+			}
+			.field-name-title-field{
+				a{
+					font-size: @font-size1-6;
+				}
+			}
+			.field-name-related-partners{
+				.node-partner{
+					background-color: @color-primary-dark;
+					padding: 15px;
+					color: @color-white;
+					margin-top: 15px;
+					h4{
+						min-height: 45px;
+						a{
+							font-size: @font-size0-9;
 							color: @color-white;
-							text-align: left;
+							margin-top: 0px;
 						}
 					}
-				}
-				a.more-link{
-					text-align: left;
-				}
-				a.show-less{
-					text-align: right !important;
-					width: 20px;
-					height: 12px;
-				    float: right;
-				    overflow: hidden;
-				    font-style: normal;
-					&:before{
-						content: "\e253";
-						font-family: "Glyphicons Halflings";
-						font-size: @font-size1-2;
-						line-height: 0;
+					.more-link{
+						color: @color-white;
+						text-align: left;
 					}
+				}
+			}
+			a.more-link{
+				text-align: left;
+			}
+			a.show-less{
+				text-align: right !important;
+				width: 20px;
+				height: 12px;
+				float: right;
+				overflow: hidden;
+				font-style: normal;
+				&:before{
+					content: "\e253";
+					font-family: "Glyphicons Halflings";
+					font-size: @font-size1-2;
+					line-height: 0;
 				}
 			}
 		}
 		.view-display-id-block_1{
-			.views-item-columns-container{
-				background-color: @color-white;
-				padding: 15px;
+			.more-link{
 				a{
-					display: block;
-    				.glyphicon-new-window{
+					font-size: 1.3em;
+				}
+			}
+		}
+	}
+	.view-display-id-block_1{
+		.views-item-columns-container{
+			background-color: @color-white;
+			padding: 15px;
+			a{
+				display: block;
+				.glyphicon-new-window{
 
-    				}
 				}
-				a.show-less{
-					text-align: right !important;
-					width: 20px;
-					height: 12px;
-				    float: right;
-				    overflow: hidden;
-				    font-style: normal;
-				    position: relative;
-				    top: -5px;
-				    margin-top: 0px;
-					&:before{
-						content: "\e253";
-						font-family: "Glyphicons Halflings";
-						font-size: @font-size1-2;
-						line-height: 0;
-					}
+			}
+			a.show-less{
+				text-align: right !important;
+				width: 20px;
+				height: 12px;
+				float: right;
+				overflow: hidden;
+				font-style: normal;
+				position: relative;
+				top: -5px;
+				margin-top: 0px;
+				&:before{
+					content: "\e253";
+					font-family: "Glyphicons Halflings";
+					font-size: @font-size1-2;
+					line-height: 0;
 				}
-				.field-name-related-partners{
-					.node-partner{
-						background-color: @color-primary-dark;
-						padding: 15px;
-						color: @color-white;
-						margin-bottom: 15px;
-						h4{
-							min-height: 45px;
-							a{
-								font-size: @font-size0-9;
-								color: @color-white;
-								margin-top: 0px;
-							}
-						}
-						.more-link{
+			}
+			.field-name-related-partners{
+				.node-partner{
+					background-color: @color-primary-dark;
+					padding: 15px;
+					color: @color-white;
+					margin-bottom: 15px;
+					h4{
+						min-height: 45px;
+						a{
+							font-size: @font-size0-9;
 							color: @color-white;
-							text-align: left;
+							margin-top: 0px;
 						}
+					}
+					.more-link{
+						color: @color-white;
+						text-align: left;
 					}
 				}
 			}
 		}
-		.pane-views.pane-tools{
-			.pane-title{
-				color: @color-text-purple;
-	    		font-size: @font-size1-2;
-	    		font-weight: bold;
-	    		margin-bottom: 14px;
-	    		font-style: italic;
-			}
+	}
+	.pane-views.pane-tools{
+		.pane-title{
+			color: @color-text-purple;
+			font-size: @font-size1-2;
+			font-weight: bold;
+			margin-bottom: 14px;
+			font-style: italic;
 		}
 	}
 	//Oira partners
