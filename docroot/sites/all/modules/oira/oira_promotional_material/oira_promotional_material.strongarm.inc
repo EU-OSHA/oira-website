@@ -258,7 +258,7 @@ function oira_promotional_material_strongarm() {
         ),
         'node_type' => array(
           'search_result' => array(
-            'weight' => '2',
+            'weight' => '4',
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
