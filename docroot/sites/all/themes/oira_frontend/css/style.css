@@ -7262,11 +7262,12 @@ a.more-link:before {
 .view-mode-teaser strong {
   background-color: yellow;
 }
-.view-display-id-block article > div > span {
-  float: left;
+.custom-label span,
+.custom-label > div {
+  display: inline-block;
 }
-.views-item-columns-container > div > div > div > span {
-  float: left;
+.custom-label span {
+  margin-right: 5px;
 }
 /*END estilos comunes
 ************************************************************************************/
