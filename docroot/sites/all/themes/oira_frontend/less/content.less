@@ -246,6 +246,14 @@ a.more-link{
 	    	margin-bottom: 0px;
 	    }
 	}
+	.field-name-field-tool-link{
+		position: absolute;
+		right: 15px;
+		margin-top: 15px;
+		a{
+			margin-top: 0px !important;
+		}
+	}
 }
 .page-search-site{
 	.field-name-pr-language{
@@ -462,6 +470,18 @@ a.more-link{
 	}
 }
 
+//tags span country, language, sector
+.view-display-id-block{
+	article > div{
+		> span{
+		float: left;
+		}
+	}
+}
+.views-item-columns-container > div > div > div > span{
+	float: left;
+}
+
 /*END estilos comunes
 ************************************************************************************/
 
@@ -539,6 +559,42 @@ a.more-link{
 	.view-id-oira_partners{
 		border-bottom: none !important;
     	padding-bottom: 0px !important;
+	}
+	.panels-flexible-row-new-6{
+		.pane-tools{
+			.view-display-id-block_1{
+				.field.field-name-field-country,
+				.field-type-language-field,
+				.field-name-field-sector,
+				.field-name-field-promotional-material-type,
+				.field-name-pr-language{
+				    background-color: @color-tags;
+				    display: inline-block;
+				    color: white;
+				    padding: 2px 10px;
+				    font-size: 0.8em;
+				    font-weight: bold;
+				    font-style: italic;
+				    margin-top: 0em;
+				    margin-right: 5px;
+				    border-radius: 15px;
+				    margin-bottom: 15px;
+				    p{
+				    	margin-bottom: 0px;
+				    }
+				}
+				.field-name-field-tool-link{
+					position: absolute;
+					margin-top: 15px;
+					a{
+						margin-top: 0px;
+					}
+				}
+				.field-name-related-partners{
+					margin-top: 50px;
+				}
+			}
+		}
 	}
 }
 
@@ -1637,12 +1693,13 @@ a.more-link{
 								}
 							}
 							.field-name-field-tool-link{
+								position: absolute;
+								right: 15px;
+								margin-top: 15px;
 								a{
-									position: absolute;
-									right: 15px;
 									color: @color-text-grey;
 								    font-weight: bold;
-								    margin-top: 15px;
+								    margin-top: 0px;
 								    display: block;
 								    //margin-bottom: 15px;
 									span.glyphicon-new-window{
@@ -2531,6 +2588,26 @@ div[id ^= "mini-panel-partner_in_"], {
 //partners and countries resources
 #quicktabs-container-view__country_partner_content__block, #quicktabs-container-view__country_partner_content__block_1{
 	.quicktabs-tabpage {
+		.field.field-name-field-country,
+		.field-type-language-field,
+		.field-name-field-sector,
+		.field-name-field-promotional-material-type,
+		.field-name-pr-language{
+		    background-color: @color-tags;
+		    display: inline-block;
+		    color: white;
+		    padding: 2px 10px;
+		    font-size: 0.8em;
+		    font-weight: bold;
+		    font-style: italic;
+		    margin-top: 0em;
+		    margin-right: 5px;
+		    border-radius: 15px;
+		    margin-bottom: 15px;
+		    p{
+		    	margin-bottom: 0px;
+		    }
+		}
 		.quicktabs-group-wrapper{
 			padding-bottom: 30px;
 		}
@@ -2612,8 +2689,13 @@ div[id ^= "mini-panel-partner_in_"], {
 					line-height: 0;
 				}
 			}
-			.field-name-field-tool-link a{
-				
+			.field-name-field-tool-link{
+				position: absolute;
+				right: 15px;
+				margin-top: 15px;
+				a{
+					margin-top: 0px;
+				}
 			}
 			.field-name-tools-see-more{
 				margin-left: 0px;
@@ -2642,7 +2724,7 @@ div[id ^= "mini-panel-partner_in_"], {
 					background-color: @color-primary-dark;
 					padding: 15px;
 					color: @color-white;
-					margin-top: 20px;
+					margin-top: 50px;
 					h4{
 						min-height: 45px;
 						a{
@@ -3757,7 +3839,7 @@ div[id ^= "mini-panel-partner_in_"], {
 									background-color: @color-primary-dark;
     								padding: 15px;
     								color: @color-white;
-    								margin-top: 20px;
+    								margin-top: 50px;
     								h4{
     									min-height: 45px;
     									a{
@@ -3849,6 +3931,7 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 }
 /*END EU LEVEL COUNTRY*/
+
 
 /*Pagination styles*/
 .pager{

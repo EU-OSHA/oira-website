@@ -7048,6 +7048,18 @@ a.more-link:before {
 .page-search-site .field-name-pr-language p {
   margin-bottom: 0px;
 }
+.oira-tools-search-page .field-name-field-tool-link,
+.page-promotional-resources-search .field-name-field-tool-link,
+.page-search-site .field-name-field-tool-link {
+  position: absolute;
+  right: 15px;
+  margin-top: 15px;
+}
+.oira-tools-search-page .field-name-field-tool-link a,
+.page-promotional-resources-search .field-name-field-tool-link a,
+.page-search-site .field-name-field-tool-link a {
+  margin-top: 0px !important;
+}
 .page-search-site .field-name-pr-language {
   margin-bottom: 20px;
 }
@@ -7250,6 +7262,12 @@ a.more-link:before {
 .view-mode-teaser strong {
   background-color: yellow;
 }
+.view-display-id-block article > div > span {
+  float: left;
+}
+.views-item-columns-container > div > div > div > span {
+  float: left;
+}
 /*END estilos comunes
 ************************************************************************************/
 /*ESTILOS LOGIN
@@ -7317,6 +7335,40 @@ a.more-link:before {
 .front .view-id-oira_partners {
   border-bottom: none !important;
   padding-bottom: 0px !important;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field.field-name-field-country,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-sector,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-promotional-material-type,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-pr-language {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field.field-name-field-country p,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field p,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-sector p,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-promotional-material-type p,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-pr-language p {
+  margin-bottom: 0px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-tool-link {
+  position: absolute;
+  margin-top: 15px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-tool-link a {
+  margin-top: 0px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-related-partners {
+  margin-top: 50px;
 }
 #block-system-main .panels-flexible-region-new-slider {
   margin-top: 35px;
@@ -8321,12 +8373,15 @@ a.more-link:before {
   font-size: 1.2em;
   line-height: 0;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link {
   position: absolute;
   right: 15px;
+  margin-top: 15px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
   color: #58585a;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 0px;
   display: block;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
@@ -9097,6 +9152,40 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .focal-poin-partner-text a:before {
   content: " > ";
 }
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field.field-name-field-country,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field.field-name-field-country,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-type-language-field,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-type-language-field,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-pr-language,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field.field-name-field-country p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field.field-name-field-country p,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-type-language-field p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-type-language-field p,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector p,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type p,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-pr-language p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language p {
+  margin-bottom: 0px;
+}
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-group-wrapper,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper {
   padding-bottom: 30px;
@@ -9200,6 +9289,16 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-size: 1.2em;
   line-height: 0;
 }
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link {
+  position: absolute;
+  right: 15px;
+  margin-top: 15px;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link a,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link a {
+  margin-top: 0px;
+}
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more {
   margin-left: 0px;
@@ -9230,7 +9329,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 {
@@ -10260,7 +10359,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-related-partners .node-partner h4 {
   min-height: 45px;
