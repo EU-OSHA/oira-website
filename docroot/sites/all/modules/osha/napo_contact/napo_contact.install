@@ -37,3 +37,10 @@ function napo_contact_update_7004() {
     ->condition('name', 'napo_contact')
     ->execute();
 }
+
+/**
+ * Revert napo_contact.
+ */
+function napo_contact_update_7005() {
+  features_revert_module('napo_contact');
+}
