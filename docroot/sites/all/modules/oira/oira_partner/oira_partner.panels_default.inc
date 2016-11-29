@@ -1067,6 +1067,9 @@ function oira_partner_default_panels_mini() {
       'text_' => NULL,
       'text_focal_point' => NULL,
     ),
+    'text_' => array(
+      'style' => '-1',
+    ),
   );
   $display->cache = array();
   $display->title = '';
@@ -1213,8 +1216,8 @@ function oira_partner_default_panels_mini() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'title_style' => 'h2',
-        'title_link' => 'content',
+        'title_style' => 'h1',
+        'title_link' => '',
         'title_class' => '',
         'field_formatter_class' => '',
       ),

@@ -600,7 +600,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_country']['label'] = '';
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<span>Country:</span> [field_country]';
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>';
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
@@ -614,7 +614,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_language']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<span>Language:</span> [field_language]';
+  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -987,7 +987,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_language']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<span>Language:</span> [field_language]';
+  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -1005,7 +1005,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_country']['label'] = '';
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<span>Country:</span> [field_country]';
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>';
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
@@ -1111,8 +1111,8 @@ function hwc_practical_tool_views_default_views() {
 </div>'),
     t('Tool of the week'),
     t('queue'),
-    t('<span>Country:</span> [field_country]'),
-    t('<span>Language:</span> [field_language]'),
+    t('<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>'),
+    t('<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>'),
     t('<div class="pane-title tool-of-the-week-label">Tool of the week</div>'),
     t('<div class="col-sm-6">
 [field_image]
