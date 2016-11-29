@@ -599,7 +599,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['label'] = '';
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_country']['alter']['text'] = '[field_country]';
+  $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<span>Country:</span> [field_country]';
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
@@ -612,6 +613,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<span>Language:</span> [field_language]';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -689,8 +692,8 @@ function hwc_practical_tool_views_default_views() {
 [nothing_2]
 [title_field]
 [body]
-Language: [field_language]
-Country: [field_country]
+[field_language]
+[field_country]
 [related_partners]
 [tools_see_more]
 </div>';
@@ -983,6 +986,8 @@ Country: [field_country]
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<span>Language:</span> [field_language]';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -999,6 +1004,8 @@ Country: [field_country]
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['label'] = '';
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<span>Country:</span> [field_country]';
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
@@ -1035,8 +1042,8 @@ Country: [field_country]
 [tool_type_field]
 [title_field]
 [body]
-Language: [field_language] 
-Country: [field_country]
+[field_language] 
+[field_country]
 [related_partners]
 [tools_see_more]
 </div>';
@@ -1104,7 +1111,8 @@ Country: [field_country]
 </div>'),
     t('Tool of the week'),
     t('queue'),
-    t('[field_country]'),
+    t('<span>Country:</span> [field_country]'),
+    t('<span>Language:</span> [field_language]'),
     t('<div class="pane-title tool-of-the-week-label">Tool of the week</div>'),
     t('<div class="col-sm-6">
 [field_image]
@@ -1113,8 +1121,8 @@ Country: [field_country]
 [nothing_2]
 [title_field]
 [body]
-Language: [field_language]
-Country: [field_country]
+[field_language]
+[field_country]
 [related_partners]
 [tools_see_more]
 </div>'),
@@ -1126,8 +1134,8 @@ Country: [field_country]
 [tool_type_field]
 [title_field]
 [body]
-Language: [field_language] 
-Country: [field_country]
+[field_language] 
+[field_country]
 [related_partners]
 [tools_see_more]
 </div>'),

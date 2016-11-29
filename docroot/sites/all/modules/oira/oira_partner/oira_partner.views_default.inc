@@ -328,14 +328,10 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'partner' => 'partner',
   );
-  /* Filter criterion: Oira partner: Random partner. */
-  $handler->display->display_options['filters']['random_partner']['id'] = 'random_partner';
-  $handler->display->display_options['filters']['random_partner']['table'] = 'oira_partner';
-  $handler->display->display_options['filters']['random_partner']['field'] = 'random_partner';
-  $handler->display->display_options['filters']['random_partner']['value'] = '0';
 
   /* Display: Attachment */
   $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
