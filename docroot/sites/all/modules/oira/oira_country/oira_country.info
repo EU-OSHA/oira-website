@@ -13,6 +13,7 @@ dependencies[] = options
 dependencies[] = osha
 dependencies[] = osha_taxonomies
 dependencies[] = page_manager
+dependencies[] = panels_custom_title_tag
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views

@@ -11,7 +11,7 @@ function oira_country_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
-  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'term_view__country-eu';
   $handler->task = 'term_view';
@@ -71,6 +71,8 @@ function oira_country_default_page_manager_handlers() {
     'panels_breadcrumbs_paths' => 'eu-national-partners
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%term:name-field | OiRA',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -408,6 +410,8 @@ function oira_country_default_page_manager_handlers() {
     'panels_breadcrumbs_paths' => 'eu-national-partners
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%term:name-field | OiRA',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
