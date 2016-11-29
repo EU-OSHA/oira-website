@@ -8322,15 +8322,19 @@ a.more-link:before {
   line-height: 0;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
+  position: absolute;
+  right: 15px;
   color: #58585a;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 15px;
   display: block;
-  margin-bottom: 15px;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
   color: #10b2e4;
   margin-left: 10px;
+}
+.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners {
+  margin-top: 50px;
 }
 .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner {
   background-color: #786586;
