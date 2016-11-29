@@ -193,7 +193,7 @@ function hwc_practical_tool_strongarm() {
       'display' => array(
         'share_widget' => array(
           'teaser' => array(
-            'weight' => '19',
+            'weight' => '18',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
@@ -294,7 +294,7 @@ function hwc_practical_tool_strongarm() {
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '17',
+            'weight' => '0',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
