@@ -570,12 +570,10 @@ a.more-link{
 				}
 				.views-field-field-link{
 				    position: inherit !important;
-				    width: 100% !important;
+				    //width: 100% !important;
 				    background-color: @color-primary-dark;
 				    margin-top: -7px;
 				    padding-top: 25px;
-				    padding-left: 15px;
-				    padding-right: 15px;
 				    a{
 						color: @color-white;
 						font-size: 1.2em;
@@ -590,13 +588,13 @@ a.more-link{
 				}
 				.views-field-body {
 				    position: inherit !important;
-				    width: 100% !important;
+				    //width: 100% !important;
 				    background-color: @color-primary-dark;
 				    padding-top: 10px;
-				    padding-bottom: 55px;
-				    padding-left: 15px;
-				    padding-right: 15px;
+				    padding-bottom: 15px;
 				    color: @color-white;
+				    font-size: @font-size1-2;
+				    min-height: 120px;
 				    .field-content{
 				    	//width: 1140px;
 				    	margin: 0 auto;
@@ -2501,7 +2499,8 @@ div[id ^= "mini-panel-partner_in_"], {
 				> div{
 					width: 50%;
 				}
-				.partner-contact-container, .partner-social-container{
+				.partner-contact-container,
+				.partner-social-container{
 					min-height: 250px;
 				}
 			}
@@ -2510,12 +2509,14 @@ div[id ^= "mini-panel-partner_in_"], {
 	.focal-poin-partner-text{
 		padding-left: 45px;
 		padding-right: 45px;
+		clear: both;
 	}
 }
 
 .focal-poin-partner-text{
 	margin-top: 5px;
 	margin-bottom: 15px;
+	clear: both;
 	a{
 	font-style: italic;
 		&:before{

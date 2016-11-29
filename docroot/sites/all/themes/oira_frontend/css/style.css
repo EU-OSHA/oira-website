@@ -7374,12 +7374,9 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link {
   position: inherit !important;
-  width: 100% !important;
   background-color: #786586;
   margin-top: -7px;
   padding-top: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link a {
   color: #ffffff;
@@ -7393,13 +7390,12 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-body {
   position: inherit !important;
-  width: 100% !important;
   background-color: #786586;
   padding-top: 10px;
-  padding-bottom: 55px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-bottom: 15px;
   color: #ffffff;
+  font-size: 1.2em;
+  min-height: 120px;
 }
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-body .field-content {
   margin: 0 auto;
@@ -9084,10 +9080,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .partners-no-2 .focal-poin-partner-text {
   padding-left: 45px;
   padding-right: 45px;
+  clear: both;
 }
 .focal-poin-partner-text {
   margin-top: 5px;
   margin-bottom: 15px;
+  clear: both;
 }
 .focal-poin-partner-text a {
   font-style: italic;
@@ -10838,35 +10836,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   /*HOME
 ****************************************************************/
-  .front .panels-flexible-region-new-slider .views-field-field-link {
-    position: inherit !important;
-    width: 100% !important;
-    background-color: #786586;
-    margin-top: -7px;
-    padding-top: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .front .panels-flexible-region-new-slider .views-field-field-link h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 720px;
-    display: block;
-    margin: 0 auto;
-  }
-  .front .panels-flexible-region-new-slider .views-field-body {
-    position: inherit !important;
-    width: 100% !important;
-    background-color: #786586;
-    padding-top: 25px;
-    padding-bottom: 55px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .front .panels-flexible-region-new-slider .views-field-body .field-content {
-    width: 720px;
-    margin: 0 auto;
-  }
   .front .views-item-columns-container {
     margin-bottom: 30px;
   }
