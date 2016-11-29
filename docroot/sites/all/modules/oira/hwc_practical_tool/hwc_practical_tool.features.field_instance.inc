@@ -443,7 +443,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(
-          'field_formatter_class' => '',
+          'field_formatter_class' => 'tools-tags',
         ),
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 3,
@@ -633,9 +633,11 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'languagefield',
         'settings' => array(
-          'field_formatter_class' => '',
+          'field_formatter_class' => 'tools-tags',
           'format' => array(
+            'iso' => 0,
             'name' => 'name',
+            'name_native' => 0,
           ),
         ),
         'type' => 'language_default',
@@ -945,7 +947,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(
-          'field_formatter_class' => '',
+          'field_formatter_class' => 'tools-tags',
         ),
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 2,
