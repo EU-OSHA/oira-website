@@ -13,9 +13,9 @@ function napo_contact_default_page_manager_pages() {
   $page->api_version = 1;
   $page->name = 'contact_us';
   $page->task = 'page';
-  $page->admin_title = 'Contact us';
+  $page->admin_title = 'OiRA FAQs';
   $page->admin_description = '';
-  $page->path = 'faq';
+  $page->path = 'oira-faqs';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -212,10 +212,10 @@ function napo_contact_default_page_manager_pages() {
     $display->content['new-3d25cf45-016d-46c9-bc67-6cdc8d8c8a27'] = $pane;
     $display->panels['center'][0] = 'new-3d25cf45-016d-46c9-bc67-6cdc8d8c8a27';
     $pane = new stdClass();
-    $pane->pid = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
+    $pane->pid = 'new-b075c1ed-7f40-4749-89ef-e3a712dbc59b';
     $pane->panel = 'content';
     $pane->type = 'views';
-    $pane->subtype = 'faqs';
+    $pane->subtype = 'faqs_oira';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -232,8 +232,8 @@ function napo_contact_default_page_manager_pages() {
       'url' => '',
       'display' => 'block',
       'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'span',
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -243,9 +243,9 @@ function napo_contact_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '874d4ecb-3c87-42c4-a50c-95577656a7cd';
-    $display->content['new-874d4ecb-3c87-42c4-a50c-95577656a7cd'] = $pane;
-    $display->panels['content'][0] = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
+    $pane->uuid = 'b075c1ed-7f40-4749-89ef-e3a712dbc59b';
+    $display->content['new-b075c1ed-7f40-4749-89ef-e3a712dbc59b'] = $pane;
+    $display->panels['content'][0] = 'new-b075c1ed-7f40-4749-89ef-e3a712dbc59b';
     $pane = new stdClass();
     $pane->pid = 'new-c2cb699b-7106-4e61-ad68-4dad9497d7bd';
     $pane->panel = 'form';
@@ -327,7 +327,10 @@ function napo_contact_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'contact-block',
+      'css_class' => 'contact-block',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -335,19 +338,19 @@ function napo_contact_default_page_manager_pages() {
     $display->content['new-6a3a4f4b-fdef-4eda-b9a5-6a953cba0c24'] = $pane;
     $display->panels['form_'][0] = 'new-6a3a4f4b-fdef-4eda-b9a5-6a953cba0c24';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-874d4ecb-3c87-42c4-a50c-95577656a7cd';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['contact_us'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'oira_faqs';
   $page->task = 'page';
   $page->admin_title = 'OiRA FAQs';
   $page->admin_description = 'OiRA FAQs';
-  $page->path = 'oira-faqs';
+  $page->path = 'oira-faqs-2';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -484,6 +487,41 @@ OiRA FAQs',
     $pane->uuid = '6fe1b51c-6c62-4fda-8ab8-37ca4c771cfc';
     $display->content['new-6fe1b51c-6c62-4fda-8ab8-37ca4c771cfc'] = $pane;
     $display->panels['center'][0] = 'new-6fe1b51c-6c62-4fda-8ab8-37ca4c771cfc';
+    $pane = new stdClass();
+    $pane->pid = 'new-d112b2bb-187d-4127-8695-0cfd9f832b59';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'faqs';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'd112b2bb-187d-4127-8695-0cfd9f832b59';
+    $display->content['new-d112b2bb-187d-4127-8695-0cfd9f832b59'] = $pane;
+    $display->panels['center'][1] = 'new-d112b2bb-187d-4127-8695-0cfd9f832b59';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-6fe1b51c-6c62-4fda-8ab8-37ca4c771cfc';
   $handler->conf['display'] = $display;
