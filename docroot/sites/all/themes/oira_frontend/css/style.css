@@ -7337,29 +7337,33 @@ a.more-link:before {
   border-bottom: none !important;
   padding-bottom: 0px !important;
 }
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field.field-name-field-country,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-sector,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-promotional-material-type,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-pr-language {
-  background-color: #b4a4bf;
-  display: inline-block;
-  color: white;
-  padding: 2px 10px;
-  font-size: 0.8em;
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-country {
+  background-color: none;
   font-weight: bold;
-  font-style: italic;
-  margin-top: 0em;
-  margin-right: 5px;
-  border-radius: 15px;
-  margin-bottom: 15px;
 }
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field.field-name-field-country p,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field p,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-sector p,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-promotional-material-type p,
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-pr-language p {
-  margin-bottom: 0px;
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-country:before {
+  content: "Country: ";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  margin-right: 5px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-country .field-items {
+  display: inline-block;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field {
+  background-color: none;
+  font-weight: bold;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field:before {
+  content: "Language: ";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  margin-right: 5px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field .field-items {
+  display: inline-block;
 }
 .front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-tool-link {
   position: absolute;
