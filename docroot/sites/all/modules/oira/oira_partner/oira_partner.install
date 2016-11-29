@@ -13,3 +13,10 @@ function oira_partner_update_7001() {
 function oira_partner_update_7002() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert Sprint 5: NOW-272, NOW-273.
+ */
+function oira_partner_update_7003() {
+  features_revert_module('oira_partner');
+}

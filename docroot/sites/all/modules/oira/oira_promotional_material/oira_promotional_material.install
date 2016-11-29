@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Feature revert Sprint 5: NOW-267.
+ */
+function oira_promotional_material_update_7001() {
+  features_revert_module('oira_promotional_material');
+}
