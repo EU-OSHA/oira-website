@@ -134,6 +134,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -150,6 +151,8 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['label'] = '';
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>';
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
@@ -177,8 +180,8 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'materials-content-wrapper\'>
 <h4>[title_field]</h4>
-[field_country] 
 [field_language]
+[field_country]
 [related_partners] 
 [tools_see_more]
 </div>';
@@ -194,10 +197,12 @@ function oira_promotional_material_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Promotional materials frontpage block'),
+    t('<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>'),
+    t('<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>'),
     t('<div class=\'materials-content-wrapper\'>
 <h4>[title_field]</h4>
-[field_country] 
 [field_language]
+[field_country]
 [related_partners] 
 [tools_see_more]
 </div>'),

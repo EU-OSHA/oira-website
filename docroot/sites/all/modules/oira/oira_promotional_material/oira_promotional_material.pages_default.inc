@@ -378,6 +378,31 @@ function oira_promotional_material_default_page_manager_pages() {
     $display->content['new-b50c66f5-a042-49cc-ac8e-62f90efbb783'] = $pane;
     $display->panels['center'][0] = 'new-b50c66f5-a042-49cc-ac8e-62f90efbb783';
     $pane = new stdClass();
+    $pane->pid = 'new-f5c6632a-9e03-49b5-a686-f294f58a5c41';
+    $pane->panel = 'center';
+    $pane->type = 'custom_title_tag';
+    $pane->subtype = 'custom_title_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'buttons' => NULL,
+      'custom_page_title_pattern' => 'Promotional Resources-Search',
+      'form_build_id' => 'form-z4kqeA0WSySXRQjZ06kXjhvg-YbaTM4xfoCJu0iFQXA',
+      'form_token' => 'DRh6GLucvYR-EmOmn5gPbMhiJgohPjoSu6oD8WQS-gI',
+      'form_id' => 'panels_custom_title_tag_edit_form',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'f5c6632a-9e03-49b5-a686-f294f58a5c41';
+    $display->content['new-f5c6632a-9e03-49b5-a686-f294f58a5c41'] = $pane;
+    $display->panels['center'][1] = 'new-f5c6632a-9e03-49b5-a686-f294f58a5c41';
+    $pane = new stdClass();
     $pane->pid = 'new-f67ccc71-f867-417a-86af-9bfec9a169e1';
     $pane->panel = 'content';
     $pane->type = 'block';

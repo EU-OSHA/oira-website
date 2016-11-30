@@ -213,25 +213,57 @@ a.more-link{
 .field-name-field-sector,
 .field-name-field-promotional-material-type,
 .field-name-pr-language{
-    background-color: #10b2e4;
-    display: inline-block;
-    color: white;
-    padding: 3px 16px;
-    font-size: 0.9em;
+    display: block;
+    color: @color-text-grey;
+    font-size: 0.em;
     font-weight: bold;
     font-style: italic;
-    margin-top: 1em;
-    margin-right: 5px;
     p{
     	margin-bottom: 0px;
     }
 }
 
+/*Etiquetas azuler de pais e idioma*/
+.oira-tools-search-page,
+.page-promotional-resources-search,
+.page-search-site{
+	.field.field-name-field-country,
+	.field-type-language-field,
+	.field-name-field-sector,
+	.field-name-field-promotional-material-type,
+	.field-name-pr-language{
+	    background-color: @color-tags;
+	    display: inline-block;
+	    color: white;
+	    padding: 2px 10px;
+	    font-size: 0.8em;
+	    font-weight: bold;
+	    font-style: italic;
+	    margin-top: 0em;
+	    margin-right: 5px;
+	    border-radius: 15px;
+	    p{
+	    	margin-bottom: 0px;
+	    }
+	}
+	.field-name-field-tool-link{
+		position: absolute;
+		right: 15px;
+		margin-top: 15px;
+		a{
+			margin-top: 0px !important;
+		}
+	}
+}
+.page-search-site{
+	.field-name-pr-language{
+		margin-bottom: 20px;
+	}
+}
+
 .alert.alert-block.alert-info{
 	border: 0px;
 	background-color: @color-primary;
-	margin-left: 15px;
-	margin-right: 15px;
 	p{
 		margin-bottom: 0px !important;
 		span{
@@ -438,6 +470,16 @@ a.more-link{
 	}
 }
 
+//tags span country, language, sector
+.custom-label{
+	span, > div{
+		display: inline-block;
+	}
+	span{
+		margin-right: 5px;
+	}
+}
+
 /*END estilos comunes
 ************************************************************************************/
 
@@ -509,12 +551,57 @@ a.more-link{
 	  display: block;
 	  overflow: hidden;
 	}
-	.panels-flexible-row-new-6{
+	.panels-flexible-row-new-6, .panels-flexible-row-new-16{
 		background-color: @color-background-light-purple;
 	}
 	.view-id-oira_partners{
 		border-bottom: none !important;
     	padding-bottom: 0px !important;
+	}
+	.panels-flexible-row-new-6{
+		.pane-tools{
+			.view-display-id-block_1{
+				.field-name-field-country{
+					background-color: none;
+					font-weight: bold;
+				    &:before{
+				    	content:"Country: ";
+				    	font-weight: normal;
+				    	font-style: normal;
+				    	display: inline-block;
+				    	margin-right: 5px;
+				    }
+				    .field-items{
+						display: inline-block;
+				    }
+				}
+				.field-type-language-field{
+				    background-color: none;
+				    font-weight: bold;
+				    &:before{
+				    	content:"Language: ";
+				    	font-weight: normal;
+				    	font-style: normal;
+				    	display: inline-block;
+				    	margin-right: 5px;
+				    }
+				    .field-items{
+				    	display: inline-block;
+				    }
+				    
+				}
+				.field-name-field-tool-link{
+					position: absolute;
+					margin-top: 15px;
+					a{
+						margin-top: 0px;
+					}
+				}
+				.field-name-related-partners{
+					margin-top: 50px;
+				}
+			}
+		}
 	}
 }
 
@@ -545,6 +632,39 @@ a.more-link{
 					}
 				}
 				.views-field-field-link{
+				    position: inherit !important;
+				    //width: 100% !important;
+				    background-color: @color-primary-dark;
+				    margin-top: -7px;
+				    padding-top: 25px;
+				    a{
+						color: @color-white;
+						font-size: 1.2em;
+					}
+				    h2{
+				    	margin-top: 0px;
+		    			margin-bottom: 0px;
+		    			//width: 1140px;
+		    			display: block;
+		    			margin: 0 auto;
+				    }
+				}
+				.views-field-body {
+				    position: inherit !important;
+				    //width: 100% !important;
+				    background-color: @color-primary-dark;
+				    padding-top: 10px;
+				    padding-bottom: 15px;
+				    color: @color-white;
+				    font-size: @font-size1-2;
+				    min-height: 120px;
+				    .field-content{
+				    	//width: 1140px;
+				    	margin: 0 auto;
+				    }
+				}
+				/*
+				.views-field-field-link{
 					position: absolute;
 					//width: 1140px;
 					top: 45%;
@@ -566,6 +686,7 @@ a.more-link{
 					margin-right: 10%;
 					font-size: @font-size1-3;
 				}
+				*/
 			}
 			.owl-controls.clickable{
 				position: absolute;
@@ -582,56 +703,54 @@ a.more-link{
 		}
 	}
 	//Latest news
-	.panels-flexible-row-new-6{
-		.panels-flexible-region-new-news_section{
-			h3{
-				&:after{
-	    		    .section-icons("../images/icons/005.png");
-	    		}
+	.panels-flexible-row-new-9{
+		h3{
+			&:after{
+				.section-icons("../images/icons/005.png");
 			}
-			.view-display-id-attachment_1{
-				border-bottom: 2px solid @color-text-purple;
-				padding-bottom: 30px;
-    			padding-top: 20px;
-    			margin-bottom: 20px;
-    			.field-name-field-image{
-    				img{
-    					//width: 100%;
-    					//max-height: 310px;
-    				}
-    			}
-    			h4{
-    				a{
-    					font-size: @font-size1-6;
-    				}
-    			}
-    			.more-link{
-    				text-align: left;
-    			}
+		}
+		.view-display-id-attachment_1{
+			border-bottom: 2px solid @color-text-purple;
+			padding-bottom: 30px;
+			padding-top: 20px;
+			margin-bottom: 20px;
+			.field-name-field-image{
+				img{
+					//width: 100%;
+					//max-height: 310px;
+				}
 			}
-			.views-item-columns-container{
-				background-color: @color-white;
-				padding: 15px;
-				min-height: 260px;
-				
-				a.more-link{
-					color: @color-see-more;
-					font-weight: bold;
-					font-style: italic;
-					display: block;
-					text-align: right;
-					font-size: @font-size1;
-				    right: 30px;
-				    bottom: 15px;
-					&:before{
-						content:'>';
-					}
+			h4{
+				a{
+					font-size: @font-size1-6;
+				}
+			}
+			.more-link{
+				text-align: left;
+			}
+		}
+		.views-item-columns-container{
+			background-color: @color-white;
+			padding: 15px;
+			//min-height: 260px;
+
+			a.more-link{
+				color: @color-see-more;
+				font-weight: bold;
+				font-style: italic;
+				display: block;
+				text-align: right;
+				font-size: @font-size1;
+				right: 30px;
+				bottom: 15px;
+				&:before{
+					content:'>';
 				}
 			}
 		}
 	}
 	//Promotional materials
-	.panels-flexible-region-new-promotional_materials{
+	.panels-flexible-row-new-16{
 		h3{
 			&:after{
 	    		.section-icons("../images/icons/083.png");
@@ -656,7 +775,7 @@ a.more-link{
 				}
 				.views-item-columns-container{
 					background-color: @color-background-light-purple;
-					min-height: 320px;
+					//min-height: 320px;
 					.materials-content-wrapper{
 						padding: 15px;
 						overflow: hidden;
@@ -706,126 +825,130 @@ a.more-link{
 		}
 	}
 	//Oira tools
-	.panels-flexible-row-new-16{
-		background-color: @color-background-light-purple;
-		.panels-flexible-region-new-tools{
-			h3{
-				&:after{
-		    		.section-icons("../images/icons/018.png");
-		    	}
+	.panels-flexible-row-new-6{
+		h3{
+			&:after{
+				.section-icons("../images/icons/018.png");
 			}
-			.view-display-id-block{
-				border-bottom: 2px solid @color-text-purple;
-				padding-bottom: 30px;
-	    		padding-top: 20px;
-	    		margin-bottom: 20px;
-	    		.field-name-field-image{
-	    			img{
-	    				//width: 100%;
-	    				//max-height: 310px; 
-	    			}
-	    		}
-	    		.field-name-title-field{
-	    			a{
-	    				font-size: @font-size1-6;	
-	    			}	
-	    		}
-	    		.field-name-related-partners{
-					.node-partner{
-						background-color: @color-primary-dark;
-						padding: 15px;
-						color: @color-white;
-						margin-top: 15px;
-						h4{
-							min-height: 45px;
-							a{
-								font-size: @font-size0-9;
-								color: @color-white;
-								margin-top: 0px;
-							}
-						}
-						.more-link{
+		}
+		.view-display-id-block{
+			border-bottom: 2px solid @color-text-purple;
+			padding-bottom: 30px;
+			padding-top: 20px;
+			margin-bottom: 20px;
+			.field-name-field-image{
+				img{
+					//width: 100%;
+					//max-height: 310px;
+				}
+			}
+			.field-name-title-field{
+				a{
+					font-size: @font-size1-6;
+				}
+			}
+			.field-name-related-partners{
+				.node-partner{
+					background-color: @color-primary-dark;
+					padding: 15px;
+					color: @color-white;
+					margin-top: 15px;
+					h4{
+						min-height: 45px;
+						a{
+							font-size: @font-size0-9;
 							color: @color-white;
-							text-align: left;
+							margin-top: 0px;
 						}
 					}
-				}
-				a.more-link{
-					text-align: left;
-				}
-				a.show-less{
-					text-align: right !important;
-					width: 20px;
-					height: 12px;
-				    float: right;
-				    overflow: hidden;
-				    font-style: normal;
-					&:before{
-						content: "\e253";
-						font-family: "Glyphicons Halflings";
-						font-size: @font-size1-2;
-						line-height: 0;
+					.more-link{
+						color: @color-white;
+						text-align: left;
 					}
+				}
+			}
+			a.more-link{
+				text-align: left;
+			}
+			a.show-less{
+				text-align: right !important;
+				width: 20px;
+				height: 12px;
+				float: right;
+				overflow: hidden;
+				font-style: normal;
+				&:before{
+					content: "\e253";
+					font-family: "Glyphicons Halflings";
+					font-size: @font-size1-2;
+					line-height: 0;
 				}
 			}
 		}
 		.view-display-id-block_1{
-			.views-item-columns-container{
-				background-color: @color-white;
-				padding: 15px;
+			.more-link{
 				a{
-					display: block;
-    				.glyphicon-new-window{
+					//font-size: 1.3em;
+				}
+			}
+		}
+	}
+	.view-display-id-block_1{
+		.views-item-columns-container{
+			background-color: @color-white;
+			padding: 15px;
+			a{
+				display: block;
+				.glyphicon-new-window{
 
-    				}
 				}
-				a.show-less{
-					text-align: right !important;
-					width: 20px;
-					height: 12px;
-				    float: right;
-				    overflow: hidden;
-				    font-style: normal;
-				    position: relative;
-				    top: -5px;
-				    margin-top: 0px;
-					&:before{
-						content: "\e253";
-						font-family: "Glyphicons Halflings";
-						font-size: @font-size1-2;
-						line-height: 0;
-					}
+			}
+			a.show-less{
+				text-align: right !important;
+				width: 20px;
+				height: 12px;
+				float: right;
+				overflow: hidden;
+				font-style: normal;
+				position: relative;
+				top: -5px;
+				margin-top: 0px;
+				&:before{
+					content: "\e253";
+					font-family: "Glyphicons Halflings";
+					font-size: @font-size1-2;
+					line-height: 0;
 				}
-				.field-name-related-partners{
-					.node-partner{
-						background-color: @color-primary-dark;
-						padding: 15px;
-						color: @color-white;
-						margin-bottom: 15px;
-						h4{
-							min-height: 45px;
-							a{
-								font-size: @font-size0-9;
-								color: @color-white;
-								margin-top: 0px;
-							}
-						}
-						.more-link{
+			}
+			.field-name-related-partners{
+				.node-partner{
+					background-color: @color-primary-dark;
+					padding: 15px;
+					color: @color-white;
+					margin-bottom: 15px;
+					h4{
+						min-height: 45px;
+						a{
+							font-size: @font-size0-9;
 							color: @color-white;
-							text-align: left;
+							margin-top: 0px;
 						}
+					}
+					.more-link{
+						color: @color-white;
+						text-align: left;
 					}
 				}
 			}
 		}
-		.pane-views.pane-tools{
-			.pane-title{
-				color: @color-text-purple;
-	    		font-size: @font-size1-2;
-	    		font-weight: bold;
-	    		margin-bottom: 14px;
-	    		font-style: italic;
-			}
+	}
+	.pane-views.pane-tools{
+		.pane-title{
+			color: @color-text-purple;
+			font-size: @font-size1-2;
+			font-weight: bold;
+			margin-bottom: 14px;
+			font-style: italic;
 		}
 	}
 	//Oira partners
@@ -846,12 +969,9 @@ a.more-link{
 					font-size: 32px;
 				}
 				.views-view-grid{
-					margin-top: 30px;
 					margin-bottom: 15px;
 					padding-bottom: 40px;
-					padding-top: 20px;
 					border-bottom: 2px solid @color-text-purple;
-					border-top: 2px solid @color-text-purple;
 					.col-md-2.col-sm-3.col-xs-6{
 						.views-field-field-logo{
 							height: 160px;
@@ -1303,7 +1423,7 @@ a.more-link{
 				padding-top: 20px;
 				.views-item-columns-container{
 					background-color: @color-primary;
-					min-height: 535px;
+					min-height: 489px;
 					.views-field-field-image{
 						min-height: 202px;//testing
 						padding: 10px;
@@ -1580,12 +1700,15 @@ a.more-link{
 								}
 							}
 							.field-name-field-tool-link{
+								position: absolute;
+								right: 15px;
+								margin-top: 15px;
 								a{
 									color: @color-text-grey;
 								    font-weight: bold;
-								    margin-top: 30px;
+								    margin-top: 0px;
 								    display: block;
-								    margin-bottom: 15px;
+								    //margin-bottom: 15px;
 									span.glyphicon-new-window{
 										color: @color-see-more;
 										margin-left: 10px;
@@ -1594,6 +1717,7 @@ a.more-link{
 							}
 							//partners inside oira tools
 							.field-name-related-partners{
+								margin-top: 50px;
 								.node-partner{
 									background-color: @color-primary-dark;
     								padding: 15px;
@@ -2256,7 +2380,7 @@ a.more-link{
 		}
 	}
 }
-div[id ^= "mini-panel-partner_in_country"]{
+div[id ^= "mini-panel-partner_in_"], {
 	.panels-flexible-row-inside-first{
 		background-color: @color-white !important;
 		border-bottom: 2px solid @color-text-purple-darker;
@@ -2442,10 +2566,28 @@ div[id ^= "mini-panel-partner_in_country"]{
 				> div{
 					width: 50%;
 				}
-				.partner-contact-container, .partner-social-container{
+				.partner-contact-container,
+				.partner-social-container{
 					min-height: 250px;
 				}
 			}
+		}
+	}
+	.focal-poin-partner-text{
+		padding-left: 45px;
+		padding-right: 45px;
+		clear: both;
+	}
+}
+
+.focal-poin-partner-text{
+	margin-top: 5px;
+	margin-bottom: 15px;
+	clear: both;
+	a{
+	font-style: italic;
+		&:before{
+			content:" > ";
 		}
 	}
 }
@@ -2453,6 +2595,26 @@ div[id ^= "mini-panel-partner_in_country"]{
 //partners and countries resources
 #quicktabs-container-view__country_partner_content__block, #quicktabs-container-view__country_partner_content__block_1{
 	.quicktabs-tabpage {
+		.field.field-name-field-country,
+		.field-type-language-field,
+		.field-name-field-sector,
+		.field-name-field-promotional-material-type,
+		.field-name-pr-language{
+		    background-color: @color-tags;
+		    display: inline-block;
+		    color: white;
+		    padding: 2px 10px;
+		    font-size: 0.8em;
+		    font-weight: bold;
+		    font-style: italic;
+		    margin-top: 0em;
+		    margin-right: 5px;
+		    border-radius: 15px;
+		    margin-bottom: 15px;
+		    p{
+		    	margin-bottom: 0px;
+		    }
+		}
 		.quicktabs-group-wrapper{
 			padding-bottom: 30px;
 		}
@@ -2534,8 +2696,13 @@ div[id ^= "mini-panel-partner_in_country"]{
 					line-height: 0;
 				}
 			}
-			.field-name-field-tool-link a{
-				
+			.field-name-field-tool-link{
+				position: absolute;
+				right: 15px;
+				margin-top: 15px;
+				a{
+					margin-top: 0px;
+				}
 			}
 			.field-name-tools-see-more{
 				margin-left: 0px;
@@ -2564,7 +2731,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 					background-color: @color-primary-dark;
 					padding: 15px;
 					color: @color-white;
-					margin-top: 20px;
+					margin-top: 50px;
 					h4{
 						min-height: 45px;
 						a{
@@ -3679,7 +3846,7 @@ div[id ^= "mini-panel-partner_in_country"]{
 									background-color: @color-primary-dark;
     								padding: 15px;
     								color: @color-white;
-    								margin-top: 20px;
+    								margin-top: 50px;
     								h4{
     									min-height: 45px;
     									a{
@@ -3738,32 +3905,16 @@ div[id ^= "mini-panel-partner_in_country"]{
 /* Countries with more than two partners
 *************************************************/
 .more-than-two-partners{
+	.view-display-id-block_1 .views-item-columns-container{
+		padding: 0px !important;
+		.views-field.views-field-field-logo{
+			min-height: 175px;
+		}
+	}
 	.view-id-oira_partners{
 		img{
 			padding: 15px;
 			cursor: pointer;
-		}
-	}
-	.country-partners-container{
-		margin-bottom: 30px;
-		position: relative;
-		*{
-			box-sizing: border-box;
-		}
-		.active{
-			border-right: none !important;
-			float: left;
-			position: absolute;
-			margin-right: 30px;
-			.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
-				display: block !important;
-			}
-		}
-		.has-open-partner{
-			float: right;
-			clear: both;
-			border-left: 2px solid @color-primary-dark;
-			border-right: none !important;
 		}
 	}
 	div[id^="mini-panel-partner_in_country"]{
@@ -3772,9 +3923,22 @@ div[id ^= "mini-panel-partner_in_country"]{
 			padding-top: 15px;
 			padding-bottom: 15px;
 		}
+		.partner-contact-container,
+		.partner-social-container,
+		.partner-colaborators-container,
+		.partner-text2-container {
+			
+		}
+		.pane-contact-information-partner,
+		.pane-node-field-social-profile,
+		.pane-node-field-collaborator,
+		.pane-taxonomy-term-field-ncw-fp-link{
+
+		}
 	}
 }
 /*END EU LEVEL COUNTRY*/
+
 
 /*Pagination styles*/
 .pager{
