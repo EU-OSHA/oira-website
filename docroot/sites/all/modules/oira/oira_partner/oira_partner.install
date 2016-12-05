@@ -22,8 +22,9 @@ function oira_partner_update_7003() {
 }
 
 /**
- * Feature revert Sprint 5 (part 2): NOW-269.
+ * Feature revert Sprint 5 (part 2): NOW-269, NOW-277.
  */
 function oira_partner_update_7004() {
   features_revert_module('oira_partner');
+  module_enable(['image_url_formatter'], true);
 }
