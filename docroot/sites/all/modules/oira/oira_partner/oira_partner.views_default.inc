@@ -265,13 +265,15 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
   $handler->display->display_options['fields']['field_logo']['label'] = '';
   $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '[field_logo]';
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img class="img-responsive" src="[field_logo]" alt="[title]" width="[field_logo-width]" height="[field_logo-height]" />';
   $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title]';
   $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'url_type' => '0',
     'image_style' => 'medium',
     'image_link' => '',
     'field_formatter_class' => '',
@@ -515,7 +517,7 @@ function oira_partner_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('[field_logo]'),
+    t('<img class="img-responsive" src="[field_logo]" alt="[title]" width="[field_logo-width]" height="[field_logo-height]" />'),
     t('[title]'),
     t('OiRA Partners Block'),
     t('OiRA Partners Home page Block'),
