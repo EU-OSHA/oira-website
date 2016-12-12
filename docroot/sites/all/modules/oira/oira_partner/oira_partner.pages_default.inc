@@ -17,7 +17,7 @@ function oira_partner_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 3;
+  $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Partner',
     'no_blocks' => 0,
@@ -216,6 +216,249 @@ function oira_partner_default_page_manager_handlers() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_1d42b836-6909-4183-b7c6-ebbdbc13b8ba'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__partner-private-zone';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -1;
+  $handler->conf = array(
+    'title' => 'Partner private zone',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'partner-private-zone',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'partner' => 'partner',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+              1 => 11,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'OiRA Community
+%node:title-field',
+    'panels_breadcrumbs_paths' => 'oira-community
+<none>',
+    'panels_breadcrumbs_home' => 1,
+    'panels_page_title_state' => 1,
+    'panels_page_title' => 'My Profile',
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 'main-row',
+          1 => 1,
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Center',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'content',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'content' => array(
+        'type' => 'region',
+        'title' => 'Content',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'content' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Private Zone';
+  $display->uuid = 'a61fb19c-554f-40d4-a391-a652a6c2b4a0';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-72ac2f02-a45d-4693-a05f-66a9631e2142';
+    $pane->panel = 'center';
+    $pane->type = 'custom_title_tag';
+    $pane->subtype = 'custom_title_tag';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'buttons' => NULL,
+      'custom_page_title_pattern' => '%node:title-field',
+      'form_build_id' => 'form-9I3xqlrjMckab6zZCQv51NqBtxZJARKEqt3eEKdcTq4',
+      'form_token' => 'agatEdmxA_gf5dEvFm6LlorxqN6Cl-MmZp1hbuqosVw',
+      'form_id' => 'panels_custom_title_tag_edit_form',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '72ac2f02-a45d-4693-a05f-66a9631e2142';
+    $display->content['new-72ac2f02-a45d-4693-a05f-66a9631e2142'] = $pane;
+    $display->panels['center'][0] = 'new-72ac2f02-a45d-4693-a05f-66a9631e2142';
+    $pane = new stdClass();
+    $pane->pid = 'new-7d903302-d5d5-4a08-a566-c4edd910ef58';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'menu-menu-private-zone';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '7d903302-d5d5-4a08-a566-c4edd910ef58';
+    $display->content['new-7d903302-d5d5-4a08-a566-c4edd910ef58'] = $pane;
+    $display->panels['center'][1] = 'new-7d903302-d5d5-4a08-a566-c4edd910ef58';
+    $pane = new stdClass();
+    $pane->pid = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
+    $pane->panel = 'center';
+    $pane->type = 'panels_mini';
+    $pane->subtype = 'partner_in_profile';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '7735b0fb-198c-4f5c-9db1-8194e9479da6';
+    $display->content['new-7735b0fb-198c-4f5c-9db1-8194e9479da6'] = $pane;
+    $display->panels['center'][2] = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
+    $pane = new stdClass();
+    $pane->pid = 'new-400d31e4-e381-4472-8332-a2601526f7b2';
+    $pane->panel = 'content';
+    $pane->type = 'views';
+    $pane->subtype = 'country_partner_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 1,
+      'link_to_view' => 0,
+      'args' => '%1',
+      'url' => '',
+      'display' => 'block_1',
+      'context' => array(
+        0 => 'argument_entity_id:node_1.nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '400d31e4-e381-4472-8332-a2601526f7b2';
+    $display->content['new-400d31e4-e381-4472-8332-a2601526f7b2'] = $pane;
+    $display->panels['content'][0] = 'new-400d31e4-e381-4472-8332-a2601526f7b2';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__partner-private-zone'] = $handler;
 
   return $export;
 }
