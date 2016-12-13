@@ -350,9 +350,11 @@ function osha_disabled_language_list() {
  * @return array
  *   of language objects.
  */
-function osha_language_list($osha_sorted = FALSE) {
+function osha_language_list($osha_sorted = FALSE, $disabled_lang = NULL) {
   $languages = language_list();
-  $disabled_lang = osha_disabled_language_list();
+  if (empty($disabled_lang)) {
+    $disabled_lang = osha_disabled_language_list();
+  }
   foreach ($languages as $lang => $language) {
     if (in_array($lang, $disabled_lang)) {
       unset($languages[$lang]);
@@ -364,8 +366,8 @@ function osha_language_list($osha_sorted = FALSE) {
   return $languages;
 }
 
-function osha_language_list_options($native = FALSE) {
-  $languages = osha_language_list();
+function osha_language_list_options($native = FALSE, $osha_sorted = FALSE, $disabled_lang = NULL) {
+  $languages = osha_language_list($osha_sorted, $disabled_lang);
   $return = array();
   foreach ($languages as $lang => $language) {
     if ($native) {

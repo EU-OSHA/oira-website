@@ -287,7 +287,7 @@ function hwc_practical_tool_strongarm() {
         ),
         'node_type' => array(
           'search_result' => array(
-            'weight' => '1',
+            'weight' => '4',
             'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
