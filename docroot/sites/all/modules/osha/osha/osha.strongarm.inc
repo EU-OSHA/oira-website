@@ -1100,7 +1100,7 @@ el.remove();
         'webform' => array(
           'default' => array(
             'weight' => '10',
-            'label' => 'above',
+            'label' => 'hidden',
             'type' => 'visible',
             'visible' => TRUE,
             'settings' => array(),
@@ -1109,7 +1109,7 @@ el.remove();
         'node_type' => array(
           'default' => array(
             'weight' => '0',
-            'label' => 'above',
+            'label' => 'hidden',
             'type' => 'hidden',
             'visible' => FALSE,
             'settings' => array(),

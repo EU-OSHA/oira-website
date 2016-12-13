@@ -2863,7 +2863,7 @@ function osha_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'osha',
         'settings' => array(
-          'field_formatter_class' => '',
+          'field_formatter_class' => 'contact-intro',
         ),
         'type' => 'text_default',
         'weight' => 1,
@@ -2951,7 +2951,7 @@ function osha_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
