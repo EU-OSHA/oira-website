@@ -7060,7 +7060,8 @@ a.more-link:before {
 .page-search-site .field-name-field-tool-link a {
   margin-top: 0px !important;
 }
-.page-search-site .field-name-pr-language {
+.page-search-site .field-name-pr-language,
+.page-search-site .field-name-field-sector {
   margin-bottom: 20px;
 }
 .alert.alert-block.alert-info {
@@ -8525,112 +8526,118 @@ a.more-link:before {
   height: 40px;
   float: right;
 }
-.page-faq .contact-form-wrapper {
-  background-color: #786586;
+.node-type-webform #node-43 {
   margin-bottom: 45px;
   padding-bottom: 10px;
   padding-top: 30px;
-}
-.page-faq .contact-form-wrapper .container {
-  max-width: 600px;
   position: relative;
 }
-.page-faq .contact-form-wrapper label {
+.node-type-webform #node-43 .content > span {
+  display: none;
+}
+.node-type-webform #node-43 .container {
+  position: relative;
+}
+.node-type-webform #node-43 form {
+  background-color: #786586;
+  max-width: 600px;
+}
+.node-type-webform #node-43 label {
   color: #ffffff;
   display: block;
 }
-.page-faq .contact-form-wrapper select,
-.page-faq .contact-form-wrapper input,
-.page-faq .contact-form-wrapper textarea {
+.node-type-webform #node-43 select,
+.node-type-webform #node-43 input,
+.node-type-webform #node-43 textarea {
   border-radius: 0;
   border: none;
   width: 100%;
   padding: 6px 12px;
 }
-.page-faq .contact-form-wrapper fieldset,
-.page-faq .contact-form-wrapper .captcha {
+.node-type-webform #node-43 fieldset,
+.node-type-webform #node-43 .captcha {
   margin-top: 35px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
   border: none;
   width: 100%;
 }
-.page-faq .contact-form-wrapper fieldset legend,
-.page-faq .contact-form-wrapper .captcha legend {
+.node-type-webform #node-43 fieldset legend,
+.node-type-webform #node-43 .captcha legend {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-heading,
-.page-faq .contact-form-wrapper .captcha .panel-heading {
+.node-type-webform #node-43 fieldset .panel-heading,
+.node-type-webform #node-43 .captcha .panel-heading {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body,
-.page-faq .contact-form-wrapper .captcha .panel-body {
+.node-type-webform #node-43 fieldset .panel-body,
+.node-type-webform #node-43 .captcha .panel-body {
   padding: 0px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .help-block,
-.page-faq .contact-form-wrapper .captcha .panel-body .help-block {
+.node-type-webform #node-43 fieldset .panel-body .help-block,
+.node-type-webform #node-43 .captcha .panel-body .help-block {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaReadAudio {
+.node-type-webform #node-43 fieldset .panel-body .captchaReadAudio,
+.node-type-webform #node-43 .captcha .panel-body .captchaReadAudio {
   background: url('../images/icons/audio-form.png') no-repeat;
   background-size: cover;
   height: 38px;
   display: inline-block;
   margin-bottom: 4px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio img,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaReadAudio img {
+.node-type-webform #node-43 fieldset .panel-body .captchaReadAudio img,
+.node-type-webform #node-43 .captcha .panel-body .captchaReadAudio img {
   visibility: hidden;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaRefresh {
+.node-type-webform #node-43 fieldset .panel-body .captchaRefresh,
+.node-type-webform #node-43 .captcha .panel-body .captchaRefresh {
   background: url('../images/icons/refresh-form.png') no-repeat;
   height: 38px;
   background-size: cover;
   display: inline-block;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh img,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaRefresh img {
+.node-type-webform #node-43 fieldset .panel-body .captchaRefresh img,
+.node-type-webform #node-43 .captcha .panel-body .captchaRefresh img {
   visibility: hidden;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code {
+.node-type-webform #node-43 fieldset .panel-body .form-item-security-code,
+.node-type-webform #node-43 .captcha .panel-body .form-item-security-code {
   margin-top: 20px;
   width: 345px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code #security_code,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code #security_code {
+.node-type-webform #node-43 fieldset .panel-body .form-item-security-code #security_code,
+.node-type-webform #node-43 .captcha .panel-body .form-item-security-code #security_code {
   width: 213px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code label:last-child {
+.node-type-webform #node-43 fieldset .panel-body .form-item-security-code label:last-child,
+.node-type-webform #node-43 .captcha .panel-body .form-item-security-code label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
   position: absolute;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child:before,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code label:last-child:before {
+.node-type-webform #node-43 fieldset .panel-body .form-item-security-code label:last-child:before,
+.node-type-webform #node-43 .captcha .panel-body .form-item-security-code label:last-child:before {
   content: "*";
 }
-.page-faq .contact-form-wrapper .grippie {
+.node-type-webform #node-43 .grippie {
   display: none;
 }
-.page-faq .contact-form-wrapper .webform-component {
+.node-type-webform #node-43 .webform-component {
   margin-bottom: 25px;
 }
-.page-faq .contact-form-wrapper .webform-component label:last-child {
+.node-type-webform #node-43 .webform-component label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
 }
-.page-faq .contact-form-wrapper .webform-component label:last-child:before {
+.node-type-webform #node-43 .webform-component label:last-child:before {
   content: "*";
 }
-.page-faq .contact-form-wrapper button.form-submit {
+.node-type-webform #node-43 button.form-submit {
   position: absolute;
-  bottom: 37px;
+  bottom: 47px;
   left: 235px;
   border-radius: 0px;
   background-color: white;
@@ -8638,7 +8645,7 @@ a.more-link:before {
   font-style: italic;
   border: 1px solid white;
 }
-.page-faq .contact-form-wrapper button.form-submit:before {
+.node-type-webform #node-43 button.form-submit:before {
   content: "> ";
 }
 .page-oira-faqs #block-system-main {
@@ -10319,6 +10326,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-style: italic;
   color: #786586;
   display: block;
+  margin-bottom: 5px;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-field-publication-date {
   margin-top: 0px;
@@ -10997,10 +11005,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .node-type-article .panels-flexible-region-new-cover_image .field-type-image {
     margin-top: 35px;
-  }
-  .node-type-article .panels-flexible-row-new-10 .container {
-    padding-right: 0px;
-    padding-left: 0px;
   }
   .node-type-article #mini-panel-related_content > div > div .col-md-10 {
     width: 750px;
@@ -12462,17 +12466,17 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     font-size: 1em;
     line-height: initial;
   }
-  .page-faq .captchaImg {
+  .node-type-webform #node-43 .captchaImg {
     width: 230px;
   }
-  .page-faq .form-item-security-code.form-group {
+  .node-type-webform #node-43 .form-item-security-code.form-group {
     width: 100% !important;
     margin-bottom: 0px !important;
   }
-  .page-faq .form-item-security-code.form-group #security_code {
+  .node-type-webform #node-43 .form-item-security-code.form-group #security_code {
     width: 100% !important;
   }
-  .page-faq .webform-submit {
+  .node-type-webform #node-43 .webform-submit {
     position: inherit !important;
     bottom: 37px;
     background-color: #10b2e4 !important;

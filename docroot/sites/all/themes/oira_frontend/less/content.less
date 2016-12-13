@@ -253,7 +253,8 @@ a.more-link{
 	}
 }
 .page-search-site{
-	.field-name-pr-language{
+	.field-name-pr-language,
+	.field-name-field-sector{
 		margin-bottom: 20px;
 	}
 }
@@ -1887,14 +1888,31 @@ a.more-link{
     		}
 		}
 	}
-	.contact-form-wrapper{
-		background-color: @color-primary-dark;
+	
+}
+
+.node-type-webform{
+	#block-system-main{
+		
+	}
+	#node-43{
+		
 		margin-bottom: 45px;
 		padding-bottom: 10px;
 		padding-top: 30px;
+		
+		position: relative;
+		.content{
+			> span{
+				display: none;
+			}
+		}
 		.container{
-			max-width: 600px;
 			position: relative;
+		}
+		form{
+			background-color: @color-primary-dark;; 
+			max-width: 600px;
 		}
 		label{
 			color: @color-white;
@@ -1976,7 +1994,7 @@ a.more-link{
 		}
 		button.form-submit{
 			position: absolute;
-			bottom: 37px;
+			bottom: 47px;
 		    left: 235px;
 		    border-radius: 0px;
 		    background-color: white;
@@ -3794,6 +3812,7 @@ div[id ^= "mini-panel-partner_in_"], {
 								font-style: italic;
 								color: @color-primary-dark;
 								display: block;
+								margin-bottom: 5px;
 							}
 							.field-name-field-publication-date{
 								margin-top: 0px;
