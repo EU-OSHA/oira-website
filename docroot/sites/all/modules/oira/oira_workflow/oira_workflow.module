@@ -24,11 +24,11 @@ function oira_workflow_cron() {
 }
 
 function _oira_get_content_types_for_partners() {
-  return array('news', 'practical_tool', 'promotional_material', 'strategic_documentation', 'collaboration_doc');
+  return array('news', 'practical_tool', 'promotional_material', 'strategic_documentation');
 }
 
 function _oira_get_content_types_for_private_zone() {
-  return array('collaboration_doc', 'strategic_documentation');
+  return array('strategic_documentation');
 }
 
 /**

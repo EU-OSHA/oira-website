@@ -81,19 +81,19 @@ function oira_strategic_documentation_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '15',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '14',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '12',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'xmlsitemap' => array(
-          'weight' => '9',
+          'weight' => '13',
         ),
         'language' => array(
           'weight' => '10',

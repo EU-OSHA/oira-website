@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Strategic documentation feature.
- */
-
-include_once 'oira_collaboration.features.inc';
