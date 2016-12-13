@@ -73,11 +73,11 @@ function hwc_practical_tool_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title_field',
-        1 => 'node_type',
-        2 => 'field_revised_date',
-        3 => 'field_country',
-        4 => 'field_sector',
+        0 => 'field_revised_date',
+        1 => 'field_country',
+        2 => 'field_sector',
+        3 => 'title_field',
+        4 => 'node_type',
         5 => 'body',
         6 => 'field_tool_link',
         7 => 'related_partners',
@@ -85,11 +85,11 @@ function hwc_practical_tool_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'title_field' => 'ds_content',
-      'node_type' => 'ds_content',
       'field_revised_date' => 'ds_content',
       'field_country' => 'ds_content',
       'field_sector' => 'ds_content',
+      'title_field' => 'ds_content',
+      'node_type' => 'ds_content',
       'body' => 'ds_content',
       'field_tool_link' => 'ds_content',
       'related_partners' => 'ds_content',
