@@ -7060,7 +7060,8 @@ a.more-link:before {
 .page-search-site .field-name-field-tool-link a {
   margin-top: 0px !important;
 }
-.page-search-site .field-name-pr-language {
+.page-search-site .field-name-pr-language,
+.page-search-site .field-name-field-sector {
   margin-bottom: 20px;
 }
 .alert.alert-block.alert-info {
@@ -8510,14 +8511,13 @@ a.more-link:before {
   background: rgba(0, 0, 0, 0);
   padding: 0px;
 }
-.page-faq .panels-flexible-region-new-form-inside h3 {
+.page-contact-us h1 {
   color: #967ea7;
-  border-bottom: 2px solid #967ea7;
-  font-size: 2.2em;
+  border-bottom: 2px solid #967ea7 !important;
   padding-bottom: 15px;
   font-family: 'Oswald';
 }
-.page-faq .panels-flexible-region-new-form-inside h3:after {
+.page-contact-us h1:after {
   content: "";
   background: url("../images/icons/186.png") no-repeat;
   background-size: 100%;
@@ -8525,110 +8525,122 @@ a.more-link:before {
   height: 40px;
   float: right;
 }
-.page-faq .contact-form-wrapper {
-  background-color: #786586;
-  margin-bottom: 45px;
+.page-contact-us #block-system-main {
   padding-bottom: 10px;
-  padding-top: 30px;
-}
-.page-faq .contact-form-wrapper .container {
-  max-width: 600px;
   position: relative;
 }
-.page-faq .contact-form-wrapper label {
+.page-contact-us #block-system-main .content > span {
+  display: none;
+}
+.page-contact-us #block-system-main .field-type-text-with-summary {
+  font-family: 'Oswald';
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+.page-contact-us #block-system-main .container {
+  position: relative;
+}
+.page-contact-us #block-system-main .panels-flexible-row-new-1 {
+  padding-top: 20px;
+  background-color: #786586;
+}
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .container {
+  max-width: 600px;
+}
+.page-contact-us #block-system-main .panels-flexible-row-new-1 label {
   color: #ffffff;
   display: block;
 }
-.page-faq .contact-form-wrapper select,
-.page-faq .contact-form-wrapper input,
-.page-faq .contact-form-wrapper textarea {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 select,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 input,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 textarea {
   border-radius: 0;
   border: none;
   width: 100%;
   padding: 6px 12px;
 }
-.page-faq .contact-form-wrapper fieldset,
-.page-faq .contact-form-wrapper .captcha {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha {
   margin-top: 35px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
   border: none;
   width: 100%;
 }
-.page-faq .contact-form-wrapper fieldset legend,
-.page-faq .contact-form-wrapper .captcha legend {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset legend,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha legend {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-heading,
-.page-faq .contact-form-wrapper .captcha .panel-heading {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-heading,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-heading {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body,
-.page-faq .contact-form-wrapper .captcha .panel-body {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body {
   padding: 0px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .help-block,
-.page-faq .contact-form-wrapper .captcha .panel-body .help-block {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .help-block,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .help-block {
   display: none;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaReadAudio {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaReadAudio,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaReadAudio {
   background: url('../images/icons/audio-form.png') no-repeat;
   background-size: cover;
   height: 38px;
   display: inline-block;
   margin-bottom: 4px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaReadAudio img,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaReadAudio img {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaReadAudio img,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaReadAudio img {
   visibility: hidden;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaRefresh {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaRefresh,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaRefresh {
   background: url('../images/icons/refresh-form.png') no-repeat;
   height: 38px;
   background-size: cover;
   display: inline-block;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .captchaRefresh img,
-.page-faq .contact-form-wrapper .captcha .panel-body .captchaRefresh img {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaRefresh img,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaRefresh img {
   visibility: hidden;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code {
   margin-top: 20px;
   width: 345px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code #security_code,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code #security_code {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code #security_code,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code #security_code {
   width: 213px;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code label:last-child {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code label:last-child,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
   position: absolute;
 }
-.page-faq .contact-form-wrapper fieldset .panel-body .form-item-security-code label:last-child:before,
-.page-faq .contact-form-wrapper .captcha .panel-body .form-item-security-code label:last-child:before {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code label:last-child:before,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code label:last-child:before {
   content: "*";
 }
-.page-faq .contact-form-wrapper .grippie {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .grippie {
   display: none;
 }
-.page-faq .contact-form-wrapper .webform-component {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component {
   margin-bottom: 25px;
 }
-.page-faq .contact-form-wrapper .webform-component label:last-child {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
 }
-.page-faq .contact-form-wrapper .webform-component label:last-child:before {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component label:last-child:before {
   content: "*";
 }
-.page-faq .contact-form-wrapper button.form-submit {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 button.form-submit {
   position: absolute;
   bottom: 37px;
   left: 235px;
@@ -8638,7 +8650,27 @@ a.more-link:before {
   font-style: italic;
   border: 1px solid white;
 }
-.page-faq .contact-form-wrapper button.form-submit:before {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 button.form-submit:before {
+  content: "> ";
+}
+.page-contact-us .alert-success {
+  background-color: #dfd8e4;
+  border: none;
+  border-radius: 0px;
+}
+.page-contact-us .alert-success p {
+  text-align: center;
+}
+.page-contact-us .alert-success p span {
+  color: #786586;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+.logged-in.page-contact-us button.form-submit {
+  position: inherit !important;
+  margin-bottom: 15px !important;
+}
+.logged-in.page-contact-us button.form-submit:before {
   content: "> ";
 }
 .page-oira-faqs #block-system-main {
@@ -10319,6 +10351,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-style: italic;
   color: #786586;
   display: block;
+  margin-bottom: 5px;
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child #edit-content .search-page-results-wrapper .view-mode-search_result .field-name-field-publication-date {
   margin-top: 0px;
@@ -10997,10 +11030,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .node-type-article .panels-flexible-region-new-cover_image .field-type-image {
     margin-top: 35px;
-  }
-  .node-type-article .panels-flexible-row-new-10 .container {
-    padding-right: 0px;
-    padding-left: 0px;
   }
   .node-type-article #mini-panel-related_content > div > div .col-md-10 {
     width: 750px;
@@ -12462,17 +12491,17 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     font-size: 1em;
     line-height: initial;
   }
-  .page-faq .captchaImg {
+  .page-contact-us #block-system-main .captchaImg {
     width: 230px;
   }
-  .page-faq .form-item-security-code.form-group {
+  .page-contact-us #block-system-main .form-item-security-code.form-group {
     width: 100% !important;
     margin-bottom: 0px !important;
   }
-  .page-faq .form-item-security-code.form-group #security_code {
+  .page-contact-us #block-system-main .form-item-security-code.form-group #security_code {
     width: 100% !important;
   }
-  .page-faq .webform-submit {
+  .page-contact-us #block-system-main .webform-submit {
     position: inherit !important;
     bottom: 37px;
     background-color: #10b2e4 !important;
