@@ -1096,26 +1096,7 @@ el.remove();
           'weight' => '2',
         ),
       ),
-      'display' => array(
-        'webform' => array(
-          'default' => array(
-            'weight' => '10',
-            'label' => 'above',
-            'type' => 'visible',
-            'visible' => TRUE,
-            'settings' => array(),
-          ),
-        ),
-        'node_type' => array(
-          'default' => array(
-            'weight' => '0',
-            'label' => 'above',
-            'type' => 'hidden',
-            'visible' => FALSE,
-            'settings' => array(),
-          ),
-        ),
-      ),
+      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__webform'] = $strongarm;

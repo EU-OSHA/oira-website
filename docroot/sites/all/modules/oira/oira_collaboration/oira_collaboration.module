@@ -4,4 +4,4 @@
  * Code for the Strategic documentation feature.
  */
 
-include_once 'oira_strategic_documentation.features.inc';
+include_once 'oira_collaboration.features.inc';
