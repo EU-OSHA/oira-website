@@ -202,6 +202,43 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['filters']['partner_access_coauthor']['field'] = 'partner_access_coauthor';
   $handler->display->display_options['filters']['partner_access_coauthor']['value'] = '1';
   $handler->display->display_options['block_caching'] = '-1';
+
+  /* Display: Block - Private zone */
+  $handler = $view->new_display('block', 'Block - Private zone', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Partner content - profile page - private zone';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+    'practical_tool' => 'practical_tool',
+    'promotional_material' => 'promotional_material',
+    'strategic_documentation' => 'strategic_documentation',
+  );
+  /* Filter criterion: Oira partner: Node belongs to partner or is the coauthor */
+  $handler->display->display_options['filters']['partner_access_coauthor']['id'] = 'partner_access_coauthor';
+  $handler->display->display_options['filters']['partner_access_coauthor']['table'] = 'oira_partner';
+  $handler->display->display_options['filters']['partner_access_coauthor']['field'] = 'partner_access_coauthor';
+  $handler->display->display_options['filters']['partner_access_coauthor']['value'] = '1';
+  $handler->display->display_options['block_caching'] = '-1';
   $translatables['country_partner_content'] = array(
     t('Master'),
     t('Partner content - country page'),
@@ -213,6 +250,8 @@ function oira_partner_views_default_views() {
     t('Desc'),
     t('Block'),
     t('Partner content - profile page'),
+    t('Block - Private zone'),
+    t('Partner content - profile page - private zone'),
   );
   $export['country_partner_content'] = $view;
 

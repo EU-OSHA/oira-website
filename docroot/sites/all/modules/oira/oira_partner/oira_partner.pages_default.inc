@@ -369,10 +369,10 @@ function oira_partner_default_page_manager_handlers() {
     $display->content['new-72ac2f02-a45d-4693-a05f-66a9631e2142'] = $pane;
     $display->panels['center'][0] = 'new-72ac2f02-a45d-4693-a05f-66a9631e2142';
     $pane = new stdClass();
-    $pane->pid = 'new-7d903302-d5d5-4a08-a566-c4edd910ef58';
+    $pane->pid = 'new-1fac81a0-fbff-4367-a3f6-c78684f34c84';
     $pane->panel = 'center';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-private-zone';
+    $pane->subtype = 'menu_block-6';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -388,9 +388,9 @@ function oira_partner_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '7d903302-d5d5-4a08-a566-c4edd910ef58';
-    $display->content['new-7d903302-d5d5-4a08-a566-c4edd910ef58'] = $pane;
-    $display->panels['center'][1] = 'new-7d903302-d5d5-4a08-a566-c4edd910ef58';
+    $pane->uuid = '1fac81a0-fbff-4367-a3f6-c78684f34c84';
+    $display->content['new-1fac81a0-fbff-4367-a3f6-c78684f34c84'] = $pane;
+    $display->panels['center'][1] = 'new-1fac81a0-fbff-4367-a3f6-c78684f34c84';
     $pane = new stdClass();
     $pane->pid = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
     $pane->panel = 'center';
@@ -418,7 +418,7 @@ function oira_partner_default_page_manager_handlers() {
     $display->content['new-7735b0fb-198c-4f5c-9db1-8194e9479da6'] = $pane;
     $display->panels['center'][2] = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
     $pane = new stdClass();
-    $pane->pid = 'new-400d31e4-e381-4472-8332-a2601526f7b2';
+    $pane->pid = 'new-f15db290-2596-44ec-bf63-aa802cf31a4d';
     $pane->panel = 'content';
     $pane->type = 'views';
     $pane->subtype = 'country_partner_content';
@@ -436,10 +436,7 @@ function oira_partner_default_page_manager_handlers() {
       'link_to_view' => 0,
       'args' => '%1',
       'url' => '',
-      'display' => 'block_1',
-      'context' => array(
-        0 => 'argument_entity_id:node_1.nid',
-      ),
+      'display' => 'block_2',
       'override_title' => 1,
       'override_title_text' => '<none>',
       'override_title_heading' => 'h2',
@@ -452,9 +449,9 @@ function oira_partner_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '400d31e4-e381-4472-8332-a2601526f7b2';
-    $display->content['new-400d31e4-e381-4472-8332-a2601526f7b2'] = $pane;
-    $display->panels['content'][0] = 'new-400d31e4-e381-4472-8332-a2601526f7b2';
+    $pane->uuid = 'f15db290-2596-44ec-bf63-aa802cf31a4d';
+    $display->content['new-f15db290-2596-44ec-bf63-aa802cf31a4d'] = $pane;
+    $display->panels['content'][0] = 'new-f15db290-2596-44ec-bf63-aa802cf31a4d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
