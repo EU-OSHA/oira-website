@@ -8511,14 +8511,13 @@ a.more-link:before {
   background: rgba(0, 0, 0, 0);
   padding: 0px;
 }
-.page-faq .panels-flexible-region-new-form-inside h3 {
+.page-contact-us h1 {
   color: #967ea7;
-  border-bottom: 2px solid #967ea7;
-  font-size: 2.2em;
+  border-bottom: 2px solid #967ea7 !important;
   padding-bottom: 15px;
   font-family: 'Oswald';
 }
-.page-faq .panels-flexible-region-new-form-inside h3:after {
+.page-contact-us h1:after {
   content: "";
   background: url("../images/icons/186.png") no-repeat;
   background-size: 100%;
@@ -8526,118 +8525,124 @@ a.more-link:before {
   height: 40px;
   float: right;
 }
-.node-type-webform #node-43 {
-  margin-bottom: 45px;
+.page-contact-us #block-system-main {
   padding-bottom: 10px;
-  padding-top: 30px;
   position: relative;
 }
-.node-type-webform #node-43 .content > span {
+.page-contact-us #block-system-main .content > span {
   display: none;
 }
-.node-type-webform #node-43 .container {
+.page-contact-us #block-system-main .field-type-text-with-summary {
+  font-family: 'Oswald';
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+.page-contact-us #block-system-main .container {
   position: relative;
 }
-.node-type-webform #node-43 form {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 {
+  padding-top: 20px;
   background-color: #786586;
+}
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .container {
   max-width: 600px;
 }
-.node-type-webform #node-43 label {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 label {
   color: #ffffff;
   display: block;
 }
-.node-type-webform #node-43 select,
-.node-type-webform #node-43 input,
-.node-type-webform #node-43 textarea {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 select,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 input,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 textarea {
   border-radius: 0;
   border: none;
   width: 100%;
   padding: 6px 12px;
 }
-.node-type-webform #node-43 fieldset,
-.node-type-webform #node-43 .captcha {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha {
   margin-top: 35px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
   border: none;
   width: 100%;
 }
-.node-type-webform #node-43 fieldset legend,
-.node-type-webform #node-43 .captcha legend {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset legend,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha legend {
   display: none;
 }
-.node-type-webform #node-43 fieldset .panel-heading,
-.node-type-webform #node-43 .captcha .panel-heading {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-heading,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-heading {
   display: none;
 }
-.node-type-webform #node-43 fieldset .panel-body,
-.node-type-webform #node-43 .captcha .panel-body {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body {
   padding: 0px;
 }
-.node-type-webform #node-43 fieldset .panel-body .help-block,
-.node-type-webform #node-43 .captcha .panel-body .help-block {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .help-block,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .help-block {
   display: none;
 }
-.node-type-webform #node-43 fieldset .panel-body .captchaReadAudio,
-.node-type-webform #node-43 .captcha .panel-body .captchaReadAudio {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaReadAudio,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaReadAudio {
   background: url('../images/icons/audio-form.png') no-repeat;
   background-size: cover;
   height: 38px;
   display: inline-block;
   margin-bottom: 4px;
 }
-.node-type-webform #node-43 fieldset .panel-body .captchaReadAudio img,
-.node-type-webform #node-43 .captcha .panel-body .captchaReadAudio img {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaReadAudio img,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaReadAudio img {
   visibility: hidden;
 }
-.node-type-webform #node-43 fieldset .panel-body .captchaRefresh,
-.node-type-webform #node-43 .captcha .panel-body .captchaRefresh {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaRefresh,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaRefresh {
   background: url('../images/icons/refresh-form.png') no-repeat;
   height: 38px;
   background-size: cover;
   display: inline-block;
 }
-.node-type-webform #node-43 fieldset .panel-body .captchaRefresh img,
-.node-type-webform #node-43 .captcha .panel-body .captchaRefresh img {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaRefresh img,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaRefresh img {
   visibility: hidden;
 }
-.node-type-webform #node-43 fieldset .panel-body .form-item-security-code,
-.node-type-webform #node-43 .captcha .panel-body .form-item-security-code {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code {
   margin-top: 20px;
   width: 345px;
 }
-.node-type-webform #node-43 fieldset .panel-body .form-item-security-code #security_code,
-.node-type-webform #node-43 .captcha .panel-body .form-item-security-code #security_code {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code #security_code,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code #security_code {
   width: 213px;
 }
-.node-type-webform #node-43 fieldset .panel-body .form-item-security-code label:last-child,
-.node-type-webform #node-43 .captcha .panel-body .form-item-security-code label:last-child {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code label:last-child,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
   position: absolute;
 }
-.node-type-webform #node-43 fieldset .panel-body .form-item-security-code label:last-child:before,
-.node-type-webform #node-43 .captcha .panel-body .form-item-security-code label:last-child:before {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code label:last-child:before,
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code label:last-child:before {
   content: "*";
 }
-.node-type-webform #node-43 .grippie {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .grippie {
   display: none;
 }
-.node-type-webform #node-43 .webform-component {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component {
   margin-bottom: 25px;
 }
-.node-type-webform #node-43 .webform-component label:last-child {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
 }
-.node-type-webform #node-43 .webform-component label:last-child:before {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component label:last-child:before {
   content: "*";
 }
-.node-type-webform #node-43 button.form-submit {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 button.form-submit {
   position: absolute;
-  bottom: 47px;
+  bottom: 37px;
   left: 235px;
   border-radius: 0px;
   background-color: white;
@@ -8645,7 +8650,27 @@ a.more-link:before {
   font-style: italic;
   border: 1px solid white;
 }
-.node-type-webform #node-43 button.form-submit:before {
+.page-contact-us #block-system-main .panels-flexible-row-new-1 button.form-submit:before {
+  content: "> ";
+}
+.page-contact-us .alert-success {
+  background-color: #dfd8e4;
+  border: none;
+  border-radius: 0px;
+}
+.page-contact-us .alert-success p {
+  text-align: center;
+}
+.page-contact-us .alert-success p span {
+  color: #786586;
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+.logged-in.page-contact-us button.form-submit {
+  position: inherit !important;
+  margin-bottom: 15px !important;
+}
+.logged-in.page-contact-us button.form-submit:before {
   content: "> ";
 }
 .page-oira-faqs #block-system-main {
@@ -12466,17 +12491,17 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     font-size: 1em;
     line-height: initial;
   }
-  .node-type-webform #node-43 .captchaImg {
+  .page-contact-us #block-system-main .captchaImg {
     width: 230px;
   }
-  .node-type-webform #node-43 .form-item-security-code.form-group {
+  .page-contact-us #block-system-main .form-item-security-code.form-group {
     width: 100% !important;
     margin-bottom: 0px !important;
   }
-  .node-type-webform #node-43 .form-item-security-code.form-group #security_code {
+  .page-contact-us #block-system-main .form-item-security-code.form-group #security_code {
     width: 100% !important;
   }
-  .node-type-webform #node-43 .webform-submit {
+  .page-contact-us #block-system-main .webform-submit {
     position: inherit !important;
     bottom: 37px;
     background-color: #10b2e4 !important;
