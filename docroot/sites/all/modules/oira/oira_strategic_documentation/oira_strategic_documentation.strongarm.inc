@@ -62,25 +62,38 @@ function oira_strategic_documentation_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__strategic_documentation';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 1,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
+    'shared_fields_original_only' => 1,
+  );
+  $export['entity_translation_settings_node__strategic_documentation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__strategic_documentation';
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '14',
-        ),
-        'path' => array(
-          'weight' => '13',
-        ),
-        'redirect' => array(
           'weight' => '11',
         ),
+        'path' => array(
+          'weight' => '10',
+        ),
+        'redirect' => array(
+          'weight' => '8',
+        ),
         'workbench_access' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '9',
         ),
         'language' => array(
           'weight' => '10',
@@ -158,6 +171,13 @@ function oira_strategic_documentation_strongarm() {
   $strongarm->name = 'menu_parent_strategic_documentation';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_strategic_documentation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_enable_node__strategic_documentation';
+  $strongarm->value = 1;
+  $export['metatag_enable_node__strategic_documentation'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
