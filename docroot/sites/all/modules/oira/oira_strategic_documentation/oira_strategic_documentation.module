@@ -33,9 +33,20 @@ function oira_strategic_documentation_form_alter(&$form, &$form_state, $form_id)
             ':input[name*="field_strategic_type[und]"]' => array('value' => 'visual'),
           ),
         ),
+        'required' => array(
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'document'),
+          ),
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'visual'),
+          ),
+        ),
       );
       $form['field_link']['#states'] = array(
         'visible' => array(
+          ':input[name*="field_strategic_type[und]"]' => array('value' => 'link'),
+        ),
+        'required' => array(
           ':input[name*="field_strategic_type[und]"]' => array('value' => 'link'),
         ),
       );

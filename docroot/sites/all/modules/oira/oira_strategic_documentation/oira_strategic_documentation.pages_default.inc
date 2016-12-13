@@ -11,14 +11,31 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'strategic_documentation_search';
+  $page->name = 'collaboration_doc_search';
   $page->task = 'page';
-  $page->admin_title = 'Strategic documentation search';
+  $page->admin_title = 'Collaboration area';
   $page->admin_description = '';
-  $page->path = 'strategic-documentation-search';
+  $page->path = 'collaboration-area';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+            2 => 12,
+            3 => 14,
+            4 => 13,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -29,13 +46,13 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_strategic_documentation_search__panel_context_86621b85-4c54-47c9-b6bb-c8d490980796';
+  $handler->name = 'page_collaboration_doc_search__panel_context_86621b85-4c54-47c9-b6bb-c8d490980796';
   $handler->task = 'page';
-  $handler->subtask = 'strategic_documentation_search';
+  $handler->subtask = 'collaboration_doc_search';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Strategic documentation landing page',
+    'title' => 'Collaboration area',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -138,28 +155,24 @@ function oira_strategic_documentation_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = 'Private Zone';
   $display->uuid = 'eee1a97d-d0a3-4ef0-8501-cbacda3efc96';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-b50c66f5-a042-49cc-ac8e-62f90efbb783';
+    $pane->pid = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane->panel = 'center';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:body';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'context_entity:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'admin_title' => 'Intro text',
+      'title' => 'Collaboration Area',
+      'title_heading' => 'h2',
+      'body' => '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>',
+      'format' => 'full_html',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -169,18 +182,18 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'b50c66f5-a042-49cc-ac8e-62f90efbb783';
-    $display->content['new-b50c66f5-a042-49cc-ac8e-62f90efbb783'] = $pane;
-    $display->panels['center'][0] = 'new-b50c66f5-a042-49cc-ac8e-62f90efbb783';
+    $pane->uuid = '181b84c3-18bb-49a1-a34b-920b1ec77495';
+    $display->content['new-181b84c3-18bb-49a1-a34b-920b1ec77495'] = $pane;
+    $display->panels['center'][0] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane = new stdClass();
-    $pane->pid = 'new-ad09cb47-53b1-40f4-9c92-7750590afc66';
+    $pane->pid = 'new-910c0e95-b468-4a6c-8ba4-16bfa078dd0c';
     $pane->panel = 'content';
     $pane->type = 'block';
-    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_listing';
+    $pane->subtype = 'menu_block-7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -192,14 +205,14 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ad09cb47-53b1-40f4-9c92-7750590afc66';
-    $display->content['new-ad09cb47-53b1-40f4-9c92-7750590afc66'] = $pane;
-    $display->panels['content'][0] = 'new-ad09cb47-53b1-40f4-9c92-7750590afc66';
+    $pane->uuid = '910c0e95-b468-4a6c-8ba4-16bfa078dd0c';
+    $display->content['new-910c0e95-b468-4a6c-8ba4-16bfa078dd0c'] = $pane;
+    $display->panels['content'][0] = 'new-910c0e95-b468-4a6c-8ba4-16bfa078dd0c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['strategic_documentation_search'] = $page;
+  $pages['collaboration_doc_search'] = $page;
 
   return $pages;
 
