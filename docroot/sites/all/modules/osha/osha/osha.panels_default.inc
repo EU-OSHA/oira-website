@@ -71,7 +71,7 @@ function osha_default_panels_mini() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '3',
-        'class' => 'col-md-offset-1 col-md-10',
+        'class' => 'container',
         'hide_empty' => 1,
       ),
       5 => array(
@@ -90,7 +90,7 @@ function osha_default_panels_mini() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '5',
-        'class' => 'col-md-offset-1 col-md-10',
+        'class' => 'container',
         'hide_empty' => 1,
       ),
       6 => array(
@@ -109,7 +109,7 @@ function osha_default_panels_mini() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '6',
-        'class' => 'col-md-offset-1 col-md-10',
+        'class' => 'container',
         'hide_empty' => 1,
       ),
     ),

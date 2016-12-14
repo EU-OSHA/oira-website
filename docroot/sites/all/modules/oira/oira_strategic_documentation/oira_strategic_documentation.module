@@ -6,19 +6,50 @@
 
 include_once 'oira_strategic_documentation.features.inc';
 
-/**
- * Implements hook_field_extra_fields_alter().
- */
-function oira_strategic_documentation_field_extra_fields_alter(&$info) {
-  $info['node']['strategic_documentation']['display']['related_partners'] = $info['node']['practical_tool']['display']['related_partners'];
-  $info['node']['strategic_documentation']['display']['tools_see_more'] = $info['node']['practical_tool']['display']['tools_see_more'];
-}
 
 /**
- * Implements hook_node_presave().
+ * Implements hook_form_alter().
  */
-function oira_strategic_documentation_node_presave($node) {
-  if ($node->type == 'strategic_documentation') {
-    cache_clear_all(_hwc_practical_tool_related_partners_cid($node), 'cache');
+function oira_strategic_documentation_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'strategic_documentation_node_form':
+      // Hide country - it's automatically added in oira_partner.module
+      $form['field_country']['#access'] = FALSE;
+
+      // TODO a validation server side.
+//      $form['#validate'][] = 'oira_promotional_material_form_validate';
+
+      $form['field_private_image']['#states'] = array(
+        'required' => array(
+          ':input[name="field_strategic_type[und]"]' => array('value' => 'photo'),
+        ),
+      );
+      $form['field_private_file']['#states'] = array(
+        'visible' => array(
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'document'),
+          ),
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'visual'),
+          ),
+        ),
+        'required' => array(
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'document'),
+          ),
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'visual'),
+          ),
+        ),
+      );
+      $form['field_link']['#states'] = array(
+        'visible' => array(
+          ':input[name*="field_strategic_type[und]"]' => array('value' => 'link'),
+        ),
+        'required' => array(
+          ':input[name*="field_strategic_type[und]"]' => array('value' => 'link'),
+        ),
+      );
+      break;
   }
 }

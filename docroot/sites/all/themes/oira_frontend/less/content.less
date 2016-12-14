@@ -59,9 +59,6 @@ h3.pane-title{
 	border-bottom: 2px solid @color-text-purple;
 	font-size: @font-size2-2;
 	padding-bottom: 15px;
-	//font-weight: bold;
-	//margin-bottom: 25px;
-	//margin-top: 50px;
 	font-family: @font-family-base-2;
 }
 
@@ -256,7 +253,8 @@ a.more-link{
 	}
 }
 .page-search-site{
-	.field-name-pr-language{
+	.field-name-pr-language,
+	.field-name-field-sector{
 		margin-bottom: 20px;
 	}
 }
@@ -888,7 +886,7 @@ a.more-link{
 		.view-display-id-block_1{
 			.more-link{
 				a{
-					//font-size: 1.3em;
+					font-size: 1.2em;
 				}
 			}
 		}
@@ -942,15 +940,15 @@ a.more-link{
 			}
 		}
 	}
-	.pane-views.pane-tools{
-		.pane-title{
-			color: @color-text-purple;
-			font-size: @font-size1-2;
-			font-weight: bold;
-			margin-bottom: 14px;
-			font-style: italic;
-		}
-	}
+	// .pane-views.pane-tools{
+	// 	.pane-title{
+	// 		color: @color-text-purple;
+	// 		font-size: @font-size1-2;
+	// 		font-weight: bold;
+	// 		margin-bottom: 14px;
+	// 		font-style: italic;
+	// 	}
+	// }
 	//Oira partners
 	.panels-flexible-region-new-oira_partners{
 		.panels-flexible-region-new-oira_partners-inside{
@@ -1875,126 +1873,160 @@ a.more-link{
 			}
 		}
 	}
-	.panels-flexible-region-new-form-inside{
-		h3{
-			color: @color-text-purple;
-			border-bottom: 2px solid @color-text-purple;
-			font-size: @font-size2-2;
-			padding-bottom: 15px;
-			//font-weight: bold;
-			//margin-bottom: 25px;
-			//margin-top: 50px;
-			font-family: @font-family-base-2;
-			&:after{
-    		    .section-icons("../images/icons/186.png");
-    		}
-		}
+}
+
+//contact us
+.page-contact-us{
+	h1{
+		color: @color-text-purple;
+		border-bottom: 2px solid @color-text-purple !important;
+		padding-bottom: 15px;
+		font-family: @font-family-base-2;
+		&:after{
+    		.section-icons("../images/icons/186.png");
+    	}
 	}
-	.contact-form-wrapper{
-		background-color: @color-primary-dark;
-		margin-bottom: 45px;
+	#block-system-main{
 		padding-bottom: 10px;
-		padding-top: 30px;
+		position: relative;
+		.content{
+			> span{
+				display: none;
+			}
+		}
+		.field-type-text-with-summary{
+			font-family: 'Oswald';
+		    font-size: 1.4em;
+		    margin-bottom: 20px;
+		}
 		.container{
-			max-width: 600px;
 			position: relative;
 		}
-		label{
-			color: @color-white;
-			display: block;
-		}
-		select, input, textarea{
-			border-radius: 0;
-			border: none;
-			width: 100%;
-			padding: 6px 12px;
-		}
-		fieldset, .captcha{
-			margin-top: 35px;
-			background-color: rgba(0, 0, 0, 0);
-			border-radius: 0;
-			border: none;
-			width: 100%;
-			legend{
-				display: none;
+		.panels-flexible-row-new-1{
+			padding-top: 20px;
+			background-color: @color-primary-dark;
+			.container{
+				max-width: 600px;
 			}
-			.panel-heading{
-				display: none;
+			label{
+				color: @color-white;
+				display: block;
 			}
-			.panel-body{
-				padding: 0px;
-				.help-block{
+			select, input, textarea{
+				border-radius: 0;
+				border: none;
+				width: 100%;
+				padding: 6px 12px;
+			}
+			fieldset, .captcha{
+				margin-top: 35px;
+				background-color: rgba(0, 0, 0, 0);
+				border-radius: 0;
+				border: none;
+				width: 100%;
+				legend{
 					display: none;
 				}
-				.captchaReadAudio{
-					background: url('../images/icons/audio-form.png') no-repeat;
-					background-size: cover;
-					height: 38px;
-					display: inline-block;
-					margin-bottom: 4px;
-					img{
-						visibility: hidden;
-					}
+				.panel-heading{
+					display: none;
 				}
-				.captchaRefresh{
-					background: url('../images/icons/refresh-form.png') no-repeat; 
-					height: 38px;
-					background-size: cover;
-					display: inline-block;
-					img{
-						visibility: hidden;
+				.panel-body{
+					padding: 0px;
+					.help-block{
+						display: none;
 					}
-				}
-				.form-item-security-code{
-					margin-top: 20px;
-					width: 345px;
-					#security_code{
-						width: 213px;
+					.captchaReadAudio{
+						background: url('../images/icons/audio-form.png') no-repeat;
+						background-size: cover;
+						height: 38px;
+						display: inline-block;
+						margin-bottom: 4px;
+						img{
+							visibility: hidden;
+						}
 					}
-					label:last-child{
-						color: @error-label;
-						margin-top: 5px;
-						font-style: italic;
-						position: absolute;
-						&:before{
-							content: "*";
+					.captchaRefresh{
+						background: url('../images/icons/refresh-form.png') no-repeat; 
+						height: 38px;
+						background-size: cover;
+						display: inline-block;
+						img{
+							visibility: hidden;
+						}
+					}
+					.form-item-security-code{
+						margin-top: 20px;
+						width: 345px;
+						#security_code{
+							width: 213px;
+						}
+						label:last-child{
+							color: @error-label;
+							margin-top: 5px;
+							font-style: italic;
+							position: absolute;
+							&:before{
+								content: "*";
+							}
 						}
 					}
 				}
 			}
-		}
-		.grippie{
-			display: none;
-		}
-		.webform-component{
-			margin-bottom: 25px;
-			label:last-child{
-				color: @error-label;
-				margin-top: 5px;
-				font-style: italic;
-				&:before{
-					content: "*";
+			.grippie{
+				display: none;
+			}
+			.webform-component{
+				margin-bottom: 25px;
+				label:last-child{
+					color: @error-label;
+					margin-top: 5px;
+					font-style: italic;
+					&:before{
+						content: "*";
+					}
 				}
 			}
+			button.form-submit{
+				position: absolute;
+				bottom: 37px;
+			    left: 235px;
+			    border-radius: 0px;
+			    background-color: white;
+			    color: @color-see-more;
+			    font-style: italic;
+			    border: 1px solid white;
+			    &:before{
+			    	content: "> ";
+			    }
+			}
 		}
-		button.form-submit{
-			position: absolute;
-			bottom: 37px;
-		    left: 235px;
-		    border-radius: 0px;
-		    background-color: white;
-		    color: @color-see-more;
-		    font-style: italic;
-		    border: 1px solid white;
-		    &:before{
-		    	content: "> ";
-		    }
+	}
+	.alert-success{
+		background-color: @color-primary;
+		border: none;
+		border-radius: 0px;
+		p{
+			text-align: center;
+			span{
+				color: @color-primary-dark;
+				font-weight: bold !important;
+				font-size: 1.1em !important;
+			}
+		}
+	}
+}
+.logged-in.page-contact-us{
+	button.form-submit{
+			position: inherit !important;
+			margin-bottom: 15px !important;
+		&:before{
+			content: "> ";
 		}
 	}
 }
 
 
-//page oira faq
+//page oira faqs
 .page-oira-faqs{
 	#block-system-main{
 		background-color: @color-background-light-purple; 
@@ -3797,6 +3829,7 @@ div[id ^= "mini-panel-partner_in_"], {
 								font-style: italic;
 								color: @color-primary-dark;
 								display: block;
+								margin-bottom: 5px;
 							}
 							.field-name-field-publication-date{
 								margin-top: 0px;
