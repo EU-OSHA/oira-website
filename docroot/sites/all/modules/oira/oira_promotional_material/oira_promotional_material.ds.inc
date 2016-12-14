@@ -12,6 +12,106 @@ function oira_promotional_material_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|promotional_material|form';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'promotional_material';
+  $ds_layout->view_mode = 'form';
+  $ds_layout->layout = 'hwc_2col_stacked_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'title_field',
+      ),
+      'right' => array(
+        1 => 'field_oira',
+        2 => 'field_publication_date',
+      ),
+      'center' => array(
+        3 => 'field_promotional_material_type',
+        4 => 'body',
+        5 => 'field_image',
+        7 => 'field_co_author',
+        9 => 'field_revised_date',
+        10 => 'field_resource_fc',
+      ),
+      'footer' => array(
+        6 => 'workbench_access',
+        8 => 'field_country',
+        11 => 'xmlsitemap',
+        12 => 'redirect',
+        13 => 'path',
+        14 => 'metatags',
+        15 => 'field_wf_notification',
+      ),
+      'hidden' => array(
+        16 => '_add_existing_field',
+      ),
+    ),
+    'fields' => array(
+      'title_field' => 'left',
+      'field_oira' => 'right',
+      'field_publication_date' => 'right',
+      'field_promotional_material_type' => 'center',
+      'body' => 'center',
+      'field_image' => 'center',
+      'workbench_access' => 'footer',
+      'field_co_author' => 'center',
+      'field_country' => 'footer',
+      'field_revised_date' => 'center',
+      'field_resource_fc' => 'center',
+      'xmlsitemap' => 'footer',
+      'redirect' => 'footer',
+      'path' => 'footer',
+      'metatags' => 'footer',
+      'field_wf_notification' => 'footer',
+      '_add_existing_field' => 'hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'container' => 'container',
+      ),
+      'header' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'left' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'right' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'center' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'left2' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'right2' => array(
+        'col-sm-8' => 'col-sm-8',
+      ),
+      'footer' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+    ),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'center' => 'div',
+      'left2' => 'div',
+      'right2' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|promotional_material|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|promotional_material|search_result';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'promotional_material';

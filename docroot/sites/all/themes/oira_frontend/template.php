@@ -629,3 +629,23 @@ function oira_frontend_form_element_label(&$variables) {
   // The leading whitespace helps visually separate fields from inline labels.
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
 }
+
+/**
+ * Implements form_alter().
+ */
+
+function oira_frontend_form_alter(&$form, &$form_state, $form_id){
+  switch($form_id){
+    case 'news_node_form':
+      $form['actions']['#attributes']['class'] = array('container','text-center');
+      $form['field_aditional_resources']['#access'] = FALSE;
+      break;
+    case 'promotional_material_node_form':
+      $form['field_publication_date']['#attributes']['class'][] = 'pull-left';
+      $form['field_oira']['#attributes']['class'][] = 'pull-right';
+      $form['actions']['#attributes']['class'] = array('container','text-center');
+      break;
+    default:
+      break;
+  }
+}
