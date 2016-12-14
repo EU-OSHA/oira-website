@@ -251,3 +251,11 @@ function osha_update_7012() {
   variable_set('pathauto_punctuation_em-dash', 1);
   variable_set('pathauto_punctuation_overline', 1);
 }
+
+/**
+ * NOW-262 Revert webform field settings.
+ */
+function osha_update_7013() {
+  //features_revert(array('osha' => 'field_instance'));
+  features_revert_module('osha');
+}

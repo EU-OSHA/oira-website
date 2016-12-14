@@ -224,7 +224,7 @@ h1.page-header {
 
 	}
 	//latest news
-	.panels-flexible-region-new-news_section{
+	.panels-flexible-region-new-promotional_materials{
 		padding-bottom: 15px;
 		h3.pane-title{
 			color: @color-primary-dark;
@@ -251,7 +251,7 @@ h1.page-header {
 		}
     }
     //Promotional materials
-	.panels-flexible-region-new-promotional_materials{
+	.panels-flexible-region-new-news_section{
 		padding-bottom: 15px;
 		#mini-panel-promotional_materials{
 			.pane-promotional-materials{
@@ -337,6 +337,7 @@ h1.page-header {
 				position: relative;
 				.col-sm-6{
 					position: initial;
+					padding: 0px;
 				}
 	    		.field-type-image{
 	    			margin-top: 15px;
@@ -797,24 +798,30 @@ h1.page-header {
 			}
 		}
 	}
-	.captchaImg {
+	
+}
+//contact us
+.page-contact-us{
+	#block-system-main{
+		.captchaImg {
 		width: 230px;
-	}
-	.form-item-security-code.form-group{
-		width: 100% !important;
-		margin-bottom: 0px !important;
-		#security_code{
-	    	width: 100% !important;
 		}
-	}
-	.webform-submit{
-		position: inherit !important;
-		bottom: 37px;
-	    background-color: @color-see-more !important;
-	    color: @color-white !important;
-	    border: 1px solid @color-see-more !important;
-	    width: 100%;
-	    margin-bottom: 20px;
+		.form-item-security-code.form-group{
+			width: 100% !important;
+			margin-bottom: 0px !important;
+			#security_code{
+		    	width: 100% !important;
+			}
+		}
+		.webform-submit{
+			position: inherit !important;
+			bottom: 37px;
+		    background-color: @color-see-more !important;
+		    color: @color-white !important;
+		    border: 1px solid @color-see-more !important;
+		    width: 100%;
+		    margin-bottom: 20px;
+		}
 	}
 }
 /*end faq's*/

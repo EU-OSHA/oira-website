@@ -1203,43 +1203,31 @@ function oira_partner_default_panels_mini() {
     $display->content['new-626e9816-cb3a-41cb-a36d-01d9067ec143'] = $pane;
     $display->panels['social'][0] = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
     $pane = new stdClass();
-    $pane->pid = 'new-b82fb197-4f24-4f68-90ee-05d83089aad9';
+    $pane->pid = 'new-12f8ecab-af41-4b31-be71-510ef9c107f5';
     $pane->panel = 'text_';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:title_field';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'title_linked',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'title_style' => 'h1',
-        'title_link' => '',
-        'title_class' => '',
-        'field_formatter_class' => '',
-      ),
-      'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'admin_title' => 'Title + country',
+      'title' => '',
+      'title_heading' => 'h2',
+      'body' => '<h1>%node:title-field - %node:field-country</h1>',
+      'format' => 'full_html',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'trim-title',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'b82fb197-4f24-4f68-90ee-05d83089aad9';
-    $display->content['new-b82fb197-4f24-4f68-90ee-05d83089aad9'] = $pane;
-    $display->panels['text_'][0] = 'new-b82fb197-4f24-4f68-90ee-05d83089aad9';
+    $pane->uuid = '12f8ecab-af41-4b31-be71-510ef9c107f5';
+    $display->content['new-12f8ecab-af41-4b31-be71-510ef9c107f5'] = $pane;
+    $display->panels['text_'][0] = 'new-12f8ecab-af41-4b31-be71-510ef9c107f5';
     $pane = new stdClass();
     $pane->pid = 'new-8e512882-295b-4326-8d8a-660e22e121a3';
     $pane->panel = 'text_';

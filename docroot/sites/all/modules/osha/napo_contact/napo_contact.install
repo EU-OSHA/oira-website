@@ -44,3 +44,10 @@ function napo_contact_update_7004() {
 function napo_contact_update_7005() {
   features_revert_module('napo_contact');
 }
+
+/**
+ * Revert napo_contact.
+ */
+function napo_contact_update_7006() {
+  features_revert_module('napo_contact');
+}

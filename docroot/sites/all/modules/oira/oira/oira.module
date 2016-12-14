@@ -50,7 +50,11 @@ function oira_theme() {
 }
 
 function oira_language_list_options($prefix = TRUE, $native = TRUE) {
-  $languages = osha_language_list_options($native);
+  // used by hwc_practical_tool_get_facets_def and _oira_promotional_material_search_form_get_facets
+  // for tools and promotional materials we don't exclude Catalan
+  $disabled = osha_disabled_language_list();
+  unset($disabled['ca']);
+  $languages = osha_language_list_options($native, TRUE, $disabled);
   if ($prefix) {
     foreach ($languages as $lang_code => $value) {
       $languages[$lang_code] = strtoupper($lang_code) . ' - ' . $value;
