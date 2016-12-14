@@ -79,5 +79,42 @@ function osha_user_default_permissions() {
     'module' => 'comment',
   );
 
+  // Exported permission: 'use text format filtered_html'.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      'Additional Partner' => 'Additional Partner',
+      'Approver' => 'Approver',
+      'Content Validator' => 'Content Validator',
+      'Editor' => 'Editor',
+      'Layout Validator' => 'Layout Validator',
+      'Oira Project Manager' => 'Oira Project Manager',
+      'Oira Supervisor' => 'Oira Supervisor',
+      'Project Manager' => 'Project Manager',
+      'Superadministrator' => 'Superadministrator',
+      'Translation Liaison' => 'Translation Liaison',
+      'Translation Manager' => 'Translation Manager',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: 'use text format full_html'.
+  $permissions['use text format full_html'] = array(
+    'name' => 'use text format full_html',
+    'roles' => array(
+      'Content Validator' => 'Content Validator',
+      'Editor' => 'Editor',
+      'Layout Validator' => 'Layout Validator',
+      'Oira Project Manager' => 'Oira Project Manager',
+      'Oira Supervisor' => 'Oira Supervisor',
+      'Superadministrator' => 'Superadministrator',
+      'Translation Liaison' => 'Translation Liaison',
+      'Translation Manager' => 'Translation Manager',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'filter',
+  );
+
   return $permissions;
 }

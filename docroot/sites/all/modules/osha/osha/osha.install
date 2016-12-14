@@ -259,3 +259,10 @@ function osha_update_7013() {
   //features_revert(array('osha' => 'field_instance'));
   features_revert_module('osha');
 }
+
+/**
+ * Revert osha module - Features: added Filter: Use the Filtered HTML text format Filter: Use the Full HTML text format
+ */
+function osha_update_7014() {
+  features_revert_module('osha');
+}

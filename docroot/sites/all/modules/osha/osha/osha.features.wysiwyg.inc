@@ -92,9 +92,10 @@ function osha_wysiwyg_default_profiles() {
     'format' => 'plain_text',
     'editor' => 'tinymce',
     'settings' => array(
-      'default' => 1,
+      'default' => 0,
       'user_choose' => 0,
-      'show_toggle' => 1,
+      'show_toggle' => 0,
+      'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
         'default' => array(
@@ -118,12 +119,12 @@ function osha_wysiwyg_default_profiles() {
         'contextmenu' => array(
           'contextmenu' => 1,
         ),
+        'paste' => array(
+          'pasteword' => 1,
+        ),
         'searchreplace' => array(
           'search' => 1,
           'replace' => 1,
-        ),
-        'paste' => array(
-          'pasteword' => 1,
         ),
         'table' => array(
           'tablecontrols' => 1,
