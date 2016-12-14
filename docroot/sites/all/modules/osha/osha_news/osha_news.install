@@ -6,3 +6,10 @@
 function osha_news_update_7001() {
   features_revert_module('osha_news');
 }
+
+/**
+ * Revert osha_news module - added field_website, changed positions for field_publication_date and body,changed field_image widget type from media browser to image
+ */
+function osha_news_update_7002() {
+  features_revert_module('osha_news');
+}
