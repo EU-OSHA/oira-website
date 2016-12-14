@@ -222,14 +222,7 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       switch ($node->type) {
         case 'news':
           $form['field_aditional_resources']['#access'] = FALSE;
-          /*foreach($form['field_image']['und'][0]['#process'] as &$value){
-            if($value == 'image_field_caption_widget_process') {
-              $value = 'oira_workflow_image_field_caption_widget_process';
-            }
-          }*/
           $form['field_image']['und'][0]['#process'][] = 'oira_workflow_image_field_caption_widget_process';
-          //dpm($form['field_image']);
-          //$form['field_image']['und'][0]['#process'][] = 'oira_workflow_image_field_caption_widget_process';
           break;
       }
 
@@ -294,7 +287,7 @@ function oira_workflow_element_info_alter(&$type) {
  * @see filter_process_format()
  */
 function oira_workflow_filter_process_format($element) {
-  if(array_search('hide-format-description', $element['#attributes']['class']) !== FALSE){
+  if(isset($element['#attributes']['class']) && array_search('hide-format-description', $element['#attributes']['class']) !== FALSE){
     unset($element['format']);
   }
   return $element;
