@@ -18,6 +18,7 @@ tmp
 docroot/files
 docroot/sites/*/files
 docroot/sites/*/private
+private
 
 # Vagrant Files #
 #################
