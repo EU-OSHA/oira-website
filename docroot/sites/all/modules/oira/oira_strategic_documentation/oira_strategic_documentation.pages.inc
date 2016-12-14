@@ -303,8 +303,11 @@ function oira_strategic_documentation_search($form_state, $per_page = 10) {
   $query->condition('type', 'strategic_documentation');
   $query->condition('language', 'en');
 
+  // TODO - filter by Current users partner nodes OR General Public nodes.
+  // relation section tid - nid is workbench_access_node
   $query->keys($text);
 
+  // TODO - add private_file for search query.
   $query->fields(array('title_field'));
 
   $query->setOption('search_api_facets', $facets_def);

@@ -55,6 +55,7 @@ function oira_strategic_documentation_default_search_api_index() {
       "fields" : {
         "field_country" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_partner_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_private_file:file" : { "type" : "integer", "entity_type" : "file" },
         "field_sector" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "language" : { "type" : "string" },
         "nid" : { "type" : "integer" },

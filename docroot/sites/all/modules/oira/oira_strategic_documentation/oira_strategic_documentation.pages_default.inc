@@ -222,7 +222,10 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $page->admin_title = 'Strategic documentation';
   $page->admin_description = '';
   $page->path = 'strategic-documentation-search';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
