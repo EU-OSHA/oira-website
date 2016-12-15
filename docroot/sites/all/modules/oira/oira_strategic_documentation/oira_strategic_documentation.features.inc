@@ -51,16 +51,19 @@ function oira_strategic_documentation_default_search_api_index() {
     "options" : {
       "datasource" : { "bundles" : [ "strategic_documentation" ] },
       "index_directly" : 1,
-      "cron_limit" : "50",
+      "cron_limit" : "10",
+      "search_api_et" : { "include" : "incomplete", "fallback language" : "en" },
       "fields" : {
+        "attachments_field_private_file" : { "type" : "text" },
+        "body:value" : { "type" : "text" },
+        "field_alternative_body:value" : { "type" : "text" },
+        "field_alternative_title" : { "type" : "text" },
         "field_country" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_partner_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_private_file:file" : { "type" : "integer", "entity_type" : "file" },
         "field_sector" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "language" : { "type" : "string" },
         "nid" : { "type" : "integer" },
         "search_api_language" : { "type" : "string" },
-        "search_api_url" : { "type" : "uri" },
         "status" : { "type" : "integer" },
         "title" : { "type" : "text" },
         "title_field" : { "type" : "text" },
@@ -78,7 +81,7 @@ function oira_strategic_documentation_default_search_api_index() {
         "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_attachments_field_collections_alter_settings" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "0",
           "settings" : {
             "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
@@ -93,16 +96,16 @@ function oira_strategic_documentation_default_search_api_index() {
           "settings" : { "lang_field" : "", "languages" : [] }
         },
         "search_api_attachments_alter_settings" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "0",
           "settings" : {
             "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
             "number_indexed" : "0",
             "max_file_size" : "0",
-            "excluded_private" : 1
+            "excluded_private" : 0
           }
         },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_add_hierarchy" : { "status" : 1, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
@@ -110,16 +113,12 @@ function oira_strategic_documentation_default_search_api_index() {
       },
       "processors" : {
         "search_api_et_remove_language" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_case_ignore" : {
-          "status" : 1,
-          "weight" : "0",
-          "settings" : { "fields" : { "title" : true, "title_field" : true } }
-        },
+        "search_api_case_ignore" : { "status" : 1, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_html_filter" : {
           "status" : 1,
           "weight" : "10",
           "settings" : {
-            "fields" : { "title" : true, "title_field" : true },
+            "fields" : [],
             "title" : 0,
             "alt" : 1,
             "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"

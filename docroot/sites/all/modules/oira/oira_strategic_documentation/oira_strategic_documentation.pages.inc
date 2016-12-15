@@ -68,11 +68,21 @@ function _oira_strategic_documentation_strip_param_value($params, $name, $value 
   return $params;
 }
 
-function oira_strategic_documentation_menu_tools_form($form, $form_state) {
+function oira_strategic_documentation_partners_form($form, $form_state) {
   $variables['form_state'] = $form_state;
-  $variables['action'] = 'strategic-documentation-search';
+  $variables['action'] = '/collaboration-area/partners-documents';
   $variables['facet_callback'] = 'oira_strategic_documentation_get_facets_def';
-  $variables['search_callback'] = 'oira_strategic_documentation_search';
+  $variables['search_callback'] = 'oira_strategic_documentation_search_partners';
+  $variables['language_field'] = 'field_language:value';
+
+  return _oira_strategic_documentation_get_generic_faceted_form($variables);
+}
+
+function oira_strategic_documentation_eu_osha_form($form, $form_state) {
+  $variables['form_state'] = $form_state;
+  $variables['action'] = '/collaboration-area/eu-osha-documents';
+  $variables['facet_callback'] = 'oira_strategic_documentation_get_facets_def';
+  $variables['search_callback'] = 'oira_strategic_documentation_search_eu_osha';
   $variables['language_field'] = 'field_language:value';
 
   return _oira_strategic_documentation_get_generic_faceted_form($variables);
@@ -279,18 +289,62 @@ function _oira_strategic_documentation_get_generic_faceted_form($variables) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function oira_strategic_documentation_form_oira_strategic_documentation_menu_tools_form_alter(&$form, $form_state) {
+function oira_strategic_documentation_form_oira_strategic_documentation_partners_form_alter(&$form, $form_state) {
   // Unset the form_id and build_id in order not to have nasty urls.
   unset($form['form_id']);
   unset($form['form_build_id']);
 }
 
-function oira_strategic_documentation_menu_tools_form_submit($form, &$form_state) {
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function oira_strategic_documentation_form_oira_strategic_documentation_eu_osha_form_alter(&$form, $form_state) {
+  // Unset the form_id and build_id in order not to have nasty urls.
+  unset($form['form_id']);
+  unset($form['form_build_id']);
+}
+
+function oira_strategic_documentation_partners_form_submit($form, &$form_state) {
   $form_state['rebuild'] = TRUE;
   $form_state['redirect'] = FALSE;
 }
 
-function oira_strategic_documentation_search($form_state, $per_page = 10) {
+function oira_strategic_documentation_eu_osha_form_submit($form, &$form_state) {
+  $form_state['rebuild'] = TRUE;
+  $form_state['redirect'] = FALSE;
+}
+
+function oira_strategic_documentation_search_eu_osha($form_state, $per_page = 10) {
+  return oira_strategic_documentation_search(FALSE, $form_state, $per_page);
+}
+function oira_strategic_documentation_search_partners($form_state, $per_page = 10) {
+  return oira_strategic_documentation_search(TRUE, $form_state, $per_page);
+}
+
+function oira_strategic_documentation_search($is_partners, $form_state, $per_page = 10) {
+  global $user;
+
+  if ($is_partners) {
+    workbench_access_user_load_data($user);
+    $tids = array_keys($user->workbench_access);
+  }
+  else {
+    $tids = ['section' => 'section'];
+  }
+
+  $nids = [];
+  if ($tids) {
+    $q = db_select('workbench_access_node', 'w');
+    $q->innerJoin('node', 'n', 'w.nid = n.nid');
+    $q->fields('n', ['nid'])
+      ->condition('n.type', 'strategic_documentation', '=')
+      ->condition('w.access_id', $tids, 'in');
+    $nids = $q->execute()->fetchAllKeyed(0, 0);
+  }
+
+  if (!$nids) {
+    return [];
+  }
 
   $facets_def = oira_strategic_documentation_get_facets_def();
 
@@ -303,12 +357,15 @@ function oira_strategic_documentation_search($form_state, $per_page = 10) {
   $query->condition('type', 'strategic_documentation');
   $query->condition('language', 'en');
 
-  // TODO - filter by Current users partner nodes OR General Public nodes.
-  // relation section tid - nid is workbench_access_node
+  $filter = $query->createFilter('or', ['facet:' . 'nid']);
+  foreach ($nids as $value) {
+    $filter->condition('nid', $value);
+    $query->filter($filter);
+  }
+
   $query->keys($text);
 
-  // TODO - add private_file for search query.
-  $query->fields(array('title_field'));
+  $query->fields(array('title_field', 'body:value', 'attachments_field_private_file', 'field_alternative_title', 'field_alternative_body:value'));
 
   $query->setOption('search_api_facets', $facets_def);
   foreach ($facets_def as $field_name => $facet_def) {
@@ -324,8 +381,6 @@ function oira_strategic_documentation_search($form_state, $per_page = 10) {
   switch ($sort) {
     case 'date':
       $query->sort('field_revised_date', 'DESC');
-      break;
-
       break;
   }
   $query->range($page * $per_page, $per_page);

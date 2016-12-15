@@ -217,15 +217,130 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'eu_osha_documents';
+  $page->task = 'page';
+  $page->admin_title = 'EU OSHA documents';
+  $page->admin_description = '';
+  $page->path = 'collaboration-area/eu-osha-documents';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_eu_osha_documents__panel_context_641b651f-b4ab-40ed-a9ec-562a8147a9d7';
+  $handler->task = 'page';
+  $handler->subtask = 'eu_osha_documents';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+        'class' => 'oira-search-form-container',
+        'hide_empty' => 0,
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Content',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'introduction' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'EU OSHA documents';
+  $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_eu_osha';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $display->content['new-19fec5ae-2e6b-480c-94de-1b0277c14342'] = $pane;
+    $display->panels['center'][0] = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['eu_osha_documents'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'strategic_documentation';
   $page->task = 'page';
-  $page->admin_title = 'Strategic documentation';
+  $page->admin_title = 'Partners documents';
   $page->admin_description = '';
-  $page->path = 'strategic-documentation-search';
-  $page->access = array(
-    'type' => 'none',
-    'settings' => NULL,
-  );
+  $page->path = 'collaboration-area/partners-documents';
+  $page->access = array();
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -302,15 +417,15 @@ function oira_strategic_documentation_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Strategic documentation';
+  $display->title = 'Partners documents';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-ec57cf1a-7ea2-4711-ba83-a76b1072296b';
+    $pane->pid = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
     $pane->panel = 'center';
     $pane->type = 'block';
-    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_listing';
+    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_partners';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -326,9 +441,9 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ec57cf1a-7ea2-4711-ba83-a76b1072296b';
-    $display->content['new-ec57cf1a-7ea2-4711-ba83-a76b1072296b'] = $pane;
-    $display->panels['center'][0] = 'new-ec57cf1a-7ea2-4711-ba83-a76b1072296b';
+    $pane->uuid = '8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+    $display->content['new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed'] = $pane;
+    $display->panels['center'][0] = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
