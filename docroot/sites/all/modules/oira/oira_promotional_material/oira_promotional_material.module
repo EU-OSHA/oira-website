@@ -304,41 +304,8 @@ function oira_promotional_material_form_alter(&$form, &$form_state, $form_id) {
           );
         }
       }
-      $form['field_image']['und'][0]['#process'][] = 'oira_promotional_material_image_field_caption_widget_process';
       break;
   }
-}
-
-/**
- * An element #process callback for the image field type.
- *
- * Adds hide-format-description class to element
- */
-function oira_promotional_material_image_field_caption_widget_process($element, &$form_state, $form) {
-  if(isset($element['image_field_caption'])) {
-    $element['image_field_caption']['#attributes'] = array(
-       'class' => array(
-          'hide-format-description',
-       )
-    );
-  }
-  return $element;
-}
-
-/**
- * Process callback for form elements that have a text format selector attached.
- *
- * This callback runs after filter_process_format() and performs additional
- * modifications to the form element.If hide-format-description class is found, the format is unset, as a result
- * the help info will not be displayed.
- *
- * @see filter_process_format()
- */
-function oira_promotional_material_filter_process_format($element) {
-  if(isset($element['#attributes']['class']) && array_search('hide-format-description', $element['#attributes']['class']) !== FALSE){
-    unset($element['format']);
-  }
-  return $element;
 }
 
 /**

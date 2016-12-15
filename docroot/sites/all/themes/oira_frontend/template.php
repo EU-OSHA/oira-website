@@ -644,12 +644,14 @@ function oira_frontend_form_element_label(&$variables) {
 function oira_frontend_form_alter(&$form, &$form_state, $form_id){
   switch($form_id){
     case 'news_node_form':
+      $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['field_aditional_resources']['#access'] = FALSE;
       break;
     case 'promotional_material_node_form':
       $form['field_publication_date']['#attributes']['class'][] = 'pull-left';
       $form['field_oira']['#attributes']['class'][] = 'pull-right';
+      $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       break;
     case 'practical_tool_node_form':

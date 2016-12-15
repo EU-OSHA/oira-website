@@ -219,13 +219,6 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       }
       $form['#after_build'][] = 'oira_workflow_node_form_after_build_hide_hints';
 
-      switch ($node->type) {
-        case 'news':
-          $form['field_aditional_resources']['#access'] = FALSE;
-          $form['field_image']['und'][0]['#process'][] = 'oira_workflow_image_field_caption_widget_process';
-          break;
-      }
-
       if (!empty($form['field_wf_notification'])) {
         $form['field_wf_notification']['#access'] = FALSE;
       }
@@ -250,47 +243,6 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
   }
 
 
-}
-/**
- * An element #process callback for the image field type.
- *
- * Adds hide-format-description class to element
- */
-function oira_workflow_image_field_caption_widget_process($element, &$form_state, $form) {
-  if(isset($element['image_field_caption'])) {
-   $element['image_field_caption']['#attributes'] = array(
-       'class' => array(
-          'hide-format-description',
-       )
-    );
-  }
-  return $element;
-}
-
-/**
- * Implements of hook_element_info_alter().
- */
-function oira_workflow_element_info_alter(&$type) {
-  // Our process callback must run immediately after filter_process_format().
-  $filter_process_format_location = array_search('filter_process_format', $type['text_format']['#process']);
-  $replacement = array('filter_process_format', 'oira_workflow_filter_process_format');
-  array_splice($type['text_format']['#process'], $filter_process_format_location, 1, $replacement);
-}
-
-/**
- * Process callback for form elements that have a text format selector attached.
- *
- * This callback runs after filter_process_format() and performs additional
- * modifications to the form element.If hide-format-description class is found, the format is unset, as a result
- * the help info will not be displayed.
- *
- * @see filter_process_format()
- */
-function oira_workflow_filter_process_format($element) {
-  if(isset($element['#attributes']['class']) && array_search('hide-format-description', $element['#attributes']['class']) !== FALSE){
-    unset($element['format']);
-  }
-  return $element;
 }
 
 function _oira_workflow_log_required_validate($element, &$form_state) {
