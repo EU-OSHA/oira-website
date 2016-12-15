@@ -65,6 +65,106 @@ function hwc_practical_tool_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|practical_tool|form';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'practical_tool';
+  $ds_layout->view_mode = 'form';
+  $ds_layout->layout = 'hwc_2col_stacked_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'center' => array(
+        0 => 'title_field',
+        1 => 'field_alternative_title',
+        2 => 'field_image',
+        3 => 'body',
+        4 => 'field_alternative_body',
+        5 => 'field_language',
+        6 => 'field_publication_date',
+        7 => 'field_revised_date',
+        8 => 'field_co_author',
+        9 => 'field_tool_link',
+        10 => 'field_tool_type',
+        11 => 'field_country',
+        12 => 'field_sector',
+        13 => 'field_wf_notification',
+        14 => 'workbench_access',
+        15 => 'redirect',
+        16 => 'path',
+        17 => 'metatags',
+        18 => 'xmlsitemap',
+      ),
+      'hidden' => array(
+        19 => '_add_existing_field',
+      ),
+    ),
+    'fields' => array(
+      'title_field' => 'center',
+      'field_alternative_title' => 'center',
+      'field_image' => 'center',
+      'body' => 'center',
+      'field_alternative_body' => 'center',
+      'field_language' => 'center',
+      'field_publication_date' => 'center',
+      'field_revised_date' => 'center',
+      'field_co_author' => 'center',
+      'field_tool_link' => 'center',
+      'field_tool_type' => 'center',
+      'field_country' => 'center',
+      'field_sector' => 'center',
+      'field_wf_notification' => 'center',
+      'workbench_access' => 'center',
+      'redirect' => 'center',
+      'path' => 'center',
+      'metatags' => 'center',
+      'xmlsitemap' => 'center',
+      '_add_existing_field' => 'hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'container' => 'container',
+      ),
+      'header' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'left' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'right' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'center' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'left2' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'right2' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'footer' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+    ),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'center' => 'div',
+      'left2' => 'div',
+      'right2' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|practical_tool|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|practical_tool|search_result';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'practical_tool';

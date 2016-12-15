@@ -146,7 +146,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -221,7 +221,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -361,7 +361,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -470,7 +470,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -538,7 +538,7 @@ function hwc_practical_tool_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'file_directory' => 'oira_tools',
       'file_extensions' => 'png gif jpg jpeg',
-      'image_field_caption' => 0,
+      'image_field_caption' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -547,41 +547,25 @@ function hwc_practical_tool_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_browser_osha--media_browser_osha' => 'media_browser_osha--media_browser_osha',
-          'media_browser_osha--media_browser_osha_my_files' => 'media_browser_osha--media_browser_osha_my_files',
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'upload' => 'upload',
-        ),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
-        'manualcrop_enable' => 1,
+        'manualcrop_enable' => 0,
         'manualcrop_inline_crop' => 0,
-        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
         'manualcrop_keyboard' => 1,
         'manualcrop_maximize_default_crop_area' => 0,
         'manualcrop_require_cropping' => array(),
-        'manualcrop_styles_list' => array(
-          'generic_detail_thumbnail' => 'generic_detail_thumbnail',
-        ),
+        'manualcrop_styles_list' => array(),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
-      'weight' => 8,
+      'type' => 'image_image',
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -659,7 +643,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -793,7 +777,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'year_range' => '1970:+3',
       ),
       'type' => 'date_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -895,7 +879,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'year_range' => '-1:+0',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -968,7 +952,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -1173,7 +1157,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -1244,7 +1228,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 19,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
