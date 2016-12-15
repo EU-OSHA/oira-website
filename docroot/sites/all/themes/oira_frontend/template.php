@@ -38,10 +38,17 @@ function oira_frontend_menu_link__menu_block($variables) {
     $options = array_merge($element['#localized_options'], array('html' => TRUE));
     $output_image = l($image, $element['#href'], $options);
   }
+
+  $sub_menu = '';
+  if (!empty($element['#below']) && in_array('expanded',$element['#attributes']['class'])) {
+    unset($element['#below']['#theme_wrappers']);
+    $sub_menu .= '<ul class="submenu-items">' . drupal_render($element['#below']) . '</ul>';
+  }
+
   return '<li' . drupal_attributes($element['#attributes']) . '>
-    <div class="introduction-image">' . $output_image . '</div>
-    <div class="introduction-title">' . $output_link . '</div>
-    </li>';
+  <div class="introduction-image">' . $output_image . '</div>
+  <div class="introduction-title">' . $output_link . '</div>'.$sub_menu.
+  '</li>';
 }
 /**
  * Overrides theme_menu_link().
