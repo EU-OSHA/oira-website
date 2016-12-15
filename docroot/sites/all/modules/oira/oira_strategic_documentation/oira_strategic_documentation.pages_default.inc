@@ -222,7 +222,24 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $page->admin_title = 'EU OSHA documents';
   $page->admin_description = '';
   $page->path = 'collaboration-area/eu-osha-documents';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+            2 => 12,
+            3 => 14,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -340,7 +357,24 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $page->admin_title = 'Partners documents';
   $page->admin_description = '';
   $page->path = 'collaboration-area/partners-documents';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+            2 => 12,
+            3 => 14,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
