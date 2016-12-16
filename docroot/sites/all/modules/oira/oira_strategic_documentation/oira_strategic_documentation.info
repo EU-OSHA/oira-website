@@ -63,6 +63,7 @@ features[field_instance][] = node-strategic_documentation-field_sector
 features[field_instance][] = node-strategic_documentation-field_strategic_type
 features[field_instance][] = node-strategic_documentation-field_wf_notification
 features[field_instance][] = node-strategic_documentation-title_field
+features[menu_custom][] = menu-collaboration
 features[node][] = strategic_documentation
 features[page_manager_pages][] = collaboration_doc_search
 features[page_manager_pages][] = eu_osha_documents
