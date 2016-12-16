@@ -27,6 +27,7 @@ features[ctools][] = ds:ds:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
+features[ds_layout_settings][] = node|promotional_material|form
 features[ds_layout_settings][] = node|promotional_material|search_result
 features[ds_layout_settings][] = node|promotional_material|teaser
 features[fe_block_settings][] = views-promotional_materials-block

@@ -39,6 +39,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[ds_field_settings][] = node|practical_tool|search_result
 features[ds_field_settings][] = node|practical_tool|teaser
+features[ds_layout_settings][] = node|practical_tool|form
 features[ds_layout_settings][] = node|practical_tool|search_result
 features[ds_layout_settings][] = node|practical_tool|teaser
 features[fe_nodequeue][] = tool_of_the_month
