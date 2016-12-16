@@ -20,6 +20,13 @@ function oira_strategic_documentation_ctools_plugin_api($module = NULL, $api = N
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function oira_strategic_documentation_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function oira_strategic_documentation_node_info() {
