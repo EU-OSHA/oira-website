@@ -34,6 +34,7 @@ dependencies[] = text
 features[ctools][] = ds:ds:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
+features[ds_layout_settings][] = node|strategic_documentation|form
 features[ds_layout_settings][] = node|strategic_documentation|teaser
 features[fe_block_settings][] = menu-menu-collaboration
 features[fe_block_settings][] = menu_block-7

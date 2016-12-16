@@ -6,3 +6,11 @@
 function oira_strategic_documentation_update_7001() {
   features_revert_module('oira_strategic_documentation');
 }
+
+/**
+ * Feature revert: Update display
+ */
+function oira_strategic_documentation_update_7002() {
+  features_revert_module('oira_strategic_documentation');
+}
+

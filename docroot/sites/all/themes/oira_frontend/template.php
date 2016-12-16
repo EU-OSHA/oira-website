@@ -661,6 +661,9 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['#after_build'][] = 'oira_hide_format_description';
       break;
+    case 'strategic_documentation_node_form':
+      $form['actions']['#attributes']['class'] = array('container','text-center');
+      break;
     default:
       break;
   }
