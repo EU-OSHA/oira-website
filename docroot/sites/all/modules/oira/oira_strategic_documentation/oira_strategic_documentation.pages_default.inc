@@ -186,7 +186,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $display->content['new-181b84c3-18bb-49a1-a34b-920b1ec77495'] = $pane;
     $display->panels['center'][0] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane = new stdClass();
-    $pane->pid = 'new-910c0e95-b468-4a6c-8ba4-16bfa078dd0c';
+    $pane->pid = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
     $pane->panel = 'content';
     $pane->type = 'block';
     $pane->subtype = 'menu_block-7';
@@ -205,9 +205,9 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '910c0e95-b468-4a6c-8ba4-16bfa078dd0c';
-    $display->content['new-910c0e95-b468-4a6c-8ba4-16bfa078dd0c'] = $pane;
-    $display->panels['content'][0] = 'new-910c0e95-b468-4a6c-8ba4-16bfa078dd0c';
+    $pane->uuid = '92abd91d-caa7-4ad7-ae17-6e40e054227b';
+    $display->content['new-92abd91d-caa7-4ad7-ae17-6e40e054227b'] = $pane;
+    $display->panels['content'][0] = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
