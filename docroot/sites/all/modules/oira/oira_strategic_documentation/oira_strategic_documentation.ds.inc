@@ -118,29 +118,21 @@ function oira_strategic_documentation_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'field_image',
+        0 => 'field_private_image',
       ),
       'right' => array(
-        1 => 'field_revised_date',
+        1 => 'field_publication_date',
         2 => 'title_field',
         3 => 'body',
         4 => 'field_country',
-        5 => 'field_resource_sdoc',
-      ),
-      'center' => array(
-        6 => 'related_partners',
-        7 => 'tools_see_more',
       ),
     ),
     'fields' => array(
-      'field_image' => 'left',
-      'field_revised_date' => 'right',
+      'field_private_image' => 'left',
+      'field_publication_date' => 'right',
       'title_field' => 'right',
       'body' => 'right',
       'field_country' => 'right',
-      'field_resource_sdoc' => 'right',
-      'related_partners' => 'center',
-      'tools_see_more' => 'center',
     ),
     'classes' => array(
       'layout_class' => array(

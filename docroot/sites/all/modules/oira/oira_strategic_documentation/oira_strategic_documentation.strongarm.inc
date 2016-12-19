@@ -109,7 +109,7 @@ function oira_strategic_documentation_strongarm() {
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '16',
+            'weight' => '19',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
