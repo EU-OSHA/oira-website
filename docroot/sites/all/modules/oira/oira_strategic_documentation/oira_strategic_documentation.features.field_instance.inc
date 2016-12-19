@@ -10,88 +10,6 @@
 function oira_strategic_documentation_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance:
-  // 'field_collection_item-field_resource_sdoc-field_file'.
-  $field_instances['field_collection_item-field_resource_sdoc-field_file'] = array(
-    'bundle' => 'field_resource_sdoc',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'file_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_file',
-    'label' => 'File',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'entity_translation_sync' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'txt pdf docx zip ppt pptx doc rar odt odp otp xls xlsx',
-      'max_filesize' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'file',
-      'settings' => array(
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'file_generic',
-      'weight' => 34,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
-  // 'field_collection_item-field_resource_sdoc-field_language'.
-  $field_instances['field_collection_item-field_resource_sdoc-field_language'] = array(
-    'bundle' => 'field_resource_sdoc',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'languagefield',
-        'settings' => array(
-          'field_formatter_class' => '',
-          'format' => array(
-            'name' => 'name',
-          ),
-        ),
-        'type' => 'language_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_language',
-    'label' => 'Language',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 32,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-strategic_documentation-body'.
   $field_instances['node-strategic_documentation-body'] = array(
     'bundle' => 'strategic_documentation',
@@ -493,80 +411,6 @@ function oira_strategic_documentation_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance:
-  // 'node-strategic_documentation-field_resource_sdoc'.
-  $field_instances['node-strategic_documentation-field_resource_sdoc'] = array(
-    'bundle' => 'strategic_documentation',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => '',
-          'delete' => '',
-          'description' => 0,
-          'edit' => '',
-          'field_formatter_class' => '',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 5,
-      ),
-      'osha_resources' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_slideshow' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_wiki' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'oira_promotional_material',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'oira_promotional_resources_row',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_resource_sdoc',
-    'label' => 'Resource',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 9,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-strategic_documentation-field_revised_date'.
   $field_instances['node-strategic_documentation-field_revised_date'] = array(
     'bundle' => 'strategic_documentation',
@@ -881,11 +725,8 @@ function oira_strategic_documentation_field_default_field_instances() {
   t('Co-author');
   t('Country');
   t('Disable notifications');
-  t('File');
   t('Image');
-  t('Language');
   t('Publication date');
-  t('Resource');
   t('Revised date');
   t('Sector');
   t('Title');

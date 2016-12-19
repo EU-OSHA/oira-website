@@ -58,7 +58,7 @@ function osha_image_default_styles() {
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 1920,
-          'height' => 595,
+          'height' => 340,
           'upscale' => 0,
           'respectminimum' => 1,
           'onlyscaleifcrop' => 0,
