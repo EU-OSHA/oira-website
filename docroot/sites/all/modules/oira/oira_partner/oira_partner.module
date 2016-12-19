@@ -165,8 +165,8 @@ function oira_partner_form_user_profile_form_alter(&$form, $form_state) {
     $form['#submit'][] = 'oira_partner_user_profile_form_redirect';
   }
   //TODO: HIDE GUID FIELD AFTER TESTING
-  //$form['field_crm_guid']['#access'] = FALSE;
-  $form['field_user_partner_guid']['#access'] = FALSE;
+  $form['field_crm_guid']['#access'] = FALSE;
+  //$form['field_user_partner_guid']['#access'] = FALSE;
 
   $form['redirect']['#access'] = FALSE;
   $form['masquerade']['#access'] = FALSE;
