@@ -233,7 +233,16 @@ function oira_partner_default_page_manager_handlers() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'partner-private-zone',
     'access' => array(
@@ -258,6 +267,20 @@ function oira_partner_default_page_manager_handlers() {
             ),
           ),
           'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Partner profile',
+            'php' => '$is_partner = FALSE;
+
+if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
+	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
+}
+
+return $is_partner;',
+          ),
           'not' => FALSE,
         ),
       ),

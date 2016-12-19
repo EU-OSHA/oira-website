@@ -38,10 +38,17 @@ function oira_frontend_menu_link__menu_block($variables) {
     $options = array_merge($element['#localized_options'], array('html' => TRUE));
     $output_image = l($image, $element['#href'], $options);
   }
+
+  $sub_menu = '';
+  if (!empty($element['#below']) && in_array('expanded',$element['#attributes']['class'])) {
+    unset($element['#below']['#theme_wrappers']);
+    $sub_menu .= '<ul class="submenu-items">' . drupal_render($element['#below']) . '</ul>';
+  }
+
   return '<li' . drupal_attributes($element['#attributes']) . '>
-    <div class="introduction-image">' . $output_image . '</div>
-    <div class="introduction-title">' . $output_link . '</div>
-    </li>';
+  <div class="introduction-image">' . $output_image . '</div>
+  <div class="introduction-title">' . $output_link . '</div>'.$sub_menu.
+  '</li>';
 }
 /**
  * Overrides theme_menu_link().
@@ -628,4 +635,91 @@ function oira_frontend_form_element_label(&$variables) {
 
   // The leading whitespace helps visually separate fields from inline labels.
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
+}
+
+/**
+ * Implements form_alter().
+ */
+
+function oira_frontend_form_alter(&$form, &$form_state, $form_id){
+  switch($form_id){
+    case 'news_node_form':
+      $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
+      $form['actions']['#attributes']['class'] = array('container','text-center');
+      $form['field_aditional_resources']['#access'] = FALSE;
+      break;
+    case 'promotional_material_node_form':
+      $form['field_publication_date']['#attributes']['class'][] = 'pull-left';
+      $form['field_oira']['#attributes']['class'][] = 'pull-right';
+      $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
+      $form['actions']['#attributes']['class'] = array('container','text-center');
+      break;
+    case 'practical_tool_node_form':
+      $form['body']['#attributes']['class'][] = 'oira-hide-format-description';
+      $form['field_alternative_body']['#attributes']['class'][] = 'oira-hide-format-description';
+      $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
+      $form['actions']['#attributes']['class'] = array('container','text-center');
+      $form['#after_build'][] = 'oira_hide_format_description';
+      break;
+    case 'strategic_documentation_node_form':
+      $form['actions']['#attributes']['class'] = array('container','text-center');
+      break;
+    default:
+      break;
+  }
+}
+
+function oira_hide_format_description($form, &$form_state){
+  foreach($form as &$element){
+    if(is_array($element) && isset($element['#attributes']['class']) && array_search('oira-hide-format-description', $element['#attributes']['class']) !== FALSE){
+      $element['und'][0]['format']['#attributes']['class'][] = 'hidden';
+      $element['und'][0]['summary']['#access'] = FALSE;
+      unset($element['format']);
+    }
+  }
+  return $form;
+}
+
+/**
+ * An element #process callback for the image field type.
+ *
+ * Adds hide-format-description class to element
+ */
+function oira_frontend_image_field_caption_widget_process($element, &$form_state, $form) {
+  if(isset($element['image_field_caption'])) {
+    $element['image_field_caption']['#attributes'] = array(
+       'class' => array(
+          'oira-hide-format-description',
+       )
+    );
+  }
+  return $element;
+}
+
+/**
+ * Implements of hook_element_info_alter().
+ */
+function oira_frontend_element_info_alter(&$type) {
+  // Our process callback must run immediately after filter_process_format().
+  $filter_process_format_location = array_search('filter_process_format', $type['text_format']['#process']);
+  $replacement = array('filter_process_format', 'oira_frontend_filter_process_format');
+  array_splice($type['text_format']['#process'], $filter_process_format_location, 1, $replacement);
+}
+
+/**
+ * Process callback for form elements that have a text format selector attached.
+ *
+ * This callback runs after filter_process_format() and performs additional
+ * modifications to the form element.If hide-format-description class is found, the format is unset, as a result
+ * the help info will not be displayed.
+ *
+ * @see filter_process_format()
+ */
+function oira_frontend_filter_process_format($element) {
+  if(isset($element['#attributes']['class']) && array_search('oira-hide-format-description', $element['#attributes']['class']) !== FALSE){
+    $element['format']['#attributes']['class'][] = 'hidden';
+    $element['summary']['#access'] = FALSE;
+    //unset($element['format']);
+  }
+  return $element;
 }

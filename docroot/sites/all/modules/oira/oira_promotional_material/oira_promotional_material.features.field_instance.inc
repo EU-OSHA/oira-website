@@ -238,23 +238,30 @@ function oira_promotional_material_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'label' => 'Description',
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
       'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 4,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-promotional_material-field_co_author'.
@@ -325,7 +332,7 @@ function oira_promotional_material_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -404,7 +411,7 @@ function oira_promotional_material_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -478,7 +485,7 @@ function oira_promotional_material_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'image_field_caption' => 0,
+      'image_field_caption' => 1,
       'max_filesize' => '5 MB',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -491,7 +498,7 @@ function oira_promotional_material_field_default_field_instances() {
       'settings' => array(
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
-        'manualcrop_enable' => 1,
+        'manualcrop_enable' => 0,
         'manualcrop_inline_crop' => 0,
         'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
@@ -507,7 +514,7 @@ function oira_promotional_material_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -566,7 +573,7 @@ function oira_promotional_material_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 1,
     ),
     'workbench_access_field' => 0,
   );
@@ -733,7 +740,7 @@ function oira_promotional_material_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_select',
-      'weight' => 5,
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -815,7 +822,7 @@ function oira_promotional_material_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -924,7 +931,7 @@ function oira_promotional_material_field_default_field_instances() {
         'year_range' => '-10:+1',
       ),
       'type' => 'date_popup',
-      'weight' => 6,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -983,7 +990,7 @@ function oira_promotional_material_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 16,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -1228,7 +1235,6 @@ function oira_promotional_material_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
   t('Co-author');
   t('Country');
   t('Description');

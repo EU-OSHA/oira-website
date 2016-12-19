@@ -202,7 +202,7 @@ function oira_promotional_material_strongarm() {
           'weight' => '12',
         ),
         'workbench_access' => array(
-          'weight' => '1',
+          'weight' => '5',
         ),
         'xmlsitemap' => array(
           'weight' => '11',

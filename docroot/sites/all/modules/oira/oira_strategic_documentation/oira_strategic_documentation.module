@@ -6,6 +6,43 @@
 
 include_once 'oira_strategic_documentation.features.inc';
 
+/**
+ * Implements hook_block_info().
+ */
+function oira_strategic_documentation_block_info() {
+  $blocks = array();
+  $blocks['oira_strategic_docs_partners'] = array(
+    'info' => t('Collaboration area Partners documents'),
+    'status' => 1,
+    'region' => '-1',
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['oira_strategic_docs_eu_osha'] = array(
+    'info' => t('Collaboration area EU OSHA documents'),
+    'status' => 1,
+    'region' => '-1',
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function oira_strategic_documentation_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'oira_strategic_docs_partners') {
+    module_load_include('inc', 'oira_strategic_documentation', 'oira_strategic_documentation.pages');
+    $block['content'] = drupal_get_form('oira_strategic_documentation_partners_form');
+  }
+  if ($delta == 'oira_strategic_docs_eu_osha') {
+    module_load_include('inc', 'oira_strategic_documentation', 'oira_strategic_documentation.pages');
+    $block['content'] = drupal_get_form('oira_strategic_documentation_eu_osha_form');
+  }
+  return $block;
+}
 
 /**
  * Implements hook_form_alter().
