@@ -10532,6 +10532,17 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   position: absolute !important;
   margin-left: 0px !important;
 }
+/*end retranslate*/
+/*Private Zone
+*********************************************/
+.menu-name-menu-private-zone {
+  background-color: #786586;
+}
+.menu-name-menu-private-zone ul.menu > li {
+  float: left;
+  max-width: 12%;
+  text-align: center;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
