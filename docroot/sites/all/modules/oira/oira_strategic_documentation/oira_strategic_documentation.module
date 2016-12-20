@@ -90,3 +90,28 @@ function oira_strategic_documentation_form_alter(&$form, &$form_state, $form_id)
       break;
   }
 }
+
+/**
+ * Implements hook_node_access().
+ */
+function oira_strategic_documentation_node_access($node, $op, $account) {
+  if($node->type == 'strategic_documentation' && $op == 'view'){
+    if(array_intersect(
+      array(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PARTNER, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR),
+      array_values($account->roles)
+    )){
+      $node_sections = $node->workbench_access;
+      if(isset($node->field_co_author['und'][0]['tid'])){
+        $node_sections[$node->field_co_author['und'][0]['tid']] = $node->field_co_author['und'][0]['tid'];
+      }
+      $user_sections = osha_workflow_editor_get_sections($account);
+      if(array_intersect($user_sections,$node_sections)){
+        return NODE_ACCESS_ALLOW;
+      }
+      return NODE_ACCESS_DENY;
+    }else{
+      return NODE_ACCESS_DENY;
+    }
+  }
+  return NODE_ACCESS_IGNORE;
+}
