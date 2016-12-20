@@ -554,6 +554,7 @@ $options['init-modules'] = array(
   'oira_ws',
   'oira_strategic_documentation',
   'image_url_formatter',
+  'menu_token',
 );
 
 
