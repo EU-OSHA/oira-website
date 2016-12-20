@@ -2625,7 +2625,9 @@ div[id ^= "mini-panel-partner_in_"], {
 }
 
 //partners and countries resources
-#quicktabs-container-view__country_partner_content__block, #quicktabs-container-view__country_partner_content__block_1{
+#quicktabs-container-view__country_partner_content__block,
+#quicktabs-container-view__country_partner_content__block_1,
+#quicktabs-container-view__country_partner_content__block_2{
 	.quicktabs-tabpage {
 		.field.field-name-field-country,
 		.field-type-language-field,
@@ -4089,10 +4091,44 @@ div[id ^= "mini-panel-partner_in_"], {
 .menu-name-menu-private-zone{
 	background-color: @color-primary-dark; 
 	ul.menu{
+		padding-top: 15px;
+		padding-bottom: 15px;
 		> li{
 			float: left;
-			max-width: 12%;
+			width: 150px;
+			height: 150px;
 			text-align: center;
+			border-radius: 50%;
+			padding: 5px;
+    		padding-top: 10px;
+    		cursor: pointer;
+    		&:hover{
+    			background-color: rgba(255, 255, 255, 0.7);
+    			img{
+    				-webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+    				filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+    			}
+    			.introduction-title{
+	    			a{
+	    				color: @color-primary-dark;
+	    			}
+    			}
+    		}
+			.introduction-image{
+				img{
+					max-width: 50%;
+				}
+			}
+			.introduction-title{
+				a{
+					color: white;
+					font-style: italic;
+					text-decoration: none;
+				}
+			}
+			ul.submenu-items{
+				list-style: none;
+			}
 		}
 	}
 }

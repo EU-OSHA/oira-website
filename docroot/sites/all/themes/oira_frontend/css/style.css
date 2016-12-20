@@ -9187,14 +9187,19 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field.field-name-field-country,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field.field-name-field-country,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field.field-name-field-country,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-type-language-field,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-type-language-field,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-type-language-field,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-pr-language,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-pr-language {
   background-color: #b4a4bf;
   display: inline-block;
   color: white;
@@ -9209,26 +9214,34 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field.field-name-field-country p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field.field-name-field-country p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field.field-name-field-country p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-type-language-field p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-type-language-field p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-type-language-field p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-pr-language p,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language p {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-pr-language p {
   margin-bottom: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-group-wrapper,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-group-wrapper {
   padding-bottom: 30px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-group-wrapper:nth-child(odd),
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper:nth-child(odd) {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-group-wrapper:nth-child(odd),
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-group-wrapper:nth-child(odd) {
   background-color: #dfd8e4;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .group-practical_tool:after,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-practical_tool:after {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-practical_tool:after,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .group-practical_tool:after {
   content: "";
   background: url("../images/icons/018.png") no-repeat;
   background-size: 100%;
@@ -9237,7 +9250,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   float: right;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .group-promotional_material:after,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-promotional_material:after {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-promotional_material:after,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .group-promotional_material:after {
   content: "";
   background: url("../images/icons/083.png") no-repeat;
   background-size: 100%;
@@ -9248,7 +9262,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   height: 45px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .group-strategic_documentation:after,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-strategic_documentation:after {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-strategic_documentation:after,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .group-strategic_documentation:after {
   content: "";
   background: url("../images/icons/070.png") no-repeat;
   background-size: 100%;
@@ -9259,7 +9274,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   height: 45px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .group-news:after,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-news:after {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .group-news:after,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .group-news:after {
   content: "";
   background: url("../images/icons/005.png") no-repeat;
   background-size: 100%;
@@ -9268,15 +9284,18 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   float: right;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-news .field-name-field-publication-date,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-news .field-name-field-publication-date {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-news .field-name-field-publication-date,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-news .field-name-field-publication-date {
   margin-top: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-news h3 a,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-news h3 a {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-news h3 a,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-news h3 a {
   color: #58585a;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .content-group-label,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .content-group-label {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .content-group-label,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .content-group-label {
   color: #967ea7;
   border-bottom: 2px solid #967ea7;
   font-size: 2.2em;
@@ -9287,27 +9306,32 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-right: -15px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .node-teaser,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .node-teaser {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .node-teaser,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .node-teaser {
   border-bottom: 2px solid #967ea7;
   padding-top: 30px;
   padding-bottom: 30px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .node-news,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .node-news {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .node-news,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .node-news {
   margin-bottom: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group h3,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group h3 {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group h3,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group h3 {
   font-size: 2em;
   font-weight: bold;
   margin-top: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .more-link,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .more-link {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .more-link,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .more-link {
   text-align: left;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group a.show-less,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group a.show-less {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group a.show-less,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group a.show-less {
   text-align: right !important;
   width: 20px;
   height: 12px;
@@ -9316,33 +9340,39 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-style: normal;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group a.show-less:before,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group a.show-less:before {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group a.show-less:before,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group a.show-less:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
   line-height: 0;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link {
   position: absolute;
   right: 15px;
   margin-top: 15px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link a,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link a {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link a,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link a {
   margin-top: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more {
   margin-left: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.more-link,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.more-link {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.more-link,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.more-link {
   text-align: left;
   margin-top: 15px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less {
   text-align: right !important;
   width: 20px;
   height: 12px;
@@ -9351,91 +9381,112 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-style: normal;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less:before,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less:before {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less:before,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-tools-see-more a.show-less:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
   line-height: 0;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
   margin-top: 50px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 {
   min-height: 45px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 a,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 a {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 a,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
   color: #ffffff;
   margin-top: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner .more-link,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner .more-link {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner .more-link,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-related-partners .node-partner .more-link {
   color: #ffffff;
   text-align: left;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-1 > div,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-1 > div {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-1 > div,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .related-partners-1 > div {
   margin-left: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-2 .node-partner,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 .node-partner {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 .node-partner,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 .node-partner {
   margin-left: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div {
   display: table;
   border-collapse: collapse;
   width: 100%;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div .group-left a img,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div .group-left a img {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div .group-left a img,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div .group-left a img {
   width: auto;
   height: 100px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .odd:first-child,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .odd:first-child {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .odd:first-child,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .odd:first-child {
   display: table-cell;
   width: 50%;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child .node-partner,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child .node-partner {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child .node-partner,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .related-partners-2 > div > .even:first-child .node-partner {
   margin-right: 10px;
   margin-left: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group:last-child .node-teaser,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group:last-child .node-teaser {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group:last-child .node-teaser,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group:last-child .node-teaser {
   border-bottom: 2px solid #967ea7;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-practical-tool .field-name-tools-see-more,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-practical-tool .field-name-tools-see-more,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-practical-tool .field-name-tools-see-more,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-strategic-documentation .field-name-tools-see-more,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-strategic-documentation .field-name-tools-see-more {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-strategic-documentation .field-name-tools-see-more,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-strategic-documentation .field-name-tools-see-more {
   margin-left: 310px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-practical-tool .related-partners-1 > div,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-practical-tool .related-partners-1 > div,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-practical-tool .related-partners-1 > div,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-promotional-material .related-partners-1 > div,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .related-partners-1 > div,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-promotional-material .related-partners-1 > div,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-strategic-documentation .related-partners-1 > div,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-strategic-documentation .related-partners-1 > div {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-strategic-documentation .related-partners-1 > div,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-strategic-documentation .related-partners-1 > div {
   margin-left: 323px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-promotional-material .field-name-tools-see-more {
   margin-left: 293px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .node-promotional-material .related-partners-1 > div,
-#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .node-promotional-material .related-partners-1 > div,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .node-promotional-material .related-partners-1 > div {
   margin-left: 309px;
 }
 .quicktabs-tabs-container {
@@ -10538,10 +10589,40 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .menu-name-menu-private-zone {
   background-color: #786586;
 }
+.menu-name-menu-private-zone ul.menu {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 .menu-name-menu-private-zone ul.menu > li {
   float: left;
-  max-width: 12%;
+  width: 150px;
+  height: 150px;
   text-align: center;
+  border-radius: 50%;
+  padding: 5px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+.menu-name-menu-private-zone ul.menu > li:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.menu-name-menu-private-zone ul.menu > li:hover img {
+  -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+  filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+}
+.menu-name-menu-private-zone ul.menu > li:hover .introduction-title a {
+  color: #786586;
+}
+.menu-name-menu-private-zone ul.menu > li .introduction-image img {
+  max-width: 50%;
+}
+.menu-name-menu-private-zone ul.menu > li .introduction-title a {
+  color: white;
+  font-style: italic;
+  text-decoration: none;
+}
+.menu-name-menu-private-zone ul.menu > li ul.submenu-items {
+  list-style: none;
 }
 /*FOOTER
 ********************************************/
