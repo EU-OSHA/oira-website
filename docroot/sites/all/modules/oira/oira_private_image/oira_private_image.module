@@ -1,0 +1,25 @@
+<?php
+/**
+ * @file
+ * Code for the Private image feature.
+ */
+
+include_once 'oira_private_image.features.inc';
+
+/**
+ * Implements hook_node_access().
+ */
+function oira_private_image_node_access($node, $op, $account) {
+
+if($node->type == 'oira_private_image' && $op == 'view'){
+  if(array_intersect(
+      array(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PARTNER, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR),
+      array_values($account->roles)
+    )){
+      return NODE_ACCESS_ALLOW;
+    }else{
+      return NODE_ACCESS_DENY;
+    }
+  }
+  return NODE_ACCESS_IGNORE;
+}

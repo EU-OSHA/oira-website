@@ -46,3 +46,10 @@ function oira_update_7004() {
   variable_set('chosen_minimum_single',35);
   variable_set('chosen_minimum_multiple',35);
 }
+
+/**
+ * Enable new module - Private image.
+ */
+function oira_update_7005() {
+  module_enable(array('oira_private_image'));
+}
