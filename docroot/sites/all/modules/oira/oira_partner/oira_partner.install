@@ -28,3 +28,16 @@ function oira_partner_update_7004() {
   features_revert_module('oira_partner');
   module_enable(['image_url_formatter'], true);
 }
+
+/**
+ * NOW-237 - Enable new module - Menu Token - used for private zone menu.
+ *         - Feature revert partner
+ */
+function oira_partner_update_7005() {
+  features_revert_module('oira_partner');
+
+  $modules = array(
+    'menu_token',
+  );
+  module_enable($modules);
+}
