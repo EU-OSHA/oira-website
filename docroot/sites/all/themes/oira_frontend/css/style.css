@@ -10628,6 +10628,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-color: #dfd8e4;
   padding-top: 25px;
   padding-bottom: 25px;
+  margin-bottom: 20px;
 }
 .node-form .grippie {
   display: none;
@@ -10637,9 +10638,62 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .node-form input,
 .node-form textarea,
-.node-form select {
+.node-form select,
+.node-form .form-control {
   border: none;
   border-radius: 0px;
+}
+.node-form select {
+  background: url("../images/icons/down-arrow-inputs.png") no-repeat right #ffffff;
+  appearance: none;
+  margin-right: 50px !important;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  background-position-x: right;
+}
+.node-form button {
+  border: none;
+  border-radius: 0px;
+  height: 36px;
+  font-weight: bold;
+}
+.node-form #edit-field-website-und-0-url {
+  max-width: 40%;
+}
+.node-form #edit_field_tags_und_chosen {
+  width: 100% !important;
+}
+.node-form #edit_field_tags_und_chosen .chosen-choices {
+  background-image: inherit;
+  border: none;
+  box-shadow: none;
+}
+.node-form #edit_field_tags_und_chosen .chosen-drop {
+  border: none;
+  box-shadow: none;
+}
+.node-form #edit-field-image .image-widget-data {
+  display: block;
+  float: none;
+  clear: both;
+}
+.node-form #edit-field-image .image-widget-data .form-file {
+  width: 40%;
+  display: inline-block;
+}
+.node-form #edit-field-image .image-widget-data button {
+  padding: 7px 15px;
+  vertical-align: top;
+  border: none;
+  border-radius: 0px;
+  background-color: #786586;
+  color: white;
+}
+.node-form #edit-field-image .image-widget-data textarea {
+  width: 40%;
+  height: 36px;
 }
 .node-form #edit-field-publication-date .date-combo {
   border: none;
@@ -10654,6 +10708,24 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .node-form #edit-field-publication-date .date-combo .panel-body .form-type-select {
   margin-right: 15px;
+}
+.node-form #edit-field-publication-date .date-combo .panel-body .form-type-select select {
+  margin-right: 15px;
+}
+.node-form button#edit-save-preview {
+  background-color: #10b2e4;
+  margin-top: 40px;
+}
+.node-form button#edit-save-preview:before {
+  content: "> ";
+}
+.node-form button#edit-send-for-approval {
+  display: block;
+  width: 100%;
+  height: 70px;
+  margin-top: 50px;
+  background-color: #786586;
+  font-size: 1.4em;
 }
 /*FOOTER
 ********************************************/

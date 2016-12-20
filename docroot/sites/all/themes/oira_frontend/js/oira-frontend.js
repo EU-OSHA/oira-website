@@ -203,8 +203,12 @@ jQuery(document).ready(function () {
 		}
 	}
 	
-	
-	
-
+	/*
+	jQuery("input[type=file]").filestyle({ 
+	     image: "../images/icons/choose-file.png",
+	     imageheight : 32,
+	     imagewidth : 82
+	 });
+	*/
 
 });
