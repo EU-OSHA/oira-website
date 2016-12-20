@@ -723,3 +723,7 @@ function oira_frontend_filter_process_format($element) {
   }
   return $element;
 }
+
+function oira_frontend_menu_tree__menu_block__menu_private_zone($variables){
+  return '<ul class="menu nav container">' . $variables['tree'] . '</ul>';
+}
