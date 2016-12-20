@@ -4133,4 +4133,46 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 }
 
+//forms
+.node-form{
+	> div{
+		background-color: @color-primary;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	.grippie{
+		display: none;
+	}
+	label{
+		color: @color-text-purple-darker;
+	}
+	input, textarea, select{
+		border: none;
+		border-radius: 0px;
+	}
+	//imagen
+	#edit-field-image{
+		.image-widget-data{
+			
+		}
+	}
+	//fecha
+	#edit-field-publication-date{
+		.date-combo{
+			border: none;
+			background-color: inherit;
+			box-shadow: none;
+			.panel-heading{
+				display: none;
+			}
+			.panel-body{
+				padding: 0px;
+				.form-type-select{
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+}
+
 /*End private zone*/

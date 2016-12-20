@@ -10624,6 +10624,37 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .menu-name-menu-private-zone ul.menu > li ul.submenu-items {
   list-style: none;
 }
+.node-form > div {
+  background-color: #dfd8e4;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.node-form .grippie {
+  display: none;
+}
+.node-form label {
+  color: #786586;
+}
+.node-form input,
+.node-form textarea,
+.node-form select {
+  border: none;
+  border-radius: 0px;
+}
+.node-form #edit-field-publication-date .date-combo {
+  border: none;
+  background-color: inherit;
+  box-shadow: none;
+}
+.node-form #edit-field-publication-date .date-combo .panel-heading {
+  display: none;
+}
+.node-form #edit-field-publication-date .date-combo .panel-body {
+  padding: 0px;
+}
+.node-form #edit-field-publication-date .date-combo .panel-body .form-type-select {
+  margin-right: 15px;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
