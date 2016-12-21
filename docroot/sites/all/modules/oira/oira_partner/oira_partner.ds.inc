@@ -77,6 +77,146 @@ function oira_partner_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|partner|form';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'partner';
+  $ds_layout->view_mode = 'form';
+  $ds_layout->layout = 'partner_edit_form';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'about_organization__left' => array(
+        0 => 'title_field',
+        1 => 'field_logo',
+      ),
+      'about_organization__right' => array(
+        2 => 'field_mission_statement',
+      ),
+      'general_contact_information__left' => array(
+        3 => 'field_ph_address',
+        4 => 'field_ph_cp',
+        5 => 'field_general_email',
+        6 => 'field_website',
+      ),
+      'general_contact_information__right' => array(
+        7 => 'field_general_phone',
+        8 => 'field_country',
+        9 => 'field_ph_town',
+        16 => 'field_dedicated_oira_website',
+      ),
+      'hidden' => array(
+        10 => 'workbench_access',
+        11 => 'path',
+        12 => 'redirect',
+        13 => 'metatags',
+        14 => 'field_orgtype',
+        15 => 'field_partner_type',
+        17 => 'field_guid_organisation',
+        18 => 'field_guid_main_contact',
+        20 => 'field_main_contact',
+        21 => 'field_main_contact_email',
+        23 => 'xmlsitemap',
+        24 => '_add_existing_field',
+      ),
+      'general_contact_information__bottom' => array(
+        19 => 'field_social_profile',
+      ),
+      'other_collaborators__top' => array(
+        22 => 'field_collaborator',
+      ),
+    ),
+    'fields' => array(
+      'title_field' => 'about_organization__left',
+      'field_logo' => 'about_organization__left',
+      'field_mission_statement' => 'about_organization__right',
+      'field_ph_address' => 'general_contact_information__left',
+      'field_ph_cp' => 'general_contact_information__left',
+      'field_general_email' => 'general_contact_information__left',
+      'field_website' => 'general_contact_information__left',
+      'field_general_phone' => 'general_contact_information__right',
+      'field_country' => 'general_contact_information__right',
+      'field_ph_town' => 'general_contact_information__right',
+      'workbench_access' => 'hidden',
+      'path' => 'hidden',
+      'redirect' => 'hidden',
+      'metatags' => 'hidden',
+      'field_orgtype' => 'hidden',
+      'field_partner_type' => 'hidden',
+      'field_dedicated_oira_website' => 'general_contact_information__right',
+      'field_guid_organisation' => 'hidden',
+      'field_guid_main_contact' => 'hidden',
+      'field_social_profile' => 'general_contact_information__bottom',
+      'field_main_contact' => 'hidden',
+      'field_main_contact_email' => 'hidden',
+      'field_collaborator' => 'other_collaborators__top',
+      'xmlsitemap' => 'hidden',
+      '_add_existing_field' => 'hidden',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'container' => 'container',
+      ),
+      'about_organization__top' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'about_organization__left' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'about_organization__right' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'about_organization__bottom' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'general_contact_information__top' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'general_contact_information__left' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'general_contact_information__right' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'general_contact_information__bottom' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'other_collaborators__top' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'other_collaborators__left' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'other_collaborators__right' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'other_collaborators__bottom' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+    ),
+    'wrappers' => array(
+      'about_organization__top' => 'div',
+      'about_organization__left' => 'div',
+      'about_organization__right' => 'div',
+      'about_organization__bottom' => 'div',
+      'general_contact_information__top' => 'div',
+      'general_contact_information__left' => 'div',
+      'general_contact_information__right' => 'div',
+      'general_contact_information__bottom' => 'div',
+      'other_collaborators__top' => 'div',
+      'other_collaborators__left' => 'div',
+      'other_collaborators__right' => 'div',
+      'other_collaborators__bottom' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => 0,
+  );
+  $export['node|partner|form'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|partner|search_result';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'partner';

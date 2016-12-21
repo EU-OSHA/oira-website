@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Display Suite Partner edit form stylesheet.
+ */
+
+.ds-about-organization {
+    /* Styles for the "about-organization" region go here */
+}
+
+.ds-general-contact-information{
+    /* Styles for the "general-contact-information" region go here */
+}
+
+.ds-other-collaborators{
+    /* Styles for the "other-collaborators" region go here */
+}
+.nav.nav-tabs{
+    display:none !important;
+}

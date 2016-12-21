@@ -637,6 +637,7 @@ function oira_frontend_form_element_label(&$variables) {
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
 }
 
+
 /**
  * Implements form_alter().
  */
@@ -663,6 +664,59 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       break;
     case 'strategic_documentation_node_form':
       $form['actions']['#attributes']['class'] = array('container','text-center');
+      break;
+    case 'partner_node_form':
+      $form['title_field']['#disabled'] = TRUE;
+      $form['field_mission_statement']['#disabled'] = TRUE;
+      $form['field_ph_address']['#disabled'] = TRUE;
+      $form['field_ph_cp']['#disabled'] = TRUE;
+      $form['field_general_email']['#disabled'] = TRUE;
+      $form['field_website']['#disabled'] = TRUE;
+      $form['field_general_phone']['#disabled'] = TRUE;
+      $form['field_country']['#disabled'] = TRUE;
+      $form['field_ph_town']['#disabled'] = TRUE;
+      $form['field_dedicated_oira_website']['#disabled'] = TRUE;
+      $form['field_social_profile']['#disabled'] = TRUE;
+      $form['field_collaborator']['#disabled'] = TRUE;
+      $form['field_logo'] = array(
+        '#type' => 'item',
+        '#title' => t('Logo'),
+        '#markup' => '<img src="' . image_style_url('thumbnail', $form['field_logo']['und'][0]['#default_value']['uri']) .'" class="img-responsive">',
+        '#prefix' => '<div class="image-preview oira-logo-container">',
+        '#suffix' => '</div>',
+        );
+      foreach($form['field_social_profile']['und'] as $key=>$val){
+        if(is_numeric($key)){
+          if(!isset($form['field_social_profile']['und'][$key]['#default_value'])
+            || !isset($form['field_social_profile']['und'][$key]['#default_value']['url'])){
+              unset($form['field_social_profile']['und'][$key]);
+            }
+          }
+        }
+      unset($form['field_social_profile']['und']['add_more']);
+      unset($form['field_collaborator']['und']['#title']);
+      foreach($form['field_collaborator']['und'] as $key=>$val){
+        if(is_numeric($key)){
+          if(isset($form['field_collaborator']['und'][$key]['#entity'])
+            && !$form['field_collaborator']['und'][$key]['#entity']->item_id){
+              unset($form['field_collaborator']['und'][$key]);
+            }else{
+            $form['field_collaborator']['und'][$key]['field_logo'] = array(
+              '#type' => 'item',
+              '#title' => t('Logo'),
+              '#markup' => '<img src="' . image_style_url('thumbnail', $form['field_collaborator']['und'][$key]['field_logo']['und'][0]['#default_value']['uri']) .'" class="img-responsive">',
+              '#prefix' => '<div class="image-preview oira-logo-container">',
+              '#suffix' => '</div>',
+            );
+          }
+          }
+        }
+      $form['#attached']['js'][] = array(
+        'data' => drupal_get_path('theme', 'oira_frontend') . '/js/oira-tabledrag.js',
+        'weight' => -2,
+      );
+      unset($form['#submit']);
+      $form['actions']['#access'] = FALSE;
       break;
     default:
       break;
