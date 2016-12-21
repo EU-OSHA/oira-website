@@ -65,7 +65,7 @@ function napo_contact_default_page_manager_pages() {
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'FAQ',
+    'panels_breadcrumbs_titles' => 'Contact us',
     'panels_breadcrumbs_paths' => '<none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -304,8 +304,10 @@ function napo_contact_default_page_manager_pages() {
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'FAQ',
-    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_titles' => 'OiRA & Tools
+> OiRA FAQ\'s',
+    'panels_breadcrumbs_paths' => '<none>
+<none>',
     'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
