@@ -28,3 +28,28 @@ function oira_update_7002() {
     variable_set('eu_cookie_compliance_' . $lang, $en_settings);
   }
 }
+
+/**
+ * Enable new module - Panel Variant Page Title.
+ */
+function oira_update_7003() {
+  $modules = array(
+    'panel_variant_page_title',
+  );
+  module_enable($modules);
+}
+
+/**
+ * Chosen Settings: Set Minimum number of options for single and multi select to 35
+ */
+function oira_update_7004() {
+  variable_set('chosen_minimum_single',35);
+  variable_set('chosen_minimum_multiple',35);
+}
+
+/**
+ * Configuration - Site information: Set Default 404 (not found) page
+ */
+function oira_update_7005() {
+  variable_set('site_404','page-not-found');
+}

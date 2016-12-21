@@ -599,6 +599,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['label'] = '';
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>';
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
@@ -611,6 +613,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -688,8 +692,8 @@ function hwc_practical_tool_views_default_views() {
 [nothing_2]
 [title_field]
 [body]
-[field_country]
 [field_language]
+[field_country]
 [related_partners]
 [tools_see_more]
 </div>';
@@ -982,6 +986,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['label'] = '';
   $handler->display->display_options['fields']['field_language']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_language']['alter']['text'] = '<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>';
   $handler->display->display_options['fields']['field_language']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
@@ -998,6 +1004,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['label'] = '';
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['alter']['text'] = '<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>';
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
@@ -1103,6 +1111,8 @@ function hwc_practical_tool_views_default_views() {
 </div>'),
     t('Tool of the week'),
     t('queue'),
+    t('<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>'),
+    t('<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>'),
     t('<div class="pane-title tool-of-the-week-label">Tool of the week</div>'),
     t('<div class="col-sm-6">
 [field_image]
@@ -1111,8 +1121,8 @@ function hwc_practical_tool_views_default_views() {
 [nothing_2]
 [title_field]
 [body]
-[field_country]
 [field_language]
+[field_country]
 [related_partners]
 [tools_see_more]
 </div>'),

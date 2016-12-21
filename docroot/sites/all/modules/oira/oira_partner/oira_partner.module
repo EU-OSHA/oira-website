@@ -236,6 +236,8 @@ function _oira_partner_partner_country_minipanel() {
   $render = array();
   $term = menu_get_object('taxonomy_term', 2);
 
+  module_load_include('inc', 'oira_country', 'plugins/content_types/focal_point_text');
+
   if (!empty($term)) {
     $partners = _oira_partner_get_by_country($term->tid, array(OIRA_PARTNER_TYPE_SECTORIAL_TID, OIRA_PARTNER_TYPE_NATIONAL_TID));
     if (!empty($partners)) {
@@ -245,6 +247,8 @@ function _oira_partner_partner_country_minipanel() {
         '#type' => 'container',
         '#attributes' => array('class' => array('country-partners-container', 'partners-no-' . $count, $more_partners_class)),
       );
+
+      $fp_text = oira_country_focal_point_pane_render();
 
       if ($count > 2) {
         // Show logo views.
@@ -284,19 +288,27 @@ function _oira_partner_partner_country_minipanel() {
         }
 
         $style = '';
+        $panel_content = panels_render_display($panel_mini->display);
         if ($count > 2) {
           $style = ' display: none; ';
+          $panel_content .= $fp_text->content;
         }
-        $html = '<div data-partner-nid="@nid" class="country-partner-wrapper container @extra_class" style="@style">@panel</div>';
+        $html = '<div data-partner-nid="@nid" class="country-partner-wrapper @extra_class" style="@style">@panel</div>';
         $html = strtr($html, array(
           '@extra_class' => $extra_class,
           '@style' => $style,
-          '@panel' => panels_render_display($panel_mini->display),
+          '@panel' => $panel_content,
           '@nid' => $node->nid,
         ));
         $render[] = array(
           '#type' => 'markup',
           '#markup' => $html,
+        );
+      }
+      if ($count <= 2) {
+        $render[] = array(
+          '#type' => 'markup',
+          '#markup' => $fp_text->content,
         );
       }
     }

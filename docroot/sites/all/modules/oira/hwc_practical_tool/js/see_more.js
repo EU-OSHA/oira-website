@@ -13,7 +13,7 @@
                 var $wrapper = $(this).closest(expander_setting.parent_selector);
                 var $body = $wrapper.find('.field-name-body');
                 var $partners = $wrapper.find('.field-name-related-partners');
-                var $link = $wrapper.find('.field-name-field-tool-link');
+                //var $link = $wrapper.find('.field-name-field-tool-link');
                 $body.expander({
                     slicePoint:       expander_setting.slice_point,
                     expandPrefix:     '...',
@@ -28,13 +28,13 @@
                         $body.find('.read-less a').trigger('click');
                         $(this).text(Drupal.t(show_more));
                         $partners.slideUp();
-                        $link.hide();
+                        //$link.hide();
                     }
                     else {
                         $body.find('.read-more a').trigger('click');
                         $(this).text(Drupal.t(show_less));
                         $partners.slideDown();
-                        $link.show();
+                        //$link.show();
                     }
                     $(this).toggleClass('show-less');
                 });

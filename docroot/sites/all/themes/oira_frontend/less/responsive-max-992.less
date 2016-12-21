@@ -339,35 +339,7 @@
 ****************************************************************/
 .front{
 	.panels-flexible-region-new-slider{
-		.views-field-field-link{
-		    position: inherit !important;
-		    width: 100% !important;
-		    background-color: @color-primary-dark;
-		    margin-top: -7px;
-		    padding-top: 25px;
-		    padding-left: 15px;
-		    padding-right: 15px;
-		    h2{
-		    	margin-top: 0px;
-    			margin-bottom: 0px;
-    			width: 720px;
-    			display: block;
-    			margin: 0 auto;
-		    }
-		}
-		.views-field-body {
-		    position: inherit !important;
-		    width: 100% !important;
-		    background-color: @color-primary-dark;
-		    padding-top: 25px;
-		    padding-bottom: 55px;
-		    padding-left: 15px;
-		    padding-right: 15px;
-		    .field-content{
-		    	width: 720px;
-		    	margin: 0 auto;
-		    }
-		}
+		
 	}
 	.views-item-columns-container{
 		margin-bottom: 30px;
@@ -456,8 +428,8 @@
 	}
 	.panels-flexible-row-new-10{
 		.container{
-			padding-right: 0px;
-			padding-left: 0px;
+			//padding-right: 0px;
+			//padding-left: 0px;
 		}
 	}
 
@@ -527,9 +499,9 @@
 .partners-no-1{
 	margin-bottom: 0px;
 }
-div[id ^= "mini-panel-partner_in_country"]{
+div[id ^= "mini-panel-partner_in_"]{
 	.panels-flexible-row-new-1{
-		border-bottom: 2px solid @color-text-purple-darker;
+		//border-bottom: 2px solid @color-text-purple-darker;
 	}
 	.panels-flexible-row-first{
 		border-bottom: 2px solid @color-text-purple-darker;
@@ -541,17 +513,18 @@ div[id ^= "mini-panel-partner_in_country"]{
 	}
 	.partner-contact-container{
 		margin-top: 20px;
-		min-height: 280px;
+		min-height: 340px;
 		border-bottom: 2px solid @color-text-purple-darker;
 	}
 	.partner-social-container{
 		margin-top: 20px;
-		min-height: 280px;
+		min-height: 340px;
 		border-bottom: 2px solid @color-text-purple-darker;
 	}
 	.partner-colaborators-container{
-		margin-top: 20px;
+		
 		.field-name-field-collaborator{
+			margin-top: 20px;
 			>div.field-items{
 				>div.field-item{
 					.field-name-field-collaborator-name{
@@ -583,6 +556,9 @@ div[id ^= "mini-panel-partner_in_country"]{
 			.panels-flexible-row-new-1{
 				border-bottom: none;
 			}
+			h2{
+				border-bottom: none !important;
+			}
 			.panels-flexible-row-inside-first{
 				margin-left: 0px;
     			margin-right: 0px;
@@ -597,61 +573,51 @@ div[id ^= "mini-panel-partner_in_country"]{
 				> div{
 					width: 100%;
 				}
-				.partner-contact-container, .partner-social-container, .partner-colaborators-container, .partner-text2-container{
+				.partner-contact-container, 
+				.partner-social-container, 
+				.partner-colaborators-container, 
+				.partner-text2-container{
 					min-height: auto;
+					margin-top: 0px;
+					border-bottom: none;
+				}
+				.pane-contact-information-partner,
+				.pane-node-field-social-profile,
+				.pane-node-field-collaborator{
+					border-bottom: 2px solid @color-primary-dark;
 					padding-top: 15px;
 					padding-bottom: 15px;
-					margin-top: 0px;
-				}
-				.partner-colaborators-container{
-					border-bottom: 2px solid @color-primary-dark;
 				}
 			}
 		}
 	}
+	.focal-poin-partner-text{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }
 /*END COUNTRY PROFILE*/
 
-/* EU LEVEL COUNTRY
+/* Countries with more than two partners
 *************************************************/
 .more-than-two-partners{
 	div[id^="mini-panel-partner_in_country"]{
-		margin: 0px 25px;
-		.panels-flexible-row-new-1{
-			border-bottom: none;
+		.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
+			border-top: 2px solid @color-primary-dark;
+			padding-top: 15px;
+			padding-bottom: 15px;
 		}
-		.partner-contact-container{
-			margin-top: 0;
-			min-height: inherit;
+		.partner-contact-container,
+		.partner-social-container,
+		.partner-colaborators-container,
+		.partner-text2-container {
+			
 		}
-		.panels-flexible-row{
-			.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
-				padding-top: 20px;
-				border-bottom: none;
-				.partner-image-container{
-					img{
-						max-width: 150px;
-					}
-				}
-				.partner-text-container{
-					h2{
-						font-size: @font-size1-6;
-					}
-				}
-			}
-			.panels-flexible-row-new-1-inside.panels-flexible-row-inside-last{
-				.partner-contact-container{
-					border-bottom: 0px;
-				}
-				.partner-contact-container,
-				.partner-social-container,
-				.partner-colaborators-container,
-				.partner-text2-container {
-					min-height: inherit;
-					margin-top: 0px;
-					border-bottom: none;
-				}
-			}
+		.pane-contact-information-partner,
+		.pane-node-field-social-profile,
+		.pane-node-field-collaborator,
+		.pane-taxonomy-term-field-ncw-fp-link{
+
 		}
 	}
 }

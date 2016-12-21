@@ -12,7 +12,7 @@ $plugin = array(
   'all contexts' => TRUE,
 );
 
-function oira_country_focal_point_pane_render($subtype, $conf, $args, $contexts) {
+function oira_country_focal_point_pane_render($subtype = NULL, $conf = NULL, $args = NULL, $contexts = NULL) {
   $term = menu_get_object('taxonomy_term', 2);
   if (empty($term)) {
     $node = menu_get_object();
@@ -34,7 +34,7 @@ function oira_country_focal_point_pane_render($subtype, $conf, $args, $contexts)
     $link = $term_wrapper->field_ncw_fp_link->value()['url'];
     if (!empty($link)) {
       $text = variable_get('oira_config_focal_point_text', 'Focal point');
-      $block->content = t($text, array('@link' => $link));
+      $block->content = '<div class="focal-poin-partner-text col-md-12">' . t($text, array('@link' => $link)) . '</div>';
     }
   }
   return $block;

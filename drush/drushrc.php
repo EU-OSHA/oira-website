@@ -468,6 +468,7 @@ $options['init-modules'] = array(
   'panels_custom_title_tag',
   'extra_field_formatter',
   'extrafield_views_integration',
+  'panel_variant_page_title',
 
   'text_resize',
 
@@ -552,7 +553,7 @@ $options['init-modules'] = array(
   'oira_homepage',
   'oira_ws',
   'oira_strategic_documentation',
-
+  'image_url_formatter',
 );
 
 

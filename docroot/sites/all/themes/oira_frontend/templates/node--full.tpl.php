@@ -80,7 +80,7 @@
  * @ingroup themeable
  */
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix container"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; if ($node->type != 'webform') {print " container";}?> clearfix "<?php print $attributes; ?>>
   <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>

@@ -143,150 +143,6 @@ function napo_contact_views_default_views() {
   $handler->display->display_options['filters']['weight']['id'] = 'weight';
   $handler->display->display_options['filters']['weight']['table'] = 'draggableviews_structure';
   $handler->display->display_options['filters']['weight']['field'] = 'weight';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Reorder FAQs';
-  $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'edit any faq content';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Draggableviews: Content */
-  $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
-  $handler->display->display_options['fields']['draggableviews']['table'] = 'node';
-  $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
-  $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['draggableviews']['draggableviews']['handler'] = 'draggableviews_handler_fieldapi';
-  $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 1;
-  $handler->display->display_options['fields']['draggableviews']['draggableviews']['draggableviews_handler_fieldapi'] = array(
-    'field' => 'field_data_field_weight:field_weight_value',
-  );
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Weight (field_weight) */
-  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
-  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
-  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'faq' => 'faq',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: OIRA (field_oira) */
-  $handler->display->display_options['filters']['field_oira_value_1']['id'] = 'field_oira_value_1';
-  $handler->display->display_options['filters']['field_oira_value_1']['table'] = 'field_data_field_oira';
-  $handler->display->display_options['filters']['field_oira_value_1']['field'] = 'field_oira_value';
-  $handler->display->display_options['filters']['field_oira_value_1']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_oira_value_1']['value'] = array(
-    1 => '1',
-  );
-  $handler->display->display_options['filters']['field_oira_value_1']['group'] = 1;
-  $handler->display->display_options['path'] = 'admin/structure/faqs';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Reorder FAQs';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'management';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $handler->display->display_options['tab_options']['title'] = 'Reorder FAQs';
-  $handler->display->display_options['tab_options']['weight'] = '0';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_accordion';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row-start-open'] = '0';
-  $handler->display->display_options['style_options']['autoheight'] = 0;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Global: View result counter */
-  $handler->display->display_options['fields']['counter']['id'] = 'counter';
-  $handler->display->display_options['fields']['counter']['table'] = 'views';
-  $handler->display->display_options['fields']['counter']['field'] = 'counter';
-  $handler->display->display_options['fields']['counter']['label'] = '';
-  $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  $handler->display->display_options['fields']['counter']['reverse'] = 0;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
-  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['label'] = '';
-  $handler->display->display_options['fields']['title_field']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title_field']['alter']['text'] = '[counter]. [title_field]';
-  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field']['type'] = 'text_plain';
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_class'] = 'faq-answer';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Weight (field_weight) */
-  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
-  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
-  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'faq' => 'faq',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: OIRA (field_oira) */
-  $handler->display->display_options['filters']['field_oira_value']['id'] = 'field_oira_value';
-  $handler->display->display_options['filters']['field_oira_value']['table'] = 'field_data_field_oira';
-  $handler->display->display_options['filters']['field_oira_value']['field'] = 'field_oira_value';
-  $handler->display->display_options['filters']['field_oira_value']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_oira_value']['value'] = array(
-    1 => '1',
-  );
   $translatables['faqs'] = array(
     t('Master'),
     t('FAQs'),
@@ -302,10 +158,6 @@ function napo_contact_views_default_views() {
     t('Content'),
     t('Parent'),
     t('All'),
-    t('Page'),
-    t('Reorder FAQs'),
-    t('Block'),
-    t('[counter]. [title_field]'),
   );
   $export['faqs'] = $view;
 
@@ -493,13 +345,6 @@ function napo_contact_views_default_views() {
     'faq' => 'faq',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: OIRA (field_oira) */
-  $handler->display->display_options['filters']['field_oira_value']['id'] = 'field_oira_value';
-  $handler->display->display_options['filters']['field_oira_value']['table'] = 'field_data_field_oira';
-  $handler->display->display_options['filters']['field_oira_value']['field'] = 'field_oira_value';
-  $handler->display->display_options['filters']['field_oira_value']['value'] = array(
-    1 => '1',
-  );
   $handler->display->display_options['path'] = 'admin/structure/oira-faqs';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Reorder OiRA FAQs';
@@ -575,13 +420,6 @@ function napo_contact_views_default_views() {
     'faq' => 'faq',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: OIRA (field_oira) */
-  $handler->display->display_options['filters']['field_oira_value']['id'] = 'field_oira_value';
-  $handler->display->display_options['filters']['field_oira_value']['table'] = 'field_data_field_oira';
-  $handler->display->display_options['filters']['field_oira_value']['field'] = 'field_oira_value';
-  $handler->display->display_options['filters']['field_oira_value']['value'] = array(
-    1 => '1',
-  );
   $translatables['faqs_oira'] = array(
     t('Master'),
     t('OIRA FAQs'),
