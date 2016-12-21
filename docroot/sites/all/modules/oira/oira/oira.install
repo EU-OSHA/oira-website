@@ -53,3 +53,10 @@ function oira_update_7004() {
 function oira_update_7005() {
   module_enable(array('oira_private_image'));
 }
+
+/**
+ * Configuration - Site information: Set Default 404 (not found) page
+ */
+function oira_update_7006() {
+  variable_set('site_404','page-not-found');
+}
