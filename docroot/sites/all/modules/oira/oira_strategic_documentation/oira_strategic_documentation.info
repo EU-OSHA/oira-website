@@ -47,7 +47,6 @@ features[field_base][] = field_private_file
 features[field_base][] = field_private_image
 features[field_base][] = field_strategic_type
 features[field_instance][] = node-strategic_documentation-body
-features[field_instance][] = node-strategic_documentation-field_co_author
 features[field_instance][] = node-strategic_documentation-field_country
 features[field_instance][] = node-strategic_documentation-field_language
 features[field_instance][] = node-strategic_documentation-field_link

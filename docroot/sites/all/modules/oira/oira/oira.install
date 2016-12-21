@@ -48,15 +48,15 @@ function oira_update_7004() {
 }
 
 /**
- * Enable new module - Private image.
+ * Configuration - Site information: Set Default 404 (not found) page
  */
 function oira_update_7005() {
-  module_enable(array('oira_private_image'));
+  variable_set('site_404','page-not-found');
 }
 
 /**
- * Configuration - Site information: Set Default 404 (not found) page
+ * Enable new module - Private image.
  */
 function oira_update_7006() {
-  variable_set('site_404','page-not-found');
+  module_enable(array('oira_private_image'));
 }
