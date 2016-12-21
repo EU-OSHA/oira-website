@@ -8666,11 +8666,11 @@ a.more-link:before {
   font-weight: bold !important;
   font-size: 1.1em !important;
 }
-.logged-in.page-contact-us button.form-submit {
+.logged-in.page-contact-us .panels-flexible-row-new-1 button.form-submit {
   position: inherit !important;
   margin-bottom: 15px !important;
 }
-.logged-in.page-contact-us button.form-submit:before {
+.logged-in.page-contact-us .panels-flexible-row-new-1 button.form-submit:before {
   content: "> ";
 }
 .page-oira-faqs #block-system-main {
