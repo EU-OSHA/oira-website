@@ -1136,7 +1136,7 @@ function oira_partner_default_panels_mini() {
     $display->content['new-be7ed5b0-3946-49ea-91d7-c95d78f1018c'] = $pane;
     $display->panels['contact'][0] = 'new-be7ed5b0-3946-49ea-91d7-c95d78f1018c';
     $pane = new stdClass();
-    $pane->pid = 'new-376ee057-6f14-4def-9bd3-8ae8f1aaa92c';
+    $pane->pid = 'new-80ae4b8d-c845-4d97-b9c3-b5a558264878';
     $pane->panel = 'image';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_logo';
@@ -1144,13 +1144,13 @@ function oira_partner_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'image',
+      'formatter' => 'oira_partner',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
         'field_formatter_class' => '',
-        'image_style' => 'large',
+        'image_style' => '',
         'image_link' => '',
       ),
       'context' => 'requiredcontext_entity:node_1',
@@ -1166,9 +1166,9 @@ function oira_partner_default_panels_mini() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '376ee057-6f14-4def-9bd3-8ae8f1aaa92c';
-    $display->content['new-376ee057-6f14-4def-9bd3-8ae8f1aaa92c'] = $pane;
-    $display->panels['image'][0] = 'new-376ee057-6f14-4def-9bd3-8ae8f1aaa92c';
+    $pane->uuid = '80ae4b8d-c845-4d97-b9c3-b5a558264878';
+    $display->content['new-80ae4b8d-c845-4d97-b9c3-b5a558264878'] = $pane;
+    $display->panels['image'][0] = 'new-80ae4b8d-c845-4d97-b9c3-b5a558264878';
     $pane = new stdClass();
     $pane->pid = 'new-626e9816-cb3a-41cb-a36d-01d9067ec143';
     $pane->panel = 'social';
