@@ -15,9 +15,21 @@ function oira_menu() {
     'access arguments' => array('administer site configuration'),
     'type' => MENU_NORMAL_ITEM,
   );
+  $items['page-not-found'] = array(
+    'title' => 'Page not found',
+    'page callback' => 'oira_page_not_found',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
   return $items;
 }
 
+function oira_page_not_found() {
+  drupal_set_title(t('Page not found'));
+  $html = '<p>' . t('Sorry, we can\'t find what you are looking for.') . '</p>';
+  $html .= '<p>' . t('You could use the search above, instead or go back to !home.', array('!home' => l(t('Home'), ''))) . '</p>';
+  return $html;
+}
 /**
  * Implements hook_theme().
  */
