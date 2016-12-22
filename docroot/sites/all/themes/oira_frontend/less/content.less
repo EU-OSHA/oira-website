@@ -4116,7 +4116,7 @@ div[id ^= "mini-panel-partner_in_"], {
     		}
 			.introduction-image{
 				img{
-					max-width: 50%;
+					max-width: 40%;
 				}
 			}
 			.introduction-title{
@@ -4146,18 +4146,34 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 	label{
 		color: @color-text-purple-darker;
+		display: block;
 	}
 	input, textarea, select, .form-control{
 		border: none;
 		border-radius: 0px;
 	}
-	select{
+	select, .chosen-container-single{
 		background: url("../images/icons/down-arrow-inputs.png") no-repeat right #fff;
 	    appearance:none;
-	    margin-right: 50px !important;
+	    padding-right: 50px !important;
 	    -moz-appearance:none; /* Firefox */
 	    -webkit-appearance:none; /* Safari and Chrome */
 	    background-position-x: right;
+	    margin-right: 0px;
+	}
+	.chosen-container-single{
+		width: auto !important;
+		.chosen-single{
+			box-shadow: none;
+			background: white;
+			border: none;
+			b{
+				display: none;
+			}
+		}
+	}
+	.radio label, .checkbox label{
+		padding-left: 0px;
 	}
 	button{
 		border: none;
@@ -4206,8 +4222,8 @@ div[id ^= "mini-panel-partner_in_"], {
 			}
 		}
 	}
-	//fecha
-	#edit-field-publication-date{
+	//dates & revised date
+	#edit-field-publication-date, #edit-field-revised-date{
 		.date-combo{
 			border: none;
 			background-color: inherit;
@@ -4227,10 +4243,82 @@ div[id ^= "mini-panel-partner_in_"], {
 		}
 	}
 
+	//upload documents
+	#edit-field-resource-fc{
+		.panel{
+			border: none;
+			border-radius: 0px;
+
+			.panel-heading{
+				background-color: @color-primary-dark;
+				border-bottom: none;
+				border-top-right-radius: 0px;
+    			border-top-left-radius: 0px;
+    			.fieldset-legend{
+    				font-family: "Oswald";
+    				font-size: 1.4em;
+    				color: white;
+    				border-bottom: 2px solid white;
+    				padding-bottom: 10px;
+    			}
+			}
+			.panel-body{
+				background-color: @color-primary-dark;
+				padding-top: 0px;
+				select, .chosen-container-single{
+					background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #fff;
+				    appearance:none;
+				    padding-right: 50px !important;
+				    -moz-appearance:none; /* Firefox */
+				    -webkit-appearance:none; /* Safari and Chrome */
+				    background-position-x: right;
+				    margin-right: 0px;
+				}
+				label{
+					color: white;
+					margin-top: 5px;
+				}
+				#edit-field-resource-fc-und-0-field-language{
+					width: 40%;
+				}
+				.form-managed-file{
+					.form-submit{
+						background-color: @color-see-more;
+						color: white;
+					}
+					.input-group-btn{
+						vertical-align: bottom;
+					}
+				}
+				.help-block{
+					color: white;
+				}
+				.file-upload-js-error{
+					color: rgba(255,255,255, 0.7);
+				}
+				.file{
+					a{
+						color: white;
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	
+
+	//selects with other widths
+	#edit_field_co_author_und_chosen,
+	#edit_field_sector_und_chosen{
+		min-width: 300px;
+	}
+
 	//buttons
-	button#edit-save-preview{
+	button#edit-save-preview, button#edit-submit{
 		background-color: @color-see-more;
 		margin-top: 40px;
+		min-width: 200px;
 		&:before{
 			content: "> ";
 		}
@@ -4242,6 +4330,98 @@ div[id ^= "mini-panel-partner_in_"], {
 	    margin-top: 50px;
 	    background-color: @color-primary-dark;
 	    font-size: @font-size1-4;
+	}
+
+}
+
+//add promotional materials
+.page-node-add-promotional-material{
+	.form-item-field-publication-date-und-0-value-hour,
+	.form-item-field-publication-date-und-0-value-minute{
+		display: none;
+	}
+	.date-no-float{
+		width: 100%;
+	}
+	.group-center{
+		clear: both;
+	}
+	#edit-field-promotional-material-type{
+		clear: both;
+	}
+	#edit-field-oira{
+		margin-top: 10px;
+	}
+}
+
+
+//list
+.page-node-my-content{
+	input, textarea, select, .form-control{
+		border: none;
+		border-radius: 0px;
+	}
+	button#edit-submit-partner-content{
+		background-color: @color-see-more;
+		min-width: 100%;
+		font-weight: bold;
+		&:before{
+			content: "> ";
+		}
+	}
+	.view-filters{
+		background-color: @color-primary-dark;
+		padding-bottom: 20px;
+		padding-top: 20px;
+		margin-bottom: 10px;
+		form{
+			color: white;
+			select, .chosen-container-single{
+				background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #fff;
+			    appearance:none;
+			    padding-right: 50px !important;
+			    -moz-appearance:none; /* Firefox */
+			    -webkit-appearance:none; /* Safari and Chrome */
+			    background-position-x: right;
+			    margin-right: 0px;
+			}
+			#edit-type-wrapper{
+				width: 50%;
+			}
+			#edit-status-wrapper{
+				width: 25%;
+			}
+			.views-submit-button{
+				width: 25%;
+			}
+		}
+	}
+	.view-id-partner_content{
+		background-color: @color-primary;
+		padding-top: 25px;
+		margin-top: 25px;
+		table{
+			max-width: 1170px;
+			margin: 0 auto;
+			tr{
+				
+				th{
+					border-bottom: none;
+					background-color: @color-primary-dark;
+					color: white;
+				}
+			}
+			tr:not(:last-child){
+				td{
+					border-bottom: 2px solid #d2c7da;
+				}
+			}
+		}
+	}
+	.pager{
+		background-color: white;
+		margin-top: 10px;
+    	padding-top: 15px;
 	}
 }
 
