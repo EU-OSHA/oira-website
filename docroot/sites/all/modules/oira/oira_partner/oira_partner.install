@@ -35,3 +35,10 @@ function oira_partner_update_7004() {
 function oira_partner_update_7005() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert: NOW-277, updates for countries
+ */
+function oira_partner_update_7006() {
+  features_revert_module('oira_partner');
+}
