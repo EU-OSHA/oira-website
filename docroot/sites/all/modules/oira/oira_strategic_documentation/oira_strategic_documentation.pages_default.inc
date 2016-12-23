@@ -285,7 +285,8 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 'main-row',
+          0 => 1,
+          1 => 'main-row',
         ),
         'parent' => 'canvas',
       ),
@@ -308,6 +309,25 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'class' => 'container',
         'hide_empty' => 0,
       ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -315,6 +335,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
       'default' => NULL,
       'center' => NULL,
       'introduction' => NULL,
+      'menu' => NULL,
     ),
   );
   $display->cache = array();
@@ -345,6 +366,29 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->uuid = '19fec5ae-2e6b-480c-94de-1b0277c14342';
     $display->content['new-19fec5ae-2e6b-480c-94de-1b0277c14342'] = $pane;
     $display->panels['center'][0] = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $pane = new stdClass();
+    $pane->pid = 'new-6c764aa6-6711-4125-8fdf-288ff5bd1de5';
+    $pane->panel = 'menu';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '6c764aa6-6711-4125-8fdf-288ff5bd1de5';
+    $display->content['new-6c764aa6-6711-4125-8fdf-288ff5bd1de5'] = $pane;
+    $display->panels['menu'][0] = 'new-6c764aa6-6711-4125-8fdf-288ff5bd1de5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -422,7 +466,8 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 'main-row',
+          0 => 1,
+          1 => 'main-row',
         ),
         'parent' => 'canvas',
       ),
@@ -445,6 +490,25 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'class' => 'container',
         'hide_empty' => 0,
       ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -452,6 +516,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
       'default' => NULL,
       'center' => NULL,
       'introduction' => NULL,
+      'menu' => NULL,
     ),
   );
   $display->cache = array();
@@ -482,6 +547,29 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->uuid = '8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
     $display->content['new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed'] = $pane;
     $display->panels['center'][0] = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+    $pane = new stdClass();
+    $pane->pid = 'new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
+    $pane->panel = 'menu';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
+    $display->content['new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045'] = $pane;
+    $display->panels['menu'][0] = 'new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
