@@ -102,8 +102,9 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 'main-row',
-          1 => 1,
+          0 => 2,
+          1 => 'main-row',
+          2 => 1,
         ),
         'parent' => 'canvas',
       ),
@@ -145,6 +146,25 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'class' => 'container',
         'hide_empty' => 0,
       ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -152,6 +172,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
       'default' => NULL,
       'center' => NULL,
       'content' => NULL,
+      'menu' => NULL,
     ),
   );
   $display->cache = array();
@@ -208,6 +229,29 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->uuid = '92abd91d-caa7-4ad7-ae17-6e40e054227b';
     $display->content['new-92abd91d-caa7-4ad7-ae17-6e40e054227b'] = $pane;
     $display->panels['content'][0] = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
+    $pane = new stdClass();
+    $pane->pid = 'new-496ad47d-e7fa-488b-845e-6e4342c50a99';
+    $pane->panel = 'menu';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '496ad47d-e7fa-488b-845e-6e4342c50a99';
+    $display->content['new-496ad47d-e7fa-488b-845e-6e4342c50a99'] = $pane;
+    $display->panels['menu'][0] = 'new-496ad47d-e7fa-488b-845e-6e4342c50a99';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
