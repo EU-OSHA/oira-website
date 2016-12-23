@@ -4201,7 +4201,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		}
 	}
 	//imagen
-	#edit-field-image{
+	#edit-field-image, #edit-field-private-image{
 		.image-widget-data{
 			display: block;
 			float: none;
@@ -4209,6 +4209,20 @@ div[id ^= "mini-panel-partner_in_"], {
 			.form-file{
 				width: 40%;
 				display: inline-block;
+			}
+			input[type="file"] {
+			    -webkit-appearance: none;
+			    -moz-appearance: none;
+			    appearance: none;
+			    &:before{
+			    	content: "Select file";
+				    background-color: @color-see-more;
+				    color: white;
+				    padding: 3px 43px;
+				    position: absolute;
+				    height: 25px;
+				    cursor: pointer;
+				}
 			}
 			button{
 				padding: 7px 15px;
@@ -4284,6 +4298,20 @@ div[id ^= "mini-panel-partner_in_"], {
 					width: 40%;
 				}
 				.form-managed-file{
+					input[type="file"] {
+					    -webkit-appearance: none;
+					    -moz-appearance: none;
+					    appearance: none;
+					    &:before{
+					    	content: "Select file";
+						    background-color: @color-see-more;
+						    color: white;
+						    padding: 3px 43px;
+						    position: absolute;
+						    height: 25px;
+						    cursor: pointer;
+						}
+					}
 					.form-submit{
 						background-color: @color-see-more;
 						color: white;
@@ -4356,6 +4384,63 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 }
 
+//update profile
+.partner-edit-form{
+	h2{
+		color: @color-text-purple-darker;
+		font-family: "Oswald";
+		padding-top: 15px;
+		padding-bottom: 20px;
+    	font-size: 2em;
+	}
+	.group-footer{
+		border-bottom: 2px solid @color-primary-dark;
+	}
+	input, .chosen-container-single{
+		background: inherit;
+		background-color: @color-primary !important;
+		border: 1px solid @color-primary-dark !important;
+		max-width: 100% !important;
+		width: 100% !important;
+		opacity: 1 !important;
+		a{
+			background: inherit !important; 
+		}
+	}
+	textarea{
+		background-color: white !important;
+	}
+	.field-multiple-drag{
+		display: none;
+	}
+	table.sticky-header{
+		display: none;
+	}
+	table#field-social-profile-values, 
+	table#field-collaborator-values{
+		.draggable{
+			background: inherit;
+			td{
+				padding: 0px;
+			}
+			.form-group{
+				margin-bottom: 5px;
+			}
+		}
+	}
+	table#field-collaborator-values{
+		.oira-logo-container{
+			width: 25%;
+			min-width: 200px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.field-name-field-collaborator-name{
+			width: 75%;
+			display: inline-block;
+		}
+	}
+}
 
 //list
 .page-node-my-content{
@@ -4424,6 +4509,71 @@ div[id ^= "mini-panel-partner_in_"], {
 		background-color: white;
 		margin-top: 10px;
     	padding-top: 15px;
+	}
+}
+
+//collaboration page
+.page-collaboration-area{
+	.page-promotional-materials-search{
+		.panel-page-introduction-text{
+			h2{
+				color: @color-text-purple-darker;
+				border-bottom: 2px solid @color-primary-dark;
+				padding-bottom: 15px;
+				margin-bottom: 25px;
+			}
+		}
+		.menu-name-menu-collaboration{
+			padding-bottom: 25px;
+			ul{
+				li{
+					display: inline-block;
+					width: 33%;
+					text-align: center;
+					.introduction-image{
+						a{
+							width: 150px;
+						    margin: 0 auto;
+						    height: 150px;
+						    margin-bottom: 10px;
+						    border-radius: 50%;
+						    display: block;
+						    img{
+						    	display: none;
+						    }
+						}
+					}
+					.introduction-title{
+						font-size: @font-size1-2;
+						color: @color-text-purple-darker;
+						font-style: italic;
+						max-width: 120px;
+						margin: 0 auto;
+					}
+				}
+				.menu-mlid-2796{
+					.introduction-image{
+						a{
+							background: url('../images/icons/collaboration-osha.png') @color-primary-dark no-repeat center !important;
+						}
+					}
+				}
+				.menu-mlid-2797{
+					.introduction-image{
+						a{
+							background: url('../images/icons/collaboration-partners.png') @color-primary-dark no-repeat center !important;
+						}
+					}
+				}
+				.menu-mlid-2798{
+					.introduction-image{
+						a{
+							background: url('../images/icons/collaboration-upload.png') @color-primary-dark no-repeat center !important;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

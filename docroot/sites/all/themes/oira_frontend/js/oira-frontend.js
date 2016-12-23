@@ -211,4 +211,6 @@ jQuery(document).ready(function () {
 	 });
 	*/
 
+	jQuery(".partner-edit-form input, .partner-edit-form textarea").attr("disabled","disabled").css("cursor", "default");
+
 });
