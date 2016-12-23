@@ -1416,6 +1416,25 @@ function oira_partner_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Partner profile - private zone',
+            'php' => '$is_partner = FALSE;
+
+if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
+	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
+}
+
+return $is_partner;',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -1506,11 +1525,11 @@ function oira_partner_default_page_manager_pages() {
       'feed_icons' => 0,
       'panel_args' => 0,
       'link_to_view' => 0,
-      'args' => '%2',
+      'args' => '%1',
       'url' => '',
       'display' => 'page',
       'context' => array(
-        0 => '',
+        0 => 'argument_entity_id:node_1.nid',
       ),
       'override_title' => 0,
       'override_title_text' => '',

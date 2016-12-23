@@ -41,9 +41,17 @@ function oira_partner_update_7005() {
   );
   module_enable($modules);
 }
+
 /**
  * Feature revert: Partner frontend edit form - readonly
  */
 function oira_partner_update_7006() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-237 My content updates
+ */
+function oira_partner_update_7007() {
   features_revert_module('oira_partner');
 }
