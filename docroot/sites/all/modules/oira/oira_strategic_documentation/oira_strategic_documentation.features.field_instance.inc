@@ -892,6 +892,7 @@ function oira_strategic_documentation_field_default_field_instances() {
   t('Body');
   t('Country');
   t('Disable notifications');
+  t('File');
   t('Image');
   t('Language');
   t('Link');

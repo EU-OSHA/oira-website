@@ -619,6 +619,15 @@ function oira_partner_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No results';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p class="text-muted text-center">No results</p>';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -652,19 +661,11 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['arguments']['access_id']['table'] = 'workbench_access';
   $handler->display->display_options['arguments']['access_id']['field'] = 'access_id';
   $handler->display->display_options['arguments']['access_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['access_id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['access_id']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['access_id']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['access_id']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['access_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['access_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['access_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['access_id']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Workbench Moderation: Current */
-  $handler->display->display_options['filters']['current']['id'] = 'current';
-  $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
-  $handler->display->display_options['filters']['current']['field'] = 'current';
-  $handler->display->display_options['filters']['current']['value'] = '1';
-  $handler->display->display_options['filters']['current']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -699,18 +700,17 @@ function oira_partner_views_default_views() {
     15 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '0';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
-  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
-  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
-  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Title (title_field) */
+  $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
+  $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
+  $handler->display->display_options['filters']['title_field_value']['group'] = 1;
+  $handler->display->display_options['filters']['title_field_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title_field_value']['expose']['operator_id'] = 'title_field_value_op';
+  $handler->display->display_options['filters']['title_field_value']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title_field_value']['expose']['operator'] = 'title_field_value_op';
+  $handler->display->display_options['filters']['title_field_value']['expose']['identifier'] = 'title_field_value';
+  $handler->display->display_options['filters']['title_field_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -727,6 +727,63 @@ function oira_partner_views_default_views() {
     13 => 0,
     15 => 0,
   );
+  /* Filter criterion: Workbench Moderation: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['group'] = 1;
+  $handler->display->display_options['filters']['state']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+  $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  $handler->display->display_options['filters']['state']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    14 => 0,
+    13 => 0,
+    15 => 0,
+  );
+  /* Filter criterion: Content: Publication date (field_publication_date) */
+  $handler->display->display_options['filters']['field_publication_date_value']['id'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['filters']['field_publication_date_value']['field'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_publication_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_publication_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_publication_date_value']['expose']['operator_id'] = 'field_publication_date_value_op';
+  $handler->display->display_options['filters']['field_publication_date_value']['expose']['label'] = 'Publication date';
+  $handler->display->display_options['filters']['field_publication_date_value']['expose']['operator'] = 'field_publication_date_value_op';
+  $handler->display->display_options['filters']['field_publication_date_value']['expose']['identifier'] = 'field_publication_date_value';
+  $handler->display->display_options['filters']['field_publication_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    14 => 0,
+    13 => 0,
+    15 => 0,
+  );
+  $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_publication_date_value']['year_range'] = '-10:+3';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -747,11 +804,14 @@ function oira_partner_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('No results'),
+    t('<p class="text-muted text-center">No results</p>'),
     t('Type'),
     t('Status'),
     t('Edit'),
     t('All'),
-    t('Published'),
+    t('Title'),
+    t('Publication date'),
     t('Page'),
   );
   $export['partner_content'] = $view;
