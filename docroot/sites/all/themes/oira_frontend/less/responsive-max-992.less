@@ -627,7 +627,8 @@ div[id ^= "mini-panel-partner_in_"]{
 **************************************************************************/
 .page-oira-tools,
 .page-promotional-resources-search,
-.page-search-site {
+.page-search-site,
+.page-collaboration-area {
 	.panels-flexible-row-new-1,
 	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
 	.oira-search-form-container {
@@ -1154,6 +1155,61 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	}
 }
 
+
+/*Private zone
+*****************************************************/
+
+.node-form{
+	#edit-field-image, 
+	#edit-field-private-image, 
+	#edit-field-private-file{
+		.image-widget-data,
+		.file-widget{
+			display: block;
+			float: none;
+			clear: both;
+			.form-file{
+				width: 60%;
+				display: inline-block;
+			}
+			input[type="file"] {
+			    -webkit-appearance: none;
+			    -moz-appearance: none;
+			    appearance: none;
+			    &:before{
+			    	content: "Select file";
+				    background-color: @color-see-more;
+				    color: white;
+				    padding: 3px 43px;
+				    position: absolute;
+				    height: 25px;
+				    cursor: pointer;
+				}
+			}
+			button{
+				padding: 7px 15px;
+				vertical-align: top;
+				border: none;
+				border-radius: 0px;
+				background-color: @color-primary-dark;
+				color: white;
+			}
+			textarea{
+				width: 40%;
+				height: 36px;
+			}
+		}
+	}
+}
+
+//add promotional materials
+.page-node-add-promotional-material{
+	.date-no-float{
+		max-width: 250px;
+	}
+}
+
+/*End private zone*/
 
 
 }
