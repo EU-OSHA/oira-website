@@ -12605,6 +12605,90 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   /*Private zone
 *****************************************************/
+  .menu-name-menu-private-zone {
+    background-color: #786586;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .menu-name-menu-private-zone ul.menu {
+    display: inherit;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 750px;
+    position: relative !important;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-list {
+    padding: 0px !important;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track li.active-trail {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li {
+    width: 150px !important;
+    height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 5px;
+    padding-top: 20px;
+    cursor: pointer;
+    display: table-cell;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li:hover img {
+    -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+    filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li:hover .introduction-title a {
+    color: #786586;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li .introduction-image img {
+    max-width: 40%;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li .introduction-title a {
+    color: white;
+    font-style: italic;
+    text-decoration: none;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li ul.submenu-items {
+    list-style: none;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-prev {
+    background: url("../images/icons/menu-arrow-left.png") #786586 center no-repeat;
+    height: 100%;
+    max-width: 35px;
+    overflow: hidden;
+    padding-left: 35px;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #786586;
+    outline: none;
+    z-index: 2;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-next {
+    background: url("../images/icons/menu-arrow-right.png") #786586 center no-repeat;
+    height: 100%;
+    max-width: 35px;
+    overflow: hidden;
+    padding-left: 35px;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #786586;
+    outline: none;
+    z-index: 2;
+  }
   .node-form #edit-field-image .image-widget-data,
   .node-form #edit-field-private-image .image-widget-data,
   .node-form #edit-field-private-file .image-widget-data,
@@ -14680,6 +14764,50 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   /*Private zone
 ************************/
+  .menu-name-menu-private-zone {
+    background-color: #786586;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .menu-name-menu-private-zone ul.menu {
+    display: inherit;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    position: initial !important;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track li.active-trail {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track > li {
+    width: 100px !important;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 5px;
+    padding-top: 5px;
+    cursor: pointer;
+    display: table-cell;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track .introduction-image img {
+    max-width: 40%;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track .introduction-title a {
+    color: white;
+    font-style: italic;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  .menu-name-menu-private-zone ul.menu .slick-track ul.submenu-items {
+    list-style: none;
+  }
   .node-form input,
   .node-form select,
   .node-form textarea,

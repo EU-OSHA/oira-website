@@ -213,4 +213,46 @@ jQuery(document).ready(function () {
 
 	jQuery(".partner-edit-form input, .partner-edit-form textarea").attr("disabled","disabled").css("cursor", "default");
 
+	// jQuery('.menu-name-menu-private-zone ul.menu').slick({
+	//   infinite: true,
+	//   slidesToShow: 4,
+	//   slidesToScroll: 1
+	// });
+
+
+	// function and variables, 'unslick' while window size reach maximum width (641px)
+    var maxWidth = 991,
+     maxWidth2= 991,
+      slickVar = {
+        lazyLoad: 'progressive',
+        dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        centerMode: true,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: maxWidth,
+            settings: 'unslick'
+          }
+        ]
+      },
+      runSlick = function() {
+        jQuery('.menu-name-menu-private-zone ul.menu').slick(slickVar);
+      };
+
+      // slick initialization while document ready
+      runSlick();
+
+      // listen to jQuery's window resize
+      jQuery(window).on('resize', function(){
+        var width = jQuery(window).width();
+        if(width < (maxWidth-16)) {
+          // reinit slick while window's width is less than maximum width (641px)
+          runSlick();
+        }
+      });
+
 });
