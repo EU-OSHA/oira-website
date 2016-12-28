@@ -781,3 +781,14 @@ function oira_frontend_filter_process_format($element) {
 function oira_frontend_menu_tree__menu_block__menu_private_zone($variables){
   return '<ul class="menu nav container">' . $variables['tree'] . '</ul>';
 }
+
+/**
+ * Preprocess variables for panels_pane.tpl.php
+ */
+function oira_frontend_preprocess_panels_pane(&$vars) {
+  if (isset($vars['pane'])) {
+    if ($vars['pane']->type == 'views' && $vars['pane']->subtype == 'partner_content') {
+      $vars['title_attributes_array']['class'][] = 'container';
+    }
+  }
+}
