@@ -11042,6 +11042,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-my-content .pane-partner-content .pane-content {
   background-color: #dfd8e4;
   padding-top: 25px;
+  padding-bottom: 25px;
   margin-top: 0px;
 }
 .page-node-my-content .pane-partner-content .pane-content .view-id-partner_content table {
@@ -11061,21 +11062,21 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-top: 10px;
   padding-top: 15px;
 }
-.page-collaboration-area .page-promotional-materials-search .panel-page-introduction-text h2 {
+.page-node-collaboration-area .page-promotional-materials-search .panel-page-introduction-text h2 {
   color: #786586;
   border-bottom: 2px solid #786586;
   padding-bottom: 15px;
   margin-bottom: 25px;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration {
   padding-bottom: 25px;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li {
   display: inline-block;
   width: 33%;
   text-align: center;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a {
   width: 150px;
   margin: 0 auto;
   height: 150px;
@@ -11083,23 +11084,23 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border-radius: 50%;
   display: block;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a img {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a img {
   display: none;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title {
   font-size: 1.2em;
   color: #786586;
   font-style: italic;
   max-width: 120px;
   margin: 0 auto;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul .menu-mlid-2796 .introduction-image a {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul .menu-mlid-2796 .introduction-image a {
   background: url('../images/icons/collaboration-osha.png') #786586 no-repeat center !important;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul .menu-mlid-2797 .introduction-image a {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul .menu-mlid-2797 .introduction-image a {
   background: url('../images/icons/collaboration-partners.png') #786586 no-repeat center !important;
 }
-.page-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul .menu-mlid-2798 .introduction-image a {
+.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul .menu-mlid-2798 .introduction-image a {
   background: url('../images/icons/collaboration-upload.png') #786586 no-repeat center !important;
 }
 .oira-search-form-container {
