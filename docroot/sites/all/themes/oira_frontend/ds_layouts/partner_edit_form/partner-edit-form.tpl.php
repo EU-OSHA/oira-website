@@ -56,7 +56,7 @@
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
 
-    <div class="ds-about-organization"><div class="col-sm-12"><h1><?php print t('About your organization')?></h1></div></div>
+    <div class="ds-about-organization"><div class="col-sm-12"><h2><?php print t('About your organization')?></h2></div></div>
 
     <<?php print $about_organization__top_wrapper; ?> class="group-header<?php print $about_organization__top_classes; ?>">
       <?php print $about_organization__top; ?>
@@ -74,7 +74,7 @@
       <?php print $about_organization__bottom; ?>
     </<?php print $about_organization__bottom_wrapper; ?>>
 
-    <div class="ds-general-contact-information"><div class="col-sm-12"><h1><?php print t('General contact information')?></h1></div></div>
+    <div class="ds-general-contact-information"><div class="col-sm-12"><h2><?php print t('General contact information')?></h2></div></div>
 
     <<?php print $general_contact_information__top_wrapper; ?> class="group-header<?php print $general_contact_information__top_classes; ?>">
       <?php print $general_contact_information__top; ?>
@@ -92,7 +92,7 @@
       <?php print $general_contact_information__bottom; ?>
     </<?php print $general_contact_information__bottom_wrapper; ?>>
 
-    <div class="ds-other-collaborators"><div class="col-sm-12"><h1><?php print t('Other collaborators')?></h1></div></div>
+    <div class="ds-other-collaborators"><div class="col-sm-12"><h2><?php print t('Other collaborators')?></h2></div></div>
 
     <<?php print $other_collaborators__top_wrapper; ?> class="group-header<?php print $other_collaborators__top_classes; ?>">
       <?php print $other_collaborators__top; ?>
