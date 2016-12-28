@@ -384,15 +384,6 @@ function oira_partner_node_presave($node) {
   }
 }
 
-/**
- * Implements hook_node_presave().
- */
-function oira_promotional_material_node_presave($node) {
-  if ($node->type == 'partner') {
-
-  }
-}
-
 function _oira_partner_compute_count_cid($node) {
   return 'oira_partner_count:' . $node->nid;
 }
@@ -451,4 +442,11 @@ function _oira_partner_get_by_country($tid, $type_tid = array()) {
     $partners = array_keys($result['node']);
   }
   return $partners;
+}
+
+function oira_frontend_panels_pane__views__partner_content_alter($content, $pane, $args, $contexts) {
+  //$vars['title_attributes_array']['class'][] = 'container';
+  echo '<pre>';
+  var_dump($content);
+  echo '</pre>';
 }
