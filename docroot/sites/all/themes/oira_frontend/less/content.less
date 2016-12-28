@@ -4515,9 +4515,8 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 	.view-filters{
 		background-color: @color-primary-dark;
-		padding-bottom: 20px;
-		padding-top: 20px;
 		margin-bottom: 10px;
+		padding: 15px;
 		form{
 			color: white;
 			select, .chosen-container-single{
@@ -4540,32 +4539,41 @@ div[id ^= "mini-panel-partner_in_"], {
 			}
 		}
 	}
-	.view-id-partner_content{
-		background-color: @color-primary;
-		padding-top: 25px;
-		margin-top: 25px;
-		table{
-			max-width: 1170px;
-			margin: 0 auto;
-			tr{
+	.pane-partner-content{
+		h2{
+			color: @color-text-purple-darker;
+		}
+		.pane-content{
+			background-color: @color-primary;
+			padding-top: 25px;
+			margin-top: 0px;
+			.view-id-partner_content{
 				
-				th{
-					border-bottom: none;
-					background-color: @color-primary-dark;
-					color: white;
+				
+				table{
+					max-width: 1170px;
+					margin: 0 auto;
+					tr{
+						
+						th{
+							border-bottom: none;
+							background-color: @color-primary-dark;
+							color: white;
+						}
+					}
+					tr:not(:last-child){
+						td{
+							border-bottom: 2px solid #d2c7da;
+						}
+					}
 				}
 			}
-			tr:not(:last-child){
-				td{
-					border-bottom: 2px solid #d2c7da;
-				}
+			.pager{
+				background-color: white;
+				margin-top: 10px;
+		    	padding-top: 15px;
 			}
 		}
-	}
-	.pager{
-		background-color: white;
-		margin-top: 10px;
-    	padding-top: 15px;
 	}
 }
 

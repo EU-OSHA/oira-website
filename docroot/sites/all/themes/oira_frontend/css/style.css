@@ -11009,9 +11009,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .page-node-my-content .view-filters {
   background-color: #786586;
-  padding-bottom: 20px;
-  padding-top: 20px;
   margin-bottom: 10px;
+  padding: 15px;
 }
 .page-node-my-content .view-filters form {
   color: white;
@@ -11037,24 +11036,27 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-my-content .view-filters form .views-submit-button {
   width: 25%;
 }
-.page-node-my-content .view-id-partner_content {
+.page-node-my-content .pane-partner-content h2 {
+  color: #786586;
+}
+.page-node-my-content .pane-partner-content .pane-content {
   background-color: #dfd8e4;
   padding-top: 25px;
-  margin-top: 25px;
+  margin-top: 0px;
 }
-.page-node-my-content .view-id-partner_content table {
+.page-node-my-content .pane-partner-content .pane-content .view-id-partner_content table {
   max-width: 1170px;
   margin: 0 auto;
 }
-.page-node-my-content .view-id-partner_content table tr th {
+.page-node-my-content .pane-partner-content .pane-content .view-id-partner_content table tr th {
   border-bottom: none;
   background-color: #786586;
   color: white;
 }
-.page-node-my-content .view-id-partner_content table tr:not(:last-child) td {
+.page-node-my-content .pane-partner-content .pane-content .view-id-partner_content table tr:not(:last-child) td {
   border-bottom: 2px solid #d2c7da;
 }
-.page-node-my-content .pager {
+.page-node-my-content .pane-partner-content .pane-content .pager {
   background-color: white;
   margin-top: 10px;
   padding-top: 15px;
