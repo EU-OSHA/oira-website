@@ -46,8 +46,8 @@ function oira_frontend_menu_link__menu_block($variables) {
   }
 
   return '<li' . drupal_attributes($element['#attributes']) . '>
-  <div class="introduction-image">' . $output_image . '</div>
-  <div class="introduction-title">' . $output_link . '</div>'.$sub_menu.
+  <div><div class="introduction-image">' . $output_image . '</div>
+  <div class="introduction-title">' . $output_link . '</div></div>'.$sub_menu.
   '</li>';
 }
 /**
