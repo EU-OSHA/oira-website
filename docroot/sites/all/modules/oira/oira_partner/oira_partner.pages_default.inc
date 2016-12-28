@@ -1472,7 +1472,7 @@ return $is_partner;',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'col-md-12',
+        'class' => '',
         'hide_empty' => 0,
       ),
       1 => array(
@@ -1539,7 +1539,10 @@ return $is_partner;',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
