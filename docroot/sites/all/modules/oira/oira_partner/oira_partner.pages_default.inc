@@ -1541,7 +1541,7 @@ return $is_partner;',
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'container',
+      'css_class' => '',
     );
     $pane->extras = array();
     $pane->position = 0;
