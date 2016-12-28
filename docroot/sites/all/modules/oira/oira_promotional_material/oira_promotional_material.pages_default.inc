@@ -11,6 +11,217 @@ function oira_promotional_material_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
+  $page->name = 'create_promotional_resource';
+  $page->task = 'page';
+  $page->admin_title = 'create promotional resource';
+  $page->admin_description = 'create promotional resources form';
+  $page->path = 'node/%node/create-promotional-resource';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
+  $page->menu = array();
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Content: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+      'keyword' => 'node',
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_create_promotional_resource__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'create_promotional_resource';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Create promotional resource form',
+        'keyword' => 'node_add',
+        'name' => 'node_add_form',
+        'type' => 'promotional_material',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'name' => 'panel',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Partner profile - private zone',
+            'php' => '$is_partner = FALSE;
+
+if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
+	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
+}
+
+return $is_partner;',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 1,
+          1 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Center',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'menu' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Private Zone';
+  $display->uuid = 'ef32d483-b1d6-4a4b-9cde-123d61d6f7df';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-17090856-ecc9-40a7-8f03-222c0535ee99';
+    $pane->panel = 'center';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'context_node_add_form_1',
+      'override_title' => 1,
+      'override_title_text' => 'Upload Promotional Resource',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '17090856-ecc9-40a7-8f03-222c0535ee99';
+    $display->content['new-17090856-ecc9-40a7-8f03-222c0535ee99'] = $pane;
+    $display->panels['center'][0] = 'new-17090856-ecc9-40a7-8f03-222c0535ee99';
+    $pane = new stdClass();
+    $pane->pid = 'new-dc40bb11-7c0a-4576-858d-e8d9f89a37d3';
+    $pane->panel = 'menu';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'dc40bb11-7c0a-4576-858d-e8d9f89a37d3';
+    $display->content['new-dc40bb11-7c0a-4576-858d-e8d9f89a37d3'] = $pane;
+    $display->panels['menu'][0] = 'new-dc40bb11-7c0a-4576-858d-e8d9f89a37d3';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['create_promotional_resource'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
   $page->name = 'promotional_materials';
   $page->task = 'page';
   $page->admin_title = 'Promotional materials';
