@@ -4099,9 +4099,15 @@ div[id ^= "mini-panel-partner_in_"], {
 	ul.menu{
 		display: table;
 		text-align: center;
+		> li.active-trail{
+			> div{
+				background-color: rgba(255, 255, 255, 0.3);
+			}
+		}
 		> li{
 			text-align: center;
     		display: table-cell;
+    		outline: none;
     		> div{
     			width: 140px;
 				height: 140px;
@@ -4114,10 +4120,12 @@ div[id ^= "mini-panel-partner_in_"], {
 	    			img{
 	    				-webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
 	    				filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+	    				outline: none;
 	    			}
 	    			.introduction-title{
 		    			a{
 		    				color: @color-primary-dark;
+		    				outline: none;
 		    			}
 	    			}
 	    		}
@@ -4125,6 +4133,8 @@ div[id ^= "mini-panel-partner_in_"], {
 					img{
 						max-width: 40%;
 						cursor: pointer;
+						outline: none;
+						outline: none;
 					}
 				}
 				.introduction-title{
@@ -4133,6 +4143,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						font-style: italic;
 						text-decoration: none;
 						cursor: pointer;
+						outline: none;
 					}
 				}
 			}

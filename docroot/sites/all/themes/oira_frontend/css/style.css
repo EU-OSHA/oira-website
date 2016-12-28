@@ -10597,9 +10597,13 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   display: table;
   text-align: center;
 }
+.menu-name-menu-private-zone ul.menu > li.active-trail > div {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 .menu-name-menu-private-zone ul.menu > li {
   text-align: center;
   display: table-cell;
+  outline: none;
 }
 .menu-name-menu-private-zone ul.menu > li > div {
   width: 140px;
@@ -10615,19 +10619,23 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .menu-name-menu-private-zone ul.menu > li > div:hover img {
   -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
   filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+  outline: none;
 }
 .menu-name-menu-private-zone ul.menu > li > div:hover .introduction-title a {
   color: #786586;
+  outline: none;
 }
 .menu-name-menu-private-zone ul.menu > li > div .introduction-image img {
   max-width: 40%;
   cursor: pointer;
+  outline: none;
 }
 .menu-name-menu-private-zone ul.menu > li > div .introduction-title a {
   color: white;
   font-style: italic;
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 }
 .menu-name-menu-private-zone ul.menu > li ul.submenu-items {
   list-style: none;
@@ -12641,9 +12649,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .menu-name-menu-private-zone ul.menu .slick-list {
     padding: 0px !important;
-  }
-  .menu-name-menu-private-zone ul.menu .slick-track li.active-trail {
-    background-color: rgba(255, 255, 255, 0.3);
   }
   .menu-name-menu-private-zone ul.menu .slick-track > li {
     text-align: center;
