@@ -21,32 +21,35 @@ class menu_token_entity_context implements menu_token_handler {
     $entity_type = $options['_type'];
     $entity_info = entity_get_info($entity_type);
 
-    $original_map = arg();
-    $parts = array_slice($original_map, 0, MENU_MAX_PARTS);
-    $ancestors = menu_get_ancestors($parts);
-    $router_item = db_query_range('SELECT * FROM {menu_router} WHERE path IN (:ancestors) ORDER BY fit DESC', 0, 1, array(':ancestors' => $ancestors))->fetchAssoc();
+    // As the $entity object is not available in $options, we can't use uri_callback method.
+    // Thus directly look for path in the entity info.
+    if (isset($entity_info['path'])) {
+      $path = $entity_info['path'];
+    }
+    // Or look for a default path.
+    elseif (isset($entity_info['default path'])) {
+      $path = $entity_info['default path'];
+    }
+    // No path available so far, so exit with NULL.
+    else {
+      return NULL;
+    }
 
-    // Check for views argument.
-    // Warning: only returns the first entity even if there are multiple arguments
-    // of the same entity type in the url. The module as is doesn't allow for
-    // argument selection.
-    if ($router_item['page_callback'] == 'views_page' && module_exists('views')) {
-      $view = views_get_page_view();
-      $entity_key = $entity_info['entity keys']['id'];
-      if (isset($view->argument) && array_key_exists($entity_key, $view->argument)) {
-        return entity_load_single($entity_type, $view->argument[$entity_key]->argument);
+    $path_components = explode('/', $path);
+    foreach ($path_components as $position => $component) {
+      // If this is a menu argument, then use the current position to find
+      // the entity id.
+      if (strpos($component, '%') === 0) {
+        break;
+      }
+
+      // If the current URL deviates from the expected path, assume the
+      // entity is not present.
+      if ($component !== arg($position)) {
+        return FALSE;
       }
     }
 
-    // Check for load function.
-    // Warning: only returns the first entity even if there are multiple load
-    // functions of the same type. The module as is doesn't allow for argument
-    // selection.
-    if (!empty($entity_info['load hook']) && !empty($router_item['load_functions'])) {
-      $load_functions = unserialize($router_item['load_functions']);
-      if ($key = array_search($entity_info['load hook'], $load_functions)) {
-        return entity_load_single($entity_type, $parts[$key]);
-      }
-    }
+    return entity_load_single($entity_type, arg($position));
   }
 }
