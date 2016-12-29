@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * oira_private_image.pages_default.inc
+ * osha_news.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function oira_private_image_default_page_manager_pages() {
+function osha_news_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'private_images';
+  $page->name = 'create_news';
   $page->task = 'page';
-  $page->admin_title = 'Private images';
-  $page->admin_description = '';
-  $page->path = 'node/%node/collaboration-area/private-images';
+  $page->admin_title = 'Create news';
+  $page->admin_description = 'Create news page contains: private zone menu and create news form';
+  $page->path = 'node/%node/create-news';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -24,8 +24,6 @@ function oira_private_image_default_page_manager_pages() {
           'rids' => array(
             0 => 3,
             1 => 11,
-            2 => 12,
-            3 => 14,
           ),
         ),
         'context' => 'logged-in-user',
@@ -41,6 +39,7 @@ function oira_private_image_default_page_manager_pages() {
       'identifier' => 'Content: ID',
       'name' => 'entity_id:node',
       'settings' => array(),
+      'keyword' => 'node',
     ),
   );
   $page->conf = array(
@@ -50,9 +49,9 @@ function oira_private_image_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_private_images__panel';
+  $handler->name = 'page_create_news__panel';
   $handler->task = 'page';
-  $handler->subtask = 'private_images';
+  $handler->subtask = 'create_news';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
@@ -63,9 +62,20 @@ function oira_private_image_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Create news form',
+        'keyword' => 'node_add',
+        'name' => 'node_add_form',
+        'type' => 'news',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'name' => 'panel',
+    'access' => array(
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -96,17 +106,13 @@ function oira_private_image_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       'center' => array(
         'type' => 'region',
-        'title' => 'Container',
+        'title' => 'Center',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'container',
-        'hide_empty' => 0,
       ),
       1 => array(
         'type' => 'row',
@@ -137,47 +143,39 @@ function oira_private_image_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
-  $display->uuid = 'e951151e-06c4-4692-80ac-906e2fca83b1';
+  $display->title = 'Private zone';
+  $display->uuid = 'dd7f8527-ac0f-4d26-8b90-8cc65b4cc2f3';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+    $pane->pid = 'new-362b9e46-c99a-401f-9260-da9f7acf420c';
     $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'private_images';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 1,
-      'nodes_per_page' => '10',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'default',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'context' => 'context_node_add_form_1',
+      'override_title' => 1,
+      'override_title_text' => 'Create News',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '664d4951-5dc5-4e60-a0c1-2778483e1958';
-    $display->content['new-664d4951-5dc5-4e60-a0c1-2778483e1958'] = $pane;
-    $display->panels['center'][0] = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+    $pane->uuid = '362b9e46-c99a-401f-9260-da9f7acf420c';
+    $display->content['new-362b9e46-c99a-401f-9260-da9f7acf420c'] = $pane;
+    $display->panels['center'][0] = 'new-362b9e46-c99a-401f-9260-da9f7acf420c';
     $pane = new stdClass();
-    $pane->pid = 'new-5eb671d8-3180-4634-a64b-58ae8bdab751';
+    $pane->pid = 'new-787da593-389a-43b5-9f1a-ca5e54e96515';
     $pane->panel = 'menu';
     $pane->type = 'block';
     $pane->subtype = 'menu_block-6';
@@ -196,14 +194,14 @@ function oira_private_image_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb671d8-3180-4634-a64b-58ae8bdab751';
-    $display->content['new-5eb671d8-3180-4634-a64b-58ae8bdab751'] = $pane;
-    $display->panels['menu'][0] = 'new-5eb671d8-3180-4634-a64b-58ae8bdab751';
+    $pane->uuid = '787da593-389a-43b5-9f1a-ca5e54e96515';
+    $display->content['new-787da593-389a-43b5-9f1a-ca5e54e96515'] = $pane;
+    $display->panels['menu'][0] = 'new-787da593-389a-43b5-9f1a-ca5e54e96515';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['private_images'] = $page;
+  $pages['create_news'] = $page;
 
   return $pages;
 

@@ -1391,6 +1391,7 @@ function oira_partner_default_page_manager_pages() {
       'identifier' => 'Content: ID',
       'name' => 'entity_id:node',
       'settings' => array(),
+      'keyword' => 'node',
     ),
   );
   $page->conf = array(
@@ -1435,6 +1436,8 @@ return $is_partner;',
       ),
       'logic' => 'and',
     ),
+    'panels_page_title_state' => 0,
+    'panels_page_title' => '',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -1504,7 +1507,7 @@ return $is_partner;',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Private Zone';
   $display->uuid = '2165b816-bccc-49f5-b5b2-5e59c166a771';
   $display->content = array();
   $display->panels = array();
@@ -1550,41 +1553,6 @@ return $is_partner;',
     $display->content['new-f0acfcd9-f7af-4f36-9e00-f9a1cf44204a'] = $pane;
     $display->panels['center'][0] = 'new-f0acfcd9-f7af-4f36-9e00-f9a1cf44204a';
     $pane = new stdClass();
-    $pane->pid = 'new-05d19aca-e3a5-437f-99b9-399ed19ebc0e';
-    $pane->panel = 'menu';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:title_field';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'title_linked',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'title_style' => 'h1',
-        'title_link' => 'content',
-        'title_class' => '',
-        'field_formatter_class' => '',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '05d19aca-e3a5-437f-99b9-399ed19ebc0e';
-    $display->content['new-05d19aca-e3a5-437f-99b9-399ed19ebc0e'] = $pane;
-    $display->panels['menu'][0] = 'new-05d19aca-e3a5-437f-99b9-399ed19ebc0e';
-    $pane = new stdClass();
     $pane->pid = 'new-2a375329-c546-42d5-a739-d5f238725ced';
     $pane->panel = 'menu';
     $pane->type = 'block';
@@ -1600,15 +1568,18 @@ return $is_partner;',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '2a375329-c546-42d5-a739-d5f238725ced';
     $display->content['new-2a375329-c546-42d5-a739-d5f238725ced'] = $pane;
-    $display->panels['menu'][1] = 'new-2a375329-c546-42d5-a739-d5f238725ced';
+    $display->panels['menu'][0] = 'new-2a375329-c546-42d5-a739-d5f238725ced';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-05d19aca-e3a5-437f-99b9-399ed19ebc0e';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['partner_news'] = $page;
