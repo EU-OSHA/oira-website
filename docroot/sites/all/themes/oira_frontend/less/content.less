@@ -4529,13 +4529,45 @@ div[id ^= "mini-panel-partner_in_"], {
 			    margin-right: 0px;
 			}
 			#edit-type-wrapper{
+				width: 25%;
+			}
+			#edit-title-field-value-wrapper{
 				width: 50%;
 			}
-			#edit-status-wrapper{
+			#edit-state-wrapper{
 				width: 25%;
+			}
+			#edit-field-publication-date-value-wrapper{
+				> label{
+					color: @color-primary;
+					margin-bottom: 0px;
+					margin-top: 15px;
+					&:after{
+						content: ":";
+					}
+				}
+				.views-widget{
+					#edit-field-publication-date-value-min-wrapper,
+					#edit-field-publication-date-value-max-wrapper{
+						display: inline-block;
+						.form-item-field-publication-date-value-min,
+						.form-item-field-publication-date-value-max{
+							>label{
+
+							}
+							> div{
+								float: inherit;
+							}
+						}
+					}
+					
+				}
 			}
 			.views-submit-button{
 				width: 25%;
+				button{
+					margin-top: 3.95em;
+				}
 			}
 		}
 	}
@@ -4640,6 +4672,15 @@ div[id ^= "mini-panel-partner_in_"], {
 				}
 			}
 		}
+	}
+}
+
+//calendar
+#ui-datepicker-div{
+	background-color: white;
+	border: 2px solid @color-primary-dark;
+	.ui-widget-header{
+		
 	}
 }
 
