@@ -25,5 +25,15 @@ function menu_token_settings_form() {
     '#default_value' => variable_get('menu_token_entities', array('node', 'user')),
   );
 
+  $form['#submit'][] = 'menu_token_settings_form_submit';
+
   return system_settings_form($form);
+}
+
+/**
+ * Form submission handler form menu_token_settings_form().
+ */
+function menu_token_settings_form_submit($form, &$form_state) {
+  // Clear plugin cache.
+  cache_clear_all('plugins:menu_token:plugins', 'cache');
 }
