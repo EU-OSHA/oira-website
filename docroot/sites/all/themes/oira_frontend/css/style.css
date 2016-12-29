@@ -11028,13 +11028,37 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-right: 0px;
 }
 .page-node-my-content .view-filters form #edit-type-wrapper {
+  width: 25%;
+}
+.page-node-my-content .view-filters form #edit-title-field-value-wrapper {
   width: 50%;
 }
-.page-node-my-content .view-filters form #edit-status-wrapper {
+.page-node-my-content .view-filters form #edit-state-wrapper {
   width: 25%;
+}
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label {
+  color: #dfd8e4;
+  margin-bottom: 0px;
+  margin-top: 15px;
+}
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label:after {
+  content: ":";
+}
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper,
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper {
+  display: inline-block;
+}
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-min > div,
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-min > div,
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-max > div,
+.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-max > div {
+  float: inherit;
 }
 .page-node-my-content .view-filters form .views-submit-button {
   width: 25%;
+}
+.page-node-my-content .view-filters form .views-submit-button button {
+  margin-top: 3.95em;
 }
 .page-node-my-content .pane-partner-content h2 {
   color: #786586;
@@ -11102,6 +11126,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul .menu-mlid-2798 .introduction-image a {
   background: url('../images/icons/collaboration-upload.png') #786586 no-repeat center !important;
+}
+#ui-datepicker-div {
+  background-color: white;
+  border: 2px solid #786586;
 }
 .oira-search-form-container {
   background: url('../images/background-two-colors.png') repeat-y 50%;
@@ -14971,6 +14999,43 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     font-size: 1em;
     color: white;
     font-style: italic;
+  }
+  .page-node-my-content .view-filters form #edit-type-wrapper {
+    width: 100%;
+  }
+  .page-node-my-content .view-filters form #edit-title-field-value-wrapper {
+    width: 100%;
+  }
+  .page-node-my-content .view-filters form #edit-state-wrapper {
+    width: 100%;
+  }
+  .page-node-my-content .view-filters form .views-exposed-widget {
+    padding: 0px;
+  }
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label {
+    color: #dfd8e4;
+    margin-bottom: 0px;
+    margin-top: 15px;
+  }
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label:after {
+    content: ":";
+  }
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper,
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-min > div,
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-min > div,
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-max > div,
+  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-max > div {
+    float: inherit;
+  }
+  .page-node-my-content .view-filters form .views-submit-button {
+    width: 100%;
+  }
+  .page-node-my-content .view-filters form .views-submit-button button {
+    margin-top: 0px;
   }
   /*End private zone*/
   /*general search styles
