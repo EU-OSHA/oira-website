@@ -13,3 +13,10 @@ function osha_news_update_7001() {
 function osha_news_update_7002() {
   features_revert_module('osha_news');
 }
+
+/**
+ * Feature revert: NOW-237
+ */
+function osha_news_update_7003() {
+  features_revert_module('osha_news');
+}

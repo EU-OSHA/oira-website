@@ -55,3 +55,10 @@ function oira_partner_update_7006() {
 function oira_partner_update_7007() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert: NOW-237
+ */
+function oira_partner_update_7008() {
+  features_revert_module('oira_partner');
+}

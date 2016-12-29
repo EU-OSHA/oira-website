@@ -62,6 +62,7 @@ features[menu_custom][] = menu-collaboration
 features[node][] = strategic_documentation
 features[page_manager_pages][] = collaboration_doc_search
 features[page_manager_pages][] = create_strategic_documentation
+features[page_manager_pages][] = edit_strategic_documentation
 features[page_manager_pages][] = eu_osha_documents
 features[page_manager_pages][] = strategic_documentation
 features[search_api_index][] = private_multilingual_node_index

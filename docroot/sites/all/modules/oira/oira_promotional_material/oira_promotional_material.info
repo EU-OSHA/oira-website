@@ -54,6 +54,7 @@ features[field_instance][] = taxonomy_term-promotional_material_type-field_image
 features[field_instance][] = taxonomy_term-promotional_material_type-name_field
 features[node][] = promotional_material
 features[page_manager_pages][] = create_promotional_resource
+features[page_manager_pages][] = edit_promotional_material
 features[page_manager_pages][] = promotional_materials
 features[page_manager_pages][] = promotional_materials_search
 features[taxonomy][] = promotional_material_type

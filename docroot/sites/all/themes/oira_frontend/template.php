@@ -637,11 +637,9 @@ function oira_frontend_form_element_label(&$variables) {
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
 }
 
-
 /**
  * Implements form_alter().
  */
-
 function oira_frontend_form_alter(&$form, &$form_state, $form_id){
   switch($form_id){
     case 'news_node_form':
