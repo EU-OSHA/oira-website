@@ -4176,10 +4176,34 @@ div[id ^= "mini-panel-partner_in_"], {
 }
 
 //forms
-.node-form{
+.partner-edit-form{
 	> div{
 		background-color: @color-primary;
-		padding-top: 0px;
+		padding-bottom: 25px;
+		margin-bottom: 20px;
+	}
+}
+.node-strategic_documentation-form{
+	> div{
+		background-color: @color-primary;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		margin-bottom: 20px;
+	}
+}
+.node-form{
+	.pane-custom{
+		h2{
+			color: @color-text-purple-darker;
+			margin-top: 45px;
+		}
+	}
+	.panels-flexible-row{
+		padding-bottom: 0px;
+	}
+	.panels-flexible-row-last{
+		background-color: @color-primary;
+		padding-top: 25px;
 		padding-bottom: 25px;
 		margin-bottom: 20px;
 	}
@@ -4243,11 +4267,11 @@ div[id ^= "mini-panel-partner_in_"], {
 		}
 	}
 	//imagen
-	#edit-field-image,
-	#edit-field-image--2,
-	#edit-field-private-image,
-	#edit-field-private-image--2,
+	#edit-field-image, 
+	#edit-field-private-image, 
 	#edit-field-private-file,
+	#edit-field-image--2, 
+	#edit-field-private-image--2, 
 	#edit-field-private-file--2{
 		.image-widget-data,
 		.file-widget{
@@ -4401,7 +4425,7 @@ div[id ^= "mini-panel-partner_in_"], {
 
 	//buttons
 	button#edit-save-preview--2,
-	button#edit-save-preview-,
+	button#edit-save-preview,
 	button#edit-submit,
 	button#edit-submit--2{
 		background-color: @color-see-more;
@@ -4671,6 +4695,13 @@ div[id ^= "mini-panel-partner_in_"], {
 				}
 			}
 		}
+	}
+}
+
+//private images
+.pane-private-images{
+	h2{
+		color: @color-text-purple-darker;
 	}
 }
 
