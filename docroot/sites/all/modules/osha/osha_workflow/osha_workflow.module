@@ -1012,3 +1012,14 @@ function osha_workflow_mail($key, &$message, $params) {
   $message['subject'] = token_replace($subject, $params);
   $message['body'][] = token_replace($body, $params);
 }
+
+/**
+ * Return Partners from section.
+ */
+function osha_workflow_section_get_partners($section) {
+  $query = db_query(
+    "SELECT {workbench_access_node}.nid FROM {workbench_access_node} JOIN {node} ON {node}.nid = {workbench_access_node}.nid AND {node}.type =:type
+     WHERE {workbench_access_node}.access_id = :section",
+    array(':section' => $section,':type'=>ROLE_OIRA_PARTNER));
+  return $query->fetchField(0);;
+}

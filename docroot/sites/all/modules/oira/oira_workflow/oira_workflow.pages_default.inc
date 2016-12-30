@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * oira_private_image.pages_default.inc
+ * oira_workflow.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function oira_private_image_default_page_manager_pages() {
+function oira_workflow_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'private_images';
+  $page->name = 'partner_update_profile';
   $page->task = 'page';
-  $page->admin_title = 'Private images';
-  $page->admin_description = '';
-  $page->path = 'node/%node/collaboration-area/private-images';
+  $page->admin_title = 'Partner update profile';
+  $page->admin_description = 'Partner update profile page form';
+  $page->path = 'node/%node/update-profile';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -24,8 +24,6 @@ function oira_private_image_default_page_manager_pages() {
           'rids' => array(
             0 => 3,
             1 => 11,
-            2 => 12,
-            3 => 14,
           ),
         ),
         'context' => 'logged-in-user',
@@ -50,9 +48,9 @@ function oira_private_image_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_private_images__panel';
+  $handler->name = 'page_partner_update_profile__panel';
   $handler->task = 'page';
-  $handler->subtask = 'private_images';
+  $handler->subtask = 'partner_update_profile';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
@@ -64,7 +62,15 @@ function oira_private_image_default_page_manager_pages() {
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Partner edit form',
+        'keyword' => 'node_form',
+        'name' => 'node_edit_form_from_node',
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
     'name' => 'panel',
     'access' => array(
       'plugins' => array(
@@ -105,6 +111,7 @@ return $is_partner;',
         'children' => array(
           0 => 1,
           1 => 'main-row',
+          2 => 2,
         ),
         'parent' => 'canvas',
       ),
@@ -115,16 +122,14 @@ return $is_partner;',
           0 => 'center',
         ),
         'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       'center' => array(
         'type' => 'region',
-        'title' => 'Container',
+        'title' => 'Form title',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'container',
+        'class' => '',
         'hide_empty' => 0,
       ),
       1 => array(
@@ -146,6 +151,25 @@ return $is_partner;',
         'class' => '',
         'hide_empty' => 0,
       ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'form',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'form' => array(
+        'type' => 'region',
+        'title' => 'Form',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -153,50 +177,72 @@ return $is_partner;',
       'default' => NULL,
       'center' => NULL,
       'menu' => NULL,
+      'form' => NULL,
     ),
   );
   $display->cache = array();
   $display->title = 'Private Zone';
-  $display->uuid = 'e951151e-06c4-4692-80ac-906e2fca83b1';
+  $display->uuid = '17dac0a9-5f40-457d-aa20-d541345bcb57';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+    $pane->pid = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
     $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'private_images';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 1,
-      'nodes_per_page' => '10',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'default',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'admin_title' => 'Partner update profile',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Update Your Profile</h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8c002d32-409a-44d0-8666-908dee7c61d6';
+    $display->content['new-8c002d32-409a-44d0-8666-908dee7c61d6'] = $pane;
+    $display->panels['center'][0] = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
+    $pane = new stdClass();
+    $pane->pid = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
+    $pane->panel = 'form';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'relationship_node_edit_form_from_node_1',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '664d4951-5dc5-4e60-a0c1-2778483e1958';
-    $display->content['new-664d4951-5dc5-4e60-a0c1-2778483e1958'] = $pane;
-    $display->panels['center'][0] = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+    $pane->uuid = '7e62e040-b155-4470-83b7-603512d6ffc8';
+    $display->content['new-7e62e040-b155-4470-83b7-603512d6ffc8'] = $pane;
+    $display->panels['form'][0] = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
     $pane = new stdClass();
-    $pane->pid = 'new-5eb671d8-3180-4634-a64b-58ae8bdab751';
+    $pane->pid = 'new-2677b52b-b403-4ea1-acfa-a1a1a69addc7';
     $pane->panel = 'menu';
     $pane->type = 'block';
     $pane->subtype = 'menu_block-6';
@@ -215,14 +261,14 @@ return $is_partner;',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '5eb671d8-3180-4634-a64b-58ae8bdab751';
-    $display->content['new-5eb671d8-3180-4634-a64b-58ae8bdab751'] = $pane;
-    $display->panels['menu'][0] = 'new-5eb671d8-3180-4634-a64b-58ae8bdab751';
+    $pane->uuid = '2677b52b-b403-4ea1-acfa-a1a1a69addc7';
+    $display->content['new-2677b52b-b403-4ea1-acfa-a1a1a69addc7'] = $pane;
+    $display->panels['menu'][0] = 'new-2677b52b-b403-4ea1-acfa-a1a1a69addc7';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['private_images'] = $page;
+  $pages['partner_update_profile'] = $page;
 
   return $pages;
 

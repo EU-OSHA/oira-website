@@ -62,6 +62,7 @@ features[image][] = scale_600x350__background__dfd8e4__align_to_left_
 features[image][] = scale_600x350__background__ffffff__align_to_left_
 features[node][] = news
 features[page_manager_pages][] = create_news
+features[page_manager_pages][] = edit_news
 features[path_breadcrumbs][] = news_details
 features[path_breadcrumbs][] = news_list
 features[variable][] = comment_anonymous_news

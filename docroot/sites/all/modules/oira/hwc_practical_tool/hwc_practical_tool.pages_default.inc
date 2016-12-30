@@ -822,6 +822,271 @@ OiRA Tools',
   $page->default_handlers[$handler->name] = $handler;
   $pages['oira_tools'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'partner_edit_practical_tool';
+  $page->task = 'page';
+  $page->admin_title = 'Partner edit practical tool';
+  $page->admin_description = 'Partner edit practical tool page form';
+  $page->path = 'node/%node/edit-practical_tool/%tool_id';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
+  $page->menu = array();
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Content: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+    'tool_id' => array(
+      'id' => 2,
+      'identifier' => 'Content: ID 2',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_partner_edit_practical_tool__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'partner_edit_practical_tool';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Tool edit form',
+        'keyword' => 'node_edit_form',
+        'name' => 'node_edit_form_from_node',
+        'context' => 'argument_entity_id:node_2',
+        'id' => 1,
+      ),
+    ),
+    'name' => 'panel',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Partner profile - private zone',
+            'php' => '$is_partner = FALSE;
+
+if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
+	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
+}
+
+return $is_partner;',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 1,
+          1 => 'main-row',
+          2 => 2,
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Form title',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'form_title',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'form_title' => array(
+        'type' => 'region',
+        'title' => 'Form',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'menu' => NULL,
+      'form_title' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Private Zone';
+  $display->uuid = 'a487d973-8f04-4fa8-bd61-0c56e2c01b82';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-67ce2d69-0887-4885-a0e7-b6d275ed9649';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner update tool',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Update Private Tool <em>%tool_id:title</em></h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '67ce2d69-0887-4885-a0e7-b6d275ed9649';
+    $display->content['new-67ce2d69-0887-4885-a0e7-b6d275ed9649'] = $pane;
+    $display->panels['center'][0] = 'new-67ce2d69-0887-4885-a0e7-b6d275ed9649';
+    $pane = new stdClass();
+    $pane->pid = 'new-d3682166-6681-43cc-8056-86dc1eea3522';
+    $pane->panel = 'form_title';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'relationship_node_edit_form_from_node_1',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd3682166-6681-43cc-8056-86dc1eea3522';
+    $display->content['new-d3682166-6681-43cc-8056-86dc1eea3522'] = $pane;
+    $display->panels['form_title'][0] = 'new-d3682166-6681-43cc-8056-86dc1eea3522';
+    $pane = new stdClass();
+    $pane->pid = 'new-cf7e87c3-b08f-491c-9df0-ac3c154f56a3';
+    $pane->panel = 'menu';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'cf7e87c3-b08f-491c-9df0-ac3c154f56a3';
+    $display->content['new-cf7e87c3-b08f-491c-9df0-ac3c154f56a3'] = $pane;
+    $display->panels['menu'][0] = 'new-cf7e87c3-b08f-491c-9df0-ac3c154f56a3';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['partner_edit_practical_tool'] = $page;
+
   return $pages;
 
 }

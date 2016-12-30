@@ -629,6 +629,21 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = '<p class="text-muted text-center">No results</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Oira partner: partner id */
+  $handler->display->display_options['fields']['partner_id']['id'] = 'partner_id';
+  $handler->display->display_options['fields']['partner_id']['table'] = 'oira_partner';
+  $handler->display->display_options['fields']['partner_id']['field'] = 'partner_id';
+  $handler->display->display_options['fields']['partner_id']['label'] = '';
+  $handler->display->display_options['fields']['partner_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['partner_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['partner_id']['type'] = 'ul';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -640,6 +655,14 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
   $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['fields']['type_1']['table'] = 'node';
+  $handler->display->display_options['fields']['type_1']['field'] = 'type';
+  $handler->display->display_options['fields']['type_1']['label'] = '';
+  $handler->display->display_options['fields']['type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type_1']['machine_name'] = TRUE;
   /* Field: Workbench Moderation: State */
   $handler->display->display_options['fields']['state']['id'] = 'state';
   $handler->display->display_options['fields']['state']['table'] = 'workbench_moderation_node_history';
@@ -651,6 +674,8 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>';
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
   /* Sort criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
@@ -810,6 +835,7 @@ function oira_partner_views_default_views() {
     t('Type'),
     t('Status'),
     t('Edit'),
+    t('<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>'),
     t('All'),
     t('Title'),
     t('Publication date'),

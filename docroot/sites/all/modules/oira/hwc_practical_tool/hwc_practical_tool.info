@@ -71,6 +71,7 @@ features[node][] = practical_tool
 features[page_manager_handlers][] = node_view__practical_tool_details
 features[page_manager_pages][] = create_practical_tool
 features[page_manager_pages][] = oira_tools
+features[page_manager_pages][] = partner_edit_practical_tool
 features[taxonomy][] = practical_tool_types
 features[variable][] = comment_anonymous_practical_tool
 features[variable][] = comment_default_mode_practical_tool
