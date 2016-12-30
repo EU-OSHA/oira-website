@@ -10666,12 +10666,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-bottom: 25px;
   margin-bottom: 20px;
 }
-.node-strategic_documentation-form > div {
-  background-color: #dfd8e4;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin-bottom: 20px;
-}
 .node-form .pane-custom h2 {
   color: #786586;
   margin-top: 45px;
@@ -11083,6 +11077,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .partner-edit-form table#field-collaborator-values .field-name-field-collaborator-name {
   width: 75%;
   display: inline-block;
+}
+.page-node-my-content .pane-custom h2 {
+  color: #786586;
+  margin-top: 45px;
 }
 .page-node-my-content input,
 .page-node-my-content textarea,
@@ -15003,6 +15001,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .node-form select,
   .node-form textarea,
   .node-form label,
+  .node-form #edit-field-website-und-0-url,
   .node-form #edit-field-website-und-0-url--2 {
     width: 100% !important;
     max-width: 100%;
@@ -15023,17 +15022,22 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .node-form .form-type-date-select .form-type-select[class*=hour] {
     margin-left: 0em;
   }
+  .node-form #edit_field_co_author_und_chosen,
+  .node-form #edit_field_sector_und_chosen,
   .node-form #edit_field_co_author_und__2_chosen,
   .node-form #edit_field_sector_und__2_chosen {
     width: 100% !important;
     min-width: 100px;
   }
+  .node-form button#edit-save-preview,
+  .node-form button#edit-submit,
   .node-form button#edit-save-preview--2,
   .node-form button#edit-submit--2 {
     margin-top: 15px;
     width: 100%;
     overflow: hidden;
   }
+  .node-form button#edit-send-for-approval,
   .node-form button#edit-send-for-approval--2 {
     font-size: 1em;
     margin-top: 15px;
@@ -15041,6 +15045,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     word-wrap: break-word;
     overflow: hidden;
   }
+  .node-form #edit-field-image .image-widget-data input[type="file"],
+  .node-form #edit-field-private-image .image-widget-data input[type="file"],
   .node-form #edit-field-image--2 .image-widget-data input[type="file"],
   .node-form #edit-field-private-image--2 .image-widget-data input[type="file"] {
     width: 67% !important;
