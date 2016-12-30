@@ -111,27 +111,9 @@ return $is_partner;',
         'width_type' => '%',
         'children' => array(
           0 => 1,
-          1 => 'main-row',
-          2 => 2,
+          1 => 2,
         ),
         'parent' => 'canvas',
-      ),
-      'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'center',
-        ),
-        'parent' => 'main',
-      ),
-      'center' => array(
-        'type' => 'region',
-        'title' => 'Form title',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       1 => array(
         'type' => 'row',
@@ -187,35 +169,6 @@ return $is_partner;',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner create promotional resource',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Upload Promotional Resource</h2>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb';
-    $display->content['new-1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb'] = $pane;
-    $display->panels['center'][0] = 'new-1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb';
-    $pane = new stdClass();
     $pane->pid = 'new-17090856-ecc9-40a7-8f03-222c0535ee99';
     $pane->panel = 'form';
     $pane->type = 'form';
@@ -265,6 +218,35 @@ return $is_partner;',
     $pane->uuid = 'dc40bb11-7c0a-4576-858d-e8d9f89a37d3';
     $display->content['new-dc40bb11-7c0a-4576-858d-e8d9f89a37d3'] = $pane;
     $display->panels['menu'][0] = 'new-dc40bb11-7c0a-4576-858d-e8d9f89a37d3';
+    $pane = new stdClass();
+    $pane->pid = 'new-1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner create promotional resource',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Upload Promotional Resource</h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb';
+    $display->content['new-1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb'] = $pane;
+    $display->panels['menu'][1] = 'new-1bd0ddf8-4cb1-48b1-9339-8c7ff0ccccfb';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -294,6 +276,8 @@ return $is_partner;',
         'not' => FALSE,
       ),
     ),
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(

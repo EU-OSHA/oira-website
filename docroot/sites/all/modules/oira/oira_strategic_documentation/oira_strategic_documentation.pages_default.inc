@@ -315,6 +315,7 @@ return $is_partner;',
       'identifier' => 'Content: ID',
       'name' => 'entity_id:node',
       'settings' => array(),
+      'keyword' => 'node',
     ),
   );
   $page->conf = array(
@@ -386,27 +387,9 @@ return $is_partner;',
         'width_type' => '%',
         'children' => array(
           0 => 1,
-          1 => 'main-row',
-          2 => 2,
+          1 => 2,
         ),
         'parent' => 'canvas',
-      ),
-      'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'center',
-        ),
-        'parent' => 'main',
-      ),
-      'center' => array(
-        'type' => 'region',
-        'title' => 'Form title',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       1 => array(
         'type' => 'row',
@@ -462,35 +445,6 @@ return $is_partner;',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner create strategic documentation',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Upload Stategic Documentation</h2>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
-    $display->content['new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f'] = $pane;
-    $display->panels['center'][0] = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
-    $pane = new stdClass();
     $pane->pid = 'new-563efce8-b3ba-4524-a6ef-712080376518';
     $pane->panel = 'form';
     $pane->type = 'form';
@@ -540,6 +494,35 @@ return $is_partner;',
     $pane->uuid = '4e4a956b-eb9a-4b6f-822a-edb05573466a';
     $display->content['new-4e4a956b-eb9a-4b6f-822a-edb05573466a'] = $pane;
     $display->panels['menu'][0] = 'new-4e4a956b-eb9a-4b6f-822a-edb05573466a';
+    $pane = new stdClass();
+    $pane->pid = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner create strategic documentation',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Upload Stategic Documentation</h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+    $display->content['new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f'] = $pane;
+    $display->panels['menu'][1] = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-563efce8-b3ba-4524-a6ef-712080376518';
   $handler->conf['display'] = $display;
@@ -569,6 +552,8 @@ return $is_partner;',
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
