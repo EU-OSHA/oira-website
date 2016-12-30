@@ -95,27 +95,9 @@ function osha_news_default_page_manager_pages() {
         'width_type' => '%',
         'children' => array(
           0 => 1,
-          1 => 'main-row',
-          2 => 2,
+          1 => 2,
         ),
         'parent' => 'canvas',
-      ),
-      'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'center',
-        ),
-        'parent' => 'main',
-      ),
-      'center' => array(
-        'type' => 'region',
-        'title' => 'Form title',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       1 => array(
         'type' => 'row',
@@ -171,35 +153,6 @@ function osha_news_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-68bd954f-871b-4240-b069-177d18ab84fa';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner update news',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Create news</h2>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '68bd954f-871b-4240-b069-177d18ab84fa';
-    $display->content['new-68bd954f-871b-4240-b069-177d18ab84fa'] = $pane;
-    $display->panels['center'][0] = 'new-68bd954f-871b-4240-b069-177d18ab84fa';
-    $pane = new stdClass();
     $pane->pid = 'new-362b9e46-c99a-401f-9260-da9f7acf420c';
     $pane->panel = 'form';
     $pane->type = 'form';
@@ -249,6 +202,35 @@ function osha_news_default_page_manager_pages() {
     $pane->uuid = '787da593-389a-43b5-9f1a-ca5e54e96515';
     $display->content['new-787da593-389a-43b5-9f1a-ca5e54e96515'] = $pane;
     $display->panels['menu'][0] = 'new-787da593-389a-43b5-9f1a-ca5e54e96515';
+    $pane = new stdClass();
+    $pane->pid = 'new-68bd954f-871b-4240-b069-177d18ab84fa';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner update news',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Create news</h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '68bd954f-871b-4240-b069-177d18ab84fa';
+    $display->content['new-68bd954f-871b-4240-b069-177d18ab84fa'] = $pane;
+    $display->panels['menu'][1] = 'new-68bd954f-871b-4240-b069-177d18ab84fa';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -278,6 +260,8 @@ function osha_news_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
