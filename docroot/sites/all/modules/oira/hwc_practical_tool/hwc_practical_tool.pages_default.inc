@@ -581,7 +581,7 @@ return $is_partner;',
     $pane->configuration = array(
       'context' => 'context_node_add_form_1',
       'override_title' => 1,
-      'override_title_text' => 'Create Tool',
+      'override_title_text' => '<none>',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -621,6 +621,35 @@ return $is_partner;',
     $pane->uuid = '1707f252-9055-4661-a291-20cf9e2df968';
     $display->content['new-1707f252-9055-4661-a291-20cf9e2df968'] = $pane;
     $display->panels['menu'][0] = 'new-1707f252-9055-4661-a291-20cf9e2df968';
+    $pane = new stdClass();
+    $pane->pid = 'new-cd35cf37-ed6b-48fe-b245-7c9e88b7d246';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner create tool',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Create Tool</h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'cd35cf37-ed6b-48fe-b245-7c9e88b7d246';
+    $display->content['new-cd35cf37-ed6b-48fe-b245-7c9e88b7d246'] = $pane;
+    $display->panels['menu'][1] = 'new-cd35cf37-ed6b-48fe-b245-7c9e88b7d246';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -845,6 +874,8 @@ OiRA Tools',
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
