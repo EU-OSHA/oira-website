@@ -213,7 +213,7 @@ function osha_news_default_page_manager_pages() {
       'admin_title' => 'Partner update news',
       'title' => '<none>',
       'title_heading' => 'h2',
-      'body' => '<h2>Create news</h2>',
+      'body' => '<h2>Create news</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );

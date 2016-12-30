@@ -44,6 +44,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
       'identifier' => 'Content: ID',
       'name' => 'entity_id:node',
       'settings' => array(),
+      'keyword' => 'node',
     ),
   );
   $page->conf = array(
@@ -207,17 +208,17 @@ return $is_partner;',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
+    $pane->pid = 'new-5df60e2f-a9a4-498d-a120-9ce921da51f7';
     $pane->panel = 'center';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'Intro text',
-      'title' => 'Collaboration Area',
+      'admin_title' => 'Intro title',
+      'title' => '<none>',
       'title_heading' => 'h2',
-      'body' => '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>',
+      'body' => '<h2>Collaboration area</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -229,9 +230,35 @@ return $is_partner;',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
+    $pane->uuid = '5df60e2f-a9a4-498d-a120-9ce921da51f7';
+    $display->content['new-5df60e2f-a9a4-498d-a120-9ce921da51f7'] = $pane;
+    $display->panels['center'][0] = 'new-5df60e2f-a9a4-498d-a120-9ce921da51f7';
+    $pane = new stdClass();
+    $pane->pid = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Intro text',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $pane->uuid = '181b84c3-18bb-49a1-a34b-920b1ec77495';
     $display->content['new-181b84c3-18bb-49a1-a34b-920b1ec77495'] = $pane;
-    $display->panels['center'][0] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
+    $display->panels['center'][1] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane = new stdClass();
     $pane->pid = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
     $pane->panel = 'content';
@@ -505,7 +532,7 @@ return $is_partner;',
       'admin_title' => 'Partner create strategic documentation',
       'title' => '<none>',
       'title_heading' => 'h2',
-      'body' => '<h2>Upload Stategic Documentation</h2>',
+      'body' => '<h2>Upload Stategic Documentation</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -950,7 +977,7 @@ return $is_partner;',
     ),
   );
   $display->cache = array();
-  $display->title = 'EU OSHA documents';
+  $display->title = 'Private Zone';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->content = array();
   $display->panels = array();
@@ -1000,6 +1027,35 @@ return $is_partner;',
     $pane->uuid = '6c764aa6-6711-4125-8fdf-288ff5bd1de5';
     $display->content['new-6c764aa6-6711-4125-8fdf-288ff5bd1de5'] = $pane;
     $display->panels['menu'][0] = 'new-6c764aa6-6711-4125-8fdf-288ff5bd1de5';
+    $pane = new stdClass();
+    $pane->pid = 'new-4893f941-561e-4ebd-9d4e-e0b63e916d4e';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'EU OSHA Documents title',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>EU-OSHA documents</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '4893f941-561e-4ebd-9d4e-e0b63e916d4e';
+    $display->content['new-4893f941-561e-4ebd-9d4e-e0b63e916d4e'] = $pane;
+    $display->panels['menu'][1] = 'new-4893f941-561e-4ebd-9d4e-e0b63e916d4e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1157,7 +1213,7 @@ return $is_partner;',
     ),
   );
   $display->cache = array();
-  $display->title = 'Partners documents';
+  $display->title = 'Private Zone';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->content = array();
   $display->panels = array();
@@ -1207,6 +1263,35 @@ return $is_partner;',
     $pane->uuid = 'bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
     $display->content['new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045'] = $pane;
     $display->panels['menu'][0] = 'new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
+    $pane = new stdClass();
+    $pane->pid = 'new-38300244-2beb-4efe-8832-e8a064092810';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partners documents title',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Partners documents</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '38300244-2beb-4efe-8832-e8a064092810';
+    $display->content['new-38300244-2beb-4efe-8832-e8a064092810'] = $pane;
+    $display->panels['menu'][1] = 'new-38300244-2beb-4efe-8832-e8a064092810';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
