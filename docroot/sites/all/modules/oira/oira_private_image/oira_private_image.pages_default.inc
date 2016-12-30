@@ -180,8 +180,8 @@ return $is_partner;',
       'args' => '',
       'url' => '',
       'display' => 'default',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -218,6 +218,35 @@ return $is_partner;',
     $pane->uuid = '5eb671d8-3180-4634-a64b-58ae8bdab751';
     $display->content['new-5eb671d8-3180-4634-a64b-58ae8bdab751'] = $pane;
     $display->panels['menu'][0] = 'new-5eb671d8-3180-4634-a64b-58ae8bdab751';
+    $pane = new stdClass();
+    $pane->pid = 'new-33c005db-d620-4fd4-9448-06322998d8c0';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Image Gallery title - private zone',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Image Gallery</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '33c005db-d620-4fd4-9448-06322998d8c0';
+    $display->content['new-33c005db-d620-4fd4-9448-06322998d8c0'] = $pane;
+    $display->panels['menu'][1] = 'new-33c005db-d620-4fd4-9448-06322998d8c0';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
   $handler->conf['display'] = $display;

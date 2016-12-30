@@ -388,6 +388,32 @@ return $is_partner;',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-eff457bb-c27f-4f91-a149-f242e4a140b5';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Your profile title - private zone',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Your profile</h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'eff457bb-c27f-4f91-a149-f242e4a140b5';
+    $display->content['new-eff457bb-c27f-4f91-a149-f242e4a140b5'] = $pane;
+    $display->panels['center'][0] = 'new-eff457bb-c27f-4f91-a149-f242e4a140b5';
+    $pane = new stdClass();
     $pane->pid = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
     $pane->panel = 'center';
     $pane->type = 'panels_mini';
@@ -408,11 +434,11 @@ return $is_partner;',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '7735b0fb-198c-4f5c-9db1-8194e9479da6';
     $display->content['new-7735b0fb-198c-4f5c-9db1-8194e9479da6'] = $pane;
-    $display->panels['center'][0] = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
+    $display->panels['center'][1] = 'new-7735b0fb-198c-4f5c-9db1-8194e9479da6';
     $pane = new stdClass();
     $pane->pid = 'new-f15db290-2596-44ec-bf63-aa802cf31a4d';
     $pane->panel = 'content';
@@ -1534,8 +1560,8 @@ return $is_partner;',
       'context' => array(
         0 => 'argument_entity_id:node_1.nid',
       ),
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -1578,6 +1604,35 @@ return $is_partner;',
     $pane->uuid = '2a375329-c546-42d5-a739-d5f238725ced';
     $display->content['new-2a375329-c546-42d5-a739-d5f238725ced'] = $pane;
     $display->panels['menu'][0] = 'new-2a375329-c546-42d5-a739-d5f238725ced';
+    $pane = new stdClass();
+    $pane->pid = 'new-ac2379ec-a444-4392-815a-6eaa296982b8';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'My content title',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>My content</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'ac2379ec-a444-4392-815a-6eaa296982b8';
+    $display->content['new-ac2379ec-a444-4392-815a-6eaa296982b8'] = $pane;
+    $display->panels['menu'][1] = 'new-ac2379ec-a444-4392-815a-6eaa296982b8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
