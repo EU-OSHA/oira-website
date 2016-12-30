@@ -10714,55 +10714,83 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   height: 36px;
   font-weight: bold;
 }
+.node-form #edit-field-website-und-0-url,
 .node-form #edit-field-website-und-0-url--2 {
   max-width: 40%;
 }
+.node-form #edit_field_tags_und_chosen,
 .node-form #edit_field_tags_und__2_chosen {
   width: 100% !important;
 }
+.node-form #edit_field_tags_und_chosen .chosen-choices,
 .node-form #edit_field_tags_und__2_chosen .chosen-choices {
   background-image: inherit;
   border: none;
   box-shadow: none;
 }
+.node-form #edit_field_tags_und_chosen .chosen-drop,
 .node-form #edit_field_tags_und__2_chosen .chosen-drop {
   border: none;
   box-shadow: none;
 }
+.node-form #edit-field-image .image-widget-data,
 .node-form #edit-field-image--2 .image-widget-data,
+.node-form #edit-field-private-image .image-widget-data,
 .node-form #edit-field-private-image--2 .image-widget-data,
+.node-form #edit-field-private-file .image-widget-data,
 .node-form #edit-field-private-file--2 .image-widget-data,
+.node-form #edit-field-image .file-widget,
 .node-form #edit-field-image--2 .file-widget,
+.node-form #edit-field-private-image .file-widget,
 .node-form #edit-field-private-image--2 .file-widget,
+.node-form #edit-field-private-file .file-widget,
 .node-form #edit-field-private-file--2 .file-widget {
   display: block;
   float: none;
   clear: both;
 }
+.node-form #edit-field-image .image-widget-data .form-file,
 .node-form #edit-field-image--2 .image-widget-data .form-file,
+.node-form #edit-field-private-image .image-widget-data .form-file,
 .node-form #edit-field-private-image--2 .image-widget-data .form-file,
+.node-form #edit-field-private-file .image-widget-data .form-file,
 .node-form #edit-field-private-file--2 .image-widget-data .form-file,
+.node-form #edit-field-image .file-widget .form-file,
 .node-form #edit-field-image--2 .file-widget .form-file,
+.node-form #edit-field-private-image .file-widget .form-file,
 .node-form #edit-field-private-image--2 .file-widget .form-file,
+.node-form #edit-field-private-file .file-widget .form-file,
 .node-form #edit-field-private-file--2 .file-widget .form-file {
   width: 40%;
   display: inline-block;
 }
+.node-form #edit-field-image .image-widget-data input[type="file"],
 .node-form #edit-field-image--2 .image-widget-data input[type="file"],
+.node-form #edit-field-private-image .image-widget-data input[type="file"],
 .node-form #edit-field-private-image--2 .image-widget-data input[type="file"],
+.node-form #edit-field-private-file .image-widget-data input[type="file"],
 .node-form #edit-field-private-file--2 .image-widget-data input[type="file"],
+.node-form #edit-field-image .file-widget input[type="file"],
 .node-form #edit-field-image--2 .file-widget input[type="file"],
+.node-form #edit-field-private-image .file-widget input[type="file"],
 .node-form #edit-field-private-image--2 .file-widget input[type="file"],
+.node-form #edit-field-private-file .file-widget input[type="file"],
 .node-form #edit-field-private-file--2 .file-widget input[type="file"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+.node-form #edit-field-image .image-widget-data input[type="file"]:before,
 .node-form #edit-field-image--2 .image-widget-data input[type="file"]:before,
+.node-form #edit-field-private-image .image-widget-data input[type="file"]:before,
 .node-form #edit-field-private-image--2 .image-widget-data input[type="file"]:before,
+.node-form #edit-field-private-file .image-widget-data input[type="file"]:before,
 .node-form #edit-field-private-file--2 .image-widget-data input[type="file"]:before,
+.node-form #edit-field-image .file-widget input[type="file"]:before,
 .node-form #edit-field-image--2 .file-widget input[type="file"]:before,
+.node-form #edit-field-private-image .file-widget input[type="file"]:before,
 .node-form #edit-field-private-image--2 .file-widget input[type="file"]:before,
+.node-form #edit-field-private-file .file-widget input[type="file"]:before,
 .node-form #edit-field-private-file--2 .file-widget input[type="file"]:before {
   content: "Select file";
   background-color: #10b2e4;
@@ -10772,11 +10800,17 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   height: 25px;
   cursor: pointer;
 }
+.node-form #edit-field-image .image-widget-data button,
 .node-form #edit-field-image--2 .image-widget-data button,
+.node-form #edit-field-private-image .image-widget-data button,
 .node-form #edit-field-private-image--2 .image-widget-data button,
+.node-form #edit-field-private-file .image-widget-data button,
 .node-form #edit-field-private-file--2 .image-widget-data button,
+.node-form #edit-field-image .file-widget button,
 .node-form #edit-field-image--2 .file-widget button,
+.node-form #edit-field-private-image .file-widget button,
 .node-form #edit-field-private-image--2 .file-widget button,
+.node-form #edit-field-private-file .file-widget button,
 .node-form #edit-field-private-file--2 .file-widget button {
   padding: 7px 15px;
   vertical-align: top;
@@ -10785,47 +10819,66 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-color: #786586;
   color: white;
 }
+.node-form #edit-field-image .image-widget-data textarea,
 .node-form #edit-field-image--2 .image-widget-data textarea,
+.node-form #edit-field-private-image .image-widget-data textarea,
 .node-form #edit-field-private-image--2 .image-widget-data textarea,
+.node-form #edit-field-private-file .image-widget-data textarea,
 .node-form #edit-field-private-file--2 .image-widget-data textarea,
+.node-form #edit-field-image .file-widget textarea,
 .node-form #edit-field-image--2 .file-widget textarea,
+.node-form #edit-field-private-image .file-widget textarea,
 .node-form #edit-field-private-image--2 .file-widget textarea,
+.node-form #edit-field-private-file .file-widget textarea,
 .node-form #edit-field-private-file--2 .file-widget textarea {
   width: 40%;
   height: 36px;
 }
+.node-form #edit-field-publication-date .date-combo,
 .node-form #edit-field-publication-date--2 .date-combo,
+.node-form #edit-field-revised-date .date-combo,
 .node-form #edit-field-revised-date--2 .date-combo {
   border: none;
   background-color: inherit;
   box-shadow: none;
 }
+.node-form #edit-field-publication-date .date-combo .panel-heading,
 .node-form #edit-field-publication-date--2 .date-combo .panel-heading,
+.node-form #edit-field-revised-date .date-combo .panel-heading,
 .node-form #edit-field-revised-date--2 .date-combo .panel-heading {
   display: none;
 }
+.node-form #edit-field-publication-date .date-combo .panel-body,
 .node-form #edit-field-publication-date--2 .date-combo .panel-body,
+.node-form #edit-field-revised-date .date-combo .panel-body,
 .node-form #edit-field-revised-date--2 .date-combo .panel-body {
   padding: 0px;
 }
+.node-form #edit-field-publication-date .date-combo .panel-body .form-type-select,
 .node-form #edit-field-publication-date--2 .date-combo .panel-body .form-type-select,
+.node-form #edit-field-revised-date .date-combo .panel-body .form-type-select,
 .node-form #edit-field-revised-date--2 .date-combo .panel-body .form-type-select {
   margin-right: 15px;
 }
+.node-form #edit-field-publication-date .date-combo .panel-body .form-type-select select,
 .node-form #edit-field-publication-date--2 .date-combo .panel-body .form-type-select select,
+.node-form #edit-field-revised-date .date-combo .panel-body .form-type-select select,
 .node-form #edit-field-revised-date--2 .date-combo .panel-body .form-type-select select {
   margin-right: 15px;
 }
+.node-form #edit-field-resource-fc .panel,
 .node-form #edit-field-resource-fc--2 .panel {
   border: none;
   border-radius: 0px;
 }
+.node-form #edit-field-resource-fc .panel .panel-heading,
 .node-form #edit-field-resource-fc--2 .panel .panel-heading {
   background-color: #786586;
   border-bottom: none;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
+.node-form #edit-field-resource-fc .panel .panel-heading .fieldset-legend,
 .node-form #edit-field-resource-fc--2 .panel .panel-heading .fieldset-legend {
   font-family: "Oswald";
   font-size: 1.4em;
@@ -10833,11 +10886,14 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border-bottom: 2px solid white;
   padding-bottom: 10px;
 }
+.node-form #edit-field-resource-fc .panel .panel-body,
 .node-form #edit-field-resource-fc--2 .panel .panel-body {
   background-color: #786586;
   padding-top: 0px;
 }
+.node-form #edit-field-resource-fc .panel .panel-body select,
 .node-form #edit-field-resource-fc--2 .panel .panel-body select,
+.node-form #edit-field-resource-fc .panel .panel-body .chosen-container-single,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .chosen-container-single {
   background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #ffffff;
   appearance: none;
@@ -10849,18 +10905,24 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-position-x: right;
   margin-right: 0px;
 }
+.node-form #edit-field-resource-fc .panel .panel-body label,
 .node-form #edit-field-resource-fc--2 .panel .panel-body label {
   color: white;
   margin-top: 5px;
 }
+.node-form #edit-field-resource-fc .panel .panel-body #edit-field-resource-fc-und-0-field-language,
+.node-form #edit-field-resource-fc--2 .panel .panel-body #edit-field-resource-fc-und-0-field-language,
+.node-form #edit-field-resource-fc .panel .panel-body #edit-field-resource-fc-und-0-field-language--2,
 .node-form #edit-field-resource-fc--2 .panel .panel-body #edit-field-resource-fc-und-0-field-language--2 {
   width: 40%;
 }
+.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file input[type="file"],
 .node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file input[type="file"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file input[type="file"]:before,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file input[type="file"]:before {
   content: "Select file";
   background-color: #10b2e4;
@@ -10870,37 +10932,49 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   height: 25px;
   cursor: pointer;
 }
+.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file .form-submit,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file .form-submit {
   background-color: #10b2e4;
   color: white;
 }
+.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file .input-group-btn,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file .input-group-btn {
   vertical-align: bottom;
 }
+.node-form #edit-field-resource-fc .panel .panel-body .help-block,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .help-block {
   color: white;
 }
+.node-form #edit-field-resource-fc .panel .panel-body .file-upload-js-error,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .file-upload-js-error {
   color: rgba(255, 255, 255, 0.7);
 }
+.node-form #edit-field-resource-fc .panel .panel-body .file a,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .file a {
   color: white;
   margin-right: 15px;
 }
+.node-form #edit_field_co_author_und_chosen,
 .node-form #edit_field_co_author_und__2_chosen,
+.node-form #edit_field_sector_und_chosen,
 .node-form #edit_field_sector_und__2_chosen {
   min-width: 300px;
 }
 .node-form button#edit-save-preview--2,
+.node-form button#edit-save-preview-,
+.node-form button#edit-submit,
 .node-form button#edit-submit--2 {
   background-color: #10b2e4;
   margin-top: 40px;
   min-width: 200px;
 }
 .node-form button#edit-save-preview--2:before,
+.node-form button#edit-save-preview-:before,
+.node-form button#edit-submit:before,
 .node-form button#edit-submit--2:before {
   content: "> ";
 }
+.node-form button#edit-send-for-approval,
 .node-form button#edit-send-for-approval--2 {
   display: block;
   width: 100%;

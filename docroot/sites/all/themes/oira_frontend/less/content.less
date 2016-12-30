@@ -4224,10 +4224,12 @@ div[id ^= "mini-panel-partner_in_"], {
 		font-weight: bold;
 	}
 	//url
+	#edit-field-website-und-0-url,
 	#edit-field-website-und-0-url--2{
 		max-width: 40%;
 	}
 	//tags
+	#edit_field_tags_und_chosen,
 	#edit_field_tags_und__2_chosen{
 		width: 100% !important;
 		.chosen-choices{
@@ -4241,8 +4243,11 @@ div[id ^= "mini-panel-partner_in_"], {
 		}
 	}
 	//imagen
-	#edit-field-image--2, 
-	#edit-field-private-image--2, 
+	#edit-field-image,
+	#edit-field-image--2,
+	#edit-field-private-image,
+	#edit-field-private-image--2,
+	#edit-field-private-file,
 	#edit-field-private-file--2{
 		.image-widget-data,
 		.file-widget{
@@ -4282,7 +4287,10 @@ div[id ^= "mini-panel-partner_in_"], {
 		}
 	}
 	//dates & revised date
-	#edit-field-publication-date--2, #edit-field-revised-date--2{
+	#edit-field-publication-date,
+	#edit-field-publication-date--2,
+	#edit-field-revised-date,
+	#edit-field-revised-date--2{
 		.date-combo{
 			border: none;
 			background-color: inherit;
@@ -4303,6 +4311,7 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 
 	//upload documents
+	#edit-field-resource-fc,
 	#edit-field-resource-fc--2{
 		.panel{
 			border: none;
@@ -4337,6 +4346,7 @@ div[id ^= "mini-panel-partner_in_"], {
 					color: white;
 					margin-top: 5px;
 				}
+				#edit-field-resource-fc-und-0-field-language,
 				#edit-field-resource-fc-und-0-field-language--2{
 					width: 40%;
 				}
@@ -4382,13 +4392,18 @@ div[id ^= "mini-panel-partner_in_"], {
 	
 
 	//selects with other widths
+	#edit_field_co_author_und_chosen,
 	#edit_field_co_author_und__2_chosen,
+	#edit_field_sector_und_chosen,
 	#edit_field_sector_und__2_chosen{
 		min-width: 300px;
 	}
 
 	//buttons
-	button#edit-save-preview--2, button#edit-submit--2{
+	button#edit-save-preview--2,
+	button#edit-save-preview-,
+	button#edit-submit,
+	button#edit-submit--2{
 		background-color: @color-see-more;
 		margin-top: 40px;
 		min-width: 200px;
@@ -4396,6 +4411,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			content: "> ";
 		}
 	}
+	button#edit-send-for-approval,
 	button#edit-send-for-approval--2{
 		display: block;
 	    width: 100%;
