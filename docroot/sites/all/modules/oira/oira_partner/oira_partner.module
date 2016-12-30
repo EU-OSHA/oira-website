@@ -444,14 +444,6 @@ function _oira_partner_get_by_country($tid, $type_tid = array()) {
   return $partners;
 }
 
-function oira_frontend_panels_pane__views__partner_content_alter($content, $pane, $args, $contexts) {
-  //$vars['title_attributes_array']['class'][] = 'container';
-  echo '<pre>';
-  var_dump($content);
-  echo '</pre>';
-}
-
-
 function oira_partner_views_data() {
   $data['oira_partner']['partner_id'] = array(
     'title' => variable_get('oira_partner_label', 'partner id'),
