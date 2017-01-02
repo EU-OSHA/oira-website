@@ -6690,7 +6690,7 @@ button.close {
 .top-header .header-blocks #block-menu-block-3 .introduction-title a {
   display: block;
   background-color: #003399;
-  padding: 3px 12px 3px 12px;
+  padding: 3px 10px 3px 10px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -10661,6 +10661,42 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   opacity: 1;
   color: #786586;
 }
+.page-node-91.node-type-partner.responsive-menus-load-processed h2 {
+  color: #786586;
+  border-bottom: 2px solid #786586;
+  padding-bottom: 15px;
+}
+.page-node-91.node-type-partner.responsive-menus-load-processed h2:after {
+  content: "";
+  background: url("../images/icons/031.png") no-repeat;
+  background-size: 100%;
+  width: 40px;
+  height: 40px;
+  float: right;
+}
+.page-node-91 .panels-flexible-row-new-1 {
+  padding-bottom: 0px;
+}
+.private-zone-back-link,
+.private-zone-back-wrapper {
+  float: right;
+  margin-top: -15px;
+}
+.private-zone-back-link a,
+.private-zone-back-wrapper a {
+  color: #10b2e4;
+}
+.private-zone-back-link a:after,
+.private-zone-back-wrapper a:after {
+  content: "";
+  background: url("../images/icons/back-news.png") no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 22px;
+  height: 25px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
 .partner-edit-form > div {
   background-color: #dfd8e4;
   padding-bottom: 25px;
@@ -10669,6 +10705,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .node-form .pane-custom h2 {
   color: #786586;
   margin-top: 45px;
+}
+.node-form .btn.form-submit {
+  white-space: inherit !important;
+  height: auto;
 }
 .node-form .panels-flexible-row {
   padding-bottom: 0px;
@@ -11178,11 +11218,19 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-top: 10px;
   padding-top: 15px;
 }
+.page-node-collaboration-area .pane-custom h2 {
+  color: #786586;
+  margin-top: 45px;
+}
 .page-node-collaboration-area .page-promotional-materials-search .panel-page-introduction-text h2 {
   color: #786586;
   border-bottom: 2px solid #786586;
   padding-bottom: 15px;
   margin-bottom: 25px;
+}
+.page-node-collaboration-area .page-promotional-materials-search .private-zone-back-link,
+.page-node-collaboration-area .page-promotional-materials-search .private-zone-back-wrapper {
+  margin-top: -30px;
 }
 .page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration {
   padding-bottom: 25px;
@@ -11218,10 +11266,47 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #ui-datepicker-div {
   background-color: white;
   border: 2px solid #786586;
+  color: #786586;
+}
+#ui-datepicker-div a,
+#ui-datepicker-div span,
+#ui-datepicker-div select {
+  color: #786586;
+}
+#ui-datepicker-div .ui-widget-header {
+  background: inherit !important;
+  background-color: #dfd8e4 !important;
+  border: none;
+}
+#ui-datepicker-div .ui-datepicker-prev,
+#ui-datepicker-div .ui-datepicker-next {
+  background: inherit !important;
+  background-color: #dfd8e4 !important;
+  border: none;
+  cursor: pointer;
+}
+.page-node-create-promotional-resource #edit-title-field--2,
+.page-node-create-promotional-resource #edit-field-oira--2,
+.page-node-create-promotional-resource #edit-field-publication-date--2 {
+  float: left;
+}
+.page-node-create-promotional-resource #edit-title-field--2 {
+  max-width: 25%;
+  margin-right: 25px;
+}
+.page-node-create-promotional-resource #edit-field-publication-date--2 {
+  width: 64%;
+}
+.page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour] {
+  margin-left: 0px;
+}
+.page-node-create-promotional-resource #edit-field-promotional-material-type--2 {
+  clear: both;
 }
 .oira-search-form-container {
   background: url('../images/background-two-colors.png') repeat-y 50%;
   padding-bottom: 0px;
+  margin-bottom: 5px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child .form-group,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child .form-group {
@@ -15119,6 +15204,33 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .page-node-my-content .view-filters form .views-submit-button button {
     margin-top: 0px;
+  }
+  .page-node-create-promotional-resource #edit-title-field--2,
+  .page-node-create-promotional-resource #edit-field-oira--2,
+  .page-node-create-promotional-resource #edit-field-publication-date--2 {
+    float: none;
+  }
+  .page-node-create-promotional-resource #edit-title-field--2 {
+    max-width: 100%;
+    margin-right: 0px;
+  }
+  .page-node-create-promotional-resource #edit-field-publication-date--2 {
+    width: 100%;
+  }
+  .page-node-create-promotional-resource #edit-field-oira--2 {
+    float: left !important;
+  }
+  .page-node-create-promotional-resource #edit-field-oira--2 .checkbox input[type="checkbox"] {
+    margin-left: -22px;
+  }
+  .page-node-create-promotional-resource #edit-field-oira--2 label {
+    padding-left: 17px;
+  }
+  .page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour] {
+    margin-left: 0px;
+  }
+  .page-node-create-promotional-resource #edit-field-promotional-material-type--2 {
+    clear: both;
   }
   /*End private zone*/
   /*general search styles

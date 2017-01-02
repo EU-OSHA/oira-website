@@ -4175,6 +4175,41 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 }
 
+//h2 pz main
+.page-node-91.node-type-partner.responsive-menus-load-processed{
+	h2{
+		color: @color-text-purple-darker;
+		border-bottom: 2px solid @color-text-purple-darker;
+		padding-bottom: 15px;
+		&:after{
+			.section-icons("../images/icons/031.png");
+		}
+	}
+}
+.page-node-91{
+	.panels-flexible-row-new-1{
+		padding-bottom: 0px;
+	}
+}
+
+.private-zone-back-link, .private-zone-back-wrapper{
+float: right;
+margin-top: -15px;
+	a{
+		color: @color-see-more;
+		&:after{
+			content: "";
+			background: url("../images/icons/back-news.png") no-repeat;
+			background-size: 100%;
+		    display: inline-block;
+		    width: 22px;
+		    height: 25px;
+		    vertical-align: middle;
+		    margin-left: 5px;
+		}
+	}
+}
+
 //forms
 .partner-edit-form{
 	> div{
@@ -4189,6 +4224,10 @@ div[id ^= "mini-panel-partner_in_"], {
 			color: @color-text-purple-darker;
 			margin-top: 45px;
 		}
+	}
+	.btn.form-submit{
+		white-space: inherit !important;
+		height: auto;
 	}
 	.panels-flexible-row{
 		padding-bottom: 0px;
@@ -4652,6 +4691,12 @@ div[id ^= "mini-panel-partner_in_"], {
 
 //collaboration page
 .page-node-collaboration-area{
+	.pane-custom{
+			h2{
+				color: @color-text-purple-darker;
+				margin-top: 45px;
+			}
+		}
 	.page-promotional-materials-search{
 		.panel-page-introduction-text{
 			h2{
@@ -4660,6 +4705,10 @@ div[id ^= "mini-panel-partner_in_"], {
 				padding-bottom: 15px;
 				margin-bottom: 25px;
 			}
+		}
+
+		.private-zone-back-link, .private-zone-back-wrapper{
+			margin-top: -30px;
 		}
 		.menu-name-menu-collaboration{
 			padding-bottom: 25px;
@@ -4707,15 +4756,52 @@ div[id ^= "mini-panel-partner_in_"], {
 #ui-datepicker-div{
 	background-color: white;
 	border: 2px solid @color-primary-dark;
+	color: @color-primary-dark;
+	a, span, select{
+		color: @color-primary-dark;
+	}
 	.ui-widget-header{
-		
+		background: inherit !important;
+		background-color: @color-primary !important;
+	    
+	    border: none;
+	}
+	.ui-datepicker-prev, .ui-datepicker-next{
+		background: inherit !important;
+		background-color: @color-primary !important;
+	    
+	    border: none;
+	    cursor: pointer;
 	}
 }
 
-//list
+//create-promotional
+.page-node-create-promotional-resource{
+	#edit-title-field--2,
+	#edit-field-oira--2,
+	#edit-field-publication-date--2{
+		float: left;
+	}
+	#edit-title-field--2{
+		max-width: 25%;
+		margin-right: 25px;
+	}
+	#edit-field-publication-date--2{
+		width: 64%;
+	}
+	.form-type-date-select .form-type-select[class*=hour]{
+		margin-left: 0px;
+	}
+	#edit-field-promotional-material-type--2{
+		clear: both;
+	}
+}
+
+//list of search
 .oira-search-form-container{
 	background: url('../images/background-two-colors.png') repeat-y 50%;
 	padding-bottom: 0px;
+	margin-bottom: 5px;
 	#oira-strategic-documentation-eu-osha-form,
 	#oira-strategic-documentation-partners-form{
 		div:first-child{
