@@ -34,3 +34,10 @@ function oira_strategic_documentation_update_7004() {
 function oira_strategic_documentation_update_7005() {
   features_revert_module('oira_strategic_documentation');
 }
+
+/**
+ * Feature revert: NOW-237 - Private zone -list stategic documentation items
+ */
+function oira_strategic_documentation_update_7006() {
+  features_revert_module('oira_strategic_documentation');
+}
