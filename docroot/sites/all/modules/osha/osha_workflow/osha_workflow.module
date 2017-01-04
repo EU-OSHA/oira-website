@@ -1023,3 +1023,16 @@ function osha_workflow_section_get_partners($section) {
     array(':section' => $section,':type'=>ROLE_OIRA_PARTNER));
   return $query->fetchField(0);;
 }
+
+/**
+ * Return User's Partner ID based on Workbench Section
+ */
+
+function osha_workflow_user_partner_id($user_id) {
+  $partner_id = NULL;
+  foreach(osha_workflow_editor_get_sections(user_load($user_id)) as $section){
+    $partner_id = osha_workflow_section_get_partners($section);
+    break;
+  }
+  return $partner_id;
+}

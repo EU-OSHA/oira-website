@@ -31,6 +31,8 @@ function oira_promotional_material_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
@@ -275,6 +277,17 @@ return $is_partner;',
         'context' => 'logged-in-user',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'node_access',
+        'settings' => array(
+          'type' => 'update',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_2',
+        ),
+        'not' => FALSE,
+      ),
     ),
     'type' => 'none',
     'settings' => NULL,
@@ -363,8 +376,7 @@ return $is_partner;',
         'width_type' => '%',
         'children' => array(
           0 => 'main-row',
-          1 => 1,
-          2 => 2,
+          1 => 2,
         ),
         'parent' => 'canvas',
       ),
@@ -382,25 +394,6 @@ return $is_partner;',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      1 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'form_title',
-        ),
-        'parent' => 'main',
-        'class' => '',
-        'hide_empty' => 0,
-      ),
-      'form_title' => array(
-        'type' => 'region',
-        'title' => 'Form title',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
         'class' => '',
         'hide_empty' => 0,
       ),
@@ -462,6 +455,35 @@ return $is_partner;',
     $display->content['new-cf508322-920c-4c57-933e-c0f4b0c2fb87'] = $pane;
     $display->panels['center'][0] = 'new-cf508322-920c-4c57-933e-c0f4b0c2fb87';
     $pane = new stdClass();
+    $pane->pid = 'new-28251796-0192-4100-af3f-4fe75006bef8';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner update promotional material',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Update Promotional Resource<em>%promotional_material_id:title</em></h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '28251796-0192-4100-af3f-4fe75006bef8';
+    $display->content['new-28251796-0192-4100-af3f-4fe75006bef8'] = $pane;
+    $display->panels['center'][1] = 'new-28251796-0192-4100-af3f-4fe75006bef8';
+    $pane = new stdClass();
     $pane->pid = 'new-3bebc8c2-c3b6-4b68-8c51-d43cb1202de6';
     $pane->panel = 'form';
     $pane->type = 'form';
@@ -488,35 +510,6 @@ return $is_partner;',
     $pane->uuid = '3bebc8c2-c3b6-4b68-8c51-d43cb1202de6';
     $display->content['new-3bebc8c2-c3b6-4b68-8c51-d43cb1202de6'] = $pane;
     $display->panels['form'][0] = 'new-3bebc8c2-c3b6-4b68-8c51-d43cb1202de6';
-    $pane = new stdClass();
-    $pane->pid = 'new-28251796-0192-4100-af3f-4fe75006bef8';
-    $pane->panel = 'form_title';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner update promotional material',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Update Promotional Resource<em>%promotional_material_id:title</em></h2>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '28251796-0192-4100-af3f-4fe75006bef8';
-    $display->content['new-28251796-0192-4100-af3f-4fe75006bef8'] = $pane;
-    $display->panels['form_title'][0] = 'new-28251796-0192-4100-af3f-4fe75006bef8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

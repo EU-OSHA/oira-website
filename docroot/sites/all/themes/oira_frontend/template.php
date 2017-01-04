@@ -637,6 +637,14 @@ function oira_frontend_form_element_label(&$variables) {
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
 }
 
+function oira_frontend_node_save_redirect_submit($form, &$form_state){
+  $partner_id = osha_workflow_user_partner_id($form_state['values']['uid']);
+  if($partner_id!==NULL){
+    unset($_GET['destination']);
+    $form_state['redirect'] = 'node/' . $partner_id . '/edit-' . $form_state['values']['type'] . '/' . $form_state['nid'];
+  }
+}
+
 /**
  * Implements form_alter().
  */
@@ -646,12 +654,26 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['field_aditional_resources']['#access'] = FALSE;
+      $form['actions']['submit']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      if(isset($form['actions']['save_preview'])){
+        $form['actions']['save_preview']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
+      if(isset($form['actions']['send_for_approval'])){
+        $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
       break;
     case 'promotional_material_node_form':
       $form['field_publication_date']['#attributes']['class'][] = 'pull-left';
       $form['field_oira']['#attributes']['class'][] = 'pull-right';
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
+      $form['actions']['submit']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      if(isset($form['actions']['save_preview'])){
+        $form['actions']['save_preview']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
+      if(isset($form['actions']['send_for_approval'])){
+        $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
       break;
     case 'practical_tool_node_form':
       $form['body']['#attributes']['class'][] = 'oira-hide-format-description';
@@ -659,9 +681,23 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['#after_build'][] = 'oira_hide_format_description';
+      $form['actions']['submit']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      if(isset($form['actions']['save_preview'])){
+        $form['actions']['save_preview']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
+      if(isset($form['actions']['send_for_approval'])){
+        $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
       break;
     case 'strategic_documentation_node_form':
       $form['actions']['#attributes']['class'] = array('container','text-center');
+      $form['actions']['submit']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      if(isset($form['actions']['save_preview'])){
+        $form['actions']['save_preview']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
+      if(isset($form['actions']['send_for_approval'])){
+        $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
+      }
       break;
     case 'partner_node_form':
       $form['title_field']['#disabled'] = TRUE;

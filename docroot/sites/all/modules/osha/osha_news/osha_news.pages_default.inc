@@ -31,6 +31,8 @@ function osha_news_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
@@ -258,6 +260,17 @@ function osha_news_default_page_manager_pages() {
         'context' => 'logged-in-user',
         'not' => FALSE,
       ),
+      1 => array(
+        'name' => 'node_access',
+        'settings' => array(
+          'type' => 'update',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_2',
+        ),
+        'not' => FALSE,
+      ),
     ),
     'logic' => 'and',
     'type' => 'none',
@@ -347,27 +360,9 @@ return $is_partner;',
         'width_type' => '%',
         'children' => array(
           0 => 1,
-          1 => 'main-row',
-          2 => 2,
+          1 => 2,
         ),
         'parent' => 'canvas',
-      ),
-      'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'center',
-        ),
-        'parent' => 'main',
-      ),
-      'center' => array(
-        'type' => 'region',
-        'title' => 'Form title',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       1 => array(
         'type' => 'row',
@@ -423,35 +418,6 @@ return $is_partner;',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-0c04bb07-2d14-4a83-b24f-218b5378a9c1';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner update news',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Update News <em>%news_id:title</em></h2>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '0c04bb07-2d14-4a83-b24f-218b5378a9c1';
-    $display->content['new-0c04bb07-2d14-4a83-b24f-218b5378a9c1'] = $pane;
-    $display->panels['center'][0] = 'new-0c04bb07-2d14-4a83-b24f-218b5378a9c1';
-    $pane = new stdClass();
     $pane->pid = 'new-3f6c51ce-2767-4ecd-ac1a-29b89c732ccb';
     $pane->panel = 'form';
     $pane->type = 'form';
@@ -501,6 +467,35 @@ return $is_partner;',
     $pane->uuid = 'ba51cc9e-c8d1-44c1-a6ca-233c4daf6a8f';
     $display->content['new-ba51cc9e-c8d1-44c1-a6ca-233c4daf6a8f'] = $pane;
     $display->panels['menu'][0] = 'new-ba51cc9e-c8d1-44c1-a6ca-233c4daf6a8f';
+    $pane = new stdClass();
+    $pane->pid = 'new-0c04bb07-2d14-4a83-b24f-218b5378a9c1';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner update news',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Update News <em>%news_id:title</em></h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '0c04bb07-2d14-4a83-b24f-218b5378a9c1';
+    $display->content['new-0c04bb07-2d14-4a83-b24f-218b5378a9c1'] = $pane;
+    $display->panels['menu'][1] = 'new-0c04bb07-2d14-4a83-b24f-218b5378a9c1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

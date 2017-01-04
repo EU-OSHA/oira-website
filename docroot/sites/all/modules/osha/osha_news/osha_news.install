@@ -20,3 +20,10 @@ function osha_news_update_7002() {
 function osha_news_update_7003() {
   features_revert_module('osha_news');
 }
+
+/**
+ * Feature revert: NOW-237 - Private zone Edit form updates
+ */
+function osha_news_update_7004() {
+  features_revert_module('osha_news');
+}

@@ -134,6 +134,7 @@ function oira_workflow_mail_alter(&$message) {
  */
 function oira_workflow_node_access($node, $op, $account) {
   $type = is_string($node) ? $node : $node->type;
+
   if (($op == 'update' || $op == 'delete')
     && in_array($node->type, ncw_migration_get_migrated_bundles())
     && $node->uid == 0) {
@@ -161,6 +162,10 @@ function oira_workflow_node_access($node, $op, $account) {
     if ($account->uid == 0) {
       return NODE_ACCESS_DENY;
     }
+  }
+  //Deny access to Published content
+  if(($op == 'update' || $op == 'delete') && !empty($node->workbench_moderation['current']->state) && $node->workbench_moderation['current']->state == OSHA_WORKFLOW_STATE_PUBLISHED){
+    return NODE_ACCESS_DENY;
   }
 
   return NODE_ACCESS_IGNORE;
@@ -199,8 +204,24 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
   }
 
   if (!empty($form['#node']->type) && in_array($form['#node']->type, _oira_get_content_types_for_partners())) {
+    if($form_id == 'node_delete_confirm'){
+      $node_workbench_moderation_state_current = !empty($form['#node']->workbench_moderation['current']->state) ? $form['#node']->workbench_moderation['current']->state : workbench_moderation_state_none();
+      $can_delete = (user_access("delete any {$form['#node']->type} content") || user_access("delete own {$form['#node']->type} content")) && user_access("delete any content in {$node_workbench_moderation_state_current}");
+      if (!$can_delete || !in_array(ROLE_OIRA_PARTNER, $user->roles)) {
+       drupal_goto('<front>');
+      }
+      $partner_id = osha_workflow_user_partner_id($form['#node']->uid);
+      if($partner_id!==NULL){
+        unset($_GET['destination']);
+        $form['actions']['cancel']['#href'] = 'node/' . $partner_id . '/edit-' . $form['#node']->type . '/' . $form['#node']->nid;
+      }
+      return;
+    }
+
+
     $node = $form_state['node'];
-    $can_delete = user_access("delete any {$node->type} content") || user_access("delete own {$node->type} content");
+    $node_workbench_moderation_state_current = !empty($node->workbench_moderation['current']->state) ? $node->workbench_moderation['current']->state : workbench_moderation_state_none();
+    $can_delete = (user_access("delete any {$node->type} content") || user_access("delete own {$node->type} content")) && user_access("delete any content in {$node_workbench_moderation_state_current}");
     if (!empty($node->nid) && $can_delete && in_array(ROLE_OIRA_PARTNER, $user->roles)) {
       $form['actions']['delete'] = array(
         '#type' => 'submit',
@@ -209,6 +230,10 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
         '#submit' => array('node_form_delete_submit')
       );
     }
+
+
+
+
 
     if (in_array(ROLE_OIRA_PARTNER, $user->roles) && count($user->roles) == 2) {
       foreach($user->workbench_access as $user_id_section => $value) {
