@@ -10,9 +10,9 @@ include_once 'oira_private_image.features.inc';
  * Implements hook_node_access().
  */
 function oira_private_image_node_access($node, $op, $account) {
-
-if($node->type == 'oira_private_image' && $op == 'view'){
-  if(array_intersect(
+  $type = is_string($node) ? $node : $node->type;
+  if($type == 'oira_private_image' && $op == 'view'){
+    if(array_intersect(
       array(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PARTNER, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR),
       array_values($account->roles)
     )){

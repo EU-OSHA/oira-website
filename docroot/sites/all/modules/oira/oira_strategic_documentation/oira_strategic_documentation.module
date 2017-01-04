@@ -95,7 +95,8 @@ function oira_strategic_documentation_form_alter(&$form, &$form_state, $form_id)
  * Implements hook_node_access().
  */
 function oira_strategic_documentation_node_access($node, $op, $account) {
-  if($node->type == 'strategic_documentation' && $op == 'view'){
+  $type = is_string($node) ? $node : $node->type;
+  if($type == 'strategic_documentation' && $op == 'view'){
     if(array_intersect(
       array(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PARTNER, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR),
       array_values($account->roles)
