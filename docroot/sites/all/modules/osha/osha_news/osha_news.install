@@ -27,3 +27,10 @@ function osha_news_update_7003() {
 function osha_news_update_7004() {
   features_revert_module('osha_news');
 }
+
+/**
+ * Feature revert: NOW-237 - Breadcrumb
+ */
+function osha_news_update_7005() {
+  features_revert_module('osha_news');
+}
