@@ -10601,6 +10601,18 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .menu-name-menu-private-zone ul.menu > li.active-trail > div {
   background-color: rgba(255, 255, 255, 0.3);
 }
+.menu-name-menu-private-zone ul.menu > li.active > div {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.menu-name-menu-private-zone ul.menu > li.active > div img {
+  -webkit-filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+  filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(231deg) saturate(200%) contrast(0.8);
+  outline: none;
+}
+.menu-name-menu-private-zone ul.menu > li.active > div .introduction-title a {
+  color: #786586;
+  outline: none;
+}
 .menu-name-menu-private-zone ul.menu > li {
   text-align: center;
   display: table-cell;
