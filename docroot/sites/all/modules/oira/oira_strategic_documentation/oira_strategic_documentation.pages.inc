@@ -69,8 +69,10 @@ function _oira_strategic_documentation_strip_param_value($params, $name, $value 
 }
 
 function oira_strategic_documentation_partners_form($form, $form_state) {
+  global $user;
+  $partner_id = osha_workflow_user_partner_id($user->uid);
   $variables['form_state'] = $form_state;
-  $variables['action'] = '/collaboration-area/partners-documents';
+  $variables['action'] = url( '/node/' . $partner_id . '/collaboration-area/partners-documents', array('absolute' => false, 'alias' => false ));
   $variables['facet_callback'] = 'oira_strategic_documentation_get_facets_def';
   $variables['search_callback'] = 'oira_strategic_documentation_search_partners';
   $variables['language_field'] = 'field_language:value';
@@ -79,8 +81,10 @@ function oira_strategic_documentation_partners_form($form, $form_state) {
 }
 
 function oira_strategic_documentation_eu_osha_form($form, $form_state) {
+  global $user;
+  $partner_id = osha_workflow_user_partner_id($user->uid);
   $variables['form_state'] = $form_state;
-  $variables['action'] = '/collaboration-area/eu-osha-documents';
+  $variables['action'] = url( '/node/' . $partner_id . '/collaboration-area/eu-osha-documents', array('absolute' => false, 'alias' => false ));
   $variables['facet_callback'] = 'oira_strategic_documentation_get_facets_def';
   $variables['search_callback'] = 'oira_strategic_documentation_search_eu_osha';
   $variables['language_field'] = 'field_language:value';
