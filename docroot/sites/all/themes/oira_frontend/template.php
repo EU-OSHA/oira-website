@@ -210,8 +210,8 @@ function oira_frontend_preprocess_image_style(&$variables) {
  */
 
 /**
-+ * Implements theme_pager().
-+ */
+* Implements theme_pager().
+*/
 function oira_frontend_pager($variables) {
   // Overwrite pager links.
   $variables['tags'][0] = '«';
