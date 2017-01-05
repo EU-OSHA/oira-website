@@ -629,9 +629,3 @@ function oira_frontend_form_element_label(&$variables) {
   // The leading whitespace helps visually separate fields from inline labels.
   return ' <label' . drupal_attributes($attributes) . '>' . $output . "</label>\n";
 }
-
-
-function oira_frontend_preprocess_file_entity(&$variables) {
-  dpm($variables);
-}
-
