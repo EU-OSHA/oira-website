@@ -45,3 +45,9 @@ function oira_workflow_update_7003() {
   features_revert_module('oira_workflow');
 }
 
+/**
+ * Feature revert: NOW-237 - partner edit profile updates
+ */
+function oira_workflow_update_7004() {
+  features_revert_module('oira_workflow');
+}

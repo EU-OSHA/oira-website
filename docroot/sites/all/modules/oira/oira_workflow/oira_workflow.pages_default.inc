@@ -110,27 +110,9 @@ return $is_partner;',
         'width_type' => '%',
         'children' => array(
           0 => 1,
-          1 => 'main-row',
-          2 => 2,
+          1 => 2,
         ),
         'parent' => 'canvas',
-      ),
-      'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'center',
-        ),
-        'parent' => 'main',
-      ),
-      'center' => array(
-        'type' => 'region',
-        'title' => 'Form title',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => '',
-        'hide_empty' => 0,
       ),
       1 => array(
         'type' => 'row',
@@ -186,35 +168,6 @@ return $is_partner;',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner update profile',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Update Your Profile</h2>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '8c002d32-409a-44d0-8666-908dee7c61d6';
-    $display->content['new-8c002d32-409a-44d0-8666-908dee7c61d6'] = $pane;
-    $display->panels['center'][0] = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
-    $pane = new stdClass();
     $pane->pid = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
     $pane->panel = 'form';
     $pane->type = 'form';
@@ -230,6 +183,7 @@ return $is_partner;',
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'default',
     );
     $pane->css = array(
       'css_id' => '',
@@ -264,6 +218,35 @@ return $is_partner;',
     $pane->uuid = '2677b52b-b403-4ea1-acfa-a1a1a69addc7';
     $display->content['new-2677b52b-b403-4ea1-acfa-a1a1a69addc7'] = $pane;
     $display->panels['menu'][0] = 'new-2677b52b-b403-4ea1-acfa-a1a1a69addc7';
+    $pane = new stdClass();
+    $pane->pid = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner update profile',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Update Your Profile</h2>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '8c002d32-409a-44d0-8666-908dee7c61d6';
+    $display->content['new-8c002d32-409a-44d0-8666-908dee7c61d6'] = $pane;
+    $display->panels['menu'][1] = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

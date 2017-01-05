@@ -44,7 +44,6 @@ function oira_frontend_menu_link__menu_block($variables) {
     unset($element['#below']['#theme_wrappers']);
     $sub_menu .= '<ul class="submenu-items">' . drupal_render($element['#below']) . '</ul>';
   }
-
   return '<li' . drupal_attributes($element['#attributes']) . '>
   <div><div class="introduction-image">' . $output_image . '</div>
   <div class="introduction-title">' . $output_link . '</div></div>'.$sub_menu.
@@ -129,6 +128,7 @@ function oira_frontend_process_html_tag(&$variables) {
     $tag['#attributes']['type'] = 'text/javascript';
   }
 }
+
 
 function oira_frontend_preprocess_page(&$vars) {
   global $language;
@@ -700,25 +700,82 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       }
       break;
     case 'partner_node_form':
+
+      $form['about_organization'] = array(
+        '#markup' => '<div class="ds-about-organization"><div class="row"><div class="col-sm-12"><h2>' . t('About your organization') . '</h2></div></div></div>',
+        '#weight' => -100,
+      );
+
       $form['title_field']['#disabled'] = TRUE;
-      $form['field_mission_statement']['#disabled'] = TRUE;
-      $form['field_ph_address']['#disabled'] = TRUE;
-      $form['field_ph_cp']['#disabled'] = TRUE;
-      $form['field_general_email']['#disabled'] = TRUE;
-      $form['field_website']['#disabled'] = TRUE;
-      $form['field_general_phone']['#disabled'] = TRUE;
-      $form['field_country']['#disabled'] = TRUE;
-      $form['field_ph_town']['#disabled'] = TRUE;
-      $form['field_dedicated_oira_website']['#disabled'] = TRUE;
-      $form['field_social_profile']['#disabled'] = TRUE;
-      $form['field_collaborator']['#disabled'] = TRUE;
+      $form['title_field']['#weight'] = -99;
+      $form['title_field']['#prefix'] = '<div class="row"><div class="group-left col-sm-6">';
+
+
       $form['field_logo'] = array(
         '#type' => 'item',
         '#title' => t('Logo'),
         '#markup' => '<img src="' . image_style_url('thumbnail', $form['field_logo']['und'][0]['#default_value']['uri']) .'" class="img-responsive">',
         '#prefix' => '<div class="image-preview oira-logo-container">',
-        '#suffix' => '</div>',
-        );
+        '#suffix' => '</div></div>',
+        '#weight' => -98,
+      );
+
+
+
+
+      $form['field_mission_statement']['#disabled'] = TRUE;
+      $form['field_mission_statement']['#weight'] = -97;
+      $form['field_mission_statement']['#prefix'] = '<div class="group-right col-sm-6">';
+      $form['field_mission_statement']['#suffix'] = '</div></div>';
+
+
+      $form['general_contact_information'] = array(
+        '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-general-contact-information"><div class="row"><div class="col-sm-12"><h2>' . t('General contact information') . '</h2></div></div></div>',
+        '#weight' => -96,
+      );
+
+
+
+      $form['field_ph_address']['#disabled'] = TRUE;
+      $form['field_ph_address']['#weight'] = -95;
+      $form['field_ph_address']['#prefix'] = '<div class="row"><div class="group-left col-sm-6">';
+
+      $form['field_ph_cp']['#disabled'] = TRUE;
+      $form['field_ph_cp']['#weight'] = -94;
+
+      $form['field_general_email']['#disabled'] = TRUE;
+      $form['field_general_email']['#weight'] = -93;
+
+      $form['field_website']['#disabled'] = TRUE;
+      $form['field_website']['#weight'] = -92;
+      $form['field_website']['#suffix'] = '</div>';;
+
+
+      $form['field_general_phone']['#disabled'] = TRUE;
+      $form['field_general_phone']['#weight'] = -91;
+      $form['field_general_phone']['#prefix'] = '<div class="group-right col-sm-6">';
+
+      $form['field_country']['#disabled'] = TRUE;
+      $form['field_country']['#weight'] = -90;
+
+      $form['field_ph_town']['#disabled'] = TRUE;
+      $form['field_ph_town']['#weight'] = -89;
+
+      $form['field_dedicated_oira_website']['#disabled'] = TRUE;
+      $form['field_dedicated_oira_website']['#weight'] = -88;
+      $form['field_dedicated_oira_website']['#suffix'] = '</div></div>';
+
+
+      $form['field_orgtype']['#access'] = FALSE;
+      $form['field_partner_type']['#access'] = FALSE;
+      $form['field_guid_organisation']['#access'] = FALSE;
+      $form['field_guid_main_contact']['#access'] = FALSE;
+
+
+      $form['field_social_profile']['#disabled'] = TRUE;
+      $form['field_social_profile']['#weight'] = -87;
+
+
       foreach($form['field_social_profile']['und'] as $key=>$val){
         if(is_numeric($key)){
           if(!isset($form['field_social_profile']['und'][$key]['#default_value'])
@@ -728,7 +785,18 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
           }
         }
       unset($form['field_social_profile']['und']['add_more']);
+
+      $form['field_main_contact']['#access'] = FALSE;
+      $form['field_main_contact_email']['#access'] = FALSE;
+
+      $form['field_collaborator']['#disabled'] = TRUE;
+      $form['other_collaborators'] = array(
+        '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-collaborators"><div class="row"><div class="col-sm-12"><h2>' . t('Other collaborators') . '</h2></div></div></div>',
+        '#weight' => 0,
+      );
+
       unset($form['field_collaborator']['und']['#title']);
+      $weight = 0;
       foreach($form['field_collaborator']['und'] as $key=>$val){
         if(is_numeric($key)){
           if(isset($form['field_collaborator']['und'][$key]['#entity'])
@@ -741,16 +809,22 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
               '#markup' => '<img src="' . image_style_url('thumbnail', $form['field_collaborator']['und'][$key]['field_logo']['und'][0]['#default_value']['uri']) .'" class="img-responsive">',
               '#prefix' => '<div class="image-preview oira-logo-container">',
               '#suffix' => '</div>',
+              '#weight' => $weight++,
             );
           }
           }
         }
+      $form['footer_line'] = array(
+        '#markup' => '<div class="group-footer col-md-12"></div>',
+        '#weight' => 100,
+      );
       $form['#attached']['js'][] = array(
         'data' => drupal_get_path('theme', 'oira_frontend') . '/js/oira-tabledrag.js',
         'weight' => -2,
       );
       unset($form['#submit']);
       $form['actions']['#access'] = FALSE;
+
       break;
     default:
       break;
