@@ -379,12 +379,12 @@ function _oira_workflow_partner_node_form_alter(&$form, &$form_state) {
     $form['actions']['submit']['#access'] = FALSE;
     $form['actions']['save_preview'] = array(
       '#type' => 'submit',
-      '#value' => t('Save and preview this !type item', array('!type' => $form['type']['#value'])),
+      '#value' => t('Save and preview this new item'),
       '#submit' => array('oira_workflow_node_form_submit_preview'),
     );
     $form['actions']['send_for_approval'] = array(
       '#type' => 'submit',
-      '#value' => strtr('Submit !type item for validation', array('!type' => $form['type']['#value'])),
+      '#value' => t('Submit this new item to validation'),
       '#submit' => array('oira_workflow_node_form_submit_send'),
     );
   }

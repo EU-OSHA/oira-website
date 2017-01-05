@@ -165,8 +165,8 @@
       <?php print render($page['sidebar_first']); ?>
     </aside>  <!-- /#sidebar-first -->
   <?php endif; ?>
-  <section<?php print $content_column_class; ?>>
-    <?php print $messages; ?>
+  <div<?php print $content_column_class; ?>>
+      <div class="container"><div class="row"><div class="col-sm-12"><?php print $messages; ?></div></div></div>
     <?php if (!empty($tabs)): ?>
       <?php print render($tabs); ?>
     <?php endif; ?>
