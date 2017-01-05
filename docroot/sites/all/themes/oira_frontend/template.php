@@ -206,19 +206,10 @@ function oira_frontend_preprocess_image_style(&$variables) {
     $variables['alt'] = drupal_basename($variables['path']);
   }
 }
-/**
- * Implements theme_on_the_web_image().
- *
- * @param $variables
- *   An associative array with generated variables.
- *
- * @return
- *   HTML for a social media icon.
- */
 
 /**
-+ * Implements theme_pager().
-+ */
+ * Implements theme_pager().
+ */
 function oira_frontend_pager($variables) {
   // Overwrite pager links.
   $variables['tags'][0] = '«';
