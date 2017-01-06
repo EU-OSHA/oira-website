@@ -91,6 +91,14 @@ return $is_partner;',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Update Your Profile
+',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+<none>
+',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';

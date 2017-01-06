@@ -85,6 +85,14 @@ return $is_partner;',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Collaboration area
+Image gallery',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/collaboration-area
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';

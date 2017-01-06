@@ -94,6 +94,12 @@ return $is_partner;',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Upload Promotional Resources',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -357,6 +363,12 @@ return $is_partner;',
         ),
       ),
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Update Promotional Resource',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -478,7 +490,7 @@ return $is_partner;',
       'css_class' => 'container',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '28251796-0192-4100-af3f-4fe75006bef8';
     $display->content['new-28251796-0192-4100-af3f-4fe75006bef8'] = $pane;

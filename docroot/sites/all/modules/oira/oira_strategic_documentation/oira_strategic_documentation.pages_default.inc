@@ -26,9 +26,6 @@ function oira_strategic_documentation_default_page_manager_pages() {
           'rids' => array(
             0 => 3,
             1 => 11,
-            2 => 12,
-            3 => 14,
-            4 => 13,
           ),
         ),
         'context' => 'logged-in-user',
@@ -67,20 +64,15 @@ function oira_strategic_documentation_default_page_manager_pages() {
     'body_classes_to_add' => 'page-strategic-documentation-search',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Content',
-        'keyword' => 'node',
-        'name' => 'entity:node',
-        'entity_id' => '174',
-        'id' => 1,
-      ),
-    ),
+    'contexts' => array(),
     'relationships' => array(),
     'name' => '',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '%node:title-field',
-    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_titles' => 'Private Zone
+Collaboration area
+',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+<none>',
     'panels_breadcrumbs_home' => 1,
     'access' => array(
       'plugins' => array(
@@ -397,6 +389,12 @@ return $is_partner;',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Upload Stategic Documentation',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -660,6 +658,12 @@ return $is_partner;',
         ),
       ),
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Update Strategic Documentation',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -781,7 +785,7 @@ return $is_partner;',
       'css_class' => 'container',
     );
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'f62b1c0d-e19e-4625-ad70-d36542169b1a';
     $display->content['new-f62b1c0d-e19e-4625-ad70-d36542169b1a'] = $pane;
@@ -898,6 +902,14 @@ return $is_partner;',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Collaboration area
+EU-OSHA documents',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/collaboration-area
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -1134,6 +1146,14 @@ return $is_partner;',
       ),
       'logic' => 'and',
     ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Collaboration area
+Partners documents',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/collaboration-area
+<none>',
+    'panels_breadcrumbs_home' => 1,
   );
   $display = new panels_display();
   $display->layout = 'flexible';
