@@ -856,6 +856,44 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       unset($form['#submit']);
       $form['actions']['#access'] = FALSE;
 
+
+
+      if(isset($form['workbench_access']['workbench_access']['#default_value'])){
+
+        $form['other_users'] = array(
+          '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-users"><div class="row"><div class="col-sm-12"><h2>' . t('Other users') . '</h2></div></div></div>',
+          '#weight' => 200,
+        );
+
+        $other_users_header = array(
+          t('Name'),
+          t('Email address'),
+          t('Telephone'),
+          );
+        $other_users_rows = array();
+
+        $section_id = $form['workbench_access']['workbench_access']['#default_value'][0];
+        $partner_users = _oira_workflow_load_users_by_section($section_id);
+
+        foreach($partner_users as $key => $partner_user){
+          //Check if user is a partner
+          if(array_intersect(array(ROLE_OIRA_PARTNER),array_values($partner_user->roles))){
+            $other_users_rows[] = array(
+              $partner_user->name,
+              $partner_user->mail,
+              isset($partner_user->field_phone[LANGUAGE_NONE][0]['safe_value']) ? $partner_user->field_phone[LANGUAGE_NONE][0]['safe_value'] : '',
+              );
+            }
+          }
+        $form['other_users_table'] = array(
+          '#markup' => theme('table',
+            array(
+              'header' => $other_users_header,
+              'rows' => $other_users_rows)),
+          '#weight' => 201,
+        );
+
+      }
       break;
     default:
       break;
