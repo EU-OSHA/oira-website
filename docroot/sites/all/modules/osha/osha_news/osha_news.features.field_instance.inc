@@ -120,10 +120,15 @@ function osha_news_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'display_summary' => 0,
       'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => '',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -137,6 +142,7 @@ function osha_news_field_default_field_instances() {
       'type' => 'text_textarea_with_summary',
       'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-news-field_aditional_resources'.
