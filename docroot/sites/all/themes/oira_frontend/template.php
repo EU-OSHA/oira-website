@@ -640,6 +640,9 @@ function oira_frontend_node_save_redirect_submit($form, &$form_state){
  * Add javascript functionality for for limiting number of words for field_summary.
  */
 function oira_frontend_news_after_build($form, &$form_state){
+
+  drupal_add_js(drupal_get_path('module', 'oira') . '/js/textarea_word_count.js');
+
   $form['#attached']['js'][] = array(
     'data' => '(function ($){$("#' . $form['field_summary']['#id'] . ' textarea").textareaCounter({limit : 420}); }(jQuery));',
     'type' => 'inline',
@@ -672,9 +675,9 @@ function oira_frontend_news_validate_summary_word_count($form, &$form_state){
 function oira_frontend_form_alter(&$form, &$form_state, $form_id){
   switch($form_id){
     case 'news_node_form':
-      $form_state['no_cache'] = TRUE;
+      //$form_state['no_cache'] = TRUE;
       $form['#after_build'][] = 'oira_frontend_news_after_build';
-      drupal_add_js(drupal_get_path('module', 'oira') . '/js/textarea_word_count.js');
+
 
       $form['#validate'][] = 'oira_frontend_news_validate_summary_word_count';
 
