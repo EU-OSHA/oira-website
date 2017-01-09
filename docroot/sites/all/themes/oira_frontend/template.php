@@ -637,11 +637,47 @@ function oira_frontend_node_save_redirect_submit($form, &$form_state){
 }
 
 /**
+ * Add javascript functionality for for limiting number of words for field_summary.
+ */
+function oira_frontend_news_after_build($form, &$form_state){
+  $form['#attached']['js'][] = array(
+    'data' => '(function ($){$("#' . $form['field_summary']['#id'] . ' textarea").textareaCounter({limit : 420}); }(jQuery));',
+    'type' => 'inline',
+    'scope' => 'footer',
+  );
+  return $form;
+}
+
+/**
+ * Additional validation for limiting number of words for field_summary.
+ */
+function oira_frontend_news_validate_summary_word_count($form, &$form_state){
+  if($form_state['values']['nid'] !== NULL){
+    $language =  isset($form_state['values']['language']) ? $form_state['values']['language'] : LANGUAGE_NONE;
+  }else{
+    $language = LANGUAGE_NONE;
+  }
+
+  if (isset($form_state['values']['field_summary'][$language][0]['value'])) {
+    $words = explode(' ', $form_state['values']['field_summary'][$language][0]['value']);
+    if(count($words)>420){
+      form_set_error('field_summary', t('Maximum allowed words for summary is @words',array('@words' => 420)));
+    }
+  }
+}
+
+/**
  * Implements form_alter().
  */
 function oira_frontend_form_alter(&$form, &$form_state, $form_id){
   switch($form_id){
     case 'news_node_form':
+      $form_state['no_cache'] = TRUE;
+      $form['#after_build'][] = 'oira_frontend_news_after_build';
+      drupal_add_js(drupal_get_path('module', 'oira') . '/js/textarea_word_count.js');
+
+      $form['#validate'][] = 'oira_frontend_news_validate_summary_word_count';
+
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['field_aditional_resources']['#access'] = FALSE;
@@ -652,6 +688,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       if(isset($form['actions']['send_for_approval'])){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
+
       break;
     case 'promotional_material_node_form':
       $form['field_publication_date']['#attributes']['class'][] = 'pull-left';

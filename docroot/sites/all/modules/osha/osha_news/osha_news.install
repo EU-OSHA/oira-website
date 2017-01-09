@@ -34,3 +34,10 @@ function osha_news_update_7004() {
 function osha_news_update_7005() {
   features_revert_module('osha_news');
 }
+
+/**
+ * Feature revert: NOW-310 - Private zone news form - summary mandatory field
+ */
+function osha_news_update_7006() {
+  features_revert_module('osha_news');
+}
