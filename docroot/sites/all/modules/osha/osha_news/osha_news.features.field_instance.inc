@@ -424,7 +424,7 @@ function osha_news_field_default_field_instances() {
       'file_directory' => 'news',
       'file_extensions' => 'png gif jpg jpeg',
       'image_field_caption' => 1,
-      'max_filesize' => '',
+      'max_filesize' => '5 MB',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
@@ -434,13 +434,6 @@ function osha_news_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'image' => 'image',
-        ),
-        'browser_plugins' => array(),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 0,
