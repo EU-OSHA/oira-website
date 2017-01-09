@@ -108,69 +108,6 @@ function oira_strategic_documentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-strategic_documentation-field_co_author'.
-  $field_instances['node-strategic_documentation-field_co_author'] = array(
-    'bundle' => 'strategic_documentation',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'body' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'osha_resources' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_slideshow' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'osha_wiki' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_co_author',
-    'label' => 'Co-author',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 3,
-    ),
-    'workbench_access_field' => 0,
-  );
 
   // Exported field_instance: 'node-strategic_documentation-field_country'.
   $field_instances['node-strategic_documentation-field_country'] = array(
@@ -722,7 +659,6 @@ function oira_strategic_documentation_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Co-author');
   t('Country');
   t('Disable notifications');
   t('Image');
