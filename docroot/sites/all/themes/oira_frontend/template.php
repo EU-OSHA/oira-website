@@ -707,11 +707,8 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       }
       break;
     case 'practical_tool_node_form':
-
-
       $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['field_revised_date']['#prefix'] = '<label>' . $form['field_revised_date'][LANGUAGE_NONE]['#title'] . '</label>';
-
       $form['body']['#attributes']['class'][] = 'oira-hide-format-description';
       $form['field_alternative_body']['#attributes']['class'][] = 'oira-hide-format-description';
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
