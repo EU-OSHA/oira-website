@@ -6520,9 +6520,10 @@ button.close {
 **************************************************/
 .top-header {
   position: relative;
+  margin-top: 25px;
 }
 .top-header .header-logo {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .top-header .header-logo .eu-logo {
   width: 75px;
@@ -6542,7 +6543,7 @@ button.close {
   font-weight: bold;
 }
 .top-header .header-blocks {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .top-header .header-blocks .region-header-block {
   max-width: 300px;
@@ -6686,6 +6687,7 @@ button.close {
   display: inline-block;
   margin-right: 10px;
   max-width: 100px;
+  visibility: hidden;
 }
 .top-header .header-blocks #block-menu-block-3 .introduction-title a {
   display: block;
@@ -6706,6 +6708,7 @@ button.close {
 .top-header .header-blocks #block-lang-dropdown-language {
   display: inline-block;
   float: right;
+  visibility: hidden;
 }
 .top-header .header-blocks #block-lang-dropdown-language #lang-dropdown-select-language {
   border: 2px solid #003399;
@@ -6723,7 +6726,7 @@ button.close {
 /*Menu
 **************************************************/
 .menu-header {
-  margin-top: 35px;
+  margin-top: 15px;
   background-color: #10b2e4;
   font-family: 'Oswald';
   font-size: 1.1em;
@@ -10581,7 +10584,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   /*HEADER
 ***********************************************/
   .top-header .header-logo {
-    margin-top: 62px;
+    margin-top: 0px;
   }
   .top-header .header-logo .logo img {
     width: 213px;
@@ -10671,7 +10674,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   /*HEADER
 ***********************************************/
   .top-header .header-logo {
-    margin-top: 40px;
+    margin-top: 0px;
   }
   .top-header .header-logo .logo img {
     width: 213px;
@@ -11857,7 +11860,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   /*HEADER
 ***********************************************/
   .top-header .header-logo {
-    margin-top: 40px;
+    margin-top: 0px;
   }
   .top-header .header-logo .logo img {
     width: 190px;
@@ -11877,7 +11880,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     margin-top: 0px;
     position: absolute;
     right: 0px;
-    top: 139px;
+    top: 100px;
     z-index: 2;
   }
   .top-header .header-blocks .region-header-block #block-menu-block-5 {
@@ -13744,8 +13747,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 @media only screen and (max-width: 480px) {
   /*HEADER
 ***********************************************/
+  .top-header {
+    margin-top: 15px;
+  }
   .top-header .header-logo {
-    margin-top: 14px;
+    margin-top: 0px;
   }
   .top-header .header-logo .logo img {
     width: 124px;
@@ -13753,7 +13759,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .top-header .header-logo img.eu-logo {
     width: 35px;
     margin-left: 12px;
-    margin-top: 25px;
+    margin-top: 18px;
+  }
+  .top-header .header-logo .navbar-btn {
+    margin-top: 0px;
   }
   .top-header .header-sitename {
     padding-left: 0px;
@@ -13762,7 +13771,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     width: 84px;
   }
   .top-header .header-blocks {
-    top: 91px;
+    top: 70px;
   }
   /*END HEADER*/
 }
