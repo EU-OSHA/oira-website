@@ -69,3 +69,10 @@ function oira_partner_update_7008() {
 function oira_partner_update_7009() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert: NOW-318 - Search by title update
+ */
+function oira_partner_update_7010() {
+  features_revert_module('oira_partner');
+}
