@@ -80,8 +80,10 @@ function osha_news_default_page_manager_pages() {
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
+My News
 Create News',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=news&status=All
 <none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -349,10 +351,12 @@ return $is_partner;',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
+My News
 Update News
 
 ',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=news&status=All
 <none>',
     'panels_breadcrumbs_home' => 1,
   );

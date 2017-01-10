@@ -239,12 +239,12 @@ function oira_promotional_material_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Description',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'display_summary' => 1,
       'entity_translation_sync' => FALSE,
       'linkit' => array(
-        'button_text' => 'Search',
+        'button_text' => '',
         'enable' => 0,
         'profile' => '',
       ),
@@ -498,7 +498,7 @@ function oira_promotional_material_field_default_field_instances() {
       'settings' => array(
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
-        'manualcrop_enable' => 0,
+        'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => 0,
         'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
@@ -560,8 +560,8 @@ function oira_promotional_material_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_oira',
-    'label' => 'OIRA',
-    'required' => 0,
+    'label' => 'OiRA / IRAT',
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -569,10 +569,8 @@ function oira_promotional_material_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
+      'settings' => array(),
+      'type' => 'options_buttons',
       'weight' => 1,
     ),
     'workbench_access_field' => 0,
@@ -739,7 +737,7 @@ function oira_promotional_material_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 2,
     ),
     'workbench_access_field' => 0,
@@ -1244,7 +1242,7 @@ function oira_promotional_material_field_default_field_instances() {
   t('Language');
   t('Link');
   t('Name');
-  t('OIRA');
+  t('OiRA / IRAT');
   t('Promotional material type');
   t('Publication date');
   t('Resource');

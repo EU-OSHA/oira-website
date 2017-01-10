@@ -27,3 +27,10 @@ function oira_promotional_material_update_7003() {
 function oira_promotional_material_update_7004() {
   features_revert_module('oira_promotional_material');
 }
+
+/**
+ * Feature revert: NOW-325,NOW-326,NOW-327,NOW-328 - Private zone promotional resources form updates
+ */
+function oira_promotional_material_update_7005() {
+  features_revert_module('oira_promotional_material');
+}

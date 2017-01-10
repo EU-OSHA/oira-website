@@ -675,12 +675,8 @@ function oira_frontend_news_validate_summary_word_count($form, &$form_state){
 function oira_frontend_form_alter(&$form, &$form_state, $form_id){
   switch($form_id){
     case 'news_node_form':
-      //$form_state['no_cache'] = TRUE;
       $form['#after_build'][] = 'oira_frontend_news_after_build';
-
-
       $form['#validate'][] = 'oira_frontend_news_validate_summary_word_count';
-
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['field_aditional_resources']['#access'] = FALSE;
@@ -691,9 +687,13 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       if(isset($form['actions']['send_for_approval'])){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
-
       break;
+
     case 'promotional_material_node_form':
+      //dpm($form['field_oira']);
+      $form['field_oira'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+      $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
+      $form['field_revised_date']['#prefix'] = '<label>' . $form['field_revised_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['field_publication_date']['#attributes']['class'][] = 'pull-left';
       $form['field_oira']['#attributes']['class'][] = 'pull-right';
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
@@ -706,6 +706,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
       break;
+
     case 'practical_tool_node_form':
       $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['field_revised_date']['#prefix'] = '<label>' . $form['field_revised_date'][LANGUAGE_NONE]['#title'] . '</label>';
@@ -722,6 +723,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
       break;
+
     case 'strategic_documentation_node_form':
       $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['actions']['#attributes']['class'] = array('container','text-center');
@@ -733,18 +735,15 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
       break;
-    case 'partner_node_form':
 
+    case 'partner_node_form':
       $form['about_organization'] = array(
         '#markup' => '<div class="ds-about-organization"><div class="row"><div class="col-sm-12"><h2>' . t('About your organization') . '</h2></div></div></div>',
         '#weight' => -100,
       );
-
       $form['title_field']['#disabled'] = TRUE;
       $form['title_field']['#weight'] = -99;
       $form['title_field']['#prefix'] = '<div class="row"><div class="group-left col-sm-6">';
-
-
       $form['field_logo'] = array(
         '#type' => 'item',
         '#title' => t('Logo'),
@@ -753,62 +752,40 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         '#suffix' => '</div></div>',
         '#weight' => -98,
       );
-
-
-
-
       $form['field_mission_statement']['#disabled'] = TRUE;
       $form['field_mission_statement']['#weight'] = -97;
       $form['field_mission_statement']['#prefix'] = '<div class="group-right col-sm-6">';
       $form['field_mission_statement']['#suffix'] = '</div></div>';
-
-
       $form['general_contact_information'] = array(
         '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-general-contact-information"><div class="row"><div class="col-sm-12"><h2>' . t('General contact information') . '</h2></div></div></div>',
         '#weight' => -96,
       );
-
-
-
       $form['field_ph_address']['#disabled'] = TRUE;
       $form['field_ph_address']['#weight'] = -95;
       $form['field_ph_address']['#prefix'] = '<div class="row"><div class="group-left col-sm-6">';
-
       $form['field_ph_cp']['#disabled'] = TRUE;
       $form['field_ph_cp']['#weight'] = -94;
-
       $form['field_general_email']['#disabled'] = TRUE;
       $form['field_general_email']['#weight'] = -93;
-
       $form['field_website']['#disabled'] = TRUE;
       $form['field_website']['#weight'] = -92;
       $form['field_website']['#suffix'] = '</div>';;
-
-
       $form['field_general_phone']['#disabled'] = TRUE;
       $form['field_general_phone']['#weight'] = -91;
       $form['field_general_phone']['#prefix'] = '<div class="group-right col-sm-6">';
-
       $form['field_country']['#disabled'] = TRUE;
       $form['field_country']['#weight'] = -90;
-
       $form['field_ph_town']['#disabled'] = TRUE;
       $form['field_ph_town']['#weight'] = -89;
-
       $form['field_dedicated_oira_website']['#disabled'] = TRUE;
       $form['field_dedicated_oira_website']['#weight'] = -88;
       $form['field_dedicated_oira_website']['#suffix'] = '</div></div>';
-
-
       $form['field_orgtype']['#access'] = FALSE;
       $form['field_partner_type']['#access'] = FALSE;
       $form['field_guid_organisation']['#access'] = FALSE;
       $form['field_guid_main_contact']['#access'] = FALSE;
-
-
       $form['field_social_profile']['#disabled'] = TRUE;
       $form['field_social_profile']['#weight'] = -87;
-
 
       foreach($form['field_social_profile']['und'] as $key=>$val){
         if(is_numeric($key)){
@@ -822,7 +799,6 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
 
       $form['field_main_contact']['#access'] = FALSE;
       $form['field_main_contact_email']['#access'] = FALSE;
-
       $form['field_collaborator']['#disabled'] = TRUE;
       $form['other_collaborators'] = array(
         '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-collaborators"><div class="row"><div class="col-sm-12"><h2>' . t('Other collaborators') . '</h2></div></div></div>',
@@ -830,6 +806,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       );
 
       unset($form['field_collaborator']['und']['#title']);
+
       $weight = 0;
       foreach($form['field_collaborator']['und'] as $key=>$val){
         if(is_numeric($key)){
@@ -848,33 +825,32 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
           }
           }
         }
+
       $form['footer_line'] = array(
         '#markup' => '<div class="group-footer col-md-12"></div>',
         '#weight' => 100,
       );
+
       $form['#attached']['js'][] = array(
         'data' => drupal_get_path('theme', 'oira_frontend') . '/js/oira-tabledrag.js',
         'weight' => -2,
       );
+
       unset($form['#submit']);
+
       $form['actions']['#access'] = FALSE;
 
-
-
       if(isset($form['workbench_access']['workbench_access']['#default_value'])){
-
         $form['other_users'] = array(
           '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-users"><div class="row"><div class="col-sm-12"><h2>' . t('Other users') . '</h2></div></div></div>',
           '#weight' => 200,
         );
-
         $other_users_header = array(
           t('Name'),
           t('Email address'),
           t('Telephone'),
           );
         $other_users_rows = array();
-
         $section_id = $form['workbench_access']['workbench_access']['#default_value'][0];
         $partner_users = _oira_workflow_load_users_by_section($section_id);
 
@@ -888,6 +864,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
               );
             }
           }
+
         $form['other_users_table'] = array(
           '#markup' => theme('table',
             array(
@@ -895,7 +872,6 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
               'rows' => $other_users_rows)),
           '#weight' => 201,
         );
-
       }
       break;
     default:
