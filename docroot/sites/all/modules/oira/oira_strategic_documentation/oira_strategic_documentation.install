@@ -36,7 +36,7 @@ function oira_strategic_documentation_update_7005() {
 }
 
 /**
- * Feature revert: NOW-237 - Private zone -list stategic documentation items
+ * Feature revert: NOW-237 - Private zone - list stategic documentation items
  */
 function oira_strategic_documentation_update_7006() {
   features_revert_module('oira_strategic_documentation');
@@ -44,6 +44,13 @@ function oira_strategic_documentation_update_7006() {
 
 /**
  * Feature revert: NOW-237 - Private zone Edit form updates
+ */
+function oira_strategic_documentation_update_7007() {
+  features_revert_module('oira_strategic_documentation');
+}
+
+/**
+ * Feature revert: NOW-324,NOW-333 - Private zone strategic documentation form updates
  */
 function oira_strategic_documentation_update_7007() {
   features_revert_module('oira_strategic_documentation');

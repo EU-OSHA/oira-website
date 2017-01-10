@@ -723,6 +723,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       }
       break;
     case 'strategic_documentation_node_form':
+      $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['actions']['submit']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       if(isset($form['actions']['save_preview'])){
