@@ -49,8 +49,6 @@
                     wordcount = $.trim(text).split(" ").length;
                 }
 
-                console.log(wordcount);
-
                 if(wordcount > options.limit) {
                     $("#" + obj_id + "-counter-text").html('0 ' + dictionary.words_left);
                     limited = $.trim(text).split(" ", options.limit);
