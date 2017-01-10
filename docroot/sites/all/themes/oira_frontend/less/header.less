@@ -2,8 +2,9 @@
 **************************************************/
 .top-header{
 	position: relative;
+	margin-top: 25px;
 	.header-logo{
-		margin-top: 50px;
+		margin-top: 0px;
 		.logo{
 
 		}
@@ -30,7 +31,7 @@
 		}
 	}
 	.header-blocks{
-		margin-top: 50px;
+		margin-top: 0px;
 		.region-header-block{
 			max-width: 300px;
 			float: right;
@@ -187,6 +188,7 @@
 			display: inline-block;
 			margin-right: 10px;//firefox
 			max-width: 100px;
+			visibility: hidden;
 			.introduction-title{				
 				a{
 					display: block;
@@ -209,6 +211,7 @@
 		#block-lang-dropdown-language{
 			display: inline-block;
 			float: right;
+			visibility: hidden;//only until finish private zone
 			#lang-dropdown-select-language{
 				border: 2px solid @color-menu-icons;
     			outline: none;
@@ -248,7 +251,7 @@
 /*Menu
 **************************************************/
 .menu-header{
-	margin-top: 35px;
+	margin-top: 15px;
     background-color: @color-menu;
     font-family: @font-family-base-2;
     font-size: 1.1em;
