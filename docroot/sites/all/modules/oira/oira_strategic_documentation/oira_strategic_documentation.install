@@ -55,3 +55,10 @@ function oira_strategic_documentation_update_7007() {
 function oira_strategic_documentation_update_7008() {
   features_revert_module('oira_strategic_documentation');
 }
+
+/**
+ * Feature revert: NOW-320 - Private zone upload Strategic Documentation added OiRA / IRAT radio buttons
+ */
+function oira_strategic_documentation_update_7009() {
+  features_revert_module('oira_strategic_documentation');
+}
