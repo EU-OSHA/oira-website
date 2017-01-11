@@ -11619,6 +11619,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-right: 10px;
   margin-left: 0px;
 }
+.node-strategic_documentation-form .form-type-radios .form-radios input[type=radio] {
+  margin-left: 0px;
+}
+.node-strategic_documentation-form .form-type-radios .form-radios label {
+  padding-left: 20px;
+}
 /*End private zone*/
 /*FOOTER
 ********************************************/

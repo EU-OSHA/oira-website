@@ -690,7 +690,6 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       break;
 
     case 'promotional_material_node_form':
-      //dpm($form['field_oira']);
       $form['field_oira'][LANGUAGE_NONE]['#title_display'] = 'invisible';
       $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['field_revised_date']['#prefix'] = '<label>' . $form['field_revised_date'][LANGUAGE_NONE]['#title'] . '</label>';
@@ -725,6 +724,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       break;
 
     case 'strategic_documentation_node_form':
+      $form['field_oira'][LANGUAGE_NONE]['#title_display'] = 'invisible';
       $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['actions']['submit']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
