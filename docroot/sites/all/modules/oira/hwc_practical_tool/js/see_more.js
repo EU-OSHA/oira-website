@@ -20,6 +20,9 @@
                     expandText:       '', // default is 'read more'
                     userCollapseText: ''
                 });
+                $body.find('div>div').css({ "display": "inline" });
+                $body.find('div>div>p').css({ "display": "inline" });
+                $body.find('.read-more').css({ "display": "inline" });
                 $(this).find('a').on('click', function(e){
                     e.preventDefault();
                     var show_less = expander_setting.show_less_text;
