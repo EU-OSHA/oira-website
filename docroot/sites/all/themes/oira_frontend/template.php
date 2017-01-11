@@ -674,6 +674,9 @@ function oira_frontend_news_validate_summary_word_count($form, &$form_state){
  */
 function oira_frontend_form_alter(&$form, &$form_state, $form_id){
   switch($form_id){
+    case 'user_login':
+      $form['#submit'][] = 'oira_frontend_login_destination_submit';
+      break;
     case 'news_node_form':
       $form['#after_build'][] = 'oira_frontend_news_after_build';
       $form['#validate'][] = 'oira_frontend_news_validate_summary_word_count';
@@ -947,4 +950,30 @@ function oira_frontend_preprocess_panels_pane(&$vars) {
       $vars['title_attributes_array']['class'][] = 'container';
     }
   }
+}
+
+/**
+ * Prepare redirect url for Partner after login
+ */
+function oira_frontend_login_destination_submit($form, &$form_state){
+  global $user;
+  if (isset($_GET['destination'])){
+    return;
+  }
+  if(array_intersect(array(ROLE_OIRA_PARTNER),array_values($user->roles))){
+    $partner_node_id = osha_workflow_user_partner_id($user->uid);
+    if($partner_node_id){
+      $GLOBALS['destination'] = url('node/' . $partner_node_id,array('absolute'=>TRUE));
+    }
+  }
+}
+
+/**
+ * Implements hook_drupal_goto_alter().
+ */
+function oira_frontend_drupal_goto_alter(&$path, &$options, &$http_response_code) {
+  if (!isset($GLOBALS['destination'])) {
+    return;
+  }
+  $path = $GLOBALS['destination'];
 }
