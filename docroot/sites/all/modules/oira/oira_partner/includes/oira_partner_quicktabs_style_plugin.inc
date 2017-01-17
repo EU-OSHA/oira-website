@@ -43,6 +43,7 @@ class oira_partner_quicktabs_style_plugin extends quicktabs_style_plugin {
       $has_sector = FALSE;
       $all_group_counter = 0;
       $content_type = '';
+
       if ($this->uses_row_plugin()) {
         $rows = array();
         foreach ($records as $row_index => $row) {
