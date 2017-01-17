@@ -213,16 +213,10 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
   $handler->display->display_options['cache']['output_lifespan'] = '3600';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -233,11 +227,22 @@ function oira_partner_views_default_views() {
     'promotional_material' => 'promotional_material',
     'strategic_documentation' => 'strategic_documentation',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Oira partner: Node belongs to partner or is the coauthor */
   $handler->display->display_options['filters']['partner_access_coauthor']['id'] = 'partner_access_coauthor';
   $handler->display->display_options['filters']['partner_access_coauthor']['table'] = 'oira_partner';
   $handler->display->display_options['filters']['partner_access_coauthor']['field'] = 'partner_access_coauthor';
   $handler->display->display_options['filters']['partner_access_coauthor']['value'] = '1';
+  $handler->display->display_options['filters']['partner_access_coauthor']['group'] = 1;
+  /* Filter criterion: Workbench Moderation: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    'draft' => 'draft',
+    'final_draft' => 'final_draft',
+    'published' => 'published',
+  );
   $handler->display->display_options['block_caching'] = '-1';
   $translatables['country_partner_content'] = array(
     t('Master'),
