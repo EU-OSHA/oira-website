@@ -734,6 +734,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['label'] = '';
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['type'] = 'text_plain';
   $handler->display->display_options['fields']['title_field_1']['settings'] = array(
     'field_formatter_class' => '',
   );
@@ -745,7 +746,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_logo']['label'] = '';
   $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="partner-logo-wrapper" title="[title_field]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/></div>';
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="partner-logo-wrapper" title="[title_field_1]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/></div>';
   $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
@@ -1097,7 +1098,7 @@ function oira_partner_views_default_views() {
 [partner_content_count]
 </div>'),
     t('term from field_orgtype'),
-    t('<div class="partner-logo-wrapper" title="[title_field]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/></div>'),
+    t('<div class="partner-logo-wrapper" title="[title_field_1]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/></div>'),
     t('National partners'),
     t('<img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/>'),
     t('IRAT'),

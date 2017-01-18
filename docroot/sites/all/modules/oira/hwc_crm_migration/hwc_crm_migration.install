@@ -1,0 +1,13 @@
+<?php
+
+/**
+* NOW-340: Update source language to english for all jobs that have undefined (und) source language
+*/
+function hwc_crm_migration_update_7001() {
+  db_update('tmgmt_job_item')
+    ->fields(array(
+      'source_language' => 'en',
+    ))
+    ->condition('source_language', 'und' ,'=')
+    ->execute();
+}
