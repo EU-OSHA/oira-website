@@ -83,6 +83,10 @@ jQuery(document).ready(function () {
 		jQuery("body").addClass("more-than-two-partners");
 	}
 
+	//country spain layout
+	jQuery("div[data-partner-nid*='103']").appendTo(".page-taxonomy-term-40.page-country-profile .partners-no-2");
+	
+
 	/*specific functions for pc, tablet and mobile */
 	funcionesPc();
 

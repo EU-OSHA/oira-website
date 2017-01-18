@@ -10535,6 +10535,45 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   position: absolute !important;
   margin-left: 0px !important;
 }
+/*end retranslate*/
+/*Spain improvement
+****************************/
+.page-taxonomy-term-40.page-country-profile .country-partner-wrapper.col-md-6.col-sm-6 {
+  width: 100%;
+}
+.page-taxonomy-term-40.page-country-profile .col-sm-4.partner-image-container,
+.page-taxonomy-term-40.page-country-profile .col-sm-8.partner-text-container {
+  width: inherit !important;
+}
+.page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside > div {
+  width: 33%;
+}
+.page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] h2 {
+  padding-bottom: inherit !important;
+}
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] {
+  border-left: none;
+}
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .panels-flexible-row-new-main-row {
+  padding-bottom: 0px;
+}
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first {
+  border-top: 2px solid #786586;
+  border-bottom: none;
+  padding-top: 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first img {
+  height: 175px;
+}
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .panels-flexible-row-new-1 {
+  display: none;
+}
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .col-sm-8.partner-text-container {
+  margin-top: 65px;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
@@ -11735,6 +11774,26 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .page-irat-network .hwc-alphabet-container {
     display: none;
+  }
+  /*Spain improvement
+****************************/
+  .page-taxonomy-term-40.page-country-profile .col-sm-4.partner-image-container,
+  .page-taxonomy-term-40.page-country-profile .col-sm-8.partner-text-container {
+    width: 100% !important;
+  }
+  .page-taxonomy-term-40.page-country-profile .partners-no-2 {
+    border-bottom: none;
+    margin-bottom: 0px;
+  }
+  .page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside > div {
+    width: 100%;
+  }
+  .page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] h2 {
+    padding-bottom: inherit !important;
+  }
+  .page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .col-sm-8.partner-text-container {
+    margin-top: 0px;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 976px) and (max-width: 991px) {
@@ -13743,6 +13802,26 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   /*general search styles
 ***************************************************/
   /*end general search*/
+  /*Spain improvement
+****************************/
+  .page-taxonomy-term-40.page-country-profile .col-sm-4.partner-image-container,
+  .page-taxonomy-term-40.page-country-profile .col-sm-8.partner-text-container {
+    width: 100% !important;
+  }
+  .page-taxonomy-term-40.page-country-profile .partners-no-2 {
+    border-bottom: none;
+    margin-bottom: 0px;
+  }
+  .page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] .panels-flexible-row-new-1-inside > div {
+    width: 100%;
+  }
+  .page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] h2 {
+    padding-bottom: inherit !important;
+  }
+  .page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .col-sm-8.partner-text-container {
+    margin-top: 0px;
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 480px) {
   /*HEADER
