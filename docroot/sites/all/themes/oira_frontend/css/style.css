@@ -10561,7 +10561,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border-top: 2px solid #786586;
   border-bottom: none;
   padding-top: 0px;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
@@ -10574,6 +10574,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .col-sm-8.partner-text-container {
   margin-top: 65px;
 }
+/*Facts and Figures
+***********************/
 /*FOOTER
 ********************************************/
 .site-footer {
