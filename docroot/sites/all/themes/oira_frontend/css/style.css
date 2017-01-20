@@ -10551,13 +10551,13 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] h2 {
   padding-bottom: inherit !important;
 }
-.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] {
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] {
   border-left: none;
 }
-.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .panels-flexible-row-new-main-row {
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] .panels-flexible-row-new-main-row {
   padding-bottom: 0px;
 }
-.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first {
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first {
   border-top: 2px solid #786586;
   border-bottom: none;
   padding-top: 0px;
@@ -10565,17 +10565,93 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
-.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first img {
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first img {
   height: 175px;
 }
-.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .panels-flexible-row-new-1 {
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] .panels-flexible-row-new-1 {
   display: none;
 }
-.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .col-sm-8.partner-text-container {
+.page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] .col-sm-8.partner-text-container {
   margin-top: 65px;
 }
 /*Facts and Figures
 ***********************/
+.page-node-401.node-type-article .article-content-container,
+.page-node-402.node-type-article .article-content-container {
+  max-width: inherit;
+}
+.page-node-401.node-type-article .article-content-container h1,
+.page-node-402.node-type-article .article-content-container h1 {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  color: #967ea7;
+}
+.page-node-401.node-type-article .article-content-container .pane-node-share-widget,
+.page-node-402.node-type-article .article-content-container .pane-node-share-widget {
+  display: none;
+}
+.page-node-401.node-type-article .article-content-container .esener-template .resume-section,
+.page-node-402.node-type-article .article-content-container .esener-template .resume-section {
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul,
+.page-node-402.node-type-article .article-content-container .esener-template > ul {
+  list-style: none;
+  margin-left: 0px;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul li:nth-child(odd),
+.page-node-402.node-type-article .article-content-container .esener-template > ul li:nth-child(odd) {
+  background-color: #dfd8e4;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul .col-left,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .col-left {
+  margin-bottom: 20px;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul .content-image,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .content-image {
+  margin-top: 30px;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid grey;
+  margin-bottom: 30px;
+  cursor: pointer;
+  position: relative;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul .content-image .magnifier,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .content-image .magnifier {
+  position: absolute;
+  top: 32%;
+  text-align: center;
+  display: block;
+  width: 75px;
+  left: 40%;
+  height: 75px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul .content-image .magnifier:before,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .content-image .magnifier:before {
+  content: "\e015";
+  font-family: "Glyphicons Halflings";
+  font-size: 3em;
+  margin-right: 100px;
+  padding-bottom: 44px;
+  margin-left: 12px;
+  line-height: 74px;
+  display: block;
+  color: #786586;
+  opacity: 0.5;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul .content-image:hover .magnifier:before,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .content-image:hover .magnifier:before {
+  opacity: 1;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
@@ -10709,6 +10785,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
     max-height: 225px;
+  }
+  /*Facts and Figures
+***********************/
+  .page-node-401.node-type-article .article-content-container h1 {
+    max-width: 970px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -11793,7 +11874,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] h2 {
     padding-bottom: inherit !important;
   }
-  .page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .col-sm-8.partner-text-container {
+  .page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] .col-sm-8.partner-text-container {
     margin-top: 0px;
     width: 100%;
   }
@@ -13820,7 +13901,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-taxonomy-term-40.page-country-profile .partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] h2 {
     padding-bottom: inherit !important;
   }
-  .page-taxonomy-term-40.page-country-profile div[data-partner-nid*="103"] .col-sm-8.partner-text-container {
+  .page-taxonomy-term-40.page-country-profile div[data-partner-nid*="91"] .col-sm-8.partner-text-container {
     margin-top: 0px;
     width: 100%;
   }
