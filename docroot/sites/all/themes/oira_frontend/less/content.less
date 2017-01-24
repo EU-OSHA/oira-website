@@ -4083,3 +4083,126 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 }
 /*end retranslate*/
+
+
+/*Spain improvement
+****************************/
+.page-taxonomy-term-40.page-country-profile{
+	.country-partner-wrapper.col-md-6.col-sm-6{
+		width: 100%;
+	}
+	.col-sm-4.partner-image-container,
+	.col-sm-8.partner-text-container{
+		width: inherit !important;
+	}
+	.partners-no-2 .country-partner-wrapper div[id^="mini-panel-partner_in_country"] {
+		.panels-flexible-row-new-1-inside > div {
+    	width: 33%;
+    	}
+    	h2{
+			padding-bottom: inherit !important;
+    	}
+
+	}
+
+	div[data-partner-nid*="91"]{
+		border-left: none;
+		.panels-flexible-row-new-main-row{
+			padding-bottom: 0px;
+		}
+		div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first{
+			border-top: 2px solid @color-primary-dark;
+			border-bottom: none;
+			padding-top: 0px;
+			margin-top: 15px;
+			margin-bottom: 0px;
+			padding-bottom: 0px;
+			img{
+				height: 175px;
+			}
+		}
+		.panels-flexible-row-new-1{
+			display: none;
+		}
+		.col-sm-8.partner-text-container{
+			margin-top: 65px;
+		}
+	}
+}
+
+/*Facts and Figures
+***********************/
+.page-node-401.node-type-article,
+.page-node-402.node-type-article{
+	.article-content-container{
+		max-width: inherit;
+		h1{
+			max-width: 1170px;
+			margin: 0 auto;
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-bottom: 30px;
+			margin-top: 40px;
+			color: @color-text-purple;
+		}
+		.pane-node-share-widget{
+			display: none;
+		}
+		.esener-template{
+			.resume-section{
+				margin-bottom: 50px;
+				font-weight: bold;
+			}
+			> ul{
+				list-style: none;
+				margin-left: 0px;
+				li:nth-child(odd){
+					background-color: @color-primary;
+				}
+				.col-left{
+					margin-bottom: 20px;
+				}
+				.content-image{
+					margin-top: 30px;
+					height: 200px;
+				    overflow: hidden;
+				    border: 1px solid grey;
+				    margin-bottom: 30px;
+				    cursor: pointer;
+				    position: relative;
+				    .magnifier{
+				    	position: absolute;
+					    top: 32%;
+					    text-align: center;
+					    display: block;
+					    width: 75px;
+					    left: 40%;
+					    height: 75px;
+					    background-color: rgba(255, 255, 255, 0.7);
+					    border-radius: 50%;
+					    overflow: hidden;
+					    &:before{
+					    	content: "\e015";
+						    font-family: "Glyphicons Halflings";
+						    font-size: 3em;
+						    margin-right: 100px;
+						    padding-bottom: 44px;
+						    margin-left: 12px;
+						    line-height: 74px;
+						    display: block;
+						    color: @color-primary-dark;
+						    opacity: 0.5;
+					    }
+				    }
+				}
+				.content-image:hover{
+					.magnifier{
+					    &:before{
+						    opacity: 1;
+					    }
+				    }
+				}
+			}
+		}
+	}
+}
