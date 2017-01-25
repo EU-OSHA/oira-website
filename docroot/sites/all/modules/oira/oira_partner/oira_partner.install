@@ -76,3 +76,10 @@ function oira_partner_update_7009() {
 function oira_partner_update_7010() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert: NOW-385 - Add label for title - My content
+ */
+function oira_partner_update_7011() {
+  features_revert_module('oira_partner');
+}
