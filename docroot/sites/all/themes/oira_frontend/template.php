@@ -789,6 +789,8 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       $form['field_guid_main_contact']['#access'] = FALSE;
       $form['field_social_profile']['#disabled'] = TRUE;
       $form['field_social_profile']['#weight'] = -87;
+      $form['field_social_profile']['#prefix'] = '<div id="field-social-profile-add-more-wrapper--2"><label>' . t('Social media profiles') . '</label>';
+      $form['field_social_profile']['#sufix'] = '</div>';
 
       foreach($form['field_social_profile']['und'] as $key=>$val){
         if(is_numeric($key)){
