@@ -36,7 +36,7 @@ function oira_promotional_material_field_default_field_instances() {
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'txt pdf docx zip ppt pptx doc rar odt odp otp xls xlsx',
-      'max_filesize' => '',
+      'max_filesize' => '5 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(

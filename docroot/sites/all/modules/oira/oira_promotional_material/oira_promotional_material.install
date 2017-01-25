@@ -34,3 +34,10 @@ function oira_promotional_material_update_7004() {
 function oira_promotional_material_update_7005() {
   features_revert_module('oira_promotional_material');
 }
+
+/**
+ * Feature revert: NOW-357 - Private zone promotional resources set max size on file
+ */
+function oira_promotional_material_update_7006() {
+  features_revert_module('oira_promotional_material');
+}
