@@ -4146,11 +4146,20 @@ div[id ^= "mini-panel-partner_in_"], {
 			color: @color-text-purple;
 		}
 		.pane-node-share-widget{
-			display: none;
+			max-width: 1170px;
+			margin: 0 auto;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		@media only screen and (max-width: 1199px){
+			.pane-node-share-widget{
+				max-width: 970px;
+			}
 		}
 		.esener-template{
 			.resume-section{
-				margin-bottom: 50px;
+				margin-top: 25px;
+				margin-bottom: 40px;
 				font-weight: bold;
 			}
 			> ul{
@@ -4161,48 +4170,68 @@ div[id ^= "mini-panel-partner_in_"], {
 				}
 				.col-left{
 					margin-bottom: 20px;
+					h2{
+						border-bottom: 2px solid @color-primary-dark;
+						padding-bottom: 20px;
+    					line-height: 1.4em;
+					}
+					.summary{
+						font-family: @font-family-base-2;
+						border-bottom: 2px solid @color-primary-dark;
+						padding-bottom: 17px;
+					    padding-top: 5px;
+					    margin-bottom: 15px;
+					    font-size: 1.1em;
+					}
+					.external-link{
+						&:after{
+							content:"\e164";
+							display: inline-block;
+							margin-left: 10px;
+							margin-right: 7px;
+							font-family: "Glyphicons Halflings";
+							font-style: normal;
+						}
+					}
 				}
 				.content-image{
-					margin-top: 30px;
-					height: 200px;
+					margin-top: 45px;
 				    overflow: hidden;
 				    border: 1px solid grey;
 				    margin-bottom: 30px;
 				    cursor: pointer;
 				    position: relative;
+				    max-height: 350px;
 				    .magnifier{
 				    	position: absolute;
-					    top: 32%;
+					    bottom: 0%;
 					    text-align: center;
 					    display: block;
-					    width: 75px;
-					    left: 40%;
-					    height: 75px;
-					    background-color: rgba(255, 255, 255, 0.7);
-					    border-radius: 50%;
+					    width: 50px;
+					    right: 0%;
+					    height: 45px;
+					    background-color: @color-see-more;
 					    overflow: hidden;
 					    &:before{
 					    	content: "\e015";
 						    font-family: "Glyphicons Halflings";
-						    font-size: 3em;
+						    font-size: 2em;
 						    margin-right: 100px;
 						    padding-bottom: 44px;
-						    margin-left: 12px;
-						    line-height: 74px;
+						    margin-left: 9px;
+						    line-height: 45px;
 						    display: block;
-						    color: @color-primary-dark;
-						    opacity: 0.5;
-					    }
-				    }
-				}
-				.content-image:hover{
-					.magnifier{
-					    &:before{
-						    opacity: 1;
+						    color: white;
 					    }
 				    }
 				}
 			}
 		}
+	}
+	.modal.fade.in{
+		padding-right: 0px !important;
+	}
+	.modal-dialog{
+		
 	}
 }
