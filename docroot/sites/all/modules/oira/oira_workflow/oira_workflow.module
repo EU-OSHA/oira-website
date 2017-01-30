@@ -207,12 +207,23 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
     if($form_id == 'node_delete_confirm'){
       $node_workbench_moderation_state_current = !empty($form['#node']->workbench_moderation['current']->state) ? $form['#node']->workbench_moderation['current']->state : workbench_moderation_state_none();
       $can_delete = (user_access("delete any {$form['#node']->type} content") || user_access("delete own {$form['#node']->type} content")) && user_access("delete any content in {$node_workbench_moderation_state_current}");
+
+      if (in_array('administrator', $user->roles)) {
+        return;
+      }
+
+      if (!$can_delete  || !in_array(ROLE_OIRA_PARTNER, $user->roles)) {
+        drupal_goto('<front>');
+      }
+
       $partner_id = osha_workflow_user_partner_id($form['#node']->uid);
 
       if($partner_id!==NULL && $can_delete && in_array(ROLE_OIRA_PARTNER, $user->roles)){
         unset($_GET['destination']);
         $form['actions']['cancel']['#href'] = 'node/' . $partner_id . '/edit-' . $form['#node']->type . '/' . $form['#node']->nid;
       }
+
+      return;
     }
 
     $node = $form_state['node'];
@@ -226,19 +237,23 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
         '#submit' => array('node_form_delete_submit')
       );
     }
-    
+
     if (in_array(ROLE_OIRA_PARTNER, $user->roles) && count($user->roles) == 2) {
       foreach($user->workbench_access as $user_id_section => $value) {
-        foreach($form['workbench_access']['workbench_access']['#options'] as $wb_id_section => $label) {
-          if ($user_id_section == $wb_id_section) {
-            $form['workbench_access']['workbench_access']['#default_value'] = $user_id_section;
-            $form['workbench_access']['workbench_access']['#access'] = FALSE;
-            break;
+        if (!empty($form['workbench_access']['workbench_access']['#options'])) {
+          foreach($form['workbench_access']['workbench_access']['#options'] as $wb_id_section => $label) {
+            if ($user_id_section == $wb_id_section) {
+              $form['workbench_access']['workbench_access']['#default_value'] = $user_id_section;
+              $form['workbench_access']['workbench_access']['#access'] = FALSE;
+              break;
+            }
           }
         }
       }
       if (empty($form['workbench_access']['workbench_access']['#default_value'])) {
-        drupal_goto('<front>');
+        if (empty($form['#node']['workbench_access']['workbench_access']['#default_value'])) {
+          drupal_goto('<front>');
+        }
       }
       $form['#after_build'][] = 'oira_workflow_node_form_after_build_hide_hints';
 
