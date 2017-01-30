@@ -8,7 +8,7 @@ function oira_promotional_material_update_7001() {
 }
 
 /**
- * Feature revert
+ * Feature revert : NOW-400.
  */
 function oira_promotional_material_update_7002() {
   features_revert_module('oira_promotional_material');
