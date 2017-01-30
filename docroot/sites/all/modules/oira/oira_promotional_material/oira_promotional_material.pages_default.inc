@@ -96,8 +96,10 @@ return $is_partner;',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
+My Promotional Resources
 Upload Promotional Resources',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=promotional_material&status=All
 <none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -365,8 +367,10 @@ return $is_partner;',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
+My Promotional Resources
 Update Promotional Resource',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=promotional_material&status=All
 <none>',
     'panels_breadcrumbs_home' => 1,
   );

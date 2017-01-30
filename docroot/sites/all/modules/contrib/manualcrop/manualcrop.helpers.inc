@@ -317,13 +317,9 @@ function _manualcrop_js_identifier($data) {
  *   Widget settings.
  */
 function _manualcrop_attach_dependencies(&$element, $form_state, $js_identifier, $settings = array()) {
-  static $added;
 
   // Attach the required files.
   _manualcrop_attach_files($element);
-
-  if (!isset($added[$js_identifier]) || $added[$js_identifier] != $form_state['rebuild']) {
-    $added[$js_identifier] = $form_state['rebuild'];
 
     // Generate image style settings.
     $styles = &drupal_static(__FUNCTION__);
@@ -356,7 +352,6 @@ function _manualcrop_attach_dependencies(&$element, $form_state, $js_identifier,
       ),
       'type' => 'setting',
     );
-  }
 }
 
 /**

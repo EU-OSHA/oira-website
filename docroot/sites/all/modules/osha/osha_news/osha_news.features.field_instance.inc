@@ -120,10 +120,15 @@ function osha_news_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'display_summary' => 0,
       'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => '',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -137,6 +142,7 @@ function osha_news_field_default_field_instances() {
       'type' => 'text_textarea_with_summary',
       'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-news-field_aditional_resources'.
@@ -424,7 +430,7 @@ function osha_news_field_default_field_instances() {
       'file_directory' => 'news',
       'file_extensions' => 'png gif jpg jpeg',
       'image_field_caption' => 1,
-      'max_filesize' => '',
+      'max_filesize' => '5 MB',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
@@ -434,13 +440,6 @@ function osha_news_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'allowed_schemes' => array(
-          'public' => 'public',
-        ),
-        'allowed_types' => array(
-          'image' => 'image',
-        ),
-        'browser_plugins' => array(),
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
         'manualcrop_enable' => 0,
@@ -788,9 +787,14 @@ function osha_news_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_summary',
     'label' => 'Summary',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => '',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -803,6 +807,7 @@ function osha_news_field_default_field_instances() {
       'type' => 'text_textarea',
       'weight' => 5,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-news-field_tags'.

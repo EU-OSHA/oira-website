@@ -208,21 +208,11 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Partner content - profile page - private zone';
   $handler->display->display_options['defaults']['cache'] = FALSE;
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -233,11 +223,22 @@ function oira_partner_views_default_views() {
     'promotional_material' => 'promotional_material',
     'strategic_documentation' => 'strategic_documentation',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Oira partner: Node belongs to partner or is the coauthor */
   $handler->display->display_options['filters']['partner_access_coauthor']['id'] = 'partner_access_coauthor';
   $handler->display->display_options['filters']['partner_access_coauthor']['table'] = 'oira_partner';
   $handler->display->display_options['filters']['partner_access_coauthor']['field'] = 'partner_access_coauthor';
   $handler->display->display_options['filters']['partner_access_coauthor']['value'] = '1';
+  $handler->display->display_options['filters']['partner_access_coauthor']['group'] = 1;
+  /* Filter criterion: Workbench Moderation: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    'draft' => 'draft',
+    'final_draft' => 'final_draft',
+    'published' => 'published',
+  );
   $handler->display->display_options['block_caching'] = '-1';
   $translatables['country_partner_content'] = array(
     t('Master'),
@@ -497,15 +498,16 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
   $handler->display->display_options['fields']['field_logo']['label'] = '';
   $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="partner-logo-wrapper" title="[title_field]" data-partner-nid="[nid]">[field_logo]</div>';
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="partner-logo-wrapper" title="[title_field]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field]" alt="[title_field]" width="[field_logo-width]" height="[field_logo-height]"/></div>';
   $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'url_type' => '0',
     'image_style' => 'medium',
     'image_link' => '',
     'field_formatter_class' => '',
   );
-  $handler->display->display_options['fields']['field_logo']['field_api_classes'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
@@ -570,7 +572,7 @@ function oira_partner_views_default_views() {
 [field_mission_statement]
 </div>'),
     t('Block'),
-    t('<div class="partner-logo-wrapper" title="[title_field]" data-partner-nid="[nid]">[field_logo]</div>'),
+    t('<div class="partner-logo-wrapper" title="[title_field]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field]" alt="[title_field]" width="[field_logo-width]" height="[field_logo-height]"/></div>'),
     t('All'),
   );
   $export['oira_partners'] = $view;
@@ -648,10 +650,8 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
@@ -671,11 +671,19 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['state']['field'] = 'state';
   $handler->display->display_options['fields']['state']['label'] = 'Status';
   $handler->display->display_options['fields']['state']['machine_name'] = 0;
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['delete_node']['text'] = 'Delete';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
   $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>';
   $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
@@ -698,6 +706,7 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
+  $handler->display->display_options['filters']['title_field_value']['operator'] = 'contains';
   $handler->display->display_options['filters']['title_field_value']['group'] = 1;
   $handler->display->display_options['filters']['title_field_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title_field_value']['expose']['operator_id'] = 'title_field_value_op';
@@ -834,12 +843,13 @@ function oira_partner_views_default_views() {
     t('last »'),
     t('No results'),
     t('<p class="text-muted text-center">No results</p>'),
+    t('Title'),
     t('Type'),
     t('Status'),
-    t('Edit'),
+    t('Delete'),
+    t('Actions'),
     t('<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>'),
     t('All'),
-    t('Title'),
     t('Publication date'),
     t('Page'),
   );
@@ -1020,24 +1030,6 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Field: Logo */
-  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img src="[field_logo-fid]" title="[title_field]" alt="[title_field]" />';
-  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
-  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-    'field_formatter_class' => '',
-  );
-  $handler->display->display_options['fields']['field_logo']['field_api_classes'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -1053,6 +1045,38 @@ function oira_partner_views_default_views() {
     'field_formatter_class' => 'hwc-alpha-pager-view-title-field',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['title_field_1']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 0;
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<div class="partner-logo-wrapper" title="[title_field_1]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/></div>';
+  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'medium',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
@@ -1148,24 +1172,6 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Field: Logo */
-  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img src="[field_logo-fid]" title="[title_field]" alt="[title_field]" />';
-  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
-  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-    'field_formatter_class' => '',
-  );
-  $handler->display->display_options['fields']['field_logo']['field_api_classes'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -1181,6 +1187,37 @@ function oira_partner_views_default_views() {
     'field_formatter_class' => 'hwc-alpha-pager-view-title-field',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 0;
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/>';
+  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'medium',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
@@ -1260,24 +1297,6 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  /* Field: Field: Logo */
-  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
-  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
-  $handler->display->display_options['fields']['field_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img src="[field_logo-fid]" title="[title_field]" alt="[title_field]" />';
-  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
-  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-    'field_formatter_class' => '',
-  );
-  $handler->display->display_options['fields']['field_logo']['field_api_classes'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -1293,6 +1312,37 @@ function oira_partner_views_default_views() {
     'field_formatter_class' => 'hwc-alpha-pager-view-title-field',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 0;
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/>';
+  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'medium',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
@@ -1366,7 +1416,9 @@ function oira_partner_views_default_views() {
 [partner_content_count]
 </div>'),
     t('term from field_orgtype'),
+    t('<div class="partner-logo-wrapper" title="[title_field_1]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/></div>'),
     t('National partners'),
+    t('<img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/>'),
     t('IRAT'),
     t('Nid'),
     t('<div class="col-sm-2">
