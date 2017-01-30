@@ -8,7 +8,7 @@ function oira_promotional_material_update_7001() {
 }
 
 /**
- * Feature revert
+ * Feature revert : NOW-400.
  */
 function oira_promotional_material_update_7002() {
   features_revert_module('oira_promotional_material');
@@ -25,5 +25,19 @@ function oira_promotional_material_update_7003() {
  * Feature revert: NOW-237 - Private zone Edit form updates
  */
 function oira_promotional_material_update_7004() {
+  features_revert_module('oira_promotional_material');
+}
+
+/**
+ * Feature revert: NOW-325,NOW-326,NOW-327,NOW-328 - Private zone promotional resources form updates
+ */
+function oira_promotional_material_update_7005() {
+  features_revert_module('oira_promotional_material');
+}
+
+/**
+ * Feature revert: NOW-357 - Private zone promotional resources set max size on file
+ */
+function oira_promotional_material_update_7006() {
   features_revert_module('oira_promotional_material');
 }

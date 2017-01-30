@@ -391,8 +391,10 @@ return $is_partner;',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
-Upload Stategic Documentation',
+My Strategic Documentation
+Upload Strategic Documentation',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=strategic_documentation&status=All
 <none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -532,7 +534,7 @@ Upload Stategic Documentation',
       'admin_title' => 'Partner create strategic documentation',
       'title' => '<none>',
       'title_heading' => 'h2',
-      'body' => '<h2>Upload Stategic Documentation</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'body' => '<h2>Upload Strategic Documentation</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );
@@ -660,8 +662,10 @@ return $is_partner;',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
+My Strategic Documentation
 Update Strategic Documentation',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=strategic_documentation&status=All
 <none>',
     'panels_breadcrumbs_home' => 1,
   );

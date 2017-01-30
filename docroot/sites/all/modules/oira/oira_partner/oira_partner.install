@@ -42,8 +42,9 @@ function oira_partner_update_7005() {
   module_enable($modules);
 }
 
+
 /**
- * Feature revert: Partner frontend edit form - readonly
+ * Feature revert: NOW-277, updates for countries
  */
 function oira_partner_update_7006() {
   features_revert_module('oira_partner');
@@ -51,6 +52,7 @@ function oira_partner_update_7006() {
 
 /**
  * Feature revert: NOW-237 My content updates
+ * Feature revert: 	alt bugfix for social partner view
  */
 function oira_partner_update_7007() {
   features_revert_module('oira_partner');
@@ -67,5 +69,19 @@ function oira_partner_update_7008() {
  * Feature revert: NOW-237 - Private zone Edit form updates
  */
 function oira_partner_update_7009() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-318 - Search by title update
+ */
+function oira_partner_update_7010() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-385 - Add label for title - My content
+ */
+function oira_partner_update_7011() {
   features_revert_module('oira_partner');
 }

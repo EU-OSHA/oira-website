@@ -1,0 +1,27 @@
+diff --git a/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc b/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc
+index 46f0ac6..bab704a 100644
+--- a/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc
++++ b/docroot/sites/all/modules/contrib/manualcrop/manualcrop.helpers.inc
+@@ -317,14 +317,10 @@ function _manualcrop_js_identifier($data) {
+  *   Widget settings.
+  */
+ function _manualcrop_attach_dependencies(&$element, $form_state, $js_identifier, $settings = array()) {
+-  static $added;
+ 
+   // Attach the required files.
+   _manualcrop_attach_files($element);
+ 
+-  if (!isset($added[$js_identifier]) || $added[$js_identifier] != $form_state['rebuild']) {
+-    $added[$js_identifier] = $form_state['rebuild'];
+-
+     // Generate image style settings.
+     $styles = &drupal_static(__FUNCTION__);
+ 
+@@ -356,7 +352,6 @@ function _manualcrop_attach_dependencies(&$element, $form_state, $js_identifier,
+       ),
+       'type' => 'setting',
+     );
+-  }
+ }
+ 
+ /**

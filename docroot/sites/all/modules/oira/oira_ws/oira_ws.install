@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Feature revert: NOW-383.
+ */
+function oira_ws_update_7001() {
+  features_revert_module('oira_ws');
+}

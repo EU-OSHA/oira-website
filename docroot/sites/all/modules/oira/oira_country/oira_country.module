@@ -287,6 +287,7 @@ function _oira_country_compute_content_count($term) {
   $query->condition('fc.field_country_tid', $term->tid);
   $query->groupBy('field_country_tid');
   $result = $query->execute();
+
   if (!empty($result)) {
     foreach ($result as $res) {
       $return['sectors'] = $res->sectors_count;
@@ -307,8 +308,7 @@ function _oira_country_compute_count_get_generic_query() {
   $query->addExpression('COUNT(DISTINCT(node.nid))', 'tools_count');
   $query->leftJoin('node', 'node', 'fc.entity_id = node.nid');
   $query->leftJoin('field_data_field_sector', 'sector', 'node.nid = sector.entity_id');
-  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
-  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id');
+  $query->leftJoin('field_data_field_language', 'lang', 'node.nid = lang.entity_id and lang.entity_type = \'node\'');
   $query->leftJoin('field_data_field_publication_date', 'pd', 'node.nid = pd.entity_id');
   $query->where('pd.field_publication_date_value <= NOW()');
   $query->condition('node.status', 1);

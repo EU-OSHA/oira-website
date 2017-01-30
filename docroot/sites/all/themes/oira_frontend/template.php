@@ -210,6 +210,7 @@ function oira_frontend_preprocess_image_style(&$variables) {
 /**
  * Implements theme_pager().
  */
+
 function oira_frontend_pager($variables) {
   // Overwrite pager links.
   $variables['tags'][0] = '«';
@@ -637,11 +638,49 @@ function oira_frontend_node_save_redirect_submit($form, &$form_state){
 }
 
 /**
+ * Add javascript functionality for for limiting number of words for field_summary.
+ */
+function oira_frontend_news_after_build($form, &$form_state){
+
+  drupal_add_js(drupal_get_path('module', 'oira') . '/js/textarea_word_count.js');
+
+  $form['#attached']['js'][] = array(
+    'data' => '(function ($){$("#' . $form['field_summary']['#id'] . ' textarea").textareaCounter({limit : 420}); }(jQuery));',
+    'type' => 'inline',
+    'scope' => 'footer',
+  );
+  return $form;
+}
+
+/**
+ * Additional validation for limiting number of words for field_summary.
+ */
+function oira_frontend_news_validate_summary_word_count($form, &$form_state){
+  if($form_state['values']['nid'] !== NULL){
+    $language =  isset($form_state['values']['language']) ? $form_state['values']['language'] : LANGUAGE_NONE;
+  }else{
+    $language = LANGUAGE_NONE;
+  }
+
+  if (isset($form_state['values']['field_summary'][$language][0]['value'])) {
+    $words = explode(' ', $form_state['values']['field_summary'][$language][0]['value']);
+    if(count($words)>420){
+      form_set_error('field_summary', t('Maximum allowed words for summary is @words',array('@words' => 420)));
+    }
+  }
+}
+
+/**
  * Implements form_alter().
  */
 function oira_frontend_form_alter(&$form, &$form_state, $form_id){
   switch($form_id){
+    case 'user_login':
+      $form['#submit'][] = 'oira_frontend_login_destination_submit';
+      break;
     case 'news_node_form':
+      $form['#after_build'][] = 'oira_frontend_news_after_build';
+      $form['#validate'][] = 'oira_frontend_news_validate_summary_word_count';
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['field_aditional_resources']['#access'] = FALSE;
@@ -653,7 +692,11 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
       break;
+
     case 'promotional_material_node_form':
+      $form['field_oira'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+      $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
+      $form['field_revised_date']['#prefix'] = '<label>' . $form['field_revised_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['field_publication_date']['#attributes']['class'][] = 'pull-left';
       $form['field_oira']['#attributes']['class'][] = 'pull-right';
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
@@ -666,7 +709,10 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
       break;
+
     case 'practical_tool_node_form':
+      $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
+      $form['field_revised_date']['#prefix'] = '<label>' . $form['field_revised_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['body']['#attributes']['class'][] = 'oira-hide-format-description';
       $form['field_alternative_body']['#attributes']['class'][] = 'oira-hide-format-description';
       $form['field_image']['und'][0]['#process'][] = 'oira_frontend_image_field_caption_widget_process';
@@ -680,7 +726,10 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
       break;
+
     case 'strategic_documentation_node_form':
+      $form['field_oira'][LANGUAGE_NONE]['#title_display'] = 'invisible';
+      $form['field_publication_date']['#prefix'] = '<label>' . $form['field_publication_date'][LANGUAGE_NONE]['#title'] . '</label>';
       $form['actions']['#attributes']['class'] = array('container','text-center');
       $form['actions']['submit']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       if(isset($form['actions']['save_preview'])){
@@ -690,18 +739,15 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         $form['actions']['send_for_approval']['#submit'][] = 'oira_frontend_node_save_redirect_submit';
       }
       break;
-    case 'partner_node_form':
 
+    case 'partner_node_form':
       $form['about_organization'] = array(
         '#markup' => '<div class="ds-about-organization"><div class="row"><div class="col-sm-12"><h2>' . t('About your organization') . '</h2></div></div></div>',
         '#weight' => -100,
       );
-
       $form['title_field']['#disabled'] = TRUE;
       $form['title_field']['#weight'] = -99;
       $form['title_field']['#prefix'] = '<div class="row"><div class="group-left col-sm-6">';
-
-
       $form['field_logo'] = array(
         '#type' => 'item',
         '#title' => t('Logo'),
@@ -710,62 +756,42 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
         '#suffix' => '</div></div>',
         '#weight' => -98,
       );
-
-
-
-
       $form['field_mission_statement']['#disabled'] = TRUE;
       $form['field_mission_statement']['#weight'] = -97;
       $form['field_mission_statement']['#prefix'] = '<div class="group-right col-sm-6">';
       $form['field_mission_statement']['#suffix'] = '</div></div>';
-
-
       $form['general_contact_information'] = array(
         '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-general-contact-information"><div class="row"><div class="col-sm-12"><h2>' . t('General contact information') . '</h2></div></div></div>',
         '#weight' => -96,
       );
-
-
-
       $form['field_ph_address']['#disabled'] = TRUE;
       $form['field_ph_address']['#weight'] = -95;
       $form['field_ph_address']['#prefix'] = '<div class="row"><div class="group-left col-sm-6">';
-
       $form['field_ph_cp']['#disabled'] = TRUE;
       $form['field_ph_cp']['#weight'] = -94;
-
       $form['field_general_email']['#disabled'] = TRUE;
       $form['field_general_email']['#weight'] = -93;
-
       $form['field_website']['#disabled'] = TRUE;
       $form['field_website']['#weight'] = -92;
       $form['field_website']['#suffix'] = '</div>';;
-
-
       $form['field_general_phone']['#disabled'] = TRUE;
       $form['field_general_phone']['#weight'] = -91;
       $form['field_general_phone']['#prefix'] = '<div class="group-right col-sm-6">';
-
       $form['field_country']['#disabled'] = TRUE;
       $form['field_country']['#weight'] = -90;
-
       $form['field_ph_town']['#disabled'] = TRUE;
       $form['field_ph_town']['#weight'] = -89;
-
       $form['field_dedicated_oira_website']['#disabled'] = TRUE;
       $form['field_dedicated_oira_website']['#weight'] = -88;
       $form['field_dedicated_oira_website']['#suffix'] = '</div></div>';
-
-
       $form['field_orgtype']['#access'] = FALSE;
       $form['field_partner_type']['#access'] = FALSE;
       $form['field_guid_organisation']['#access'] = FALSE;
       $form['field_guid_main_contact']['#access'] = FALSE;
-
-
       $form['field_social_profile']['#disabled'] = TRUE;
       $form['field_social_profile']['#weight'] = -87;
-
+      $form['field_social_profile']['#prefix'] = '<div id="field-social-profile-add-more-wrapper--2"><label>' . t('Social media profiles') . '</label>';
+      $form['field_social_profile']['#sufix'] = '</div>';
 
       foreach($form['field_social_profile']['und'] as $key=>$val){
         if(is_numeric($key)){
@@ -779,7 +805,6 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
 
       $form['field_main_contact']['#access'] = FALSE;
       $form['field_main_contact_email']['#access'] = FALSE;
-
       $form['field_collaborator']['#disabled'] = TRUE;
       $form['other_collaborators'] = array(
         '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-collaborators"><div class="row"><div class="col-sm-12"><h2>' . t('Other collaborators') . '</h2></div></div></div>',
@@ -787,6 +812,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       );
 
       unset($form['field_collaborator']['und']['#title']);
+
       $weight = 0;
       foreach($form['field_collaborator']['und'] as $key=>$val){
         if(is_numeric($key)){
@@ -805,17 +831,54 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
           }
           }
         }
+
       $form['footer_line'] = array(
         '#markup' => '<div class="group-footer col-md-12"></div>',
         '#weight' => 100,
       );
+
       $form['#attached']['js'][] = array(
         'data' => drupal_get_path('theme', 'oira_frontend') . '/js/oira-tabledrag.js',
         'weight' => -2,
       );
+
       unset($form['#submit']);
+
       $form['actions']['#access'] = FALSE;
 
+      if(isset($form['workbench_access']['workbench_access']['#default_value'])){
+        $form['other_users'] = array(
+          '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-users"><div class="row"><div class="col-sm-12"><h2>' . t('Other users') . '</h2></div></div></div>',
+          '#weight' => 200,
+        );
+        $other_users_header = array(
+          t('Name'),
+          t('Email address'),
+          t('Telephone'),
+          );
+        $other_users_rows = array();
+        $section_id = $form['workbench_access']['workbench_access']['#default_value'][0];
+        $partner_users = _oira_workflow_load_users_by_section($section_id);
+
+        foreach($partner_users as $key => $partner_user){
+          //Check if user is a partner
+          if(array_intersect(array(ROLE_OIRA_PARTNER),array_values($partner_user->roles))){
+            $other_users_rows[] = array(
+              $partner_user->name,
+              $partner_user->mail,
+              isset($partner_user->field_phone[LANGUAGE_NONE][0]['safe_value']) ? $partner_user->field_phone[LANGUAGE_NONE][0]['safe_value'] : '',
+              );
+            }
+          }
+
+        $form['other_users_table'] = array(
+          '#markup' => theme('table',
+            array(
+              'header' => $other_users_header,
+              'rows' => $other_users_rows)),
+          '#weight' => 201,
+        );
+      }
       break;
     default:
       break;
@@ -890,4 +953,30 @@ function oira_frontend_preprocess_panels_pane(&$vars) {
       $vars['title_attributes_array']['class'][] = 'container';
     }
   }
+}
+
+/**
+ * Prepare redirect url for Partner after login
+ */
+function oira_frontend_login_destination_submit($form, &$form_state){
+  global $user;
+  if (isset($_GET['destination'])){
+    return;
+  }
+  if(array_intersect(array(ROLE_OIRA_PARTNER),array_values($user->roles))){
+    $partner_node_id = osha_workflow_user_partner_id($user->uid);
+    if($partner_node_id){
+      $GLOBALS['destination'] = url('node/' . $partner_node_id,array('absolute'=>TRUE));
+    }
+  }
+}
+
+/**
+ * Implements hook_drupal_goto_alter().
+ */
+function oira_frontend_drupal_goto_alter(&$path, &$options, &$http_response_code) {
+  if (!isset($GLOBALS['destination'])) {
+    return;
+  }
+  $path = $GLOBALS['destination'];
 }

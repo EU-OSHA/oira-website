@@ -500,8 +500,10 @@ return $is_partner;',
     'panels_page_title' => '',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
+My Tools
 Create Tools',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=practical_tool&status=All
 <none>
 ',
     'panels_breadcrumbs_home' => 1,
@@ -964,8 +966,10 @@ return $is_partner;',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
+My Tools
 Update Tool',
     'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=practical_tool&status=All
 <none>',
     'panels_breadcrumbs_home' => 1,
   );
