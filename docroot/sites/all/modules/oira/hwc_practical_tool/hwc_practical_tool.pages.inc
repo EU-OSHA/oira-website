@@ -353,7 +353,7 @@ function hwc_practical_tool_get_facets_def() {
     'field_sector' => array(
       'label' => t('Sector'),
       'field' => 'field_sector',
-      'limit' => 50,
+      'limit' => 150,
       'operator' => 'or',
       'min_count' => 1,
       'missing' => 0,
