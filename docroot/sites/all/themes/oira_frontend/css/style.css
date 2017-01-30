@@ -6522,7 +6522,7 @@ button.close {
   position: relative;
 }
 .top-header .header-logo {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .top-header .header-logo .eu-logo {
   width: 75px;
@@ -6542,7 +6542,7 @@ button.close {
   font-weight: bold;
 }
 .top-header .header-blocks {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .top-header .header-blocks .region-header-block {
   max-width: 300px;
