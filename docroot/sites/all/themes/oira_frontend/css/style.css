@@ -10590,6 +10590,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-top: 40px;
   color: #967ea7;
 }
+@media only screen and (max-width: 991px) {
+  .page-node-401.node-type-article .article-content-container h1,
+  .page-node-402.node-type-article .article-content-container h1 {
+    max-width: 750px !important;
+  }
+}
 .page-node-401.node-type-article .article-content-container .pane-node-share-widget,
 .page-node-402.node-type-article .article-content-container .pane-node-share-widget {
   max-width: 1170px;
@@ -10603,6 +10609,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     max-width: 970px;
   }
 }
+@media only screen and (max-width: 991px) {
+  .page-node-401.node-type-article .article-content-container .pane-node-share-widget,
+  .page-node-402.node-type-article .article-content-container .pane-node-share-widget {
+    max-width: 750px;
+  }
+}
 .page-node-401.node-type-article .article-content-container .esener-template .resume-section,
 .page-node-402.node-type-article .article-content-container .esener-template .resume-section {
   margin-top: 25px;
@@ -10613,6 +10625,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-402.node-type-article .article-content-container .esener-template > ul {
   list-style: none;
   margin-left: 0px;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul li .esener-item.container,
+.page-node-402.node-type-article .article-content-container .esener-template > ul li .esener-item.container {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .page-node-401.node-type-article .article-content-container .esener-template > ul li:nth-child(odd),
 .page-node-402.node-type-article .article-content-container .esener-template > ul li:nth-child(odd) {
@@ -10655,6 +10672,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   cursor: pointer;
   position: relative;
   max-height: 350px;
+  background-color: white;
 }
 .page-node-401.node-type-article .article-content-container .esener-template > ul .content-image .magnifier,
 .page-node-402.node-type-article .article-content-container .esener-template > ul .content-image .magnifier {
@@ -10680,9 +10698,39 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   display: block;
   color: white;
 }
+@media only screen and (max-width: 991px) {
+  .page-node-401.node-type-article .article-content-container .esener-template > ul .content-image,
+  .page-node-402.node-type-article .article-content-container .esener-template > ul .content-image {
+    margin-top: 0px;
+  }
+}
 .page-node-401.node-type-article .modal.fade.in,
 .page-node-402.node-type-article .modal.fade.in {
   padding-right: 0px !important;
+}
+.page-node-401.node-type-article .modal.in .modal-dialog,
+.page-node-402.node-type-article .modal.in .modal-dialog {
+  min-width: 900px;
+}
+@media only screen and (max-width: 991px) {
+  .page-node-401.node-type-article .modal.in .modal-dialog,
+  .page-node-402.node-type-article .modal.in .modal-dialog {
+    min-width: 700px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-node-401.node-type-article .modal.in .modal-dialog,
+  .page-node-402.node-type-article .modal.in .modal-dialog {
+    min-width: 200px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .page-node-401.node-type-article .article-content-container,
+  .page-node-402.node-type-article .article-content-container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: inherit !important;
+  }
 }
 /*FOOTER
 ********************************************/
