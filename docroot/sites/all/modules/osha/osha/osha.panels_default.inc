@@ -162,9 +162,9 @@ function osha_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => 'OSH Wiki',
+      'override_title_text' => 'OSHwiki',
       'override_title_heading' => 'h3',
-      'title' => 'OSH Wiki',
+      'title' => 'OSHwiki',
     );
     $pane->cache = array();
     $pane->style = array(
