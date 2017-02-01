@@ -425,4 +425,17 @@
   .more-link {
     display: none !important;
   }
+  .page-node-401.node-type-article .article-content-container .content-image,
+  .page-node-402.node-type-article .article-content-container .content-image {
+    max-height: inherit !important;
+  }
+  .page-node-401.node-type-article .article-content-container .content-image img,
+  .page-node-402.node-type-article .article-content-container .content-image img {
+    display: block !important;
+    margin: 0 auto;
+  }
+  .page-node-401.node-type-article .article-content-container .content-image .magnifier,
+  .page-node-402.node-type-article .article-content-container .content-image .magnifier {
+    display: none !important;
+  }
 }
