@@ -415,9 +415,9 @@ function oira_strategic_documentation_get_facets_def() {
       'options_callback' => 'oira_language_list_options',
       'options_callback_args' => array(TRUE, TRUE),
     ),
-    'field_sector' => array(
+    'field_multiple_sector' => array(
       'label' => t('Sector'),
-      'field' => 'field_sector',
+      'field' => 'field_multiple_sector',
       'limit' => 150,
       'operator' => 'or',
       'min_count' => 1,

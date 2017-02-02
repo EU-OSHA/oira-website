@@ -137,12 +137,13 @@ function oira_strategic_documentation_views_default_views() {
   $handler->display->display_options['fields']['section']['field'] = 'section';
   $handler->display->display_options['fields']['section']['label'] = 'Partner (Author/Partner)';
   /* Field: Content: Sector */
-  $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['settings'] = array(
+  $handler->display->display_options['fields']['field_multiple_sector']['id'] = 'field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['table'] = 'field_data_field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['field'] = 'field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_multiple_sector']['delta_offset'] = '0';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -516,17 +517,19 @@ function oira_strategic_documentation_views_default_views() {
     3 => array(),
   );
   $handler->display->display_options['filters']['field_strategic_type_value_1']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Content: Sector (field_sector) */
-  $handler->display->display_options['filters']['field_sector_tid']['id'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['filters']['field_sector_tid']['field'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator_id'] = 'field_sector_tid_op';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['label'] = 'Sector';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator'] = 'field_sector_tid_op';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['identifier'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Sector (field_multiple_sector) */
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['id'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['table'] = 'field_data_field_multiple_sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['field'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator_id'] = 'field_multiple_sector_tid_op';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['label'] = 'Sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator'] = 'field_multiple_sector_tid_op';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['identifier'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -543,12 +546,13 @@ function oira_strategic_documentation_views_default_views() {
     13 => 0,
     15 => 0,
   );
-  $handler->display->display_options['filters']['field_sector_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sector_tid']['vocabulary'] = 'sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['vocabulary'] = 'sector';
   /* Filter criterion: Content: Co-author (field_co_author) */
   $handler->display->display_options['filters']['field_co_author_tid']['id'] = 'field_co_author_tid';
   $handler->display->display_options['filters']['field_co_author_tid']['table'] = 'field_data_field_co_author';
   $handler->display->display_options['filters']['field_co_author_tid']['field'] = 'field_co_author_tid';
+  $handler->display->display_options['filters']['field_co_author_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_co_author_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_co_author_tid']['expose']['operator_id'] = 'field_co_author_tid_op';
   $handler->display->display_options['filters']['field_co_author_tid']['expose']['label'] = 'Co-author (field_co_author)';
