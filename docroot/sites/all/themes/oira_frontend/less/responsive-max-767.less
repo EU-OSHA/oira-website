@@ -1843,7 +1843,6 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 //end menu
 
 .node-form{
-	input,
 	select,
 	textarea,
 	label,
@@ -1908,8 +1907,15 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	}
 }
 
-.partner-edit-form h2{
-	padding-top: 0px;
+.partner-edit-form {
+	h2{
+		padding-top: 0px;
+	}
+	.row{
+		margin-left: 0px !important;
+		margin-right: 0px !important; 
+	}
+
 }
 
 .page-node-my-content{
@@ -2028,12 +2034,16 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		width: 100%;
 	}
 	#edit-field-oira--2{
-		float: left !important;
+		//float: left !important;
 		.checkbox input[type="checkbox"]{
 			margin-left: -22px;
 		}
 		label {
-		    padding-left: 17px;
+		    //padding-left: 17px;
+		    max-width: 100%;
+		}
+		label[for*="edit-field-oira-und--2"]{
+			display: none !important;
 		}
 	}
 	.form-type-date-select .form-type-select[class*=hour]{
@@ -2042,6 +2052,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	#edit-field-promotional-material-type--2{
 		clear: both;
 	}
+
 }
 
 /*End private zone*/

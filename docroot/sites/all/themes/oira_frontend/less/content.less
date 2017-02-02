@@ -4255,10 +4255,11 @@ div[id ^= "mini-panel-partner_in_"], {
 	.modal.fade.in{
 		padding-right: 0px !important;
 	}
-	.modal-dialog{
+	
 	.modal.in .modal-dialog{
 		min-width: 900px;
 	}
+	
 	@media only screen and (max-width : 991px) {
 		.modal.in .modal-dialog{
 			min-width: 700px;
@@ -4424,6 +4425,29 @@ div[id ^= "mini-panel-partner_in_"], {
 		background-color: @color-primary;
 		padding-bottom: 25px;
 		margin-bottom: 20px;
+	}
+	table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"]{
+		display: block;
+		overflow: hidden;
+		margin-bottom: 0px;
+		thead{
+			tr{
+				display: block;
+			}
+		}
+		tbody{
+			tr{
+				background-color: inherit;
+			    border: 1px solid @color-primary-dark;
+			    padding: 0;
+			    margin: 0;
+			    margin-top: 15px;
+			    display: block;
+			    td{
+			    	font-size: 14px;
+			    }
+			}
+		}
 	}
 }
 .node-form{
@@ -4631,6 +4655,7 @@ div[id ^= "mini-panel-partner_in_"], {
 					.form-submit{
 						background-color: @color-see-more;
 						color: white;
+						padding-top: 8px;
 					}
 					.input-group-btn{
 						vertical-align: bottom;
@@ -4686,6 +4711,16 @@ div[id ^= "mini-panel-partner_in_"], {
 		margin-top: 50px;
 		background-color: @color-primary-dark;
 		font-size: @font-size1-4;
+	}
+
+	#edit-actions--2{
+		padding-right: 0px !important;
+		padding-left: 0px !important;
+		max-width: 100%;
+	}
+
+	.element-invisible{
+		display: none !important;
 	}
 
 }
@@ -4988,15 +5023,21 @@ div[id ^= "mini-panel-partner_in_"], {
 }
 
 //create-promotional
+.page-node-create-strategic-documentation,
 .page-node-create-promotional-resource{
 	#edit-title-field--2,
 	#edit-field-oira--2,
 	#edit-field-publication-date--2{
-		float: left;
+		//float: left;
 	}
 	#edit-title-field--2{
-		max-width: 25%;
-		margin-right: 25px;
+		width: 100%;
+		//margin-right: 25px;
+	}
+	.field-type-list-boolean{
+		float: none !important;
+		max-width: 200px;
+		margin-left: 20px;
 	}
 	#edit-field-publication-date--2{
 		width: 64%;
