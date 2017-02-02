@@ -118,17 +118,19 @@ function oira_strategic_documentation_ds_layout_settings_info() {
       ),
       'right' => array(
         1 => 'field_publication_date',
-        2 => 'title_field',
-        3 => 'body',
-        4 => 'field_country',
+        2 => 'field_country',
+        3 => 'title_field',
+        4 => 'body',
+        5 => 'field_private_file',
       ),
     ),
     'fields' => array(
       'field_private_image' => 'left',
       'field_publication_date' => 'right',
+      'field_country' => 'right',
       'title_field' => 'right',
       'body' => 'right',
-      'field_country' => 'right',
+      'field_private_file' => 'right',
     ),
     'classes' => array(
       'layout_class' => array(
