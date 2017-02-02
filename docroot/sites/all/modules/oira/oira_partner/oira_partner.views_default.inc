@@ -671,6 +671,11 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['state']['field'] = 'state';
   $handler->display->display_options['fields']['state']['label'] = 'Status';
   $handler->display->display_options['fields']['state']['machine_name'] = 0;
+  /* Field: Content revision: Log message */
+  $handler->display->display_options['fields']['log']['id'] = 'log';
+  $handler->display->display_options['fields']['log']['table'] = 'node_revision';
+  $handler->display->display_options['fields']['log']['field'] = 'log';
+  $handler->display->display_options['fields']['log']['label'] = 'Message';
   /* Field: Content: Delete link */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
@@ -678,15 +683,26 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['delete_node']['label'] = '';
   $handler->display->display_options['fields']['delete_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['delete_node']['text'] = 'Delete';
+  $handler->display->display_options['fields']['delete_node']['text'] = '| Delete';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
   $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>';
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>
+[delete_node]';
   $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Sort criterion: Content: Publication date (field_publication_date) */
   $handler->display->display_options['sorts']['field_publication_date_value']['id'] = 'field_publication_date_value';
   $handler->display->display_options['sorts']['field_publication_date_value']['table'] = 'field_data_field_publication_date';
@@ -702,18 +718,18 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['arguments']['access_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['access_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['access_id']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Content: Title (title_field) */
-  $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
-  $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title_field_value']['group'] = 1;
-  $handler->display->display_options['filters']['title_field_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title_field_value']['expose']['operator_id'] = 'title_field_value_op';
-  $handler->display->display_options['filters']['title_field_value']['expose']['label'] = 'Title';
-  $handler->display->display_options['filters']['title_field_value']['expose']['operator'] = 'title_field_value_op';
-  $handler->display->display_options['filters']['title_field_value']['expose']['identifier'] = 'title_field_value';
-  $handler->display->display_options['filters']['title_field_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -729,6 +745,10 @@ function oira_partner_views_default_views() {
     14 => 0,
     13 => 0,
     15 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'body' => 'body',
   );
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
@@ -846,10 +866,13 @@ function oira_partner_views_default_views() {
     t('Title'),
     t('Type'),
     t('Status'),
-    t('Delete'),
+    t('Message'),
+    t('| Delete'),
     t('Actions'),
-    t('<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>'),
+    t('<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>
+[delete_node]'),
     t('All'),
+    t('Search'),
     t('Publication date'),
     t('Page'),
   );
