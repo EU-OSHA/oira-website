@@ -35,11 +35,11 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['row_class'] = 'container';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-2 col-sm-4 col-xs-6';
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['columns'] = '3';
-  $handler->display->display_options['style_options']['alignment'] = 'vertical';
+  $handler->display->display_options['style_options']['class'] = 'private-images';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'container';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -49,14 +49,6 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<p class="text-muted text-center">No results</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_oira_private_image']['id'] = 'field_oira_private_image';
   $handler->display->display_options['fields']['field_oira_private_image']['table'] = 'field_data_field_oira_private_image';
@@ -69,6 +61,14 @@ function oira_private_image_views_default_views() {
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_oira_private_image_1']['id'] = 'field_oira_private_image_1';
   $handler->display->display_options['fields']['field_oira_private_image_1']['table'] = 'field_data_field_oira_private_image';

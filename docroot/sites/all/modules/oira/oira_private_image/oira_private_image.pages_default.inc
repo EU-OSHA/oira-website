@@ -33,6 +33,8 @@ function oira_private_image_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
