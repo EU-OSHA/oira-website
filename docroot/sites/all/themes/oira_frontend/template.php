@@ -129,6 +129,14 @@ function oira_frontend_process_html_tag(&$variables) {
   }
 }
 
+function oira_frontend_preprocess_block(&$vars) {
+  // Private zone menu block alter.
+  if (!empty($vars['elements']['#block']->bid)
+    && $vars['elements']['#block']->bid == 317) {
+    $vars['title_attributes_array']['class'][] = 'container';
+    $vars['content'] .= '<div class="container"><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div></div>';
+  }
+}
 
 function oira_frontend_preprocess_page(&$vars) {
   global $language;
@@ -164,6 +172,13 @@ function oira_frontend_preprocess_page(&$vars) {
   else {
     $vars['content_column_class'] = '';
   }
+
+  // Hide tabs for partners.
+  $partner_role = user_role_load_by_name(ROLE_OIRA_PARTNER);
+  if (user_has_role($partner_role->rid) && isset($vars['tabs'])) {
+    $vars['tabs']['#access'] = FALSE;
+  }
+
 }
 
 function oira_frontend_css_alter(&$css) {
@@ -630,11 +645,12 @@ function oira_frontend_form_element_label(&$variables) {
 }
 
 function oira_frontend_node_save_redirect_submit($form, &$form_state){
-  $partner_id = osha_workflow_user_partner_id($form_state['values']['uid']);
-  if($partner_id!==NULL){
-    unset($_GET['destination']);
-    $form_state['redirect'] = 'node/' . $partner_id . '/edit-' . $form_state['values']['type'] . '/' . $form_state['nid'];
-  }
+//  $partner_id = osha_workflow_user_partner_id($form_state['values']['uid']);
+//  // TODO FIX THIS SCOTCH WITH ANOTHER SCOTCH.
+//  if ($partner_id !== NULL) {
+//    unset($_GET['destination']);
+//    $form_state['redirect'] = 'node/' . $partner_id . '/edit-' . $form_state['values']['type'] . '/' . $form_state['nid'];
+//  }
 }
 
 /**
@@ -741,6 +757,10 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       break;
 
     case 'partner_node_form':
+      drupal_set_title('Update your profile');
+      $form['#prefix'] = '<div class="node-form-wrapper">';
+      $form['#suffix'] = '</div>';
+      $form['#attributes']['class'][] = 'container';
       $form['about_organization'] = array(
         '#markup' => '<div class="ds-about-organization"><div class="row"><div class="col-sm-12"><h2>' . t('About your organization') . '</h2></div></div></div>',
         '#weight' => -100,

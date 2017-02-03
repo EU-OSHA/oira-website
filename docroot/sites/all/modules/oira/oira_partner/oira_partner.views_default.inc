@@ -591,11 +591,9 @@ function oira_partner_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'My content';
   $handler->display->display_options['css_class'] = 'container';
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
-    3 => '3',
     11 => '11',
   );
   $handler->display->display_options['cache']['type'] = 'none';
@@ -652,7 +650,6 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -688,11 +685,17 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
-  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>
-[delete_node]';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[edit_node] [delete_node]';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -713,11 +716,19 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['arguments']['access_id']['table'] = 'workbench_access';
   $handler->display->display_options['arguments']['access_id']['field'] = 'access_id';
   $handler->display->display_options['arguments']['access_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['access_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['access_id']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['access_id']['default_argument_options']['code'] = 'global $user;
+if (!empty($user-> workbench_access)){
+  return key($user-> workbench_access); 
+}
+else {
+  return NULL;
+}';
   $handler->display->display_options['arguments']['access_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['access_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['access_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['access_id']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['arguments']['access_id']['workbench_access_context'] = 'access_id';
   /* Filter criterion: Global: Combine fields filter */
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
@@ -841,10 +852,15 @@ function oira_partner_views_default_views() {
   );
   $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_publication_date_value']['year_range'] = '-10:+3';
+  /* Filter criterion: Workbench Moderation: Current */
+  $handler->display->display_options['filters']['current']['id'] = 'current';
+  $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['current']['field'] = 'current';
+  $handler->display->display_options['filters']['current']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'partner-content';
+  $handler->display->display_options['path'] = 'private-zone/my-content';
   $translatables['partner_content'] = array(
     t('Master'),
     t('My content'),
@@ -868,9 +884,9 @@ function oira_partner_views_default_views() {
     t('Status'),
     t('Message'),
     t('| Delete'),
+    t('Edit'),
     t('Actions'),
-    t('<a href="/node/[partner_id]/edit-[type_1]/[nid]">Edit</a>
-[delete_node]'),
+    t('[edit_node] [delete_node]'),
     t('All'),
     t('Search'),
     t('Publication date'),

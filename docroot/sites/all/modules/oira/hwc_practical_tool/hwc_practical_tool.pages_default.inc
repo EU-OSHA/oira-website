@@ -412,7 +412,7 @@ function hwc_practical_tool_default_page_manager_handlers() {
  */
 function hwc_practical_tool_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'create_practical_tool';
   $page->task = 'page';
@@ -863,7 +863,7 @@ OiRA Tools',
   $pages['oira_tools'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'partner_edit_practical_tool';
   $page->task = 'page';
