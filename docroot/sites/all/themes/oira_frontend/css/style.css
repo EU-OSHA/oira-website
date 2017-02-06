@@ -11849,6 +11849,38 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-right: 10px;
   margin-left: 0px;
 }
+.page-node-collaboration-area-private-images .panels-flexible-row-new-1 {
+  background-color: white !important;
+}
+.page-node-collaboration-area-private-images ul.private-images {
+  overflow: auto;
+  list-style: none;
+  margin-top: 25px;
+}
+.page-node-collaboration-area-private-images ul.private-images li {
+  text-align: center;
+  min-height: 185px;
+}
+.page-node-collaboration-area-private-images ul.private-images li a img {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 {
+  margin-top: 10px;
+}
+.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 a {
+  display: inline-block;
+  background-color: #786586;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 a:before {
+  content: "\e026";
+  font-family: "Glyphicons Halflings";
+  vertical-align: middle;
+  margin-right: 7px;
+}
 /*FOOTER
 ********************************************/
 .site-footer {

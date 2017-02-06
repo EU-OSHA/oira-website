@@ -5328,4 +5328,41 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 }
 
+//image gallery
+.page-node-collaboration-area-private-images{
+	.panels-flexible-row-new-1{
+		background-color: white !important;
+	}
+	ul.private-images{
+		overflow: auto;
+		list-style: none;
+		margin-top: 25px;
+		li{
+			text-align: center;
+			min-height: 185px;
+			a{
+				img{
+					margin: 0 auto;
+					margin-bottom: 10px;
+				}
+			}
+			.views-field-field-oira-private-image-1{
+				margin-top: 10px;
+				a{
+					display: inline-block;
+					background-color: @color-primary-dark;
+					color: white;
+					padding: 3px 8px;
+					border-radius: 4px;
+					&:before{
+						content:"\e026";
+						font-family: "Glyphicons Halflings";
+						vertical-align: middle;
+						margin-right: 7px;
+					}
+				}
+			}
+		}
+	}
+}
 /*End private zone*/
