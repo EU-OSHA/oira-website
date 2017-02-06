@@ -77,10 +77,12 @@ function oira_partner_default_fe_block_settings() {
     'module' => 'menu_block',
     'node_types' => array(),
     'pages' => 'node/add/*
-node/*/edit
+node/*
 private-zone
 private-zone/*',
-    'roles' => array(),
+    'roles' => array(
+      'Partner' => 11,
+    ),
     'themes' => array(
       'oira_frontend' => array(
         'region' => 'above_title',
