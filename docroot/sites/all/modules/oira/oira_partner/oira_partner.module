@@ -34,6 +34,11 @@ function oira_partner_menu() {
 }
 
 function oira_partner_has_role($role_name) {
+  /// allow admin to add it as menu item.
+  $admin_role = user_role_load_by_name(OSHA_WORKFLOW_ROLE_ADMINISTRATOR);
+  if (user_has_role($admin_role->rid)) {
+    return TRUE;
+  }
   $role = user_role_load_by_name($role_name);
   return user_has_role($role->rid);
 }
