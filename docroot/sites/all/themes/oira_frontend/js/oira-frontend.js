@@ -264,4 +264,11 @@ jQuery(document).ready(function () {
         }
       });
 
+	jQuery('.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 a').each(
+		function(){
+			var idx = jQuery(this).attr('href').lastIndexOf("/") + 1;
+			var filename = jQuery(this).attr('href').substr(idx);
+			jQuery(this).prop('download',filename);
+		}
+	);
 });

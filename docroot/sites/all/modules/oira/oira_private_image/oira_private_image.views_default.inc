@@ -58,7 +58,7 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['fields']['field_oira_private_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_oira_private_image']['settings'] = array(
     'image_style' => 'thumbnail',
-    'image_link' => 'content',
+    'image_link' => 'file',
     'field_formatter_class' => '',
   );
   /* Field: Content: Title */
@@ -69,6 +69,7 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_oira_private_image_1']['id'] = 'field_oira_private_image_1';
   $handler->display->display_options['fields']['field_oira_private_image_1']['table'] = 'field_data_field_oira_private_image';
