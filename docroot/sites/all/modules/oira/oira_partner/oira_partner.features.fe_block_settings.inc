@@ -78,6 +78,8 @@ function oira_partner_default_fe_block_settings() {
     'node_types' => array(),
     'pages' => 'node/add/*
 node/*
+node/*/edit
+node/*/update-profile
 private-zone
 private-zone/*',
     'roles' => array(
@@ -97,7 +99,7 @@ private-zone/*',
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => 'Private Zone',
     'visibility' => 1,
   );
 

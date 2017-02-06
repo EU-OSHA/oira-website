@@ -23,6 +23,13 @@ function oira_partner_menu() {
     'access arguments' => ['11'],
   ];
 
+  $items['private-zone/update-profile'] = [
+    'title' => 'Private zone',
+    'page callback' => 'oira_partner_private_zone_update_callback',
+    'access callback' => 'user_has_role',
+    'access arguments' => ['11'],
+  ];
+
   return $items;
 }
 
@@ -136,6 +143,16 @@ function oira_partner_field_extra_fields() {
   );
   $extra['node']['partner'] = $content_count;
   return $extra;
+}
+
+/**
+ * Implements hook_block_view_MODULE_DELTA_alter().
+ */
+function oira_partner_block_view_menu_block_6_alter(&$data, $block) {
+  // Show the private zone menu block only for partner's node.
+  if ($node = menu_get_object()) {
+    $data['content']['#access'] = oira_node_belongs_to_partner_user($node);
+  }
 }
 
 /**
@@ -467,6 +484,24 @@ function _oira_partner_get_by_country($tid, $type_tid = array()) {
     $partners = array_keys($result['node']);
   }
   return $partners;
+}
+
+function oira_node_belongs_to_partner_user($node) {
+  global $user;
+  // if masquerade, the access it's not loaded correctly.
+  workbench_access_user_load_data($user);
+  $sections = array_keys($user->workbench_access);
+  if (!empty($sections)) {
+    $query = db_select('workbench_access_node', 'wan')
+      ->fields('wan', array('nid'))
+      ->condition('wan.access_id', $sections, 'IN')
+      ->condition('wan.nid', $node->nid);
+    $count = $query->execute()->rowCount();
+    if ($count) {
+      return TRUE;
+    }
+  }
+  return FALSE;
 }
 
 function oira_partner_views_data() {
