@@ -179,19 +179,19 @@ function oira_strategic_documentation_default_search_api_index() {
 function oira_strategic_documentation_default_search_api_server() {
   $items = array();
   $items['private_apache_solr_server'] = entity_import('search_api_server', '{
-    "name" : "Solr server",
+    "name" : "Private Solr server",
     "machine_name" : "private_apache_solr_server",
-    "description" : "Search server",
+    "description" : "",
     "class" : "search_api_solr_service",
     "options" : {
       "scheme" : "http",
       "host" : "localhost",
-      "port" : "8983",
-      "path" : "\\/solr",
+      "port" : 8983,
+      "path" : "\\/solr\\/oira-private",
       "http" : { "http_user" : "", "http_pass" : null },
-      "excerpt" : null,
-      "retrieve_data" : null,
-      "highlight_data" : null,
+      "excerpt" : 1,
+      "retrieve_data" : 0,
+      "highlight_data" : 1,
       "skip_schema_check" : null,
       "solr_version" : "",
       "http_method" : "AUTO"
