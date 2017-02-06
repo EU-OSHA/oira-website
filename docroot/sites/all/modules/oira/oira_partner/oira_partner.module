@@ -19,18 +19,23 @@ function oira_partner_menu() {
   $items['private-zone'] = [
     'title' => 'Private zone',
     'page callback' => 'oira_partner_private_zone_callback',
-    'access callback' => 'user_has_role',
-    'access arguments' => ['11'],
+    'access callback' => 'oira_partner_has_role',
+    'access arguments' => [ROLE_OIRA_PARTNER],
   ];
 
   $items['private-zone/update-profile'] = [
     'title' => 'Private zone',
     'page callback' => 'oira_partner_private_zone_update_callback',
-    'access callback' => 'user_has_role',
-    'access arguments' => ['11'],
+    'access callback' => 'oira_partner_has_role',
+    'access arguments' => [ROLE_OIRA_PARTNER],
   ];
 
   return $items;
+}
+
+function oira_partner_has_role($role_name) {
+  $role = user_role_load_by_name($role_name);
+  return user_has_role($role->rid);
 }
 
 function oira_partner_private_zone_callback() {
@@ -38,6 +43,17 @@ function oira_partner_private_zone_callback() {
   if (!empty($partner)) {
     $uri = entity_uri('node', $partner);
     drupal_goto($uri['path']);
+  }
+  else {
+    drupal_access_denied();
+  }
+}
+
+
+function oira_partner_private_zone_update_callback() {
+  $partner = oira_partner_get_account_partner();
+  if (!empty($partner)) {
+    drupal_goto('node/' . $partner->nid . '/update-profile');
   }
   else {
     drupal_access_denied();
