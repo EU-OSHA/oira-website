@@ -33,11 +33,11 @@ function oira_strategic_documentation_field_default_field_instances() {
           'field_formatter_class' => '',
           'more_link' => 0,
           'more_text' => 'Read more',
-          'summary_handler' => 'ignore',
-          'trim_length' => 250,
+          'summary_handler' => 'full',
+          'trim_length' => 9999,
           'trim_link' => 0,
           'trim_options' => array(
-            'text' => 'text',
+            'text' => 0,
             'use_field_summary' => 0,
           ),
           'trim_preserve_tags' => '',
@@ -45,7 +45,7 @@ function oira_strategic_documentation_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -128,7 +128,7 @@ function oira_strategic_documentation_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -173,7 +173,7 @@ function oira_strategic_documentation_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -192,7 +192,7 @@ function oira_strategic_documentation_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'languagefield',
         'settings' => array(
           'field_formatter_class' => '',
@@ -201,7 +201,7 @@ function oira_strategic_documentation_field_default_field_instances() {
           ),
         ),
         'type' => 'language_default',
-        'weight' => 21,
+        'weight' => 4,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -262,13 +262,13 @@ function oira_strategic_documentation_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(
           'field_formatter_class' => '',
         ),
         'type' => 'link_default',
-        'weight' => 22,
+        'weight' => 9,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -353,13 +353,13 @@ function oira_strategic_documentation_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 24,
+        'weight' => 7,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -401,7 +401,7 @@ function oira_strategic_documentation_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -425,12 +425,9 @@ function oira_strategic_documentation_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'list_default',
-        'weight' => 23,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -488,13 +485,14 @@ function oira_strategic_documentation_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'file',
+        'label' => 'hidden',
+        'module' => 'file_entity',
         'settings' => array(
           'field_formatter_class' => '',
+          'text' => 'Download [file:name]',
         ),
-        'type' => 'file_default',
-        'weight' => 20,
+        'type' => 'file_download_link',
+        'weight' => 8,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -563,15 +561,15 @@ function oira_strategic_documentation_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'generic_detail_thumbnail',
         ),
         'type' => 'image',
-        'weight' => 18,
+        'weight' => 0,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -660,10 +658,20 @@ function oira_strategic_documentation_field_default_field_instances() {
         'weight' => 6,
       ),
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'field_formatter_class' => '',
+          'format_type' => 'osha_day_only',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'osha_date_theme' => '',
+          'show_remaining_days' => 0,
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -745,13 +753,13 @@ function oira_strategic_documentation_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(
           'field_formatter_class' => '',
         ),
         'type' => 'list_default',
-        'weight' => 19,
+        'weight' => 3,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -818,12 +826,9 @@ function oira_strategic_documentation_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'list_default',
-        'weight' => 17,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -865,7 +870,7 @@ function oira_strategic_documentation_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -893,7 +898,7 @@ function oira_strategic_documentation_field_default_field_instances() {
           'title_style' => 'h3',
         ),
         'type' => 'title_linked',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'osha_resources' => array(
         'label' => 'above',
