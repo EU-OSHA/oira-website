@@ -9,7 +9,7 @@
  */
 function oira_promotional_material_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'create_promotional_resource';
   $page->task = 'page';
@@ -264,7 +264,7 @@ Upload Promotional Resources',
   $pages['create_promotional_resource'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'edit_promotional_material';
   $page->task = 'page';

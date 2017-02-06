@@ -1385,13 +1385,13 @@ function oira_partner_default_page_manager_pages() {
   $pages['oira_community'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'partner_news';
   $page->task = 'page';
   $page->admin_title = 'Partner content - Private Zone';
   $page->admin_description = 'Partners content - panel page.';
-  $page->path = 'node/%node/my-content';
+  $page->path = 'private-zone/my-content';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -1411,15 +1411,7 @@ function oira_partner_default_page_manager_pages() {
     'settings' => NULL,
   );
   $page->menu = array();
-  $page->arguments = array(
-    'node' => array(
-      'id' => 1,
-      'identifier' => 'Content: ID',
-      'name' => 'entity_id:node',
-      'settings' => array(),
-      'keyword' => 'node',
-    ),
-  );
+  $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
   );
@@ -1444,22 +1436,7 @@ function oira_partner_default_page_manager_pages() {
     'relationships' => array(),
     'name' => 'panel',
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'php',
-          'settings' => array(
-            'description' => 'Partner profile - private zone',
-            'php' => '$is_partner = FALSE;
-
-if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
-	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
-}
-
-return $is_partner;',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
     'panels_page_title_state' => 0,
@@ -1546,7 +1523,7 @@ My Content
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-f0acfcd9-f7af-4f36-9e00-f9a1cf44204a';
+    $pane->pid = 'new-e3f9bf95-c651-4bd3-aae3-83880fab8958';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'partner_content';
@@ -1562,30 +1539,24 @@ My Content
       'feed_icons' => 0,
       'panel_args' => 0,
       'link_to_view' => 0,
-      'args' => '%1',
+      'args' => '',
       'url' => '',
-      'display' => 'page',
-      'context' => array(
-        0 => 'argument_entity_id:node_1.nid',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '<none>',
+      'display' => 'block_1',
+      'override_title' => 0,
+      'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'f0acfcd9-f7af-4f36-9e00-f9a1cf44204a';
-    $display->content['new-f0acfcd9-f7af-4f36-9e00-f9a1cf44204a'] = $pane;
-    $display->panels['center'][0] = 'new-f0acfcd9-f7af-4f36-9e00-f9a1cf44204a';
+    $pane->uuid = 'e3f9bf95-c651-4bd3-aae3-83880fab8958';
+    $display->content['new-e3f9bf95-c651-4bd3-aae3-83880fab8958'] = $pane;
+    $display->panels['center'][0] = 'new-e3f9bf95-c651-4bd3-aae3-83880fab8958';
     $pane = new stdClass();
     $pane->pid = 'new-2a375329-c546-42d5-a739-d5f238725ced';
     $pane->panel = 'menu';

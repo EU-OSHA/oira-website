@@ -62,3 +62,8 @@ function oira_strategic_documentation_update_7008() {
 function oira_strategic_documentation_update_7009() {
   features_revert_module('oira_strategic_documentation');
 }
+
+
+function oira_strategic_documentation_update_7010() {
+  features_revert_module('oira_strategic_documentation');
+}

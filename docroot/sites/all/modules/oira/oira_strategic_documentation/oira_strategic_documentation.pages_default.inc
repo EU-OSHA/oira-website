@@ -304,7 +304,7 @@ return $is_partner;',
   $pages['collaboration_doc_search'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'create_strategic_documentation';
   $page->task = 'page';
@@ -559,7 +559,7 @@ Upload Strategic Documentation',
   $pages['create_strategic_documentation'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'edit_strategic_documentation';
   $page->task = 'page';
