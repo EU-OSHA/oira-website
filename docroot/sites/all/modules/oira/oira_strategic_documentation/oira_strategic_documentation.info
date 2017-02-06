@@ -60,7 +60,6 @@ features[field_instance][] = node-strategic_documentation-field_oira
 features[field_instance][] = node-strategic_documentation-field_private_file
 features[field_instance][] = node-strategic_documentation-field_private_image
 features[field_instance][] = node-strategic_documentation-field_publication_date
-features[field_instance][] = node-strategic_documentation-field_sector
 features[field_instance][] = node-strategic_documentation-field_strategic_type
 features[field_instance][] = node-strategic_documentation-field_wf_notification
 features[field_instance][] = node-strategic_documentation-title_field
