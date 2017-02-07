@@ -23,3 +23,15 @@ function oira_private_image_node_access($node, $op, $account) {
   }
   return NODE_ACCESS_IGNORE;
 }
+
+/**
+ * Implements hook_file_download().
+ */
+function oira_private_image_file_download($uri) {
+  // Force image download for private images.
+  if (preg_match('/private-images-gallery/', $uri)) {
+    $file_name = basename($uri);
+    return array('Content-Disposition' => 'attachment; filename=' . $file_name);
+  }
+  return NULL;
+}

@@ -139,7 +139,7 @@ function oira_private_image_field_default_field_instances() {
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => '',
+      'file_directory' => 'private-images-gallery',
       'file_extensions' => 'png gif jpg jpeg',
       'image_field_caption' => 0,
       'max_filesize' => '',
