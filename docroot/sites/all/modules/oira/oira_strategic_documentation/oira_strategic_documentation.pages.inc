@@ -14,6 +14,15 @@ function _oira_strategic_documentation_filter_options_list($vocabulary, $default
   return $default;
 }
 
+function _oira_strategic_documentation_filter_list_values($field_name, $default = array()) {
+  $field_info = field_info_field($field_name);
+  $allowed = $field_info['settings']['allowed_values'];
+  foreach ($allowed as $key => $label) {
+    $default[$key] = $label;
+  }
+  return $default;
+}
+
 // We need this function because it is used within modules from hwc website.
 function _oira_strategic_documentation_get_req_param($form_state, $name, $default = NULL) {
   if (!empty($form_state['values'][$name])) {
@@ -393,6 +402,16 @@ function oira_strategic_documentation_search($is_partners, $form_state, $per_pag
 
 function oira_strategic_documentation_get_facets_def() {
   return array(
+    'field_strategic_type' => array(
+      'label' => t('Type'),
+      'field' => 'field_strategic_type',
+      'limit' => 150,
+      'operator' => 'or',
+      'min_count' => 1,
+      'missing' => 0,
+      'options_callback' => '_oira_strategic_documentation_filter_list_values',
+      'options_callback_args' => 'field_strategic_type',
+    ),
     'field_country' => array(
       'label' => t('Country'),
       'field' => 'field_country',
