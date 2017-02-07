@@ -10785,6 +10785,23 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 /*Private Zone
 *********************************************/
+.node-type-partner .block-menu-block h2.block-title,
+.page-private-zone .block-menu-block h2.block-title,
+.page-node-add .block-menu-block h2.block-title,
+.page-node-update-profile .block-menu-block h2.block-title {
+  font-size: 3em;
+  margin-bottom: 25px;
+  color: #786586;
+}
+.node-type-partner .page-title-wrapper h1,
+.page-private-zone .page-title-wrapper h1,
+.page-node-add .page-title-wrapper h1,
+.page-node-update-profile .page-title-wrapper h1 {
+  color: #786586;
+  border-bottom: 2px solid #786586 !important;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
 .menu-name-menu-private-zone {
   background-color: #786586;
   padding-top: 15px;
@@ -10872,12 +10889,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   opacity: 1;
   color: #786586;
 }
-.page-node-91.node-type-partner.responsive-menus-load-processed h2 {
+.page-node-91.node-type-partner.responsive-menus-load-processed .page-title-container h1.page-header {
   color: #786586;
-  border-bottom: 2px solid #786586;
+  border-bottom: 2px solid #786586 !important;
   padding-bottom: 15px;
 }
-.page-node-91.node-type-partner.responsive-menus-load-processed h2:after {
+.page-node-91.node-type-partner.responsive-menus-load-processed .page-title-container h1.page-header:after {
   content: "";
   background: url("../images/icons/031.png") no-repeat;
   background-size: 100%;
@@ -10885,20 +10902,44 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   height: 40px;
   float: right;
 }
+.page-node-91.node-type-partner.responsive-menus-load-processed .private-zone-back-wrapper {
+  display: none;
+}
 .page-node-91 .panels-flexible-row-new-1 {
   padding-bottom: 0px;
 }
-.private-zone-back-link,
-.private-zone-back-wrapper {
-  float: right;
-  margin-top: -15px;
+.page-private-zone .block-menu-block > .container,
+.page-node-add .block-menu-block > .container,
+.page-node-update-profile .block-menu-block > .container {
+  position: relative;
 }
-.private-zone-back-link a,
-.private-zone-back-wrapper a {
+.page-private-zone .block-menu-block > .container .private-zone-back-link,
+.page-node-add .block-menu-block > .container .private-zone-back-link,
+.page-node-update-profile .block-menu-block > .container .private-zone-back-link,
+.page-private-zone .block-menu-block > .container .private-zone-back-wrapper,
+.page-node-add .block-menu-block > .container .private-zone-back-wrapper,
+.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper {
+  position: absolute;
+  right: 0;
+  top: 34px;
+  width: 65px;
+  display: block;
+}
+.page-private-zone .block-menu-block > .container .private-zone-back-link a,
+.page-node-add .block-menu-block > .container .private-zone-back-link a,
+.page-node-update-profile .block-menu-block > .container .private-zone-back-link a,
+.page-private-zone .block-menu-block > .container .private-zone-back-wrapper a,
+.page-node-add .block-menu-block > .container .private-zone-back-wrapper a,
+.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a {
   color: #10b2e4;
+  margin-right: 15px;
 }
-.private-zone-back-link a:after,
-.private-zone-back-wrapper a:after {
+.page-private-zone .block-menu-block > .container .private-zone-back-link a:after,
+.page-node-add .block-menu-block > .container .private-zone-back-link a:after,
+.page-node-update-profile .block-menu-block > .container .private-zone-back-link a:after,
+.page-private-zone .block-menu-block > .container .private-zone-back-wrapper a:after,
+.page-node-add .block-menu-block > .container .private-zone-back-wrapper a:after,
+.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a:after {
   content: "";
   background: url("../images/icons/back-news.png") no-repeat;
   background-size: 100%;
@@ -10932,9 +10973,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] tbody tr td {
   font-size: 14px;
 }
-.node-form .pane-custom h2 {
-  color: #786586;
-  margin-top: 45px;
+.node-form {
+  background-color: #dfd8e4;
+  overflow: auto;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
+  padding-top: 15px;
 }
 .node-form .btn.form-submit {
   white-space: inherit !important;
@@ -10945,9 +10989,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .node-form .panels-flexible-row-last {
   background-color: #dfd8e4;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  margin-bottom: 20px;
 }
 .node-form .grippie {
   display: none;
@@ -11279,25 +11320,30 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   display: none !important;
 }
 .page-node-add-promotional-material .form-item-field-publication-date-und-0-value-hour,
-.page-node-add-promotional-material .form-item-field-publication-date-und-0-value-minute {
+.page-node-add-strategic-documentation .form-item-field-publication-date-und-0-value-hour,
+.page-node-add-promotional-material .form-item-field-publication-date-und-0-value-minute,
+.page-node-add-strategic-documentation .form-item-field-publication-date-und-0-value-minute {
   display: none;
 }
-.page-node-add-promotional-material .date-no-float {
+.page-node-add-promotional-material .date-no-float,
+.page-node-add-strategic-documentation .date-no-float {
   width: 100%;
 }
-.page-node-add-promotional-material .group-center {
+.page-node-add-promotional-material .group-center,
+.page-node-add-strategic-documentation .group-center {
   clear: both;
 }
-.page-node-add-promotional-material #edit-field-promotional-material-type {
+.page-node-add-promotional-material #edit-field-promotional-material-type,
+.page-node-add-strategic-documentation #edit-field-promotional-material-type {
   clear: both;
 }
-.page-node-add-promotional-material #edit-field-oira {
+.page-node-add-promotional-material #edit-field-oira,
+.page-node-add-strategic-documentation #edit-field-oira {
   margin-top: 10px;
 }
 .partner-edit-form h2 {
   color: #786586;
   font-family: "Oswald";
-  padding-top: 15px;
   padding-bottom: 20px;
   font-size: 2em;
 }
@@ -11361,35 +11407,35 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   width: 75%;
   display: inline-block;
 }
-.page-node-my-content .pane-custom h2 {
+.page-private-zone-my-content .pane-custom h2 {
   color: #786586;
   margin-top: 45px;
 }
-.page-node-my-content input,
-.page-node-my-content textarea,
-.page-node-my-content select,
-.page-node-my-content .form-control {
+.page-private-zone-my-content input,
+.page-private-zone-my-content textarea,
+.page-private-zone-my-content select,
+.page-private-zone-my-content .form-control {
   border: none;
   border-radius: 0px;
 }
-.page-node-my-content button#edit-submit-partner-content {
+.page-private-zone-my-content button#edit-submit-partner-content {
   background-color: #10b2e4;
   min-width: 100%;
   font-weight: bold;
 }
-.page-node-my-content button#edit-submit-partner-content:before {
+.page-private-zone-my-content button#edit-submit-partner-content:before {
   content: "> ";
 }
-.page-node-my-content .view-filters {
+.page-private-zone-my-content .view-filters {
   background-color: #786586;
   margin-bottom: 10px;
   padding: 15px;
 }
-.page-node-my-content .view-filters form {
+.page-private-zone-my-content .view-filters form {
   color: white;
 }
-.page-node-my-content .view-filters form select,
-.page-node-my-content .view-filters form .chosen-container-single {
+.page-private-zone-my-content .view-filters form select,
+.page-private-zone-my-content .view-filters form .chosen-container-single {
   background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #ffffff;
   appearance: none;
   padding-right: 50px !important;
@@ -11400,91 +11446,78 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-position-x: right;
   margin-right: 0px;
 }
-.page-node-my-content .view-filters form #edit-type-wrapper {
+.page-private-zone-my-content .view-filters form #edit-type-wrapper {
   width: 25%;
 }
-.page-node-my-content .view-filters form #edit-title-field-value-wrapper {
+.page-private-zone-my-content .view-filters form #edit-title-field-value-wrapper {
   width: 50%;
 }
-.page-node-my-content .view-filters form #edit-state-wrapper {
+.page-private-zone-my-content .view-filters form #edit-state-wrapper {
   width: 25%;
 }
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label {
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper > label {
   color: #dfd8e4;
   margin-bottom: 0px;
   margin-top: 15px;
 }
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label:after {
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper > label:after {
   content: ":";
 }
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper,
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper {
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper,
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper {
   display: inline-block;
 }
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-min > div,
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-min > div,
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-max > div,
-.page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-max > div {
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-min > div,
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-min > div,
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-max > div,
+.page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-max > div {
   float: inherit;
 }
-.page-node-my-content .view-filters form .views-submit-button {
+.page-private-zone-my-content .view-filters form .views-submit-button {
   width: 25%;
 }
-.page-node-my-content .view-filters form .views-submit-button button {
+.page-private-zone-my-content .view-filters form .views-submit-button button {
   margin-top: 3.95em;
   border-radius: 0px;
   border: none;
 }
-.page-node-my-content .pane-partner-content h2 {
-  color: #786586;
-}
-.page-node-my-content .pane-partner-content .pane-content {
+.page-private-zone-my-content #block-system-main {
   background-color: #dfd8e4;
   padding-top: 25px;
   padding-bottom: 25px;
   margin-top: 0px;
 }
-.page-node-my-content .pane-partner-content .pane-content .view-id-partner_content table {
+.page-private-zone-my-content #block-system-main .view-id-partner_content table {
   max-width: 1170px;
   margin: 0 auto;
 }
-.page-node-my-content .pane-partner-content .pane-content .view-id-partner_content table tr th {
+.page-private-zone-my-content #block-system-main .view-id-partner_content table tr th {
   border-bottom: none;
   background-color: #786586;
   color: white;
 }
-.page-node-my-content .pane-partner-content .pane-content .view-id-partner_content table tr:not(:last-child) td {
+.page-private-zone-my-content #block-system-main .view-id-partner_content table tr:not(:last-child) td {
   border-bottom: 2px solid #d2c7da;
 }
-.page-node-my-content .pane-partner-content .pane-content .pager {
+.page-private-zone-my-content #block-system-main .pager {
   background-color: white;
   margin-top: 10px;
   padding-top: 15px;
 }
-.page-node-collaboration-area .pane-custom h2 {
-  color: #786586;
-  margin-top: 45px;
-}
-.page-node-collaboration-area .page-promotional-materials-search .panel-page-introduction-text h2 {
-  color: #786586;
-  border-bottom: 2px solid #786586;
-  padding-bottom: 15px;
-  margin-bottom: 25px;
-}
-.page-node-collaboration-area .page-promotional-materials-search .private-zone-back-link,
-.page-node-collaboration-area .page-promotional-materials-search .private-zone-back-wrapper {
+.page-private-zone-collaboration-area .page-promotional-materials-search .private-zone-back-link,
+.page-private-zone-collaboration-area .page-promotional-materials-search .private-zone-back-wrapper {
   margin-top: -30px;
 }
-.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration {
+.page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration {
   padding-bottom: 25px;
 }
-.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li {
+.page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li {
   display: inline-block;
   width: 25%;
   text-align: center;
   vertical-align: top;
 }
-.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a {
+.page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a {
   width: 150px;
   margin: 0 auto;
   height: 150px;
@@ -11493,10 +11526,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   display: block;
   background-color: #786586;
 }
-.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a img {
+.page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a img {
   margin-top: 30px;
 }
-.page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title {
+.page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title {
   font-size: 1.2em;
   color: #786586;
   font-style: italic;
@@ -11528,27 +11561,53 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border: none;
   cursor: pointer;
 }
-.page-node-create-strategic-documentation #edit-title-field--2,
-.page-node-create-promotional-resource #edit-title-field--2 {
+#promotional-material-node-form .group-left,
+.page-node-add-strategic-documentation .group-left,
+.page-node-create-promotional-resource .group-left,
+#promotional-material-node-form .group-right,
+.page-node-add-strategic-documentation .group-right,
+.page-node-create-promotional-resource .group-right {
+  float: none;
+  width: inherit;
+}
+#promotional-material-node-form #edit-title-field,
+.page-node-add-strategic-documentation #edit-title-field,
+.page-node-create-promotional-resource #edit-title-field {
   width: 100%;
 }
-.page-node-create-strategic-documentation .field-type-list-boolean,
+#promotional-material-node-form .field-type-list-boolean,
+.page-node-add-strategic-documentation .field-type-list-boolean,
 .page-node-create-promotional-resource .field-type-list-boolean {
   float: none !important;
   max-width: 200px;
   margin-left: 20px;
 }
-.page-node-create-strategic-documentation #edit-field-publication-date--2,
+#promotional-material-node-form #edit-field-publication-date--2,
+.page-node-add-strategic-documentation #edit-field-publication-date--2,
 .page-node-create-promotional-resource #edit-field-publication-date--2 {
   width: 64%;
 }
-.page-node-create-strategic-documentation .form-type-date-select .form-type-select[class*=hour],
+#promotional-material-node-form .form-type-date-select .form-type-select[class*=hour],
+.page-node-add-strategic-documentation .form-type-date-select .form-type-select[class*=hour],
 .page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour] {
   margin-left: 0px;
 }
-.page-node-create-strategic-documentation #edit-field-promotional-material-type--2,
+#promotional-material-node-form #edit-field-promotional-material-type--2,
+.page-node-add-strategic-documentation #edit-field-promotional-material-type--2,
 .page-node-create-promotional-resource #edit-field-promotional-material-type--2 {
   clear: both;
+}
+#promotional-material-node-form #edit_field_multiple_sector_und_chosen,
+.page-node-add-strategic-documentation #edit_field_multiple_sector_und_chosen,
+.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen {
+  width: 100% !important;
+  box-shadow: none;
+}
+#promotional-material-node-form #edit_field_multiple_sector_und_chosen .chosen-choices,
+.page-node-add-strategic-documentation #edit_field_multiple_sector_und_chosen .chosen-choices,
+.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen .chosen-choices {
+  border: none;
+  background-image: inherit;
 }
 .oira-search-form-container {
   background: url('../images/background-two-colors.png') repeat-y 50%;
@@ -11849,33 +11908,33 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-right: 10px;
   margin-left: 0px;
 }
-.page-node-collaboration-area-private-images .panels-flexible-row-new-1 {
+.private-images-page-selector .panels-flexible-row-new-1 {
   background-color: white !important;
 }
-.page-node-collaboration-area-private-images ul.private-images {
+.private-images-page-selector ul.private-images {
   overflow: auto;
   list-style: none;
   margin-top: 25px;
 }
-.page-node-collaboration-area-private-images ul.private-images li {
+.private-images-page-selector ul.private-images li {
   text-align: center;
   min-height: 185px;
 }
-.page-node-collaboration-area-private-images ul.private-images li a img {
+.private-images-page-selector ul.private-images li a img {
   margin: 0 auto;
   margin-bottom: 10px;
 }
-.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 {
+.private-images-page-selector ul.private-images li .views-field-field-oira-private-image-1 {
   margin-top: 10px;
 }
-.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 a {
+.private-images-page-selector ul.private-images li .views-field-field-oira-private-image-1 a {
   display: inline-block;
   background-color: #786586;
   color: white;
   padding: 3px 8px;
   border-radius: 4px;
 }
-.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 a:before {
+.private-images-page-selector ul.private-images li .views-field-field-oira-private-image-1 a:before {
   content: "\e026";
   font-family: "Glyphicons Halflings";
   vertical-align: middle;
