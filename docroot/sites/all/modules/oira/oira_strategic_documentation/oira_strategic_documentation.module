@@ -93,23 +93,26 @@ function oira_strategic_documentation_form_alter(&$form, &$form_state, $form_id)
  */
 function oira_strategic_documentation_node_access($node, $op, $account) {
   $type = is_string($node) ? $node : $node->type;
-  if($type == 'strategic_documentation' && $op == 'view'){
-    if(array_intersect(
-      array(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PARTNER, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR),
-      array_values($account->roles)
-    )){
+  if ($type == 'strategic_documentation' && $op == 'view') {
+    $admin_roles = [OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR];
+    $user_roles = array_values($account->roles);
+    if (!empty(array_intersect($admin_roles, $user_roles))) {
+      return NODE_ACCESS_IGNORE;
+    }
+    if (in_array(ROLE_OIRA_PARTNER, $user_roles)) {
       $node_sections = $node->workbench_access;
-      if(isset($node->field_co_author['und'][0]['tid'])){
+      if (isset($node->field_co_author['und'][0]['tid'])) {
         $node_sections[$node->field_co_author['und'][0]['tid']] = $node->field_co_author['und'][0]['tid'];
       }
       $user_sections = osha_workflow_editor_get_sections($account);
-      if(array_intersect($user_sections,$node_sections)){
+      // Allow also the general section.
+      $user_sections[] = 'section';
+      if (!empty(array_intersect($user_sections, $node_sections))) {
         return NODE_ACCESS_ALLOW;
       }
-      return NODE_ACCESS_DENY;
-    }else{
-      return NODE_ACCESS_DENY;
     }
+    return NODE_ACCESS_DENY;
   }
+
   return NODE_ACCESS_IGNORE;
 }
