@@ -48,3 +48,10 @@ function oira_promotional_material_update_7006() {
 function oira_promotional_material_update_7007() {
   features_revert_module('oira_promotional_material');
 }
+
+/**
+ * Feature revert: add display suit layout for default view mode
+ */
+function oira_promotional_material_update_7008() {
+  features_revert_module('oira_promotional_material');
+}
