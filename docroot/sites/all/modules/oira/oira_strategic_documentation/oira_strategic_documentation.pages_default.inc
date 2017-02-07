@@ -15,7 +15,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Collaboration area';
   $page->admin_description = '';
-  $page->path = 'node/%node/collaboration-area';
+  $page->path = 'private-zone/collaboration-area';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
@@ -35,15 +35,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
     'logic' => 'and',
   );
   $page->menu = array();
-  $page->arguments = array(
-    'node' => array(
-      'id' => 1,
-      'identifier' => 'Content: ID',
-      'name' => 'entity_id:node',
-      'settings' => array(),
-      'keyword' => 'node',
-    ),
-  );
+  $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
   );
@@ -61,7 +53,7 @@ function oira_strategic_documentation_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-strategic-documentation-search',
+    'body_classes_to_add' => 'page-strategic-documentation-search private-zone-page collaboration-area-page-selector',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -75,22 +67,7 @@ Collaboration area
 <none>',
     'panels_breadcrumbs_home' => 1,
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'php',
-          'settings' => array(
-            'description' => 'Partner profile - private zone',
-            'php' => '$is_partner = FALSE;
-
-if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
-	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
-}
-
-return $is_partner;',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
   );
@@ -195,36 +172,10 @@ return $is_partner;',
     ),
   );
   $display->cache = array();
-  $display->title = 'Private Zone';
+  $display->title = 'Collaboration area';
   $display->uuid = 'eee1a97d-d0a3-4ef0-8501-cbacda3efc96';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-5df60e2f-a9a4-498d-a120-9ce921da51f7';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Intro title',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Collaboration area</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5df60e2f-a9a4-498d-a120-9ce921da51f7';
-    $display->content['new-5df60e2f-a9a4-498d-a120-9ce921da51f7'] = $pane;
-    $display->panels['center'][0] = 'new-5df60e2f-a9a4-498d-a120-9ce921da51f7';
     $pane = new stdClass();
     $pane->pid = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane->panel = 'center';
@@ -246,11 +197,11 @@ return $is_partner;',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '181b84c3-18bb-49a1-a34b-920b1ec77495';
     $display->content['new-181b84c3-18bb-49a1-a34b-920b1ec77495'] = $pane;
-    $display->panels['center'][1] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
+    $display->panels['center'][0] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane = new stdClass();
     $pane->pid = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
     $pane->panel = 'content';
@@ -274,29 +225,6 @@ return $is_partner;',
     $pane->uuid = '92abd91d-caa7-4ad7-ae17-6e40e054227b';
     $display->content['new-92abd91d-caa7-4ad7-ae17-6e40e054227b'] = $pane;
     $display->panels['content'][0] = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
-    $pane = new stdClass();
-    $pane->pid = 'new-496ad47d-e7fa-488b-845e-6e4342c50a99';
-    $pane->panel = 'menu';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-6';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '496ad47d-e7fa-488b-845e-6e4342c50a99';
-    $display->content['new-496ad47d-e7fa-488b-845e-6e4342c50a99'] = $pane;
-    $display->panels['menu'][0] = 'new-496ad47d-e7fa-488b-845e-6e4342c50a99';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -834,7 +762,7 @@ Update Strategic Documentation',
   $page->task = 'page';
   $page->admin_title = 'EU OSHA documents';
   $page->admin_description = '';
-  $page->path = 'node/%node/collaboration-area/eu-osha-documents';
+  $page->path = 'private-zone/collaboration-area/eu-osha-documents';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -856,14 +784,7 @@ Update Strategic Documentation',
     'settings' => NULL,
   );
   $page->menu = array();
-  $page->arguments = array(
-    'node' => array(
-      'id' => 1,
-      'identifier' => 'Content: ID',
-      'name' => 'entity_id:node',
-      'settings' => array(),
-    ),
-  );
+  $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
   );
@@ -881,29 +802,14 @@ Update Strategic Documentation',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page',
+    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page eu-osha-doc-page-selector',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
     'name' => '',
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'php',
-          'settings' => array(
-            'description' => '',
-            'php' => '$is_partner = FALSE;
-
-if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
-	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
-}
-
-return $is_partner;',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
@@ -986,7 +892,7 @@ EU-OSHA documents',
     ),
   );
   $display->cache = array();
-  $display->title = 'Private Zone';
+  $display->title = 'EU OSHA Documents title';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->content = array();
   $display->panels = array();
@@ -1013,58 +919,6 @@ EU-OSHA documents',
     $pane->uuid = '19fec5ae-2e6b-480c-94de-1b0277c14342';
     $display->content['new-19fec5ae-2e6b-480c-94de-1b0277c14342'] = $pane;
     $display->panels['center'][0] = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
-    $pane = new stdClass();
-    $pane->pid = 'new-6c764aa6-6711-4125-8fdf-288ff5bd1de5';
-    $pane->panel = 'menu';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-6';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '6c764aa6-6711-4125-8fdf-288ff5bd1de5';
-    $display->content['new-6c764aa6-6711-4125-8fdf-288ff5bd1de5'] = $pane;
-    $display->panels['menu'][0] = 'new-6c764aa6-6711-4125-8fdf-288ff5bd1de5';
-    $pane = new stdClass();
-    $pane->pid = 'new-4893f941-561e-4ebd-9d4e-e0b63e916d4e';
-    $pane->panel = 'menu';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'EU OSHA Documents title',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>EU-OSHA documents</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '4893f941-561e-4ebd-9d4e-e0b63e916d4e';
-    $display->content['new-4893f941-561e-4ebd-9d4e-e0b63e916d4e'] = $pane;
-    $display->panels['menu'][1] = 'new-4893f941-561e-4ebd-9d4e-e0b63e916d4e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1078,7 +932,7 @@ EU-OSHA documents',
   $page->task = 'page';
   $page->admin_title = 'Partners documents';
   $page->admin_description = '';
-  $page->path = 'node/%node/collaboration-area/partners-documents';
+  $page->path = 'private-zone/collaboration-area/partners-documents';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -1100,14 +954,7 @@ EU-OSHA documents',
     'settings' => NULL,
   );
   $page->menu = array();
-  $page->arguments = array(
-    'node' => array(
-      'id' => 1,
-      'identifier' => 'Content: ID',
-      'name' => 'entity_id:node',
-      'settings' => array(),
-    ),
-  );
+  $page->arguments = array();
   $page->conf = array(
     'admin_paths' => FALSE,
   );
@@ -1125,29 +972,14 @@ EU-OSHA documents',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page',
+    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page partner-doc-page-selector',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'panel',
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'php',
-          'settings' => array(
-            'description' => '',
-            'php' => '$is_partner = FALSE;
-
-if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
-	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
-}
-
-return $is_partner;',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
     'panels_breadcrumbs_state' => 1,
@@ -1230,7 +1062,7 @@ Partners documents',
     ),
   );
   $display->cache = array();
-  $display->title = 'Private Zone';
+  $display->title = 'Partners documents';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->content = array();
   $display->panels = array();
@@ -1257,58 +1089,6 @@ Partners documents',
     $pane->uuid = '8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
     $display->content['new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed'] = $pane;
     $display->panels['center'][0] = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
-    $pane = new stdClass();
-    $pane->pid = 'new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
-    $pane->panel = 'menu';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-6';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
-    $display->content['new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045'] = $pane;
-    $display->panels['menu'][0] = 'new-bd0c9ad1-0f57-4f34-acd6-ed1f4f8a5045';
-    $pane = new stdClass();
-    $pane->pid = 'new-38300244-2beb-4efe-8832-e8a064092810';
-    $pane->panel = 'menu';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partners documents title',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Partners documents</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '38300244-2beb-4efe-8832-e8a064092810';
-    $display->content['new-38300244-2beb-4efe-8832-e8a064092810'] = $pane;
-    $display->panels['menu'][1] = 'new-38300244-2beb-4efe-8832-e8a064092810';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -81,19 +81,19 @@ function oira_strategic_documentation_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '17',
-        ),
-        'path' => array(
           'weight' => '16',
         ),
+        'path' => array(
+          'weight' => '15',
+        ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '13',
         ),
         'workbench_access' => array(
           'weight' => '0',
         ),
         'xmlsitemap' => array(
-          'weight' => '15',
+          'weight' => '14',
         ),
         'language' => array(
           'weight' => '10',
@@ -102,7 +102,7 @@ function oira_strategic_documentation_strongarm() {
       'display' => array(
         'node_type' => array(
           'default' => array(
-            'weight' => '17',
+            'weight' => '20',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,

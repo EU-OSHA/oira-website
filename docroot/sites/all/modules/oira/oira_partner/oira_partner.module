@@ -19,14 +19,28 @@ function oira_partner_menu() {
   $items['private-zone'] = [
     'title' => 'Private zone',
     'page callback' => 'oira_partner_private_zone_callback',
-    'access arguments' => ['edit any partner content'],
+    'access callback' => 'oira_partner_has_role',
+    'access arguments' => [ROLE_OIRA_PARTNER],
   ];
+
   $items['private-zone/update-profile'] = [
     'title' => 'Private zone',
     'page callback' => 'oira_partner_private_zone_update_callback',
-    'access arguments' => ['edit any partner content'],
+    'access callback' => 'oira_partner_has_role',
+    'access arguments' => [ROLE_OIRA_PARTNER],
   ];
+
   return $items;
+}
+
+function oira_partner_has_role($role_name) {
+  /// allow admin to add it as menu item.
+  $admin_role = user_role_load_by_name(OSHA_WORKFLOW_ROLE_ADMINISTRATOR);
+  if (user_has_role($admin_role->rid)) {
+    return TRUE;
+  }
+  $role = user_role_load_by_name($role_name);
+  return user_has_role($role->rid);
 }
 
 function oira_partner_private_zone_callback() {
@@ -40,10 +54,11 @@ function oira_partner_private_zone_callback() {
   }
 }
 
+
 function oira_partner_private_zone_update_callback() {
   $partner = oira_partner_get_account_partner();
   if (!empty($partner)) {
-    drupal_goto('node/' . $partner->nid . '/edit');
+    drupal_goto('node/' . $partner->nid . '/update-profile');
   }
   else {
     drupal_access_denied();
@@ -149,6 +164,16 @@ function oira_partner_field_extra_fields() {
   );
   $extra['node']['partner'] = $content_count;
   return $extra;
+}
+
+/**
+ * Implements hook_block_view_MODULE_DELTA_alter().
+ */
+function oira_partner_block_view_menu_block_6_alter(&$data, $block) {
+  // Show the private zone menu block only for partner's node.
+  if ($node = menu_get_object()) {
+    $data['content']['#access'] = oira_node_belongs_to_partner_user($node);
+  }
 }
 
 /**
@@ -480,6 +505,24 @@ function _oira_partner_get_by_country($tid, $type_tid = array()) {
     $partners = array_keys($result['node']);
   }
   return $partners;
+}
+
+function oira_node_belongs_to_partner_user($node) {
+  global $user;
+  // if masquerade, the access it's not loaded correctly.
+  workbench_access_user_load_data($user);
+  $sections = array_keys($user->workbench_access);
+  if (!empty($sections)) {
+    $query = db_select('workbench_access_node', 'wan')
+      ->fields('wan', array('nid'))
+      ->condition('wan.access_id', $sections, 'IN')
+      ->condition('wan.nid', $node->nid);
+    $count = $query->execute()->rowCount();
+    if ($count) {
+      return TRUE;
+    }
+  }
+  return FALSE;
 }
 
 function oira_partner_views_data() {

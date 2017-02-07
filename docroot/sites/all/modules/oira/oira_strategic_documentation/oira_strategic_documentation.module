@@ -50,9 +50,6 @@ function oira_strategic_documentation_block_view($delta = '') {
 function oira_strategic_documentation_form_alter(&$form, &$form_state, $form_id) {
   switch ($form_id) {
     case 'strategic_documentation_node_form':
-      // Hide country - it's automatically added in oira_partner.module
-      $form['field_country']['#access'] = FALSE;
-
       // TODO a validation server side.
 //      $form['#validate'][] = 'oira_promotional_material_form_validate';
 

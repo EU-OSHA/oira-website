@@ -757,10 +757,6 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       break;
 
     case 'partner_node_form':
-      drupal_set_title('Update your profile');
-      $form['#prefix'] = '<div class="node-form-wrapper">';
-      $form['#suffix'] = '</div>';
-      $form['#attributes']['class'][] = 'container';
       $form['about_organization'] = array(
         '#markup' => '<div class="ds-about-organization"><div class="row"><div class="col-sm-12"><h2>' . t('About your organization') . '</h2></div></div></div>',
         '#weight' => -100,
@@ -793,7 +789,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       $form['field_general_email']['#weight'] = -93;
       $form['field_website']['#disabled'] = TRUE;
       $form['field_website']['#weight'] = -92;
-      $form['field_website']['#suffix'] = '</div>';;
+      $form['field_website']['#suffix'] = '</div>';
       $form['field_general_phone']['#disabled'] = TRUE;
       $form['field_general_phone']['#weight'] = -91;
       $form['field_general_phone']['#prefix'] = '<div class="group-right col-sm-6">';

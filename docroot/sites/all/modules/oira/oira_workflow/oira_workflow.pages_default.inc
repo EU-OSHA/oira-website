@@ -9,7 +9,7 @@
  */
 function oira_workflow_default_page_manager_pages() {
   $page = new stdClass();
-  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'partner_update_profile';
   $page->task = 'page';
@@ -39,6 +39,7 @@ function oira_workflow_default_page_manager_pages() {
       'identifier' => 'Content: ID',
       'name' => 'entity_id:node',
       'settings' => array(),
+      'keyword' => 'node',
     ),
   );
   $page->conf = array(
@@ -171,7 +172,7 @@ Update Your Profile
     ),
   );
   $display->cache = array();
-  $display->title = 'Private Zone';
+  $display->title = 'Update Your Profile';
   $display->uuid = '17dac0a9-5f40-457d-aa20-d541345bcb57';
   $display->content = array();
   $display->panels = array();
@@ -203,58 +204,6 @@ Update Your Profile
     $pane->uuid = '7e62e040-b155-4470-83b7-603512d6ffc8';
     $display->content['new-7e62e040-b155-4470-83b7-603512d6ffc8'] = $pane;
     $display->panels['form'][0] = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
-    $pane = new stdClass();
-    $pane->pid = 'new-2677b52b-b403-4ea1-acfa-a1a1a69addc7';
-    $pane->panel = 'menu';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-6';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '2677b52b-b403-4ea1-acfa-a1a1a69addc7';
-    $display->content['new-2677b52b-b403-4ea1-acfa-a1a1a69addc7'] = $pane;
-    $display->panels['menu'][0] = 'new-2677b52b-b403-4ea1-acfa-a1a1a69addc7';
-    $pane = new stdClass();
-    $pane->pid = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
-    $pane->panel = 'menu';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner update profile',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Update Your Profile</h2>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '8c002d32-409a-44d0-8666-908dee7c61d6';
-    $display->content['new-8c002d32-409a-44d0-8666-908dee7c61d6'] = $pane;
-    $display->panels['menu'][1] = 'new-8c002d32-409a-44d0-8666-908dee7c61d6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

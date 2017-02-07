@@ -332,6 +332,7 @@ function osha_workflow_node_access($node, $operation, $user) {
   else if ($operation == 'delete') {
     $is_moderated = workbench_moderation_node_moderated($node);
     // Deny access if doesn't have the perm toq edit in current state.
+//    dpm($state);
     if ($is_moderated && variable_get('workbench_moderation_per_node_type', FALSE)) {
       $state = $node->workbench_moderation['current']->state;
       if (!user_access('delete any content in ' . $state, $user)) {
