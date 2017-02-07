@@ -12,6 +12,84 @@ function oira_promotional_material_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|promotional_material|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'promotional_material';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'hwc_2col_stacked_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_image',
+      ),
+      'right' => array(
+        1 => 'field_revised_date',
+        2 => 'field_country',
+        3 => 'field_promotional_material_type',
+        4 => 'body',
+        5 => 'field_resource_fc',
+      ),
+      'center' => array(
+        6 => 'related_partners',
+        7 => 'tools_see_more',
+      ),
+    ),
+    'fields' => array(
+      'field_image' => 'left',
+      'field_revised_date' => 'right',
+      'field_country' => 'right',
+      'field_promotional_material_type' => 'right',
+      'body' => 'right',
+      'field_resource_fc' => 'right',
+      'related_partners' => 'center',
+      'tools_see_more' => 'center',
+    ),
+    'classes' => array(
+      'layout_class' => array(
+        'row' => 'row',
+      ),
+      'header' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'left' => array(
+        'col-sm-3' => 'col-sm-3',
+      ),
+      'right' => array(
+        'col-sm-9' => 'col-sm-9',
+      ),
+      'center' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+      'left2' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'right2' => array(
+        'col-sm-6' => 'col-sm-6',
+      ),
+      'footer' => array(
+        'col-md-12' => 'col-md-12',
+      ),
+    ),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'center' => 'div',
+      'left2' => 'div',
+      'right2' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => 'class="container"',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|promotional_material|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|promotional_material|form';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'promotional_material';
