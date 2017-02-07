@@ -110,8 +110,9 @@ function oira_strategic_documentation_node_access($node, $op, $account) {
       if (!empty(array_intersect($user_sections, $node_sections))) {
         return NODE_ACCESS_ALLOW;
       }
-      return NODE_ACCESS_DENY;
     }
+    return NODE_ACCESS_DENY;
   }
+
   return NODE_ACCESS_IGNORE;
 }
