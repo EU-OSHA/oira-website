@@ -1775,9 +1775,9 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		width: 600px;
 		position: initial !important;
 		.slick-track{
-			li.active-trail{
-				background-color: rgba(255, 255, 255, 0.3);
-			}
+			// li.active-trail{
+			// 	background-color: rgba(255, 255, 255, 0.3);
+			// }
 			> li{
 				> div{
 					width: 93% !important;
@@ -1849,7 +1849,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	textarea,
 	label,
 	#edit-field-website-und-0-url,
-	#edit-field-website-und-0-url--2{
+	#edit-field-website-und-0-url{
 		width: 100% !important;
 		max-width: 100%;
 	}
@@ -1881,14 +1881,14 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	//buttons
 	button#edit-save-preview,
 	button#edit-submit,
-	button#edit-save-preview--2,
-	button#edit-submit--2{
+	button#edit-save-preview,
+	button#edit-submit{
 		margin-top: 15px;
 		width: 100%;
 		overflow: hidden;
 	}
 	button#edit-send-for-approval,
-	button#edit-send-for-approval--2{
+	button#edit-send-for-approval{
 		font-size: 1em;
 		margin-top: 15px;
 		width: 100%;
@@ -1899,8 +1899,8 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	//file
 	#edit-field-image,
 	#edit-field-private-image,
-	#edit-field-image--2,
-	#edit-field-private-image--2{
+	#edit-field-image,
+	#edit-field-private-image{
 		.image-widget-data{
 			input[type="file"]{
 				width: 67% !important;
@@ -1919,10 +1919,14 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	}
 
 }
+.private-zone-back-wrapper{
+	top: 0px !important;
+}
 
-.page-node-my-content{
+.page-private-zone-my-content{
 	.view-id-partner_content{
 		table{
+			font-size: 0.7em;
 			td{
 				padding-left: 2px !important;
 				padding-right: 2px !important;
@@ -1932,12 +1936,13 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 }
 
 //collaboration page
-.page-node-collaboration-area.page-strategic-documentation-search{
+.page-private-zone-collaboration-area{
 	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last{
 		background-color: inherit;
 	}
 	.page-promotional-materials-search{
 		.menu-name-menu-collaboration{
+			padding-bottom: 25px;
 			ul{
 				li{
 					display: block;
@@ -1969,7 +1974,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 }
 
 //list
-.page-node-my-content{
+.page-private-zone-my-content{
 	.view-filters{
 		form{
 			#edit-type-wrapper{
@@ -2023,19 +2028,19 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 
 //create-promotional
 .page-node-create-promotional-resource{
-	#edit-title-field--2,
-	#edit-field-oira--2,
-	#edit-field-publication-date--2{
+	#edit-title-field,
+	#edit-field-oira,
+	#edit-field-publication-date{
 		float: none;
 	}
-	#edit-title-field--2{
+	#edit-title-field{
 		max-width: 100%;
 		margin-right: 0px;
 	}
-	#edit-field-publication-date--2{
+	#edit-field-publication-date{
 		width: 100%;
 	}
-	#edit-field-oira--2{
+	#edit-field-oira{
 		//float: left !important;
 		.checkbox input[type="checkbox"]{
 			margin-left: -22px;
@@ -2044,14 +2049,14 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		    //padding-left: 17px;
 		    max-width: 100%;
 		}
-		label[for*="edit-field-oira-und--2"]{
+		label[for*="edit-field-oira-und"]{
 			display: none !important;
 		}
 	}
 	.form-type-date-select .form-type-select[class*=hour]{
 		margin-left: 0px;
 	}
-	#edit-field-promotional-material-type--2{
+	#edit-field-promotional-material-type{
 		clear: both;
 	}
 

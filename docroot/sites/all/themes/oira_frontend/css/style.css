@@ -10789,7 +10789,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-private-zone .block-menu-block h2.block-title,
 .page-node-add .block-menu-block h2.block-title,
 .page-node-update-profile .block-menu-block h2.block-title {
-  font-size: 3em;
+  font-size: 3.5em;
   margin-bottom: 25px;
   color: #786586;
 }
@@ -10798,8 +10798,13 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-add .page-title-wrapper h1,
 .page-node-update-profile .page-title-wrapper h1 {
   color: #786586;
-  border-bottom: 2px solid #786586 !important;
   padding-bottom: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+.page-node-91.node-type-partner .page-title-wrapper h1,
+.private-zone-page.private-images-page-selector .page-title-wrapper h1 {
+  border-bottom: 2px solid #786586 !important;
   margin-bottom: 25px;
 }
 .menu-name-menu-private-zone {
@@ -10812,9 +10817,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .menu-name-menu-private-zone ul.menu {
   display: table;
   text-align: center;
-}
-.menu-name-menu-private-zone ul.menu > li.active-trail > div {
-  background-color: rgba(255, 255, 255, 0.3);
 }
 .menu-name-menu-private-zone ul.menu > li.active > div {
   background-color: rgba(255, 255, 255, 0.7);
@@ -11788,125 +11790,36 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-color: #ffffff;
   padding: 30px;
 }
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool {
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser {
   border-top: 2px solid #786586;
-  padding: 30px 0px;
+  margin-left: 0px;
   margin-right: 0px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-datetime,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-datetime {
+  margin-bottom: 5px !important;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-name-title-field h3,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-name-title-field h3 {
+  margin-top: 0px !important;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-file,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-file {
+  margin-top: 10px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-taxonomy-term-reference,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-taxonomy-term-reference {
+  margin-bottom: 5px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser:first-child,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser:first-child {
+  border-top: none;
   margin-left: 0px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 {
-  padding-left: 0px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field {
-  font-size: 1.4em;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .group-center.col-md-12,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .group-center.col-md-12 {
-  clear: both;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
-  margin-left: 207px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.more-link,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.more-link {
-  text-align: left;
-  margin-top: 15px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less {
-  text-align: right !important;
-  width: 20px;
-  height: 12px;
-  float: right;
-  overflow: hidden;
-  font-style: normal;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less:before,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less:before {
-  content: "\e253";
-  font-family: "Glyphicons Halflings";
-  font-size: 1.2em;
-  line-height: 0;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link {
-  position: absolute;
-  right: 15px;
-  margin-top: 15px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
-  color: #58585a;
-  font-weight: bold;
-  margin-top: 0px;
-  display: block;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
-  color: #10b2e4;
-  margin-left: 10px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners {
-  margin-top: 50px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner {
-  background-color: #786586;
-  padding: 15px;
-  color: #ffffff;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 {
-  min-height: 45px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a {
-  font-size: 0.9em;
-  color: #ffffff;
-  margin-top: 0px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .more-link,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .more-link {
-  color: #ffffff;
-  text-align: left;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
-  margin-left: 222px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 .node-partner,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 .node-partner {
-  margin-left: 0px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div {
-  display: table;
-  border-collapse: collapse;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div .group-left a img,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div .group-left a img {
-  width: auto;
-  height: 100px;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child,
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .odd:first-child,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .odd:first-child {
-  display: table-cell;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child {
-  width: 50%;
-}
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child .node-partner,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child .node-partner {
-  margin-right: 10px;
-  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
 }
 .private-images-page-selector .panels-flexible-row-new-1 {
   background-color: white !important;
@@ -12576,15 +12489,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1,
   .page-promotional-resources-search .panels-flexible-row-new-1,
   .page-search-site .panels-flexible-row-new-1,
-  .page-node-collaboration-area .panels-flexible-row-new-1,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last,
   .page-oira-tools .oira-search-form-container,
   .page-promotional-resources-search .oira-search-form-container,
   .page-search-site .oira-search-form-container,
-  .page-node-collaboration-area .oira-search-form-container {
+  .page-private-zone-collaboration-area .oira-search-form-container {
     background: none;
     background-color: #dfd8e4;
     padding-bottom: 0px;
@@ -12592,15 +12505,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1 #edit-left-column,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column,
   .page-search-site .panels-flexible-row-new-1 #edit-left-column,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-left-column,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-left-column,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column,
   .page-oira-tools .oira-search-form-container #edit-left-column,
   .page-promotional-resources-search .oira-search-form-container #edit-left-column,
   .page-search-site .oira-search-form-container #edit-left-column,
-  .page-node-collaboration-area .oira-search-form-container #edit-left-column {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-left-column {
     position: absolute !important;
     z-index: 1;
     padding-left: 30px;
@@ -12612,57 +12525,57 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1 #edit-left-column > a,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column > a,
   .page-search-site .panels-flexible-row-new-1 #edit-left-column > a,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-left-column > a,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-left-column > a,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column > a,
   .page-oira-tools .oira-search-form-container #edit-left-column > a,
   .page-promotional-resources-search .oira-search-form-container #edit-left-column > a,
   .page-search-site .oira-search-form-container #edit-left-column > a,
-  .page-node-collaboration-area .oira-search-form-container #edit-left-column > a {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-left-column > a {
     clear: both;
   }
   .page-oira-tools .panels-flexible-row-new-1 #edit-left-column .form-type-textfield,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column .form-type-textfield,
   .page-search-site .panels-flexible-row-new-1 #edit-left-column .form-type-textfield,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-left-column .form-type-textfield,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-left-column .form-type-textfield,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .form-type-textfield,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .form-type-textfield,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .form-type-textfield,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .form-type-textfield,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .form-type-textfield,
   .page-oira-tools .oira-search-form-container #edit-left-column .form-type-textfield,
   .page-promotional-resources-search .oira-search-form-container #edit-left-column .form-type-textfield,
   .page-search-site .oira-search-form-container #edit-left-column .form-type-textfield,
-  .page-node-collaboration-area .oira-search-form-container #edit-left-column .form-type-textfield {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-left-column .form-type-textfield {
     width: 100% !important;
   }
   .page-oira-tools .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar,
   .page-search-site .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar,
   .page-oira-tools .oira-search-form-container #edit-left-column .toggle-search-sidebar,
   .page-promotional-resources-search .oira-search-form-container #edit-left-column .toggle-search-sidebar,
   .page-search-site .oira-search-form-container #edit-left-column .toggle-search-sidebar,
-  .page-node-collaboration-area .oira-search-form-container #edit-left-column .toggle-search-sidebar {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-left-column .toggle-search-sidebar {
     display: block !important;
   }
   .page-oira-tools .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span,
   .page-search-site .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span,
   .page-oira-tools .oira-search-form-container #edit-left-column .toggle-search-sidebar span,
   .page-promotional-resources-search .oira-search-form-container #edit-left-column .toggle-search-sidebar span,
   .page-search-site .oira-search-form-container #edit-left-column .toggle-search-sidebar span,
-  .page-node-collaboration-area .oira-search-form-container #edit-left-column .toggle-search-sidebar span {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-left-column .toggle-search-sidebar span {
     height: 20px;
     width: 20px;
     overflow: hidden;
@@ -12674,15 +12587,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span:before,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span:before,
   .page-search-site .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span:before,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span:before,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-left-column .toggle-search-sidebar span:before,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span:before,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span:before,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span:before,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span:before,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-left-column .toggle-search-sidebar span:before,
   .page-oira-tools .oira-search-form-container #edit-left-column .toggle-search-sidebar span:before,
   .page-promotional-resources-search .oira-search-form-container #edit-left-column .toggle-search-sidebar span:before,
   .page-search-site .oira-search-form-container #edit-left-column .toggle-search-sidebar span:before,
-  .page-node-collaboration-area .oira-search-form-container #edit-left-column .toggle-search-sidebar span:before {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-left-column .toggle-search-sidebar span:before {
     content: "\e253";
     font-family: "Glyphicons Halflings";
     font-size: 1.2em;
@@ -12694,15 +12607,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1 #edit-content,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content,
   .page-search-site .panels-flexible-row-new-1 #edit-content,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-content,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-content,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content,
   .page-oira-tools .oira-search-form-container #edit-content,
   .page-promotional-resources-search .oira-search-form-container #edit-content,
   .page-search-site .oira-search-form-container #edit-content,
-  .page-node-collaboration-area .oira-search-form-container #edit-content {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-content {
     padding-left: 15px !important;
     border-left: 0px !important;
     padding-bottom: 40px !important;
@@ -12711,15 +12624,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .results-for,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .results-for,
   .page-search-site .panels-flexible-row-new-1 #edit-content .results-for,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-content .results-for,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-content .results-for,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .results-for,
   .page-oira-tools .oira-search-form-container #edit-content .results-for,
   .page-promotional-resources-search .oira-search-form-container #edit-content .results-for,
   .page-search-site .oira-search-form-container #edit-content .results-for,
-  .page-node-collaboration-area .oira-search-form-container #edit-content .results-for {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-content .results-for {
     position: absolute;
     top: 11px;
     left: 67px;
@@ -12727,30 +12640,30 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
   .page-search-site .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar,
   .page-oira-tools .oira-search-form-container #edit-content .toggle-search-sidebar,
   .page-promotional-resources-search .oira-search-form-container #edit-content .toggle-search-sidebar,
   .page-search-site .oira-search-form-container #edit-content .toggle-search-sidebar,
-  .page-node-collaboration-area .oira-search-form-container #edit-content .toggle-search-sidebar {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-content .toggle-search-sidebar {
     position: absolute;
     top: 20px;
   }
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span,
   .page-search-site .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span,
   .page-oira-tools .oira-search-form-container #edit-content .toggle-search-sidebar span,
   .page-promotional-resources-search .oira-search-form-container #edit-content .toggle-search-sidebar span,
   .page-search-site .oira-search-form-container #edit-content .toggle-search-sidebar span,
-  .page-node-collaboration-area .oira-search-form-container #edit-content .toggle-search-sidebar span {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-content .toggle-search-sidebar span {
     height: 40px;
     width: 40px;
     overflow: hidden;
@@ -12761,15 +12674,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span:before,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span:before,
   .page-search-site .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span:before,
-  .page-node-collaboration-area .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span:before,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span:before,
   .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span:before,
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span:before,
   .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span:before,
-  .page-node-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span:before,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #edit-content .toggle-search-sidebar span:before,
   .page-oira-tools .oira-search-form-container #edit-content .toggle-search-sidebar span:before,
   .page-promotional-resources-search .oira-search-form-container #edit-content .toggle-search-sidebar span:before,
   .page-search-site .oira-search-form-container #edit-content .toggle-search-sidebar span:before,
-  .page-node-collaboration-area .oira-search-form-container #edit-content .toggle-search-sidebar span:before {
+  .page-private-zone-collaboration-area .oira-search-form-container #edit-content .toggle-search-sidebar span:before {
     content: "\e003";
     font-family: "Glyphicons Halflings";
     font-size: 1.3em;
@@ -13204,6 +13117,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   /*Private zone
 *****************************************************/
+  .node-type-partner .block-menu-block h2.block-title,
+  .page-private-zone .block-menu-block h2.block-title,
+  .page-node-add .block-menu-block h2.block-title,
+  .page-node-update-profile .block-menu-block h2.block-title {
+    font-size: 2.5em;
+  }
   .menu-name-menu-private-zone {
     position: relative;
   }
@@ -13302,41 +13221,41 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     outline: none;
     z-index: 2;
   }
-  .node-form #edit-field-image--2 .image-widget-data,
-  .node-form #edit-field-private-image--2 .image-widget-data,
-  .node-form #edit-field-private-file--2 .image-widget-data,
-  .node-form #edit-field-image--2 .file-widget,
-  .node-form #edit-field-private-image--2 .file-widget,
-  .node-form #edit-field-private-file--2 .file-widget {
+  .node-form #edit-field-image .image-widget-data,
+  .node-form #edit-field-private-image .image-widget-data,
+  .node-form #edit-field-private-file .image-widget-data,
+  .node-form #edit-field-image .file-widget,
+  .node-form #edit-field-private-image .file-widget,
+  .node-form #edit-field-private-file .file-widget {
     display: block;
     float: none;
     clear: both;
   }
-  .node-form #edit-field-image--2 .image-widget-data .form-file,
-  .node-form #edit-field-private-image--2 .image-widget-data .form-file,
-  .node-form #edit-field-private-file--2 .image-widget-data .form-file,
-  .node-form #edit-field-image--2 .file-widget .form-file,
-  .node-form #edit-field-private-image--2 .file-widget .form-file,
-  .node-form #edit-field-private-file--2 .file-widget .form-file {
+  .node-form #edit-field-image .image-widget-data .form-file,
+  .node-form #edit-field-private-image .image-widget-data .form-file,
+  .node-form #edit-field-private-file .image-widget-data .form-file,
+  .node-form #edit-field-image .file-widget .form-file,
+  .node-form #edit-field-private-image .file-widget .form-file,
+  .node-form #edit-field-private-file .file-widget .form-file {
     width: 60%;
     display: inline-block;
   }
-  .node-form #edit-field-image--2 .image-widget-data input[type="file"],
-  .node-form #edit-field-private-image--2 .image-widget-data input[type="file"],
-  .node-form #edit-field-private-file--2 .image-widget-data input[type="file"],
-  .node-form #edit-field-image--2 .file-widget input[type="file"],
-  .node-form #edit-field-private-image--2 .file-widget input[type="file"],
-  .node-form #edit-field-private-file--2 .file-widget input[type="file"] {
+  .node-form #edit-field-image .image-widget-data input[type="file"],
+  .node-form #edit-field-private-image .image-widget-data input[type="file"],
+  .node-form #edit-field-private-file .image-widget-data input[type="file"],
+  .node-form #edit-field-image .file-widget input[type="file"],
+  .node-form #edit-field-private-image .file-widget input[type="file"],
+  .node-form #edit-field-private-file .file-widget input[type="file"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
   }
-  .node-form #edit-field-image--2 .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-private-image--2 .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-private-file--2 .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-image--2 .file-widget input[type="file"]:before,
-  .node-form #edit-field-private-image--2 .file-widget input[type="file"]:before,
-  .node-form #edit-field-private-file--2 .file-widget input[type="file"]:before {
+  .node-form #edit-field-image .image-widget-data input[type="file"]:before,
+  .node-form #edit-field-private-image .image-widget-data input[type="file"]:before,
+  .node-form #edit-field-private-file .image-widget-data input[type="file"]:before,
+  .node-form #edit-field-image .file-widget input[type="file"]:before,
+  .node-form #edit-field-private-image .file-widget input[type="file"]:before,
+  .node-form #edit-field-private-file .file-widget input[type="file"]:before {
     content: "Select file";
     background-color: #10b2e4;
     color: white;
@@ -13345,12 +13264,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     height: 25px;
     cursor: pointer;
   }
-  .node-form #edit-field-image--2 .image-widget-data button,
-  .node-form #edit-field-private-image--2 .image-widget-data button,
-  .node-form #edit-field-private-file--2 .image-widget-data button,
-  .node-form #edit-field-image--2 .file-widget button,
-  .node-form #edit-field-private-image--2 .file-widget button,
-  .node-form #edit-field-private-file--2 .file-widget button {
+  .node-form #edit-field-image .image-widget-data button,
+  .node-form #edit-field-private-image .image-widget-data button,
+  .node-form #edit-field-private-file .image-widget-data button,
+  .node-form #edit-field-image .file-widget button,
+  .node-form #edit-field-private-image .file-widget button,
+  .node-form #edit-field-private-file .file-widget button {
     padding: 7px 15px;
     vertical-align: top;
     border: none;
@@ -13358,21 +13277,27 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     background-color: #786586;
     color: white;
   }
-  .node-form #edit-field-image--2 .image-widget-data textarea,
-  .node-form #edit-field-private-image--2 .image-widget-data textarea,
-  .node-form #edit-field-private-file--2 .image-widget-data textarea,
-  .node-form #edit-field-image--2 .file-widget textarea,
-  .node-form #edit-field-private-image--2 .file-widget textarea,
-  .node-form #edit-field-private-file--2 .file-widget textarea {
+  .node-form #edit-field-image .image-widget-data textarea,
+  .node-form #edit-field-private-image .image-widget-data textarea,
+  .node-form #edit-field-private-file .image-widget-data textarea,
+  .node-form #edit-field-image .file-widget textarea,
+  .node-form #edit-field-private-image .file-widget textarea,
+  .node-form #edit-field-private-file .file-widget textarea {
     width: 40%;
     height: 36px;
   }
   .page-node-add-promotional-material .date-no-float {
     max-width: 250px;
   }
-  .page-node-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li {
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration {
+    padding-top: 25px;
+  }
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li {
     width: 50%;
     margin-bottom: 30px;
+  }
+  .page-private-zone-collaboration-area .search-page-results-wrapper {
+    padding: 15px !important;
   }
   /*End private zone*/
 }
@@ -15394,9 +15319,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     width: 600px;
     position: initial !important;
   }
-  .menu-name-menu-private-zone ul.menu .slick-track li.active-trail {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
   .menu-name-menu-private-zone ul.menu .slick-track > li > div {
     width: 93% !important;
     height: 100px;
@@ -15454,7 +15376,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .node-form textarea,
   .node-form label,
   .node-form #edit-field-website-und-0-url,
-  .node-form #edit-field-website-und-0-url--2 {
+  .node-form #edit-field-website-und-0-url {
     width: 100% !important;
     max-width: 100%;
   }
@@ -15483,14 +15405,14 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .node-form button#edit-save-preview,
   .node-form button#edit-submit,
-  .node-form button#edit-save-preview--2,
-  .node-form button#edit-submit--2 {
+  .node-form button#edit-save-preview,
+  .node-form button#edit-submit {
     margin-top: 15px;
     width: 100%;
     overflow: hidden;
   }
   .node-form button#edit-send-for-approval,
-  .node-form button#edit-send-for-approval--2 {
+  .node-form button#edit-send-for-approval {
     font-size: 1em;
     margin-top: 15px;
     width: 100%;
@@ -15499,8 +15421,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .node-form #edit-field-image .image-widget-data input[type="file"],
   .node-form #edit-field-private-image .image-widget-data input[type="file"],
-  .node-form #edit-field-image--2 .image-widget-data input[type="file"],
-  .node-form #edit-field-private-image--2 .image-widget-data input[type="file"] {
+  .node-form #edit-field-image .image-widget-data input[type="file"],
+  .node-form #edit-field-private-image .image-widget-data input[type="file"] {
     width: 67% !important;
   }
   .partner-edit-form h2 {
@@ -15510,97 +15432,106 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     margin-left: 0px !important;
     margin-right: 0px !important;
   }
-  .page-node-my-content .view-id-partner_content table td {
+  .private-zone-back-wrapper {
+    top: 0px !important;
+  }
+  .page-private-zone-my-content .view-id-partner_content table {
+    font-size: 0.7em;
+  }
+  .page-private-zone-my-content .view-id-partner_content table td {
     padding-left: 2px !important;
     padding-right: 2px !important;
   }
-  .page-node-collaboration-area.page-strategic-documentation-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last {
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last {
     background-color: inherit;
   }
-  .page-node-collaboration-area.page-strategic-documentation-search .page-promotional-materials-search .menu-name-menu-collaboration ul li {
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration {
+    padding-bottom: 25px;
+  }
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li {
     display: block;
     width: 100%;
     background-color: #786586;
     margin-bottom: 10px;
   }
-  .page-node-collaboration-area.page-strategic-documentation-search .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image {
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image {
     display: none;
   }
-  .page-node-collaboration-area.page-strategic-documentation-search .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a img {
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-image a img {
     display: none;
   }
-  .page-node-collaboration-area.page-strategic-documentation-search .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title {
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title {
     max-width: inherit;
     padding: 15px 0px;
     margin-bottom: 10px;
   }
-  .page-node-collaboration-area.page-strategic-documentation-search .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title a {
+  .page-private-zone-collaboration-area .page-promotional-materials-search .menu-name-menu-collaboration ul li .introduction-title a {
     font-size: 1em;
     color: white;
     font-style: italic;
   }
-  .page-node-my-content .view-filters form #edit-type-wrapper {
+  .page-private-zone-my-content .view-filters form #edit-type-wrapper {
     width: 100%;
   }
-  .page-node-my-content .view-filters form #edit-title-field-value-wrapper {
+  .page-private-zone-my-content .view-filters form #edit-title-field-value-wrapper {
     width: 100%;
   }
-  .page-node-my-content .view-filters form #edit-state-wrapper {
+  .page-private-zone-my-content .view-filters form #edit-state-wrapper {
     width: 100%;
   }
-  .page-node-my-content .view-filters form .views-exposed-widget {
+  .page-private-zone-my-content .view-filters form .views-exposed-widget {
     padding: 0px;
   }
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label {
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper > label {
     color: #dfd8e4;
     margin-bottom: 0px;
     margin-top: 15px;
   }
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper > label:after {
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper > label:after {
     content: ":";
   }
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper,
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper {
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper,
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper {
     display: inline-block;
     margin-bottom: 15px;
   }
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-min > div,
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-min > div,
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-max > div,
-  .page-node-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-max > div {
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-min > div,
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-min > div,
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-min-wrapper .form-item-field-publication-date-value-max > div,
+  .page-private-zone-my-content .view-filters form #edit-field-publication-date-value-wrapper .views-widget #edit-field-publication-date-value-max-wrapper .form-item-field-publication-date-value-max > div {
     float: inherit;
   }
-  .page-node-my-content .view-filters form .views-submit-button {
+  .page-private-zone-my-content .view-filters form .views-submit-button {
     width: 100%;
   }
-  .page-node-my-content .view-filters form .views-submit-button button {
+  .page-private-zone-my-content .view-filters form .views-submit-button button {
     margin-top: 0px;
   }
-  .page-node-create-promotional-resource #edit-title-field--2,
-  .page-node-create-promotional-resource #edit-field-oira--2,
-  .page-node-create-promotional-resource #edit-field-publication-date--2 {
+  .page-node-create-promotional-resource #edit-title-field,
+  .page-node-create-promotional-resource #edit-field-oira,
+  .page-node-create-promotional-resource #edit-field-publication-date {
     float: none;
   }
-  .page-node-create-promotional-resource #edit-title-field--2 {
+  .page-node-create-promotional-resource #edit-title-field {
     max-width: 100%;
     margin-right: 0px;
   }
-  .page-node-create-promotional-resource #edit-field-publication-date--2 {
+  .page-node-create-promotional-resource #edit-field-publication-date {
     width: 100%;
   }
-  .page-node-create-promotional-resource #edit-field-oira--2 .checkbox input[type="checkbox"] {
+  .page-node-create-promotional-resource #edit-field-oira .checkbox input[type="checkbox"] {
     margin-left: -22px;
   }
-  .page-node-create-promotional-resource #edit-field-oira--2 label {
+  .page-node-create-promotional-resource #edit-field-oira label {
     max-width: 100%;
   }
-  .page-node-create-promotional-resource #edit-field-oira--2 label[for*="edit-field-oira-und--2"] {
+  .page-node-create-promotional-resource #edit-field-oira label[for*="edit-field-oira-und"] {
     display: none !important;
   }
   .page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour] {
     margin-left: 0px;
   }
-  .page-node-create-promotional-resource #edit-field-promotional-material-type--2 {
+  .page-node-create-promotional-resource #edit-field-promotional-material-type {
     clear: both;
   }
   /*End private zone*/

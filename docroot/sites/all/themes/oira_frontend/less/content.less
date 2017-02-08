@@ -4291,7 +4291,7 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-node-update-profile{
 	.block-menu-block{
 		h2.block-title{
-			font-size: 3em;
+			font-size: 3.5em;
     		margin-bottom: 25px;
     		color: @color-text-purple-darker;
 		}
@@ -4299,12 +4299,23 @@ div[id ^= "mini-panel-partner_in_"], {
 	.page-title-wrapper{
 		h1{
 			color: @color-text-purple-darker;
-			border-bottom: 2px solid @color-primary-dark !important;
 			padding-bottom: 15px;
+			padding-bottom: 0px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.page-node-91.node-type-partner,
+.private-zone-page.private-images-page-selector{
+	.page-title-wrapper{
+		h1{
+			border-bottom: 2px solid @color-primary-dark !important;
 			margin-bottom: 25px;
 		}
 	}
 }
+
 //menu
 .menu-name-menu-private-zone{
 	background-color: @color-primary-dark;
@@ -4315,11 +4326,11 @@ div[id ^= "mini-panel-partner_in_"], {
 	ul.menu{
 		display: table;
 		text-align: center;
-		> li.active-trail{
-			> div{
-				background-color: rgba(255, 255, 255, 0.3);
-			}
-		}
+		// > li.active-trail{
+		// 	> div{
+		// 		background-color: rgba(255, 255, 255, 0.3);
+		// 	}
+		// }
 		>li.active{
 			> div{
 				background-color: rgba(255, 255, 255, 0.7);
@@ -5235,113 +5246,140 @@ div[id ^= "mini-panel-partner_in_"], {
 				.search-page-results-wrapper{
 					background-color: @color-white;
 					padding: 30px;
-					.node-practical-tool{
+					.node-teaser{
 						border-top: 2px solid @color-primary-dark;
-						padding:30px 0px;
-						margin-right: 0px;
 						margin-left: 0px;
-						.col-sm-3{
-							padding-left: 0px;
+						margin-right: 0px;
+						padding-bottom: 25px;
+						padding-top: 25px;
+						.field-type-datetime{
+							margin-bottom: 5px !important;
 						}
 						.field-name-title-field{
-							font-size: @font-size1-4;
-						}
-						.group-center.col-md-12{
-							clear: both;
-						}
-						.field-name-tools-see-more{
-							margin-left: 207px;
-							a.more-link{
-								text-align: left;
-								margin-top: 15px;
-							}
-							a.show-less{
-								text-align: right !important;
-								width: 20px;
-								height: 12px;
-								float: right;
-								overflow: hidden;
-								font-style: normal;
-								&:before{
-									content: "\e253";
-									font-family: "Glyphicons Halflings";
-									font-size: 1.2em;
-									line-height: 0;
-								}
+							h3{
+								margin-top: 0px !important;
 							}
 						}
-						.field-name-field-tool-link{
-							position: absolute;
-							right: 15px;
-							margin-top: 15px;
-							a{
-								color: @color-text-grey;
-								font-weight: bold;
-								margin-top: 0px;
-								display: block;
-								//margin-bottom: 15px;
-								span.glyphicon-new-window{
-									color: @color-see-more;
-									margin-left: 10px;
-								}
-							}
+						.field-type-file{
+							margin-top: 10px;
 						}
-						//partners inside oira tools
-						.field-name-related-partners{
-							margin-top: 50px;
-							.node-partner{
-								background-color: @color-primary-dark;
-								padding: 15px;
-								color: @color-white;
-
-								h4{
-									min-height: 45px;
-									a{
-										font-size: 0.9em;
-										color: @color-white;
-										margin-top: 0px;
-									}
-								}
-								.more-link{
-									color: @color-white;
-									text-align: left;
-								}
-							}
-						}
-						.related-partners-1 > div{
-							margin-left: 222px;
-						}
-						.related-partners-2{
-							.node-partner{
-								margin-left: 0px;
-							}
-						}
-						.related-partners-2 > div{
-							display: table;
-							border-collapse: collapse;
-							.group-left {
-								a{
-									img{
-										width: auto;
-										height: 100px;
-									}
-								}
-							}
-							& > .even, & > .odd{
-								&:first-child{
-									display: table-cell;
-								}
-							}
-							& > .even:first-child{
-								//border-right: 10px solid white;
-								width: 50%;
-								.node-partner{
-									margin-right: 10px;
-									margin-left: 0px;
-								}
-							}
+						.field-type-taxonomy-term-reference{
+							margin-bottom: 5px;
 						}
 					}
+					.node-teaser:first-child{
+						border-top: none;
+						margin-left: 0px;
+						margin-right: 0px;
+						padding-top: 0px;	
+					}
+					// .node-practical-tool{
+					// 	border-top: 2px solid @color-primary-dark;
+					// 	padding:30px 0px;
+					// 	margin-right: 0px;
+					// 	margin-left: 0px;
+					// 	.col-sm-3{
+					// 		padding-left: 0px;
+					// 	}
+					// 	.field-name-title-field{
+					// 		font-size: @font-size1-4;
+					// 	}
+					// 	.group-center.col-md-12{
+					// 		clear: both;
+					// 	}
+					// 	.field-name-tools-see-more{
+					// 		margin-left: 207px;
+					// 		a.more-link{
+					// 			text-align: left;
+					// 			margin-top: 15px;
+					// 		}
+					// 		a.show-less{
+					// 			text-align: right !important;
+					// 			width: 20px;
+					// 			height: 12px;
+					// 			float: right;
+					// 			overflow: hidden;
+					// 			font-style: normal;
+					// 			&:before{
+					// 				content: "\e253";
+					// 				font-family: "Glyphicons Halflings";
+					// 				font-size: 1.2em;
+					// 				line-height: 0;
+					// 			}
+					// 		}
+					// 	}
+					// 	.field-name-field-tool-link{
+					// 		position: absolute;
+					// 		right: 15px;
+					// 		margin-top: 15px;
+					// 		a{
+					// 			color: @color-text-grey;
+					// 			font-weight: bold;
+					// 			margin-top: 0px;
+					// 			display: block;
+					// 			//margin-bottom: 15px;
+					// 			span.glyphicon-new-window{
+					// 				color: @color-see-more;
+					// 				margin-left: 10px;
+					// 			}
+					// 		}
+					// 	}
+					// 	//partners inside oira tools
+					// 	.field-name-related-partners{
+					// 		margin-top: 50px;
+					// 		.node-partner{
+					// 			background-color: @color-primary-dark;
+					// 			padding: 15px;
+					// 			color: @color-white;
+
+					// 			h4{
+					// 				min-height: 45px;
+					// 				a{
+					// 					font-size: 0.9em;
+					// 					color: @color-white;
+					// 					margin-top: 0px;
+					// 				}
+					// 			}
+					// 			.more-link{
+					// 				color: @color-white;
+					// 				text-align: left;
+					// 			}
+					// 		}
+					// 	}
+					// 	.related-partners-1 > div{
+					// 		margin-left: 222px;
+					// 	}
+					// 	.related-partners-2{
+					// 		.node-partner{
+					// 			margin-left: 0px;
+					// 		}
+					// 	}
+					// 	.related-partners-2 > div{
+					// 		display: table;
+					// 		border-collapse: collapse;
+					// 		.group-left {
+					// 			a{
+					// 				img{
+					// 					width: auto;
+					// 					height: 100px;
+					// 				}
+					// 			}
+					// 		}
+					// 		& > .even, & > .odd{
+					// 			&:first-child{
+					// 				display: table-cell;
+					// 			}
+					// 		}
+					// 		& > .even:first-child{
+					// 			//border-right: 10px solid white;
+					// 			width: 50%;
+					// 			.node-partner{
+					// 				margin-right: 10px;
+					// 				margin-left: 0px;
+					// 			}
+					// 		}
+					// 	}
+					// }
 				}
 			}
 		}
