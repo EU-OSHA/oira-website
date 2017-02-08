@@ -74,3 +74,10 @@ function oira_strategic_documentation_update_7010() {
 function oira_strategic_documentation_update_7011() {
   features_revert_module('oira_strategic_documentation');
 }
+
+/**
+ * Feature revert: NOW-332 339
+ */
+function oira_strategic_documentation_update_7012() {
+  features_revert_module('oira_strategic_documentation');
+}

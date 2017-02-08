@@ -42,7 +42,6 @@ class PartnerMigration extends HwcCrmMigration {
       'field_partner_type',
       'field_organisation_rep',
       'field_social_profile',
-      'field_orgtype',
       'field_dedicated_oira_website',
     );
   }
