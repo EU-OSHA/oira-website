@@ -212,8 +212,63 @@ jQuery(document).ready(function () {
 		}
 	}
 	
-	
-	
+	/*
+	jQuery("input[type=file]").filestyle({ 
+	     image: "../images/icons/choose-file.png",
+	     imageheight : 32,
+	     imagewidth : 82
+	 });
+	*/
+
+	jQuery(".partner-edit-form input, .partner-edit-form textarea").attr("disabled","disabled").css("cursor", "default");
+
+	// jQuery('.menu-name-menu-private-zone ul.menu').slick({
+	//   infinite: true,
+	//   slidesToShow: 4,
+	//   slidesToScroll: 1
+	// });
 
 
+	// function and variables, 'unslick' while window size reach maximum width (641px)
+    var maxWidth = 991,
+     maxWidth2= 991,
+      slickVar = {
+        lazyLoad: 'progressive',
+        dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        centerMode: true,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: maxWidth,
+            settings: 'unslick'
+          }
+        ]
+      },
+      runSlick = function() {
+        jQuery('.menu-name-menu-private-zone ul.menu').slick(slickVar);
+      };
+
+      // slick initialization while document ready
+      runSlick();
+
+      // listen to jQuery's window resize
+      jQuery(window).on('resize', function(){
+        var width = jQuery(window).width();
+        if(width < (maxWidth-16)) {
+          // reinit slick while window's width is less than maximum width (641px)
+          runSlick();
+        }
+      });
+
+	jQuery('.page-node-collaboration-area-private-images ul.private-images li .views-field-field-oira-private-image-1 a').each(
+		function(){
+			var idx = jQuery(this).attr('href').lastIndexOf("/") + 1;
+			var filename = jQuery(this).attr('href').substr(idx);
+			jQuery(this).prop('download',filename);
+		}
+	);
 });

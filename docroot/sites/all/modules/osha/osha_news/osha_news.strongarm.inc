@@ -166,7 +166,7 @@ function osha_news_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '1',
         ),
         'workbench_access' => array(
           'weight' => '0',
@@ -175,13 +175,13 @@ function osha_news_strongarm() {
           'weight' => '1',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '2',
         ),
         'metatags' => array(
-          'weight' => '16',
+          'weight' => '3',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '14',
         ),
       ),
       'display' => array(

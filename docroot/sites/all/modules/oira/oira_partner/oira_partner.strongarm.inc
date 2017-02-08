@@ -154,16 +154,16 @@ function oira_partner_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '4',
+          'weight' => '13',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '12',
         ),
         'workbench_access' => array(
-          'weight' => '0',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
           'weight' => '23',

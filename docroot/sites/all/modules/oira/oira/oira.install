@@ -53,3 +53,10 @@ function oira_update_7004() {
 function oira_update_7005() {
   variable_set('site_404','page-not-found');
 }
+
+/**
+ * Enable new module - Private image.
+ */
+function oira_update_7006() {
+  module_enable(array('oira_private_image'));
+}

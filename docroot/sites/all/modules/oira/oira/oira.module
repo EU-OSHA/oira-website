@@ -283,6 +283,8 @@ function oira_form_chosen_admin_settings_alter(&$form, $form_state) {
   // Add options to chosen 30.
   $form['chosen_minimum_single']['#options']['30'] = '30';
   $form['chosen_minimum_multiple']['#options']['30'] = '30';
+  $form['chosen_minimum_single']['#options']['35'] = '35';
+  $form['chosen_minimum_multiple']['#options']['35'] = '35';
 }
 
 function oira_configuration_form($form, &$form_state) {

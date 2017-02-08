@@ -11,3 +11,23 @@ function hwc_crm_migration_update_7001() {
     ->condition('source_language', 'und' ,'=')
     ->execute();
 }
+
+/**
+ * NOW-340: Update language to english for all organisation_type taxonomy terms that have the language as undefined
+ */
+function hwc_crm_migration_update_7002() {
+  $organisation_type_vid = db_select('taxonomy_vocabulary','tv')
+    ->fields('tv',array('vid'))
+    ->condition('machine_name', 'organisation_type')
+    ->execute()
+    ->fetchField();
+  if($organisation_type_vid){
+    db_update('taxonomy_term_data')
+      ->fields(array(
+        'language' => 'en',
+      ))
+      ->condition('vid', $organisation_type_vid ,'=')
+      ->condition('language', 'und' ,'=')
+      ->execute();
+  }
+}

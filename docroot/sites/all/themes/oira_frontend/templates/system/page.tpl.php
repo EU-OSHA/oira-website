@@ -144,6 +144,11 @@
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
       <a id="main-content"></a>
+      <?php if (!empty($page['above_title'])): ?>
+          <div class="above_title">
+            <?php print render($page['above_title']); ?>
+          </div>
+      <?php endif; ?>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
         <div class="page-title-wrapper">
@@ -153,11 +158,6 @@
         </div>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
-      <?php if (!empty($page['above_title'])): ?>
-        <div class="above_title">
-          <?php print render($page['above_title']); ?>
-        </div>
-      <?php endif; ?>
     </div>
   </div>
   <?php if (!empty($page['sidebar_first'])): ?>
@@ -165,8 +165,8 @@
       <?php print render($page['sidebar_first']); ?>
     </aside>  <!-- /#sidebar-first -->
   <?php endif; ?>
-  <section<?php print $content_column_class; ?>>
-    <?php print $messages; ?>
+  <div<?php print $content_column_class; ?>>
+      <div class="container"><div class="row"><div class="col-sm-12"><?php print $messages; ?></div></div></div>
     <?php if (!empty($tabs)): ?>
       <?php print render($tabs); ?>
     <?php endif; ?>

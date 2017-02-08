@@ -48,3 +48,38 @@ function hwc_practical_tool_update_7002() {
 function hwc_practical_tool_update_7003() {
   features_revert_module('hwc_practical_tool');
 }
+
+/**
+ * Feature revert: Form fields updates.
+ */
+function hwc_practical_tool_update_7004() {
+  features_revert_module('hwc_practical_tool');
+}
+
+/**
+ * Feature revert: NOW-237.
+ */
+function hwc_practical_tool_update_7005() {
+  features_revert_module('hwc_practical_tool');
+}
+
+/**
+ * Feature revert: NOW-237 - Private zone Edit form updates
+ */
+function hwc_practical_tool_update_7006() {
+  features_revert_module('hwc_practical_tool');
+}
+
+/**
+ * Feature revert: NOW-315 - Changed image max upload size to 5MB and enabled user to be able to crop the thumbnail
+ */
+function hwc_practical_tool_update_7007() {
+  features_revert_module('hwc_practical_tool');
+}
+
+/**
+ * Feature revert: disable panel pages for editing.
+ */
+function hwc_practical_tool_update_7008() {
+  features_revert_module('hwc_practical_tool');
+}

@@ -202,7 +202,7 @@ function oira_promotional_material_strongarm() {
           'weight' => '12',
         ),
         'workbench_access' => array(
-          'weight' => '1',
+          'weight' => '5',
         ),
         'xmlsitemap' => array(
           'weight' => '11',
@@ -233,6 +233,13 @@ function oira_promotional_material_strongarm() {
             'visible' => TRUE,
             'settings' => array(),
           ),
+          'default' => array(
+            'weight' => '6',
+            'label' => 'hidden',
+            'type' => 'related_partners',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
         ),
         'tools_see_more' => array(
           'teaser' => array(
@@ -255,6 +262,13 @@ function oira_promotional_material_strongarm() {
               'parent_selector' => '.view-mode-search_result',
             ),
           ),
+          'default' => array(
+            'weight' => '7',
+            'label' => 'hidden',
+            'type' => 'tools_see_more',
+            'visible' => TRUE,
+            'settings' => array(),
+          ),
         ),
         'node_type' => array(
           'search_result' => array(
@@ -266,6 +280,13 @@ function oira_promotional_material_strongarm() {
           ),
           'teaser' => array(
             'weight' => '19',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
+          'default' => array(
+            'weight' => '16',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,

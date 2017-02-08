@@ -47,3 +47,14 @@ function _hwc_crm_migration_get_term_by_code($voc_name, $code) {
   }
   return FALSE;
 }
+
+/**
+ * Implements hook_taxonomy_term_presave().
+ */
+function hwc_crm_migration_taxonomy_term_presave($term) {
+  if($term->vocabulary_machine_name == 'organisation_type'){
+    if(!isset($term->language)){
+      $term->language = 'en';
+    }
+  }
+}

@@ -14,7 +14,7 @@ define('OSHA_WIKI_CONTENT_TYPE_WIKI', 'wiki_pages');
  */
 function osha_wiki_entity_info_alter(&$entity_info) {
   $entity_info['node']['view modes']['osha_wiki'] = array(
-    'label' => t('OSH Wiki'),
+    'label' => t('OSHwiki'),
     'custom settings' => TRUE,
   );
 }
