@@ -4213,6 +4213,26 @@ div[id ^= "mini-panel-partner_in_"], {
 							font-style: normal;
 						}
 					}
+					.seemore{
+						color: @color-see-more;
+						text-decoration: none !important;
+						font-style: italic;
+						font-weight: bold;
+						display: block;
+						margin-top: 20px;
+						&:before{
+							content: "> ";
+						}
+						&:after{
+							content: "\e164";
+							font-family: "Glyphicons Halflings";
+							color: @color-see-more;
+							margin-left: 4px;
+							font-style: normal;
+							font-weight: normal;
+    						vertical-align: bottom;
+						}
+					}
 				}
 				
 				.content-image{
