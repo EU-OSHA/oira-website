@@ -10715,6 +10715,29 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-family: "Glyphicons Halflings";
   font-style: normal;
 }
+.page-node-401.node-type-article .article-content-container .esener-template > ul .col-left .seemore,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .col-left .seemore {
+  color: #10b2e4;
+  text-decoration: none !important;
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+  margin-top: 20px;
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul .col-left .seemore:before,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .col-left .seemore:before {
+  content: "> ";
+}
+.page-node-401.node-type-article .article-content-container .esener-template > ul .col-left .seemore:after,
+.page-node-402.node-type-article .article-content-container .esener-template > ul .col-left .seemore:after {
+  content: "\e164";
+  font-family: "Glyphicons Halflings";
+  color: #10b2e4;
+  margin-left: 4px;
+  font-style: normal;
+  font-weight: normal;
+  vertical-align: bottom;
+}
 .page-node-401.node-type-article .article-content-container .esener-template > ul .content-image,
 .page-node-402.node-type-article .article-content-container .esener-template > ul .content-image {
   margin-top: 45px;
