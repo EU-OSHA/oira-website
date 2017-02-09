@@ -7443,6 +7443,10 @@ a.more-link:before {
   color: #ffffff;
   font-size: 1.2em;
 }
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link h1 {
+  font-size: 34px;
+}
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link h1,
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link h2 {
   margin-top: 0px;
   margin-bottom: 0px;
