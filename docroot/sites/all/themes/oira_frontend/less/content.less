@@ -1351,7 +1351,7 @@ a.more-link{
 *********************************************************************/
 .page-what-is-new{
 	//imagen superior articulos
-	.panels-flexible-region-new-image{
+	.panels-flexible-row-first{
 		position: relative;
 		.field-type-image{
 			position: relative;
@@ -1381,40 +1381,39 @@ a.more-link{
 			}
 		}
 	}
-	.panels-flexible-row-new-2{
+	.panels-flexible-row.container-fluid{
 		padding-top: 30px;
 		background-color: @color-primary;
 		.views-field-field-summary{
 			padding: 15px 0px 0px 0px;
 		}
 	}
-	.panels-flexible-row-new-3{
+	.panels-flexible-row:nth-child(3){
 		background-color: @color-primary-dark;
 		margin-top: 10px;
-		.panels-flexible-region-new-latest_news{
-			h3.pane-title{
-				color: @color-white;
-				border-bottom: 2px solid @color-white;
-				margin-bottom: 0px;
-				&:after{
-					.section-icons("../images/icons/004.png");
-				}
-			}
-			.views-item-columns-container{
-				padding: 15px;
-				margin-top: 30px;
-				min-height: 230px;
-			}
-			.more-link{
-				a{
-					color: @color-white;
-				}
+		h3.pane-title{
+			color: @color-white;
+			border-bottom: 2px solid @color-white;
+			margin-bottom: 0px;
+			&:after{
+				.section-icons("../images/icons/004.png");
 			}
 		}
+		.views-item-columns-container{
+			padding: 15px;
+			margin-top: 30px;
+			min-height: 230px;
+		}
+		.more-link{
+			a{
+				color: @color-white;
+			}
+		}
+
 	}
-	.panels-flexible-row-new-6{
+	.panels-flexible-row-last{
 		background-color: @color-white !important;
-		.panels-flexible-region-new-new_tools{
+		.panels-flexible-region{
 			h3{
 				&:after{
 					.section-icons("../images/icons/018.png");
@@ -2009,7 +2008,7 @@ a.more-link{
 			}
 		}
 		.panels-flexible-row-first{
-			background-color:transparent !important;
+			background-color:transparent !impor;
 			padding-top:0px;
 		}
 	}

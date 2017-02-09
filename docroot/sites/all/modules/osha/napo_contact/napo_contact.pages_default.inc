@@ -317,6 +317,17 @@ function napo_contact_default_page_manager_pages() {
     'panels_breadcrumbs_paths' => '<none>
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '[current-page:title] - [site:name] - [site:slogan]',
+        ),
+        'description' => array(
+          'value' => 'Frequently asked questions about the OiRA project and Risk Assessment in general',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

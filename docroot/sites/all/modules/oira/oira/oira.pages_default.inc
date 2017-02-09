@@ -57,6 +57,14 @@ function oira_default_page_manager_pages() {
     'panels_breadcrumbs_titles' => '%node:title-field',
     'panels_breadcrumbs_paths' => '<none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'Stay up-to-date with OiRA works such as latest tools and news',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

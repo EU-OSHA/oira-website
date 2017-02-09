@@ -581,6 +581,14 @@ Update Promotional Resource',
     'panels_breadcrumbs_titles' => '%node:title-field',
     'panels_breadcrumbs_paths' => '<none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'To promote the OiRA tools we make sure that users can take them up and developed promotional materials including everything from videos and infographics to more traditional factsheets and presentations',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

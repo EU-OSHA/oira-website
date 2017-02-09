@@ -769,6 +769,14 @@ EU and national partners',
     'panels_breadcrumbs_paths' => '<none>
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'Find out more more about the tools and related materials that are available for your country. The tools developed by the EU sectoral social partners can be found here as well',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

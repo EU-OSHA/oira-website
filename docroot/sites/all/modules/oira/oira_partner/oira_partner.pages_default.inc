@@ -1120,6 +1120,14 @@ Social dialogue refers to discussions, consultations, negotiations and joint act
     'panels_breadcrumbs_paths' => '<none>
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'The OiRA community is made up of the organisations and people developing OiRA tools. It aims to facilitate the development of OiRA tools by stimulating the exchange of tools, knowledge and good practices, promoting collaborative work, reinforcing existing relationships within the community and creating new ones',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

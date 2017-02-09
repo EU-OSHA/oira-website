@@ -16,7 +16,6 @@ dependencies[] = multiple_selects
 dependencies[] = napo_contact
 dependencies[] = oira_country
 dependencies[] = oira_homepage
-dependencies[] = oira_promotional_material
 dependencies[] = osha
 dependencies[] = osha_news
 dependencies[] = page_manager
