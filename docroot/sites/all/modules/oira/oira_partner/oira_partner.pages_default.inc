@@ -511,6 +511,15 @@ function oira_partner_default_page_manager_pages() {
     'panels_breadcrumbs_paths' => 'oira-community
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'Interactive Risk Assessment Tool (IRAT) network - OiRA – Online interactive Risk Assessment
+The IRAT network is made up of OSH institutions and ministries that have developed an interactive risk assessment tool (IRAT)',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -905,6 +914,15 @@ function oira_partner_default_page_manager_pages() {
     'panels_breadcrumbs_paths' => 'oira-community
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'Sectorial social partners - OiRA – Online interactive Risk Assessment
+Social dialogue refers to discussions, consultations, negotiations and joint actions involving organisations representing the two sides of industry (employers and workers). EU-OSHA works closely with the EU sectoral social dialogue committees to develop OiRA tools',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

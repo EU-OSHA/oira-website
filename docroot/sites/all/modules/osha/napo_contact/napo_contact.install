@@ -59,3 +59,9 @@ function napo_contact_update_7007() {
   features_revert_module('napo_contact');
 }
 
+/**
+ * Feature revert: NOW-266.
+ */
+function napo_contact_update_7008() {
+  features_revert_module('napo_contact');
+}

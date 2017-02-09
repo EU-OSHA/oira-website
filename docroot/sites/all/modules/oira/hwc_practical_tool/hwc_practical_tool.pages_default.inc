@@ -718,6 +718,14 @@ OiRA Tools',
     'panels_breadcrumbs_paths' => '<none>
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => ' The OiRA sectoral tools provided here are available for small and micro enterprises to use to carry out risk assessments, helping them to produce a documented assessment tailored to their requirements. The tools are free to download and can be easily accessed',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';

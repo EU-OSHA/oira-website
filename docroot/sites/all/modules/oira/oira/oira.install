@@ -60,3 +60,10 @@ function oira_update_7005() {
 function oira_update_7006() {
   module_enable(array('oira_private_image'));
 }
+
+/**
+ * Enable new module - NOW-266 - Metatag: Panels.
+ */
+function oira_update_7007() {
+  module_enable(array('metatag_panels'));
+}

@@ -68,6 +68,14 @@ function napo_contact_default_page_manager_pages() {
     'panels_breadcrumbs_titles' => 'Contact us',
     'panels_breadcrumbs_paths' => '<none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'description' => array(
+          'value' => 'Send your requests and enquiries to the OiRA Consortium',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
