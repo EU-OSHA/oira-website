@@ -61,7 +61,7 @@ function oira_views_default_views() {
     'more_link' => '1',
     'more_text' => 'See more',
     'trim_options' => array(
-      'text' => 'text',
+      'text' => 0,
       'use_field_summary' => 0,
     ),
     'trim_preserve_tags' => '',
