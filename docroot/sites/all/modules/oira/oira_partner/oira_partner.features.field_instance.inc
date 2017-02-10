@@ -1320,7 +1320,7 @@ function oira_partner_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ph_address',
-    'label' => 'Ph Address',
+    'label' => 'Address',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1411,7 +1411,7 @@ function oira_partner_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ph_cp',
-    'label' => 'Ph CP',
+    'label' => 'Postal code',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1953,8 +1953,8 @@ function oira_partner_field_default_field_instances() {
   t('Organisation');
   t('Organisation GUID');
   t('Organisation Type');
-  t('Ph Address');
-  t('Ph CP');
+  t('Address');
+  t('Postal code');
   t('Social profile');
   t('Type');
   t('Website');

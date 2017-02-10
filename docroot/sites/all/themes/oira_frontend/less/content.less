@@ -2646,7 +2646,8 @@ div[id ^= "mini-panel-partner_in_"], {
 		.field-type-language-field,
 		.field-name-field-sector,
 		.field-name-field-promotional-material-type,
-		.field-name-pr-language{
+		.field-name-pr-language,
+		.field-name-field-strategic-type{
 			background-color: @color-tags;
 			display: inline-block;
 			color: white;
@@ -2660,6 +2661,25 @@ div[id ^= "mini-panel-partner_in_"], {
 			margin-bottom: 15px;
 			p{
 				margin-bottom: 0px;
+			}
+		}
+		.field-name-field-multiple-sector{
+			display: inline-block;
+			.field-item{
+				background-color: @color-tags;
+				display: inline-block;
+				color: white;
+				padding: 2px 10px;
+				font-size: 0.8em;
+				font-weight: bold;
+				font-style: italic;
+				margin-top: 0em;
+				margin-right: 5px;
+				border-radius: 15px;
+				margin-bottom: 15px;
+				p{
+					margin-bottom: 0px;
+				}
 			}
 		}
 		.quicktabs-group-wrapper{
@@ -2741,6 +2761,18 @@ div[id ^= "mini-panel-partner_in_"], {
 					font-family: "Glyphicons Halflings";
 					font-size: 1.2em;
 					line-height: 0;
+				}
+			}
+			.field-name-field-private-file,
+			.field-name-field-link{
+				margin-top: 15px;
+				a{
+					color: @color-see-more;
+					font-weight: bold;
+					font-style: italic;
+					&:hover{
+						color: @color-text-purple;
+					}
 				}
 			}
 			.field-name-field-tool-link{
@@ -5165,7 +5197,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						margin-right: 30px;
 					}
 				}
-				a.active{
+				> a{
 					display: block;
 					color: @color-white;
 					margin-bottom: 10px;
@@ -5221,6 +5253,11 @@ div[id ^= "mini-panel-partner_in_"], {
 							content: "\e252";
 							font-family: "Glyphicons Halflings";
 							margin-left: 10px;
+						}
+					}
+					.form-type-checkbox{
+						> label{
+							padding-left: 0px;
 						}
 					}
 
@@ -5305,113 +5342,60 @@ div[id ^= "mini-panel-partner_in_"], {
 						margin-right: 0px;
 						padding-top: 0px;	
 					}
-					// .node-practical-tool{
-					// 	border-top: 2px solid @color-primary-dark;
-					// 	padding:30px 0px;
-					// 	margin-right: 0px;
-					// 	margin-left: 0px;
-					// 	.col-sm-3{
-					// 		padding-left: 0px;
-					// 	}
-					// 	.field-name-title-field{
-					// 		font-size: @font-size1-4;
-					// 	}
-					// 	.group-center.col-md-12{
-					// 		clear: both;
-					// 	}
-					// 	.field-name-tools-see-more{
-					// 		margin-left: 207px;
-					// 		a.more-link{
-					// 			text-align: left;
-					// 			margin-top: 15px;
-					// 		}
-					// 		a.show-less{
-					// 			text-align: right !important;
-					// 			width: 20px;
-					// 			height: 12px;
-					// 			float: right;
-					// 			overflow: hidden;
-					// 			font-style: normal;
-					// 			&:before{
-					// 				content: "\e253";
-					// 				font-family: "Glyphicons Halflings";
-					// 				font-size: 1.2em;
-					// 				line-height: 0;
-					// 			}
-					// 		}
-					// 	}
-					// 	.field-name-field-tool-link{
-					// 		position: absolute;
-					// 		right: 15px;
-					// 		margin-top: 15px;
-					// 		a{
-					// 			color: @color-text-grey;
-					// 			font-weight: bold;
-					// 			margin-top: 0px;
-					// 			display: block;
-					// 			//margin-bottom: 15px;
-					// 			span.glyphicon-new-window{
-					// 				color: @color-see-more;
-					// 				margin-left: 10px;
-					// 			}
-					// 		}
-					// 	}
-					// 	//partners inside oira tools
-					// 	.field-name-related-partners{
-					// 		margin-top: 50px;
-					// 		.node-partner{
-					// 			background-color: @color-primary-dark;
-					// 			padding: 15px;
-					// 			color: @color-white;
-
-					// 			h4{
-					// 				min-height: 45px;
-					// 				a{
-					// 					font-size: 0.9em;
-					// 					color: @color-white;
-					// 					margin-top: 0px;
-					// 				}
-					// 			}
-					// 			.more-link{
-					// 				color: @color-white;
-					// 				text-align: left;
-					// 			}
-					// 		}
-					// 	}
-					// 	.related-partners-1 > div{
-					// 		margin-left: 222px;
-					// 	}
-					// 	.related-partners-2{
-					// 		.node-partner{
-					// 			margin-left: 0px;
-					// 		}
-					// 	}
-					// 	.related-partners-2 > div{
-					// 		display: table;
-					// 		border-collapse: collapse;
-					// 		.group-left {
-					// 			a{
-					// 				img{
-					// 					width: auto;
-					// 					height: 100px;
-					// 				}
-					// 			}
-					// 		}
-					// 		& > .even, & > .odd{
-					// 			&:first-child{
-					// 				display: table-cell;
-					// 			}
-					// 		}
-					// 		& > .even:first-child{
-					// 			//border-right: 10px solid white;
-					// 			width: 50%;
-					// 			.node-partner{
-					// 				margin-right: 10px;
-					// 				margin-left: 0px;
-					// 			}
-					// 		}
-					// 	}
-					// }
+					.node-strategic-documentation{
+						.field.field-name-field-country,
+						.field-type-language-field,
+						.field-name-field-sector,
+						.field-name-field-promotional-material-type,
+						.field-name-pr-language,
+						.field-name-field-strategic-type{
+							background-color: @color-tags;
+							display: inline-block;
+							color: white;
+							padding: 2px 10px;
+							font-size: 0.8em;
+							font-weight: bold;
+							font-style: italic;
+							margin-top: 0em;
+							margin-right: 5px;
+							border-radius: 15px;
+							margin-bottom: 15px;
+							p{
+								margin-bottom: 0px;
+							}
+						}
+						.field-name-field-multiple-sector{
+							display: inline-block;
+							.field-item{
+								background-color: @color-tags;
+								display: inline-block;
+								color: white;
+								padding: 2px 10px;
+								font-size: 0.8em;
+								font-weight: bold;
+								font-style: italic;
+								margin-top: 0em;
+								margin-right: 5px;
+								border-radius: 15px;
+								margin-bottom: 15px;
+								p{
+									margin-bottom: 0px;
+								}
+							}
+						}
+						.field-name-field-private-file,
+						.field-name-field-link{
+							margin-top: 15px;
+							a{
+								color: @color-see-more;
+								font-weight: bold;
+								font-style: italic;
+								&:hover{
+									color: @color-text-purple;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
