@@ -7,7 +7,7 @@ function _oira_strategic_documentation_filter_options_list($vocabulary, $default
   $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary);
   if (!empty($vocabulary)) {
     $terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
-    foreach($terms as $key => $term) {
+    foreach ($terms as $key => $term) {
       $default[$term->tid] = $term->name;
     }
   }
@@ -23,7 +23,9 @@ function _oira_strategic_documentation_filter_list_values($field_name, $default 
   return $default;
 }
 
-// We need this function because it is used within modules from hwc website.
+/**
+ * We need this function because it is used within modules from hwc website.
+ */
 function _oira_strategic_documentation_get_req_param($form_state, $name, $default = NULL) {
   if (!empty($form_state['values'][$name])) {
     $ret = $form_state['values'][$name];
@@ -31,7 +33,7 @@ function _oira_strategic_documentation_get_req_param($form_state, $name, $defaul
   if (!empty($_GET[$name])) {
     if (is_array($_GET[$name])) {
       $ret = array();
-      foreach($_GET[$name] as $v) {
+      foreach ($_GET[$name] as $v) {
         $ret[] = check_plain($v);
       }
     }
@@ -79,23 +81,21 @@ function _oira_strategic_documentation_strip_param_value($params, $name, $value 
 
 function oira_strategic_documentation_partners_form($form, $form_state) {
   global $user;
-  $partner_id = osha_workflow_user_partner_id($user->uid);
   $variables['form_state'] = $form_state;
   $variables['facet_callback'] = 'oira_strategic_documentation_get_facets_def';
   $variables['search_callback'] = 'oira_strategic_documentation_search_partners';
   $variables['language_field'] = 'field_language:value';
-
+  $variables['action'] = '/private-zone/collaboration-area/partners-documents';
   return _oira_strategic_documentation_get_generic_faceted_form($variables);
 }
 
 function oira_strategic_documentation_eu_osha_form($form, $form_state) {
   global $user;
-  $partner_id = osha_workflow_user_partner_id($user->uid);
   $variables['form_state'] = $form_state;
   $variables['facet_callback'] = 'oira_strategic_documentation_get_facets_def';
   $variables['search_callback'] = 'oira_strategic_documentation_search_eu_osha';
   $variables['language_field'] = 'field_language:value';
-
+  $variables['action'] = '/private-zone/collaboration-area/eu-osha-documents';
   return _oira_strategic_documentation_get_generic_faceted_form($variables);
 }
 
@@ -111,13 +111,12 @@ function _oira_strategic_documentation_get_generic_faceted_form($variables) {
   $action = $variables['action'];
   $facet_callback = $variables['facet_callback'];
   $search_callback = $variables['search_callback'];
-  $lang_field = $variables['language_field'];
 
   $text = _oira_strategic_documentation_get_req_param($form_state, 'text');
   $sort = _oira_strategic_documentation_get_req_param($form_state, 'sort', 'alphabetically');
 
   $form = array(
-    '#action' => $action,
+    '#action' => url($action),
     '#method' => 'GET',
     '#token' => FALSE,
     '#attributes' => array('class' => array('row', 'oira-custom-faceted-search-form')),
@@ -147,7 +146,7 @@ function _oira_strategic_documentation_get_generic_faceted_form($variables) {
   if (!empty($text)) {
     $form['content']['search_phrase'] = array(
       '#type' => 'markup',
-      '#markup' => '<div class="results-for">' . t('Results for !text', array('!text' => '<span class="searched-text">' . check_plain($text) .'</span>')) . '</div>',
+      '#markup' => '<div class="results-for">' . t('Results for !text', array('!text' => '<span class="searched-text">' . check_plain($text) . '</span>')) . '</div>',
     );
   }
 
@@ -165,7 +164,7 @@ function _oira_strategic_documentation_get_generic_faceted_form($variables) {
     '#default_value' => $sort,
     '#prefix' => '<div class="sort-container col-xs-3">',
     '#suffix' => '</div>',
-    '#options' => array('alphabetically' => t('Alphabetically'),'date' => t('Latest first')),
+    '#options' => array('alphabetically' => t('Alphabetically'), 'date' => t('Latest first')),
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
@@ -251,30 +250,53 @@ function _oira_strategic_documentation_get_generic_faceted_form($variables) {
 
     $nodes = node_load_multiple($nids);
 
+    // Perform grouping by field_strategic_type.
+    $nodes_grouped = [];
+    foreach ($nodes as $node) {
+      $field_strategic_type_key = $node->field_strategic_type[LANGUAGE_NONE][0]['value'];
+      $nodes_grouped[$field_strategic_type_key][$node->nid] = $node;
+    }
+
     pager_default_initialize($response['result count'], $per_page);
     $pager_params = $_GET;
     $page_no = isset($pager_params['page']) ? (int) $pager_params['page'] : 0;
     unset($pager_params['page']);
-    $form['content']['results'] = array(
-      '#nids' => $nids,
-      'nodes' => array(
-        '#type' => 'container',
-        '#attributes' => array('class' => array('search-page-results-wrapper')),
-        'results-native' => node_view_multiple($nodes, 'teaser', 0, $language->language),
-      ),
-      '#suffix' => theme('pager', array(
-        'tags' => array('<', '<', '', '>', '>'),
-        'quantity' => 9,
-        'parameters' => $pager_params,
-      )),
-    );
 
-    foreach ($form['content']['results']['nodes']['results-native']['nodes'] as $nid => &$renderable_node) {
-      if (!empty($excerpts[$nid]) && !empty($renderable_node['body'][0]['#markup'])) {
-        $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
+    $field_strategic_types = _oira_strategic_documentation_filter_list_values('field_strategic_type');
+
+    $idx = 0;
+    foreach ($nodes_grouped as $key => $ng) {
+      $grouped_title = isset($field_strategic_types[$key]) ? $field_strategic_types[$key] : $key;
+      $form['content']['results_' . $key] = array(
+        'nodes' => array(
+          '#type' => 'container',
+          '#prefix' => '<div class="search-page-results-wrapper-grouped-type-title"><div class="row"><div class="group-center col-md-12"><h2>' . $grouped_title . '</h2></div></div></div>',
+          '#attributes' => array(
+            'class' => array(
+              'search-page-results-wrapper',
+              'search-page-results-wrapper-grouped',
+              'search-page-results-strategic-type-' . $key,
+            ),
+          ),
+          'results-native' => node_view_multiple($ng, 'teaser', 0, $language->language),
+        ),
+      );
+      if ($idx == 0) {
+        $form['content']['results_' . $key]['#nids'] = $nids;
+        $form['content']['results_' . $key]['#suffix'] = theme('pager', array(
+          'tags' => array('<', '<', '', '>', '>'),
+          'quantity' => 9,
+          'parameters' => $pager_params,
+        ));
       }
-      if (!empty($title_excerpts[$nid]) && !empty($renderable_node['title_field'][0]['#markup'])) {
-        $renderable_node['title_field'][0]['#markup'] = _osha_search_string_replace_highlight($renderable_node['title_field'][0]['#markup'], $title_excerpts[$nid]);
+      $idx++;
+      foreach ($form['content']['results_' . $key]['nodes']['results-native']['nodes'] as $nid => &$renderable_node) {
+        if (!empty($excerpts[$nid]) && !empty($renderable_node['body'][0]['#markup'])) {
+          $renderable_node['body'][0]['#markup'] = $excerpts[$nid];
+        }
+        if (!empty($title_excerpts[$nid]) && !empty($renderable_node['title_field'][0]['#markup'])) {
+          $renderable_node['title_field'][0]['#markup'] = _osha_search_string_replace_highlight($renderable_node['title_field'][0]['#markup'], $title_excerpts[$nid]);
+        }
       }
     }
 
@@ -283,7 +305,11 @@ function _oira_strategic_documentation_get_generic_faceted_form($variables) {
       '#prefix' => '<span class="count-container pull-right">',
       '#suffix' => '</span>',
       '#type' => 'markup',
-      '#markup' => t('Showing @start - @limit from @total', array('@start' => $start + 1, '@limit' => $start + count($nids), '@total' => $response['result count'])),
+      '#markup' => t('Showing @start - @limit from @total', array(
+        '@start' => $start + 1,
+        '@limit' => $start + count($nids),
+        '@total' => $response['result count'],
+      )),
     );
   }
   else {
@@ -368,7 +394,7 @@ function oira_strategic_documentation_search($is_partners, $form_state, $per_pag
   $query->condition('type', 'strategic_documentation');
   $query->condition('language', 'en');
 
-  $filter = $query->createFilter('or', ['facet:' . 'nid']);
+  $filter = $query->createFilter('or', ['facet:nid']);
   foreach ($nids as $value) {
     $filter->condition('nid', $value);
     $query->filter($filter);
@@ -376,7 +402,12 @@ function oira_strategic_documentation_search($is_partners, $form_state, $per_pag
 
   $query->keys($text);
 
-  $query->fields(array('title_field', 'body:value', 'attachments_field_private_file', 'field_alternative_title', 'field_alternative_body:value'));
+  $query->fields(array('title_field',
+    'body:value',
+    'attachments_field_private_file',
+    'field_alternative_title',
+    'field_alternative_body:value',
+  ));
 
   $query->setOption('search_api_facets', $facets_def);
   foreach ($facets_def as $field_name => $facet_def) {

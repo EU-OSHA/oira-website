@@ -72,6 +72,7 @@ function oira_strategic_documentation_default_search_api_index() {
         "field_language:value" : { "type" : "string" },
         "field_multiple_sector" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_partner_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_revised_date" : { "type" : "date" },
         "field_strategic_type" : { "type" : "string" },
         "language" : { "type" : "string" },
         "nid" : { "type" : "integer" },
