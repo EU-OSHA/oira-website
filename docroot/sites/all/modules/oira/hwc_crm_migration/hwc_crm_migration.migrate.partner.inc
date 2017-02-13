@@ -204,6 +204,7 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml {
           $term = current($term);
           // Sectorial partner has EU level country.
           if ($term->tid == OIRA_PARTNER_TYPE_SECTORIAL_TID) {
+            $data->field_ph_town .= ', ' . ucwords(strtolower(trim($data->field_country)));
             $data->field_country = 'EU level';
           }
           $data->field_partner_type = $partner_type;
