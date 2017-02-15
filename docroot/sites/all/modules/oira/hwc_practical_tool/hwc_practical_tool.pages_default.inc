@@ -709,23 +709,41 @@ Create Tools',
         'entity_id' => '56',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Menu Link Item',
+        'keyword' => 'menu_link_item',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1134',
+        'id' => 1,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'OiRA & Tools
-OiRA Tools',
-    'panels_breadcrumbs_paths' => '<none>
+    'panels_breadcrumbs_titles' => '%menu_link_item:title
+%node:title_field',
+    'panels_breadcrumbs_paths' => '%menu_link_item:path
 <none>',
     'panels_breadcrumbs_home' => 1,
     'metatag_panels' => array(
       'enabled' => 1,
       'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
         'description' => array(
-          'value' => ' The OiRA sectoral tools provided here are available for small and micro enterprises to use to carry out risk assessments, helping them to produce a documented assessment tailored to their requirements. The tools are free to download and can be easily accessed',
+          'value' => '[node:summary]',
         ),
       ),
     ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
   );
   $display = new panels_display();
   $display->layout = 'flexible';

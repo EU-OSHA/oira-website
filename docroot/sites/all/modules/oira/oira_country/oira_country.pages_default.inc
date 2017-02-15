@@ -760,23 +760,41 @@ function oira_country_default_page_manager_pages() {
         'entity_id' => '238',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Menu Link Item',
+        'keyword' => 'menu_link_item',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1228',
+        'id' => 1,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Partners and OiRA Community
-EU and national partners',
-    'panels_breadcrumbs_paths' => '<none>
+    'panels_breadcrumbs_titles' => '%menu_link_item:title
+%node:title_field',
+    'panels_breadcrumbs_paths' => '%menu_link_item:path
 <none>',
     'panels_breadcrumbs_home' => 1,
     'metatag_panels' => array(
       'enabled' => 1,
       'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
         'description' => array(
-          'value' => 'Find out more more about the tools and related materials that are available for your country. The tools developed by the EU sectoral social partners can be found here as well',
+          'value' => '[node:summary]',
         ),
       ),
     ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
   );
   $display = new panels_display();
   $display->layout = 'flexible';

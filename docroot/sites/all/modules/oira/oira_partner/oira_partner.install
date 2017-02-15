@@ -106,3 +106,10 @@ function oira_partner_update_7013() {
 function oira_partner_update_7014() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert: NOW-266, NOW-411, NOW-412.
+ */
+function oira_partner_update_7015() {
+  features_revert_module('oira_partner');
+}

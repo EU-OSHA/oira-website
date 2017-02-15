@@ -273,3 +273,10 @@ function osha_update_7014() {
 function osha_update_7015() {
   features_revert_module('osha');
 }
+
+/**
+ * Feature revert: NOW-266, NOW-411, NOW-412.
+ */
+function osha_update_7016() {
+  features_revert_module('osha');
+}
