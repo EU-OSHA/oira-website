@@ -18,23 +18,21 @@ function hwc_practical_tool_path_breadcrumbs_settings_info() {
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Private Zone',
-      1 => 'My Tools',
-      2 => 'Upload Tools',
+      1 => 'Upload Tools',
     ),
     'paths' => array(
       0 => 'private-zone',
-      1 => 'private-zone/my-content?type=practical_tool',
-      2 => '<none>',
+      1 => '<none>',
     ),
     'home' => 1,
-    'translatable' => 0,
+    'translatable' => 1,
     'arguments' => array(),
     'access' => array(
       'plugins' => array(),
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -91;
   $export['add_tools'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -80,7 +78,7 @@ function hwc_practical_tool_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -95;
   $export['edit_news_clone'] = $path_breadcrumb;
 
   return $export;

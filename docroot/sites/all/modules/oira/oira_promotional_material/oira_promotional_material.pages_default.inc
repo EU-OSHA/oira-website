@@ -574,21 +574,32 @@ Update Promotional Resource',
         'entity_id' => '50',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '%node:title-field',
+    'panels_breadcrumbs_titles' => '%node:title_field',
     'panels_breadcrumbs_paths' => '<none>',
     'panels_breadcrumbs_home' => 1,
     'metatag_panels' => array(
       'enabled' => 1,
       'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
         'description' => array(
-          'value' => 'To promote the OiRA tools we make sure that users can take them up and developed promotional materials including everything from videos and infographics to more traditional factsheets and presentations',
+          'value' => '[node:summary]',
         ),
       ),
     ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
   );
   $display = new panels_display();
   $display->layout = 'flexible';

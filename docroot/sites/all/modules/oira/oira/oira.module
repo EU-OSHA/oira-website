@@ -374,3 +374,22 @@ function theme_oira_social_link_icon($element) {
   }
   return $return;
 }
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ *
+ * Integrate our module with Ctools. Tell where
+ * Ctools have to search plugins. Usually a place
+ * where developers store all defined plugins is
+ * "module_name/plugins" directory. Variable
+ * $plugin contains a name of a plugin type. It can be
+ * content_types, context, argument, cache, access. So all
+ * of listed plugin types should be located in corresponding
+ * subdirectories (plugins/content_types if you create a content
+ * type plugin).
+ */
+function oira_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}

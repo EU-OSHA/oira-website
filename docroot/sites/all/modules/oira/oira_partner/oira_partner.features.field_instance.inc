@@ -1936,6 +1936,7 @@ function oira_partner_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Address');
   t('City');
   t('Code');
   t('Collaborator');
@@ -1953,7 +1954,6 @@ function oira_partner_field_default_field_instances() {
   t('Organisation');
   t('Organisation GUID');
   t('Organisation Type');
-  t('Address');
   t('Postal code');
   t('Social profile');
   t('Type');

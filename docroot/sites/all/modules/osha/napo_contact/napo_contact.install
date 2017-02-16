@@ -65,3 +65,10 @@ function napo_contact_update_7007() {
 function napo_contact_update_7008() {
   features_revert_module('napo_contact');
 }
+
+/**
+ * Feature revert: NOW-266, NOW-411, NOW-412.
+ */
+function napo_contact_update_7009() {
+  features_revert_module('napo_contact');
+}
