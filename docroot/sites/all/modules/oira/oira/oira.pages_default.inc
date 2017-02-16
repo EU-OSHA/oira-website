@@ -47,7 +47,7 @@ function oira_default_page_manager_pages() {
         'identifier' => 'Content',
         'keyword' => 'node',
         'name' => 'entity:node',
-        'entity_id' => '57',
+        'entity_id' => '450',
         'id' => 1,
       ),
       1 => array(
