@@ -280,3 +280,10 @@ function osha_update_7015() {
 function osha_update_7016() {
   features_revert_module('osha');
 }
+
+/**
+ * MDR-923.
+ */
+function osha_update_7017() {
+  features_revert_module('osha');
+}
