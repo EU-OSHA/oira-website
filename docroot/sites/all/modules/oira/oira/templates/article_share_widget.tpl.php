@@ -71,3 +71,41 @@
   })(jQuery);
 
 </script>
+
+<?php
+/* PIWIK EVENTS */
+$event_name = '/node/' . $node->nid;
+$event_val = $language->language;
+if (!empty($node->path['alias'])) {
+  $event_name = '/' . $node->path['alias'];
+}
+?>
+
+<script>
+    (function($) {
+        $(window).ready(function(){
+            if (typeof _paq != 'undefined') {
+                $('.napo-share-widget-linkedin a').once('piwik_share_event', function(){
+                    $(this).on('click', function(event) {
+                        _paq.push(['trackEvent', 'Share', 'LinkedIn', '<?php print $event_name ?>', '<?php print $event_val ?>']);
+                    });
+                });
+                $('.hwc-share-widget-twitter a').once('piwik_share_event', function(){
+                    $(this).on('click', function(event) {
+                        _paq.push(['trackEvent', 'Share', 'Twitter', '<?php print $event_name ?>', '<?php print $event_val ?>']);
+                    });
+                });
+                $('.hwc-share-widget-facebook a').once('piwik_share_event', function(){
+                    $(this).on('click', function(event) {
+                        _paq.push(['trackEvent', 'Share', 'Facebook', '<?php print $event_name ?>', '<?php print $event_val ?>']);
+                    });
+                });
+                $('.napo-share-widget-google-plus a').once('piwik_share_event', function(){
+                    $(this).on('click', function(event) {
+                        _paq.push(['trackEvent', 'Share', 'Google+', '<?php print $event_name ?>', '<?php print $event_val ?>']);
+                    });
+                });
+            }
+        });
+    })(jQuery);
+</script>
