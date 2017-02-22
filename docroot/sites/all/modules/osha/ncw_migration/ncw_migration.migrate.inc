@@ -183,7 +183,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
   }
 
   protected function getManuallyMigratedFields() {
-    return array();
+    return array('field_migration_source');
   }
 
   protected function ignoreMetatagMigration() {
@@ -259,6 +259,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
           $row->{$field_name} = array();
         }
       }
+      $row->field_migration_source = 'ncw';
     } catch(Exception $e) {
       ncw_migration_debug("Exception while preparing the row: {$row->nid}", 'error');
       return FALSE;
