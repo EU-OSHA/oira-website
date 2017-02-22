@@ -62,6 +62,7 @@ class NCWWikiPagesSource extends AbstractNCWNodeSource {
       'field_tags',
       'field_wiki_categories',
       'field_wiki_page_url',
+      'field_migration_source',
     );
     return array_combine($fields, $fields);
   }

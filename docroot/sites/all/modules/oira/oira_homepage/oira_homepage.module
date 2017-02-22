@@ -5,3 +5,20 @@
  */
 
 include_once 'oira_homepage.features.inc';
+
+/**
+ * Implements hook_views_post_execute().
+ */
+function oira_homepage_views_post_execute(&$view) {
+  if ($view->name == 'slideshow'){
+    foreach($view->result as $k=>$result){
+      if($k==0){
+        $view->result[0]->field_field_link[0]['rendered']['#prefix'] = '<h1 class="field-content container">';
+        $view->result[0]->field_field_link[0]['rendered']['#suffix'] = '</h1>';
+      }else{
+        $view->result[$k]->field_field_link[0]['rendered']['#prefix'] = '<h2 class="field-content container">';
+        $view->result[$k]->field_field_link[0]['rendered']['#suffix'] = '</h2>';
+      }
+    }
+  }
+}

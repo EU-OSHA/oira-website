@@ -311,6 +311,31 @@ function oira_configuration_form($form, &$form_state) {
 }
 
 /**
+ * Implements hook_node_access().
+ */
+function oira_node_access($node, $op, $account) {
+  // Migrated content should not be editable.
+  if (($op == 'update' || $op == 'delete')
+    && !empty($node->field_migration_source)) {
+    return NODE_ACCESS_DENY;
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function oira_form_node_form_alter(&$form, &$form_state, $form_id) {
+  // Hide migration source field.
+  if (isset($form['field_migration_source'])) {
+    $form['field_migration_source']['#access'] = FALSE;
+  }
+  if (!empty($form['#entity']->field_migration_source)) {
+    drupal_set_message('You are not allowed to edit imported content', 'warning');
+    $form['#access'] = FALSE;
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function oira_form_alter(&$form, &$form_state, $form_id) {
@@ -373,4 +398,23 @@ function theme_oira_social_link_icon($element) {
     }
   }
   return $return;
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ *
+ * Integrate our module with Ctools. Tell where
+ * Ctools have to search plugins. Usually a place
+ * where developers store all defined plugins is
+ * "module_name/plugins" directory. Variable
+ * $plugin contains a name of a plugin type. It can be
+ * content_types, context, argument, cache, access. So all
+ * of listed plugin types should be located in corresponding
+ * subdirectories (plugins/content_types if you create a content
+ * type plugin).
+ */
+function oira_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
 }

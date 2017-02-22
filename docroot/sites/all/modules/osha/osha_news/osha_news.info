@@ -51,6 +51,7 @@ features[field_instance][] = node-news-body
 features[field_instance][] = node-news-field_aditional_resources
 features[field_instance][] = node-news-field_character_count
 features[field_instance][] = node-news-field_image
+features[field_instance][] = node-news-field_migration_source
 features[field_instance][] = node-news-field_page_count
 features[field_instance][] = node-news-field_publication_date
 features[field_instance][] = node-news-field_summary

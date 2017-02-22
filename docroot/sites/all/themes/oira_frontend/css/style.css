@@ -7443,6 +7443,10 @@ a.more-link:before {
   color: #ffffff;
   font-size: 1.2em;
 }
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link h1 {
+  font-size: 34px;
+}
+#block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link h1,
 #block-system-main .panels-flexible-region-new-slider .view-id-slideshow .owl-wrapper .views-field-field-link h2 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -8040,10 +8044,10 @@ a.more-link:before {
 /*END ARTICLES*/
 /*WHAT'S NEW SECTION
 *********************************************************************/
-.page-what-is-new .panels-flexible-region-new-image {
+.page-what-is-new .panels-flexible-row-first {
   position: relative;
 }
-.page-what-is-new .panels-flexible-region-new-image .field-type-image {
+.page-what-is-new .panels-flexible-row-first .field-type-image {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -8062,38 +8066,38 @@ a.more-link:before {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
   /* IE6-9 */
 }
-.page-what-is-new .panels-flexible-region-new-image .field-type-image img {
+.page-what-is-new .panels-flexible-row-first .field-type-image img {
   position: relative;
   z-index: -1;
   display: block;
   width: 100%;
 }
-.page-what-is-new .panels-flexible-region-new-image .pane-node-title-field {
+.page-what-is-new .panels-flexible-row-first .pane-node-title-field {
   margin-top: -93px;
   position: relative;
 }
-.page-what-is-new .panels-flexible-region-new-image .pane-node-title-field h1 {
+.page-what-is-new .panels-flexible-row-first .pane-node-title-field h1 {
   color: #ffffff;
   font-size: 2.6em;
   font-family: 'Oswald';
 }
-.page-what-is-new .panels-flexible-row-new-2 {
+.page-what-is-new .panels-flexible-row.container-fluid {
   padding-top: 30px;
   background-color: #dfd8e4;
 }
-.page-what-is-new .panels-flexible-row-new-2 .views-field-field-summary {
+.page-what-is-new .panels-flexible-row.container-fluid .views-field-field-summary {
   padding: 15px 0px 0px 0px;
 }
-.page-what-is-new .panels-flexible-row-new-3 {
+.page-what-is-new .panels-flexible-row:nth-child(3) {
   background-color: #786586;
   margin-top: 10px;
 }
-.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news h3.pane-title {
+.page-what-is-new .panels-flexible-row:nth-child(3) h3.pane-title {
   color: #ffffff;
   border-bottom: 2px solid #ffffff;
   margin-bottom: 0px;
 }
-.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news h3.pane-title:after {
+.page-what-is-new .panels-flexible-row:nth-child(3) h3.pane-title:after {
   content: "";
   background: url("../images/icons/004.png") no-repeat;
   background-size: 100%;
@@ -8101,18 +8105,18 @@ a.more-link:before {
   height: 40px;
   float: right;
 }
-.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news .views-item-columns-container {
+.page-what-is-new .panels-flexible-row:nth-child(3) .views-item-columns-container {
   padding: 15px;
   margin-top: 30px;
   min-height: 230px;
 }
-.page-what-is-new .panels-flexible-row-new-3 .panels-flexible-region-new-latest_news .more-link a {
+.page-what-is-new .panels-flexible-row:nth-child(3) .more-link a {
   color: #ffffff;
 }
-.page-what-is-new .panels-flexible-row-new-6 {
+.page-what-is-new .panels-flexible-row-last {
   background-color: #ffffff !important;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools h3:after {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region h3:after {
   content: "";
   background: url("../images/icons/018.png") no-repeat;
   background-size: 100%;
@@ -8120,52 +8124,52 @@ a.more-link:before {
   height: 40px;
   float: right;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools {
   padding-top: 20px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container {
   background-color: #dfd8e4;
   min-height: 558px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .views-field-field-image {
   min-height: 202px;
   padding: 10px;
   padding-bottom: 0px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .views-field-field-image img[alt="tools_default.png"] {
   margin: 0 auto;
   max-height: 260px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
   overflow: hidden;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
   margin-top: 15px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 {
   min-height: 45px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 a {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
   color: #ffffff;
   margin-top: 0px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner .more-link {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner .more-link {
   color: #ffffff;
   text-align: left;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed {
   margin-left: 0px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
   text-align: right;
   margin-top: 15px;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less {
   text-align: right !important;
   width: 20px;
   height: 12px;
@@ -8173,7 +8177,7 @@ a.more-link:before {
   overflow: hidden;
   font-style: normal;
 }
-.page-what-is-new .panels-flexible-row-new-6 .panels-flexible-region-new-new_tools .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less:before {
+.page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
@@ -8191,14 +8195,14 @@ a.more-link:before {
   font-weight: 300;
   margin-bottom: 30px;
 }
-.page-oira-tools .panels-flexible-row-new-1 {
+.page-oira-tools .panels-flexible-row-last {
   background: url('../images/background-two-colors.png') repeat-y 50%;
   padding-bottom: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child .form-group {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child .form-group {
   margin-bottom: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column {
   background-color: #786586;
   color: #ffffff;
   padding-right: 30px;
@@ -8206,18 +8210,18 @@ a.more-link:before {
   padding-bottom: 30px;
   position: relative;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-textfield {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-textfield {
   float: left;
   margin-bottom: 15px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-textfield input {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-textfield input {
   border: none;
   border-radius: 0px;
   outline: none;
   height: auto;
   padding-right: 35px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-submit {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-submit {
   position: absolute;
   right: 0;
   margin-right: 30px;
@@ -8232,18 +8236,18 @@ a.more-link:before {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0);
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-submit:before {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-submit:before {
   content: "\e003";
   font-family: "Glyphicons Halflings";
   margin-right: 30px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column a.active {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column a.active {
   display: block;
   color: #ffffff;
   margin-bottom: 10px;
   font-style: italic;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column a.active span:before {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column a.active span:before {
   color: #786586;
   padding: 1px;
   font-size: 0.7em;
@@ -8253,25 +8257,25 @@ a.more-link:before {
   width: 13px;
   height: 13px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-country label:after,
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-sector label:after {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-country label:after,
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-sector label:after {
   content: none;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes {
   border-top: 2px solid #ffffff;
   padding-top: 10px;
   clear: both;
   margin-top: 15px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
   display: none;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label {
   padding-left: 0px;
   margin-bottom: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
   font-family: 'Oswald';
   font-size: 1.2em;
   font-weight: normal;
@@ -8279,20 +8283,20 @@ a.more-link:before {
   margin-bottom: 10px;
   cursor: pointer;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:after {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:after {
   content: "\e250";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-item-field-sector {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-item-field-sector {
   border-bottom: 2px solid #ffffff;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content {
   background-color: #dfd8e4;
   padding-bottom: 90px;
   padding-left: 30px;
@@ -8300,7 +8304,7 @@ a.more-link:before {
   min-height: 338px;
   border-left: 5px solid #ffffff;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset {
   border: none;
   border-radius: 0px;
   background-color: rgba(0, 0, 0, 0);
@@ -8309,22 +8313,22 @@ a.more-link:before {
   border-bottom: 2px solid #786586;
   margin-bottom: 30px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .panel-body {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .panel-body {
   padding-left: 0px;
   padding-right: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container {
   min-width: 210px;
   padding-left: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container label {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container label {
   font-weight: 100;
   font-size: 0.9em;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after {
   content: ": ";
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort {
   font-size: 0.9em;
   display: inline-block;
   width: auto;
@@ -8335,36 +8339,36 @@ a.more-link:before {
   height: initial;
   background-color: rgba(0, 0, 0, 0);
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .count-container {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content #edit-sort-fieldset .count-container {
   font-size: 0.9em;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper {
   background-color: #ffffff;
   padding: 30px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool {
   border-top: 2px solid #786586;
   padding: 30px 0px;
   margin-right: 0px;
   margin-left: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 {
   padding-left: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field {
   font-size: 1.4em;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .group-center.col-md-12 {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .group-center.col-md-12 {
   clear: both;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
   margin-left: 207px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.more-link {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.more-link {
   text-align: left;
   margin-top: 15px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less {
   text-align: right !important;
   width: 20px;
   height: 12px;
@@ -8372,71 +8376,75 @@ a.more-link:before {
   overflow: hidden;
   font-style: normal;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less:before {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.show-less:before {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
   line-height: 0;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link {
   position: absolute;
   right: 0px;
   margin-top: 15px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
   color: #58585a;
   font-weight: bold;
   margin-top: 0px;
   display: block;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
   color: #10b2e4;
   margin-left: 10px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners {
   margin-top: 50px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner {
   background-color: #786586;
   padding: 15px;
   color: #ffffff;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 {
   min-height: 45px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
   color: #ffffff;
   margin-top: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .more-link {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .more-link {
   color: #ffffff;
   text-align: left;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
   margin-left: 222px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 .node-partner {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 .node-partner {
   margin-left: 0px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div {
   display: table;
   border-collapse: collapse;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div .group-left a img {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div .group-left a img {
   width: auto;
   height: 100px;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child,
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .odd:first-child {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child,
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .odd:first-child {
   display: table-cell;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child {
   width: 50%;
 }
-.page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child .node-partner {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child .node-partner {
   margin-right: 10px;
   margin-left: 0px;
+}
+.page-oira-tools .panels-flexible-row-first {
+  background: none !important;
+  padding-bottom: 25px;
 }
 /*END OIRA TOOLS*/
 /*FAQ'S
@@ -8543,107 +8551,107 @@ a.more-link:before {
 .page-contact-us #block-system-main .container {
   position: relative;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 {
+.page-contact-us #block-system-main .panels-flexible-row {
   padding-top: 20px;
   background-color: #786586;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .container {
+.page-contact-us #block-system-main .panels-flexible-row .container {
   max-width: 600px;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 label {
+.page-contact-us #block-system-main .panels-flexible-row label {
   color: #ffffff;
   display: block;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 select,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 input,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 textarea {
+.page-contact-us #block-system-main .panels-flexible-row select,
+.page-contact-us #block-system-main .panels-flexible-row input,
+.page-contact-us #block-system-main .panels-flexible-row textarea {
   border-radius: 0;
   border: none;
   width: 100%;
   padding: 6px 12px;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha {
+.page-contact-us #block-system-main .panels-flexible-row fieldset,
+.page-contact-us #block-system-main .panels-flexible-row .captcha {
   margin-top: 35px;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 0;
   border: none;
   width: 100%;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset legend,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha legend {
+.page-contact-us #block-system-main .panels-flexible-row fieldset legend,
+.page-contact-us #block-system-main .panels-flexible-row .captcha legend {
   display: none;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-heading,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-heading {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-heading,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-heading {
   display: none;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body {
   padding: 0px;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .help-block,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .help-block {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .help-block,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .help-block {
   display: none;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaReadAudio,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaReadAudio {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaReadAudio,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaReadAudio {
   background: url('../images/icons/audio-form.png') no-repeat;
   background-size: cover;
   height: 38px;
   display: inline-block;
   margin-bottom: 4px;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaReadAudio img,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaReadAudio img {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaReadAudio img,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaReadAudio img {
   visibility: hidden;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaRefresh,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaRefresh {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaRefresh,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaRefresh {
   background: url('../images/icons/refresh-form.png') no-repeat;
   height: 38px;
   background-size: cover;
   display: inline-block;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .captchaRefresh img,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .captchaRefresh img {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaRefresh img,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaRefresh img {
   visibility: hidden;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code {
   margin-top: 20px;
   width: 345px;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code #security_code,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code #security_code {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code #security_code,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code #security_code {
   width: 213px;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code label:last-child,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code label:last-child {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code label:last-child,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
   position: absolute;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 fieldset .panel-body .form-item-security-code label:last-child:before,
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .captcha .panel-body .form-item-security-code label:last-child:before {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code label:last-child:before,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code label:last-child:before {
   content: "*";
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .grippie {
+.page-contact-us #block-system-main .panels-flexible-row .grippie {
   display: none;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component {
+.page-contact-us #block-system-main .panels-flexible-row .webform-component {
   margin-bottom: 25px;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component label:last-child {
+.page-contact-us #block-system-main .panels-flexible-row .webform-component label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 .webform-component label:last-child:before {
+.page-contact-us #block-system-main .panels-flexible-row .webform-component label:last-child:before {
   content: "*";
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 button.form-submit {
+.page-contact-us #block-system-main .panels-flexible-row button.form-submit {
   position: absolute;
   bottom: 37px;
   left: 235px;
@@ -8653,8 +8661,12 @@ a.more-link:before {
   font-style: italic;
   border: 1px solid white;
 }
-.page-contact-us #block-system-main .panels-flexible-row-new-1 button.form-submit:before {
+.page-contact-us #block-system-main .panels-flexible-row button.form-submit:before {
   content: "> ";
+}
+.page-contact-us #block-system-main .panels-flexible-row-first {
+  background-color: transparent !important;
+  padding-top: 0px;
 }
 .page-contact-us .alert-success {
   background-color: #dfd8e4;
@@ -9202,7 +9214,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-pr-language,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language,
-#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-pr-language {
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-pr-language,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-strategic-type,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-strategic-type,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-strategic-type {
   background-color: #b4a4bf;
   display: inline-block;
   color: white;
@@ -9229,7 +9244,35 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-pr-language p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-pr-language p,
-#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-pr-language p {
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-pr-language p,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-strategic-type p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-strategic-type p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-strategic-type p {
+  margin-bottom: 0px;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-multiple-sector,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-multiple-sector,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-multiple-sector {
+  display: inline-block;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-multiple-sector .field-item,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-multiple-sector .field-item,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-multiple-sector .field-item {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-multiple-sector .field-item p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-multiple-sector .field-item p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-multiple-sector .field-item p {
   margin-bottom: 0px;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-group-wrapper,
@@ -9349,6 +9392,32 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-family: "Glyphicons Halflings";
   font-size: 1.2em;
   line-height: 0;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-link,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-link,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-link {
+  margin-top: 15px;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file a,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file a,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file a,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-link a,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-link a,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-link a {
+  color: #10b2e4;
+  font-weight: bold;
+  font-style: italic;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file a:hover,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file a:hover,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-private-file a:hover,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-link a:hover,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-link a:hover,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .field-name-field-link a:hover {
+  color: #967ea7;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .field-name-field-tool-link,
@@ -11688,15 +11757,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-family: "Glyphicons Halflings";
   margin-right: 30px;
 }
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column a.active,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column a.active {
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column > a,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column > a {
   display: block;
   color: #ffffff;
   margin-bottom: 10px;
   font-style: italic;
 }
-.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column a.active span:before,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column a.active span:before {
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column > a span:before,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column > a span:before {
   color: #786586;
   padding: 1px;
   font-size: 0.7em;
@@ -11750,6 +11819,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes .form-type-checkbox > label,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes .form-type-checkbox > label {
+  padding-left: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-item-field-sector,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-item-field-sector {
@@ -11809,6 +11882,21 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .count-container {
   font-size: 0.9em;
 }
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper-grouped,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped {
+  margin-bottom: 20px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title {
+  background-color: #ffffff;
+  padding: 10px 30px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title h2,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title h2 {
+  color: #786586;
+  border-bottom: 2px solid #786586;
+  padding-bottom: 20px;
+}
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper {
   background-color: #ffffff;
@@ -11844,6 +11932,86 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-left: 0px;
   margin-right: 0px;
   padding-top: 0px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country p,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field p,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language p,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type p {
+  margin-bottom: 0px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector {
+  display: inline-block;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item p {
+  margin-bottom: 0px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link {
+  margin-top: 15px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a {
+  color: #10b2e4;
+  font-weight: bold;
+  font-style: italic;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a:hover,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a:hover,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a:hover,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a:hover {
+  color: #967ea7;
 }
 .private-images-page-selector .panels-flexible-row-new-1 {
   background-color: white !important;
