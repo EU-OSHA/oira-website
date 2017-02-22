@@ -313,7 +313,7 @@ function oira_partner_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'email_plain',
+      'formatter' => 'email_spamspan',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,

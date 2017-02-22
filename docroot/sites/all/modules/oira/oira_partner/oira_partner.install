@@ -120,3 +120,11 @@ function oira_partner_update_7015() {
 function oira_partner_update_7016() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert: NOW-412.
+ */
+function oira_partner_update_7017() {
+  features_revert_module('oira_partner');
+  module_enable(['spamspan']);
+}
