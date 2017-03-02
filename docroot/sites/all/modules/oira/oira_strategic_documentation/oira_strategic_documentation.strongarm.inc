@@ -62,25 +62,38 @@ function oira_strategic_documentation_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__strategic_documentation';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 1,
+    'exclude_language_none' => 1,
+    'lock_language' => 1,
+    'shared_fields_original_only' => 1,
+  );
+  $export['entity_translation_settings_node__strategic_documentation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__strategic_documentation';
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '14',
+          'weight' => '16',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '15',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '13',
         ),
         'workbench_access' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '14',
         ),
         'language' => array(
           'weight' => '10',
@@ -89,14 +102,14 @@ function oira_strategic_documentation_strongarm() {
       'display' => array(
         'node_type' => array(
           'default' => array(
-            'weight' => '17',
+            'weight' => '20',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '16',
+            'weight' => '19',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
@@ -162,9 +175,17 @@ function oira_strategic_documentation_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_enable_node__strategic_documentation';
+  $strongarm->value = 1;
+  $export['metatag_enable_node__strategic_documentation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_strategic_documentation';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_strategic_documentation'] = $strongarm;
 

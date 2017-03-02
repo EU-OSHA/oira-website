@@ -7,18 +7,112 @@
 include_once 'oira_strategic_documentation.features.inc';
 
 /**
- * Implements hook_field_extra_fields_alter().
+ * Implements hook_block_info().
  */
-function oira_strategic_documentation_field_extra_fields_alter(&$info) {
-  $info['node']['strategic_documentation']['display']['related_partners'] = $info['node']['practical_tool']['display']['related_partners'];
-  $info['node']['strategic_documentation']['display']['tools_see_more'] = $info['node']['practical_tool']['display']['tools_see_more'];
+function oira_strategic_documentation_block_info() {
+  $blocks = array();
+  $blocks['oira_strategic_docs_partners'] = array(
+    'info' => t('Collaboration area Partners documents'),
+    'status' => 1,
+    'region' => '-1',
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['oira_strategic_docs_eu_osha'] = array(
+    'info' => t('Collaboration area EU OSHA documents'),
+    'status' => 1,
+    'region' => '-1',
+    'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
 }
 
 /**
- * Implements hook_node_presave().
+ * Implements hook_block_view().
  */
-function oira_strategic_documentation_node_presave($node) {
-  if ($node->type == 'strategic_documentation') {
-    cache_clear_all(_hwc_practical_tool_related_partners_cid($node), 'cache');
+function oira_strategic_documentation_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'oira_strategic_docs_partners') {
+    module_load_include('inc', 'oira_strategic_documentation', 'oira_strategic_documentation.pages');
+    $block['content'] = drupal_get_form('oira_strategic_documentation_partners_form');
   }
+  if ($delta == 'oira_strategic_docs_eu_osha') {
+    module_load_include('inc', 'oira_strategic_documentation', 'oira_strategic_documentation.pages');
+    $block['content'] = drupal_get_form('oira_strategic_documentation_eu_osha_form');
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function oira_strategic_documentation_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'strategic_documentation_node_form':
+      // TODO a validation server side.
+//      $form['#validate'][] = 'oira_promotional_material_form_validate';
+
+      $form['field_private_image']['#states'] = array(
+        'required' => array(
+          ':input[name="field_strategic_type[und]"]' => array('value' => 'photo'),
+        ),
+      );
+      $form['field_private_file']['#states'] = array(
+        'visible' => array(
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'document'),
+          ),
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'visual'),
+          ),
+        ),
+        'required' => array(
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'document'),
+          ),
+          array(
+            ':input[name*="field_strategic_type[und]"]' => array('value' => 'visual'),
+          ),
+        ),
+      );
+      $form['field_link']['#states'] = array(
+        'visible' => array(
+          ':input[name*="field_strategic_type[und]"]' => array('value' => 'link'),
+        ),
+        'required' => array(
+          ':input[name*="field_strategic_type[und]"]' => array('value' => 'link'),
+        ),
+      );
+      break;
+  }
+}
+
+/**
+ * Implements hook_node_access().
+ */
+function oira_strategic_documentation_node_access($node, $op, $account) {
+  $type = is_string($node) ? $node : $node->type;
+  if ($type == 'strategic_documentation' && $op == 'view') {
+    $admin_roles = [OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR];
+    $user_roles = array_values($account->roles);
+    if (!empty(array_intersect($admin_roles, $user_roles))) {
+      return NODE_ACCESS_IGNORE;
+    }
+    if (in_array(ROLE_OIRA_PARTNER, $user_roles)) {
+      $node_sections = $node->workbench_access;
+      if (isset($node->field_co_author['und'][0]['tid'])) {
+        $node_sections[$node->field_co_author['und'][0]['tid']] = $node->field_co_author['und'][0]['tid'];
+      }
+      $user_sections = osha_workflow_editor_get_sections($account);
+      // Allow also the general section.
+      $user_sections[] = 'section';
+      if (!empty(array_intersect($user_sections, $node_sections))) {
+        return NODE_ACCESS_ALLOW;
+      }
+    }
+    return NODE_ACCESS_DENY;
+  }
+
+  return NODE_ACCESS_IGNORE;
 }

@@ -11,14 +11,28 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
-  $page->name = 'strategic_documentation_search';
+  $page->name = 'collaboration_doc_search';
   $page->task = 'page';
-  $page->admin_title = 'Strategic documentation search';
+  $page->admin_title = 'Collaboration area';
   $page->admin_description = '';
-  $page->path = 'strategic-documentation-search';
+  $page->path = 'private-zone/collaboration-area';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
   );
   $page->menu = array();
   $page->arguments = array();
@@ -29,34 +43,33 @@ function oira_strategic_documentation_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'page_strategic_documentation_search__panel_context_86621b85-4c54-47c9-b6bb-c8d490980796';
+  $handler->name = 'page_collaboration_doc_search__panel_context_86621b85-4c54-47c9-b6bb-c8d490980796';
   $handler->task = 'page';
-  $handler->subtask = 'strategic_documentation_search';
+  $handler->subtask = 'collaboration_doc_search';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Strategic documentation landing page',
+    'title' => 'Collaboration area',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-strategic-documentation-search',
+    'body_classes_to_add' => 'page-strategic-documentation-search private-zone-page collaboration-area-page-selector',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Content',
-        'keyword' => 'node',
-        'name' => 'entity:node',
-        'entity_id' => '174',
-        'id' => 1,
-      ),
-    ),
+    'contexts' => array(),
     'relationships' => array(),
     'name' => '',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '%node:title-field',
-    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_titles' => 'Private Zone
+Collaboration area
+',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+<none>',
     'panels_breadcrumbs_home' => 1,
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -85,8 +98,9 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 'main-row',
-          1 => 1,
+          0 => 2,
+          1 => 'main-row',
+          2 => 1,
         ),
         'parent' => 'canvas',
       ),
@@ -128,6 +142,25 @@ function oira_strategic_documentation_default_page_manager_pages() {
         'class' => 'container',
         'hide_empty' => 0,
       ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -135,31 +168,28 @@ function oira_strategic_documentation_default_page_manager_pages() {
       'default' => NULL,
       'center' => NULL,
       'content' => NULL,
+      'menu' => NULL,
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = 'Collaboration area';
   $display->uuid = 'eee1a97d-d0a3-4ef0-8501-cbacda3efc96';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-b50c66f5-a042-49cc-ac8e-62f90efbb783';
+    $pane->pid = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane->panel = 'center';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:body';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'context_entity:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'admin_title' => 'Intro text',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>',
+      'format' => 'full_html',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -169,18 +199,18 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'b50c66f5-a042-49cc-ac8e-62f90efbb783';
-    $display->content['new-b50c66f5-a042-49cc-ac8e-62f90efbb783'] = $pane;
-    $display->panels['center'][0] = 'new-b50c66f5-a042-49cc-ac8e-62f90efbb783';
+    $pane->uuid = '181b84c3-18bb-49a1-a34b-920b1ec77495';
+    $display->content['new-181b84c3-18bb-49a1-a34b-920b1ec77495'] = $pane;
+    $display->panels['center'][0] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
     $pane = new stdClass();
-    $pane->pid = 'new-ad09cb47-53b1-40f4-9c92-7750590afc66';
+    $pane->pid = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
     $pane->panel = 'content';
     $pane->type = 'block';
-    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_listing';
+    $pane->subtype = 'menu_block-7';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -192,14 +222,878 @@ function oira_strategic_documentation_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'ad09cb47-53b1-40f4-9c92-7750590afc66';
-    $display->content['new-ad09cb47-53b1-40f4-9c92-7750590afc66'] = $pane;
-    $display->panels['content'][0] = 'new-ad09cb47-53b1-40f4-9c92-7750590afc66';
+    $pane->uuid = '92abd91d-caa7-4ad7-ae17-6e40e054227b';
+    $display->content['new-92abd91d-caa7-4ad7-ae17-6e40e054227b'] = $pane;
+    $display->panels['content'][0] = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['strategic_documentation_search'] = $page;
+  $pages['collaboration_doc_search'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'create_strategic_documentation';
+  $page->task = 'page';
+  $page->admin_title = 'create strategic documentation';
+  $page->admin_description = 'create strategic documentation form';
+  $page->path = 'node/%node/create-strategic-documentation';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array();
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Content: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+      'keyword' => 'node',
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_create_strategic_documentation__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'create_strategic_documentation';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Create strategic documentation form',
+        'keyword' => 'node_add',
+        'name' => 'node_add_form',
+        'type' => 'strategic_documentation',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'name' => 'panel',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Partner profile - private zone',
+            'php' => '$is_partner = FALSE;
+
+if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
+	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
+}
+
+return $is_partner;',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+My Strategic Documentation
+Upload Strategic Documentation',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=strategic_documentation&status=All
+<none>',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 1,
+          1 => 2,
+        ),
+        'parent' => 'canvas',
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'form',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'form' => array(
+        'type' => 'region',
+        'title' => 'Form',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'menu' => NULL,
+      'form' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Private Zone';
+  $display->uuid = '12ae27de-e08e-4eb3-b4db-5e37124aa5f7';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-563efce8-b3ba-4524-a6ef-712080376518';
+    $pane->panel = 'form';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'context_node_add_form_1',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '563efce8-b3ba-4524-a6ef-712080376518';
+    $display->content['new-563efce8-b3ba-4524-a6ef-712080376518'] = $pane;
+    $display->panels['form'][0] = 'new-563efce8-b3ba-4524-a6ef-712080376518';
+    $pane = new stdClass();
+    $pane->pid = 'new-4e4a956b-eb9a-4b6f-822a-edb05573466a';
+    $pane->panel = 'menu';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '4e4a956b-eb9a-4b6f-822a-edb05573466a';
+    $display->content['new-4e4a956b-eb9a-4b6f-822a-edb05573466a'] = $pane;
+    $display->panels['menu'][0] = 'new-4e4a956b-eb9a-4b6f-822a-edb05573466a';
+    $pane = new stdClass();
+    $pane->pid = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+    $pane->panel = 'menu';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Partner create strategic documentation',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<h2>Upload Strategic Documentation</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+    $display->content['new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f'] = $pane;
+    $display->panels['menu'][1] = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-563efce8-b3ba-4524-a6ef-712080376518';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['create_strategic_documentation'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'edit_strategic_documentation';
+  $page->task = 'page';
+  $page->admin_title = 'Edit strategic documentation';
+  $page->admin_description = 'Edit strategic documentation page form';
+  $page->path = 'node/%node/edit-strategic_documentation/%strategic_documentation_id';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'node_access',
+        'settings' => array(
+          'type' => 'update',
+        ),
+        'context' => array(
+          0 => 'logged-in-user',
+          1 => 'argument_entity_id:node_2',
+        ),
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array();
+  $page->arguments = array(
+    'node' => array(
+      'id' => 1,
+      'identifier' => 'Content: ID',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+    'strategic_documentation_id' => array(
+      'id' => 2,
+      'identifier' => 'Content: ID 2',
+      'name' => 'entity_id:node',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_edit_strategic_documentation__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'edit_strategic_documentation';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Strategic documentation edit form',
+        'keyword' => 'node_edit_form',
+        'name' => 'node_edit_form_from_node',
+        'context' => 'argument_entity_id:node_2',
+        'id' => 1,
+      ),
+    ),
+    'name' => 'panel',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Partner profile - private zone',
+            'php' => '$is_partner = FALSE;
+
+if(isset($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\']) && isset($contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\'])) {
+	if($contexts[\'argument_entity_id:node_1\']->data->field_guid_organisation[LANGUAGE_NONE][0][\'value\'] == $contexts[\'logged-in-user\']->data->field_user_partner_guid[LANGUAGE_NONE][0][\'value\']) {$is_partner = TRUE;}
+}
+
+return $is_partner;',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+My Strategic Documentation
+Update Strategic Documentation',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/my-content?type=strategic_documentation&status=All
+<none>',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 'main-row',
+          1 => 2,
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'form',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'form' => array(
+        'type' => 'region',
+        'title' => 'Form',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'form_title' => NULL,
+      'form' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Private Zone';
+  $display->uuid = '31f79834-9676-4f04-9b1e-95b6297d11ff';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-318a7f8a-04f3-4658-bc5d-23b1020c0c28';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-6';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '318a7f8a-04f3-4658-bc5d-23b1020c0c28';
+    $display->content['new-318a7f8a-04f3-4658-bc5d-23b1020c0c28'] = $pane;
+    $display->panels['center'][0] = 'new-318a7f8a-04f3-4658-bc5d-23b1020c0c28';
+    $pane = new stdClass();
+    $pane->pid = 'new-f62b1c0d-e19e-4625-ad70-d36542169b1a';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'title_heading' => 'h2',
+      'body' => '<h2>Update Strategic Documentation <em>%strategic_documentation_id:title</em></h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'f62b1c0d-e19e-4625-ad70-d36542169b1a';
+    $display->content['new-f62b1c0d-e19e-4625-ad70-d36542169b1a'] = $pane;
+    $display->panels['center'][1] = 'new-f62b1c0d-e19e-4625-ad70-d36542169b1a';
+    $pane = new stdClass();
+    $pane->pid = 'new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
+    $pane->panel = 'form';
+    $pane->type = 'form';
+    $pane->subtype = 'form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'relationship_node_edit_form_from_node_1',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'container',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
+    $display->content['new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f'] = $pane;
+    $display->panels['form'][0] = 'new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['edit_strategic_documentation'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'eu_osha_documents';
+  $page->task = 'page';
+  $page->admin_title = 'EU OSHA documents';
+  $page->admin_description = '';
+  $page->path = 'private-zone/collaboration-area/eu-osha-documents';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+            2 => 12,
+            3 => 14,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_eu_osha_documents__panel_context_641b651f-b4ab-40ed-a9ec-562a8147a9d7';
+  $handler->task = 'page';
+  $handler->subtask = 'eu_osha_documents';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page eu-osha-doc-page-selector',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Collaboration area
+EU-OSHA documents',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/collaboration-area
+<none>',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 1,
+          1 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+        'class' => 'oira-search-form-container',
+        'hide_empty' => 0,
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Content',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'introduction' => NULL,
+      'menu' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'EU OSHA Documents';
+  $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_eu_osha';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $display->content['new-19fec5ae-2e6b-480c-94de-1b0277c14342'] = $pane;
+    $display->panels['center'][0] = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['eu_osha_documents'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'strategic_documentation';
+  $page->task = 'page';
+  $page->admin_title = 'Partners documents';
+  $page->admin_description = '';
+  $page->path = 'private-zone/collaboration-area/partners-documents';
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+            2 => 12,
+            3 => 14,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
+  );
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_strategic_documentation__panel';
+  $handler->task = 'page';
+  $handler->subtask = 'strategic_documentation';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page partner-doc-page-selector',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'panel',
+    'access' => array(
+      'plugins' => array(),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Private Zone
+Collaboration area
+Partners documents',
+    'panels_breadcrumbs_paths' => '/node/%node:nid
+/node/%node:nid/collaboration-area
+<none>',
+    'panels_breadcrumbs_home' => 1,
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 1,
+          1 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+        'class' => 'oira-search-form-container',
+        'hide_empty' => 0,
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Content',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => 'container',
+        'hide_empty' => 0,
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'menu',
+        ),
+        'parent' => 'main',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+      'menu' => array(
+        'type' => 'region',
+        'title' => 'Menu',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 1,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'introduction' => NULL,
+      'menu' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Partners documents';
+  $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_partners';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+    $display->content['new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed'] = $pane;
+    $display->panels['center'][0] = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['strategic_documentation'] = $page;
 
   return $pages;
 

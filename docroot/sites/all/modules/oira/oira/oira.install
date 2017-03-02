@@ -53,3 +53,36 @@ function oira_update_7004() {
 function oira_update_7005() {
   variable_set('site_404','page-not-found');
 }
+
+/**
+ * Enable new module - Private image.
+ */
+function oira_update_7006() {
+  module_enable(array('oira_private_image'));
+}
+
+/**
+ * Enable new module - NOW-266 - Metatag: Panels.
+ */
+function oira_update_7007() {
+  module_enable(array('metatag_panels'));
+}
+
+/**
+ * Feature revert: NOW-264 - Homepage slider changes
+ */
+function oira_update_7008() {
+  features_revert_module('oira');
+  variable_set('page_title_default','[current-page:page-title] - [site:name] - [site:slogan]');
+}
+
+function oira_update_7009() {
+  features_revert_module('oira');
+  features_revert_module('osha_news');
+  features_revert_module('osha_wiki');
+  ncw_migration_run_single('wiki_categories');
+  ncw_migration_run_single('tax_tags');
+  ncw_migration_run_single('news');
+  ncw_migration_run_single('highlights');
+  ncw_migration_run_single('wiki_pages');
+}

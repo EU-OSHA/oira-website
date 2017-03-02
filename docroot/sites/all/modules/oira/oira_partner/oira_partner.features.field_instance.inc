@@ -254,7 +254,7 @@ function oira_partner_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -332,7 +332,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -416,7 +416,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -506,7 +506,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -597,7 +597,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 18,
     ),
     'workbench_access_field' => 0,
   );
@@ -688,7 +688,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 17,
     ),
     'workbench_access_field' => 0,
   );
@@ -783,7 +783,7 @@ function oira_partner_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'image',
       'settings' => array(
         'allowed_schemes' => array(
           'public' => 'public',
@@ -813,9 +813,11 @@ function oira_partner_field_default_field_instances() {
         'manualcrop_styles_list' => array(),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => FALSE,
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
-      'weight' => 14,
+      'type' => 'image_image',
+      'weight' => 1,
     ),
     'workbench_access_field' => 0,
   );
@@ -906,7 +908,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 20,
     ),
     'workbench_access_field' => 0,
   );
@@ -991,7 +993,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 20,
+      'weight' => 21,
     ),
     'workbench_access_field' => 0,
   );
@@ -1097,7 +1099,7 @@ function oira_partner_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -1164,7 +1166,7 @@ function oira_partner_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -1246,7 +1248,7 @@ function oira_partner_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -1318,7 +1320,7 @@ function oira_partner_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ph_address',
-    'label' => 'Ph Address',
+    'label' => 'Address',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1337,7 +1339,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -1409,7 +1411,7 @@ function oira_partner_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ph_cp',
-    'label' => 'Ph CP',
+    'label' => 'Postal code',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1428,7 +1430,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -1503,7 +1505,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -1593,7 +1595,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 18,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -1701,7 +1703,7 @@ function oira_partner_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -1805,7 +1807,7 @@ function oira_partner_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 0,
     ),
     'workbench_access_field' => 0,
   );
@@ -1934,6 +1936,7 @@ function oira_partner_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Address');
   t('City');
   t('Code');
   t('Collaborator');
@@ -1951,8 +1954,7 @@ function oira_partner_field_default_field_instances() {
   t('Organisation');
   t('Organisation GUID');
   t('Organisation Type');
-  t('Ph Address');
-  t('Ph CP');
+  t('Postal code');
   t('Social profile');
   t('Type');
   t('Website');

@@ -30,11 +30,18 @@ function oira_partner_update_7004() {
 }
 
 /**
- * Feature revert: NOW-277.
+ * NOW-237 - Enable new module - Menu Token - used for private zone menu.
+ *         - Feature revert partner
  */
 function oira_partner_update_7005() {
   features_revert_module('oira_partner');
+
+  $modules = array(
+    'menu_token',
+  );
+  module_enable($modules);
 }
+
 
 /**
  * Feature revert: NOW-277, updates for countries
@@ -44,8 +51,80 @@ function oira_partner_update_7006() {
 }
 
 /**
+ * Feature revert: NOW-237 My content updates
  * Feature revert: 	alt bugfix for social partner view
  */
 function oira_partner_update_7007() {
   features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-237
+ */
+function oira_partner_update_7008() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-237 - Private zone Edit form updates
+ */
+function oira_partner_update_7009() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-318 - Search by title update
+ */
+function oira_partner_update_7010() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-385 - Add label for title - My content
+ */
+function oira_partner_update_7011() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-388 - My content view fixes.
+ */
+function oira_partner_update_7012() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-266.
+ */
+function oira_partner_update_7013() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: MDR-896.
+ */
+function oira_partner_update_7014() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-266, NOW-411, NOW-412.
+ */
+function oira_partner_update_7015() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-412.
+ */
+function oira_partner_update_7016() {
+  features_revert_module('oira_partner');
+}
+
+/**
+ * Feature revert: NOW-412.
+ */
+function oira_partner_update_7017() {
+  features_revert_module('oira_partner');
+  module_enable(['spamspan']);
 }

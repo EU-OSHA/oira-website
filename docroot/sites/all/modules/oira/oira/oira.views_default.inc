@@ -61,7 +61,7 @@ function oira_views_default_views() {
     'more_link' => '1',
     'more_text' => 'See more',
     'trim_options' => array(
-      'text' => 'text',
+      'text' => 0,
       'use_field_summary' => 0,
     ),
     'trim_preserve_tags' => '',
@@ -87,7 +87,7 @@ function oira_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'wiki_page' => 'wiki_page',
   );
-  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
+  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
   $handler->display->display_options['filters']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';

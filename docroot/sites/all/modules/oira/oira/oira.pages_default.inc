@@ -47,16 +47,45 @@ function oira_default_page_manager_pages() {
         'identifier' => 'Content',
         'keyword' => 'node',
         'name' => 'entity:node',
-        'entity_id' => '57',
+        'entity_id' => '450',
+        'id' => 1,
+      ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Menu Link Item',
+        'keyword' => 'menu_link_item',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1134',
         'id' => 1,
       ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => '%node:title-field',
-    'panels_breadcrumbs_paths' => '<none>',
+    'panels_breadcrumbs_titles' => '%menu_link_item:title
+%node:title_field',
+    'panels_breadcrumbs_paths' => '%menu_link_item:path
+<none>
+',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
+        'description' => array(
+          'value' => '[node:summary]',
+        ),
+      ),
+    ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -263,31 +292,6 @@ function oira_default_page_manager_pages() {
     $pane->uuid = 'f40dd034-992b-48a0-96bb-9259fe5b869f';
     $display->content['new-f40dd034-992b-48a0-96bb-9259fe5b869f'] = $pane;
     $display->panels['image'][1] = 'new-f40dd034-992b-48a0-96bb-9259fe5b869f';
-    $pane = new stdClass();
-    $pane->pid = 'new-2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4';
-    $pane->panel = 'image';
-    $pane->type = 'custom_title_tag';
-    $pane->subtype = 'custom_title_tag';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'buttons' => NULL,
-      'custom_page_title_pattern' => '%node:title-field',
-      'form_build_id' => 'form-pgsPVFG5mhMxdlcWqL_DZSclyNQjTO3AFODEgPQxtLA',
-      'form_token' => '2xYl9p4C3kOEiWl7_vgX0RWpvzbEv2N4xXRWPR_FXn0',
-      'form_id' => 'panels_custom_title_tag_edit_form',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4';
-    $display->content['new-2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4'] = $pane;
-    $display->panels['image'][2] = 'new-2ed4e4d8-2e7e-41a8-ab6b-3c7eaa4746a4';
     $pane = new stdClass();
     $pane->pid = 'new-c2927d13-7604-4d82-836e-95d33a90155e';
     $pane->panel = 'latest_news';

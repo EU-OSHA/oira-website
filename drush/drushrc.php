@@ -554,6 +554,7 @@ $options['init-modules'] = array(
   'oira_ws',
   'oira_strategic_documentation',
   'image_url_formatter',
+  'menu_token',
 );
 
 
@@ -616,6 +617,13 @@ $command_specific['devify']['sanitize-password'] = !empty($cfg->sanitize_passwor
 
 $command_specific['devify_solr'] = array(
   'solr_server' => (array) $cfg->solr_server,
+);
+
+if (empty($cfg->private_solr_server)) {
+  $cfg->private_solr_server = [];
+}
+$command_specific['devify_private_solr'] = array(
+  'solr_server' => (array) $cfg->private_solr_server,
 );
 
 $command_specific['devify_ldap'] = array(

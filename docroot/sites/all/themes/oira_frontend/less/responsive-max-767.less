@@ -1085,7 +1085,9 @@ h1.page-header {
 	}
 }
 //partners and countries resources
-#quicktabs-container-view__country_partner_content__block, #quicktabs-container-view__country_partner_content__block_1{
+#quicktabs-container-view__country_partner_content__block,
+#quicktabs-container-view__country_partner_content__block_1,
+#quicktabs-container-view__country_partner_content__block_2{
 	.quicktabs-tabpage {
 		.quicktabs-views-group {
 			.node-teaser{
@@ -1762,6 +1764,305 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		}
 	}
 }
+
+/*Private zone
+************************/
+//menu
+.menu-name-menu-private-zone{
+    position: relative;
+    padding-left: 43px;
+	ul.menu{
+		width: 600px;
+		position: initial !important;
+		.slick-track{
+			// li.active-trail{
+			// 	background-color: rgba(255, 255, 255, 0.3);
+			// }
+			> li{
+				> div{
+					width: 93% !important;
+					height: 100px;
+					border-radius: 50%;
+					padding: 0px;
+		    		padding-top: 5px;
+		    		margin-bottom: 20px;
+		    		&:hover{
+		    			background-color: inherit;
+		    			img{
+		    				-webkit-filter: inherit;
+		    				filter: inherit;
+		    				cursor: pointer;
+		    			}
+		    			.introduction-title{
+			    			a{
+			    				color: white;
+			    				cursor: pointer;
+			    			}
+		    			}
+		    		}
+		    		.introduction-image{
+						img{
+							max-width: 40%;
+							margin-bottom: 10px;
+							margin: 0 auto;
+							text-align: center;
+						}
+					}
+					.introduction-title{
+						a{
+							color: white;
+							font-style: italic;
+							text-decoration: none;
+							font-size: 1em;
+						}
+					}
+				}
+				ul.submenu-items{
+					list-style: none;
+					a{
+						background-color: white;
+					    vertical-align: middle;
+					    display: table-cell;
+					    height: 40px;
+					    border-radius: 5px;
+					    font-style: italic;
+					    padding-top: 2px;
+					    padding-bottom: 2px;
+					    font-size: 0.9em;
+					    line-height: 16px;
+					    text-decoration: none;
+					    opacity: 0.8;
+					    &:hover{
+					    	opacity: 1;
+					    	color: @color-text-purple-darker;
+					    }
+					}
+				}
+			}
+    	}
+	}
+}
+//end menu
+
+.node-form{
+	select,
+	textarea,
+	label,
+	#edit-field-website-und-0-url,
+	#edit-field-website-und-0-url{
+		width: 100% !important;
+		max-width: 100%;
+	}
+	textarea{
+		max-height: 90px;
+	}
+	.col-md-12,
+	.col-md-12,
+	.col-sm-12,
+	.col-sm-6{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.form-group {
+	    margin-bottom: 10px;
+	}
+	.form-type-date-select .form-type-select[class*=hour] {
+	    margin-left: 0em;
+	}
+	#edit_field_co_author_und_chosen, 
+	#edit_field_sector_und_chosen,
+	#edit_field_co_author_und__2_chosen, 
+	#edit_field_sector_und__2_chosen {
+    	width: 100% !important;
+    	min-width: 100px;
+	}
+
+
+	//buttons
+	button#edit-save-preview,
+	button#edit-submit,
+	button#edit-save-preview,
+	button#edit-submit{
+		margin-top: 15px;
+		width: 100%;
+		overflow: hidden;
+	}
+	button#edit-send-for-approval,
+	button#edit-send-for-approval{
+		font-size: 1em;
+		margin-top: 15px;
+		width: 100%;
+    	word-wrap: break-word;
+    	overflow: hidden;
+	}
+
+	//file
+	#edit-field-image,
+	#edit-field-private-image,
+	#edit-field-image,
+	#edit-field-private-image{
+		.image-widget-data{
+			input[type="file"]{
+				width: 67% !important;
+			}
+		}
+	}
+}
+
+.partner-edit-form {
+	h2{
+		padding-top: 0px;
+	}
+	.row{
+		margin-left: 0px !important;
+		margin-right: 0px !important; 
+	}
+
+}
+.private-zone-back-wrapper{
+	top: 0px !important;
+}
+
+.page-private-zone-my-content{
+	.view-id-partner_content{
+		table{
+			font-size: 0.7em;
+			td{
+				padding-left: 2px !important;
+				padding-right: 2px !important;
+			}
+		}
+	}
+}
+
+//collaboration page
+.page-private-zone-collaboration-area{
+	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last{
+		background-color: inherit;
+	}
+	.page-promotional-materials-search{
+		.menu-name-menu-collaboration{
+			padding-bottom: 25px;
+			ul{
+				li{
+					display: block;
+					width: 100%;
+					background-color: @color-text-purple-darker;
+					margin-bottom: 10px;
+					.introduction-image{
+						display: none;
+						a{
+						    img{
+						    	display: none;
+						    }
+						}
+					}
+					.introduction-title{
+						max-width: inherit;
+						padding: 15px 0px;
+						margin-bottom: 10px;
+						a{
+							font-size: @font-size1;
+							color: white;
+							font-style: italic;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//list
+.page-private-zone-my-content{
+	.view-filters{
+		form{
+			#edit-type-wrapper{
+				width: 100%;
+			}
+			#edit-title-field-value-wrapper{
+				width: 100%;
+			}
+			#edit-state-wrapper{
+				width: 100%;
+			}
+			.views-exposed-widget{
+				padding: 0px;
+			}
+			#edit-field-publication-date-value-wrapper{
+				> label{
+					color: @color-primary;
+					margin-bottom: 0px;
+					margin-top: 15px;
+					&:after{
+						content: ":";
+					}
+				}
+				.views-widget{
+					#edit-field-publication-date-value-min-wrapper,
+					#edit-field-publication-date-value-max-wrapper{
+						display: inline-block;
+						margin-bottom: 15px;
+						.form-item-field-publication-date-value-min,
+						.form-item-field-publication-date-value-max{
+							>label{
+
+							}
+							> div{
+								float: inherit;
+							}
+						}
+					}
+					
+				}
+			}
+			.views-submit-button{
+				width: 100%;
+				button{
+					margin-top: 0px;
+				}
+			}
+		}
+	}
+}
+
+//create-promotional
+.page-node-create-promotional-resource{
+	#edit-title-field,
+	#edit-field-oira,
+	#edit-field-publication-date{
+		float: none;
+	}
+	#edit-title-field{
+		max-width: 100%;
+		margin-right: 0px;
+	}
+	#edit-field-publication-date{
+		width: 100%;
+	}
+	#edit-field-oira{
+		//float: left !important;
+		.checkbox input[type="checkbox"]{
+			margin-left: -22px;
+		}
+		label {
+		    //padding-left: 17px;
+		    max-width: 100%;
+		}
+		label[for*="edit-field-oira-und"]{
+			display: none !important;
+		}
+	}
+	.form-type-date-select .form-type-select[class*=hour]{
+		margin-left: 0px;
+	}
+	#edit-field-promotional-material-type{
+		clear: both;
+	}
+
+}
+
+/*End private zone*/
 
 /*general search styles
 ***************************************************/
