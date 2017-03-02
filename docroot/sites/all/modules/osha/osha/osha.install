@@ -271,14 +271,14 @@ function osha_update_7014() {
  * Revert osha module - Features: added Filter: Use the Filtered HTML text format Filter: Use the Full HTML text format
  */
 function osha_update_7015() {
-  features_revert_module('osha');
+  //features_revert_module('osha');
 }
 
 /**
  * Feature revert: NOW-266, NOW-411, NOW-412.
  */
 function osha_update_7016() {
-  features_revert_module('osha');
+  //features_revert_module('osha');
 }
 
 /**

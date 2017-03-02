@@ -72,7 +72,7 @@ function oira_update_7007() {
  * Feature revert: NOW-264 - Homepage slider changes
  */
 function oira_update_7008() {
-  features_revert_module('oira');
+  //features_revert_module('oira');
   variable_set('page_title_default','[current-page:page-title] - [site:name] - [site:slogan]');
 }
 
