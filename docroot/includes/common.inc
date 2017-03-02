@@ -450,21 +450,16 @@ function drupal_get_query_parameters(array $query = NULL, array $exclude = array
  *
  * @param $query
  *   The query string to split.
- * @param $decode
- *   Defaults to TRUE. Boolean flag indicating that the return value should be
- *   URL-decoded.
  *
  * @return
  *   An array of URL decoded couples $param_name => $value.
  */
-function drupal_get_query_array($query, $decode = TRUE) {
+function drupal_get_query_array($query) {
   $result = array();
   if (!empty($query)) {
     foreach (explode('&', $query) as $param) {
       $param = explode('=', $param, 2);
-      $key = ($decode) ? rawurldecode($param[0]) : $param[0];
-      $value = isset($param[1]) ? ($decode) ? rawurldecode($param[1]) : $param[1] : ''; 
-      $result[$key] = $value;
+      $result[$param[0]] = isset($param[1]) ? rawurldecode($param[1]) : '';
     }
   }
   return $result;
@@ -478,9 +473,6 @@ function drupal_get_query_array($query, $decode = TRUE) {
  *
  * @param $query
  *   The query parameter array to be processed, e.g. $_GET.
- * @param $encode
- *   Defaults to TRUE. Boolean flag indicating that the return value should be
- *   URL-encoded.
  * @param $parent
  *   Internal use only. Used to build the $query array key for nested items.
  *
@@ -491,16 +483,15 @@ function drupal_get_query_array($query, $decode = TRUE) {
  * @see drupal_get_query_parameters()
  * @ingroup php_wrappers
  */
-function drupal_http_build_query(array $query, $encode = TRUE, $parent = '') {
+function drupal_http_build_query(array $query, $parent = '') {
   $params = array();
 
   foreach ($query as $key => $value) {
-    $raw_key = ($encode) ? rawurlencode($key) : $key;
-    $key = ($parent ? $parent . '[' . $raw_key . ']' : $raw_key);
+    $key = ($parent ? $parent . '[' . rawurlencode($key) . ']' : rawurlencode($key));
 
     // Recurse into children.
     if (is_array($value)) {
-      $params[] = drupal_http_build_query($value, $encode, $key);
+      $params[] = drupal_http_build_query($value, $key);
     }
     // If a query parameter value is NULL, only append its key.
     elseif (!isset($value)) {
@@ -508,8 +499,7 @@ function drupal_http_build_query(array $query, $encode = TRUE, $parent = '') {
     }
     else {
       // For better readability of paths in query strings, we decode slashes.
-      $raw_value = ($encode) ? rawurlencode($value) : $value;
-      $params[] = $key . '=' . str_replace('%2F', '/', $raw_value);
+      $params[] = $key . '=' . str_replace('%2F', '/', rawurlencode($value));
     }
   }
 
@@ -770,7 +760,8 @@ function drupal_access_denied() {
  *   - headers: An array containing request headers to send as name/value pairs.
  *   - method: A string containing the request method. Defaults to 'GET'.
  *   - data: A string containing the request body, formatted as
- *     'param=value&param=value&...'. Defaults to NULL.
+ *     'param=value&param=value&...'; to generate this, use http_build_query().
+ *     Defaults to NULL.
  *   - max_redirects: An integer representing how many times a redirect
  *     may be followed. Defaults to 3.
  *   - timeout: A float representing the maximum number of seconds the function
@@ -795,6 +786,8 @@ function drupal_access_denied() {
  *     HTTP header names are case-insensitive (RFC 2616, section 4.2), so for
  *     easy access the array keys are returned in lower case.
  *   - data: A string containing the response body that was received.
+ *
+ * @see http_build_query()
  */
 function drupal_http_request($url, array $options = array()) {
   // Allow an alternate HTTP client library to replace Drupal's default
@@ -1777,9 +1770,15 @@ function format_rss_item($title, $link, $description, $args = array()) {
  *     - 'key': element name
  *     - 'value': element contents
  *     - 'attributes': associative array of element attributes
+ *     - 'encoded': TRUE if 'value' is already encoded
  *
  * In both cases, 'value' can be a simple string, or it can be another array
  * with the same format as $array itself for nesting.
+ *
+ * If 'encoded' is TRUE it is up to the caller to ensure that 'value' is either
+ * entity-encoded or CDATA-escaped. Using this option is not recommended when
+ * working with untrusted user input, since failing to escape the data
+ * correctly has security implications.
  */
 function format_xml_elements($array) {
   $output = '';
@@ -1792,7 +1791,7 @@ function format_xml_elements($array) {
         }
 
         if (isset($value['value']) && $value['value'] != '') {
-          $output .= '>' . (is_array($value['value']) ? format_xml_elements($value['value']) : check_plain($value['value'])) . '</' . $value['key'] . ">\n";
+          $output .= '>' . (is_array($value['value']) ? format_xml_elements($value['value']) : (!empty($value['encoded']) ? $value['value'] : check_plain($value['value']))) . '</' . $value['key'] . ">\n";
         }
         else {
           $output .= " />\n";
@@ -2191,8 +2190,6 @@ function format_username($account) {
  *   elements:
  *   - 'query': An array of query key/value-pairs (without any URL-encoding) to
  *     append to the URL.
- *   - 'encode': Defaults to TRUE. Boolean flag indicating that the return value
- *     of query parameters should be URL-encoded.
  *   - 'fragment': A fragment identifier (named anchor) to append to the URL.
  *     Do not include the leading '#' character.
  *   - 'absolute': Defaults to FALSE. Whether to force the output to be an
@@ -2236,8 +2233,7 @@ function url($path = NULL, array $options = array()) {
     'query' => array(),
     'absolute' => FALSE,
     'alias' => FALSE,
-    'prefix' => '',
-    'encode' => TRUE,
+    'prefix' => ''
   );
 
   if (!isset($options['external'])) {
@@ -2265,7 +2261,7 @@ function url($path = NULL, array $options = array()) {
     }
     // Append the query.
     if ($options['query']) {
-      $path .= (strpos($path, '?') !== FALSE ? '&' : '?') . drupal_http_build_query($options['query'], $options['encode']);
+      $path .= (strpos($path, '?') !== FALSE ? '&' : '?') . drupal_http_build_query($options['query']);
     }
     if (isset($options['https']) && variable_get('https', FALSE)) {
       if ($options['https'] === TRUE) {
@@ -2322,7 +2318,7 @@ function url($path = NULL, array $options = array()) {
   if (!empty($GLOBALS['conf']['clean_url'])) {
     $path = drupal_encode_path($prefix . $path);
     if ($options['query']) {
-      return $base . $path . '?' . drupal_http_build_query($options['query'], $options['encode']) . $options['fragment'];
+      return $base . $path . '?' . drupal_http_build_query($options['query']) . $options['fragment'];
     }
     else {
       return $base . $path . $options['fragment'];
@@ -2657,6 +2653,15 @@ function drupal_deliver_html_page($page_callback_result) {
   global $language;
   drupal_add_http_header('Content-Language', $language->language);
 
+  // By default, do not allow the site to be rendered in an iframe on another
+  // domain, but provide a variable to override this. If the code running for
+  // this page request already set the X-Frame-Options header earlier, don't
+  // overwrite it here.
+  $frame_options = variable_get('x_frame_options', 'SAMEORIGIN');
+  if ($frame_options && is_null(drupal_get_http_header('X-Frame-Options'))) {
+    drupal_add_http_header('X-Frame-Options', $frame_options);
+  }
+
   // Menu status constants are integers; page content is a string or array.
   if (is_int($page_callback_result)) {
     // @todo: Break these up into separate functions?
@@ -2771,6 +2776,7 @@ function drupal_page_footer() {
   _registry_check_code(REGISTRY_WRITE_LOOKUP_CACHE);
   drupal_cache_system_paths();
   module_implements_write_cache();
+  drupal_file_scan_write_cache();
   system_run_automated_cron();
 }
 
@@ -3038,6 +3044,13 @@ function drupal_add_html_head_link($attributes, $header = FALSE) {
  */
 function drupal_add_css($data = NULL, $options = NULL) {
   $css = &drupal_static(__FUNCTION__, array());
+  $count = &drupal_static(__FUNCTION__ . '_count', 0);
+
+  // If the $css variable has been reset with drupal_static_reset(), there is
+  // no longer any CSS being tracked, so set the counter back to 0 also.
+  if (count($css) === 0) {
+    $count = 0;
+  }
 
   // Construct the options, taking the defaults into consideration.
   if (isset($options)) {
@@ -3073,7 +3086,8 @@ function drupal_add_css($data = NULL, $options = NULL) {
     }
 
     // Always add a tiny value to the weight, to conserve the insertion order.
-    $options['weight'] += count($css) / 1000;
+    $options['weight'] += $count / 1000;
+    $count++;
 
     // Add the data to the CSS array depending on the type.
     switch ($options['type']) {
@@ -3886,6 +3900,21 @@ function drupal_delete_file_if_stale($uri) {
  *   The cleaned identifier.
  */
 function drupal_clean_css_identifier($identifier, $filter = array(' ' => '-', '_' => '-', '/' => '-', '[' => '-', ']' => '')) {
+  // Use the advanced drupal_static() pattern, since this is called very often.
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast['allow_css_double_underscores'] = &drupal_static(__FUNCTION__ . ':allow_css_double_underscores');
+  }
+  $allow_css_double_underscores = &$drupal_static_fast['allow_css_double_underscores'];
+  if (!isset($allow_css_double_underscores)) {
+    $allow_css_double_underscores = variable_get('allow_css_double_underscores', FALSE);
+  }
+
+  // Preserve BEM-style double-underscores depending on custom setting.
+  if ($allow_css_double_underscores) {
+    $filter['__'] = '__';
+  }
+
   // By default, we filter using Drupal's coding standards.
   $identifier = strtr($identifier, $filter);
 
@@ -3957,7 +3986,11 @@ function drupal_html_id($id) {
   // be merged with content already on the base page. The HTML IDs must be
   // unique for the fully merged content. Therefore, initialize $seen_ids to
   // take into account IDs that are already in use on the base page.
-  $seen_ids_init = &drupal_static(__FUNCTION__ . ':init');
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast['seen_ids_init'])) {
+    $drupal_static_fast['seen_ids_init'] = &drupal_static(__FUNCTION__ . ':init');
+  }
+  $seen_ids_init = &$drupal_static_fast['seen_ids_init'];
   if (!isset($seen_ids_init)) {
     // Ideally, Drupal would provide an API to persist state information about
     // prior page requests in the database, and we'd be able to add this
@@ -4002,7 +4035,10 @@ function drupal_html_id($id) {
       }
     }
   }
-  $seen_ids = &drupal_static(__FUNCTION__, $seen_ids_init);
+  if (!isset($drupal_static_fast['seen_ids'])) {
+    $drupal_static_fast['seen_ids'] = &drupal_static(__FUNCTION__, $seen_ids_init);
+  }
+  $seen_ids = &$drupal_static_fast['seen_ids'];
 
   $id = strtr(drupal_strtolower($id), array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
 
@@ -5186,14 +5222,7 @@ function drupal_get_private_key() {
  * @see drupal_get_hash_salt()
  */
 function drupal_get_token($value = '') {
-  // For mixed HTTP(S) sessions, use a constant identifier so that tokens can be shared between protocols.
-  if (variable_get('https', FALSE) && $GLOBALS['is_https'] && isset($_COOKIE[substr(session_name(), 1)])) {
-    $session_id = $_COOKIE[substr(session_name(), 1)];
-  }
-  else {
-    $session_id = session_id();
-  }
-  return drupal_hmac_base64($value, $session_id . drupal_get_private_key() . drupal_get_hash_salt());
+  return drupal_hmac_base64($value, session_id() . drupal_get_private_key() . drupal_get_hash_salt());
 }
 
 /**
