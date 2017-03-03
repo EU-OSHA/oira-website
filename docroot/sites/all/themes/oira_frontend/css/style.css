@@ -8449,75 +8449,137 @@ a.more-link:before {
 /*END OIRA TOOLS*/
 /*FAQ'S
 **************************************************************/
-.page-faq .panels-flexible-row-new-main-row .field-name-body {
+.page-faq .panels-flexible-row-new-main-row .field-name-body,
+.page-oira-faqs .panels-flexible-row-new-main-row .field-name-body {
   font-size: 1.4em;
   font-family: "Oswald";
 }
-.page-faq .panels-flexible-row-new-1 {
+.page-faq .panels-flexible-row-new-1,
+.page-oira-faqs .panels-flexible-row-new-1 {
   background-color: #dfd8e4;
   padding-top: 17px;
   margin-bottom: 20px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-even {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-even,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-row-even,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-even,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-even {
   border-bottom: 2px solid #967ea7;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-odd {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-odd,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-row-odd,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-odd,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-odd {
   border-bottom: 2px solid #967ea7;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-last {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-last,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-row-last,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-last,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-last {
   border-bottom: 0px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field {
   background: rgba(0, 0, 0, 0);
   padding-left: 0px;
   border: none;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .ui-accordion-header-icon {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .ui-accordion-header-icon,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .ui-accordion-header-icon,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .ui-accordion-header-icon,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .ui-accordion-header-icon {
   background-image: none;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .field-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .field-content {
   font-size: 1.2em;
   color: #786586;
   font-family: "Oswald";
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer {
   margin-bottom: 25px;
   color: #58585a;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul {
   padding-left: 20px;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span,
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li {
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li {
   font-family: "Roboto";
-  font-size: 0.9em !important;
+  font-size: 1.2em !important;
   line-height: initial !important;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a,
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a {
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a {
   text-decoration: underline;
   color: #786586;
   font-style: italic;
   font-weight: bold;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a:hover,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a:hover,
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a:hover {
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a:hover {
   color: #23527c;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-accordion-header-active a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-accordion-header-active a .field-content:after {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   padding-left: 9px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-corner-all a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-corner-all a .field-content:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   padding-left: 9px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .ui-accordion-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .ui-accordion-content {
   border: 0px;
   background: rgba(0, 0, 0, 0);
   padding: 0px;
