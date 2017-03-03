@@ -83,7 +83,6 @@ function osha_user_default_permissions() {
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(
-      'Additional Partner' => 'Additional Partner',
       'Approver' => 'Approver',
       'Content Validator' => 'Content Validator',
       'Editor' => 'Editor',

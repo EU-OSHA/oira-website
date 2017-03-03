@@ -69,3 +69,10 @@ function oira_promotional_material_update_7009() {
 function oira_promotional_material_update_7010() {
   features_revert_module('oira_promotional_material');
 }
+
+/**
+ * Feature revert: MDR-909
+ */
+function oira_promotional_material_update_7011() {
+  features_revert_module('oira_promotional_material');
+}

@@ -643,7 +643,6 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['partner_id']['label'] = '';
   $handler->display->display_options['fields']['partner_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['partner_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['partner_id']['type'] = 'ul';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
