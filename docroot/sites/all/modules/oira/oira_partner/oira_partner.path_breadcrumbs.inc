@@ -18,13 +18,11 @@ function oira_partner_path_breadcrumbs_settings_info() {
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Private Zone',
-      1 => 'My news',
-      2 => 'Create news',
+      1 => 'Create news',
     ),
     'paths' => array(
       0 => 'private-zone',
-      1 => 'private-zone/my-content?type=news',
-      2 => '<none>',
+      1 => '<none>',
     ),
     'home' => 1,
     'translatable' => 0,
@@ -45,13 +43,11 @@ function oira_partner_path_breadcrumbs_settings_info() {
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Private Zone',
-      1 => 'My news',
-      2 => 'Update news',
+      1 => 'Update news',
     ),
     'paths' => array(
       0 => 'private-zone',
-      1 => 'private-zone/my-content?type=news',
-      2 => '<none>',
+      1 => '<none>',
     ),
     'home' => 1,
     'translatable' => 0,

@@ -52,7 +52,6 @@ class PartnerMigration extends HwcCrmMigration {
       if (strtolower($term->name) != strtolower($row->title)) {
         $term->name = $row->title;
         taxonomy_term_save($term);
-        $row->regenerate_alias = TRUE;
       }
     }
     else {
@@ -110,21 +109,26 @@ class PartnerMigration extends HwcCrmMigration {
       $entity->field_collaborator = $old_entity->field_collaborator;
     }
 
+    // Handle aliases and redirects.
     $entity->path['pathauto'] = TRUE;
-    if (!empty($row->regenerate_alias) && !empty($entity->nid)) {
+    if (!empty($entity->nid)) {
+      $uri = entity_uri('node', $entity);
+      module_load_include('inc', 'pathauto', 'pathauto');
       if ($existing_alias = _pathauto_existing_alias_data('node/' . $entity->nid, 'en')) {
-        // Remove old alias.
-        path_delete($existing_alias['pid']);
-        // Redirect old alias.
-        $redirect = new stdClass();
-        redirect_object_prepare($redirect);
-        $redirect->source = $existing_alias['alias'];
-        $redirect->redirect = $existing_alias['source'];
-        $redirect->language = LANGUAGE_NONE;
-        // Check if the redirect exists before saving.
-        $hash = redirect_hash($redirect);
-        if (!redirect_load_by_hash($hash)) {
-          redirect_save($redirect);
+        $new_alias = pathauto_create_alias('node', 'return', $uri['path'], array('node' => $entity), $entity->type, 'en');
+        if ($new_alias != $existing_alias['alias']) {
+          $existing_alias['alias'] = $new_alias;
+          path_save($existing_alias);
+        }
+        // Remove if any redirect is added with the current alias
+        // from a previous title change.
+        $redirect = redirect_load_by_source($existing_alias['alias'], LANGUAGE_NONE);
+        if (!empty($redirect)) {
+          redirect_delete($redirect->rid);
+        }
+        $redirect = redirect_load_by_source($existing_alias['alias'], 'en');
+        if (!empty($redirect)) {
+          redirect_delete($redirect->rid);
         }
       }
     }
@@ -204,6 +208,7 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml {
           $term = current($term);
           // Sectorial partner has EU level country.
           if ($term->tid == OIRA_PARTNER_TYPE_SECTORIAL_TID) {
+            $data->field_ph_town .= ', ' . ucwords(strtolower(trim($data->field_country)));
             $data->field_country = 'EU level';
           }
           $data->field_partner_type = $partner_type;

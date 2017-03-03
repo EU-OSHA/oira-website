@@ -89,18 +89,13 @@ function oira_promotional_material_views_default_views() {
   /* Display: Promotional materials frontpage block */
   $handler = $view->new_display('block', 'Promotional materials frontpage block', 'block');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'generic_detail_thumbnail',
-    'image_link' => '',
-    'field_formatter_class' => '',
-  );
+  /* Field: Oira partner: partner_url */
+  $handler->display->display_options['fields']['partner_url']['id'] = 'partner_url';
+  $handler->display->display_options['fields']['partner_url']['table'] = 'oira_partner';
+  $handler->display->display_options['fields']['partner_url']['field'] = 'partner_url';
+  $handler->display->display_options['fields']['partner_url']['label'] = '';
+  $handler->display->display_options['fields']['partner_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['partner_url']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -128,6 +123,22 @@ function oira_promotional_material_views_default_views() {
     'tools_show_full' => 0,
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Field: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_image']['alter']['text'] = '<a href="[partner_url]"><img src="[field_image]" title="[title_field]" alt="[title_field]"/></a>';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => 'generic_detail_thumbnail',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Field: Language */
   $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
@@ -197,6 +208,7 @@ function oira_promotional_material_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Promotional materials frontpage block'),
+    t('<a href="[partner_url]"><img src="[field_image]" title="[title_field]" alt="[title_field]"/></a>'),
     t('<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>'),
     t('<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>'),
     t('<div class=\'materials-content-wrapper\'>

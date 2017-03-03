@@ -313,7 +313,7 @@ function oira_partner_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'email_plain',
+      'formatter' => 'email_spamspan',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
@@ -1264,7 +1264,27 @@ function oira_partner_default_panels_mini() {
     $pane->type = 'focal_point_text';
     $pane->subtype = 'focal_point_text';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:partner:field_partner_type',
+          'settings' => array(
+            'field_partner_type' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '284',
+                ),
+              ),
+            ),
+            'field_partner_type_tid' => array(
+              0 => '284',
+            ),
+          ),
+          'context' => 'requiredcontext_entity:node_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(

@@ -106,8 +106,10 @@ function _hwc_practical_tool_get_partners($node) {
   if (!empty($cache)) {
     return $cache->data;
   }
+
   $partners = array();
   if (!empty($node->workbench_access)) {
+    reset($node->workbench_access);
     $section = current($node->workbench_access);
     $partner = oira_partner_by_section_id_load($section);
     if (!empty($partner)) {
@@ -126,6 +128,7 @@ function _hwc_practical_tool_get_partners($node) {
   }
 
   cache_set(_hwc_practical_tool_related_partners_cid($node), $partners, 'cache', variable_get('page_cache_maximum_age', strtotime('+1 day')));
+
   return $partners;
 }
 

@@ -18,13 +18,11 @@ function oira_strategic_documentation_path_breadcrumbs_settings_info() {
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Private Zone',
-      1 => 'My Strategic Documentation',
-      2 => 'Upload Strategic Documentation',
+      1 => 'Upload Strategic Documentation',
     ),
     'paths' => array(
       0 => 'private-zone',
-      1 => 'private-zone/my-content?type=strategic_documentation',
-      2 => '<none>',
+      1 => '<none>',
     ),
     'home' => 1,
     'translatable' => 0,
@@ -34,7 +32,7 @@ function oira_strategic_documentation_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -87;
   $export['add_strategic'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -80,7 +78,7 @@ function oira_strategic_documentation_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -98;
   $export['edit_strategic'] = $path_breadcrumb;
 
   return $export;

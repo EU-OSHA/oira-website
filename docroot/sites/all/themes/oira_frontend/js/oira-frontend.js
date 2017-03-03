@@ -6,7 +6,7 @@ jQuery(document).ready(function () {
 //     };
 //
 
-	jQuery('.trim-title').dotdotdot({
+	jQuery('.trim-title').not('[data-partner-nid="91"] .trim-title').dotdotdot({
 		ellipsis: '...',
 		height: 45,
 		watch: true,

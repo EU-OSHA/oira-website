@@ -27,7 +27,7 @@ function osha_path_breadcrumbs_settings_info() {
     'arguments' => array(),
     'access' => array(),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -93;
   $export['contact_page'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -78,7 +78,7 @@ function osha_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -92;
   $export['node_breadcrumbs'] = $path_breadcrumb;
 
   return $export;
