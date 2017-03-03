@@ -639,7 +639,10 @@ a.more-link{
 						color: @color-white;
 						font-size: 1.2em;
 					}
-					h2{
+					h1{
+						font-size:34px;
+					}
+					h1,h2{
 						margin-top: 0px;
 						margin-bottom: 0px;
 						//width: 1140px;
@@ -1348,7 +1351,7 @@ a.more-link{
 *********************************************************************/
 .page-what-is-new{
 	//imagen superior articulos
-	.panels-flexible-region-new-image{
+	.panels-flexible-row-first{
 		position: relative;
 		.field-type-image{
 			position: relative;
@@ -1378,40 +1381,39 @@ a.more-link{
 			}
 		}
 	}
-	.panels-flexible-row-new-2{
+	.panels-flexible-row.container-fluid{
 		padding-top: 30px;
 		background-color: @color-primary;
 		.views-field-field-summary{
 			padding: 15px 0px 0px 0px;
 		}
 	}
-	.panels-flexible-row-new-3{
+	.panels-flexible-row:nth-child(3){
 		background-color: @color-primary-dark;
 		margin-top: 10px;
-		.panels-flexible-region-new-latest_news{
-			h3.pane-title{
-				color: @color-white;
-				border-bottom: 2px solid @color-white;
-				margin-bottom: 0px;
-				&:after{
-					.section-icons("../images/icons/004.png");
-				}
-			}
-			.views-item-columns-container{
-				padding: 15px;
-				margin-top: 30px;
-				min-height: 230px;
-			}
-			.more-link{
-				a{
-					color: @color-white;
-				}
+		h3.pane-title{
+			color: @color-white;
+			border-bottom: 2px solid @color-white;
+			margin-bottom: 0px;
+			&:after{
+				.section-icons("../images/icons/004.png");
 			}
 		}
+		.views-item-columns-container{
+			padding: 15px;
+			margin-top: 30px;
+			min-height: 230px;
+		}
+		.more-link{
+			a{
+				color: @color-white;
+			}
+		}
+
 	}
-	.panels-flexible-row-new-6{
+	.panels-flexible-row-last{
 		background-color: @color-white !important;
-		.panels-flexible-region-new-new_tools{
+		.panels-flexible-region{
 			h3{
 				&:after{
 					.section-icons("../images/icons/018.png");
@@ -1502,7 +1504,7 @@ a.more-link{
 			margin-bottom: 30px;
 		}
 	}
-	.panels-flexible-row-new-1{
+	.panels-flexible-row-last{
 		background: url('../images/background-two-colors.png') repeat-y 50%;
 		padding-bottom: 0px;
 		#hwc-practical-tool-menu-tools-form{
@@ -1774,9 +1776,11 @@ a.more-link{
 			}
 		}
 	}
+	.panels-flexible-row-first{
+		background:none !important;
+		padding-bottom:25px;
+	}
 }
-
-
 
 /*END OIRA TOOLS*/
 
@@ -1902,7 +1906,8 @@ a.more-link{
 		.container{
 			position: relative;
 		}
-		.panels-flexible-row-new-1{
+
+		.panels-flexible-row{
 			padding-top: 20px;
 			background-color: @color-primary-dark;
 			.container{
@@ -1999,6 +2004,10 @@ a.more-link{
 					content: "> ";
 				}
 			}
+		}
+		.panels-flexible-row-first{
+			background-color:transparent !important;
+			padding-top:0px;
 		}
 	}
 	.alert-success{
@@ -5299,6 +5308,18 @@ div[id ^= "mini-panel-partner_in_"], {
 					}
 					.count-container{
 						font-size: @font-size0-9;
+					}
+				}
+				.search-page-results-wrapper-grouped{
+					margin-bottom: 20px;
+				}
+				.search-page-results-wrapper-grouped-type-title{
+					background-color: @color-white;
+					padding: 10px 30px;
+					h2{
+						color: @color-text-purple-darker;
+						border-bottom: 2px solid @color-primary-dark;
+						padding-bottom:20px;
 					}
 				}
 				.search-page-results-wrapper{

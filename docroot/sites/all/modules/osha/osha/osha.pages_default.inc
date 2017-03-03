@@ -254,7 +254,7 @@ function osha_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Additional Resources',
+      'override_title_text' => 'Additional resources',
       'override_title_heading' => 'h3',
     );
     $pane->cache = array();

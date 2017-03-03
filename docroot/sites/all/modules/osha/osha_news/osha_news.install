@@ -42,6 +42,16 @@ function osha_news_update_7006() {
   features_revert_module('osha_news');
 }
 
+/**
+ * Feature revert.
+ */
 function osha_news_update_7007() {
+  features_revert_module('osha_news');
+}
+
+/**
+ * Feature revert: NOW-266, NOW-411, NOW-412.
+ */
+function osha_news_update_7008() {
   features_revert_module('osha_news');
 }

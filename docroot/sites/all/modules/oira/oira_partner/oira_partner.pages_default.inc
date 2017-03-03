@@ -502,15 +502,50 @@ function oira_partner_default_page_manager_pages() {
         'entity_id' => '69',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Menu Link Item',
+        'keyword' => 'menu_link_item',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1228',
+        'id' => 1,
+      ),
+      3 => array(
+        'identifier' => 'Menu Link Item 2',
+        'keyword' => 'menu_link_item_2',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1241',
+        'id' => 2,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'OiRA Community
-%node:title-field',
-    'panels_breadcrumbs_paths' => 'oira-community
+    'panels_breadcrumbs_titles' => '%menu_link_item:title
+%menu_link_item_2:title
+%node:title_field',
+    'panels_breadcrumbs_paths' => '%menu_link_item:path
+%menu_link_item_2:path
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
+        'description' => array(
+          'value' => '[node:summary]',
+        ),
+      ),
+    ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -582,7 +617,7 @@ function oira_partner_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = '%node:title_field';
   $display->uuid = 'c1fc1590-4876-41f3-873f-953d5a594e2c';
   $display->content = array();
   $display->panels = array();
@@ -699,15 +734,50 @@ function oira_partner_default_page_manager_pages() {
         'entity_id' => '68',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Menu Link Item',
+        'keyword' => 'menu_link_item',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1228',
+        'id' => 1,
+      ),
+      3 => array(
+        'identifier' => 'Menu Link Item 2',
+        'keyword' => 'menu_link_item_2',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1241',
+        'id' => 2,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'OiRA Community
-%node:title-field',
-    'panels_breadcrumbs_paths' => 'oira-community
+    'panels_breadcrumbs_titles' => '%menu_link_item:title
+%menu_link_item_2:title
+%node:title_field',
+    'panels_breadcrumbs_paths' => '%menu_link_item:path
+%menu_link_item_2:path
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
+        'description' => array(
+          'value' => '[node:summary]',
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -779,7 +849,7 @@ function oira_partner_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = '%node:title_field';
   $display->uuid = '33cd8a4b-77ee-4e08-8f4f-3364ed8a8f6f';
   $display->content = array();
   $display->panels = array();
@@ -896,15 +966,50 @@ function oira_partner_default_page_manager_pages() {
         'entity_id' => '52',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Menu Link Item',
+        'keyword' => 'menu_link_item',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1228',
+        'id' => 1,
+      ),
+      3 => array(
+        'identifier' => 'Menu Link Item 2',
+        'keyword' => 'menu_link_item_2',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1241',
+        'id' => 2,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'OiRA Community
-%node:title-field',
-    'panels_breadcrumbs_paths' => 'oira-community
+    'panels_breadcrumbs_titles' => '%menu_link_item:title
+%menu_link_item_2:title
+%node:title_field',
+    'panels_breadcrumbs_paths' => '%menu_link_item:path
+%menu_link_item_2:path
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
+        'description' => array(
+          'value' => '[node:summary]',
+        ),
+      ),
+    ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -976,7 +1081,7 @@ function oira_partner_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = '%node:title_field';
   $display->uuid = '47b47281-c299-48fd-9a54-2e3c7de4c9a5';
   $display->content = array();
   $display->panels = array();
@@ -1093,15 +1198,41 @@ function oira_partner_default_page_manager_pages() {
         'entity_id' => '67',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Token',
+        'keyword' => 'token',
+        'name' => 'token',
+        'id' => 1,
+      ),
+      2 => array(
+        'identifier' => 'Menu Link Item',
+        'keyword' => 'menu_link_item',
+        'name' => 'oira.oira_menu_link_item_context_plugin',
+        'menu_item_id' => '1228',
+        'id' => 1,
+      ),
     ),
     'relationships' => array(),
     'name' => 'panel',
     'panels_breadcrumbs_state' => 1,
-    'panels_breadcrumbs_titles' => 'Partners and OiRA Community
-%node:title-field',
-    'panels_breadcrumbs_paths' => '<none>
+    'panels_breadcrumbs_titles' => '%menu_link_item:title
+%node:title_field',
+    'panels_breadcrumbs_paths' => '%menu_link_item:path
 <none>',
     'panels_breadcrumbs_home' => 1,
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '',
+        ),
+        'description' => array(
+          'value' => '[node:summary]',
+        ),
+      ),
+    ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title_field - %token:site:name - %token:site:slogan',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -1192,7 +1323,7 @@ function oira_partner_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = '%node:title_field';
   $display->uuid = 'afc0311c-dfe4-4c8e-b885-446a71f2089f';
   $display->content = array();
   $display->panels = array();

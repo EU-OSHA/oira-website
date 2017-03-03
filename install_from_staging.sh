@@ -1,6 +1,9 @@
 #!/bin/bash
 
+#
 # Go to docroot/
+#
+
 cd docroot/
 
 drush sql-drop -y

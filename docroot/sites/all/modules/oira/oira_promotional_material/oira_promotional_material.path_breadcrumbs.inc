@@ -18,13 +18,11 @@ function oira_promotional_material_path_breadcrumbs_settings_info() {
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => 'Private Zone',
-      1 => 'My Promotional Resources',
-      2 => 'Upload Promotional Resources',
+      1 => 'Upload Promotional Resources',
     ),
     'paths' => array(
       0 => 'private-zone',
-      1 => 'private-zone/my-content?type=promotional_material',
-      2 => '<none>',
+      1 => '<none>',
     ),
     'home' => 1,
     'translatable' => 0,
@@ -34,7 +32,7 @@ function oira_promotional_material_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -86;
   $export['add_promotional'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -80,7 +78,7 @@ function oira_promotional_material_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -94;
   $export['edit_promotional'] = $path_breadcrumb;
 
   return $export;

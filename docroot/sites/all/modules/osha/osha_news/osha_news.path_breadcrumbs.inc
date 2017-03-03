@@ -53,7 +53,7 @@ function osha_news_path_breadcrumbs_settings_info() {
       'logic' => 'and',
     ),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -99;
   $export['news_details'] = $path_breadcrumb;
 
   $path_breadcrumb = new stdClass();
@@ -73,7 +73,7 @@ function osha_news_path_breadcrumbs_settings_info() {
     'arguments' => array(),
     'access' => array(),
   );
-  $path_breadcrumb->weight = 0;
+  $path_breadcrumb->weight = -100;
   $export['news_list'] = $path_breadcrumb;
 
   return $export;
