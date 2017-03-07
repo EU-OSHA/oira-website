@@ -130,7 +130,10 @@
 				margin-top: 4px;
 				a{
 					color: @color-menu-icons;
-					margin-left: 5px;
+					margin-left: 0px;
+					font-size: 0.9em;
+					max-width: 59px;
+    				display: block;
 				}
 			}
 		}
@@ -188,7 +191,7 @@
 			display: inline-block;
 			margin-right: 10px;//firefox
 			max-width: 100px;
-			visibility: hidden;
+			//visibility: hidden;
 			.introduction-title{				
 				a{
 					display: block;
@@ -211,7 +214,7 @@
 		#block-lang-dropdown-language{
 			display: inline-block;
 			float: right;
-			visibility: hidden;//only until finish private zone
+			//visibility: hidden;//only until finish private zone
 			#lang-dropdown-select-language{
 				border: 2px solid @color-menu-icons;
     			outline: none;
@@ -269,6 +272,7 @@
     		//display: table; //testing ie
     		margin-top: 15px;
     		text-align: center;
+    		float: none !important;
     		li.last.leaf{
     			a{
     				border-right: none;
@@ -276,7 +280,7 @@
     		}
     		&>li.first.leaf{
 				top:-1px;
-				padding-right: 15px;
+				padding-right: 8px;
     		}
     		li{
     			float: inherit;
@@ -287,8 +291,9 @@
     			color: @color-white;
     			text-align: center;
     			border-right: 2px solid @color-white;
-    			padding-left: 15px;
-    			padding-right: 15px;
+    			padding-left: 8px;
+    			padding-right: 8px;
+    			font-size: 0.9em;
     			&:last-child{
     				border-right: none;
     			}
@@ -317,7 +322,7 @@
     			.dropdown-menu{
     				background-color: @color-menu;
     				border: none;
-    				top: 25px;
+    				top: 22px;
     				padding: 0px;
     				padding-top: 10px;
    					border-radius: 0px;
