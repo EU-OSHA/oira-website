@@ -489,16 +489,18 @@ function oira_promotional_material_field_default_field_instances() {
     'label' => 'Image',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
+      'alt_field_required' => 1,
       'default_image' => 291,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'image_field_caption' => 1,
+      'image_field_caption' => 0,
       'max_filesize' => '5 MB',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1131,6 +1133,7 @@ function oira_promotional_material_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'alt_field_required' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
@@ -1140,6 +1143,7 @@ function oira_promotional_material_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
