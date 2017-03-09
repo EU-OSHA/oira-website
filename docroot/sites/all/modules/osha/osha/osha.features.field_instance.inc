@@ -97,11 +97,17 @@ function osha_field_default_field_instances() {
     'entity_type' => 'file',
     'field_name' => 'field_file_image_alt_text',
     'label' => 'Alt text',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -957,6 +963,7 @@ function osha_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
+      'alt_field_required' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'pages',
@@ -966,6 +973,7 @@ function osha_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2310,6 +2318,7 @@ function osha_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'alt_field_required' => 0,
       'default_image' => 0,
       'entity_translation_sync' => 0,
       'file_directory' => '',
@@ -2319,6 +2328,7 @@ function osha_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
+      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
