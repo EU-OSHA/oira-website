@@ -432,13 +432,14 @@ function oira_ctools_plugin_directory($module, $plugin) {
  */
 function oira_export_node($node) {
   if ($node->status == 0) {
-    drupal_access_denied();
+    header('HTTP/1.0 404 Forbidden');
+    drupal_exit();
   }
   header('Content-type: application/javascript; charset=utf-8');
   $fields = field_info_instances('node', $node->type);
   $w = entity_metadata_wrapper('node', $node);
   $node->path = path_load('node/' . $node->nid);
-  foreach(array_keys($fields) as $field_name) {
+  foreach (array_keys($fields) as $field_name) {
     $info = field_info_field($field_name);
     if ($info['type'] == 'taxonomy_term_reference') {
       $node->$field_name = $w->$field_name->value();
