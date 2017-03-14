@@ -99,3 +99,11 @@ function oira_update_7010() {
   features_revert_module('oira_strategic_documentation');
   features_revert_module('osha_news');
 }
+
+/**
+ * Set datasource view for ncw export.
+ */
+function oira_update_7011() {
+  module_enable(['views_json']);
+  features_revert_module('oira');
+}
