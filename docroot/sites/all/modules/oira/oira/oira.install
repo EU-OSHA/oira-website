@@ -108,6 +108,9 @@ function oira_update_7011() {
   features_revert_module('oira');
 }
 
+/**
+ * Disable eim and optional alt.
+ */
 function oira_update_7012() {
   module_disable(['eim']);
   features_revert_module('osha');
