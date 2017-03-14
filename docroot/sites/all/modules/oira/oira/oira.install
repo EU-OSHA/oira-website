@@ -99,3 +99,13 @@ function oira_update_7010() {
   features_revert_module('oira_strategic_documentation');
   features_revert_module('osha_news');
 }
+
+function oira_update_7011() {
+  module_disable(['eim']);
+  features_revert_module('osha');
+  features_revert_module('osha_news');
+  features_revert_module('hwc_practical_tool');
+  features_revert_module('oira_private_image');
+  features_revert_module('oira_promotional_material');
+  features_revert_module('oira_strategic_documentation');
+}

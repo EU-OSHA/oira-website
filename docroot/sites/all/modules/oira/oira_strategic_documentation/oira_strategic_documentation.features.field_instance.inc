@@ -618,7 +618,6 @@ function oira_strategic_documentation_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'alt_field_required' => 1,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',

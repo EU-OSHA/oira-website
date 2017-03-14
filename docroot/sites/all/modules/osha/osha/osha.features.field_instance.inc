@@ -963,7 +963,6 @@ function osha_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'alt_field_required' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'pages',
@@ -2318,7 +2317,6 @@ function osha_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'alt_field_required' => 0,
       'default_image' => 0,
       'entity_translation_sync' => 0,
       'file_directory' => '',

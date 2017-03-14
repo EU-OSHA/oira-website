@@ -490,7 +490,6 @@ function oira_promotional_material_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'alt_field_required' => 1,
       'default_image' => 291,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
@@ -1133,7 +1132,6 @@ function oira_promotional_material_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'alt_field_required' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
