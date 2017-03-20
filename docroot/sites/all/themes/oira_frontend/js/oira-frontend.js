@@ -92,6 +92,20 @@ jQuery(document).ready(function () {
 		jQuery('.modal.fade').modal('show');   
 	});
 
+	/*fixing sticky menu*/
+	/*hight of page*/
+	var num = 150; //number of pixels before modifying styles
+	if(jQuery("body").height()>=1200){
+		jQuery(window).bind('scroll', function () {
+		    if (jQuery(window).scrollTop() > num) {
+		        jQuery("header").addClass("sticky-menu");
+		    } else {
+		        jQuery('header').removeClass('sticky-menu');
+		    }
+		});
+	}
+	/*end hight of page*/
+
 	/*specific functions for pc, tablet and mobile */
 	funcionesPc();
 
