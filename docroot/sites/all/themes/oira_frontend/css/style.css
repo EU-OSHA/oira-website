@@ -6690,7 +6690,6 @@ button.close {
   display: inline-block;
   margin-right: 10px;
   max-width: 100px;
-  visibility: hidden;
 }
 .top-header .header-blocks #block-menu-block-3 .introduction-title a {
   display: block;
@@ -6711,7 +6710,6 @@ button.close {
 .top-header .header-blocks #block-lang-dropdown-language {
   display: inline-block;
   float: right;
-  visibility: hidden;
 }
 .top-header .header-blocks #block-lang-dropdown-language #lang-dropdown-select-language {
   border: 2px solid #003399;
@@ -6829,6 +6827,45 @@ button.close {
 @media only screen and (min-width: 993px) {
   .input-search-display {
     display: none;
+  }
+}
+/*Sticky menu
+****************************************/
+@media only screen and (min-width: 768px) {
+  .sticky-menu {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    background-color: white;
+    top: 0px;
+  }
+  .sticky-menu .top-header {
+    margin-top: 10px !important;
+  }
+  .sticky-menu .header-blocks {
+    display: none;
+  }
+  .sticky-menu .header-sitename {
+    float: right;
+    width: auto;
+  }
+  .sticky-menu .header-sitename .oira-logo img {
+    width: 115px !important;
+  }
+  .sticky-menu .header-sitename .sitename {
+    display: none !important;
+  }
+  .sticky-menu .header-logo .logo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .sticky-menu .header-logo .logo img {
+    width: 160px !important;
+  }
+  .sticky-menu .header-logo .eu-logo {
+    width: 55px !important;
+    margin-left: 15px !important;
+    margin-top: 16px !important;
   }
 }
 /*MIXINS
@@ -8360,6 +8397,9 @@ a.more-link:before {
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 {
   padding-left: 0px;
 }
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 img {
+  border: 1px solid grey;
+}
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field {
   font-size: 1.4em;
 }
@@ -8818,6 +8858,9 @@ a.more-link:before {
 .view-display-id-oshnews_list {
   font-size: 16px;
 }
+.view-display-id-oshnews_list .field-type-image img {
+  border: 1px solid grey;
+}
 .view-display-id-oshnews_list .views-row-odd {
   background-color: #dfd8e4;
 }
@@ -8937,6 +8980,10 @@ a.more-link:before {
   float: left;
   margin-right: 30px;
   margin-bottom: 20px;
+  width: 100%;
+}
+.node-news .field-name-field-image img {
+  border: 1px solid grey;
 }
 .node-news .group-content-wrapper.news-field-group {
   overflow: hidden;
@@ -9417,6 +9464,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-top: 30px;
   margin-left: -15px;
   margin-right: -15px;
+}
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .col-sm-3 img,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .col-sm-3 img,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .quicktabs-views-group .col-sm-3 img {
+  border: 1px solid grey;
 }
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .quicktabs-views-group .node-teaser,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .quicktabs-views-group .node-teaser,
@@ -9991,6 +10043,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .col-sm-3 {
   padding-left: 0px;
+}
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .col-sm-3 img {
+  border: 1px solid grey;
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .group-center.col-md-12 {
   clear: both;
