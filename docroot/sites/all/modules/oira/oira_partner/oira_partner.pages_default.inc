@@ -931,7 +931,7 @@ function oira_partner_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Sectorial social partners';
   $page->admin_description = '';
-  $page->path = 'sectorial-social-partners';
+  $page->path = 'sectoral-social-partners';
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
