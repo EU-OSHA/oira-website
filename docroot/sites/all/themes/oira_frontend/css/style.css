@@ -6635,7 +6635,10 @@ button.close {
 }
 .top-header .header-blocks #block-menu-block-5 .introduction-title a {
   color: #003399;
-  margin-left: 5px;
+  margin-left: 0px;
+  font-size: 0.9em;
+  max-width: 59px;
+  display: block;
 }
 .top-header .header-blocks #block-search-form {
   margin-top: 7px;
@@ -6743,13 +6746,14 @@ button.close {
   width: 100%;
   margin-top: 15px;
   text-align: center;
+  float: none !important;
 }
 .menu-header #navbar .navbar-nav li.last.leaf a {
   border-right: none;
 }
 .menu-header #navbar .navbar-nav > li.first.leaf {
   top: -1px;
-  padding-right: 15px;
+  padding-right: 8px;
 }
 .menu-header #navbar .navbar-nav li {
   float: inherit;
@@ -6758,8 +6762,9 @@ button.close {
   color: #ffffff;
   text-align: center;
   border-right: 2px solid #ffffff;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 0.9em;
 }
 .menu-header #navbar .navbar-nav li:last-child {
   border-right: none;
@@ -6788,7 +6793,7 @@ button.close {
 .menu-header #navbar .navbar-nav li .dropdown-menu {
   background-color: #10b2e4;
   border: none;
-  top: 25px;
+  top: 22px;
   padding: 0px;
   padding-top: 10px;
   border-radius: 0px;
@@ -8447,75 +8452,137 @@ a.more-link:before {
 /*END OIRA TOOLS*/
 /*FAQ'S
 **************************************************************/
-.page-faq .panels-flexible-row-new-main-row .field-name-body {
+.page-faq .panels-flexible-row-new-main-row .field-name-body,
+.page-oira-faqs .panels-flexible-row-new-main-row .field-name-body {
   font-size: 1.4em;
   font-family: "Oswald";
 }
-.page-faq .panels-flexible-row-new-1 {
+.page-faq .panels-flexible-row-new-1,
+.page-oira-faqs .panels-flexible-row-new-1 {
   background-color: #dfd8e4;
   padding-top: 17px;
   margin-bottom: 20px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-even {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-even,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-row-even,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-even,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-even {
   border-bottom: 2px solid #967ea7;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-odd {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-odd,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-row-odd,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-odd,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-odd {
   border-bottom: 2px solid #967ea7;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-last {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-row-last,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-row-last,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-last,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-row-last {
   border-bottom: 0px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field {
   background: rgba(0, 0, 0, 0);
   padding-left: 0px;
   border: none;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .ui-accordion-header-icon {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .ui-accordion-header-icon,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .ui-accordion-header-icon,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .ui-accordion-header-icon,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .ui-accordion-header-icon {
   background-image: none;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field .field-content,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .field-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field .field-content {
   font-size: 1.2em;
   color: #786586;
   font-family: "Oswald";
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer {
   margin-bottom: 25px;
   color: #58585a;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul {
   padding-left: 20px;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span,
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li {
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li {
   font-family: "Roboto";
-  font-size: 0.9em !important;
+  font-size: 1.2em !important;
   line-height: initial !important;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a,
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a {
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a {
   text-decoration: underline;
   color: #786586;
   font-style: italic;
   font-weight: bold;
 }
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer p a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer p a:hover,
 .page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a:hover,
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a:hover {
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer span a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer span a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-body .faq-answer ul li a:hover,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a:hover,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-body .faq-answer ul li a:hover {
   color: #23527c;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-accordion-header-active a .field-content:after,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-accordion-header-active a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-accordion-header-active a .field-content:after {
   content: "\e253";
   font-family: "Glyphicons Halflings";
   padding-left: 9px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .views-field-title-field.ui-corner-all a .field-content:after,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-corner-all a .field-content:after,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .views-field-title-field.ui-corner-all a .field-content:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   padding-left: 9px;
 }
-.page-faq .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content {
+.page-faq .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs .ui-accordion-content,
+.page-faq .panels-flexible-row-new-1 .view-id-faqs_oira .ui-accordion-content,
+.page-oira-faqs .panels-flexible-row-new-1 .view-id-faqs_oira .ui-accordion-content {
   border: 0px;
   background: rgba(0, 0, 0, 0);
   padding: 0px;
@@ -12102,27 +12169,34 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     margin-left: 15px;
     margin-top: 36px;
   }
-  .menu-header #navbar .navbar-nav {
-    font-size: 0.95em;
+  .menu-header .navbar-header-container {
+    padding-right: 1px;
+    padding-left: 1px;
   }
-  .menu-header #navbar .navbar-nav li.first.leaf {
+  .menu-header .navbar-header-container #navbar .navbar-nav {
+    font-size: 0.85em;
+  }
+  .menu-header .navbar-header-container #navbar .navbar-nav li.first.leaf {
     top: 0px;
   }
-  .menu-header #navbar .navbar-nav li.first.leaf a {
+  .menu-header .navbar-header-container #navbar .navbar-nav li.first.leaf a {
     top: -2px;
   }
-  .menu-header #navbar .navbar-nav li.first.leaf a img {
+  .menu-header .navbar-header-container #navbar .navbar-nav li.first.leaf a img {
     height: 18px;
   }
-  .menu-header #navbar .navbar-nav > li.first.leaf {
-    padding-right: 8px;
+  .menu-header .navbar-header-container #navbar .navbar-nav > li.first.leaf {
+    padding-right: 4px;
   }
-  .menu-header #navbar .navbar-nav li {
+  .menu-header .navbar-header-container #navbar .navbar-nav li.expanded.dropdown {
+    margin-top: 2px;
+  }
+  .menu-header .navbar-header-container #navbar .navbar-nav li {
     padding-left: 5px;
     padding-right: 5px;
   }
-  .menu-header #navbar .navbar-nav li .dropdown-menu {
-    top: 22px;
+  .menu-header .navbar-header-container #navbar .navbar-nav li .dropdown-menu {
+    top: 19px;
     padding-top: 13px;
   }
   /*END HEADER*/
@@ -12266,42 +12340,43 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     width: 117px !important;
   }
   /*END HEADER*/
-  .navbar-header {
+  header .navbar-header {
     float: none;
   }
-  .navbar-left,
-  .navbar-right {
+  header .navbar-left,
+  header .navbar-right {
     float: none !important;
   }
-  .navbar-toggle {
+  header .navbar-toggle {
     display: block;
   }
-  .navbar-collapse {
+  header .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-  .navbar-fixed-top {
+  header .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
   }
-  .navbar-collapse.collapse {
+  header .navbar-collapse.collapse {
     display: none!important;
   }
-  .navbar-nav {
+  header .navbar-nav {
     float: none!important;
     margin-top: 7.5px;
   }
-  .navbar-nav > li {
+  header .navbar-nav > li {
     float: none;
+    font-size: 1em !important;
   }
-  .navbar-nav > li > a {
+  header .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .collapse.in {
+  header .collapse.in {
     display: block !important;
   }
-  #navbar button.navbar-toggle {
+  header #navbar button.navbar-toggle {
     float: left;
   }
   /*MENU
@@ -12408,7 +12483,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0);
     margin-left: 20px;
     margin-bottom: 10px;
-    top: 10px;
+    top: 0px !important;
   }
   .menu-header #navbar .navbar-nav li .dropdown-menu li {
     display: block !important;
@@ -12478,7 +12553,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     margin: 0 auto;
     position: relative;
     display: block;
-    margin-top: -44px;
+    margin-top: -10px;
   }
   .breadcrum-container .breadcrumb {
     background-color: inherit !important;

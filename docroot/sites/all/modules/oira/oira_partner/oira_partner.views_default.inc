@@ -680,21 +680,20 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['delete_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['delete_node']['text'] = '| Delete';
-  /* Field: Content: Edit link */
-  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = '';
-  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
+  /* Field: Content: Edit link (no destination) */
+  $handler->display->display_options['fields']['edit_node_no_destination']['id'] = 'edit_node_no_destination';
+  $handler->display->display_options['fields']['edit_node_no_destination']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node_no_destination']['field'] = 'edit_node_no_destination';
+  $handler->display->display_options['fields']['edit_node_no_destination']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_no_destination']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_no_destination']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_no_destination']['text'] = 'Edit';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[edit_node] [delete_node]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[edit_node_no_destination] [delete_node]';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -885,7 +884,7 @@ else {
     t('| Delete'),
     t('Edit'),
     t('Actions'),
-    t('[edit_node] [delete_node]'),
+    t('[edit_node_no_destination] [delete_node]'),
     t('All'),
     t('Search'),
     t('Publication date'),

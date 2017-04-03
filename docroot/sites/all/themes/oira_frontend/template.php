@@ -863,6 +863,9 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       $form['actions']['#access'] = FALSE;
 
       if(isset($form['workbench_access']['workbench_access']['#default_value'])){
+        // Because the profile menu item is just a callback with a redirect, manually set it as active.
+        menu_set_active_item('private-zone/update-profile');
+
         $form['other_users'] = array(
           '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-users"><div class="row"><div class="col-sm-12"><h2>' . t('Other users') . '</h2></div></div></div>',
           '#weight' => 200,

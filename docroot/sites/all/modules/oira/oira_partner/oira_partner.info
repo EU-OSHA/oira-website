@@ -114,3 +114,4 @@ features_exclude[dependencies][views] = views
 files[] = includes/oira_partner_quicktabs_style_plugin.inc
 files[] = views/handlers/oira_partner_handler_field_partner_url.inc
 files[] = views/handlers/oira_partner_handler_field_partner_id.inc
+files[] = views/handlers/views_handler_field_node_link_edit_no_destination.inc
