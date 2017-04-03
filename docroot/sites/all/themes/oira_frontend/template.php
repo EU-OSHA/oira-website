@@ -823,7 +823,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       $form['field_main_contact_email']['#access'] = FALSE;
       $form['field_collaborator']['#disabled'] = TRUE;
       $form['other_collaborators'] = array(
-        '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-collaborators"><div class="row"><div class="col-sm-12"><h2>' . t('Other collaborators') . '</h2></div></div></div>',
+        '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-collaborators"><div class="row"><div class="col-sm-12"><h2>' . t('Collaborators') . '</h2></div></div></div>',
         '#weight' => 0,
       );
 
@@ -864,7 +864,7 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
 
       if(isset($form['workbench_access']['workbench_access']['#default_value'])){
         $form['other_users'] = array(
-          '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-users"><div class="row"><div class="col-sm-12"><h2>' . t('Other users') . '</h2></div></div></div>',
+          '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-users"><div class="row"><div class="col-sm-12"><h2>' . t('Users') . '</h2></div></div></div>',
           '#weight' => 200,
         );
         $other_users_header = array(
