@@ -629,6 +629,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
+  $handler->display->display_options['fields']['field_language']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_language']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
       'name' => 'name',
@@ -642,6 +644,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_country']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
     'field_formatter_class' => '',
@@ -707,6 +711,8 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
   $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
   $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_country']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
     'field_formatter_class' => '',
@@ -716,6 +722,9 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
   $handler->display->display_options['fields']['field_language']['field'] = 'field_language';
+  $handler->display->display_options['fields']['field_language']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_language']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_language']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_language']['settings'] = array(
     'format' => array(
       'name' => 'name',
