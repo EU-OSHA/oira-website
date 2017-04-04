@@ -557,46 +557,78 @@ a.more-link{
 		padding-bottom: 0px !important;
 	}
 	.panels-flexible-row-new-6{
+		#mini-panel-oira_tools{
+			.view-display-id-default{
+				.views-row{
+					display: inline-block !important;
+					margin: 10px 0px;
+				}
+			}
+		}
 		.pane-tools{
-			.view-display-id-block_1{
-				.field-name-field-country{
-					background-color: none;
-					font-weight: bold;
-					&:before{
-						content:"Country: ";
-						font-weight: normal;
-						font-style: normal;
-						display: inline-block;
-						margin-right: 5px;
-					}
-					.field-items{
+			.pane-title{
+				color: #967ea7;
+			    font-size: 1.2em;
+			    font-weight: bold;
+			    margin: 14px 0px;
+			    font-style: italic;
+			}
+			.view-display-id-block_tool{
+				margin-top: 25px;
+    			margin-bottom: 20px;
+				.views-field-field-language{
+					margin-top: 10px;
+					.views-label-field-language,
+					.field-type-language-field{
 						display: inline-block;
 					}
 				}
-				.field-type-language-field{
+				.views-field-field-country{
+					margin-bottom: 15px;
+					.views-label-field-country,
+					.field-name-field-country{
+						display: inline-block;
+					}
+				}
+				.field-name-related-partners{
+					background-color: @color-primary-dark;
+					padding: 15px;
+					a{
+						color: white;
+					}
+				}
+			}
+			.view-display-id-block_1{
+				.views-item-columns-container{
+					.field-content:first-child{
+						display: block !important;
+					}
+				}
+				.field-content{
 					background-color: none;
 					font-weight: bold;
-					&:before{
-						content:"Language: ";
-						font-weight: normal;
-						font-style: normal;
-						display: inline-block;
-						margin-right: 5px;
-					}
-					.field-items{
-						display: inline-block;
-					}
-
+					display: inline-block;
+				}
+				.views-label-field-country{
+					display: inline-block;
 				}
 				.field-name-field-tool-link{
 					position: absolute;
 					margin-top: 0px;
+					margin-bottom: 0px;
 					a{
 						margin-top: 0px;
 					}
 				}
 				.field-name-related-partners{
 					margin-top: 50px;
+				}
+				.views-field-field-language{
+					margin-bottom: 5px;
+					.views-label-field-language,
+					.field-content{
+						display: inline-block;
+					}
 				}
 			}
 		}
@@ -778,7 +810,7 @@ a.more-link{
 					background-color: @color-background-light-purple;
 					//min-height: 320px;
 					.materials-content-wrapper{
-						padding: 15px;
+						padding: 0px 15px;
 						overflow: hidden;
 						.field-name-title-field{
 							min-height: 45px;
