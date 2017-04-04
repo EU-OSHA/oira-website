@@ -11231,6 +11231,22 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   display: block;
   float: none;
   clear: both;
+  /*
+			input[type="file"] {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				&:before{
+					content: "Select file";
+					background-color: @color-see-more;
+					color: white;
+					padding: 3px 43px;
+					position: absolute;
+					height: 25px;
+					cursor: pointer;
+				}
+			}
+			*/
 }
 .node-form #edit-field-image .image-widget-data .form-file,
 .node-form #edit-field-private-image .image-widget-data .form-file,
@@ -11246,42 +11262,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .node-form #edit-field-private-file--2 .file-widget .form-file {
   width: 40%;
   display: inline-block;
-}
-.node-form #edit-field-image .image-widget-data input[type="file"],
-.node-form #edit-field-private-image .image-widget-data input[type="file"],
-.node-form #edit-field-private-file .image-widget-data input[type="file"],
-.node-form #edit-field-image--2 .image-widget-data input[type="file"],
-.node-form #edit-field-private-image--2 .image-widget-data input[type="file"],
-.node-form #edit-field-private-file--2 .image-widget-data input[type="file"],
-.node-form #edit-field-image .file-widget input[type="file"],
-.node-form #edit-field-private-image .file-widget input[type="file"],
-.node-form #edit-field-private-file .file-widget input[type="file"],
-.node-form #edit-field-image--2 .file-widget input[type="file"],
-.node-form #edit-field-private-image--2 .file-widget input[type="file"],
-.node-form #edit-field-private-file--2 .file-widget input[type="file"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.node-form #edit-field-image .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-image .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-file .image-widget-data input[type="file"]:before,
-.node-form #edit-field-image--2 .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-image--2 .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-file--2 .image-widget-data input[type="file"]:before,
-.node-form #edit-field-image .file-widget input[type="file"]:before,
-.node-form #edit-field-private-image .file-widget input[type="file"]:before,
-.node-form #edit-field-private-file .file-widget input[type="file"]:before,
-.node-form #edit-field-image--2 .file-widget input[type="file"]:before,
-.node-form #edit-field-private-image--2 .file-widget input[type="file"]:before,
-.node-form #edit-field-private-file--2 .file-widget input[type="file"]:before {
-  content: "Select file";
-  background-color: #10b2e4;
-  color: white;
-  padding: 3px 43px;
-  position: absolute;
-  height: 25px;
-  cursor: pointer;
 }
 .node-form #edit-field-image .image-widget-data button,
 .node-form #edit-field-private-image .image-widget-data button,
@@ -11399,21 +11379,24 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .node-form #edit-field-resource-fc--2 .panel .panel-body #edit-field-resource-fc-und-0-field-language--2 {
   width: 40%;
 }
-.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file input[type="file"],
-.node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file input[type="file"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file input[type="file"]:before,
-.node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file input[type="file"]:before {
-  content: "Select file";
-  background-color: #10b2e4;
-  color: white;
-  padding: 3px 43px;
-  position: absolute;
-  height: 25px;
-  cursor: pointer;
+.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file,
+.node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file {
+  /*
+					input[type="file"] {
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						appearance: none;
+						&:before{
+							content: "Select file";
+							background-color: @color-see-more;
+							color: white;
+							padding: 3px 43px;
+							position: absolute;
+							height: 25px;
+							cursor: pointer;
+						}
+					}
+					*/
 }
 .node-form #edit-field-resource-fc .panel .panel-body .form-managed-file .form-submit,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file .form-submit {
@@ -13495,6 +13478,21 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     display: block;
     float: none;
     clear: both;
+    /*
+			input[type="file"] {
+			    -webkit-appearance: none;
+			    -moz-appearance: none;
+			    appearance: none;
+			    &:before{
+			    	content: "Select file";
+				    background-color: @color-see-more;
+				    color: white;
+				    padding: 3px 43px;
+				    position: absolute;
+				    height: 25px;
+				    cursor: pointer;
+				}
+			}*/
   }
   .node-form #edit-field-image .image-widget-data .form-file,
   .node-form #edit-field-private-image .image-widget-data .form-file,
@@ -13504,30 +13502,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .node-form #edit-field-private-file .file-widget .form-file {
     width: 60%;
     display: inline-block;
-  }
-  .node-form #edit-field-image .image-widget-data input[type="file"],
-  .node-form #edit-field-private-image .image-widget-data input[type="file"],
-  .node-form #edit-field-private-file .image-widget-data input[type="file"],
-  .node-form #edit-field-image .file-widget input[type="file"],
-  .node-form #edit-field-private-image .file-widget input[type="file"],
-  .node-form #edit-field-private-file .file-widget input[type="file"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  .node-form #edit-field-image .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-private-image .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-private-file .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-image .file-widget input[type="file"]:before,
-  .node-form #edit-field-private-image .file-widget input[type="file"]:before,
-  .node-form #edit-field-private-file .file-widget input[type="file"]:before {
-    content: "Select file";
-    background-color: #10b2e4;
-    color: white;
-    padding: 3px 43px;
-    position: absolute;
-    height: 25px;
-    cursor: pointer;
   }
   .node-form #edit-field-image .image-widget-data button,
   .node-form #edit-field-private-image .image-widget-data button,
