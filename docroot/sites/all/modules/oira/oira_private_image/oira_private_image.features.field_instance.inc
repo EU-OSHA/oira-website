@@ -134,9 +134,9 @@ function oira_private_image_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_oira_private_image',
     'label' => 'Image',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'private-images-gallery',

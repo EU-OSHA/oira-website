@@ -191,7 +191,8 @@
 			display: inline-block;
 			margin-right: 10px;//firefox
 			max-width: 100px;
-			.introduction-title{				
+			//visibility: hidden;
+			.introduction-title{
 				a{
 					display: block;
 					background-color: @color-menu-icons;
@@ -213,6 +214,7 @@
 		#block-lang-dropdown-language{
 			display: inline-block;
 			float: right;
+			//visibility: hidden;//only until finish private zone
 			#lang-dropdown-select-language{
 				border: 2px solid @color-menu-icons;
     			outline: none;
@@ -366,4 +368,52 @@
 		display: none;
 	}
 }
+
+/*Sticky menu
+****************************************/
+@media only screen and (min-width : 768px){
+	
+	.sticky-menu{
+		position: fixed;
+		z-index: 9999;
+		width: 100%;
+		background-color: white;
+		top: 0px;
+		.top-header{
+			margin-top: 10px !important;
+		}
+		.header-blocks{
+			display: none;
+		}
+		.header-sitename{
+			float: right;
+			width: auto;
+			.oira-logo{
+				img{
+					width: 115px !important;
+				}
+			}
+			.sitename{
+				display: none !important;
+			}
+		}
+		.header-logo{
+			.logo{
+				margin-top: 0px;
+				margin-bottom: 0px;
+				img{
+					width: 160px !important;
+				}
+			}
+			.eu-logo{
+				width: 55px !important;
+    			margin-left: 15px !important;
+    			margin-top: 16px !important;
+			}
+		}
+		
+	}
+
+}
+/*end sticky menu*/
 	

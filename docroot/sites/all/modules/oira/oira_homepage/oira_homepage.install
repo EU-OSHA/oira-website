@@ -6,3 +6,18 @@
 function oira_homepage_update_7001() {
   features_revert_module('oira_homepage');
 }
+
+/**
+ * Clone translations of some new literals.
+ */
+function oira_homepage_update_7002() {
+  $strings = array(
+    'Language',
+    'Country',
+  );
+
+  foreach ($strings as $string) {
+    locale($string, '', 'bg');
+    _osha_tmgmt_add_translations_to_identical_strings($string);
+  }
+}

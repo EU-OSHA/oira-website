@@ -887,7 +887,7 @@ function oira_country_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = '%node:title_field';
   $display->uuid = '6ec3c1d0-4f3f-4249-9470-bd1917d4750a';
   $display->content = array();
   $display->panels = array();
