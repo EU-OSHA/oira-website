@@ -304,6 +304,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['tid']['label'] = '';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
   $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
@@ -355,7 +356,6 @@ function oira_promotional_material_views_default_views() {
     t('Desc'),
     t('Block'),
     t('.'),
-    t(','),
   );
   $export['promotional_materials_type'] = $view;
 
