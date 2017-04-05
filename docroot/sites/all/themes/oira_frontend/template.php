@@ -186,7 +186,42 @@ function oira_frontend_css_alter(&$css) {
   if (isset($css['sites/all/modules/contrib/panels/css/panels.css'])) {
     unset($css['sites/all/modules/contrib/panels/css/panels.css']);
   }
+
+  uasort($css, 'drupal_sort_css_js');
+  $print = array();
+  $weight = 0;
+  foreach ($css as $name => $style) {
+    if ($css[$name]['browsers']['!IE']) {
+      $css[$name]['group'] = 0;
+      $css[$name]['weight'] = ++$weight;
+      $css[$name]['every_page'] = TRUE;
+    }
+    if ($css[$name]['media'] == 'print') {
+      $print[$name] = $css[$name];
+      unset($css[$name]);
+    }
+  }
+  $css = array_merge($css, $print);
 }
+
+function oira_frontend_js_alter(&$js) {
+
+  if (arg(0) === 'admin') {
+    return;
+  }
+  // Sort JS items, so that they appear in the correct order.
+  uasort($js, 'drupal_sort_css_js');
+
+  $weight = 0;
+
+  foreach ($js as $name => $javascript) {
+    $js[$name]['group'] = -100;
+    $js[$name]['weight'] = ++$weight;
+    $js[$name]['every_page'] = 1;
+  }
+
+}
+
 
 function oira_frontend_preprocess_region(&$variables, $hook) {
   if($variables['region'] == "header_block"){
