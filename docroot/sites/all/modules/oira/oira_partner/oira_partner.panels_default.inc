@@ -630,7 +630,7 @@ function oira_partner_default_panels_mini() {
       ),
       'context' => 'requiredcontext_entity:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Other collaborators',
+      'override_title_text' => 'Collaborators',
       'override_title_heading' => 'div',
     );
     $pane->cache = array();
@@ -1095,7 +1095,7 @@ function oira_partner_default_panels_mini() {
       ),
       'context' => 'requiredcontext_entity:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Other collaborators',
+      'override_title_text' => 'Collaborators',
       'override_title_heading' => 'div',
     );
     $pane->cache = array();

@@ -287,3 +287,10 @@ function osha_update_7016() {
 function osha_update_7017() {
   features_revert_module('osha');
 }
+
+/**
+ * Feature revert: NOW-449 - SEO: Page titles not translated.
+ */
+function osha_update_7018() {
+  features_revert_module('osha');
+}
