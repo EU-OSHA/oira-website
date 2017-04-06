@@ -792,6 +792,8 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
       break;
 
     case 'partner_node_form':
+      $node = $form['#node'];
+      $node_wrapper = entity_metadata_wrapper('node', $node);
       $form['about_organization'] = array(
         '#markup' => '<div class="ds-about-organization"><div class="row"><div class="col-sm-12"><h2>' . t('About your organization') . '</h2></div></div></div>',
         '#weight' => -100,
@@ -856,32 +858,40 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
 
       $form['field_main_contact']['#access'] = FALSE;
       $form['field_main_contact_email']['#access'] = FALSE;
-      $form['field_collaborator']['#disabled'] = TRUE;
-      $form['other_collaborators'] = array(
-        '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-collaborators"><div class="row"><div class="col-sm-12"><h2>' . t('Collaborators') . '</h2></div></div></div>',
-        '#weight' => 0,
-      );
 
-      unset($form['field_collaborator']['und']['#title']);
 
-      $weight = 0;
-      foreach($form['field_collaborator']['und'] as $key=>$val){
-        if(is_numeric($key)){
-          if(isset($form['field_collaborator']['und'][$key]['#entity'])
-            && !$form['field_collaborator']['und'][$key]['#entity']->item_id){
+
+      if (empty($node->field_collaborator[LANGUAGE_NONE])) {
+        $form['field_collaborator']['#access'] = FALSE;
+      }
+      else {
+        $form['field_collaborator']['#disabled'] = TRUE;
+        unset($form['field_collaborator']['und']['#title']);
+        $form['other_collaborators'] = array(
+          '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-collaborators"><div class="row"><div class="col-sm-12"><h2>' . t('Collaborators') . '</h2></div></div></div>',
+          '#weight' => 0,
+        );
+
+        $weight = 0;
+        foreach ($form['field_collaborator']['und'] as $key => $val) {
+          if (is_numeric($key)) {
+            if (isset($form['field_collaborator']['und'][$key]['#entity'])
+              && !$form['field_collaborator']['und'][$key]['#entity']->item_id){
               unset($form['field_collaborator']['und'][$key]);
-            }else{
-            $form['field_collaborator']['und'][$key]['field_logo'] = array(
-              '#type' => 'item',
-              '#title' => t('Logo'),
-              '#markup' => '<img src="' . image_style_url('thumbnail', $form['field_collaborator']['und'][$key]['field_logo']['und'][0]['#default_value']['uri']) .'" class="img-responsive">',
-              '#prefix' => '<div class="image-preview oira-logo-container">',
-              '#suffix' => '</div>',
-              '#weight' => $weight++,
-            );
-          }
+            }
+            else {
+              $form['field_collaborator']['und'][$key]['field_logo'] = array(
+                '#type' => 'item',
+                '#title' => t('Logo'),
+                '#markup' => '<img src="' . image_style_url('thumbnail', $form['field_collaborator']['und'][$key]['field_logo']['und'][0]['#default_value']['uri']) .'" class="img-responsive">',
+                '#prefix' => '<div class="image-preview oira-logo-container">',
+                '#suffix' => '</div>',
+                '#weight' => $weight++,
+              );
+            }
           }
         }
+      }
 
       $form['footer_line'] = array(
         '#markup' => '<div class="group-footer col-md-12"></div>',
@@ -897,10 +907,13 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
 
       $form['actions']['#access'] = FALSE;
 
-      if(isset($form['workbench_access']['workbench_access']['#default_value'])){
+      $form['field_partner_other_users']['#access'] = FALSE;
+
+      if (isset($form['workbench_access']['workbench_access']['#default_value']) && !empty($node->field_partner_other_users)) {
         // Because the profile menu item is just a callback with a redirect, manually set it as active.
         menu_set_active_item('private-zone/update-profile');
 
+        $other_users = $node_wrapper->field_partner_other_users->value();
         $form['other_users'] = array(
           '#markup' => '<div class="group-footer col-md-12"></div><div class="ds-other-users"><div class="row"><div class="col-sm-12"><h2>' . t('Users') . '</h2></div></div></div>',
           '#weight' => 200,
@@ -910,26 +923,18 @@ function oira_frontend_form_alter(&$form, &$form_state, $form_id){
           t('Email address'),
           t('Telephone'),
           );
-        $other_users_rows = array();
-        $section_id = $form['workbench_access']['workbench_access']['#default_value'][0];
-        $partner_users = _oira_workflow_load_users_by_section($section_id);
-
-        foreach($partner_users as $key => $partner_user){
-          //Check if user is a partner
-          if(array_intersect(array(ROLE_OIRA_PARTNER),array_values($partner_user->roles))){
-            $other_users_rows[] = array(
-              $partner_user->name,
-              $partner_user->mail,
-              isset($partner_user->field_phone[LANGUAGE_NONE][0]['safe_value']) ? $partner_user->field_phone[LANGUAGE_NONE][0]['safe_value'] : '',
-              );
-            }
-          }
+        $other_users_rows = [];
+        foreach ($other_users as $user_text) {
+          $other_users_rows[] = explode('^', $user_text);
+        }
 
         $form['other_users_table'] = array(
           '#markup' => theme('table',
             array(
               'header' => $other_users_header,
-              'rows' => $other_users_rows)),
+              'rows' => $other_users_rows
+            )
+          ),
           '#weight' => 201,
         );
       }

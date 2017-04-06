@@ -43,6 +43,7 @@ class PartnerMigration extends HwcCrmMigration {
       'field_organisation_rep',
       'field_social_profile',
       'field_dedicated_oira_website',
+      'field_partner_other_users',
     );
   }
 
@@ -200,6 +201,21 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml {
         $data->field_main_contact = trim((string) $attributes['Textbox16'] . ' ' . (string) $attributes['Textbox17']);
         $data->field_main_contact_email = (string) $attributes['Textbox18'];
         $data->field_dedicated_oira_website = (string) $attributes['Textbox24'];
+
+        // Other users.
+        // In XML, the fields are First name, last name, email.
+        for ($i = 26; $i <= 45; $i += 4) {
+          if (empty($attributes['Textbox' . $i])) {
+            continue;
+          }
+          $data->field_partner_other_users[] = implode("^",
+            [
+              $attributes['Textbox' . $i] . ' ' . $attributes['Textbox' . ($i + 1)],
+              $attributes['Textbox' . ($i + 2)],
+              $attributes['Textbox' . ($i + 3)],
+            ]
+          );
+        }
 
         // Try to assign a valid partner type term.
         $partner_type = (string) $attributes['Textbox22'];
