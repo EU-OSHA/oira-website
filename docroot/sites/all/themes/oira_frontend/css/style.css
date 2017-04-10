@@ -6833,7 +6833,7 @@ button.close {
 @media only screen and (min-width: 768px) {
   .sticky-menu {
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     width: 100%;
     background-color: white;
     top: 0px;
@@ -9006,7 +9006,6 @@ a.more-link:before {
   float: left;
   margin-right: 30px;
   margin-bottom: 20px;
-  width: 100%;
 }
 .node-news .field-name-field-image img {
   border: 1px solid grey;
@@ -14478,9 +14477,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     margin-top: 20px;
   }
   .node-news .field-name-field-image {
-    width: 35%;
+    width: 100%;
     margin-right: 15px !important;
     margin-bottom: 7px !important;
+  }
+  .node-news .field-name-field-image img {
+    width: 100%;
   }
   /*END OIRA NEWS*/
   /*COUNTRIES LIST
