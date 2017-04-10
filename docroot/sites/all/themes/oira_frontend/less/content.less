@@ -4596,24 +4596,32 @@ div[id ^= "mini-panel-partner_in_"], {
 		margin-bottom: 20px;
 	}
 	table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"]{
-		display: block;
+		//display: block;
 		overflow: hidden;
 		margin-bottom: 0px;
+		font-family: "Roboto";
 		thead{
 			tr{
-				display: block;
+				//display: block;
+				th{
+					color: @color-primary-dark;
+					word-wrap: break-word;
+				}
 			}
 		}
 		tbody{
 			tr{
-				background-color: inherit;
-			    border: 1px solid @color-primary-dark;
-			    padding: 0;
-			    margin: 0;
-			    margin-top: 15px;
-			    display: block;
+				background-color: white;
+			    border: 10px solid @color-primary;
 			    td{
 			    	font-size: 14px;
+			    	border: none !important;
+			    	word-wrap: break-word;
+			    }
+			    @media only screen and (max-width : 767px){
+					td{
+						max-width: 80px;
+					}
 			    }
 			}
 		}

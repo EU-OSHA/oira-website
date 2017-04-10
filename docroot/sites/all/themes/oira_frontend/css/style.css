@@ -6833,7 +6833,7 @@ button.close {
 @media only screen and (min-width: 768px) {
   .sticky-menu {
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     width: 100%;
     background-color: white;
     top: 0px;
@@ -11202,23 +11202,27 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-bottom: 20px;
 }
 .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] {
-  display: block;
   overflow: hidden;
   margin-bottom: 0px;
+  font-family: "Roboto";
 }
-.partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] thead tr {
-  display: block;
+.partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] thead tr th {
+  color: #786586;
+  word-wrap: break-word;
 }
 .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] tbody tr {
-  background-color: inherit;
-  border: 1px solid #786586;
-  padding: 0;
-  margin: 0;
-  margin-top: 15px;
-  display: block;
+  background-color: white;
+  border: 10px solid #dfd8e4;
 }
 .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] tbody tr td {
   font-size: 14px;
+  border: none !important;
+  word-wrap: break-word;
+}
+@media only screen and (max-width: 767px) {
+  .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] tbody tr td {
+    max-width: 80px;
+  }
 }
 .node-form {
   background-color: #dfd8e4;
