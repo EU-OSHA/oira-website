@@ -7,6 +7,10 @@ function oira_promotional_material_search_form($form, $form_state) {
   $variables['search_callback'] = 'oira_promotional_material_search';
   $variables['language_field'] = 'field_resource_fc:field_language:value';
 
+  // Default sort is date.
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
+  $variables['form_state']['values']['sort'] = $sort;
+  
   return _hwc_practical_tool_get_generic_faceted_form($variables);
 }
 
@@ -59,7 +63,7 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
 
   $page = _hwc_practical_tool_get_req_param($form_state, 'page', 0);
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
   /** @var SearchApiQuery $query */
   /** @var SearchApiSolrService $server */
   list($server, $query) = hwc_practical_tool_menu_tools_get_query();

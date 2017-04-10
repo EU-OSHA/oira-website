@@ -53,7 +53,7 @@ function oira_homepage_default_panels_mini() {
       'link_to_view' => 0,
       'args' => '',
       'url' => '',
-      'display' => 'block',
+      'display' => 'block_tool',
       'override_title' => 1,
       'override_title_text' => '<none>',
       'override_title_heading' => 'div',
