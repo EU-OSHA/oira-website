@@ -120,3 +120,23 @@ function oira_update_7012() {
   features_revert_module('oira_promotional_material');
   features_revert_module('oira_strategic_documentation');
 }
+
+
+/**
+ * Feature revert: NOW-449 - Sitemap settings.
+ */
+function oira_update_7013() {
+  features_revert_module('osha');
+  features_revert_module('osha_menu');
+  features_revert_module('osha_news');
+  features_revert_module('hwc_practical_tool');
+  features_revert_module('oira_promotional_material');
+}
+
+/**
+ * Set datasource view for ncw export.
+ */
+function oira_update_7014() {
+  module_enable(['views_json']);
+  features_revert_module('oira');
+}
