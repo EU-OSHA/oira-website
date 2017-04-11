@@ -897,10 +897,10 @@ EU-OSHA documents',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $pane->pid = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
     $pane->panel = 'center';
     $pane->type = 'block';
-    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_eu_osha';
+    $pane->subtype = 'oira_collaboration_items-oira_collaboration_items';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -916,9 +916,9 @@ EU-OSHA documents',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '19fec5ae-2e6b-480c-94de-1b0277c14342';
-    $display->content['new-19fec5ae-2e6b-480c-94de-1b0277c14342'] = $pane;
-    $display->panels['center'][0] = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $pane->uuid = '9e4be591-440a-4380-858c-0b83d6b861b4';
+    $display->content['new-9e4be591-440a-4380-858c-0b83d6b861b4'] = $pane;
+    $display->panels['center'][0] = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
