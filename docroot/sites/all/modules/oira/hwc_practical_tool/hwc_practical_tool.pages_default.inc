@@ -825,7 +825,7 @@ Create Tools',
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title-field';
+  $display->title = '%node:title_field';
   $display->uuid = '0dd33c22-fbd7-41ec-a6a7-6ab0ef34bbba';
   $display->content = array();
   $display->panels = array();
