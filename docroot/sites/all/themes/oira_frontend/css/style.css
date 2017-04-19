@@ -1,5 +1,4 @@
-@import url('//fonts.googleapis.com/css?family=Oswald:300,400,700&subset=latin,latin-ext');
-@import url('//fonts.googleapis.com/css?family=Roboto:700,400,700italic&subset=latin,greek,cyrillic,latin-ext');
+@import url('//fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:700,400,700italic&subset=latin,greek,cyrillic,latin-ext');
 /*ENDIKA - ASIER VARIABLES
 *********************************************/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -7383,43 +7382,70 @@ a.more-link:before {
   border-bottom: none !important;
   padding-bottom: 0px !important;
 }
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-country {
+.front .panels-flexible-row-new-6 #mini-panel-oira_tools .view-display-id-default .views-row {
+  display: inline-block !important;
+  margin: 10px 0px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .pane-title {
+  color: #967ea7;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 14px 0px;
+  font-style: italic;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool {
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .views-field-field-language {
+  margin-top: 10px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .views-field-field-language .views-label-field-language,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .views-field-field-language .field-type-language-field {
+  display: inline-block;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .views-field-field-country {
+  margin-bottom: 15px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .views-field-field-country .views-label-field-country,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .views-field-field-country .field-name-field-country {
+  display: inline-block;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .field-name-related-partners {
+  background-color: #786586;
+  padding: 15px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_tool .field-name-related-partners a {
+  color: white;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .views-item-columns-container .field-content:first-child {
+  display: block !important;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-content {
   background-color: none;
   font-weight: bold;
-}
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-country:before {
-  content: "Country: ";
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  margin-right: 5px;
-}
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-country .field-items {
   display: inline-block;
 }
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field {
-  background-color: none;
-  font-weight: bold;
-}
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field:before {
-  content: "Language: ";
-  font-weight: normal;
-  font-style: normal;
-  display: inline-block;
-  margin-right: 5px;
-}
-.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-type-language-field .field-items {
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .views-label-field-country {
   display: inline-block;
 }
 .front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-tool-link {
   position: absolute;
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 .front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-field-tool-link a {
   margin-top: 0px;
 }
 .front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .field-name-related-partners {
   margin-top: 50px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .views-field-field-language {
+  margin-bottom: 5px;
+}
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .views-field-field-language .views-label-field-language,
+.front .panels-flexible-row-new-6 .pane-tools .view-display-id-block_1 .views-field-field-language .field-content {
+  display: inline-block;
 }
 #block-system-main .panels-flexible-region-new-slider {
   margin-top: 35px;
@@ -7581,7 +7607,7 @@ a.more-link:before {
   background-color: #dfd8e4;
 }
 #block-system-main .panels-flexible-row-new-16 .pane-promotional-materials .view-promotional-materials .views-item-columns-container .materials-content-wrapper {
-  padding: 15px;
+  padding: 0px 15px;
   overflow: hidden;
 }
 #block-system-main .panels-flexible-row-new-16 .pane-promotional-materials .view-promotional-materials .views-item-columns-container .materials-content-wrapper .field-name-title-field {

@@ -44,6 +44,8 @@ function osha_default_page_manager_handlers() {
       ),
       'logic' => 'and',
     ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => '%node:title',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
