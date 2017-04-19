@@ -34,6 +34,22 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Country (field_country) */
+  $handler->display->display_options['relationships']['field_country_tid']['id'] = 'field_country_tid';
+  $handler->display->display_options['relationships']['field_country_tid']['table'] = 'field_data_field_country';
+  $handler->display->display_options['relationships']['field_country_tid']['field'] = 'field_country_tid';
+  /* Relationship: Content: Sector (field_sector) */
+  $handler->display->display_options['relationships']['field_sector_tid']['id'] = 'field_sector_tid';
+  $handler->display->display_options['relationships']['field_sector_tid']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['relationships']['field_sector_tid']['field'] = 'field_sector_tid';
+  /* Relationship: Content: Type (field_tool_type) */
+  $handler->display->display_options['relationships']['field_tool_type_tid']['id'] = 'field_tool_type_tid';
+  $handler->display->display_options['relationships']['field_tool_type_tid']['table'] = 'field_data_field_tool_type';
+  $handler->display->display_options['relationships']['field_tool_type_tid']['field'] = 'field_tool_type_tid';
+  /* Relationship: Content: Co-author (field_co_author) */
+  $handler->display->display_options['relationships']['field_co_author_tid']['id'] = 'field_co_author_tid';
+  $handler->display->display_options['relationships']['field_co_author_tid']['table'] = 'field_data_field_co_author';
+  $handler->display->display_options['relationships']['field_co_author_tid']['field'] = 'field_co_author_tid';
   /* Field: Content: Content UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'node';
@@ -58,6 +74,7 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['fields']['field_alternative_title']['table'] = 'field_data_field_alternative_title';
   $handler->display->display_options['fields']['field_alternative_title']['field'] = 'field_alternative_title';
   $handler->display->display_options['fields']['field_alternative_title']['label'] = 'title_alt';
+  $handler->display->display_options['fields']['field_alternative_title']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_alternative_title']['type'] = 'text_plain';
   $handler->display->display_options['fields']['field_alternative_title']['settings'] = array(
     'field_formatter_class' => '',
@@ -74,15 +91,6 @@ function oira_ws_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
-    'field_formatter_class' => '',
-  );
-  /* Field: Content: Type */
-  $handler->display->display_options['fields']['field_tool_type']['id'] = 'field_tool_type';
-  $handler->display->display_options['fields']['field_tool_type']['table'] = 'field_data_field_tool_type';
-  $handler->display->display_options['fields']['field_tool_type']['field'] = 'field_tool_type';
-  $handler->display->display_options['fields']['field_tool_type']['label'] = 'tool_type';
-  $handler->display->display_options['fields']['field_tool_type']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_tool_type']['settings'] = array(
     'field_formatter_class' => '',
   );
   /* Field: Field: Image */
@@ -107,6 +115,17 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field_1']['id'] = 'name_field_1';
+  $handler->display->display_options['fields']['name_field_1']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field_1']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field_1']['relationship'] = 'field_tool_type_tid';
+  $handler->display->display_options['fields']['name_field_1']['label'] = 'tool_type';
+  $handler->display->display_options['fields']['name_field_1']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['name_field_1']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['name_field_1']['link_to_entity'] = 0;
   /* Field: Content: Alternative description */
   $handler->display->display_options['fields']['field_alternative_body']['id'] = 'field_alternative_body';
   $handler->display->display_options['fields']['field_alternative_body']['table'] = 'field_data_field_alternative_body';
@@ -116,31 +135,28 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['fields']['field_alternative_body']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Country */
-  $handler->display->display_options['fields']['field_country_1']['id'] = 'field_country_1';
-  $handler->display->display_options['fields']['field_country_1']['table'] = 'field_data_field_country';
-  $handler->display->display_options['fields']['field_country_1']['field'] = 'field_country';
-  $handler->display->display_options['fields']['field_country_1']['label'] = 'country_code';
-  $handler->display->display_options['fields']['field_country_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_country_1']['alter']['text'] = '[field_country_1-tid]';
-  $handler->display->display_options['fields']['field_country_1']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_country_1']['type'] = 'services';
-  $handler->display->display_options['fields']['field_country_1']['settings'] = array(
-    'data_element_key' => '',
-    'skip_safe' => 0,
-    'skip_empty_values' => 0,
-    'term_name' => 0,
+  /* Field: Taxonomy term: ISO2 */
+  $handler->display->display_options['fields']['field_iso2']['id'] = 'field_iso2';
+  $handler->display->display_options['fields']['field_iso2']['table'] = 'field_data_field_iso2';
+  $handler->display->display_options['fields']['field_iso2']['field'] = 'field_iso2';
+  $handler->display->display_options['fields']['field_iso2']['relationship'] = 'field_country_tid';
+  $handler->display->display_options['fields']['field_iso2']['label'] = 'country_code';
+  $handler->display->display_options['fields']['field_iso2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_iso2']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_iso2']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_iso2']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Content: Country */
-  $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
-  $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
-  $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
-  $handler->display->display_options['fields']['field_country']['label'] = 'country_name';
-  $handler->display->display_options['fields']['field_country']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_country']['settings'] = array(
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field_3']['id'] = 'name_field_3';
+  $handler->display->display_options['fields']['name_field_3']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field_3']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field_3']['relationship'] = 'field_country_tid';
+  $handler->display->display_options['fields']['name_field_3']['label'] = 'country_name';
+  $handler->display->display_options['fields']['name_field_3']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['name_field_3']['link_to_entity'] = 0;
   /* Field: Field: Language */
   $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
@@ -167,15 +183,17 @@ function oira_ws_views_default_views() {
     ),
     'field_formatter_class' => '',
   );
-  /* Field: Content: Sector */
-  $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['label'] = 'sector_name';
-  $handler->display->display_options['fields']['field_sector']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_sector']['settings'] = array(
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['relationship'] = 'field_sector_tid';
+  $handler->display->display_options['fields']['name_field']['label'] = 'sector_name';
+  $handler->display->display_options['fields']['name_field']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['name_field']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
   /* Field: Content: Tool link */
   $handler->display->display_options['fields']['field_tool_link']['id'] = 'field_tool_link';
   $handler->display->display_options['fields']['field_tool_link']['table'] = 'field_data_field_tool_link';
@@ -191,24 +209,17 @@ function oira_ws_views_default_views() {
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
   $handler->display->display_options['fields']['section']['label'] = 'author_name';
-  /* Field: Content: Co-author */
-  $handler->display->display_options['fields']['field_co_author']['id'] = 'field_co_author';
-  $handler->display->display_options['fields']['field_co_author']['table'] = 'field_data_field_co_author';
-  $handler->display->display_options['fields']['field_co_author']['field'] = 'field_co_author';
-  $handler->display->display_options['fields']['field_co_author']['label'] = 'co_authors';
-  $handler->display->display_options['fields']['field_co_author']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_co_author']['alter']['text'] = '[field_co_author-tid]';
-  $handler->display->display_options['fields']['field_co_author']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_co_author']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_co_author']['type'] = 'services';
-  $handler->display->display_options['fields']['field_co_author']['settings'] = array(
-    'data_element_key' => '',
-    'skip_safe' => 0,
-    'skip_empty_values' => 0,
-    'term_name' => 1,
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field_2']['id'] = 'name_field_2';
+  $handler->display->display_options['fields']['name_field_2']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field_2']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field_2']['relationship'] = 'field_co_author_tid';
+  $handler->display->display_options['fields']['name_field_2']['label'] = 'co_authors';
+  $handler->display->display_options['fields']['name_field_2']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['name_field_2']['settings'] = array(
     'field_formatter_class' => '',
   );
-  $handler->display->display_options['fields']['field_co_author']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['name_field_2']['link_to_entity'] = 0;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -244,6 +255,9 @@ function oira_ws_views_default_views() {
   /* Display: Tools WS */
   $handler = $view->new_display('services', 'Tools WS', 'tools_ws');
   $handler->display->display_options['path'] = 'tools';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
   $translatables['oira_ws'] = array(
     t('Master'),
     t('<none>'),
@@ -253,17 +267,20 @@ function oira_ws_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('term from field_country'),
+    t('term from field_sector'),
+    t('term from field_tool_type'),
+    t('term from field_co_author'),
     t('tool_id'),
     t('tool_url'),
     t('title'),
     t('title_alt'),
     t('revised_date'),
-    t('tool_type'),
     t('image'),
     t('body'),
+    t('tool_type'),
     t('body_alt'),
     t('country_code'),
-    t('[field_country_1-tid]'),
     t('country_name'),
     t('language_code'),
     t('language_name'),
@@ -271,9 +288,9 @@ function oira_ws_views_default_views() {
     t('tool_link'),
     t('author_name'),
     t('co_authors'),
-    t('[field_co_author-tid]'),
     t('nid'),
     t('Tools WS'),
+    t('Block'),
   );
   $export['oira_ws'] = $view;
 
