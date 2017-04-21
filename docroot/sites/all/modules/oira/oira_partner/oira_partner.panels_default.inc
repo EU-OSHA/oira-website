@@ -630,7 +630,7 @@ function oira_partner_default_panels_mini() {
       ),
       'context' => 'requiredcontext_entity:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Other collaborators',
+      'override_title_text' => 'Collaborators',
       'override_title_heading' => 'div',
     );
     $pane->cache = array();
@@ -1095,7 +1095,7 @@ function oira_partner_default_panels_mini() {
       ),
       'context' => 'requiredcontext_entity:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Other collaborators',
+      'override_title_text' => 'Collaborators',
       'override_title_heading' => 'div',
     );
     $pane->cache = array();
@@ -1283,6 +1283,69 @@ function oira_partner_default_panels_mini() {
           'context' => 'requiredcontext_entity:node_1',
           'not' => TRUE,
         ),
+        1 => array(
+          'name' => 'entity_field_value:node:partner:field_guid_organisation',
+          'settings' => array(
+            'field_guid_organisation' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '80892479-9d92-e411-80c3-005056ba4e5c',
+                  'format' => '',
+                ),
+              ),
+            ),
+            'field_guid_organisation_value' => array(
+              0 => '80892479-9d92-e411-80c3-005056ba4e5c',
+            ),
+            'field_guid_organisation_format' => array(
+              0 => '',
+            ),
+          ),
+          'context' => 'requiredcontext_entity:node_1',
+          'not' => TRUE,
+        ),
+        2 => array(
+          'name' => 'entity_field_value:node:partner:field_guid_organisation',
+          'settings' => array(
+            'field_guid_organisation' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 'a4892479-9d92-e411-80c3-005056ba4e5c',
+                  'format' => '',
+                ),
+              ),
+            ),
+            'field_guid_organisation_value' => array(
+              0 => 'a4892479-9d92-e411-80c3-005056ba4e5c',
+            ),
+            'field_guid_organisation_format' => array(
+              0 => '',
+            ),
+          ),
+          'context' => 'requiredcontext_entity:node_1',
+          'not' => TRUE,
+        ),
+        3 => array(
+          'name' => 'entity_field_value:node:partner:field_guid_organisation',
+          'settings' => array(
+            'field_guid_organisation' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '7559f896-552c-e511-80c3-005056ba4e5c',
+                  'format' => '',
+                ),
+              ),
+            ),
+            'field_guid_organisation_value' => array(
+              0 => '7559f896-552c-e511-80c3-005056ba4e5c',
+            ),
+            'field_guid_organisation_format' => array(
+              0 => '',
+            ),
+          ),
+          'context' => 'requiredcontext_entity:node_1',
+          'not' => TRUE,
+        ),
       ),
     );
     $pane->configuration = array();
@@ -1297,6 +1360,156 @@ function oira_partner_default_panels_mini() {
     $pane->uuid = 'd5cf3bca-eb15-49e5-b600-84b39f10bf9d';
     $display->content['new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d'] = $pane;
     $display->panels['text_focal_point'][0] = 'new-d5cf3bca-eb15-49e5-b600-84b39f10bf9d';
+    $pane = new stdClass();
+    $pane->pid = 'new-2f492cab-6d2e-4eb0-8d93-6f336c641e76';
+    $pane->panel = 'text_focal_point';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'entity_field_value:node:partner:field_guid_organisation',
+          'settings' => array(
+            'field_guid_organisation' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '80892479-9d92-e411-80c3-005056ba4e5c',
+                  'format' => '',
+                ),
+              ),
+            ),
+            'field_guid_organisation_value' => array(
+              0 => '80892479-9d92-e411-80c3-005056ba4e5c',
+            ),
+            'field_guid_organisation_format' => array(
+              0 => '',
+            ),
+          ),
+          'context' => 'requiredcontext_entity:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Health and Safety Authority - IRAT - custom text',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<div class="focal-poin-partner-text">The BeSMART.ie - Business electronic Safety Management And Risk assessment Tool - will help small business owners/managers to prepare risk assessments and a safety statement for their workplace. It is easy to use and it aims to reduce the chances of an accident occurring in the workplace and to save time and money. Developed by the Health and Safety Authority, you can explore BeSMART.ie (EN)&nbsp;<a class="external-link" title="Follow link" href="https://www.besmart.ie/" rel="nofollow">here</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '2f492cab-6d2e-4eb0-8d93-6f336c641e76';
+    $display->content['new-2f492cab-6d2e-4eb0-8d93-6f336c641e76'] = $pane;
+    $display->panels['text_focal_point'][1] = 'new-2f492cab-6d2e-4eb0-8d93-6f336c641e76';
+    $pane = new stdClass();
+    $pane->pid = 'new-65c16067-e1c3-4526-9c99-9ddd58284d13';
+    $pane->panel = 'text_focal_point';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:partner:field_guid_organisation',
+          'settings' => array(
+            'field_guid_organisation' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 'a4892479-9d92-e411-80c3-005056ba4e5c',
+                  'format' => '',
+                ),
+              ),
+            ),
+            'field_guid_organisation_value' => array(
+              0 => 'a4892479-9d92-e411-80c3-005056ba4e5c',
+            ),
+            'field_guid_organisation_format' => array(
+              0 => '',
+            ),
+          ),
+          'context' => 'requiredcontext_entity:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Spanish National Institute for Safety and Health at Work - IRAT - custom text',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<div class="focal-poin-partner-text">Prevencion10.es is a free public platform developed by the Spanish Ministry of Employment and Social Security, which offers advice on occupational risks prevention. It is aimed at companies with up to 25 workers - which will be able to carry out their own risk assessments while complying with the Spanish Act on Prevention of Occupational Risks - and at self-employed workers - who will be able to know what their obligations and rights are in terms of occupational risks prevention and business activity coordination. You can explore Prevencion10.es (ES)&nbsp;<a class="external-link" title="Follow link" href="https://www.prevencion10.es/site-web/home.seam" rel="nofollow">here</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '65c16067-e1c3-4526-9c99-9ddd58284d13';
+    $display->content['new-65c16067-e1c3-4526-9c99-9ddd58284d13'] = $pane;
+    $display->panels['text_focal_point'][2] = 'new-65c16067-e1c3-4526-9c99-9ddd58284d13';
+    $pane = new stdClass();
+    $pane->pid = 'new-e3423e93-2e21-4dd4-8dcf-3315446b58dd';
+    $pane->panel = 'text_focal_point';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:partner:field_guid_organisation',
+          'settings' => array(
+            'field_guid_organisation' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '7559f896-552c-e511-80c3-005056ba4e5c',
+                  'format' => '',
+                ),
+              ),
+            ),
+            'field_guid_organisation_value' => array(
+              0 => '7559f896-552c-e511-80c3-005056ba4e5c',
+            ),
+            'field_guid_organisation_format' => array(
+              0 => '',
+            ),
+          ),
+          'context' => 'requiredcontext_entity:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'TNO Prevention, Work & Health - IRAT - custom text',
+      'title' => '<none>',
+      'title_heading' => 'h2',
+      'body' => '<div class="focal-poin-partner-text">RI&amp;E is a Dutch interactive risk assessment &amp; evaluation tool, and the equivalent to OiRA in The Netherlands. An RI&amp;E means actually two things; a list of all occupational risks associated to the company and a plan for their solution. The combination of these two will help companies reduce the workplace hazards, in terms of staff and business, which will also involve a reduction of the financial risks as well. Developed by TNO Prevention, Work &amp; Health, you can explore RI&amp;E (NL)&nbsp;<a class="external-link" title="Follow link" href="http://www.rie.nl/" rel="nofollow">here</a></div>',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'e3423e93-2e21-4dd4-8dcf-3315446b58dd';
+    $display->content['new-e3423e93-2e21-4dd4-8dcf-3315446b58dd'] = $pane;
+    $display->panels['text_focal_point'][3] = 'new-e3423e93-2e21-4dd4-8dcf-3315446b58dd';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $mini->display = $display;

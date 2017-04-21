@@ -287,3 +287,18 @@ function osha_update_7016() {
 function osha_update_7017() {
   features_revert_module('osha');
 }
+
+/**
+ * Feature revert: NOW-449 - SEO: Page titles not translated.
+ */
+function osha_update_7018() {
+  features_revert_module('osha');
+}
+
+/**
+ * Install and configure no_autocomplete module: MDR-1001 - Password type input with auto-complete enabled.
+ */
+function osha_update_7019() {
+  module_enable(['no_autocomplete']);
+  variable_set('no_autocomplete_login_form', 1);
+}
