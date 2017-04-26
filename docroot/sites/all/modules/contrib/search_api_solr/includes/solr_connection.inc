@@ -904,6 +904,7 @@ class SearchApiSolrConnection implements SearchApiSolrConnectionInterface {
       // If we have filters set (which will nearly always be the case, since we
       // have to filter by index), move them to the q.alt parameter where
       // possible.
+/*
       if (!empty($params['fq'])) {
         $qalt = array();
         foreach ($params['fq'] as $i => $fq) {
@@ -920,6 +921,7 @@ class SearchApiSolrConnection implements SearchApiSolrConnectionInterface {
           unset($params['fq']);
         }
       }
+*/
     }
 
     // Build the HTTP query string. We have our own method for that since PHP's
