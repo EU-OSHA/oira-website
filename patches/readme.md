@@ -7,6 +7,10 @@ When patching a contrib module, the following steps should be followed:
 
 List of patches (most recent first)
 
+* search_api_solr
+  * https://www.drupal.org/node/2481715
+  * patches/search_api_solr/Empty_search_excerpts_produce_some_highlighted_text-2481715-2.patch
+
 * tmgmt
   * Compare cart against the database and refresh the session.
   * patches/tmgmt/tmgmt-cart-init-session-vs-db.patch
