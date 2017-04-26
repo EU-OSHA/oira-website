@@ -15,7 +15,7 @@ function oira_workflow_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Partner update profile';
   $page->admin_description = 'Partner update profile page form';
-  $page->path = 'node/%node/update-profile';
+  $page->path = 'node/%node/view-profile';
   $page->access = array(
     'plugins' => array(
       0 => array(
