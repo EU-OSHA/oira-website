@@ -140,3 +140,10 @@ function oira_update_7014() {
   module_enable(['views_json']);
   features_revert_module('oira');
 }
+
+/**
+ * Feature revert: MDR-1076 - Remove smart trim form summary.
+ */
+function oira_update_7015() {
+  features_revert_module('oira');
+}

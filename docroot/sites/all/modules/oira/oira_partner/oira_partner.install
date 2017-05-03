@@ -128,3 +128,10 @@ function oira_partner_update_7017() {
   features_revert_module('oira_partner');
   module_enable(['spamspan']);
 }
+
+/**
+ * Feature revert: MDR-1078.
+ */
+function oira_partner_update_7018() {
+  features_revert_module('oira_partner');
+}
