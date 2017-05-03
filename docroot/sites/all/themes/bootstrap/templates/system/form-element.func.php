@@ -147,6 +147,16 @@ function bootstrap_form_element(&$variables) {
       '#suffix' => !empty($suffix) ? $suffix : NULL,
       '#weight' => 1,
     );
+  } else {
+    $prefix = isset($element['#field_prefix']) ? $element['#field_prefix'] : '';
+    $suffix = isset($element['#field_suffix']) ? $element['#field_suffix'] : '';
+
+    $build['element'] = array(
+      '#markup' => $element['#children'],
+      '#prefix' => !empty($prefix) ? $prefix : NULL,
+      '#suffix' => !empty($suffix) ? $suffix : NULL,
+      '#weight' => 1,
+    );
   }
 
   // Construct the element's description markup.
