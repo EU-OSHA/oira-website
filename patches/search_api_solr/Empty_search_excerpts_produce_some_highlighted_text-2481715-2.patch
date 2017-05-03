@@ -1,0 +1,18 @@
+--- a/includes/solr_connection.inc
++++ b/includes/solr_connection.inc
+@@ -904,6 +903,7 @@
+       // If we have filters set (which will nearly always be the case, since we
+       // have to filter by index), move them to the q.alt parameter where
+       // possible.
++/*
+       if (!empty($params['fq'])) {
+         $qalt = array();
+         foreach ($params['fq'] as $i => $fq) {
+@@ -920,6 +920,7 @@
+           unset($params['fq']);
+         }
+       }
++*/
+     }
+ 
+     // Build the HTTP query string. We have our own method for that since PHP's
