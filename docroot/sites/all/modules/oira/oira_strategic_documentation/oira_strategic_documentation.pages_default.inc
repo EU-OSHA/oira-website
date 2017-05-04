@@ -760,7 +760,7 @@ Update Strategic Documentation',
   $page->api_version = 1;
   $page->name = 'eu_osha_documents';
   $page->task = 'page';
-  $page->admin_title = 'EU OSHA documents';
+  $page->admin_title = 'EU-OSHA documents';
   $page->admin_description = '';
   $page->path = 'private-zone/collaboration-area/eu-osha-documents';
   $page->access = array(
@@ -892,7 +892,7 @@ EU-OSHA documents',
     ),
   );
   $display->cache = array();
-  $display->title = 'EU OSHA Documents';
+  $display->title = 'EU-OSHA Documents';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->content = array();
   $display->panels = array();
