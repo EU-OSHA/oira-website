@@ -638,6 +638,15 @@ div[id ^= "mini-panel-partner_in_"]{
 		background: none;
     	background-color: @color-primary;
     	padding-bottom: 0px;
+    	#osha-search-search-form,
+    	#hwc-practical-tool-menu-tools-form,
+    	#oira-promotional-material-search-form,
+    	#oira-strategic-documentation-eu-osha-form,
+    	#oira-strategic-documentation-partners-form{
+    		>div{
+				display: block !important;
+			}
+		}
     	#edit-left-column{
 			position: absolute !important;
 			z-index: 1;
@@ -687,6 +696,7 @@ div[id ^= "mini-panel-partner_in_"]{
 			.toggle-search-sidebar{
 				position: absolute;
 				top: 20px;
+				left: 15px;
 				span{
 					height: 40px;
 					width: 40px;
@@ -714,6 +724,9 @@ div[id ^= "mini-panel-partner_in_"]{
 **************************************/
 .page-oira-tools{
 	#hwc-practical-tool-menu-tools-form{
+		>div{
+				display: block !important;
+			}
 		div:first-child {
 			#edit-content {
 				.search-page-results-wrapper {
@@ -740,6 +753,9 @@ div[id ^= "mini-panel-partner_in_"]{
 .page-promotional-resources-search{
 	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last{
     	#oira-promotional-material-search-form {
+    		>div{
+				display: block !important;
+			}
     		div:first-child{ 
     			#edit-content{ 
     				.search-page-results-wrapper{
