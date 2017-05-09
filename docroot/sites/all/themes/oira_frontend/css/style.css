@@ -8721,55 +8721,47 @@ a.more-link:before {
 .page-contact-us #block-system-main .panels-flexible-row .captcha .panel-heading {
   display: none;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body {
-  padding: 0px;
-}
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .help-block,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .help-block {
-  display: none;
-}
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaReadAudio,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaReadAudio {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .captchaReadAudio,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .captchaReadAudio {
   background: url('../images/icons/audio-form.png') no-repeat;
   background-size: cover;
   height: 38px;
   display: inline-block;
   margin-bottom: 4px;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaReadAudio img,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaReadAudio img {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .captchaReadAudio img,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .captchaReadAudio img {
   visibility: hidden;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaRefresh,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaRefresh {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .captchaRefresh,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .captchaRefresh {
   background: url('../images/icons/refresh-form.png') no-repeat;
   height: 38px;
   background-size: cover;
   display: inline-block;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .captchaRefresh img,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .captchaRefresh img {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .captchaRefresh img,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .captchaRefresh img {
   visibility: hidden;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .form-item-security-code,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .form-item-security-code {
   margin-top: 20px;
   width: 345px;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code #security_code,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code #security_code {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .form-item-security-code #security_code,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .form-item-security-code #security_code {
   width: 213px;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code label:last-child,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code label:last-child {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .form-item-security-code label:last-child,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .form-item-security-code label:last-child {
   color: #5fd9ff;
   margin-top: 5px;
   font-style: italic;
   position: absolute;
 }
-.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .form-item-security-code label:last-child:before,
-.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .form-item-security-code label:last-child:before {
+.page-contact-us #block-system-main .panels-flexible-row fieldset .form-item-security-code label:last-child:before,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .form-item-security-code label:last-child:before {
   content: "*";
 }
 .page-contact-us #block-system-main .panels-flexible-row .grippie {
@@ -8788,13 +8780,14 @@ a.more-link:before {
 }
 .page-contact-us #block-system-main .panels-flexible-row button.form-submit {
   position: absolute;
-  bottom: 37px;
+  bottom: 15px;
   left: 235px;
   border-radius: 0px;
   background-color: white;
   color: #10b2e4;
   font-style: italic;
   border: 1px solid white;
+  margin-top: 15px;
 }
 .page-contact-us #block-system-main .panels-flexible-row button.form-submit:before {
   content: "> ";
