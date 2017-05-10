@@ -7,6 +7,10 @@ When patching a contrib module, the following steps should be followed:
 
 List of patches (most recent first)
 
+* bootstrap (base theme)
+  * checkbox & radio inputs are not rendered
+  * patches/bootstrap/bootstap-checkbox-radio-input.patch
+
 * search_api_solr
   * https://www.drupal.org/node/2481715
   * patches/search_api_solr/Empty_search_excerpts_produce_some_highlighted_text-2481715-2.patch
