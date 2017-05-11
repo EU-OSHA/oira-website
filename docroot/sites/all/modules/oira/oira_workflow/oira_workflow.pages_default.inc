@@ -15,7 +15,7 @@ function oira_workflow_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Partner update profile';
   $page->admin_description = 'Partner update profile page form';
-  $page->path = 'node/%node/update-profile';
+  $page->path = 'node/%node/view-profile';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -94,7 +94,7 @@ return $is_partner;',
     ),
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
-Update Your Profile
+View your profile
 ',
     'panels_breadcrumbs_paths' => '/node/%node:nid
 <none>
@@ -172,7 +172,7 @@ Update Your Profile
     ),
   );
   $display->cache = array();
-  $display->title = 'Update Your Profile';
+  $display->title = 'View your profile';
   $display->uuid = '17dac0a9-5f40-457d-aa20-d541345bcb57';
   $display->content = array();
   $display->panels = array();
