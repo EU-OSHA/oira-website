@@ -1,0 +1,33 @@
+diff --git a/includes/datasource_entity.inc b/includes/datasource_entity.inc
+index 21136eb2..d8eac7b8 100644
+--- a/includes/datasource_entity.inc
++++ b/includes/datasource_entity.inc
+@@ -131,8 +131,11 @@ class SearchApiEtDatasourceController extends SearchApiEntityDataSourceControlle
+       $entity_type = $index->getEntityType();
+ 
+       $query = new EntityFieldQuery();
+-      $entities = $query->entityCondition('entity_type', $entity_type)
+-        ->execute();
++      $query->entityCondition('entity_type', $entity_type);
++      if ($bundles = $this->getIndexBundles($index)) {
++        $query->entityCondition('bundle', $bundles, 'IN');
++      }
++      $entities = $query->execute();
+       if (empty($entities[$entity_type])) {
+         continue;
+       }
+@@ -181,7 +184,13 @@ class SearchApiEtDatasourceController extends SearchApiEntityDataSourceControlle
+    *   being the IDs.
+    */
+   public function getAllIndexItemIds(SearchApiIndex $index) {
+-    $entities = entity_load($this->entityType);
++    $query = new EntityFieldQuery();
++    $query->entityCondition('entity_type', $this->entityType);
++    if ($bundles = $this->getIndexBundles($index)) {
++      $query->entityCondition('bundle', $bundles, 'IN');
++    }
++    $entities = $query->execute();
++    $entities = entity_load($this->entityType, array_keys($entities[$this->entityType]));
+     $ids = array();
+ 
+     foreach ($entities as $id => $entity) {

@@ -4617,24 +4617,32 @@ div[id ^= "mini-panel-partner_in_"], {
 		margin-bottom: 20px;
 	}
 	table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"]{
-		display: block;
+		//display: block;
 		overflow: hidden;
 		margin-bottom: 0px;
+		font-family: "Roboto";
 		thead{
 			tr{
-				display: block;
+				//display: block;
+				th{
+					color: @color-primary-dark;
+					word-wrap: break-word;
+				}
 			}
 		}
 		tbody{
 			tr{
-				background-color: inherit;
-			    border: 1px solid @color-primary-dark;
-			    padding: 0;
-			    margin: 0;
-			    margin-top: 15px;
-			    display: block;
+				background-color: white;
+			    border: 10px solid @color-primary;
 			    td{
 			    	font-size: 14px;
+			    	border: none !important;
+			    	word-wrap: break-word;
+			    }
+			    @media only screen and (max-width : 767px){
+					td{
+						max-width: 80px;
+					}
 			    }
 			}
 		}
@@ -4731,6 +4739,7 @@ div[id ^= "mini-panel-partner_in_"], {
 				width: 40%;
 				display: inline-block;
 			}
+			/*
 			input[type="file"] {
 				-webkit-appearance: none;
 				-moz-appearance: none;
@@ -4745,6 +4754,7 @@ div[id ^= "mini-panel-partner_in_"], {
 					cursor: pointer;
 				}
 			}
+			*/
 			button{
 				padding: 7px 15px;
 				vertical-align: top;
@@ -4824,6 +4834,7 @@ div[id ^= "mini-panel-partner_in_"], {
 					width: 40%;
 				}
 				.form-managed-file{
+					/*
 					input[type="file"] {
 						-webkit-appearance: none;
 						-moz-appearance: none;
@@ -4838,6 +4849,7 @@ div[id ^= "mini-panel-partner_in_"], {
 							cursor: pointer;
 						}
 					}
+					*/
 					.form-submit{
 						background-color: @color-see-more;
 						color: white;
@@ -4934,6 +4946,11 @@ div[id ^= "mini-panel-partner_in_"], {
 
 //update profile
 .partner-edit-form{
+	.group-right.col-sm-6{
+		.field-name-field-mission-statement{
+			visibility: hidden;
+		}
+	}
 	h2{
 		color: @color-text-purple-darker;
 		font-family: "Oswald";
@@ -5230,7 +5247,8 @@ div[id ^= "mini-panel-partner_in_"], {
 	padding-bottom: 0px;
 	margin-bottom: 5px;
 	#oira-strategic-documentation-eu-osha-form,
-	#oira-strategic-documentation-partners-form{
+	#oira-strategic-documentation-partners-form,
+	#oira-collaboration-items-form{
 		>div{
 				display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
 				display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -5410,7 +5428,7 @@ div[id ^= "mini-panel-partner_in_"], {
 				}
 				.search-page-results-wrapper{
 					background-color: @color-white;
-					padding: 30px;
+					padding: 0px 30px;
 					.node-teaser{
 						border-top: 2px solid @color-primary-dark;
 						margin-left: 0px;
@@ -5437,6 +5455,50 @@ div[id ^= "mini-panel-partner_in_"], {
 						margin-left: 0px;
 						margin-right: 0px;
 						padding-top: 0px;	
+					}
+					.node-collaboration-document{
+						h2{
+							margin-top: 0px;
+						}
+						.field-collection-container{
+							border: none;
+							margin-bottom: 0px;
+							.field-collection-view{
+								margin: 0px;
+								padding: 0px;
+								.field-name-field-col-item-label{
+									font-weight: bolder;
+								}
+								.field-type-file{
+									a{
+										color: @color-menu;
+									    font-weight: bold;
+									    font-style: italic;
+									}
+								}
+								.field-type-link-field{
+									margin-top: 15px;
+									a{
+										color: @color-menu;
+										font-weight: bold;
+										font-style: italic;
+										text-decoration: none;
+										&:hover{
+											color: @color-text-purple;
+										}
+										&:before{
+											content: "\e164";
+											text-decoration: none;
+											font-style: normal;
+											margin-right: 5px;
+	    									color: @color-text-purple-darker;
+											font-family: "Glyphicons Halflings";
+											vertical-align: middle;
+										}
+									}
+								}
+							}
+						}
 					}
 					.node-strategic-documentation{
 						.field.field-name-field-country,
