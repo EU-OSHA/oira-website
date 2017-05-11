@@ -23,7 +23,7 @@ function oira_partner_menu() {
     'access arguments' => [ROLE_OIRA_PARTNER],
   ];
 
-  $items['private-zone/update-profile'] = [
+  $items['private-zone/view-profile'] = [
     'title' => 'Private zone',
     'page callback' => 'oira_partner_private_zone_update_callback',
     'access callback' => 'oira_partner_has_role',
@@ -58,7 +58,7 @@ function oira_partner_private_zone_callback() {
 function oira_partner_private_zone_update_callback() {
   $partner = oira_partner_get_account_partner();
   if (!empty($partner)) {
-    drupal_goto('node/' . $partner->nid . '/update-profile');
+    drupal_goto('node/' . $partner->nid . '/view-profile');
   }
   else {
     drupal_access_denied();

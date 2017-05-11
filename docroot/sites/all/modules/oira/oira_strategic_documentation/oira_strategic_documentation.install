@@ -95,3 +95,25 @@ function oira_strategic_documentation_update_7013() {
 function oira_strategic_documentation_update_7014() {
   features_revert_module('oira_strategic_documentation');
 }
+
+/**
+ * Enable collaboration module and config search index.
+ */
+function oira_strategic_documentation_update_7015() {
+  module_enable(['oira_collaboration_items']);
+  $index = search_api_index_load('private_multilingual_node_index');
+  $index->options['datasource']['bundles'] = [
+    'strategic_documentation' => 'strategic_documentation',
+    'collaboration_document' => 'collaboration_document',
+  ];
+  $index->save();
+
+  features_revert_module('oira_strategic_documentation');
+}
+
+/**
+ * Feature revert: NOW-462
+ */
+function oira_strategic_documentation_update_7016() {
+  features_revert_module('oira_strategic_documentation');
+}

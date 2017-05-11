@@ -187,9 +187,9 @@ Collaboration area
       'admin_title' => 'Intro text',
       'title' => '<none>',
       'title_heading' => 'h2',
-      'body' => '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>',
+      'body' => '<p>This section has been designed as a networking space where OiRA partners will be able to share documents, materials and resources. It can also be used as a source of information from where to find, for instance, images to be used in the OiRA tools and for OiRA related presentations and publications.</p>',
       'format' => 'full_html',
-      'substitute' => 1,
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -760,7 +760,7 @@ Update Strategic Documentation',
   $page->api_version = 1;
   $page->name = 'eu_osha_documents';
   $page->task = 'page';
-  $page->admin_title = 'EU OSHA documents';
+  $page->admin_title = 'EU-OSHA documents';
   $page->admin_description = '';
   $page->path = 'private-zone/collaboration-area/eu-osha-documents';
   $page->access = array(
@@ -892,15 +892,15 @@ EU-OSHA documents',
     ),
   );
   $display->cache = array();
-  $display->title = 'EU OSHA Documents';
+  $display->title = 'EU-OSHA Documents';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $pane->pid = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
     $pane->panel = 'center';
     $pane->type = 'block';
-    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_eu_osha';
+    $pane->subtype = 'oira_collaboration_items-oira_collaboration_items';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -916,9 +916,9 @@ EU-OSHA documents',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '19fec5ae-2e6b-480c-94de-1b0277c14342';
-    $display->content['new-19fec5ae-2e6b-480c-94de-1b0277c14342'] = $pane;
-    $display->panels['center'][0] = 'new-19fec5ae-2e6b-480c-94de-1b0277c14342';
+    $pane->uuid = '9e4be591-440a-4380-858c-0b83d6b861b4';
+    $display->content['new-9e4be591-440a-4380-858c-0b83d6b861b4'] = $pane;
+    $display->panels['center'][0] = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

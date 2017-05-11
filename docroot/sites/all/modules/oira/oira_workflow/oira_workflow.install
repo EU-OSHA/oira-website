@@ -55,3 +55,10 @@ function oira_workflow_update_7004() {
 function oira_workflow_update_7005() {
   features_revert_module('oira_workflow');
 }
+
+/**
+ * Feature revert: NOW-453 - update partner profile url - private zone
+ */
+function oira_workflow_update_7006() {
+  features_revert_module('oira_workflow');
+}
