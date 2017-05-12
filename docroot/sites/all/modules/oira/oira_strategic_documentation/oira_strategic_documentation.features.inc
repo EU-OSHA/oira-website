@@ -184,38 +184,3 @@ function oira_strategic_documentation_default_search_api_index() {
   }');
   return $items;
 }
-
-/**
- * Implements hook_default_search_api_server().
- */
-function oira_strategic_documentation_default_search_api_server() {
-  $items = array();
-  $items['private_apache_solr_server'] = entity_import('search_api_server', '{
-    "name" : "Private Solr server",
-    "machine_name" : "private_apache_solr_server",
-    "description" : "",
-    "class" : "search_api_solr_service",
-    "options" : {
-      "clean_ids_form" : [],
-      "clean_ids" : false,
-      "site_hash_form" : [],
-      "site_hash" : false,
-      "scheme" : "http",
-      "host" : "localhost",
-      "port" : "8983",
-      "path" : "\\/solr\\/oira-private",
-      "http_user" : "",
-      "http_pass" : "",
-      "excerpt" : 1,
-      "retrieve_data" : 0,
-      "highlight_data" : 1,
-      "skip_schema_check" : 0,
-      "solr_version" : "",
-      "http_method" : "AUTO",
-      "http" : { "http_user" : "", "http_pass" : null }
-    },
-    "enabled" : "1",
-    "rdf_mapping" : []
-  }');
-  return $items;
-}
