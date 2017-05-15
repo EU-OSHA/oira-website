@@ -618,9 +618,8 @@ function oira_strategic_documentation_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
       'default_image' => 676,
+      'entity_translation_sync' => FALSE,
       'file_directory' => 'strategic-doc-image',
       'file_extensions' => 'png gif jpg jpeg',
       'image_field_caption' => 0,

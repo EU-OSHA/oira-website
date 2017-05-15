@@ -59,17 +59,23 @@ function oira_strategic_documentation_default_search_api_index() {
     "server" : "private_apache_solr_server",
     "item_type" : "search_api_et_node",
     "options" : {
-      "datasource" : { "bundles" : [ "strategic_documentation" ] },
+      "datasource" : { "bundles" : [ "collaboration_document", "strategic_documentation" ] },
       "index_directly" : 1,
       "cron_limit" : "10",
       "search_api_et" : { "include" : "incomplete", "fallback language" : "en" },
       "fields" : {
+        "attachments_field_col_item_files" : { "type" : "text" },
         "attachments_field_private_file" : { "type" : "text" },
         "body:value" : { "type" : "text" },
+        "changed" : { "type" : "date" },
+        "created" : { "type" : "date" },
         "field_alternative_body:value" : { "type" : "text" },
         "field_alternative_title" : { "type" : "text" },
+        "field_collaboration_items:field_col_item_desc" : { "type" : "list\\u003Ctext\\u003E", "boost" : "5.0" },
+        "field_collaboration_items:field_col_item_label" : { "type" : "list\\u003Ctext\\u003E", "boost" : "5.0" },
         "field_country" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_language:value" : { "type" : "string" },
+        "field_languages:value" : { "type" : "list\\u003Cstring\\u003E" },
         "field_multiple_sector" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_partner_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_revised_date" : { "type" : "date" },
@@ -88,7 +94,10 @@ function oira_strategic_documentation_default_search_api_index() {
           "weight" : "-10",
           "settings" : {
             "default" : "0",
-            "bundles" : { "strategic_documentation" : "strategic_documentation" }
+            "bundles" : {
+              "collaboration_document" : "collaboration_document",
+              "strategic_documentation" : "strategic_documentation"
+            }
           }
         },
         "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
@@ -97,7 +106,7 @@ function oira_strategic_documentation_default_search_api_index() {
           "status" : 1,
           "weight" : "0",
           "settings" : {
-            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
+            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv webm mp4 wmv zip rar swf fla flv",
             "number_indexed" : "0",
             "max_file_size" : "0",
             "excluded_private" : 1
@@ -112,7 +121,7 @@ function oira_strategic_documentation_default_search_api_index() {
           "status" : 1,
           "weight" : "0",
           "settings" : {
-            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
+            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv webm mp4 wmv zip rar swf fla flv",
             "number_indexed" : "0",
             "max_file_size" : "0",
             "excluded_private" : 0
@@ -171,41 +180,6 @@ function oira_strategic_documentation_default_search_api_index() {
     },
     "enabled" : "1",
     "read_only" : "0",
-    "rdf_mapping" : []
-  }');
-  return $items;
-}
-
-/**
- * Implements hook_default_search_api_server().
- */
-function oira_strategic_documentation_default_search_api_server() {
-  $items = array();
-  $items['private_apache_solr_server'] = entity_import('search_api_server', '{
-    "name" : "Private Solr server",
-    "machine_name" : "private_apache_solr_server",
-    "description" : "",
-    "class" : "search_api_solr_service",
-    "options" : {
-      "clean_ids_form" : [],
-      "clean_ids" : false,
-      "site_hash_form" : [],
-      "site_hash" : false,
-      "scheme" : "http",
-      "host" : "localhost",
-      "port" : "8983",
-      "path" : "\\/solr\\/oira-private",
-      "http_user" : "",
-      "http_pass" : "",
-      "excerpt" : 1,
-      "retrieve_data" : 0,
-      "highlight_data" : 1,
-      "skip_schema_check" : 0,
-      "solr_version" : "",
-      "http_method" : "AUTO",
-      "http" : { "http_user" : "", "http_pass" : null }
-    },
-    "enabled" : "1",
     "rdf_mapping" : []
   }');
   return $items;
