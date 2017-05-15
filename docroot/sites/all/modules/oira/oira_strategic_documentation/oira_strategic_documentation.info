@@ -74,7 +74,6 @@ features[page_manager_pages][] = strategic_documentation
 features[path_breadcrumbs][] = add_strategic
 features[path_breadcrumbs][] = edit_strategic
 features[search_api_index][] = private_multilingual_node_index
-features[search_api_server][] = private_apache_solr_server
 features[variable][] = comment_anonymous_strategic_documentation
 features[variable][] = comment_default_mode_strategic_documentation
 features[variable][] = comment_default_per_page_strategic_documentation
