@@ -38,6 +38,21 @@ function osha_news_views_api($module = NULL, $api = NULL) {
 function osha_news_image_default_styles() {
   $styles = array();
 
+  // Exported image style: resize_image_600x350.
+  $styles['resize_image_600x350'] = array(
+    'label' => 'Resize Image (600X350)',
+    'effects' => array(
+      12 => array(
+        'name' => 'image_resize',
+        'data' => array(
+          'width' => 600,
+          'height' => 350,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: scale_600x350__background__dfd8e4__align_to_left_.
   $styles['scale_600x350__background__dfd8e4__align_to_left_'] = array(
     'label' => 'Scale 600x350 (background #dfd8e4, align to left)',
