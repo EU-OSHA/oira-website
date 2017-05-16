@@ -8723,6 +8723,16 @@ a.more-link:before {
   border: none;
   width: 100%;
 }
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body {
+  padding: 0px;
+}
+.page-contact-us #block-system-main .panels-flexible-row fieldset .panel-body .help-block,
+.page-contact-us #block-system-main .panels-flexible-row .captcha .panel-body .help-block {
+  color: white;
+  font-size: .9em;
+  opacity: .8;
+}
 .page-contact-us #block-system-main .panels-flexible-row fieldset legend,
 .page-contact-us #block-system-main .panels-flexible-row .captcha legend {
   display: none;
@@ -8790,7 +8800,7 @@ a.more-link:before {
 }
 .page-contact-us #block-system-main .panels-flexible-row button.form-submit {
   position: absolute;
-  bottom: 15px;
+  bottom: 62px;
   left: 235px;
   border-radius: 0px;
   background-color: white;
