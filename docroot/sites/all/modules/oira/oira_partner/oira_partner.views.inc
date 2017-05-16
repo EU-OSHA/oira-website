@@ -66,6 +66,14 @@ function oira_partner_views_data_alter(&$data) {
       'handler' => 'oira_partner_handler_partner_author_coauthor_access',
     ),
   );
+
+  $data['views_entity_node']['edit_node_no_destination'] = array(
+    'field' => array(
+      'title' => t('Edit link (no destination)'),
+      'help' => t('Provide a simple link to edit the content.'),
+      'handler' => 'views_handler_field_node_link_edit_no_destination',
+    ),
+  );
 }
 
 /**

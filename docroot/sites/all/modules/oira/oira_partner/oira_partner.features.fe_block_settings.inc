@@ -79,7 +79,7 @@ function oira_partner_default_fe_block_settings() {
     'pages' => 'node/add/*
 node/*
 node/*/edit
-node/*/update-profile
+node/*/view-profile
 private-zone
 private-zone/*',
     'roles' => array(

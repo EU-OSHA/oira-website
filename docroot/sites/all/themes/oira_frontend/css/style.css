@@ -6689,7 +6689,6 @@ button.close {
   display: inline-block;
   margin-right: 10px;
   max-width: 100px;
-  visibility: hidden;
 }
 .top-header .header-blocks #block-menu-block-3 .introduction-title a {
   display: block;
@@ -6710,7 +6709,6 @@ button.close {
 .top-header .header-blocks #block-lang-dropdown-language {
   display: inline-block;
   float: right;
-  visibility: hidden;
 }
 .top-header .header-blocks #block-lang-dropdown-language #lang-dropdown-select-language {
   border: 2px solid #003399;
@@ -8268,6 +8266,18 @@ a.more-link:before {
 .page-oira-tools .panels-flexible-row-last {
   background: url('../images/background-two-colors.png') repeat-y 50%;
   padding-bottom: 0px;
+}
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form > div {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child .form-group {
   margin-bottom: 0px;
@@ -9909,6 +9919,18 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-bottom: 0px;
   padding-top: 0px;
 }
+.page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form > div {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child .form-group {
   margin-bottom: 0px;
 }
@@ -10439,6 +10461,18 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background: url('../images/background-two-colors.png') repeat-y 50%;
   padding-bottom: 0px;
   padding-top: 0px;
+}
+.page-search-site .oira-search-form-container #osha-search-search-form > div {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 .page-search-site .oira-search-form-container #osha-search-search-form div:first-child .form-group {
   margin-bottom: 0px;
@@ -11196,23 +11230,27 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-bottom: 20px;
 }
 .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] {
-  display: block;
   overflow: hidden;
   margin-bottom: 0px;
+  font-family: "Roboto";
 }
-.partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] thead tr {
-  display: block;
+.partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] thead tr th {
+  color: #786586;
+  word-wrap: break-word;
 }
 .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] tbody tr {
-  background-color: inherit;
-  border: 1px solid #786586;
-  padding: 0;
-  margin: 0;
-  margin-top: 15px;
-  display: block;
+  background-color: white;
+  border: 10px solid #dfd8e4;
 }
 .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] tbody tr td {
   font-size: 14px;
+  border: none !important;
+  word-wrap: break-word;
+}
+@media only screen and (max-width: 767px) {
+  .partner-edit-form table[class*="table table-striped sticky-enabled tableheader-processed sticky-table"] tbody tr td {
+    max-width: 80px;
+  }
 }
 .node-form {
   background-color: #dfd8e4;
@@ -11312,6 +11350,22 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   display: block;
   float: none;
   clear: both;
+  /*
+			input[type="file"] {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				&:before{
+					content: "Select file";
+					background-color: @color-see-more;
+					color: white;
+					padding: 3px 43px;
+					position: absolute;
+					height: 25px;
+					cursor: pointer;
+				}
+			}
+			*/
 }
 .node-form #edit-field-image .image-widget-data .form-file,
 .node-form #edit-field-private-image .image-widget-data .form-file,
@@ -11327,42 +11381,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .node-form #edit-field-private-file--2 .file-widget .form-file {
   width: 40%;
   display: inline-block;
-}
-.node-form #edit-field-image .image-widget-data input[type="file"],
-.node-form #edit-field-private-image .image-widget-data input[type="file"],
-.node-form #edit-field-private-file .image-widget-data input[type="file"],
-.node-form #edit-field-image--2 .image-widget-data input[type="file"],
-.node-form #edit-field-private-image--2 .image-widget-data input[type="file"],
-.node-form #edit-field-private-file--2 .image-widget-data input[type="file"],
-.node-form #edit-field-image .file-widget input[type="file"],
-.node-form #edit-field-private-image .file-widget input[type="file"],
-.node-form #edit-field-private-file .file-widget input[type="file"],
-.node-form #edit-field-image--2 .file-widget input[type="file"],
-.node-form #edit-field-private-image--2 .file-widget input[type="file"],
-.node-form #edit-field-private-file--2 .file-widget input[type="file"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.node-form #edit-field-image .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-image .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-file .image-widget-data input[type="file"]:before,
-.node-form #edit-field-image--2 .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-image--2 .image-widget-data input[type="file"]:before,
-.node-form #edit-field-private-file--2 .image-widget-data input[type="file"]:before,
-.node-form #edit-field-image .file-widget input[type="file"]:before,
-.node-form #edit-field-private-image .file-widget input[type="file"]:before,
-.node-form #edit-field-private-file .file-widget input[type="file"]:before,
-.node-form #edit-field-image--2 .file-widget input[type="file"]:before,
-.node-form #edit-field-private-image--2 .file-widget input[type="file"]:before,
-.node-form #edit-field-private-file--2 .file-widget input[type="file"]:before {
-  content: "Select file";
-  background-color: #10b2e4;
-  color: white;
-  padding: 3px 43px;
-  position: absolute;
-  height: 25px;
-  cursor: pointer;
 }
 .node-form #edit-field-image .image-widget-data button,
 .node-form #edit-field-private-image .image-widget-data button,
@@ -11480,21 +11498,24 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .node-form #edit-field-resource-fc--2 .panel .panel-body #edit-field-resource-fc-und-0-field-language--2 {
   width: 40%;
 }
-.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file input[type="file"],
-.node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file input[type="file"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file input[type="file"]:before,
-.node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file input[type="file"]:before {
-  content: "Select file";
-  background-color: #10b2e4;
-  color: white;
-  padding: 3px 43px;
-  position: absolute;
-  height: 25px;
-  cursor: pointer;
+.node-form #edit-field-resource-fc .panel .panel-body .form-managed-file,
+.node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file {
+  /*
+					input[type="file"] {
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						appearance: none;
+						&:before{
+							content: "Select file";
+							background-color: @color-see-more;
+							color: white;
+							padding: 3px 43px;
+							position: absolute;
+							height: 25px;
+							cursor: pointer;
+						}
+					}
+					*/
 }
 .node-form #edit-field-resource-fc .panel .panel-body .form-managed-file .form-submit,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .form-managed-file .form-submit {
@@ -11581,6 +11602,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-add-promotional-material #edit-field-oira,
 .page-node-add-strategic-documentation #edit-field-oira {
   margin-top: 10px;
+}
+.partner-edit-form .group-right.col-sm-6 .field-name-field-mission-statement {
+  visibility: hidden;
 }
 .partner-edit-form h2 {
   color: #786586;
@@ -11855,12 +11879,28 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-bottom: 0px;
   margin-bottom: 5px;
 }
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form > div,
+.oira-search-form-container #oira-strategic-documentation-partners-form > div,
+.oira-search-form-container #oira-collaboration-items-form > div {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child .form-group,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child .form-group {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child .form-group,
+.oira-search-form-container #oira-collaboration-items-form div:first-child .form-group {
   margin-bottom: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column {
   background-color: #765e84;
   color: #ffffff;
   padding-right: 30px;
@@ -11869,12 +11909,14 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   position: relative;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-textfield,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-textfield {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-textfield,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-textfield {
   float: left;
   margin-bottom: 15px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-textfield input,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-textfield input {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-textfield input,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-textfield input {
   border: none;
   border-radius: 0px;
   outline: none;
@@ -11882,7 +11924,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-right: 35px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column #edit-submit,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-submit {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-submit,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column #edit-submit {
   position: absolute;
   right: 0;
   margin-right: 30px;
@@ -11898,20 +11941,23 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column #edit-submit:before,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-submit:before {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-submit:before,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column #edit-submit:before {
   content: "\e003";
   font-family: "Glyphicons Halflings";
   margin-right: 30px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column > a,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column > a {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column > a,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column > a {
   display: block;
   color: #ffffff;
   margin-bottom: 10px;
   font-style: italic;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column > a span:before,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column > a span:before {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column > a span:before,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column > a span:before {
   color: #786586;
   padding: 1px;
   font-size: 0.7em;
@@ -11923,30 +11969,37 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column #edit-field-country label:after,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-field-country label:after,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column #edit-field-country label:after,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column #edit-field-sector label:after,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-field-sector label:after {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column #edit-field-sector label:after,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column #edit-field-sector label:after {
   content: none;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-checkboxes {
   border-top: 2px solid #ffffff;
   padding-top: 10px;
   clear: both;
   margin-top: 15px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
   display: none;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes > label,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes > label {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes > label,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-checkboxes > label {
   padding-left: 0px;
   margin-bottom: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes > label:first-child,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes > label:first-child {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes > label:first-child,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-checkboxes > label:first-child {
   font-family: 'Oswald';
   font-size: 1.2em;
   font-weight: normal;
@@ -11955,27 +12008,32 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   cursor: pointer;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes > label:after,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes > label:after {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes > label:after,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-checkboxes > label:after {
   content: "\e250";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-checkboxes .area-shown:after {
   content: "\e252";
   font-family: "Glyphicons Halflings";
   margin-left: 10px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-type-checkboxes .form-type-checkbox > label,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes .form-type-checkbox > label {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-type-checkboxes .form-type-checkbox > label,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-type-checkboxes .form-type-checkbox > label {
   padding-left: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-left-column .form-item-field-sector,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-item-field-sector {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-left-column .form-item-field-sector,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-left-column .form-item-field-sector {
   border-bottom: 2px solid #ffffff;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content {
   background-color: #dfd8e4;
   padding-bottom: 90px;
   padding-left: 30px;
@@ -11984,7 +12042,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border-left: 5px solid #ffffff;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content #edit-sort-fieldset,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content #edit-sort-fieldset {
   border: none;
   border-radius: 0px;
   background-color: rgba(0, 0, 0, 0);
@@ -11994,26 +12053,31 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-bottom: 30px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content #edit-sort-fieldset .panel-body,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .panel-body {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .panel-body,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content #edit-sort-fieldset .panel-body {
   padding-left: 0px;
   padding-right: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content #edit-sort-fieldset .sort-container,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content #edit-sort-fieldset .sort-container {
   min-width: 210px;
   padding-left: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content #edit-sort-fieldset .sort-container label,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container label {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container label,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content #edit-sort-fieldset .sort-container label {
   font-weight: 100;
   font-size: 0.9em;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content #edit-sort-fieldset .sort-container label:after {
   content: ": ";
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content #edit-sort-fieldset .sort-container #edit-sort {
   font-size: 0.9em;
   display: inline-block;
   width: auto;
@@ -12025,31 +12089,37 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content #edit-sort-fieldset .count-container,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .count-container {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content #edit-sort-fieldset .count-container,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content #edit-sort-fieldset .count-container {
   font-size: 0.9em;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper-grouped,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper-grouped {
   margin-bottom: 20px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title {
   background-color: #ffffff;
   padding: 10px 30px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title h2,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title h2 {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title h2,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper-grouped-type-title h2 {
   color: #786586;
   border-bottom: 2px solid #786586;
   padding-bottom: 20px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 0px 30px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-teaser {
   border-top: 2px solid #786586;
   margin-left: 0px;
   margin-right: 0px;
@@ -12057,40 +12127,109 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-top: 25px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-datetime,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-datetime {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-datetime,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-datetime {
   margin-bottom: 5px !important;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-name-title-field h3,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-name-title-field h3 {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-name-title-field h3,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-name-title-field h3 {
   margin-top: 0px !important;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-file,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-file {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-file,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-file {
   margin-top: 10px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-taxonomy-term-reference,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-taxonomy-term-reference {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-taxonomy-term-reference,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-teaser .field-type-taxonomy-term-reference {
   margin-bottom: 5px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-teaser:first-child,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser:first-child {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-teaser:first-child,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-teaser:first-child {
   border-top: none;
   margin-left: 0px;
   margin-right: 0px;
   padding-top: 0px;
 }
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document h2,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document h2,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document h2 {
+  margin-top: 0px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container {
+  border: none;
+  margin-bottom: 0px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view {
+  margin: 0px;
+  padding: 0px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-name-field-col-item-label,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-name-field-col-item-label,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-name-field-col-item-label {
+  font-weight: bolder;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-file a,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-file a,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-file a {
+  color: #10b2e4;
+  font-weight: bold;
+  font-style: italic;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field {
+  margin-top: 15px;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a {
+  color: #10b2e4;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: none;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a:hover,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a:hover,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a:hover {
+  color: #967ea7;
+}
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a:before,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a:before,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-collaboration-document .field-collection-container .field-collection-view .field-type-link-field a:before {
+  content: "\e164";
+  text-decoration: none;
+  font-style: normal;
+  margin-right: 5px;
+  color: #786586;
+  font-family: "Glyphicons Halflings";
+  vertical-align: middle;
+}
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type {
   background-color: #b4a4bf;
   display: inline-block;
   color: white;
@@ -12105,24 +12244,32 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field.field-name-field-country p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-pr-language p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type p,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type p {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-strategic-type p {
   margin-bottom: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector {
   display: inline-block;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item {
   background-color: #b4a4bf;
   display: inline-block;
   color: white;
@@ -12136,27 +12283,34 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-bottom: 15px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item p,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item p {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-multiple-sector .field-item p {
   margin-bottom: 0px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link {
   margin-top: 15px;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a {
   color: #10b2e4;
   font-weight: bold;
   font-style: italic;
 }
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a:hover,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a:hover,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-private-file a:hover,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a:hover,
-.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a:hover {
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a:hover,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a:hover {
   color: #967ea7;
 }
 .private-images-page-selector .panels-flexible-row-new-1 {
@@ -12848,6 +13002,68 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     background-color: #dfd8e4;
     padding-bottom: 0px;
   }
+  .page-oira-tools .panels-flexible-row-new-1 #osha-search-search-form > div,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #osha-search-search-form > div,
+  .page-search-site .panels-flexible-row-new-1 #osha-search-search-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #osha-search-search-form > div,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #osha-search-search-form > div,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #osha-search-search-form > div,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #osha-search-search-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #osha-search-search-form > div,
+  .page-oira-tools .oira-search-form-container #osha-search-search-form > div,
+  .page-promotional-resources-search .oira-search-form-container #osha-search-search-form > div,
+  .page-search-site .oira-search-form-container #osha-search-search-form > div,
+  .page-private-zone-collaboration-area .oira-search-form-container #osha-search-search-form > div,
+  .page-oira-tools .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form > div,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form > div,
+  .page-search-site .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #hwc-practical-tool-menu-tools-form > div,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #hwc-practical-tool-menu-tools-form > div,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #hwc-practical-tool-menu-tools-form > div,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #hwc-practical-tool-menu-tools-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #hwc-practical-tool-menu-tools-form > div,
+  .page-oira-tools .oira-search-form-container #hwc-practical-tool-menu-tools-form > div,
+  .page-promotional-resources-search .oira-search-form-container #hwc-practical-tool-menu-tools-form > div,
+  .page-search-site .oira-search-form-container #hwc-practical-tool-menu-tools-form > div,
+  .page-private-zone-collaboration-area .oira-search-form-container #hwc-practical-tool-menu-tools-form > div,
+  .page-oira-tools .panels-flexible-row-new-1 #oira-promotional-material-search-form > div,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #oira-promotional-material-search-form > div,
+  .page-search-site .panels-flexible-row-new-1 #oira-promotional-material-search-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #oira-promotional-material-search-form > div,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form > div,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form > div,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form > div,
+  .page-oira-tools .oira-search-form-container #oira-promotional-material-search-form > div,
+  .page-promotional-resources-search .oira-search-form-container #oira-promotional-material-search-form > div,
+  .page-search-site .oira-search-form-container #oira-promotional-material-search-form > div,
+  .page-private-zone-collaboration-area .oira-search-form-container #oira-promotional-material-search-form > div,
+  .page-oira-tools .panels-flexible-row-new-1 #oira-strategic-documentation-eu-osha-form > div,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #oira-strategic-documentation-eu-osha-form > div,
+  .page-search-site .panels-flexible-row-new-1 #oira-strategic-documentation-eu-osha-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #oira-strategic-documentation-eu-osha-form > div,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-eu-osha-form > div,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-eu-osha-form > div,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-eu-osha-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-eu-osha-form > div,
+  .page-oira-tools .oira-search-form-container #oira-strategic-documentation-eu-osha-form > div,
+  .page-promotional-resources-search .oira-search-form-container #oira-strategic-documentation-eu-osha-form > div,
+  .page-search-site .oira-search-form-container #oira-strategic-documentation-eu-osha-form > div,
+  .page-private-zone-collaboration-area .oira-search-form-container #oira-strategic-documentation-eu-osha-form > div,
+  .page-oira-tools .panels-flexible-row-new-1 #oira-strategic-documentation-partners-form > div,
+  .page-promotional-resources-search .panels-flexible-row-new-1 #oira-strategic-documentation-partners-form > div,
+  .page-search-site .panels-flexible-row-new-1 #oira-strategic-documentation-partners-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-new-1 #oira-strategic-documentation-partners-form > div,
+  .page-oira-tools .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-partners-form > div,
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-partners-form > div,
+  .page-search-site .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-partners-form > div,
+  .page-private-zone-collaboration-area .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-strategic-documentation-partners-form > div,
+  .page-oira-tools .oira-search-form-container #oira-strategic-documentation-partners-form > div,
+  .page-promotional-resources-search .oira-search-form-container #oira-strategic-documentation-partners-form > div,
+  .page-search-site .oira-search-form-container #oira-strategic-documentation-partners-form > div,
+  .page-private-zone-collaboration-area .oira-search-form-container #oira-strategic-documentation-partners-form > div {
+    display: block !important;
+  }
   .page-oira-tools .panels-flexible-row-new-1 #edit-left-column,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-left-column,
   .page-search-site .panels-flexible-row-new-1 #edit-left-column,
@@ -12997,6 +13213,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-private-zone-collaboration-area .oira-search-form-container #edit-content .toggle-search-sidebar {
     position: absolute;
     top: 20px;
+    left: 15px;
   }
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .toggle-search-sidebar span,
@@ -13040,6 +13257,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   /*END OIRA TOOLS, PROMOTIONAL RESOURCES, GENERAL SEARCH (FILTERS)*/
   /*OIRA TOOLS
 **************************************/
+  .page-oira-tools #hwc-practical-tool-menu-tools-form > div {
+    display: block !important;
+  }
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
     margin-left: 180px !important;
   }
@@ -13051,6 +13271,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 ***************************************************/
   .promotional-introduction-item {
     min-height: 475px;
+  }
+  .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form > div {
+    display: block !important;
   }
   .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last #oira-promotional-material-search-form div:first-child #edit-content .search-page-results-wrapper .node-promotional-material .field-name-tools-see-more a.more-link {
     margin-left: 166px !important;
@@ -13576,6 +13799,21 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     display: block;
     float: none;
     clear: both;
+    /*
+			input[type="file"] {
+			    -webkit-appearance: none;
+			    -moz-appearance: none;
+			    appearance: none;
+			    &:before{
+			    	content: "Select file";
+				    background-color: @color-see-more;
+				    color: white;
+				    padding: 3px 43px;
+				    position: absolute;
+				    height: 25px;
+				    cursor: pointer;
+				}
+			}*/
   }
   .node-form #edit-field-image .image-widget-data .form-file,
   .node-form #edit-field-private-image .image-widget-data .form-file,
@@ -13585,30 +13823,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .node-form #edit-field-private-file .file-widget .form-file {
     width: 60%;
     display: inline-block;
-  }
-  .node-form #edit-field-image .image-widget-data input[type="file"],
-  .node-form #edit-field-private-image .image-widget-data input[type="file"],
-  .node-form #edit-field-private-file .image-widget-data input[type="file"],
-  .node-form #edit-field-image .file-widget input[type="file"],
-  .node-form #edit-field-private-image .file-widget input[type="file"],
-  .node-form #edit-field-private-file .file-widget input[type="file"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  .node-form #edit-field-image .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-private-image .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-private-file .image-widget-data input[type="file"]:before,
-  .node-form #edit-field-image .file-widget input[type="file"]:before,
-  .node-form #edit-field-private-image .file-widget input[type="file"]:before,
-  .node-form #edit-field-private-file .file-widget input[type="file"]:before {
-    content: "Select file";
-    background-color: #10b2e4;
-    color: white;
-    padding: 3px 43px;
-    position: absolute;
-    height: 25px;
-    cursor: pointer;
   }
   .node-form #edit-field-image .image-widget-data button,
   .node-form #edit-field-private-image .image-widget-data button,

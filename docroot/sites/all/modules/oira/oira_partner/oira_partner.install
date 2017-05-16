@@ -135,3 +135,18 @@ function oira_partner_update_7017() {
 function oira_partner_update_7018() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * Feature revert: NOW-453 + update partner profile url - private zone.
+ */
+function oira_partner_update_7019() {
+  features_revert_module('oira_partner');
+
+  db_update('menu_links')
+    ->fields(array('link_path' => 'private-zone/view-profile'))
+    ->condition('link_path', 'private-zone/update-profile', '=')
+    ->condition('menu_name', 'menu-private-zone', '=')
+    ->execute();
+
+  drupal_flush_all_caches();
+}

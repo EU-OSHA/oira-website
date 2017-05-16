@@ -1171,6 +1171,67 @@ function oira_partner_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-partner-field_partner_other_users'.
+  $field_instances['node-partner-field_partner_other_users'] = array(
+    'bundle' => 'partner',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'osha',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'text_default',
+        'weight' => 21,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_partner_other_users',
+    'label' => 'Other users',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 24,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-partner-field_partner_type'.
   $field_instances['node-partner-field_partner_type'] = array(
     'bundle' => 'partner',
@@ -1954,6 +2015,7 @@ function oira_partner_field_default_field_instances() {
   t('Organisation');
   t('Organisation GUID');
   t('Organisation Type');
+  t('Other users');
   t('Postal code');
   t('Social profile');
   t('Type');

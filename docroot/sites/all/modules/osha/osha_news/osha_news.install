@@ -57,8 +57,15 @@ function osha_news_update_7008() {
 }
 
 /**
- * Feature revert: MDR-1146
+ * Feature revert: NOW-463.
  */
 function osha_news_update_7009() {
+  features_revert_module('osha_news');
+}
+
+/**
+ * Feature revert: MDR-1146
+ */
+function osha_news_update_7010() {
   features_revert_module('osha_news');
 }
