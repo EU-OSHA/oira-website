@@ -7997,11 +7997,7 @@ a.more-link:before {
   font-weight: bold;
   color: #58585a;
 }
-<<<<<<< HEAD
-.node-type-article .panels-flexible-region-7-add_res-inside .pane-node-field-aditional-resources #additional-resources-external_url-pane h4:after {
-=======
-.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-external-url-pane h4:after {
->>>>>>> MDR-911_security_update
+.node-type-article .panels-flexible-region-7-add_res-inside .pane-node-field-aditional-resources #additional-resources-external-url-pane h4:after {
   content: "";
   background: url("../images/icons/175.png") no-repeat;
   background-size: 100%;
@@ -8011,11 +8007,7 @@ a.more-link:before {
   width: 25px;
   height: 25px;
 }
-<<<<<<< HEAD
-.node-type-article .panels-flexible-region-7-add_res-inside .pane-node-field-aditional-resources #additional-resources-external_url-pane .node-external-url .field-name-field-external-url a {
-=======
-.node-type-article .panels-flexible-region-new-add_res-inside .pane-node-field-aditional-resources #additional-resources-external-url-pane .node-external-url .field-name-field-external-url a {
->>>>>>> MDR-911_security_update
+.node-type-article .panels-flexible-region-7-add_res-inside .pane-node-field-aditional-resources #additional-resources-external-url-pane .node-external-url .field-name-field-external-url a {
   text-align: right;
   color: #10b2e4;
 }
@@ -8048,8 +8040,7 @@ a.more-link:before {
   font-size: 0.8em;
   font-weight: bold;
 }
-.node-type-article .panels-flexible-region-7-add_res-inside #additional-resources-external_url-pane .view-additional-resources .views-item-columns-container,
-.node-type-article .panels-flexible-region-new-add_res-inside #additional-resources-external-url-pane .view-additional-resources .views-item-columns-container {
+.node-type-article .panels-flexible-region-7-add_res-inside #additional-resources-external-url-pane .view-additional-resources .views-item-columns-container {
   padding: 15px !important;
 }
 .node-type-article .oira-heading-pagination-container {
