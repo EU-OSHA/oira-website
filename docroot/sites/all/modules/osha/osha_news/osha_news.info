@@ -59,6 +59,7 @@ features[field_instance][] = node-news-field_tags
 features[field_instance][] = node-news-field_website
 features[field_instance][] = node-news-field_wf_notification
 features[field_instance][] = node-news-title_field
+features[image][] = resize_image_600x350
 features[image][] = scale_600x350__background__dfd8e4__align_to_left_
 features[image][] = scale_600x350__background__ffffff__align_to_left_
 features[node][] = news
