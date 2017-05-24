@@ -7,6 +7,10 @@ When patching a contrib module, the following steps should be followed:
 
 List of patches (most recent first)
 
+* node (core)
+  * https://www.drupal.org/node/2684337
+  * patches/node/uasort-expects-parameter-1-to-be-array.patch
+
 * bootstrap (base theme)
   * checkbox & radio inputs are not rendered
   * patches/bootstrap/bootstap-checkbox-radio-input.patch
