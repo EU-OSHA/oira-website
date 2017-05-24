@@ -7108,6 +7108,9 @@ a.more-link:before {
 .page-search-site .field-name-field-sector {
   margin-bottom: 20px;
 }
+.alert {
+  padding: 15px 30px !important;
+}
 .alert.alert-block.alert-info {
   border: 0px;
   background-color: #dfd8e4;
@@ -11196,17 +11199,23 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-private-zone .block-menu-block > .container,
 .page-node-add .block-menu-block > .container,
 .page-node-update-profile .block-menu-block > .container,
-.page-node-view-profile .block-menu-block > .container {
+.page-node-view-profile .block-menu-block > .container,
+.node-type-promotional-material .block-menu-block > .container,
+.node-type-strategic-documentation .block-menu-block > .container {
   position: relative;
 }
 .page-private-zone .block-menu-block > .container .private-zone-back-link,
 .page-node-add .block-menu-block > .container .private-zone-back-link,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-link,
 .page-node-view-profile .block-menu-block > .container .private-zone-back-link,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-link,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link,
 .page-private-zone .block-menu-block > .container .private-zone-back-wrapper,
 .page-node-add .block-menu-block > .container .private-zone-back-wrapper,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper {
+.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper {
   position: absolute;
   right: 0;
   top: 34px;
@@ -11217,10 +11226,14 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-add .block-menu-block > .container .private-zone-back-link a,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-link a,
 .page-node-view-profile .block-menu-block > .container .private-zone-back-link a,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-link a,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link a,
 .page-private-zone .block-menu-block > .container .private-zone-back-wrapper a,
 .page-node-add .block-menu-block > .container .private-zone-back-wrapper a,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a {
+.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper a,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper a {
   color: #10b2e4;
   margin-right: 15px;
 }
@@ -11228,10 +11241,14 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-add .block-menu-block > .container .private-zone-back-link a:after,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-link a:after,
 .page-node-view-profile .block-menu-block > .container .private-zone-back-link a:after,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-link a:after,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link a:after,
 .page-private-zone .block-menu-block > .container .private-zone-back-wrapper a:after,
 .page-node-add .block-menu-block > .container .private-zone-back-wrapper a:after,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a:after,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a:after {
+.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a:after,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper a:after,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper a:after {
   content: "";
   background: url("../images/icons/back-news.png") no-repeat;
   background-size: 100%;
@@ -11875,51 +11892,72 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border: none;
   cursor: pointer;
 }
+#promotional-material-node-form label[for="edit-field-publication-date-und-0-value"],
+.page-node-add-strategic-documentation label[for="edit-field-publication-date-und-0-value"],
+.page-node-create-promotional-resource label[for="edit-field-publication-date-und-0-value"],
+.node-type-strategic-documentation label[for="edit-field-publication-date-und-0-value"] {
+  display: none;
+}
+#promotional-material-node-form label[for="edit-field-revised-date-und-0-value"],
+.page-node-add-strategic-documentation label[for="edit-field-revised-date-und-0-value"],
+.page-node-create-promotional-resource label[for="edit-field-revised-date-und-0-value"],
+.node-type-strategic-documentation label[for="edit-field-revised-date-und-0-value"] {
+  display: none;
+}
 #promotional-material-node-form .group-left,
 .page-node-add-strategic-documentation .group-left,
 .page-node-create-promotional-resource .group-left,
+.node-type-strategic-documentation .group-left,
 #promotional-material-node-form .group-right,
 .page-node-add-strategic-documentation .group-right,
-.page-node-create-promotional-resource .group-right {
+.page-node-create-promotional-resource .group-right,
+.node-type-strategic-documentation .group-right {
   float: none;
   width: inherit;
 }
 #promotional-material-node-form #edit-title-field,
 .page-node-add-strategic-documentation #edit-title-field,
-.page-node-create-promotional-resource #edit-title-field {
+.page-node-create-promotional-resource #edit-title-field,
+.node-type-strategic-documentation #edit-title-field {
   width: 100%;
 }
 #promotional-material-node-form .field-type-list-boolean,
 .page-node-add-strategic-documentation .field-type-list-boolean,
-.page-node-create-promotional-resource .field-type-list-boolean {
+.page-node-create-promotional-resource .field-type-list-boolean,
+.node-type-strategic-documentation .field-type-list-boolean {
   float: none !important;
   max-width: 200px;
   margin-left: 20px;
 }
 #promotional-material-node-form #edit-field-publication-date--2,
 .page-node-add-strategic-documentation #edit-field-publication-date--2,
-.page-node-create-promotional-resource #edit-field-publication-date--2 {
+.page-node-create-promotional-resource #edit-field-publication-date--2,
+.node-type-strategic-documentation #edit-field-publication-date--2 {
   width: 64%;
 }
 #promotional-material-node-form .form-type-date-select .form-type-select[class*=hour],
 .page-node-add-strategic-documentation .form-type-date-select .form-type-select[class*=hour],
-.page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour] {
+.page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour],
+.node-type-strategic-documentation .form-type-date-select .form-type-select[class*=hour] {
   margin-left: 0px;
 }
 #promotional-material-node-form #edit-field-promotional-material-type--2,
 .page-node-add-strategic-documentation #edit-field-promotional-material-type--2,
-.page-node-create-promotional-resource #edit-field-promotional-material-type--2 {
+.page-node-create-promotional-resource #edit-field-promotional-material-type--2,
+.node-type-strategic-documentation #edit-field-promotional-material-type--2 {
   clear: both;
 }
 #promotional-material-node-form #edit_field_multiple_sector_und_chosen,
 .page-node-add-strategic-documentation #edit_field_multiple_sector_und_chosen,
-.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen {
+.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen,
+.node-type-strategic-documentation #edit_field_multiple_sector_und_chosen {
   width: 100% !important;
   box-shadow: none;
 }
 #promotional-material-node-form #edit_field_multiple_sector_und_chosen .chosen-choices,
 .page-node-add-strategic-documentation #edit_field_multiple_sector_und_chosen .chosen-choices,
-.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen .chosen-choices {
+.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen .chosen-choices,
+.node-type-strategic-documentation #edit_field_multiple_sector_und_chosen .chosen-choices {
   border: none;
   background-image: inherit;
 }

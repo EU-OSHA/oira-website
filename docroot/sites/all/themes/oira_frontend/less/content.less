@@ -258,7 +258,9 @@ a.more-link{
 		margin-bottom: 20px;
 	}
 }
-
+.alert{
+	padding: 15px 30px !important;
+}
 .alert.alert-block.alert-info{
 	border: 0px;
 	background-color: @color-primary;
@@ -4586,7 +4588,9 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-private-zone,
 .page-node-add,
 .page-node-update-profile,
-.page-node-view-profile{
+.page-node-view-profile,
+.node-type-promotional-material,
+.node-type-strategic-documentation{
 	.block-menu-block > .container{
 		position: relative;
 		.private-zone-back-link,
@@ -5227,7 +5231,14 @@ div[id ^= "mini-panel-partner_in_"], {
 //create-promotional and strategic
 #promotional-material-node-form,
 .page-node-add-strategic-documentation,
-.page-node-create-promotional-resource{
+.page-node-create-promotional-resource,
+.node-type-strategic-documentation{
+	label[for="edit-field-publication-date-und-0-value"]{
+		display: none;
+	}
+	label[for="edit-field-revised-date-und-0-value"]{
+		display: none;
+	}
 	.group-left,
 	.group-right{
 		float: none;
