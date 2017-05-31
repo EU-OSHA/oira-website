@@ -258,7 +258,9 @@ a.more-link{
 		margin-bottom: 20px;
 	}
 }
-
+.alert{
+	padding: 15px 30px !important;
+}
 .alert.alert-block.alert-info{
 	border: 0px;
 	background-color: @color-primary;
@@ -273,7 +275,7 @@ a.more-link{
 }
 
 .field-name-field-publication-date, .field-type-datetime{
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 	color: @color-text-purple;
 	.date-display-single{
 		font-weight: bold;
@@ -1536,7 +1538,7 @@ a.more-link{
 		}
 	}
 	.panels-flexible-row-last{
-		background: url('../images/background-two-colors.png') repeat-y 50%;
+		background: url('../images/background-two-colors.jpg') repeat-y 50%;
 		padding-bottom: 0px;
 		#hwc-practical-tool-menu-tools-form{
 			>div{
@@ -3195,7 +3197,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		}
 	}
 	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last{
-		background: url('../images/background-two-colors.png') repeat-y 50%;
+		background: url('../images/background-two-colors.jpg') repeat-y 50%;
 		padding-bottom: 0px;
 		padding-top: 0px;
 		#oira-promotional-material-search-form{
@@ -3760,7 +3762,7 @@ div[id ^= "mini-panel-partner_in_"], {
 //general search styles
 .page-search-site{
 	.oira-search-form-container{
-		background: url('../images/background-two-colors.png') repeat-y 50%;
+		background: url('../images/background-two-colors.jpg') repeat-y 50%;
 		padding-bottom: 0px;
 		padding-top: 0px;
 		#osha-search-search-form{
@@ -4585,7 +4587,10 @@ div[id ^= "mini-panel-partner_in_"], {
 
 .page-private-zone,
 .page-node-add,
-.page-node-update-profile{
+.page-node-update-profile,
+.page-node-view-profile,
+.node-type-promotional-material,
+.node-type-strategic-documentation{
 	.block-menu-block > .container{
 		position: relative;
 		.private-zone-back-link,
@@ -4739,6 +4744,9 @@ div[id ^= "mini-panel-partner_in_"], {
 			display: block;
 			float: none;
 			clear: both;
+			.input-group{
+				display: inherit;
+			}
 			.form-file{
 				width: 40%;
 				display: inline-block;
@@ -4865,6 +4873,9 @@ div[id ^= "mini-panel-partner_in_"], {
 				}
 				.help-block{
 					color: white;
+					a{
+						color: white;
+					}
 				}
 				.file-upload-js-error{
 					color: rgba(255,255,255, 0.7);
@@ -4900,6 +4911,9 @@ div[id ^= "mini-panel-partner_in_"], {
 		&:before{
 			content: "> ";
 		}
+		.glyphicon-ok{
+			display: none;
+		}
 	}
 	button#edit-delete,
 	button#edit-delete--2{
@@ -4930,6 +4944,12 @@ div[id ^= "mini-panel-partner_in_"], {
 //add promotional materials
 .page-node-add-promotional-material,
 .page-node-add-strategic-documentation{
+	label[for="edit-field-publication-date-und-0-value"]{
+		display: none;
+	}
+	label[for="edit-field-revised-date-und-0-value"]{
+		display: none;
+	}
 	.form-item-field-publication-date-und-0-value-hour,
 	.form-item-field-publication-date-und-0-value-minute{
 		display: none;
@@ -5211,7 +5231,14 @@ div[id ^= "mini-panel-partner_in_"], {
 //create-promotional and strategic
 #promotional-material-node-form,
 .page-node-add-strategic-documentation,
-.page-node-create-promotional-resource{
+.page-node-create-promotional-resource,
+.node-type-strategic-documentation{
+	label[for="edit-field-publication-date-und-0-value"]{
+		display: none;
+	}
+	label[for="edit-field-revised-date-und-0-value"]{
+		display: none;
+	}
 	.group-left,
 	.group-right{
 		float: none;
@@ -5247,7 +5274,7 @@ div[id ^= "mini-panel-partner_in_"], {
 
 //list of search
 .oira-search-form-container{
-	background: url('../images/background-two-colors.png') repeat-y 50%;
+	background: url('../images/background-two-colors.jpg') repeat-y 50%;
 	padding-bottom: 0px;
 	margin-bottom: 5px;
 	#oira-strategic-documentation-eu-osha-form,
@@ -5600,5 +5627,9 @@ div[id ^= "mini-panel-partner_in_"], {
 			}
 		}
 	}
+}
+
+.popover-content{
+	padding: 10px 30px !important;
 }
 /*End private zone*/

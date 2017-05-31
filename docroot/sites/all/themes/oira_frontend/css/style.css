@@ -7108,6 +7108,9 @@ a.more-link:before {
 .page-search-site .field-name-field-sector {
   margin-bottom: 20px;
 }
+.alert {
+  padding: 15px 30px !important;
+}
 .alert.alert-block.alert-info {
   border: 0px;
   background-color: #dfd8e4;
@@ -7122,7 +7125,7 @@ a.more-link:before {
 }
 .field-name-field-publication-date,
 .field-type-datetime {
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   color: #967ea7;
 }
 .field-name-field-publication-date .date-display-single,
@@ -8264,7 +8267,7 @@ a.more-link:before {
   margin-bottom: 30px;
 }
 .page-oira-tools .panels-flexible-row-last {
-  background: url('../images/background-two-colors.png') repeat-y 50%;
+  background: url('../images/background-two-colors.jpg') repeat-y 50%;
   padding-bottom: 0px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form > div {
@@ -9925,7 +9928,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-bottom: 30px;
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last {
-  background: url('../images/background-two-colors.png') repeat-y 50%;
+  background: url('../images/background-two-colors.jpg') repeat-y 50%;
   padding-bottom: 0px;
   padding-top: 0px;
 }
@@ -10468,7 +10471,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border-top: none;
 }
 .page-search-site .oira-search-form-container {
-  background: url('../images/background-two-colors.png') repeat-y 50%;
+  background: url('../images/background-two-colors.jpg') repeat-y 50%;
   padding-bottom: 0px;
   padding-top: 0px;
 }
@@ -11195,15 +11198,24 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .page-private-zone .block-menu-block > .container,
 .page-node-add .block-menu-block > .container,
-.page-node-update-profile .block-menu-block > .container {
+.page-node-update-profile .block-menu-block > .container,
+.page-node-view-profile .block-menu-block > .container,
+.node-type-promotional-material .block-menu-block > .container,
+.node-type-strategic-documentation .block-menu-block > .container {
   position: relative;
 }
 .page-private-zone .block-menu-block > .container .private-zone-back-link,
 .page-node-add .block-menu-block > .container .private-zone-back-link,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-link,
+.page-node-view-profile .block-menu-block > .container .private-zone-back-link,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-link,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link,
 .page-private-zone .block-menu-block > .container .private-zone-back-wrapper,
 .page-node-add .block-menu-block > .container .private-zone-back-wrapper,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper {
+.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper,
+.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper {
   position: absolute;
   right: 0;
   top: 34px;
@@ -11213,18 +11225,30 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-private-zone .block-menu-block > .container .private-zone-back-link a,
 .page-node-add .block-menu-block > .container .private-zone-back-link a,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-link a,
+.page-node-view-profile .block-menu-block > .container .private-zone-back-link a,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-link a,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link a,
 .page-private-zone .block-menu-block > .container .private-zone-back-wrapper a,
 .page-node-add .block-menu-block > .container .private-zone-back-wrapper a,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a {
+.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a,
+.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper a,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper a {
   color: #10b2e4;
   margin-right: 15px;
 }
 .page-private-zone .block-menu-block > .container .private-zone-back-link a:after,
 .page-node-add .block-menu-block > .container .private-zone-back-link a:after,
 .page-node-update-profile .block-menu-block > .container .private-zone-back-link a:after,
+.page-node-view-profile .block-menu-block > .container .private-zone-back-link a:after,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-link a:after,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link a:after,
 .page-private-zone .block-menu-block > .container .private-zone-back-wrapper a:after,
 .page-node-add .block-menu-block > .container .private-zone-back-wrapper a:after,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a:after {
+.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a:after,
+.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a:after,
+.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper a:after,
+.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper a:after {
   content: "";
   background: url("../images/icons/back-news.png") no-repeat;
   background-size: 100%;
@@ -11376,6 +11400,20 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 				}
 			}
 			*/
+}
+.node-form #edit-field-image .image-widget-data .input-group,
+.node-form #edit-field-private-image .image-widget-data .input-group,
+.node-form #edit-field-private-file .image-widget-data .input-group,
+.node-form #edit-field-image--2 .image-widget-data .input-group,
+.node-form #edit-field-private-image--2 .image-widget-data .input-group,
+.node-form #edit-field-private-file--2 .image-widget-data .input-group,
+.node-form #edit-field-image .file-widget .input-group,
+.node-form #edit-field-private-image .file-widget .input-group,
+.node-form #edit-field-private-file .file-widget .input-group,
+.node-form #edit-field-image--2 .file-widget .input-group,
+.node-form #edit-field-private-image--2 .file-widget .input-group,
+.node-form #edit-field-private-file--2 .file-widget .input-group {
+  display: inherit;
 }
 .node-form #edit-field-image .image-widget-data .form-file,
 .node-form #edit-field-private-image .image-widget-data .form-file,
@@ -11541,6 +11579,10 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .node-form #edit-field-resource-fc--2 .panel .panel-body .help-block {
   color: white;
 }
+.node-form #edit-field-resource-fc .panel .panel-body .help-block a,
+.node-form #edit-field-resource-fc--2 .panel .panel-body .help-block a {
+  color: white;
+}
 .node-form #edit-field-resource-fc .panel .panel-body .file-upload-js-error,
 .node-form #edit-field-resource-fc--2 .panel .panel-body .file-upload-js-error {
   color: rgba(255, 255, 255, 0.7);
@@ -11570,6 +11612,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .node-form button#edit-submit--2:before {
   content: "> ";
 }
+.node-form button#edit-save-preview--2 .glyphicon-ok,
+.node-form button#edit-save-preview .glyphicon-ok,
+.node-form button#edit-submit .glyphicon-ok,
+.node-form button#edit-submit--2 .glyphicon-ok {
+  display: none;
+}
 .node-form button#edit-delete,
 .node-form button#edit-delete--2 {
   margin-top: 40px;
@@ -11590,6 +11638,14 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .node-form .element-invisible {
   display: none !important;
+}
+.page-node-add-promotional-material label[for="edit-field-publication-date-und-0-value"],
+.page-node-add-strategic-documentation label[for="edit-field-publication-date-und-0-value"] {
+  display: none;
+}
+.page-node-add-promotional-material label[for="edit-field-revised-date-und-0-value"],
+.page-node-add-strategic-documentation label[for="edit-field-revised-date-und-0-value"] {
+  display: none;
 }
 .page-node-add-promotional-material .form-item-field-publication-date-und-0-value-hour,
 .page-node-add-strategic-documentation .form-item-field-publication-date-und-0-value-hour,
@@ -11836,56 +11892,77 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   border: none;
   cursor: pointer;
 }
+#promotional-material-node-form label[for="edit-field-publication-date-und-0-value"],
+.page-node-add-strategic-documentation label[for="edit-field-publication-date-und-0-value"],
+.page-node-create-promotional-resource label[for="edit-field-publication-date-und-0-value"],
+.node-type-strategic-documentation label[for="edit-field-publication-date-und-0-value"] {
+  display: none;
+}
+#promotional-material-node-form label[for="edit-field-revised-date-und-0-value"],
+.page-node-add-strategic-documentation label[for="edit-field-revised-date-und-0-value"],
+.page-node-create-promotional-resource label[for="edit-field-revised-date-und-0-value"],
+.node-type-strategic-documentation label[for="edit-field-revised-date-und-0-value"] {
+  display: none;
+}
 #promotional-material-node-form .group-left,
 .page-node-add-strategic-documentation .group-left,
 .page-node-create-promotional-resource .group-left,
+.node-type-strategic-documentation .group-left,
 #promotional-material-node-form .group-right,
 .page-node-add-strategic-documentation .group-right,
-.page-node-create-promotional-resource .group-right {
+.page-node-create-promotional-resource .group-right,
+.node-type-strategic-documentation .group-right {
   float: none;
   width: inherit;
 }
 #promotional-material-node-form #edit-title-field,
 .page-node-add-strategic-documentation #edit-title-field,
-.page-node-create-promotional-resource #edit-title-field {
+.page-node-create-promotional-resource #edit-title-field,
+.node-type-strategic-documentation #edit-title-field {
   width: 100%;
 }
 #promotional-material-node-form .field-type-list-boolean,
 .page-node-add-strategic-documentation .field-type-list-boolean,
-.page-node-create-promotional-resource .field-type-list-boolean {
+.page-node-create-promotional-resource .field-type-list-boolean,
+.node-type-strategic-documentation .field-type-list-boolean {
   float: none !important;
   max-width: 200px;
   margin-left: 20px;
 }
 #promotional-material-node-form #edit-field-publication-date--2,
 .page-node-add-strategic-documentation #edit-field-publication-date--2,
-.page-node-create-promotional-resource #edit-field-publication-date--2 {
+.page-node-create-promotional-resource #edit-field-publication-date--2,
+.node-type-strategic-documentation #edit-field-publication-date--2 {
   width: 64%;
 }
 #promotional-material-node-form .form-type-date-select .form-type-select[class*=hour],
 .page-node-add-strategic-documentation .form-type-date-select .form-type-select[class*=hour],
-.page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour] {
+.page-node-create-promotional-resource .form-type-date-select .form-type-select[class*=hour],
+.node-type-strategic-documentation .form-type-date-select .form-type-select[class*=hour] {
   margin-left: 0px;
 }
 #promotional-material-node-form #edit-field-promotional-material-type--2,
 .page-node-add-strategic-documentation #edit-field-promotional-material-type--2,
-.page-node-create-promotional-resource #edit-field-promotional-material-type--2 {
+.page-node-create-promotional-resource #edit-field-promotional-material-type--2,
+.node-type-strategic-documentation #edit-field-promotional-material-type--2 {
   clear: both;
 }
 #promotional-material-node-form #edit_field_multiple_sector_und_chosen,
 .page-node-add-strategic-documentation #edit_field_multiple_sector_und_chosen,
-.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen {
+.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen,
+.node-type-strategic-documentation #edit_field_multiple_sector_und_chosen {
   width: 100% !important;
   box-shadow: none;
 }
 #promotional-material-node-form #edit_field_multiple_sector_und_chosen .chosen-choices,
 .page-node-add-strategic-documentation #edit_field_multiple_sector_und_chosen .chosen-choices,
-.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen .chosen-choices {
+.page-node-create-promotional-resource #edit_field_multiple_sector_und_chosen .chosen-choices,
+.node-type-strategic-documentation #edit_field_multiple_sector_und_chosen .chosen-choices {
   border: none;
   background-image: inherit;
 }
 .oira-search-form-container {
-  background: url('../images/background-two-colors.png') repeat-y 50%;
+  background: url('../images/background-two-colors.jpg') repeat-y 50%;
   padding-bottom: 0px;
   margin-bottom: 5px;
 }
@@ -12354,6 +12431,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-family: "Glyphicons Halflings";
   vertical-align: middle;
   margin-right: 7px;
+}
+.popover-content {
+  padding: 10px 30px !important;
 }
 /*FOOTER
 ********************************************/
@@ -16109,6 +16189,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .page-node-create-promotional-resource #edit-field-promotional-material-type {
     clear: both;
+  }
+  .partner-edit-form .group-right.col-sm-6 .field-name-field-mission-statement {
+    display: none;
   }
   /*End private zone*/
   /*general search styles

@@ -1,0 +1,11 @@
+diff --git a/modules/node/node.module b/modules/node/node.module
+index 1d88834..1c0e518 100644
+--- a/modules/node/node.module
++++ b/modules/node/node.module
+@@ -2660,5 +2660,5 @@ function node_feed($nids = FALSE, $channel = array()) {
+  */
+ function node_view_multiple($nodes, $view_mode = 'teaser', $weight = 0, $langcode = NULL) {
+-  $build = array();
++  $build = array('nodes' => array());
+   $entities_by_view_mode = entity_view_mode_prepare('node', $nodes, $view_mode, $langcode);
+   foreach ($entities_by_view_mode as $entity_view_mode => $entities) {
