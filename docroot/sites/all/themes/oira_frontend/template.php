@@ -648,7 +648,10 @@ function oira_frontend_form_element_label(&$variables) {
   // If the element is required, a required marker is appended to the label.
   $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
 
-  $title = filter_xss_admin($element['#title']);
+  $title = '';
+  if (!empty($element['#title'])) {
+    $title = filter_xss_admin($element['#title']);
+  }
 
   $attributes = array();
 

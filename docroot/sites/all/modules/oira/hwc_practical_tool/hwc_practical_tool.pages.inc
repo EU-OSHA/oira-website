@@ -264,6 +264,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
     );
   }
   else {
+    hide($form['content']['sort_fieldset']);
     $form['content']['results']['#markup'] = '<p class="no-results">' . t('No results found to match your search.') . '</p>';
   }
 
