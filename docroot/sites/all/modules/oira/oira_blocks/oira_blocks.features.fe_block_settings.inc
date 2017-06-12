@@ -180,6 +180,34 @@ function oira_blocks_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['oira_partner-oira_partner_masquerade'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'oira_partner_masquerade',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'oira_partner',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'oira_frontend' => array(
+        'region' => 'header_block',
+        'status' => 1,
+        'theme' => 'oira_frontend',
+        'weight' => -48,
+      ),
+      'osha_admin' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'osha_admin',
+        'weight' => 50,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['text_resize-0'] = array(
     'cache' => 4,
     'custom' => 0,
