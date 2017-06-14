@@ -7,6 +7,9 @@ When patching a contrib module, the following steps should be followed:
 
 List of patches (most recent first)
 
+* file (core)
+  * patches/drupal/core_file_ajax_upload_size_exceeded.patch
+
 * node (core)
   * https://www.drupal.org/node/2684337
   * patches/node/uasort-expects-parameter-1-to-be-array.patch

@@ -1,5 +1,6 @@
 name = Oira collaboration items
 core = 7.x
+version = 7.x-0.2
 package = OIRA
 dependencies[] = ctools
 dependencies[] = ds
