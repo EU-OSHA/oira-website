@@ -6726,6 +6726,15 @@ button.close {
 .top-header .header-blocks #block-oira-partner-oira-partner-masquerade {
   margin-top: 10px;
 }
+.top-header .header-blocks #block-oira-partner-oira-partner-masquerade > a {
+  color: #003399;
+  font-style: italic;
+  font-weight: bolder;
+  float: right;
+}
+.top-header .header-blocks #block-oira-partner-oira-partner-masquerade > a:before {
+  content: "> ";
+}
 .top-header .header-blocks #block-oira-partner-oira-partner-masquerade a.btn {
   background-color: #003399;
   border-radius: 0px;
@@ -6733,6 +6742,9 @@ button.close {
   padding: 6px 12px;
   font-size: 16px;
   float: right;
+  color: white;
+  font-weight: normal;
+  font-style: normal;
 }
 .top-header .header-blocks #block-oira-partner-oira-partner-masquerade a.btn:before {
   content: "> ";
