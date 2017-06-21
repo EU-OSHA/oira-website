@@ -159,3 +159,6 @@ ul.primary {
   margin-top: 3px;
 }
 
+.alert-block.alert-danger a.close{
+  display: none;
+}
