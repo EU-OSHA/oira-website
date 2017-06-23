@@ -6515,6 +6515,9 @@ button.close {
     display: none !important;
   }
 }
+html[lang=fi] #block-menu-block-5 .menu.nav li {
+  margin-left: -11px;
+}
 /*Estilos header
 **************************************************/
 .top-header {
