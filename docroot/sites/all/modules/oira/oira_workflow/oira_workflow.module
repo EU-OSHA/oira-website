@@ -87,7 +87,7 @@ function oira_workflow_partner_content_cron() {
         watchdog('oira_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => $next_state), WATCHDOG_INFO);
 
         // If no supervisor exists, state to be approved.
-        $supervisors = osha_workflow_users_get_users_from_role(ROLE_OIRA_SUPERVISOR);
+        $supervisors = osha_workflow_users_get_users_from_role(ROLE_OIRA_SUPERVISOR, TRUE);
         if (empty($supervisors)) {
           $next_state = OSHA_WORKFLOW_STATE_TO_BE_APPROVED;
           // Moderate the content.
