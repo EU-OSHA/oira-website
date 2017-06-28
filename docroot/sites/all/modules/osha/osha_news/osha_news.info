@@ -56,7 +56,6 @@ features[field_instance][] = node-news-field_page_count
 features[field_instance][] = node-news-field_publication_date
 features[field_instance][] = node-news-field_summary
 features[field_instance][] = node-news-field_tags
-features[field_instance][] = node-news-field_website
 features[field_instance][] = node-news-field_wf_notification
 features[field_instance][] = node-news-title_field
 features[image][] = resize_image_600x350

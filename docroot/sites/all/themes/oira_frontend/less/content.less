@@ -5633,3 +5633,49 @@ div[id ^= "mini-panel-partner_in_"], {
 	padding: 10px 30px !important;
 }
 /*End private zone*/
+
+/*act as a partner modal*/
+#act-as-partner{
+	.modal-header .close {
+	    margin-top: -10px;
+	}
+	.modal-body{
+		.container-inline{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			label[for="edit-masquerade-user-field"]{
+				display: none;
+			}
+		}
+		.form-control {
+			border-radius: 0;
+			border-color: #003399;
+		}
+		.btn-default{
+			color: #ffffff;
+		    background-color: #003399;
+		    border-radius: 0;
+		    border: none;
+		    width: auto;
+		    display: inline;
+		    padding: 0.45em;
+		}
+	}
+	.modal-footer {
+	    padding: 15px;
+	    text-align: right;
+	    border-top: 1px solid #e5e5e5;
+	    button{
+	    	background-color: @color-menu-icons;
+			border-radius: 0px;
+			border: none;
+			padding: 6px 12px;
+			font-size: 16px;
+			color: white;
+			&:before{
+				content: "> ";
+			}
+	    }
+	}
+}
+/*end act as a partner modal*/

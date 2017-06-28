@@ -76,3 +76,10 @@ function osha_news_update_7010() {
 function osha_news_update_7011() {
   features_revert_module('osha_news');
 }
+
+/**
+ * Feature revert: MDR-1232.
+ */
+function osha_news_update_7012() {
+  features_revert_module('osha_news');
+}
