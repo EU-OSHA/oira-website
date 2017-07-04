@@ -189,7 +189,12 @@ function oira_blocks_default_fe_block_settings() {
     'module' => 'oira_partner',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 3,
+      'Oira Project Manager' => 12,
+      'Project Manager' => 10,
+      'Superadministrator' => 13,
+    ),
     'themes' => array(
       'oira_frontend' => array(
         'region' => 'header_block',
