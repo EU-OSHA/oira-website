@@ -10,5 +10,5 @@
  * Change the icon directory to use icons from this theme.
  */
 function osha_admin_preprocess_file_icon(&$variables) {
-  $variables['icon_directory'] = drupal_get_path('theme', 'osha_frontend') . '/images/file_icons';
+  $variables['icon_directory'] = drupal_get_path('theme', 'oira_frontend') . '/images/file_icons';
 }

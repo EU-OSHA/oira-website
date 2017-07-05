@@ -229,7 +229,7 @@ function osha_resources_theme() {
 function theme_osha_resources_file_as_title_format($element) {
   $file = (object) $element['file'];
   $entity = (object) $element['entity'];
-  $icon_directory = drupal_get_path('theme', 'osha_frontend') . '/images/file_icons';
+  $icon_directory = drupal_get_path('theme', 'oira_frontend') . '/images/file_icons';
 
   global $language;
   $name = isset($entity->title_field[$language->language][0])
