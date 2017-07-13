@@ -13,6 +13,7 @@ $plugin = array(
 );
 
 function oira_country_focal_point_pane_render($subtype = NULL, $conf = NULL, $args = NULL, $contexts = NULL) {
+  global $language;
   $term = menu_get_object('taxonomy_term', 2);
   if (empty($term)) {
     $node = menu_get_object();
@@ -29,13 +30,12 @@ function oira_country_focal_point_pane_render($subtype = NULL, $conf = NULL, $ar
   // Render as a block.
   $block = new stdClass();
   $block->content = '';
-  $term_wrapper = entity_metadata_wrapper('taxonomy_term', $term);
-  if (!empty($term_wrapper->field_ncw_fp_link->value()['url'])) {
-    $link = $term_wrapper->field_ncw_fp_link->value()['url'];
-    if (!empty($link)) {
-      $text = variable_get('oira_config_focal_point_text', 'Focal point');
-      $block->content = '<div class="focal-poin-partner-text col-md-12">' . t($text, array('@link' => $link)) . '</div>';
-    }
+  $term_wrapper = entity_metadata_wrapper('taxonomy_term', $term, ['langcode' => $language->language]);
+  // For some reason it doesn't get the correct translations.
+  $link = $term_wrapper->language($language->language)->field_ncw_fp_link->value();
+  if (!empty($link)) {
+    $text = variable_get('oira_config_focal_point_text', 'Focal point');
+    $block->content = '<div class="focal-poin-partner-text col-md-12">' . t($text, array('@link' => $link['url'])) . '</div>';
   }
   return $block;
 }

@@ -489,15 +489,18 @@ function osha_workflow_users_get_users_from_role_as_options($role_name) {
  * @return array
  *   Array of user objects
  */
-function osha_workflow_users_get_users_from_role($role_name) {
+function osha_workflow_users_get_users_from_role($role_name, $only_active = FALSE) {
   $ret = array();
   if ($role = user_role_load_by_name($role_name)) {
     $query = db_select('users', 'u')->fields('u', array('uid'));
     $query->join('users_roles', 'ur', 'ur.uid = u.uid');
-    $uids = $query->condition('ur.rid', $role->rid)
+    $query->condition('ur.rid', $role->rid)
       ->orderBy('u.name')
-      ->groupBy('u.uid')
-      ->execute()->fetchCol();
+      ->groupBy('u.uid');
+    if ($only_active) {
+      $query->condition('u.status', 1);
+    }
+    $uids = $query->execute()->fetchCol();
     $ret = user_load_multiple($uids);
   }
   return $ret;
