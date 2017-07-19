@@ -174,3 +174,14 @@ function oira_partner_update_7021() {
     user_role_grant_permissions($role->rid, $permissions);
   }
 }
+
+/**
+ * MDR-1221 - Assign masquarade required permission for roles
+ */
+function oira_partner_update_7022() {
+  $permissions = array('masquerade as user');
+  foreach(array('administrator', 'Project Manager', 'Oira Project Manager', 'Superadministrator') as $role_name) {
+    $role = user_role_load_by_name($role_name);
+    user_role_grant_permissions($role->rid, $permissions);
+  }
+}
