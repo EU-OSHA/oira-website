@@ -117,7 +117,7 @@ function oira_collaboration_items_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'file_directory' => 'collaboration-documents',
       'file_extensions' => 'txt pdf docx zip ppt pptx doc rar odt odp otp xls xlsx png gif jpg jpeg',
-      'max_filesize' => '50 MB',
+      'max_filesize' => '100 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(

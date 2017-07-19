@@ -544,7 +544,7 @@ function oira_strategic_documentation_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'file_directory' => 'strategic-doc-files',
       'file_extensions' => 'txt pdf docx zip ppt pptx doc rar odt odp otp xls xlsx',
-      'max_filesize' => '50 MB',
+      'max_filesize' => '100 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(

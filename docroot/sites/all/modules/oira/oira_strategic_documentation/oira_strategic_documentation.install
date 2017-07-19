@@ -124,3 +124,10 @@ function oira_strategic_documentation_update_7016() {
 function oira_strategic_documentation_update_7017() {
   features_revert_module('oira_strategic_documentation');
 }
+
+/**
+ * Feature revert: MDR-1319.
+ */
+function oira_strategic_documentation_update_7018() {
+  features_revert_module('oira_strategic_documentation');
+}
