@@ -13,3 +13,10 @@ function oira_private_image_update_7001() {
 function oira_private_image_update_7002() {
   features_revert_module('oira_private_image');
 }
+
+/**
+ * MDR-1344.
+ */
+function oira_private_image_update_7003() {
+  features_revert_module('oira_private_image');
+}

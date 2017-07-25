@@ -174,57 +174,59 @@ Collaboration area
   $display->cache = array();
   $display->title = 'Collaboration area';
   $display->uuid = 'eee1a97d-d0a3-4ef0-8501-cbacda3efc96';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Intro text',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<p>This section has been designed as a networking space where OiRA partners will be able to share documents, materials and resources. It can also be used as a source of information from where to find, for instance, images to be used in the OiRA tools and for OiRA related presentations and publications.</p>',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '181b84c3-18bb-49a1-a34b-920b1ec77495';
-    $display->content['new-181b84c3-18bb-49a1-a34b-920b1ec77495'] = $pane;
-    $display->panels['center'][0] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
-    $pane = new stdClass();
-    $pane->pid = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
-    $pane->panel = 'content';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-7';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '92abd91d-caa7-4ad7-ae17-6e40e054227b';
-    $display->content['new-92abd91d-caa7-4ad7-ae17-6e40e054227b'] = $pane;
-    $display->panels['content'][0] = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
+  $pane = new stdClass();
+  $pane->pid = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
+  $pane->panel = 'center';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Intro text',
+    'title' => '<none>',
+    'title_heading' => 'h2',
+    'body' => '<p>This section has been designed as a networking space where OiRA partners will be able to share documents, materials and resources. It can also be used as a source of information from where to find, for instance, images to be used in the OiRA tools and for OiRA related presentations and publications.</p>',
+    'format' => 'full_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '181b84c3-18bb-49a1-a34b-920b1ec77495';
+  $display->content['new-181b84c3-18bb-49a1-a34b-920b1ec77495'] = $pane;
+  $display->panels['center'][0] = 'new-181b84c3-18bb-49a1-a34b-920b1ec77495';
+  $pane = new stdClass();
+  $pane->pid = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
+  $pane->panel = 'content';
+  $pane->type = 'block';
+  $pane->subtype = 'menu_block-7';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '92abd91d-caa7-4ad7-ae17-6e40e054227b';
+  $display->content['new-92abd91d-caa7-4ad7-ae17-6e40e054227b'] = $pane;
+  $display->panels['content'][0] = 'new-92abd91d-caa7-4ad7-ae17-6e40e054227b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -399,87 +401,89 @@ Upload Strategic Documentation',
   $display->cache = array();
   $display->title = 'Private Zone';
   $display->uuid = '12ae27de-e08e-4eb3-b4db-5e37124aa5f7';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-563efce8-b3ba-4524-a6ef-712080376518';
-    $pane->panel = 'form';
-    $pane->type = 'form';
-    $pane->subtype = 'form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'context_node_add_form_1',
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '563efce8-b3ba-4524-a6ef-712080376518';
-    $display->content['new-563efce8-b3ba-4524-a6ef-712080376518'] = $pane;
-    $display->panels['form'][0] = 'new-563efce8-b3ba-4524-a6ef-712080376518';
-    $pane = new stdClass();
-    $pane->pid = 'new-4e4a956b-eb9a-4b6f-822a-edb05573466a';
-    $pane->panel = 'menu';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-6';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '4e4a956b-eb9a-4b6f-822a-edb05573466a';
-    $display->content['new-4e4a956b-eb9a-4b6f-822a-edb05573466a'] = $pane;
-    $display->panels['menu'][0] = 'new-4e4a956b-eb9a-4b6f-822a-edb05573466a';
-    $pane = new stdClass();
-    $pane->pid = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
-    $pane->panel = 'menu';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Partner create strategic documentation',
-      'title' => '<none>',
-      'title_heading' => 'h2',
-      'body' => '<h2>Upload Strategic Documentation</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
-    $display->content['new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f'] = $pane;
-    $display->panels['menu'][1] = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+  $pane = new stdClass();
+  $pane->pid = 'new-563efce8-b3ba-4524-a6ef-712080376518';
+  $pane->panel = 'form';
+  $pane->type = 'form';
+  $pane->subtype = 'form';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'context_node_add_form_1',
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '563efce8-b3ba-4524-a6ef-712080376518';
+  $display->content['new-563efce8-b3ba-4524-a6ef-712080376518'] = $pane;
+  $display->panels['form'][0] = 'new-563efce8-b3ba-4524-a6ef-712080376518';
+  $pane = new stdClass();
+  $pane->pid = 'new-4e4a956b-eb9a-4b6f-822a-edb05573466a';
+  $pane->panel = 'menu';
+  $pane->type = 'block';
+  $pane->subtype = 'menu_block-6';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '4e4a956b-eb9a-4b6f-822a-edb05573466a';
+  $display->content['new-4e4a956b-eb9a-4b6f-822a-edb05573466a'] = $pane;
+  $display->panels['menu'][0] = 'new-4e4a956b-eb9a-4b6f-822a-edb05573466a';
+  $pane = new stdClass();
+  $pane->pid = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+  $pane->panel = 'menu';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => 'Partner create strategic documentation',
+    'title' => '<none>',
+    'title_heading' => 'h2',
+    'body' => '<h2>Upload Strategic Documentation</h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
+  $display->content['new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f'] = $pane;
+  $display->panels['menu'][1] = 'new-48c2c912-cd2f-4828-afad-f49cfbc7ae6f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-563efce8-b3ba-4524-a6ef-712080376518';
   $handler->conf['display'] = $display;
@@ -668,87 +672,89 @@ Update Strategic Documentation',
   $display->cache = array();
   $display->title = 'Private Zone';
   $display->uuid = '31f79834-9676-4f04-9b1e-95b6297d11ff';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-318a7f8a-04f3-4658-bc5d-23b1020c0c28';
-    $pane->panel = 'center';
-    $pane->type = 'block';
-    $pane->subtype = 'menu_block-6';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '318a7f8a-04f3-4658-bc5d-23b1020c0c28';
-    $display->content['new-318a7f8a-04f3-4658-bc5d-23b1020c0c28'] = $pane;
-    $display->panels['center'][0] = 'new-318a7f8a-04f3-4658-bc5d-23b1020c0c28';
-    $pane = new stdClass();
-    $pane->pid = 'new-f62b1c0d-e19e-4625-ad70-d36542169b1a';
-    $pane->panel = 'center';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'title_heading' => 'h2',
-      'body' => '<h2>Update Strategic Documentation <em>%strategic_documentation_id:title</em></h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
-      'format' => 'full_html',
-      'substitute' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'f62b1c0d-e19e-4625-ad70-d36542169b1a';
-    $display->content['new-f62b1c0d-e19e-4625-ad70-d36542169b1a'] = $pane;
-    $display->panels['center'][1] = 'new-f62b1c0d-e19e-4625-ad70-d36542169b1a';
-    $pane = new stdClass();
-    $pane->pid = 'new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
-    $pane->panel = 'form';
-    $pane->type = 'form';
-    $pane->subtype = 'form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'relationship_node_edit_form_from_node_1',
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
-    $display->content['new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f'] = $pane;
-    $display->panels['form'][0] = 'new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
+  $pane = new stdClass();
+  $pane->pid = 'new-318a7f8a-04f3-4658-bc5d-23b1020c0c28';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'menu_block-6';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '318a7f8a-04f3-4658-bc5d-23b1020c0c28';
+  $display->content['new-318a7f8a-04f3-4658-bc5d-23b1020c0c28'] = $pane;
+  $display->panels['center'][0] = 'new-318a7f8a-04f3-4658-bc5d-23b1020c0c28';
+  $pane = new stdClass();
+  $pane->pid = 'new-f62b1c0d-e19e-4625-ad70-d36542169b1a';
+  $pane->panel = 'center';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'title_heading' => 'h2',
+    'body' => '<h2>Update Strategic Documentation <em>%strategic_documentation_id:title</em></h2><div class="private-zone-back-wrapper"><a class="private-zone-back-link" onclick="history.go(-1);return true;" href="#">Back</a></div>',
+    'format' => 'full_html',
+    'substitute' => 1,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'f62b1c0d-e19e-4625-ad70-d36542169b1a';
+  $display->content['new-f62b1c0d-e19e-4625-ad70-d36542169b1a'] = $pane;
+  $display->panels['center'][1] = 'new-f62b1c0d-e19e-4625-ad70-d36542169b1a';
+  $pane = new stdClass();
+  $pane->pid = 'new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
+  $pane->panel = 'form';
+  $pane->type = 'form';
+  $pane->subtype = 'form';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'relationship_node_edit_form_from_node_1',
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
+  $display->content['new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f'] = $pane;
+  $display->panels['form'][0] = 'new-0a5025db-e590-4ee2-aa9c-32ca12d4ab3f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -816,8 +822,8 @@ Update Strategic Documentation',
     'panels_breadcrumbs_titles' => 'Private Zone
 Collaboration area
 EU-OSHA documents',
-    'panels_breadcrumbs_paths' => '/node/%node:nid
-/node/%node:nid/collaboration-area
+    'panels_breadcrumbs_paths' => '/private-zone
+/private-zone/collaboration-area
 <none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -894,31 +900,33 @@ EU-OSHA documents',
   $display->cache = array();
   $display->title = 'EU-OSHA Documents';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
-    $pane->panel = 'center';
-    $pane->type = 'block';
-    $pane->subtype = 'oira_collaboration_items-oira_collaboration_items';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '9e4be591-440a-4380-858c-0b83d6b861b4';
-    $display->content['new-9e4be591-440a-4380-858c-0b83d6b861b4'] = $pane;
-    $display->panels['center'][0] = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
+  $pane = new stdClass();
+  $pane->pid = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'oira_collaboration_items-oira_collaboration_items';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '9e4be591-440a-4380-858c-0b83d6b861b4';
+  $display->content['new-9e4be591-440a-4380-858c-0b83d6b861b4'] = $pane;
+  $display->panels['center'][0] = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -986,8 +994,8 @@ EU-OSHA documents',
     'panels_breadcrumbs_titles' => 'Private Zone
 Collaboration area
 Partners documents',
-    'panels_breadcrumbs_paths' => '/node/%node:nid
-/node/%node:nid/collaboration-area
+    'panels_breadcrumbs_paths' => '/private-zone
+/private-zone/collaboration-area
 <none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -1064,31 +1072,33 @@ Partners documents',
   $display->cache = array();
   $display->title = 'Partners documents';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
-    $pane->panel = 'center';
-    $pane->type = 'block';
-    $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_partners';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
-    $display->content['new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed'] = $pane;
-    $display->panels['center'][0] = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+  $pane = new stdClass();
+  $pane->pid = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+  $pane->panel = 'center';
+  $pane->type = 'block';
+  $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_partners';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+  $display->content['new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed'] = $pane;
+  $display->panels['center'][0] = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
