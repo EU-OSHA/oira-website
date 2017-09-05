@@ -83,18 +83,16 @@ function oira_workflow_partner_content_cron() {
       if (!empty($current_node->workbench_moderation['current'])
         && $current_node->workbench_moderation['current']->state == 'final_draft') {
         $next_state = OSHA_WORKFLOW_STATE_TO_BE_REVIEWED;
-        workbench_moderation_moderate($current_node, $next_state);
-        watchdog('oira_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => $next_state), WATCHDOG_INFO);
 
         // If no supervisor exists, state to be approved.
         $supervisors = osha_workflow_users_get_users_from_role(ROLE_OIRA_SUPERVISOR, TRUE);
         if (empty($supervisors)) {
           $next_state = OSHA_WORKFLOW_STATE_TO_BE_APPROVED;
-          // Moderate the content.
-          workbench_moderation_moderate($current_node, $next_state);
-          watchdog('oira_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => $next_state), WATCHDOG_INFO);
         }
 
+        // Moderate the content.
+        workbench_moderation_moderate($current_node, $next_state);
+        watchdog('oira_workflow', 'Node !title automoderated to !state', array('!title' => $current_node->title, '!state' => $next_state), WATCHDOG_INFO);
       }
     }
   }
@@ -108,10 +106,6 @@ function _oira_workflow_partner_content_get_time_limit() {
   $time_gap = (int) variable_get('oira_workflow_partner_content_minutes_gap_autosubmit', 30);
   return time() - $time_gap * 60;
 }
-
-
-
-
 
 /**
  * Implements hook_mail_alter().
