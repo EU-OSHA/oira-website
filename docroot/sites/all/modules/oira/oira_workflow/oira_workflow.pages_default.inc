@@ -174,36 +174,38 @@ View your profile
   $display->cache = array();
   $display->title = 'View your profile';
   $display->uuid = '17dac0a9-5f40-457d-aa20-d541345bcb57';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
-    $pane->panel = 'form';
-    $pane->type = 'form';
-    $pane->subtype = 'form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'relationship_node_edit_form_from_node_1',
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-      'style' => 'default',
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'container partner-edit-form',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7e62e040-b155-4470-83b7-603512d6ffc8';
-    $display->content['new-7e62e040-b155-4470-83b7-603512d6ffc8'] = $pane;
-    $display->panels['form'][0] = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
+  $pane = new stdClass();
+  $pane->pid = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
+  $pane->panel = 'form';
+  $pane->type = 'form';
+  $pane->subtype = 'form';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'relationship_node_edit_form_from_node_1',
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+    'style' => 'default',
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container partner-edit-form',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7e62e040-b155-4470-83b7-603512d6ffc8';
+  $display->content['new-7e62e040-b155-4470-83b7-603512d6ffc8'] = $pane;
+  $display->panels['form'][0] = 'new-7e62e040-b155-4470-83b7-603512d6ffc8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
