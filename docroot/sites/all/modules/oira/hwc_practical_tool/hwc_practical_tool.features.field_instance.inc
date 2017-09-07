@@ -110,7 +110,7 @@ function hwc_practical_tool_field_default_field_instances() {
             'use_field_summary' => 0,
           ),
           'trim_preserve_tags' => '',
-          'trim_suffix' => '...',
+          'trim_suffix' => '',
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
