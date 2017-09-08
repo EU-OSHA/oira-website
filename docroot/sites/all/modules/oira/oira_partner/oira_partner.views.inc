@@ -67,6 +67,15 @@ function oira_partner_views_data_alter(&$data) {
     ),
   );
 
+  $data['oira_partner']['belongs_partner'] = array(
+    'title' => t('If node belongs to current partner or user is coauthor'),
+    'help' => t('If node belongs to current partner or user is coauthor'),
+    'filter' => array(
+      'label' => t('Node belongs to partner - current user is the author/coauthor'),
+      'handler' => 'oira_partner_handler_filter_node_belongs_partner',
+    ),
+  );
+
   $data['views_entity_node']['edit_node_no_destination'] = array(
     'field' => array(
       'title' => t('Edit link (no destination)'),
@@ -171,7 +180,9 @@ class oira_partner_handler_partner_author_coauthor_access extends views_handler_
       $in_operator = 'IN';
       $equal_operator = '=';
     }
+
     $partner = menu_get_object();
+
     if ($partner->type == 'partner' && !empty($partner->workbench_access)) {
       $subquery_partner = db_select('workbench_access_node', 'wa')
         ->fields('wa', array('nid'))
@@ -192,6 +203,56 @@ class oira_partner_handler_partner_author_coauthor_access extends views_handler_
     else {
       // Show no results.
       $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", 0, $equal_operator);
+    }
+  }
+}
+
+/**
+ * Filters nodes that belongs to users partner or the user is author/coauthor.
+ */
+class oira_partner_handler_filter_node_belongs_partner extends views_handler_filter_boolean_operator {
+
+  /**
+   * Overrides views_handler_field::query().
+   */
+  function query() {
+    global $user;
+    if (empty($user->workbench_access)) {
+      workbench_access_user_load_data($user);
+    }
+    $role = user_role_load_by_name(ROLE_OIRA_PARTNER);
+    if (empty($this->value)) {
+      $in_operator = 'NOT IN';
+      $equal_operator = '!=';
+    }
+    else {
+      $in_operator = 'IN';
+      $equal_operator = '=';
+    }
+
+    if (user_has_role($role->rid)) {
+      $sections = array_keys($user->workbench_access);
+      $subquery = db_select('workbench_access_node', 'workbench_access_node');
+      $subquery->addField('workbench_access_node', 'nid');
+      $subquery->distinct();
+      $subquery->condition('workbench_access_node.access_id', $sections, 'IN');
+
+      $subquery_coauthor = db_select('field_data_field_co_author', 'f')
+        ->fields('f', array('entity_id'))
+        ->condition('f.field_co_author_tid', $sections, 'IN');
+
+      $db_or = db_or();
+      $db_or->condition('nid', $subquery_coauthor, 'IN');
+      $db_or->condition('nid', $subquery, 'IN');
+      $query = db_select('node', 'n')
+        ->fields('n', array('nid'))
+        ->distinct()
+        ->condition($db_or);
+
+      $this->query->add_where(0, "{$this->query->base_table}.nid", $query, $in_operator);
+    }
+    else {
+      $this->query->add_where(0, "{$this->query->base_table}.uid", $user->uid, $equal_operator);
     }
   }
 }
