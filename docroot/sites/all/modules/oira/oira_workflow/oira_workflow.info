@@ -32,3 +32,4 @@ features[workbench_moderation_transitions][] = final_draft:needs_review
 features[workbench_moderation_transitions][] = needs_review:draft
 features[workbench_moderation_transitions][] = needs_review:to_be_approved
 features[workbench_moderation_transitions][] = to_be_approved:published
+features_exclude[dependencies][oira_workflow] = oira_workflow

@@ -20,7 +20,13 @@ function oira_workflow_default_rules_configuration() {
         { "entity_is_of_bundle" : {
             "entity" : [ "node" ],
             "type" : "node",
-            "bundle" : { "value" : { "news" : "news" } }
+            "bundle" : { "value" : {
+                "news" : "news",
+                "practical_tool" : "practical_tool",
+                "promotional_material" : "promotional_material",
+                "strategic_documentation" : "strategic_documentation"
+              }
+            }
           }
         },
         { "node_has_partner_section" : { "entity" : [ "node" ] } },
@@ -68,7 +74,13 @@ function oira_workflow_default_rules_configuration() {
         { "entity_is_of_bundle" : {
             "entity" : [ "node" ],
             "type" : "node",
-            "bundle" : { "value" : { "events" : "events", "news" : "news" } }
+            "bundle" : { "value" : {
+                "news" : "news",
+                "practical_tool" : "practical_tool",
+                "promotional_material" : "promotional_material",
+                "strategic_documentation" : "strategic_documentation"
+              }
+            }
           }
         },
         { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_wf_notification" } },
