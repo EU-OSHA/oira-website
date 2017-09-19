@@ -30,19 +30,20 @@ function oira_private_image_node_access($node, $op, $account) {
  */
 function oira_private_image_node_view($node, $view_mode, $langcode) {
   if ($node->type == 'private_album' && $view_mode == 'full') {
-//    $wrapper = entity_metadata_wrapper('node', $node);
     if (!empty($node->content['field_private_images'])) {
       $node->content['field_private_images']['#prefix'] = '';
       $image_deltas = element_children($node->content['field_private_images']);
       $total = count($image_deltas);
-      $per_page = 6;
+      $per_page = 9;
       if ($total > $per_page) {
         $page = pager_default_initialize($total, $per_page);
-//        if ($page > 0) {
-//          hide($node->content['gallery_cover_image']);
-//        }
         $offset = $per_page * $page;
-        $showing_deltas = range($offset, $offset + $per_page - 1);
+        if ($page == 0) {
+          $showing_deltas = range(0, $offset + $per_page);
+        }
+        else {
+          $showing_deltas = range($offset + 1, $offset + $per_page);
+        }
         $remove_deltas = array_diff($image_deltas, $showing_deltas);
         foreach ($remove_deltas as $delta) {
           unset($node->content['field_private_images'][$delta]);
@@ -50,18 +51,6 @@ function oira_private_image_node_view($node, $view_mode, $langcode) {
         $node->content['field_private_images']['#suffix'] = theme('pager');
       }
     }
-//    $first_image = $wrapper->field_private_images->value()[0];
-//    if (!empty($first_image)) {
-//      $image_vars = array(
-//        'style_name' => 'gallery_cover_image',
-//        'path' => $first_image['uri'],
-//        'alt' => $node->title,
-//      );
-//      // Cover image will open first image of gallery.
-//      $link = '<a href="javascript:void(0);" onclick="jQuery(\'.field-name-field-images a.colorbox-inline\').eq(0).trigger(\'click\')">' . theme('image_style', $image_vars) . '</a>';
-//      $node->content['gallery_cover_image'] = array('#markup' => $link);
-//
-//    }
   }
 }
 
