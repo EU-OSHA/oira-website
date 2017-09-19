@@ -392,6 +392,15 @@ function oira_private_image_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'osha_gallery_usable_fields_bundles';
+  $strongarm->value = array(
+    'private_album|field_private_images' => 'private_album|field_private_images',
+  );
+  $export['osha_gallery_usable_fields_bundles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'page_title_type_oira_private_image';
   $strongarm->value = '';
   $export['page_title_type_oira_private_image'] = $strongarm;
