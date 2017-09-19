@@ -438,6 +438,6 @@ function osha_workflow_update_7003() {
 /**
  * Feature revert MDR-1368.
  */
-function oira_workflow_update_7004() {
+function osha_workflow_update_7004() {
   features_revert_module('osha_workflow');
 }

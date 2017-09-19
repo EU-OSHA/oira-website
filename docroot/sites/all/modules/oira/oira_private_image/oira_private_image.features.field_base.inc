@@ -10,13 +10,13 @@
 function oira_private_image_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_oira_private_image'.
-  $field_bases['field_oira_private_image'] = array(
+  // Exported field_base: 'field_private_images'.
+  $field_bases['field_private_images'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_oira_private_image',
+    'field_name' => 'field_private_images',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

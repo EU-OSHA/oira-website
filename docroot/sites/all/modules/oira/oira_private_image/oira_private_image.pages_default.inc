@@ -112,7 +112,7 @@ Image gallery',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'container',
+        'class' => '',
         'hide_empty' => 0,
       ),
       1 => array(
@@ -151,7 +151,7 @@ Image gallery',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+  $pane->pid = 'new-a6cdb474-e374-447d-80e3-8b2897a3ff0f';
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'private_images';
@@ -169,7 +169,7 @@ Image gallery',
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'default',
+    'display' => 'block_1',
     'override_title' => 1,
     'override_title_text' => '<none>',
     'override_title_heading' => 'h2',
@@ -182,11 +182,11 @@ Image gallery',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '664d4951-5dc5-4e60-a0c1-2778483e1958';
-  $display->content['new-664d4951-5dc5-4e60-a0c1-2778483e1958'] = $pane;
-  $display->panels['center'][0] = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+  $pane->uuid = 'a6cdb474-e374-447d-80e3-8b2897a3ff0f';
+  $display->content['new-a6cdb474-e374-447d-80e3-8b2897a3ff0f'] = $pane;
+  $display->panels['center'][0] = 'new-a6cdb474-e374-447d-80e3-8b2897a3ff0f';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['private_images'] = $page;

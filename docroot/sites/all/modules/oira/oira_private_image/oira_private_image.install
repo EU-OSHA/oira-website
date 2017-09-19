@@ -20,3 +20,7 @@ function oira_private_image_update_7002() {
 function oira_private_image_update_7003() {
   features_revert_module('oira_private_image');
 }
+
+function oira_private_image_update_7004() {
+  module_enable(['colorbox', 'osha_gallery']);
+}
