@@ -69,8 +69,8 @@ function oira_private_image_default_page_manager_pages() {
     'panels_breadcrumbs_titles' => 'Private Zone
 Collaboration area
 Image gallery',
-    'panels_breadcrumbs_paths' => '/node/%node:nid
-/node/%node:nid/collaboration-area
+    'panels_breadcrumbs_paths' => '/private-zone
+/private-zone/collaboration-area
 <none>',
     'panels_breadcrumbs_home' => 1,
   );
@@ -112,7 +112,7 @@ Image gallery',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'container',
+        'class' => '',
         'hide_empty' => 0,
       ),
       1 => array(
@@ -146,45 +146,47 @@ Image gallery',
   $display->cache = array();
   $display->title = 'Image Gallery';
   $display->uuid = 'e951151e-06c4-4692-80ac-906e2fca83b1';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'private_images';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 1,
-      'nodes_per_page' => '10',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'default',
-      'override_title' => 1,
-      'override_title_text' => '<none>',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '664d4951-5dc5-4e60-a0c1-2778483e1958';
-    $display->content['new-664d4951-5dc5-4e60-a0c1-2778483e1958'] = $pane;
-    $display->panels['center'][0] = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+  $pane = new stdClass();
+  $pane->pid = 'new-a6cdb474-e374-447d-80e3-8b2897a3ff0f';
+  $pane->panel = 'center';
+  $pane->type = 'views';
+  $pane->subtype = 'private_images';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '10',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'block_1',
+    'override_title' => 1,
+    'override_title_text' => '<none>',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'a6cdb474-e374-447d-80e3-8b2897a3ff0f';
+  $display->content['new-a6cdb474-e374-447d-80e3-8b2897a3ff0f'] = $pane;
+  $display->panels['center'][0] = 'new-a6cdb474-e374-447d-80e3-8b2897a3ff0f';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-664d4951-5dc5-4e60-a0c1-2778483e1958';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['private_images'] = $page;

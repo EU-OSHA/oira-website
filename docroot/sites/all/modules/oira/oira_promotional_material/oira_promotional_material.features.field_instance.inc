@@ -36,7 +36,7 @@ function oira_promotional_material_field_default_field_instances() {
       'entity_translation_sync' => 0,
       'file_directory' => '',
       'file_extensions' => 'txt pdf docx zip ppt pptx doc rar odt odp otp xls xlsx',
-      'max_filesize' => '50 MB',
+      'max_filesize' => '100 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -241,7 +241,7 @@ function oira_promotional_material_field_default_field_instances() {
             'use_field_summary' => 0,
           ),
           'trim_preserve_tags' => '',
-          'trim_suffix' => '...',
+          'trim_suffix' => '',
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',

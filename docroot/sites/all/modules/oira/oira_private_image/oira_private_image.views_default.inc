@@ -23,6 +23,7 @@ function oira_private_image_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Private images';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -35,11 +36,8 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'col-md-2 col-sm-4 col-xs-6';
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['class'] = 'private-images';
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-md-4 col-sm-6 col-xs-12';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -49,18 +47,20 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<p class="text-muted text-center">No results</p>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_oira_private_image']['id'] = 'field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image']['table'] = 'field_data_field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image']['field'] = 'field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image']['label'] = '';
-  $handler->display->display_options['fields']['field_oira_private_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_oira_private_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_oira_private_image']['settings'] = array(
-    'image_style' => 'thumbnail',
-    'image_link' => 'file',
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_private_images']['id'] = 'field_private_images';
+  $handler->display->display_options['fields']['field_private_images']['table'] = 'field_data_field_private_images';
+  $handler->display->display_options['fields']['field_private_images']['field'] = 'field_private_images';
+  $handler->display->display_options['fields']['field_private_images']['label'] = '';
+  $handler->display->display_options['fields']['field_private_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_private_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_private_images']['settings'] = array(
+    'image_style' => 'square_thumbnail_teaser',
+    'image_link' => 'content',
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_private_images']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_private_images']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -69,26 +69,18 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_oira_private_image_1']['id'] = 'field_oira_private_image_1';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['table'] = 'field_data_field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['field'] = 'field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_oira_private_image_1']['alter']['text'] = 'Download';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_oira_private_image_1']['alter']['path'] = '[field_oira_private_image_1]';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['alter']['target'] = '_blank';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_oira_private_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['type'] = 'image_url';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['settings'] = array(
-    'url_type' => '0',
-    'image_style' => '',
-    'image_link' => 'content',
+  /* Field: Field: Sector */
+  $handler->display->display_options['fields']['field_multiple_sector']['id'] = 'field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['table'] = 'field_data_field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['field'] = 'field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['label'] = '';
+  $handler->display->display_options['fields']['field_multiple_sector']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_multiple_sector']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_multiple_sector']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_multiple_sector']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_multiple_sector']['separator'] = '';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -106,18 +98,39 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'oira_private_image' => 'oira_private_image',
+    'private_album' => 'private_album',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Sector (field_multiple_sector) */
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['id'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['table'] = 'field_data_field_multiple_sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['field'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator_id'] = 'field_multiple_sector_tid_op';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['label'] = 'Sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator'] = 'field_multiple_sector_tid_op';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['identifier'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    14 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['vocabulary'] = 'sector';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'private-images';
-  $handler->display->display_options['menu']['title'] = 'Private Images';
-  $handler->display->display_options['menu']['description'] = 'Administrate Private Images';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
   $translatables['private_images'] = array(
     t('Master'),
     t('Private images'),
@@ -136,8 +149,8 @@ function oira_private_image_views_default_views() {
     t('last »'),
     t('No results'),
     t('<p class="text-muted text-center">No results</p>'),
-    t('Download'),
-    t('Page'),
+    t('Sector'),
+    t('Block'),
   );
   $export['private_images'] = $view;
 
@@ -200,29 +213,33 @@ function oira_private_image_views_default_views() {
       'label' => '',
     ),
   );
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_oira_private_image']['id'] = 'field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image']['table'] = 'field_data_field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image']['field'] = 'field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_oira_private_image']['settings'] = array(
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_private_images']['id'] = 'field_private_images';
+  $handler->display->display_options['fields']['field_private_images']['table'] = 'field_data_field_private_images';
+  $handler->display->display_options['fields']['field_private_images']['field'] = 'field_private_images';
+  $handler->display->display_options['fields']['field_private_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_private_images']['settings'] = array(
     'image_style' => 'thumbnail',
-    'image_link' => 'content',
+    'image_link' => '',
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_private_images']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_private_images']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Sector */
-  $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['settings'] = array(
+  /* Field: Field: Sector */
+  $handler->display->display_options['fields']['field_multiple_sector']['id'] = 'field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['table'] = 'field_data_field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['field'] = 'field_multiple_sector';
+  $handler->display->display_options['fields']['field_multiple_sector']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_multiple_sector']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_multiple_sector']['delta_offset'] = '0';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -241,16 +258,6 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Operations';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[edit_node] [delete_node]';
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_oira_private_image_1']['id'] = 'field_oira_private_image_1';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['table'] = 'field_data_field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['field'] = 'field_oira_private_image';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['type'] = 'file_download_link';
-  $handler->display->display_options['fields']['field_oira_private_image_1']['settings'] = array(
-    'text' => 'Download [file:name]',
-    'field_formatter_class' => '',
-  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -268,7 +275,7 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'oira_private_image' => 'oira_private_image',
+    'private_album' => 'private_album',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Title (title_field) */
@@ -296,18 +303,16 @@ function oira_private_image_views_default_views() {
     11 => 0,
     12 => 0,
   );
-  /* Filter criterion: Content: Sector (field_sector) */
-  $handler->display->display_options['filters']['field_sector_tid']['id'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['filters']['field_sector_tid']['field'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_sector_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator_id'] = 'field_sector_tid_op';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['label'] = 'Sector';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator'] = 'field_sector_tid_op';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['identifier'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Field: Sector (field_multiple_sector) */
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['id'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['table'] = 'field_data_field_multiple_sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['field'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator_id'] = 'field_multiple_sector_tid_op';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['label'] = 'Sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator'] = 'field_multiple_sector_tid_op';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['identifier'] = 'field_multiple_sector_tid';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -322,10 +327,10 @@ function oira_private_image_views_default_views() {
     12 => 0,
     14 => 0,
     13 => 0,
-    15 => 0,
   );
-  $handler->display->display_options['filters']['field_sector_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sector_tid']['vocabulary'] = 'sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['vocabulary'] = 'sector';
+  $handler->display->display_options['filters']['field_multiple_sector_tid']['error_message'] = FALSE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -354,7 +359,7 @@ function oira_private_image_views_default_views() {
     t('last »'),
     t('- Choose an operation -'),
     t('Delete'),
-    t('Image'),
+    t('Images'),
     t('Title'),
     t('Sector'),
     t('Edit'),

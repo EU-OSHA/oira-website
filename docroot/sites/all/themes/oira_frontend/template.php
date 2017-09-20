@@ -497,13 +497,28 @@ function oira_frontend_colorbox_imagefield($variables) {
   else {
     $image = theme('image', $variables['image']);
   }
+  $file = current(file_load_multiple(array(), array('uri' => $variables['image']['path'])));
+  $sectors = '';
+  if (!empty($file->field_multiple_sector)) {
+    $sectors = '<div class="image-sectors">';
+    foreach ($file->field_multiple_sector[LANGUAGE_NONE] as $val) {
+      $term = taxonomy_term_load($val['tid']);
+      $sectors .= '<span class="sector-term">' . $term->name . '</span>';
+    }
+    $sectors .= '</div>';
+  }
+  $download = '<a href="' . file_create_url($file->uri) . '" target="_blank" class="download-file"><span class="glyphicon glyphicon-download"></span></a>';
+
+  $image = '<div class="image-thumb-container"><div class="image-container">' . $image . '</div><div class="image-title">' . $file->filename . '</div>' . $sectors . $download . '</div>';
+
   $image_vars = array(
     'style_name' => $variables['colorbox_style'],
     'path' => $variables['image']['path'],
     'alt' => $variables['entity']->title,
   );
   $popup = theme('image_style', $image_vars);
-  $caption = $variables['title'] . hwc_news_share_widget($variables['entity'], array('type' => 'article', 'label' => t('Share this gallery')));
+
+  $caption = $variables['title'];
 
   $width = 'auto';
   $height = 'auto';

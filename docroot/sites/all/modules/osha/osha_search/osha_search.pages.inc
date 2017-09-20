@@ -159,7 +159,7 @@ function osha_search_search_form($form, $form_state) {
     $nodes = node_load_multiple($nids);
 
     pager_default_initialize($response['result count'], $per_page);
-    $pager_params = $_GET;
+    $pager_params = drupal_get_query_parameters();
     $page_no = isset($pager_params['page']) ? (int) $pager_params['page'] : 0;
     unset($pager_params['page']);
     $form['content']['results'] = array(

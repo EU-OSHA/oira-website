@@ -258,7 +258,7 @@ function _oira_strategic_documentation_get_generic_faceted_form($variables) {
     }
 
     pager_default_initialize($response['result count'], $per_page);
-    $pager_params = $_GET;
+    $pager_params = drupal_get_query_parameters();
     $page_no = isset($pager_params['page']) ? (int) $pager_params['page'] : 0;
     unset($pager_params['page']);
 

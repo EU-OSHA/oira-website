@@ -62,3 +62,24 @@ function oira_workflow_update_7005() {
 function oira_workflow_update_7006() {
   features_revert_module('oira_workflow');
 }
+
+/**
+ * Feature revert MDR-1300.
+ */
+function oira_workflow_update_7007() {
+  features_revert_module('oira_workflow');
+}
+
+/**
+ * Feature revert MDR-1353.
+ */
+function oira_workflow_update_7008() {
+  features_revert_module('oira_workflow');
+}
+
+/**
+ * Feature revert MDR-1368.
+ */
+function oira_workflow_update_7009() {
+  features_revert_module('oira_workflow');
+}
