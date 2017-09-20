@@ -89,7 +89,8 @@ function oira_private_image_form_views_exposed_form_alter(&$form, &$form_state) 
     $result = $query->execute();
     $tids = $result->fetchAllKeyed(0);
     $form['field_multiple_sector_tid']['#options'] = array_intersect_key($form['field_multiple_sector_tid']['#options'], array_flip($tids) + ['All' => 'All']);
-    $form['field_multiple_sector_tid']['#options']['All'] = t('Sector') . ' (' . count($tids) . ')';
+//    $form['field_multiple_sector_tid']['#options']['All'] = t('Sector') . ' (' . count($tids) . ')';
+    $form['#info']['filter-field_multiple_sector_tid']['label'] = t('Sector') . ' (' . count($tids) . ')';
     $form['field_multiple_sector_tid']['#chosen'] = FALSE;
     $form['#prefix'] = '<div class="container"><span class="filter-show-all">' . t('Show all') . '</span>';
     $form['#suffix'] = '</div>';
