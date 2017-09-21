@@ -92,6 +92,21 @@ jQuery(document).ready(function () {
 		jQuery('.modal.fade').modal('show');   
 	});
 
+	//display menu of pz
+	jQuery('.toogle-content-switcher .show-link').hide();
+	jQuery('.toogle-content-switcher .hide-link').click(function(){
+		jQuery('.toogle-content-switcher .show-link').show();
+		jQuery('.toogle-content-switcher .hide-link').hide();
+		jQuery('h2.block-title').css({"border-bottom":"2px solid #786586", "margin-bottom": "0px", "padding-bottom":"22px"});
+	});
+	jQuery('.toogle-content-switcher .show-link').click(function(){
+		jQuery('.toogle-content-switcher .hide-link').show();
+		jQuery('.toogle-content-switcher .show-link').hide();
+	});
+
+	
+
+
 	/*fixing sticky menu*/
 	/*hight of page*/
 	var num = 150; //number of pixels before modifying styles
@@ -285,4 +300,9 @@ jQuery(document).ready(function () {
 			jQuery(this).prop('download',filename);
 		}
 	);
+
+	jQuery('.page-node-bulk-upload .page-content > div:eq(1)').addClass("bulk-upload");
+
 });
+	
+	
