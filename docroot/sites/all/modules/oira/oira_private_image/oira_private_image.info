@@ -98,6 +98,7 @@ features[variable][] = nodeblock_view_mode_oira_private_image
 features[variable][] = osha_gallery_usable_fields_bundles
 features[variable][] = page_title_type_oira_private_image
 features[variable][] = page_title_type_oira_private_image_showfield
+features[variable][] = pathauto_node_private_album_pattern
 features[variable][] = print_html_display_comment_oira_private_image
 features[variable][] = print_html_display_oira_private_image
 features[variable][] = print_html_display_urllist_oira_private_image

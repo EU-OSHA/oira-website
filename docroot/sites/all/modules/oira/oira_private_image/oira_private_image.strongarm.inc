@@ -415,6 +415,13 @@ function oira_private_image_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_private_album_pattern';
+  $strongarm->value = 'private-zone/collaboration-area/private-images/[node:title]';
+  $export['pathauto_node_private_album_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'print_html_display_comment_oira_private_image';
   $strongarm->value = 0;
   $export['print_html_display_comment_oira_private_image'] = $strongarm;

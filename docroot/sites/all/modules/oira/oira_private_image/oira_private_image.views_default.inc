@@ -75,11 +75,12 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['fields']['field_multiple_sector']['field'] = 'field_multiple_sector';
   $handler->display->display_options['fields']['field_multiple_sector']['label'] = '';
   $handler->display->display_options['fields']['field_multiple_sector']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_multiple_sector']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_multiple_sector']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_multiple_sector']['settings'] = array(
     'field_formatter_class' => '',
   );
   $handler->display->display_options['fields']['field_multiple_sector']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_multiple_sector']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_multiple_sector']['separator'] = '';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
