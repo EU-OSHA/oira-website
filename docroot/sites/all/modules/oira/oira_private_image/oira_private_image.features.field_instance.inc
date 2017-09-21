@@ -360,7 +360,7 @@ function oira_private_image_field_default_field_instances() {
           'colorbox_node_style' => 'medium_thumbnail_mc',
           'colorbox_node_style_first' => 'gallery_cover_image',
           'field_formatter_class' => '',
-          'use_image_caption_field' => 1,
+          'use_image_caption_field' => 0,
         ),
         'type' => 'colorbox',
         'weight' => 0,

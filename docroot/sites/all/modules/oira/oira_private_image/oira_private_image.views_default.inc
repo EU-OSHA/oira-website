@@ -55,7 +55,7 @@ function oira_private_image_views_default_views() {
   $handler->display->display_options['fields']['field_private_images']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_private_images']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_private_images']['settings'] = array(
-    'image_style' => 'square_thumbnail_teaser',
+    'image_style' => 'medium_thumbnail_mc',
     'image_link' => 'content',
     'field_formatter_class' => '',
   );
