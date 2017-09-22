@@ -10,37 +10,37 @@
 function oira_private_image_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'create oira_private_image content'.
-  $permissions['create oira_private_image content'] = array(
-    'name' => 'create oira_private_image content',
+  // Exported permission: 'create private_album content'.
+  $permissions['create private_album content'] = array(
+    'name' => 'create private_album content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any oira_private_image content'.
-  $permissions['delete any oira_private_image content'] = array(
-    'name' => 'delete any oira_private_image content',
+  // Exported permission: 'delete any private_album content'.
+  $permissions['delete any private_album content'] = array(
+    'name' => 'delete any private_album content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own oira_private_image content'.
-  $permissions['delete own oira_private_image content'] = array(
-    'name' => 'delete own oira_private_image content',
+  // Exported permission: 'delete own private_album content'.
+  $permissions['delete own private_album content'] = array(
+    'name' => 'delete own private_album content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any oira_private_image content'.
-  $permissions['edit any oira_private_image content'] = array(
-    'name' => 'edit any oira_private_image content',
+  // Exported permission: 'edit any private_album content'.
+  $permissions['edit any private_album content'] = array(
+    'name' => 'edit any private_album content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own oira_private_image content'.
-  $permissions['edit own oira_private_image content'] = array(
-    'name' => 'edit own oira_private_image content',
+  // Exported permission: 'edit own private_album content'.
+  $permissions['edit own private_album content'] = array(
+    'name' => 'edit own private_album content',
     'roles' => array(),
     'module' => 'node',
   );

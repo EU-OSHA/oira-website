@@ -39,11 +39,11 @@ function oira_private_image_image_default_styles() {
   $styles['gallery_cover_image'] = array(
     'label' => 'gallery_cover_image',
     'effects' => array(
-      13 => array(
+      12 => array(
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 1170,
-          'height' => 555,
+          'height' => 350,
           'upscale' => 0,
           'respectminimum' => 1,
           'onlyscaleifcrop' => 0,
@@ -56,13 +56,13 @@ function oira_private_image_image_default_styles() {
 
   // Exported image style: medium_thumbnail_mc.
   $styles['medium_thumbnail_mc'] = array(
-    'label' => 'Medium thumbnail MC (340 X 220)',
+    'label' => 'Medium thumbnail MC (525 X 350)',
     'effects' => array(
-      14 => array(
+      13 => array(
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
-          'width' => 340,
-          'height' => 220,
+          'width' => 525,
+          'height' => 350,
           'upscale' => 0,
           'respectminimum' => 1,
           'onlyscaleifcrop' => 0,
