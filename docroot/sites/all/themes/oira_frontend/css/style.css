@@ -12653,6 +12653,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin-bottom: 25px;
   color: #786586;
 }
+.node-type-private-album #cboxCurrent {
+  display: none !important;
+}
 .node-type-private-album .images-filter-wrapper {
   background-color: #786586;
   margin-bottom: 30px;
