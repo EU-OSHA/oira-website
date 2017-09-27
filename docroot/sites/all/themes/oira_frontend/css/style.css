@@ -11116,8 +11116,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-bottom: 0px;
   margin-bottom: 15px;
 }
-.page-node-91.node-type-partner .page-title-wrapper h1,
-.private-zone-page.private-images-page-selector .page-title-wrapper h1 {
+.page-node-91.node-type-partner .page-title-wrapper h1 {
   border-bottom: 2px solid #786586 !important;
   margin-bottom: 25px;
   padding-bottom: 10px;
@@ -11225,59 +11224,146 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-91 .panels-flexible-row-new-1 {
   padding-bottom: 0px;
 }
-.page-private-zone .block-menu-block > .container,
-.page-node-add .block-menu-block > .container,
-.page-node-update-profile .block-menu-block > .container,
-.page-node-view-profile .block-menu-block > .container,
-.node-type-promotional-material .block-menu-block > .container,
-.node-type-strategic-documentation .block-menu-block > .container {
+.page-private-zone .toogle-content-switcher,
+.page-node-add .toogle-content-switcher,
+.page-node-update-profile .toogle-content-switcher,
+.page-node-view-profile .toogle-content-switcher,
+.node-type-promotional-material .toogle-content-switcher,
+.node-type-strategic-documentation .toogle-content-switcher,
+.node-type-private-album .toogle-content-switcher,
+.node-type-partner .toogle-content-switcher {
+  text-align: right;
+  cursor: pointer;
+  margin-top: -50px;
+  padding-bottom: 10px;
+}
+.page-private-zone .toogle-content-switcher .hide-link,
+.page-node-add .toogle-content-switcher .hide-link,
+.page-node-update-profile .toogle-content-switcher .hide-link,
+.page-node-view-profile .toogle-content-switcher .hide-link,
+.node-type-promotional-material .toogle-content-switcher .hide-link,
+.node-type-strategic-documentation .toogle-content-switcher .hide-link,
+.node-type-private-album .toogle-content-switcher .hide-link,
+.node-type-partner .toogle-content-switcher .hide-link,
+.page-private-zone .toogle-content-switcher .show-link,
+.page-node-add .toogle-content-switcher .show-link,
+.page-node-update-profile .toogle-content-switcher .show-link,
+.page-node-view-profile .toogle-content-switcher .show-link,
+.node-type-promotional-material .toogle-content-switcher .show-link,
+.node-type-strategic-documentation .toogle-content-switcher .show-link,
+.node-type-private-album .toogle-content-switcher .show-link,
+.node-type-partner .toogle-content-switcher .show-link {
+  color: #786586;
+}
+.page-private-zone .toogle-content-switcher .hide-link:after,
+.page-node-add .toogle-content-switcher .hide-link:after,
+.page-node-update-profile .toogle-content-switcher .hide-link:after,
+.page-node-view-profile .toogle-content-switcher .hide-link:after,
+.node-type-promotional-material .toogle-content-switcher .hide-link:after,
+.node-type-strategic-documentation .toogle-content-switcher .hide-link:after,
+.node-type-private-album .toogle-content-switcher .hide-link:after,
+.node-type-partner .toogle-content-switcher .hide-link:after,
+.page-private-zone .toogle-content-switcher .show-link:after,
+.page-node-add .toogle-content-switcher .show-link:after,
+.page-node-update-profile .toogle-content-switcher .show-link:after,
+.page-node-view-profile .toogle-content-switcher .show-link:after,
+.node-type-promotional-material .toogle-content-switcher .show-link:after,
+.node-type-strategic-documentation .toogle-content-switcher .show-link:after,
+.node-type-private-album .toogle-content-switcher .show-link:after,
+.node-type-partner .toogle-content-switcher .show-link:after {
+  content: "\e252";
+  color: white;
+  background-color: #10b2e4;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  font-size: 13px;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-family: "Glyphicons Halflings";
+  text-align: center;
+}
+.page-private-zone .toogle-content-switcher .hide-link:after,
+.page-node-add .toogle-content-switcher .hide-link:after,
+.page-node-update-profile .toogle-content-switcher .hide-link:after,
+.page-node-view-profile .toogle-content-switcher .hide-link:after,
+.node-type-promotional-material .toogle-content-switcher .hide-link:after,
+.node-type-strategic-documentation .toogle-content-switcher .hide-link:after,
+.node-type-private-album .toogle-content-switcher .hide-link:after,
+.node-type-partner .toogle-content-switcher .hide-link:after {
+  content: "\e253";
+  font-family: "Glyphicons Halflings";
+  line-height: 20px;
+}
+.page-private-zone .block-menu-block > #private-zone-block-content > .container,
+.page-node-add .block-menu-block > #private-zone-block-content > .container,
+.page-node-update-profile .block-menu-block > #private-zone-block-content > .container,
+.page-node-view-profile .block-menu-block > #private-zone-block-content > .container,
+.node-type-promotional-material .block-menu-block > #private-zone-block-content > .container,
+.node-type-strategic-documentation .block-menu-block > #private-zone-block-content > .container,
+.node-type-private-album .block-menu-block > #private-zone-block-content > .container,
+.node-type-partner .block-menu-block > #private-zone-block-content > .container {
   position: relative;
 }
-.page-private-zone .block-menu-block > .container .private-zone-back-link,
-.page-node-add .block-menu-block > .container .private-zone-back-link,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-link,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-link,
-.node-type-promotional-material .block-menu-block > .container .private-zone-back-link,
-.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link,
-.page-private-zone .block-menu-block > .container .private-zone-back-wrapper,
-.page-node-add .block-menu-block > .container .private-zone-back-wrapper,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper,
-.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper,
-.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper {
+.page-private-zone .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.page-node-add .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.page-node-update-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.page-node-view-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.node-type-promotional-material .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.node-type-strategic-documentation .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.node-type-private-album .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.node-type-partner .block-menu-block > #private-zone-block-content > .container .private-zone-back-link,
+.page-private-zone .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper,
+.page-node-add .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper,
+.page-node-update-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper,
+.page-node-view-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper,
+.node-type-promotional-material .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper,
+.node-type-strategic-documentation .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper,
+.node-type-private-album .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper,
+.node-type-partner .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper {
   position: absolute;
   right: 0;
   top: 34px;
   width: 65px;
   display: block;
 }
-.page-private-zone .block-menu-block > .container .private-zone-back-link a,
-.page-node-add .block-menu-block > .container .private-zone-back-link a,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-link a,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-link a,
-.node-type-promotional-material .block-menu-block > .container .private-zone-back-link a,
-.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link a,
-.page-private-zone .block-menu-block > .container .private-zone-back-wrapper a,
-.page-node-add .block-menu-block > .container .private-zone-back-wrapper a,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a,
-.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper a,
-.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper a {
+.page-private-zone .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.page-node-add .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.page-node-update-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.page-node-view-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.node-type-promotional-material .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.node-type-strategic-documentation .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.node-type-private-album .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.node-type-partner .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a,
+.page-private-zone .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a,
+.page-node-add .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a,
+.page-node-update-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a,
+.page-node-view-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a,
+.node-type-promotional-material .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a,
+.node-type-strategic-documentation .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a,
+.node-type-private-album .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a,
+.node-type-partner .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a {
   color: #10b2e4;
   margin-right: 15px;
 }
-.page-private-zone .block-menu-block > .container .private-zone-back-link a:after,
-.page-node-add .block-menu-block > .container .private-zone-back-link a:after,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-link a:after,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-link a:after,
-.node-type-promotional-material .block-menu-block > .container .private-zone-back-link a:after,
-.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-link a:after,
-.page-private-zone .block-menu-block > .container .private-zone-back-wrapper a:after,
-.page-node-add .block-menu-block > .container .private-zone-back-wrapper a:after,
-.page-node-update-profile .block-menu-block > .container .private-zone-back-wrapper a:after,
-.page-node-view-profile .block-menu-block > .container .private-zone-back-wrapper a:after,
-.node-type-promotional-material .block-menu-block > .container .private-zone-back-wrapper a:after,
-.node-type-strategic-documentation .block-menu-block > .container .private-zone-back-wrapper a:after {
+.page-private-zone .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.page-node-add .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.page-node-update-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.page-node-view-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.node-type-promotional-material .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.node-type-strategic-documentation .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.node-type-private-album .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.node-type-partner .block-menu-block > #private-zone-block-content > .container .private-zone-back-link a:after,
+.page-private-zone .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after,
+.page-node-add .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after,
+.page-node-update-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after,
+.page-node-view-profile .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after,
+.node-type-promotional-material .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after,
+.node-type-strategic-documentation .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after,
+.node-type-private-album .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after,
+.node-type-partner .block-menu-block > #private-zone-block-content > .container .private-zone-back-wrapper a:after {
   content: "";
   background: url("../images/icons/back-news.png") no-repeat;
   background-size: 100%;
@@ -12429,37 +12515,317 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-link a:hover {
   color: #967ea7;
 }
-.private-images-page-selector .panels-flexible-row-new-1 {
-  background-color: white !important;
+.page-private-zone-collaboration-area-private-images h1 {
+  border-bottom: none !important;
 }
-.private-images-page-selector ul.private-images {
-  overflow: auto;
-  list-style: none;
-  margin-top: 25px;
+.page-private-zone-collaboration-area-private-images .panels-flexible-row {
+  padding-bottom: 0px;
 }
-.private-images-page-selector ul.private-images li {
-  text-align: center;
-  min-height: 185px;
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters {
+  background-color: #786586;
+  margin-bottom: 30px;
+  color: white;
 }
-.private-images-page-selector ul.private-images li a img {
-  margin: 0 auto;
-  margin-bottom: 10px;
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters .filter-show-all {
+  padding: 15px;
+  float: left;
+  color: #ffffff;
+  font-style: italic;
+  cursor: pointer;
 }
-.private-images-page-selector ul.private-images li .views-field-field-oira-private-image-1 {
-  margin-top: 10px;
-}
-.private-images-page-selector ul.private-images li .views-field-field-oira-private-image-1 a {
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters .filter-show-all:before {
+  content: "";
+  background: url(../images/icons/show-all-icon-w.png) no-repeat;
+  background-size: 100%;
   display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters .filter-show-all:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #967ea7;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form {
+  float: left;
+  padding: 15px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form .views-exposed-widgets {
+  margin-bottom: 0px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper {
+  padding: 0px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper label {
+  display: none;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper {
+  z-index: 2;
+  list-style: none;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper .sector-filter-label {
+  padding: 15px;
+  color: #ffffff;
+  font-style: italic;
+  cursor: pointer;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper .sector-filter-label:before {
+  content: "";
+  background: url(../images/icons/tools-icon-w.png) no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper ul {
+  display: none;
+  position: absolute;
+  color: #58585a;
+  background-color: #ffffff;
+  z-index: 100;
+  min-width: 140px;
+  list-style: none;
+  margin-top: 15px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper ul li {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper ul li:hover {
+  background-color: #786586;
+  color: #ffffff;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form .views-submit-button {
+  display: none;
+  padding: 15px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form:hover #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper .sector-filter-label {
+  color: #967ea7;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-filters form:hover #edit-field-multiple-sector-tid-wrapper .sector-filter-list-wrapper ul {
+  display: block;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-content article {
+  padding: 0px 15px;
+  margin-bottom: 30px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-content article img {
+  width: 100%;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-content article .views-field-title {
+  background-color: #786586;
+  padding: 15px 15px 0px 15px;
+  min-height: 60px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-content article .views-field-title a {
+  color: white;
+  font-weight: bold;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-content article .views-field-title a:before {
+  content: "> ";
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-content article .views-field-field-multiple-sector {
+  background-color: #786586;
+  padding: 10px 15px 10px 15px;
+  min-height: 65px;
+}
+.page-private-zone-collaboration-area-private-images .view-private-images .view-content article .views-field-field-multiple-sector li {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+}
+.node-type-private-album h2 {
+  font-size: 3.5em;
+  margin-bottom: 25px;
+  color: #786586;
+}
+.node-type-private-album #cboxCurrent {
+  display: none !important;
+}
+.node-type-private-album .images-filter-wrapper {
+  background-color: #786586;
+  margin-bottom: 30px;
+  color: white;
+}
+.node-type-private-album .images-filter-wrapper .filter-show-all {
+  padding: 15px;
+  float: left;
+  color: #ffffff;
+  font-style: italic;
+  cursor: pointer;
+}
+.node-type-private-album .images-filter-wrapper .filter-show-all:before {
+  content: "";
+  background: url(../images/icons/show-all-icon-w.png) no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.node-type-private-album .images-filter-wrapper .filter-show-all:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #967ea7;
+}
+.node-type-private-album .images-filter-wrapper .filter-show-all:hover:before {
+  content: "";
+  background: url(../images/icons/show-all-icon-w.png) no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+  color: #967ea7 !important;
+}
+.node-type-private-album .images-filter-wrapper form {
+  float: left;
+  padding: 15px;
+}
+.node-type-private-album .images-filter-wrapper form .views-exposed-widgets {
+  margin-bottom: 0px;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector {
+  padding: 0px;
+  margin-bottom: 0px;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector label {
+  display: none;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector .sector-filter-list-wrapper {
+  z-index: 2;
+  list-style: none;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector .sector-filter-list-wrapper .sector-filter-label {
+  padding: 15px;
+  color: #ffffff;
+  font-style: italic;
+  cursor: pointer;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector .sector-filter-list-wrapper .sector-filter-label:before {
+  content: "";
+  background: url(../images/icons/tools-icon-w.png) no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector .sector-filter-list-wrapper ul {
+  display: none;
+  position: absolute;
+  color: #58585a;
+  background-color: #ffffff;
+  z-index: 100;
+  min-width: 140px;
+  list-style: none;
+  margin-top: 15px;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector .sector-filter-list-wrapper ul li {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.node-type-private-album .images-filter-wrapper form .form-item-sector .sector-filter-list-wrapper ul li:hover {
+  background-color: #786586;
+  color: #ffffff;
+}
+.node-type-private-album .images-filter-wrapper form #edit-submit {
+  display: none;
+  padding: 15px;
+}
+.node-type-private-album .images-filter-wrapper form:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.node-type-private-album .images-filter-wrapper form:hover .form-item-sector .sector-filter-list-wrapper .sector-filter-label {
+  color: #967ea7;
+}
+.node-type-private-album .images-filter-wrapper form:hover .form-item-sector .sector-filter-list-wrapper ul {
+  display: block;
+}
+.node-type-private-album .node-private-album .field-item {
+  margin-bottom: 30px;
+}
+.node-type-private-album .node-private-album .field-item .image-thumb-container {
   background-color: #786586;
   color: white;
-  padding: 3px 8px;
-  border-radius: 4px;
 }
-.private-images-page-selector ul.private-images li .views-field-field-oira-private-image-1 a:before {
-  content: "\e026";
-  font-family: "Glyphicons Halflings";
-  vertical-align: middle;
-  margin-right: 7px;
+.node-type-private-album .node-private-album .field-item .image-thumb-container a.colorbox-inline {
+  text-decoration: none;
+}
+.node-type-private-album .node-private-album .field-item .image-thumb-container img {
+  width: 100%;
+}
+.node-type-private-album .node-private-album .field-item .image-thumb-container .image-title {
+  color: white;
+  padding: 15px 15px 0px 15px;
+  min-height: 59px;
+  max-width: 83%;
+}
+.node-type-private-album .node-private-album .field-item .image-thumb-container .image-sectors {
+  padding: 10px 15px 10px 15px;
+  min-height: 66px;
+}
+.node-type-private-album .node-private-album .field-item .image-thumb-container .image-sectors .sector-term {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+}
+.node-type-private-album .node-private-album .field-item .image-thumb-container .download-file {
+  color: white;
+  font-size: 2.3em;
+  position: absolute;
+  right: 32px;
+  bottom: 35px;
+}
+.node-type-private-album .node-private-album .field-item.col-md-12 .image-sectors {
+  min-height: inherit;
+}
+.node-type-private-album .node-private-album .field-item.col-md-12 .download-file {
+  font-size: 3.5em;
+  right: 45px;
+  bottom: 5px;
+}
+.page-node-bulk-upload .page-content .bulk-upload {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 2em;
+}
+.page-node-bulk-upload .page-content .bulk-upload #osha-gallery-bulk-upload-form .form-item.form-item-overwrite.checkbox {
+  margin-left: 20px !important;
+}
+.page-node-bulk-upload .page-content .bulk-upload #osha-gallery-bulk-upload-form .form-item.form-item-overwrite.checkbox label {
+  padding-left: 0px !important;
+}
+.page-node-bulk-upload .page-content .bulk-upload #osha-gallery-bulk-upload-form button {
+  background-color: #786586;
+  color: white;
+  border: none;
 }
 .popover-content {
   padding: 10px 30px !important;

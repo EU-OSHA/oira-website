@@ -279,11 +279,6 @@ function osha_workflow_views_default_views() {
     15 => 0,
   );
   $handler->display->display_options['filters']['state']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['cpm_assigned']['id'] = 'cpm_assigned';
-  $handler->display->display_options['filters']['cpm_assigned']['table'] = 'hwc_partner';
-  $handler->display->display_options['filters']['cpm_assigned']['field'] = 'cpm_assigned';
-  $handler->display->display_options['filters']['cpm_assigned']['value'] = '1';
   $handler->display->display_options['path'] = 'admin/workbench/manager';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Needs PM Review';
@@ -454,6 +449,8 @@ function osha_workflow_views_default_views() {
   $handler = $view->new_display('page', 'My Content', 'my_content');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'My Content';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view osh my content tab';
@@ -605,9 +602,9 @@ function osha_workflow_views_default_views() {
   $handler->display->display_options['filters']['current']['field'] = 'current';
   $handler->display->display_options['filters']['current']['value'] = '1';
   $handler->display->display_options['filters']['current']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Oira partner: If node belongs to current partner or user is coauthor */
   $handler->display->display_options['filters']['belongs_partner']['id'] = 'belongs_partner';
-  $handler->display->display_options['filters']['belongs_partner']['table'] = 'hwc_partner';
+  $handler->display->display_options['filters']['belongs_partner']['table'] = 'oira_partner';
   $handler->display->display_options['filters']['belongs_partner']['field'] = 'belongs_partner';
   $handler->display->display_options['filters']['belongs_partner']['value'] = '1';
   $handler->display->display_options['filters']['belongs_partner']['group'] = 1;

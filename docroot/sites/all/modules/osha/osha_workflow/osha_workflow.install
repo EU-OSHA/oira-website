@@ -434,3 +434,10 @@ function osha_workflow_update_7003() {
     db_add_field('osha_workflow_node_project_managers', 'message', $schema['osha_workflow_node_project_managers']['fields']['message']);
   }
 }
+
+/**
+ * Feature revert MDR-1368.
+ */
+function osha_workflow_update_7004() {
+  features_revert_module('osha_workflow');
+}

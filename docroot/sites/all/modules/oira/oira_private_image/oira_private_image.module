@@ -11,18 +11,162 @@ include_once 'oira_private_image.features.inc';
  */
 function oira_private_image_node_access($node, $op, $account) {
   $type = is_string($node) ? $node : $node->type;
-  if($type == 'oira_private_image' && $op == 'view'){
-    if(array_intersect(
+  if ($type == 'private_album' && $op == 'view') {
+    if (array_intersect(
       array(OSHA_WORKFLOW_ROLE_ADMINISTRATOR, ROLE_OIRA_PARTNER, ROLE_OIRA_PROJECT_MANAGER, ROLE_OIRA_SUPERVISOR),
       array_values($account->roles)
-    )){
+    )) {
       return NODE_ACCESS_ALLOW;
-    }else{
+    }
+    else {
       return NODE_ACCESS_DENY;
     }
   }
   return NODE_ACCESS_IGNORE;
 }
+
+/**
+ * Implements hook_node_view().
+ */
+function oira_private_image_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'private_album' && $view_mode == 'full') {
+    if (!empty($node->content['field_private_images'])) {
+      $all_fids = [];
+      foreach ($node->field_private_images[LANGUAGE_NONE] as $img) {
+        $all_fids[] = $img['fid'];
+      }
+
+      $sector = (int) $_GET['sector'];
+      $filter_fids = [];
+      if (!empty($sector)) {
+        $query = db_select('field_data_field_multiple_sector', 'sector')
+          ->fields('sector', ['entity_id', 'entity_id'])
+          ->condition('bundle', 'image')
+          ->condition('entity_id', $all_fids, 'IN')
+          ->condition('field_multiple_sector_tid', $sector);
+        $result = $query->execute();
+        $filter_fids = $result->fetchAllKeyed(0);
+      }
+      if (!empty($filter_fids)) {
+        $showing = element_children($node->content['field_private_images']);
+        for ($i = current($showing); $i <= end($showing); $i++) {
+          if (!in_array($node->content['field_private_images'][$i]['#item']['fid'], $filter_fids)) {
+            unset($node->content['field_private_images'][$i]);
+          }
+        }
+
+      }
+
+      $image_deltas = element_children($node->content['field_private_images']);
+      $total = count($image_deltas);
+      $per_page = 9;
+      if ($total > $per_page) {
+        $page = pager_default_initialize($total, $per_page);
+        $offset = $per_page * $page;
+        if ($page == 0) {
+          $showing_deltas = range(0, $offset + $per_page);
+        }
+        else {
+          $showing_deltas = range($offset + 1, $offset + $per_page);
+        }
+        $remove_deltas = array_diff($image_deltas, $showing_deltas);
+        foreach ($remove_deltas as $delta) {
+          unset($node->content['field_private_images'][$delta]);
+        }
+        $node->content['field_private_images']['#suffix'] = theme('pager');
+      }
+
+      $showing = element_children($node->content['field_private_images']);
+      $fids = [];
+      for ($i = current($showing); $i <= end($showing); $i++) {
+        $fids[] = $node->content['field_private_images'][$i]['#item']['fid'];
+      }
+      $query = db_select('field_data_field_multiple_sector', 'sector')
+        ->fields('sector', ['field_multiple_sector_tid', 'field_multiple_sector_tid'])
+        ->condition('bundle', 'image')
+        ->condition('entity_id', $fids, 'IN');
+      $result = $query->execute();
+      $tids = $result->fetchAllKeyed(0);
+      $form = drupal_get_form('oira_private_image_sector_filter_form', $tids);
+      unset($form['op']);
+      unset($form['form_build_id']);
+      unset($form['form_token']);
+      unset($form['form_id']);
+      $node->content['images_filter'] = $form;
+    }
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function oira_private_image_node_update($node) {
+  if ($node->type == 'private_album') {
+    if (!empty($node->field_private_images) && !empty($node->field_multiple_sector)) {
+      // Append sectors to files.
+      $album_terms = $node->field_multiple_sector[LANGUAGE_NONE];
+      foreach ($node->field_private_images[LANGUAGE_NONE] as $val) {
+        $file = file_load($val['fid']);
+        $file_terms = [];
+        if (!empty($file->field_multiple_sector[LANGUAGE_NONE])) {
+          $file_terms = $file->field_multiple_sector[LANGUAGE_NONE];
+        }
+        $terms = array_merge($file_terms, $album_terms);
+        // Unique terms.
+        $terms = array_map("unserialize", array_unique(array_map("serialize", $terms)));
+        $file->field_multiple_sector[LANGUAGE_NONE] = $terms;
+        file_save($file);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_views_exposed_form_alter().
+ */
+function oira_private_image_form_views_exposed_form_alter(&$form, &$form_state) {
+  if ($form['#id'] == 'views-exposed-form-private-images-block-1') {
+    $query = db_select('field_data_field_multiple_sector', 'sector')
+      ->fields('sector', ['field_multiple_sector_tid', 'field_multiple_sector_tid'])
+      ->condition('bundle', 'private_album');
+    $result = $query->execute();
+    $tids = $result->fetchAllKeyed(0);
+    $form['field_multiple_sector_tid']['#options'] = array_intersect_key($form['field_multiple_sector_tid']['#options'], array_flip($tids) + ['All' => 'All']);
+    $form['field_multiple_sector_tid']['#options']['All'] = t('Any');
+    $form['#info']['filter-field_multiple_sector_tid']['label'] = t('Sector') . ' (' . count($tids) . ')';
+    $form['field_multiple_sector_tid']['#chosen'] = FALSE;
+    $form['#prefix'] = '<div class="container"><span class="filter-show-all">' . t('Show all') . '</span>';
+    $form['#suffix'] = '</div>';
+    $form['#attached']['js'][] = drupal_get_path('module', 'oira_private_image') . '/js/gallery_filter.js';
+  }
+}
+
+function oira_private_image_sector_filter_form($form, &$form_state, $tids) {
+  $terms = taxonomy_term_load_multiple($tids);
+  $options = ['' => t('Any')];
+  foreach ($terms as $term) {
+    $options[$term->tid] = $term->name;
+  }
+  $form['#method'] = 'GET';
+  $form['sector'] = [
+    '#title' => t('Sector') . ' (' . count($tids) . ')',
+    '#type' => 'select',
+    '#options' => $options,
+  ];
+  if (!empty($_GET['sector']) && isset($options[(int) $_GET['sector']])) {
+    $form['sector']['#default_value'] = (int) $_GET['sector'];
+  }
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => 'Apply',
+  ];
+  $form['#prefix'] = '<div class="container"><span class="filter-show-all">' . t('Show all') . '</span>';
+  $form['#suffix'] = '</div>';
+  $form['#attached']['js'][] = drupal_get_path('module', 'oira_private_image') . '/js/gallery_filter.js';
+
+  return $form;
+}
+
 
 /**
  * Implements hook_file_download().
