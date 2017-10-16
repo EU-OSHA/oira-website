@@ -351,8 +351,9 @@ abstract class AbstractNCWNodeMigration extends Migration {
       }
       else if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'node') {
         // Check if the needs review nodes are indeed missing in source.
+        $initial_list = $source->getInitialSourceIds();
         foreach ($removed as $to_remove) {
-          if (!in_array($to_remove->sourceid1, $source->initial_source_ids)) {
+          if (!in_array($to_remove->sourceid1, $initial_list)) {
             node_delete($to_remove->destid1);
             $this->getMap()->delete(array($to_remove->sourceid1));
             watchdog('osha_sites_migration', 'Deleting NODE that are not in the source anymore (@migration): !nids.',
@@ -382,6 +383,10 @@ abstract class AbstractNCWNodeSource extends MigrateSource {
     if (!empty($options['skip_ids'])) {
       $this->skip_ids = $options['skip_ids'];
     }
+  }
+
+  public function getInitialSourceIds() {
+    return $this->initial_source_ids;
   }
 
   /**
@@ -450,6 +455,7 @@ abstract class AbstractNCWNodeSource extends MigrateSource {
   public function readData() {
     ncw_migration_debug('!klass: Starting reading items from !url', array('!klass' => get_class($this), '!url' => $this->endpoint_url));
     $this->rows = array();
+
     $content = $this->fileGetContents($this->endpoint_url);
     if ($data = json_decode($content)) {
       ncw_migration_debug('!klass:      * Processing !count items', array('!klass' => get_class($this), '!count' => count($data->items)));
