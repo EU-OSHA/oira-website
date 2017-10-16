@@ -343,7 +343,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
     $map = $this->getMap();
     $source = $this->getSource();
     $removed = $map->getRowsNeedingUpdate(10000);
-    $to_be_removed = array();
+
     if (!empty($removed)) {
       if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'taxonomy_term') {
         // TODO ?! Removing terms that don't exists anymore
@@ -352,17 +352,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
       else if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'node') {
         // Check if the needs review nodes are indeed missing in source.
         foreach ($removed as $to_remove) {
-          $url = $source->itemURL($to_remove->sourceid1);
-          $curl = curl_init();
-          curl_setopt($curl, CURLOPT_URL, $url);
-          curl_setopt($curl, CURLOPT_NOBODY, true);
-          curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 5);
-          curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-          $result = curl_exec($curl);
-          $info = curl_getinfo($curl);
-          curl_close($curl);
-          // Remove only if 404.
-          if (!empty($info['http_code']) && $info['http_code'] == 404) {
+          if (!in_array($to_remove->sourceid1, $source->initial_source_ids)) {
             node_delete($to_remove->destid1);
             $this->getMap()->delete(array($to_remove->sourceid1));
             watchdog('osha_sites_migration', 'Deleting NODE that are not in the source anymore (@migration): !nids.',
@@ -384,6 +374,7 @@ abstract class AbstractNCWNodeSource extends MigrateSource {
   protected $rows = array();
   protected $count = -1;
   protected $skip_ids = array();
+  protected $initial_source_ids = array();
 
   public function __construct($options) {
     parent::__construct($options);
@@ -468,8 +459,11 @@ abstract class AbstractNCWNodeSource extends MigrateSource {
         if (in_array($id, $this->skip_ids)) {
           continue;
         }
+
+        array_push($this->initial_source_ids, $id);
         $node_url = $this->itemURL($id);
         ncw_migration_debug('!klass:      * Reading item: !url', array('!klass' => get_class($this), '!url' => $node_url));
+
         if ($rowd = $this->fileGetContents($node_url)) {
           if ($row_ob = json_decode($rowd, TRUE)) {
             $row = new stdClass();
