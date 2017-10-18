@@ -28,7 +28,6 @@ function drush_ncw_migration_hwc_migrate_all() {
 //    'tax_country',
     'tax_tags',
     'wiki_categories',
-
     'highlights',
     'news',
     'wiki_pages',
