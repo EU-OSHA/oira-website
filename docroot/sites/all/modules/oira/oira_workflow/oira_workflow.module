@@ -16,7 +16,7 @@ define('ROLE_OIRA_SUPERVISOR', 'Oira Supervisor');
  * Implements Elysia hook_cronapi().
  */
 function oira_workflow_cronapi() {
-  return array('oira_workflow_partner_content_cron' => array(
+  return array('oira_workflow_cron' => array(
     'description' => 'Set partners content from final draft to next state.',
     'rule' => '*/5 * * * *',
   ));
