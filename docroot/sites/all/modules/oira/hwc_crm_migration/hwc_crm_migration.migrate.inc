@@ -104,6 +104,14 @@ class HwcCrmMigration extends Migration {
     // Getting guids from source.
     $guids = $this->source->idsToProcess;
 
+    // Get unpublished partners.
+    $query = db_select('node', 'n');
+    $query->fields('n', ['nid', 'nid']);
+    $query->condition('n.type', 'partner');
+    $query->condition('n.status', 0);
+    $result = $query->execute();
+    $unpublished_partners = $result->fetchAllKeyed();
+
     // Get existing nodes.
     $query = db_select('field_data_field_guid_organisation', 'g');
     $query->fields('g', ['entity_id', 'field_guid_organisation_value']);
@@ -114,6 +122,21 @@ class HwcCrmMigration extends Migration {
     foreach ($existing_partners as $nid => $guid) {
       if (!in_array($guid, $guids)) {
         $removed[] = $nid;
+      }
+      elseif (isset($unpublished_partners[$nid])) {
+        // Require to publish.
+        if ($node = node_load($nid)) {
+          if ($node->status == 0) {
+            $node->status = 1;
+            node_save($node);
+            $this->currentMigration()->displayMessage(
+              strtr('Publishing partner @partner - found in source again.',
+                array('@partner' => $node->title)
+              ),
+              'warning'
+            );
+          }
+        }
       }
     }
     if (!empty($removed)) {
