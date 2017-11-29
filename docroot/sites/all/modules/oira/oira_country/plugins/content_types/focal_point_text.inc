@@ -35,6 +35,7 @@ function oira_country_focal_point_pane_render($subtype = NULL, $conf = NULL, $ar
   $link = $term_wrapper->language($language->language)->field_ncw_fp_link->value();
   if (!empty($link)) {
     $text = variable_get('oira_config_focal_point_text', 'Focal point');
+    $link['url'] = str_replace('osha.europa.eu/en/','osha.europa.eu/' . $language->language . '/', $link['url']);
     $block->content = '<div class="focal-poin-partner-text col-md-12">' . t($text, array('@link' => $link['url'])) . '</div>';
   }
   return $block;
