@@ -144,13 +144,26 @@ class oira_partner_handler_country_partner_access extends views_handler_filter_b
     if (!empty($term)) {
       $nids = _oira_partner_get_by_country($term->tid);
       if (!empty($nids)) {
+        $partner_workbench_access = [];
+        foreach ($nids as $nid){
+          $partner = node_load($nid);
+          $partner_workbench_access += $partner->workbench_access;
+        }
         $subquery = db_select('workbench_access_node', 'wa')
           ->fields('wa', array('access_id'))
           ->condition('wa.nid', $nids);
 
+        $subquery_coauthor = db_select('field_data_field_co_author', 'f')
+          ->fields('f', array('entity_id'))
+          ->condition('f.field_co_author_tid', $partner_workbench_access, 'IN');
+
+        $db_or = db_or();
+        $db_or->condition('access_id', $subquery, 'IN');
+        $db_or->condition('nid', $subquery_coauthor, 'IN');
+
         $query = db_select('workbench_access_node', 'wan')
           ->fields('wan', array('nid'))
-          ->condition('access_id', $subquery, 'IN');
+          ->condition($db_or);
 
         $this->query->add_where($this->options['group'], "{$this->query->base_table}.nid", $query, $in_operator);
       }
