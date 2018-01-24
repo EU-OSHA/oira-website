@@ -415,6 +415,12 @@ function oira_partner_form_node_form_alter(&$form, &$form_state, $form_id) {
       && isset($form['field_country'])) {
       $form['field_country']['#access'] = FALSE;
     }
+    if ($bundle == 'news') {
+      $role = user_role_load_by_name(ROLE_OIRA_PARTNER);
+      if (user_has_role($role->rid)) {
+       $form['field_co_author']['#access'] = FALSE;
+      }
+    }
   }
 }
 
