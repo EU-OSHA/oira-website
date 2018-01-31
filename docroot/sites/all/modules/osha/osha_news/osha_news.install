@@ -83,3 +83,10 @@ function osha_news_update_7011() {
 function osha_news_update_7012() {
   features_revert_module('osha_news');
 }
+
+/**
+ * MDR-1577 News shared between two partners.
+ */
+function osha_news_update_7013() {
+  features_revert(array('osha_news' => 'field_instance'));
+}
