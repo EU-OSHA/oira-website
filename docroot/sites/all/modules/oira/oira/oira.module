@@ -64,6 +64,9 @@ function oira_theme() {
     'oira_social_link_icon' => array(
       'variables' => array('element' => NULL),
     ),
+    'oira_external_link' => array(
+      'variables' => array('element' => NULL),
+    ),
   );
 }
 
@@ -93,6 +96,13 @@ function oira_field_formatter_info() {
       'module' => 'oira',
       'settings' => array(),
     ),
+    'oira_external_link' => array(
+      'label' => t('Partner external link'),
+      'field types' => array('link_field'),
+      'multiple values' => FIELD_BEHAVIOR_DEFAULT,
+      'module' => 'oira',
+      'settings' => array(),
+    ),
   );
 }
 
@@ -103,10 +113,21 @@ function oira_field_formatter_view($entity_type, $entity, $field, $instance, $la
   $settings = $display['settings'];
 
   $elements = array();
-  foreach ($items as $delta => $item) {
-    $elements[$delta] = array(
-      '#markup' => theme('oira_social_link_icon', array('element' => $item)),
-    );
+  switch ($display['type']) {
+    case 'oira_social_link_icon':
+      foreach ($items as $delta => $item) {
+        $elements[$delta] = array(
+          '#markup' => theme('oira_social_link_icon', array('element' => $item)),
+        );
+      }
+      break;
+    case 'oira_external_link':
+      foreach ($items as $delta => $item) {
+        $elements[$delta] = array(
+          '#markup' => theme('oira_external_link', array('element' => $item)),
+        );
+      }
+      break;
   }
   return $elements;
 }
@@ -402,6 +423,27 @@ function theme_oira_social_link_icon($element) {
         )
       );
     }
+  }
+  return $return;
+}
+
+function theme_oira_external_link($element) {
+  $return = '';
+  $url = $element['element']['url'];
+  $parts = parse_url($url);
+  if ($parts) {
+    $return = theme('link', array(
+        'path' => $url,
+        'text' => '<span class="social-profile-icon">' . $url . '</span>',
+        'options' => array(
+          'html' => TRUE,
+          'attributes' => array(
+            'target' => '_blank',
+            'class' => "social-profile-link",
+          ),
+        ),
+      )
+    );
   }
   return $return;
 }
