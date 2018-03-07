@@ -185,3 +185,10 @@ function oira_partner_update_7022() {
     user_role_grant_permissions($role->rid, $permissions);
   }
 }
+
+/**
+ * MDR-1734 partners' profiles and hyperlinks.
+ */
+function oira_partner_update_7023() {
+  features_revert_module('oira_partner');
+}
