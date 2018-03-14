@@ -92,6 +92,8 @@ function oira_partner_default_panels_mini() {
   $display->cache = array();
   $display->title = 'Contact information';
   $display->uuid = '136c25a0-a518-463a-b32d-ce46a625d543';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -253,7 +255,7 @@ function oira_partner_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'link_absolute',
+    'formatter' => 'oira_external_link',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
@@ -283,7 +285,7 @@ function oira_partner_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'link_absolute',
+    'formatter' => 'oira_external_link',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
@@ -609,6 +611,8 @@ function oira_partner_default_panels_mini() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '525e4bb5-491e-4a1a-8942-236f30882f5f';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -1074,6 +1078,8 @@ function oira_partner_default_panels_mini() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '525e4bb5-491e-4a1a-8942-236f30882f5f';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'partner_in_profile';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -1445,7 +1451,7 @@ function oira_partner_default_panels_mini() {
       'admin_title' => 'Spanish National Institute for Safety and Health at Work - IRAT - custom text',
       'title' => '<none>',
       'title_heading' => 'h2',
-      'body' => '<div class="focal-poin-partner-text">Prevencion10.es is a free public platform developed by the Spanish Ministry of Employment and Social Security, which offers advice on occupational risks prevention. It is aimed at companies with up to 25 workers - which will be able to carry out their own risk assessments while complying with the Spanish Act on Prevention of Occupational Risks - and at self-employed workers - who will be able to know what their obligations and rights are in terms of occupational risks prevention and business activity coordination. You can explore Prevencion10.es (ES)&nbsp;<a class="external-link" title="Follow link" href="https://www.prevencion10.es/site-web/home.seam" rel="nofollow">here</a></div>',
+    'body' => '<div class="focal-poin-partner-text">Prevencion10.es is a free public platform developed by the Spanish Ministry of Employment and Social Security, which offers advice on occupational risks prevention. It is aimed at companies with up to 25 workers - which will be able to carry out their own risk assessments while complying with the Spanish Act on Prevention of Occupational Risks - and at self-employed workers - who will be able to know what their obligations and rights are in terms of occupational risks prevention and business activity coordination. You can explore Prevencion10.es (ES)&nbsp;<a title="Follow link" href="https://www.prevencion10.es/p10_front/" rel="nofollow" target="_blank">here</a></div>',
       'format' => 'full_html',
       'substitute' => 1,
     );

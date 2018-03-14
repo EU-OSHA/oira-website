@@ -40,12 +40,18 @@ function osha_tmgmt_cron_cronapi() {
   ));
 }
 
+/**
+ * Implements hook_cron().
+ */
 function osha_tmgmt_cron() {
   // Remove old job items in cart
   $time_limit = strtotime('-1 day');
   _osha_tmgmt_remove_old_cart_jobs($time_limit);
 }
 
+/**
+ * Implements hook_menu().
+ */
 function osha_tmgmt_menu() {
   $items['node/%/layout-validation/%tmgmt_job_item'] = array(
     'page callback' => 'osha_tmgmt_layout_validation_node_preview',
@@ -94,7 +100,7 @@ function osha_tmgmt_menu() {
 }
 
 /**
- * hook_translated_menu_link_alter().
+ * Implements hook_translated_menu_link_alter().
  */
 function osha_tmgmt_translated_menu_link_alter(&$item, $map) {
   // Menu link preview.
