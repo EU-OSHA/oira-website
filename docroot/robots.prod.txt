@@ -95,3 +95,7 @@ Disallow: /ru/
 Disallow: /sr/
 Disallow: /sh/
 Disallow: /tr/
+Disallow: /rss-feeds/latest/news.xml
+Disallow: /rss-feeds/latest/tools.xml
+Disallow: /rss-feeds/latest/promotional-materials.xml
+Disallow: /search-site
