@@ -356,9 +356,30 @@ function oira_form_node_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['field_migration_source'])) {
     $form['field_migration_source']['#access'] = FALSE;
   }
+
   if (!empty($form['#entity']->field_migration_source)) {
-    drupal_set_message('You are not allowed to edit imported content', 'warning');
-    $form['#access'] = FALSE;
+    // Hide all wiki-page fields except image and disabled title.
+    if ($form['type']['#value'] == 'wiki_page') {
+      $form['title_field']['#disabled'] = TRUE;
+
+      $disabled = [
+        "body", "language", "field_summary", "field_tags", "field_updated",
+        "field_wiki_categories", "field_wiki_page_url", "field_revised_date", "field_migration_source",
+        "revision_information", "author", "options", "redirect",
+        "comment_settings", "menu", "metatags", "additional_settings",
+      ];
+
+      drupal_add_css(drupal_get_path('module', 'oira') . '/css/oira.admin.css');
+      foreach ($form as $k => $v) {
+        if (is_array($v) && in_array($k, $disabled)) {
+          $form[$k]['#access'] = FALSE;
+        }
+      }
+    }
+    else {
+      drupal_set_message('You are not allowed to edit imported content', 'warning');
+      $form['#access'] = FALSE;
+    }
   }
 }
 
