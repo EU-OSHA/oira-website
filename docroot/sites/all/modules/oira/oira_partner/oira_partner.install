@@ -192,3 +192,10 @@ function oira_partner_update_7022() {
 function oira_partner_update_7023() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * MDR-1888 Delete the description text of all the IRAT partners.
+ */
+function oira_partner_update_7024() {
+  features_revert_module('oira_partner');
+}
