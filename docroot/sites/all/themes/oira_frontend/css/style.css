@@ -8184,6 +8184,8 @@ a.more-link:before {
 .page-what-is-new .panels-flexible-row.container-fluid {
   padding-top: 30px;
   background-color: #dfd8e4;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .page-what-is-new .panels-flexible-row.container-fluid .views-field-field-summary {
   padding: 15px 0px 0px 0px;
