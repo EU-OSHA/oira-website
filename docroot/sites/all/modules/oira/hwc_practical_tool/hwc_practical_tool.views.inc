@@ -77,7 +77,9 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
     // Get latest 3 E-tools WIKI PAGES
     $q = db_select('field_data_field_wiki_categories', 'cat');
     $q->innerJoin('field_data_field_updated', 'up', 'cat.entity_id = up.entity_id');
+    $q->innerJoin('node', 'n', 'n.nid = cat.entity_id');
     $q->fields('up', ['entity_id', 'field_updated_value'])
+      ->condition('n.status', 1)
       ->condition('cat.bundle', 'wiki_page')
       ->condition('cat.field_wiki_categories_tid', $term->tid)
       ->orderBy('up.field_updated_value', 'DESC')
@@ -87,7 +89,9 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
     // Get latest 3 OiRA TOOLS
     $q = db_select('field_data_field_publication_date', 'd');
     $q->innerJoin('field_data_field_revised_date', 'rev', 'rev.entity_id = d.entity_id');
+    $q->innerJoin('node', 'n', 'n.nid = d.entity_id');
     $q->fields('rev', ['entity_id', 'field_revised_date_value'])
+      ->condition('n.status', 1)
       ->condition('d.bundle', 'practical_tool')
       ->condition('d.field_publication_date_value', gmdate("Y-m-d H:i:s", time()), '<=')
       ->orderBy('rev.field_revised_date_value', 'DESC')

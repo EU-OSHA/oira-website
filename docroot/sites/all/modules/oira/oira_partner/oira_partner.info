@@ -1,7 +1,7 @@
 name = Oira Partner
 core = 7.x
 package = OIRA
-version = 7.x-0.3
+version = 7.x-0.5
 dependencies[] = email
 dependencies[] = field_collection
 dependencies[] = menu

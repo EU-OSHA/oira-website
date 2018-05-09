@@ -1,0 +1,8 @@
+<?php
+/**
+ * MDR-1410 - Administrator should have access to bulk upload images.
+ */
+function osha_gallery_update_7001() {
+  $role = user_role_load_by_name('administrator');
+  user_role_grant_permissions($role->rid, array('use hwc gallery bulk upload'));
+}

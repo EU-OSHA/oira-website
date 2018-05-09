@@ -121,6 +121,8 @@ function oira_partner_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = 'a61fb19c-554f-40d4-a391-a652a6c2b4a0';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -385,6 +387,8 @@ return $is_partner;',
   $display->cache = array();
   $display->title = 'Your profile';
   $display->uuid = 'a61fb19c-554f-40d4-a391-a652a6c2b4a0';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -619,6 +623,8 @@ function oira_partner_default_page_manager_pages() {
   $display->cache = array();
   $display->title = '%node:title_field';
   $display->uuid = 'c1fc1590-4876-41f3-873f-953d5a594e2c';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -851,6 +857,8 @@ function oira_partner_default_page_manager_pages() {
   $display->cache = array();
   $display->title = '%node:title_field';
   $display->uuid = '33cd8a4b-77ee-4e08-8f4f-3364ed8a8f6f';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -1083,6 +1091,8 @@ function oira_partner_default_page_manager_pages() {
   $display->cache = array();
   $display->title = '%node:title_field';
   $display->uuid = '47b47281-c299-48fd-9a54-2e3c7de4c9a5';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -1325,6 +1335,8 @@ function oira_partner_default_page_manager_pages() {
   $display->cache = array();
   $display->title = '%node:title_field';
   $display->uuid = 'afc0311c-dfe4-4c8e-b885-446a71f2089f';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -1577,6 +1589,8 @@ My Content
   $display->cache = array();
   $display->title = 'Private Zone';
   $display->uuid = '2165b816-bccc-49f5-b5b2-5e59c166a771';
+  $display->storage_type = '';
+  $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();

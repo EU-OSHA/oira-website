@@ -40,12 +40,18 @@ function osha_tmgmt_cron_cronapi() {
   ));
 }
 
+/**
+ * Implements hook_cron().
+ */
 function osha_tmgmt_cron() {
   // Remove old job items in cart
   $time_limit = strtotime('-1 day');
   _osha_tmgmt_remove_old_cart_jobs($time_limit);
 }
 
+/**
+ * Implements hook_menu().
+ */
 function osha_tmgmt_menu() {
   $items['node/%/layout-validation/%tmgmt_job_item'] = array(
     'page callback' => 'osha_tmgmt_layout_validation_node_preview',
@@ -94,7 +100,7 @@ function osha_tmgmt_menu() {
 }
 
 /**
- * hook_translated_menu_link_alter().
+ * Implements hook_translated_menu_link_alter().
  */
 function osha_tmgmt_translated_menu_link_alter(&$item, $map) {
   // Menu link preview.
@@ -740,7 +746,12 @@ function osha_tmgmt_node_presave($node) {
   if (isset($node->body) && is_array($node->body)) {
     // reformat body text for all languages and enhance paragraphs with unique id's
     foreach(array_keys($node->body) as $lang) {
-      if (isset($node->body[$lang][0]['format']) && $node->body[$lang][0]['format'] == 'full_html') {
+      if (isset($node->body[$lang][0]['format']) &&
+        (
+          ($node->body[$lang][0]['format'] == 'full_html') ||
+          ($node->body[$lang][0]['format'] == 'full_html_minimal')
+        )
+      ) {
         // can be not set for a new node with empty body
         $new_text = OshaTMGMTRetranslate::prepare_text($node->body[$lang][0]['value']);
         $node->body[$lang][0]['value'] = $new_text;
