@@ -1352,6 +1352,27 @@ function oira_partner_default_panels_mini() {
           'context' => 'requiredcontext_entity:node_1',
           'not' => TRUE,
         ),
+      4 => array(
+        'name' => 'entity_field_value:node:partner:field_guid_organisation',
+        'settings' => array(
+          'field_guid_organisation' => array(
+            'und' => array(
+              0 => array(
+                'value' => 'dc842479-9d92-e411-80c3-005056ba4e5c',
+                'format' => '',
+              ),
+            ),
+          ),
+          'field_guid_organisation_value' => array(
+            0 => 'dc842479-9d92-e411-80c3-005056ba4e5c',
+          ),
+          'field_guid_organisation_format' => array(
+            0 => '',
+          ),
+        ),
+        'context' => 'requiredcontext_entity:node_1',
+        'not' => TRUE,
+      ),
       ),
     );
     $pane->configuration = array();
@@ -1371,7 +1392,7 @@ function oira_partner_default_panels_mini() {
     $pane->panel = 'text_focal_point';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+  $pane->shown = FALSE;
     $pane->access = array(
       'plugins' => array(
         1 => array(
@@ -1421,7 +1442,7 @@ function oira_partner_default_panels_mini() {
     $pane->panel = 'text_focal_point';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+  $pane->shown = FALSE;
     $pane->access = array(
       'plugins' => array(
         0 => array(
@@ -1471,7 +1492,7 @@ function oira_partner_default_panels_mini() {
     $pane->panel = 'text_focal_point';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+  $pane->shown = FALSE;
     $pane->access = array(
       'plugins' => array(
         0 => array(
