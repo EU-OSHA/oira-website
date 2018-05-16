@@ -224,6 +224,12 @@ function oira_partner_views_field_content_count_callback($node) {
   return drupal_render($element);
 }
 
+function oira_partner_profile_form_redirect_profile($form, &$form_state) {
+  global $user;
+  $form_state['redirect'] = 'user/' . $user->uid;
+  drupal_redirect_form($form_state);
+}
+
 /**
  * Implments hook_form_FORM_ID_alter().
  */
@@ -233,6 +239,13 @@ function oira_partner_form_user_profile_form_alter(&$form, $form_state) {
     $form['field_cmw_mail_notifications']['#access'] = FALSE;
     $form['#submit'][] = 'oira_partner_user_profile_form_redirect';
   }
+
+  if (isset($_REQUEST['pass-reset-token'])) {
+    if (!in_array(ROLE_OIRA_PARTNER, $user->roles)) {
+      $form['#submit'][] = 'oira_partner_profile_form_redirect_profile';
+    }
+  }
+
   //TODO: HIDE GUID FIELD AFTER TESTING
   $form['field_crm_guid']['#access'] = FALSE;
   //$form['field_user_partner_guid']['#access'] = FALSE;

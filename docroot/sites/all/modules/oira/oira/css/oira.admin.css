@@ -1,0 +1,9 @@
+/**
+ * @file
+ * CSS for wiki page node form.
+ */
+
+.node-wiki_page-form .form-item-language {
+  visibility: hidden;
+  display: none;
+}

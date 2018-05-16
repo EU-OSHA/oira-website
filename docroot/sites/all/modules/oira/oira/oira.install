@@ -160,3 +160,10 @@ function oira_update_7016() {
     ->condition('type', 'module')
     ->execute();
 }
+
+/**
+ * MDR-1744 E-tools on OiRA website.
+ */
+function oira_update_7017() {
+  features_revert(array('oira' => 'page_manager_pages'));
+}

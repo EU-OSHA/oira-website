@@ -24,6 +24,38 @@ class NCWWikiPagesMigration extends AbstractNCWNodeMigration {
     $this->addFieldMapping('field_tags', 'field_tags');
     $this->addFieldMapping('field_revised_date', 'field_updated');
 
+    $this->addUnmigratedDestinations(array(
+      'field_tags:ignore_case',
+      'field_updated:rrule',
+      'field_wiki_categories:ignore_case',
+      'field_revised_date:timezone',
+      'field_revised_date:rrule',
+      'field_revised_date:to',
+
+      'metatag_rating',
+      'metatag_referrer',
+      'metatag_prev',
+      'metatag_next',
+      'metatag_geo.position',
+      'metatag_geo.placename',
+      'metatag_geo.region',
+      'metatag_icbm',
+      'metatag_refresh',
+      'metatag_pragma',
+      'metatag_cache-control',
+      'metatag_expires',
+
+      'field_image',
+      'field_image:file_class',
+      'field_image:preserve_files',
+      'field_image:destination_dir',
+      'field_image:destination_file',
+      'field_image:file_replace',
+      'field_image:source_dir',
+      'field_image:urlencode',
+      'field_image:alt',
+      'field_image:title',
+    ));
     $this->ignoreMetatagMigration();
   }
 
