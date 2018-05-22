@@ -8,9 +8,9 @@ files[] = clientside_validation_fapi.module
 dependencies[] = clientside_validation_form
 dependencies[] = fapi_validation
 
-; Information added by Drupal.org packaging script on 2016-10-14
-version = "7.x-1.44"
+; Information added by Drupal.org packaging script on 2017-09-25
+version = "7.x-1.46"
 core = "7.x"
 project = "clientside_validation"
-datestamp = "1476439457"
+datestamp = "1506322456"
 
