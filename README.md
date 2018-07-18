@@ -1,4 +1,4 @@
-OSHA
+EU-OSHA - OIRA
 ====
 
 Build scripts and source code for the Osha project
