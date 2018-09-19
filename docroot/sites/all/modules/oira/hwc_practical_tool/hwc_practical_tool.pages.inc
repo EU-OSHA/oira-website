@@ -291,6 +291,8 @@ function hwc_practical_tool_menu_tools_form_submit($form, &$form_state) {
 }
 
 function hwc_practical_tool_search($form_state, $per_page = 10) {
+  global $language;
+
   $facets_def = hwc_practical_tool_get_facets_def();
 
   $page = _hwc_practical_tool_get_req_param($form_state, 'page', 0);
@@ -303,7 +305,8 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
   $query->condition('field_publication_date', time(), '<=');
   $query->keys($text);
   $query->fields(array('title_field', 'body:value',
-    'field_alternative_title', 'field_alternative_body:value'));
+    'field_alternative_title', 'field_alternative_body:value')
+  );
   $query->setOption('search_api_facets', $facets_def);
   foreach ($facets_def as $field_name => $facet_def) {
     $selected_values = _hwc_practical_tool_get_req_param($form_state, $field_name, array());
@@ -321,7 +324,11 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
       break;
 
     default:
-      $query->sort('title2', 'ASC');
+      $title_field = 'title2';
+      if (function_exists('hwc_practical_tool_node_get_sort_title_' . $language->language)) {
+        $title_field = 'practical_tool_sort_title_' . $language->language;
+      }
+      $query->sort($title_field, 'ASC');
       break;
   }
   $query->range($page * $per_page, $per_page);
