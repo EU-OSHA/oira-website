@@ -8,6 +8,16 @@ define('OSHA_ARTICLE_CONTENT_TYPE_ARTICLE', 'article');
 define('OSHA', 'OSHA');
 
 /**
+ * Implements hook_menu_alter().
+ */
+function osha_menu_alter(&$items) {
+  $items['taxonomy/term/%taxonomy_term/feed']['page callback'] = 'osha_disable_taxonomy_term_feed';
+}
+
+function osha_disable_taxonomy_term_feed() {
+  drupal_not_found();
+}
+/**
  * Implements hook_token_info().
  */
 function osha_token_info() {

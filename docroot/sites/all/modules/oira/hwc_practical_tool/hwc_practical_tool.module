@@ -300,6 +300,348 @@ function hwc_practical_tool_form_views_exposed_form_alter(&$form, &$form_state, 
   }
 }
 
+function hwc_practical_tool_node_get_sort_title_en($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'en');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_bg($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'bg');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_cs($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'cs');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_da($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'da');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_de($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'de');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_el($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'el');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_es($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'es');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_et($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'et');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_fi($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'fi');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_hr($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'hr');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_fr($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'fr');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_hu($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'hu');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_is($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'is');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_it($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'it');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_lv($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'lv');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_lt($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'lt');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_nl($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'nl');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_mt($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'mt');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_no($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'no');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_pl($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'pl');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_pt($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'pt');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_ro($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'ro');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_sk($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'sk');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_sl($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'sl');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_sv($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'sv');
+}
+
+
+function hwc_practical_tool_node_get_sort_title_ca($item) {
+  return hwc_practical_tool_node_get_sort_title($item, 'ca');
+}
+
+function hwc_practical_tool_node_get_sort_title($item, $language) {
+  if ($item->type != 'practical_tool') {
+    return NULL;
+  }
+  $wrapper = entity_metadata_wrapper('node', $item);
+  $field_language = $wrapper->field_language->value();
+  if ($field_language && $field_language['value'] == $language) {
+    return $wrapper->field_alternative_title->value();
+  }
+  return $wrapper->title_field->value();
+}
+
+/**
+ * Implements hook_entity_property_info_alter().
+ */
+function hwc_practical_tool_entity_property_info_alter(&$info) {
+
+  $info['node']['properties']['practical_tool_sort_title_en'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "en"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_en',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_bg'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "bg"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_bg',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_cs'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "cs"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_cs',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_da'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "da"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_da',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_de'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "de"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_de',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_el'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "el"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_el',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_es'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "es"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_es',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_et'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "et"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_et',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_fi'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "fi"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_fi',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_hr'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "hr"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_hr',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_fr'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "fr"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_fr',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_hu'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "hu"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_hu',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_is'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "is"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_is',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_it'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "it"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_it',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_lv'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "lv"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_lv',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_lt'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "lt"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_lt',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_nl'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "nl"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_nl',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_mt'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "mt"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_mt',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_no'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "no"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_no',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_pl'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "pl"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_pl',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_pt'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "pt"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_pt',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_ro'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "ro"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_ro',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_sk'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "sk"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_sk',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_sl'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "sl"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_sl',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_sv'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "sv"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_sv',
+  );
+
+  $info['node']['properties']['practical_tool_sort_title_ca'] = array(
+    'type' => 'string',
+    'label' => t('Practical tool sort %language title', ["%language" => "ca"]),
+    'sanitized' => TRUE,
+    'getter callback' => 'hwc_practical_tool_node_get_sort_title_ca',
+  );
+
+//  $languages = language_list();
+//  foreach ($languages as $language => $lang) {
+//    if (!$lang->enabled) {
+//      continue;
+//    }
+//    $info['node']['properties']['practical_tool_sort_title_' . $language] = array(
+//      'type' => 'string',
+//      'label' => t('Practical tool sort title') . ' ' . $language,
+//      'sanitized' => TRUE,
+//      'getter callback' => 'hwc_practical_tool_node_get_sort_title',
+//    );
+//  }
+}
+
 /**
  * Implements hook_block_view().
  */
