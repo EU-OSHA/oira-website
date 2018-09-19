@@ -627,19 +627,6 @@ function hwc_practical_tool_entity_property_info_alter(&$info) {
     'sanitized' => TRUE,
     'getter callback' => 'hwc_practical_tool_node_get_sort_title_ca',
   );
-
-//  $languages = language_list();
-//  foreach ($languages as $language => $lang) {
-//    if (!$lang->enabled) {
-//      continue;
-//    }
-//    $info['node']['properties']['practical_tool_sort_title_' . $language] = array(
-//      'type' => 'string',
-//      'label' => t('Practical tool sort title') . ' ' . $language,
-//      'sanitized' => TRUE,
-//      'getter callback' => 'hwc_practical_tool_node_get_sort_title',
-//    );
-//  }
 }
 
 /**
