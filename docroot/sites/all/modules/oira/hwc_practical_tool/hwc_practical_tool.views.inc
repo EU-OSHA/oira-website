@@ -69,24 +69,28 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
    * Overrides views_handler_field::query().
    */
   function query() {
+    $allow_wiki = variable_get('hwc_practical_tool_allow_wiki', 0);
+
     $limit = !empty($this->options['number_of_items']) ? $this->options['number_of_items'] : 3;
     $term = taxonomy_get_term_by_name('E-tools', 'wiki_categories');
     $term = reset($term);
-    $operator = empty($this->value) ? 'NOT IN' : 'IN';
 
-    // Get latest 3 E-tools WIKI PAGES
-    $q = db_select('field_data_field_wiki_categories', 'cat');
-    $q->innerJoin('field_data_field_updated', 'up', 'cat.entity_id = up.entity_id');
-    $q->innerJoin('node', 'n', 'n.nid = cat.entity_id');
-    $q->fields('up', ['entity_id', 'field_updated_value'])
-      ->condition('n.status', 1)
-      ->condition('cat.bundle', 'wiki_page')
-      ->condition('cat.field_wiki_categories_tid', $term->tid)
-      ->orderBy('up.field_updated_value', 'DESC')
-      ->range(0, $limit);
-    $wiki_pages = $q->execute()->fetchAllKeyed();
+    $wiki_pages = [];
+    if ($allow_wiki) {
+      // Get latest 3 E-tools WIKI PAGES.
+      $q = db_select('field_data_field_wiki_categories', 'cat');
+      $q->innerJoin('field_data_field_updated', 'up', 'cat.entity_id = up.entity_id');
+      $q->innerJoin('node', 'n', 'n.nid = cat.entity_id');
+      $q->fields('up', ['entity_id', 'field_updated_value'])
+        ->condition('n.status', 1)
+        ->condition('cat.bundle', 'wiki_page')
+        ->condition('cat.field_wiki_categories_tid', $term->tid)
+        ->orderBy('up.field_updated_value', 'DESC')
+        ->range(0, $limit);
+      $wiki_pages = $q->execute()->fetchAllKeyed();
+    }
 
-    // Get latest 3 OiRA TOOLS
+    // Get latest 3 OiRA TOOLS.
     $q = db_select('field_data_field_publication_date', 'd');
     $q->innerJoin('field_data_field_revised_date', 'rev', 'rev.entity_id = d.entity_id');
     $q->innerJoin('node', 'n', 'n.nid = d.entity_id');
@@ -100,38 +104,30 @@ class Hwc_practical_tool_handler_latest_tools extends views_handler_filter_boole
 
     $items = [];
 
-    // Add first wiki.
-    if (!empty($wiki_pages)) {
-      reset($wiki_pages);
-      $nid = key($wiki_pages);
-      $items[$nid] = strtotime($wiki_pages[$nid]);
-      unset($wiki_pages[$nid]);
-    }
     // Add first tool.
     if (!empty($tools)) {
       reset($tools);
       $nid = key($tools);
       $items[$nid] = strtotime($tools[$nid]);
       unset($tools[$nid]);
+      $limit -= 1;
     }
-
     // Get remaining items and sort them desc.
     $all_items = array_map('strtotime', $wiki_pages + $tools);
     arsort($all_items);
-
-    // NO-198 - event if no wiki page or tool added, we should count it, WHY?!
-    $limit -= 2;
 
     // Add the rest of items.
     while ($limit > 0 && !empty($all_items)) {
       reset($all_items);
       $nid = key($all_items);
       $items[$nid] = strtotime($all_items[$nid]);
+      unset($all_items[$nid]);
       $limit--;
     }
 
     $nids = array_keys($items);
     if (!empty($nids)) {
+      $operator = empty($this->value) ? 'NOT IN' : 'IN';
       $this->query->add_where(1, "{$this->query->base_table}.nid", $nids, $operator);
     }
   }
