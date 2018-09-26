@@ -167,3 +167,10 @@ function oira_update_7016() {
 function oira_update_7017() {
   features_revert(array('oira' => 'page_manager_pages'));
 }
+
+/**
+ * MDR-2193 OiRA - Matomo script to overwrite the language for the URLs.
+ */
+function oira_update_7018() {
+  variable_set('piwik_translation_set', 1);
+}
