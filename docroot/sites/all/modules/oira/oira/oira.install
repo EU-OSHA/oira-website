@@ -173,4 +173,5 @@ function oira_update_7017() {
  */
 function oira_update_7018() {
   variable_set('piwik_translation_set', 1);
+  variable_set('piwik_query_parameters', 1);
 }
