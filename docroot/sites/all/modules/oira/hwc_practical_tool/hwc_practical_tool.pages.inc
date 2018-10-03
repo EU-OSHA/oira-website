@@ -186,6 +186,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
         }
       }
     }
+    asort($form['left-column'][$field_name]['#options']);
   }
 
   $form['left-column']['toggle_filter'] = $form['content']['sort_fieldset']['toggle_filter'];
