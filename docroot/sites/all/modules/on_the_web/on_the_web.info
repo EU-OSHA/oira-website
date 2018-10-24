@@ -1,0 +1,6 @@
+name = on_the_web
+description = News content type - OSHA Project
+core = 7.x
+package = OSHA
+version = 7.x-1.8
+project = on_the_web
