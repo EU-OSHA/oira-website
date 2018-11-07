@@ -119,3 +119,9 @@ function hwc_practical_tool_update_7013() {
   variable_set('hwc_practical_tool_allow_wiki', 1);
 }
 
+/**
+ * MDR-2289 webpage, pictures for tools showing up differently on different views/pages.
+ */
+function hwc_practical_tool_update_7014() {
+  features_revert_module('hwc_practical_tool');
+}

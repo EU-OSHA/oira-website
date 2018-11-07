@@ -99,3 +99,7 @@ Disallow: /rss-feeds/latest/news.xml
 Disallow: /rss-feeds/latest/tools.xml
 Disallow: /rss-feeds/latest/promotional-materials.xml
 Disallow: /search-site
+Disallow: /*node/723
+Disallow: /*node/509
+Disallow: /*node/180
+Disallow: /*node/750

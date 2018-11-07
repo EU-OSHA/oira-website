@@ -326,7 +326,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['alter']['path'] = 'promotional-resources-search?field_promotional_material_type%5B0%5D=[tid]';
+  $handler->display->display_options['fields']['field_image']['alter']['path'] = 'promotional-resources-search?field_promotional_material_type[[tid]]=[tid]';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
