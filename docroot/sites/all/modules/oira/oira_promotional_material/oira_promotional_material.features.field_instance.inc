@@ -650,13 +650,11 @@ function oira_promotional_material_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'multiple_selects',
+      'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
       ),
-      'type' => 'multiple_selects',
+      'type' => 'options_select',
       'weight' => 3,
     ),
     'workbench_access_field' => 0,
