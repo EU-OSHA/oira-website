@@ -125,3 +125,24 @@ function hwc_practical_tool_update_7013() {
 function hwc_practical_tool_update_7014() {
   features_revert_module('hwc_practical_tool');
 }
+
+/**
+ * MHOS-131 Update links in Drupal's catalogue of OiRA tools.
+ */
+function hwc_practical_tool_update_7015() {
+  $query = db_select('node', 'n');
+  $query->fields('n', ['nid']);
+  $query->condition('n.type', 'practical_tool');
+  $result = $query->execute()->fetchAllKeyed(0, 0);
+  foreach ($result as $nid) {
+    $node = node_load($nid);
+    if (!empty($node->field_tool_link[LANGUAGE_NONE][0]['url'])) {
+      $tool_link = explode('/', $node->field_tool_link[LANGUAGE_NONE][0]['url']);
+      if (!empty($tool_link[2]) && $tool_link[2] == 'client.oiraproject.eu') {
+        $tool_link[2] = 'oiraproject.eu/oira-tools';
+        $node->field_tool_link[LANGUAGE_NONE][0]['url'] = implode('/', $tool_link);
+        node_save($node);
+      }
+    }
+  }
+}
