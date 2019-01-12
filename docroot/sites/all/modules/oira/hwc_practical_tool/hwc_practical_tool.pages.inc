@@ -91,7 +91,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   $lang_field = $variables['language_field'];
 
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
 
   $form = array(
     '#action' => $action,
@@ -300,7 +300,7 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
 
   $page = _hwc_practical_tool_get_req_param($form_state, 'page', 0);
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
-  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'alphabetically');
+  $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
   list($server, $query) = hwc_practical_tool_menu_tools_get_query();
   $query->condition('status', 1);
   $query->condition('type', 'practical_tool');
