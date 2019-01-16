@@ -274,6 +274,15 @@ a.more-link{
 	}
 }
 
+.page-promotional-materials-search .form-item-field-promotional-material-type.form-type-checkboxes{
+	display: none;
+}
+
+.page-promotional-materials-search .oira-custom-faceted-search-form #edit-left-column > a{
+	display: none!important;
+}
+
+
 .field-name-field-publication-date, .field-type-datetime{
 	margin-bottom: 0px;
 	color: @color-text-purple;
@@ -3141,6 +3150,9 @@ div[id ^= "mini-panel-partner_in_"], {
 
 //introduction
 .page-promotional-resources{
+
+
+
 	.pane-node-body{
 		.field-type-text-with-summary {
 			font-family: 'Oswald';
@@ -3154,7 +3166,10 @@ div[id ^= "mini-panel-partner_in_"], {
 		padding-top: 30px;
 		padding-bottom: 30px;
 		.promotional-introduction-item{
-			min-height: 470px;
+			min-height: 521px;
+		}
+		.promotional-introduction-item:nth-child(2), .promotional-introduction-item:nth-child(3){
+			padding-top: 35px;
 		}
 		.views-item-columns-container{
 			margin-bottom: 15px;
@@ -6024,3 +6039,4 @@ div[id ^= "mini-panel-partner_in_"], {
 	}
 }
 /*end act as a partner modal*/
+
