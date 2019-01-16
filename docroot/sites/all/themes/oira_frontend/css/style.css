@@ -7152,6 +7152,12 @@ a.more-link:before {
   font-style: italic;
   font-weight: bold;
 }
+.page-promotional-materials-search .form-item-field-promotional-material-type.form-type-checkboxes {
+  display: none;
+}
+.page-promotional-materials-search .oira-custom-faceted-search-form #edit-left-column > a {
+  display: none!important;
+}
 .field-name-field-publication-date,
 .field-type-datetime {
   margin-bottom: 0px;
@@ -9929,7 +9935,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-bottom: 30px;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item {
-  min-height: 470px;
+  min-height: 521px;
+}
+.page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(2),
+.page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(3) {
+  padding-top: 35px;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .views-item-columns-container {
   margin-bottom: 15px;
@@ -16693,4 +16703,24 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     top: 70px;
   }
   /*END HEADER*/
+}
+@media only screen and (max-width: 560px) {
+  .oira-tools-search-page .field.field-name-field-country,
+  .page-promotional-resources-search .field.field-name-field-country,
+  .page-search-site .field.field-name-field-country,
+  .oira-tools-search-page .field-type-language-field,
+  .page-promotional-resources-search .field-type-language-field,
+  .page-search-site .field-type-language-field,
+  .oira-tools-search-page .field-name-field-sector,
+  .page-promotional-resources-search .field-name-field-sector,
+  .page-search-site .field-name-field-sector,
+  .oira-tools-search-page .field-name-field-promotional-material-type,
+  .page-promotional-resources-search .field-name-field-promotional-material-type,
+  .page-search-site .field-name-field-promotional-material-type,
+  .oira-tools-search-page .field-name-pr-language,
+  .page-promotional-resources-search .field-name-pr-language,
+  .page-search-site .field-name-pr-language {
+    width: 100%;
+    margin-bottom: 5px;
+  }
 }
