@@ -9936,7 +9936,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-bottom: 30px;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item {
-  min-height: 521px;
+  min-height: 527px;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(2),
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(3) {
@@ -14525,6 +14525,9 @@ body.front .view-slideshow blockquote.image-field-caption p,
     padding: 15px !important;
   }
   /*End private zone*/
+  .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(3) {
+    padding-top: 0;
+  }
 }
 @media only screen and (min-width: 976px) and (max-width: 991px) {
   .quicktabs-tabs-container {
