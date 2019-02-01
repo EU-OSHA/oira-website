@@ -2337,6 +2337,7 @@ a.more-link{
 			width: 100%;
 			margin-top: 15px;
 			margin-bottom: 10px;
+			text-align: center;
 			.country-content-count-label{
 				display: inline-block;
 				color: @color-white;
@@ -6155,4 +6156,39 @@ body.front .view-slideshow blockquote.image-field-caption p,
     padding: 10px 20px;
     margin: 0;
     text-align: right;
+}
+
+
+/* Sector hidden - MDR-2548 */
+
+.country-content-count-sectors .form-group{
+	display: none;
+}
+
+.page-eu-national-partners{
+	.view-id-countries .views-item-columns-container .views-field-country-content-count .field-content{ 
+		.country-content-count-label:first-child{
+			border:0;
+		}
+		.country-content-count-label:last-child{
+			padding-left: 20px;
+		}
+	}
+	.pane-oira-country-oira-country-count-all .pane-content .country-content-count-label.country-content-count-total_sectors{
+		display: none;
+	}
+}
+
+.page-country-profile{
+	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .pane-taxonomy-term-country-content-count .field-items{
+		.field-item:first-child{
+			border:0;
+		}
+
+		.field-item:nth-child(3){
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+	
 }
