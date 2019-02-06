@@ -9120,14 +9120,15 @@ a.more-link:before {
   margin-bottom: 30px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
-  margin: 30px 30px 0px 30px;
+  margin: 20px 20px 0px 20px;
+  float: left;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag img {
   max-height: 67px;
   min-height: 67px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field {
-  margin: 30px 30px 0px 30px;
+  margin: 20px 20px 0px 20px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field h2 {
   font-size: 2em;
@@ -9137,9 +9138,10 @@ a.more-link:before {
   font-family: "Roboto";
   font-weight: bold;
   min-height: 70px;
+  font-size: 0.9em;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count {
-  margin: 0px 30px 30px 30px;
+  margin: 0px 20px 20px 20px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .form-group {
   margin-bottom: 0px;
@@ -13051,6 +13053,11 @@ body.front .view-slideshow blockquote.image-field-caption p,
   display: inline-block;
   margin-left: 10px;
 }
+@media only screen and (max-width: 1280px) {
+  .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
+    float: none;
+  }
+}
 @media only screen and (max-width: 1199px) {
   /*HEADER
 ***********************************************/
@@ -14527,6 +14534,12 @@ body.front .view-slideshow blockquote.image-field-caption p,
   /*End private zone*/
   .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(3) {
     padding-top: 0;
+  }
+  .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
+    float: left;
+  }
+  .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field h2 a {
+    font-size: 0.8em;
   }
 }
 @media only screen and (min-width: 976px) and (max-width: 991px) {
