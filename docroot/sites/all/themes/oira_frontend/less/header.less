@@ -43,14 +43,17 @@ html[lang=fi]{
 	.header-blocks{
 		margin-top: 0px;
 		.region-header-block{
-			max-width: 300px;
+			width: 305px;
 			float: right;
 		}
 		#block-oira-blocks-oira-print-friendly{
 			display: inline-block;
 			float: left;
 			a.printfriendly{
-				content: url("../images/icons/220r.png");
+				background: url(../images/icons/220r.png) no-repeat;
+			    width: 30px;
+			    height: 27px;
+			    display: block;
 
 				.glyphicon-print{
 					display: none;
@@ -175,6 +178,7 @@ html[lang=fi]{
 					button{
 						border-radius: 0px;
 						width: 30px;
+						height: 30px;
 						color: white;
 						background-color: @color-menu-icons;
     					border: 0px solid @color-menu-icons;
@@ -240,7 +244,8 @@ html[lang=fi]{
 			}
 		}
 		#block-oira-partner-oira-partner-masquerade{
-			margin-top: 10px;
+			margin-top: 7px;
+			float: right;
 			> a{
 				color: @color-menu-icons;
 				font-style: italic;

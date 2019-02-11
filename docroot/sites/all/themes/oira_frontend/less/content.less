@@ -6194,3 +6194,33 @@ body.front .view-slideshow blockquote.image-field-caption p,
 	}
 	
 }
+
+.margin-line{
+	padding-left: 30px;
+    padding-right: 0;
+}
+
+.content-login-view{
+    margin-top: 2em;
+    border-top: 2px solid @color-primary-dark;
+    padding-top: 1em;
+    text-align: right;
+    padding-right: 0;
+    
+    a{
+    	color: @color-menu;
+    	font-style: italic;
+    	font-weight: bold;
+    	&:before{
+	        content: "\e033";
+		    margin-right: 8px;
+		    display: inline-block;
+		    font-family: 'Glyphicons Halflings';
+		    font-size: 0.9em;
+		    top: 1px;
+		    position: relative;
+		    color: @color-menu;
+		    font-style: normal;
+		}
+    }   
+}
