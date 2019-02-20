@@ -22,6 +22,7 @@ class NCWHighlightMigration extends AbstractNCWNodeMigration {
     $this->addFieldMapping('field_tags:source_type')->defaultValue('tid');
     $this->addFieldMapping('field_tags:create_term')->defaultValue(FALSE);
     $this->addFieldMapping('field_tags', 'field_tags');
+    $this->addFieldMapping('field_image_home_latest_news', 'field_image');
     $this->addFieldMapping('field_aditional_resources', 'field_aditional_resources');
 
     $this->addUnmigratedDestinations(array(

@@ -1,5 +1,10 @@
 @media only screen and (max-width : 767px){
 
+.margin-line {
+	padding-left: 15px;
+    padding-right: 15px;
+}
+
 blockquote.image-field-caption {
     p{
 		max-width: 430px;
@@ -48,7 +53,7 @@ blockquote.image-field-caption {
 			#block-menu-block-5{
 				position: absolute;
 				bottom: 0px;
-				right: 58px;
+				right: 30px;
 				top: 5px;
 				margin-right: 15px;
 				.introduction-image{
@@ -180,8 +185,11 @@ h1.page-header {
 /*HOME
 ***************************************/
 .front{
-	.views-view-grid.cols-3 .row > :nth-child(3){
-		display: block;
+	.views-view-grid.cols-3 > .row > div:nth-child(2){
+		display: none;
+	}
+	.views-view-grid.cols-3 > .row > div:nth-child(3){
+		display: none;
 	}
 	.panels-flexible-region-new-slider{
 		margin-top: 5px !important;
@@ -240,7 +248,12 @@ h1.page-header {
 		}
 		.view-display-id-oshnews_latest{
 			.view-display-id-attachment_1{
-				display: none;
+				.image-wrapper{
+					display: none;
+				}
+				h4 a{
+					font-size: 0.9em!important;
+				}
 			}
 		}
 		.views-item-columns-container{
@@ -2116,6 +2129,5 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		}
 	}
 }
-
 
 }
