@@ -132,16 +132,18 @@ jQuery(document).ready(function () {
 	var num = 150; //number of pixels before modifying styles
 	if(jQuery("body").height()>=1300){
 		jQuery(window).bind('scroll', function () {
-		    if (jQuery(window).scrollTop() > num) {
-		        jQuery("header").addClass("sticky-menu");
-		    } else {
-		        jQuery('header').removeClass('sticky-menu');
+			if(jQuery("body").height()>=1300){
+		    	if (jQuery(window).scrollTop() > num) {
+					jQuery("header").addClass("sticky-menu");
+		    	}else {
+		        	jQuery('header').removeClass('sticky-menu');
+		    	} 
 		    }
 		});
 	}
 	/*end hight of page*/
-
-	/*specific functions for pc, tablet and mobile */
+ 
+ 	/*specific functions for pc, tablet and mobile */
 	funcionesPc();
 
 	funcionesPcTablet();
