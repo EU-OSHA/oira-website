@@ -13,6 +13,26 @@ jQuery(document).ready(function () {
 		wrap: 'word',
 	});
 
+	
+	if (jQuery(window).width() < 760){
+		var newstitle = jQuery('.view-news .field-name-title-field h4 a').text();
+		var shortTextTitle = jQuery.trim(newstitle).substring(0, 80)
+	    .split(" ").slice(0, -1).join(" ") + "...";
+
+		var newsbody = jQuery('.view-news .field-name-body .field-item').text();
+		var shortText = jQuery.trim(newsbody).substring(0, 130)
+	    .split(" ").slice(0, -1).join(" ") + "...";
+
+	    var $button = jQuery('.view-news .field-name-body .field-item .more-link').clone();
+  		
+		jQuery('.view-news .field-name-title-field h4 a').text(shortTextTitle);
+		jQuery('.view-news .field-name-body .field-item').text(shortText);
+
+		jQuery(".view-news .field-name-body").append('<span ></span>');
+		jQuery('.view-news .field-name-body span').html($button);
+	}
+
+
 
 	var windowWidth= jQuery(window).width();//window size
 
@@ -112,16 +132,18 @@ jQuery(document).ready(function () {
 	var num = 150; //number of pixels before modifying styles
 	if(jQuery("body").height()>=1300){
 		jQuery(window).bind('scroll', function () {
-		    if (jQuery(window).scrollTop() > num) {
-		        jQuery("header").addClass("sticky-menu");
-		    } else {
-		        jQuery('header').removeClass('sticky-menu');
+			if(jQuery("body").height()>=1300){
+		    	if (jQuery(window).scrollTop() > num) {
+					jQuery("header").addClass("sticky-menu");
+		    	}else {
+		        	jQuery('header').removeClass('sticky-menu');
+		    	} 
 		    }
 		});
 	}
 	/*end hight of page*/
-
-	/*specific functions for pc, tablet and mobile */
+ 
+ 	/*specific functions for pc, tablet and mobile */
 	funcionesPc();
 
 	funcionesPcTablet();
