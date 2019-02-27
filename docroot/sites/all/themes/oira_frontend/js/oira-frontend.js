@@ -15,21 +15,21 @@ jQuery(document).ready(function () {
 
 	
 	if (jQuery(window).width() < 760){
-		var newstitle = jQuery('.view-news .field-name-title-field h4 a').text();
+		var newstitle = jQuery('.front .view-news .field-name-title-field h4 a').text();
 		var shortTextTitle = jQuery.trim(newstitle).substring(0, 80)
 	    .split(" ").slice(0, -1).join(" ") + "...";
 
-		var newsbody = jQuery('.view-news .field-name-body .field-item').text();
+		var newsbody = jQuery('.front .view-news .field-name-body .field-item').text();
 		var shortText = jQuery.trim(newsbody).substring(0, 130)
 	    .split(" ").slice(0, -1).join(" ") + "...";
 
-	    var $button = jQuery('.view-news .field-name-body .field-item .more-link').clone();
+	    var $button = jQuery('.front .view-news .views-row .field-name-body .field-item .more-link').clone();
   		
-		jQuery('.view-news .field-name-title-field h4 a').text(shortTextTitle);
-		jQuery('.view-news .field-name-body .field-item').text(shortText);
+		jQuery('.front .view-news .field-name-title-field h4 a').text(shortTextTitle);
+		jQuery('.front .view-news .field-name-body .field-item').text(shortText);
 
-		jQuery(".view-news .field-name-body").append('<span ></span>');
-		jQuery('.view-news .field-name-body span').html($button);
+		jQuery(".front .view-news .views-row .field-name-body").append('<span></span>');
+		jQuery('.front .view-news .views-row .field-name-body span').html($button);
 	}
 
 
