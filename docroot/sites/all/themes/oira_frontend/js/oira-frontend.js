@@ -15,21 +15,21 @@ jQuery(document).ready(function () {
 
 	
 	if (jQuery(window).width() < 760){
+		
 		var newstitle = jQuery('.front .view-news .field-name-title-field h4 a').text();
-		var shortTextTitle = jQuery.trim(newstitle).substring(0, 80)
-	    .split(" ").slice(0, -1).join(" ") + "...";
+		if (newstitle.length > 80){
+			var shortTextTitle = jQuery.trim(newstitle).substring(0, 80)+"...";
+			jQuery('.front .view-news .field-name-title-field h4 a').text(shortTextTitle);
+		}
 
 		var newsbody = jQuery('.front .view-news .field-name-body .field-item').text();
-		var shortText = jQuery.trim(newsbody).substring(0, 130)
-	    .split(" ").slice(0, -1).join(" ") + "...";
-
-	    var $button = jQuery('.front .view-news .views-row .field-name-body .field-item .more-link').clone();
-  		
-		jQuery('.front .view-news .field-name-title-field h4 a').text(shortTextTitle);
-		jQuery('.front .view-news .field-name-body .field-item').text(shortText);
-
-		jQuery(".front .view-news .views-row .field-name-body").append('<span></span>');
-		jQuery('.front .view-news .views-row .field-name-body span').html($button);
+		if (newsbody.length > 130){
+			var shortText = jQuery.trim(newsbody).substring(0, 130)+"...";
+			var $button = jQuery('.front .view-news .views-row .field-name-body .field-item .more-link').clone();
+  			jQuery('.front .view-news .field-name-body .field-item').text(shortText);
+			jQuery(".front .view-news .views-row .field-name-body").append('<span></span>');
+			jQuery('.front .view-news .views-row .field-name-body span').html($button);
+		}
 	}
 
 
