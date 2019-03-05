@@ -31,11 +31,10 @@
       // Sidr power go.
       $('#' + $id + '-button').sidr({
         name: $id || "sidr",
-        speed: parseInt(iteration.speed) || 200,
+        speed: iteration.speed || 200,
         side: iteration.side || "left",
         source: iteration.selectors[ind] || "#main-menu",
         displace: iteration.displace,
-        renaming: iteration.renaming,
         onOpen: function() { eval(iteration.onOpen); } || function() {},
         onClose: function() { eval(iteration.onClose); } || function() {}
       });
@@ -49,7 +48,7 @@
   Drupal.behaviors.responsive_menus_sidr = {
     attach: function (context, settings) {
       settings.responsive_menus = settings.responsive_menus || {};
-      var $windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var $windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
       $.each(settings.responsive_menus, function(ind, iteration) {
         if (iteration.responsive_menus_style != 'sidr') {
           return true;
@@ -81,7 +80,7 @@
       // Handle window resizing.
       $(window).resize(function() {
         // Window width with legacy browsers.
-        $windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        $windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
         $.each(settings.responsive_menus, function(ind, iteration) {
           if (iteration.responsive_menus_style != 'sidr') {
             return true;

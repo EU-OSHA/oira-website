@@ -202,12 +202,6 @@ function responsive_menus_admin_form($form, &$form_state) {
     '#options' => array(1 => t('I will provide my own jQuery library.')),
     '#default_value' => variable_get('responsive_menus_no_jquery_update', array(1 => 0)),
   );
-  // Ignore admin pages option.
-  $form['responsive_menus_ignore_admin'] = array(
-    '#type' => 'checkboxes',
-    '#options' => array(1 => t('Ignore admin pages?')),
-    '#default_value' => variable_get('responsive_menus_ignore_admin', array(1 => 1)),
-  );
   $jq_update_ignore = $form['responsive_menus_no_jquery_update']['#default_value'];
   $style_info = responsive_menus_style_load($current_style, $jq_update_ignore);
 
@@ -231,12 +225,12 @@ function responsive_menus_admin_form($form, &$form_state) {
     '#type' => 'fieldset',
     '#tree' => TRUE,
   );
-  // Which selector to use info.
+
   if (!empty($style_info['selector'])) {
     $form['responsive_menus_style_settings']['selector_info'] = array(
       '#type' => 'item',
       '#title' => t('Selector(s) to use for this style:'),
-      '#markup' => '<div class="messages status">' . $style_info['selector'] . '</div>',
+      '#markup' => $style_info['selector'],
     );
   }
   // Build additional style settings from style plugins.
@@ -246,6 +240,12 @@ function responsive_menus_admin_form($form, &$form_state) {
       $form['responsive_menus_style_settings'][$name] = $element;
     }
   }
+
+  $form['responsive_menus_ignore_admin'] = array(
+    '#type' => 'checkboxes',
+    '#options' => array(1 => t('Ignore admin pages?')),
+    '#default_value' => variable_get('responsive_menus_ignore_admin', array(1 => 1)),
+  );
 
   $form['actions']['#type'] = 'actions';
   $form['actions']['submit'] = array(
@@ -269,7 +269,7 @@ function responsive_menus_style_settings_form($form, $form_state) {
 }
 
 /**
- * Submit handler for responsive_menus_admin_form.
+ * Submit handler for resopnsive_menus_admin_form.
  */
 function responsive_menus_admin_form_submit($form, &$form_state) {
   // Exclude unnecessary elements.
@@ -319,7 +319,6 @@ function responsive_menus_style_load($style, $jq_update_ignore) {
   $data = &drupal_static(__FUNCTION__, array());
   if (!isset($data[$style]) && !empty($styles[$style])) {
     $style_info = $styles[$style];
-    // @todo module_load_include() the .inc file for the style being loaded.
     // Check for this style's requirements.
     if (!empty($style_info['jquery_version'])) {
       if (!$jq_update_ignore[1]) {
@@ -328,7 +327,7 @@ function responsive_menus_style_load($style, $jq_update_ignore) {
           drupal_set_message(t('@style style requires !link set to version !version or higher.  Please enable jquery_update.', array('@style' => $style_info['name'], '!link' => l(t('jQuery Update'), 'http://drupal.org/project/jquery_update'), '!version' => $style_info['jquery_version'])), 'warning');
           $error = TRUE;
         }
-        elseif (version_compare(variable_get('jquery_update_jquery_version', '1.5'), $style_info['jquery_version'], '<')) {
+        elseif (variable_get('jquery_update_jquery_version', 1.5) < $style_info['jquery_version']) {
           // jQuery Update version not high enough.
           drupal_set_message(t('@style style requires !link set to version !version or higher.', array('@style' => $style_info['name'], '!version' => $style_info['jquery_version'], '!link' => l(t('jQuery Update'), 'admin/config/development/jquery_update', array('query' => array('destination' => 'admin/config/user-interface/responsive_menus'))))), 'warning');
           $error = TRUE;
@@ -387,7 +386,6 @@ function responsive_menus_responsive_menus_style_info() {
       'js_files' => array($path . '/responsive_menus_simple/js/responsive_menus_simple.js'),
       'css_files' => array($path . '/responsive_menus_simple/css/responsive_menus_simple.css'),
       'js_settings' => 'responsive_menus_simple_style_js_settings',
-      'file' => $path . '/responsive_menus_simple/responsive_menus_simple.inc',
       'selector' => t('Anything.  Example: Given <code>@code</code> you could use !use', array('@ul' => '<ul>', '@code' => '<div id="parent-div"> <ul class="menu"> </ul> </div>', '!use' => '<strong>#parent-div or .menu</strong>')),
     ),
     'mean_menu' => array(
@@ -400,7 +398,6 @@ function responsive_menus_responsive_menus_style_info() {
       'css_files' => array($path . '/meanMenu/meanmenu.min.css'),
       'js_settings' => 'responsive_menus_mean_menu_style_js_settings',
       'jquery_version' => 1.7,
-      'file' => $path . '/meanMenu/meanMenu.inc',
       'selector' => t('Parent of the @ul.  Example: Given <code>@code</code> you would use !use', array('@ul' => '<ul>', '@code' => '<div id="parent-div"> <ul class="menu"> </ul> </div>', '!use' => '<strong>#parent-div</strong>')),
     ),
     'codrops_responsive_multi' => array(
@@ -410,7 +407,6 @@ function responsive_menus_responsive_menus_style_info() {
       'use_libraries' => TRUE,
       'library' => 'ResponsiveMultiLevelMenu',
       'jquery_version' => 1.7,
-      'file' => $path . '/ResponsiveMultiLevelMenu/ResponsiveMultiLevelMenu.inc',
       'selector' => t('Parent of the @ul.  Example: Given <code>@code</code> you would use !use', array('@ul' => '<ul>', '@code' => '<div id="parent-div"> <ul class="menu"> </ul> </div>', '!use' => '<strong>#parent-div</strong>')),
     ),
     'sidr' => array(
@@ -419,7 +415,6 @@ function responsive_menus_responsive_menus_style_info() {
       'js_settings' => 'responsive_menus_sidr_style_js_settings',
       'use_libraries' => TRUE,
       'library' => 'sidr',
-      'file' => $path . '/sidr/sidr.inc',
       'selector' => t('Anything (parent of ul preferred).  Example: Given <code>@code</code> you could use !use', array('@ul' => '<ul>', '@code' => '<div id="parent-div"> <ul class="menu"> </ul> </div>', '!use' => '<strong>#parent-div or .menu</strong>')),
     ),
     'google_nexus' => array(
@@ -428,7 +423,6 @@ function responsive_menus_responsive_menus_style_info() {
       'js_settings' => 'responsive_menus_google_nexus_style_js_settings',
       'use_libraries' => TRUE,
       'library' => 'GoogleNexusWebsiteMenu',
-      'file' => $path . '/google_nexus/google_nexus.inc',
       'selector' => t('The @ul.  Example: Given <code>@code</code> you would use !use', array('@ul' => '<ul>', '@code' => '<div id="parent-div"> <ul class="menu"> </ul> </div>', '!use' => '<strong>.menu</strong>')),
     ),
   );
@@ -521,12 +515,6 @@ function responsive_menus_mean_menu_style_settings() {
     '#default_value' => variable_get('responsive_menus_mean_menu_css_selectors', '#main-menu'),
     '#description' => t('Enter CSS/jQuery selector of menus to responsify.'),
   );
-  $form['responsive_menus_mean_menu_container'] = array(
-    '#type' => 'textfield',
-    '#title' => t('CSS selector for where to attach the menu on the page'),
-    '#default_value' => variable_get('responsive_menus_mean_menu_container', 'body'),
-    '#description' => t('Enter CSS/jQuery selector of where MeanMenu gets attached.'),
-  );
   $form['responsive_menus_mean_menu_trigger_txt'] = array(
     '#type' => 'textarea',
     '#title' => t('Text or HTML for trigger button'),
@@ -613,7 +601,6 @@ function responsive_menus_mean_menu_style_js_settings($js_defaults = array()) {
   $js_settings = array();
 
   $js_settings['selectors'] = responsive_menus_var_get('responsive_menus_mean_menu_css_selectors', '#main-menu', $js_defaults);
-  $js_settings['container'] = responsive_menus_var_get('responsive_menus_mean_menu_container', 'body', $js_defaults);
   $js_settings['trigger_txt'] = responsive_menus_var_get('responsive_menus_mean_menu_trigger_txt', '<span /><span /><span />', $js_defaults);
   $js_settings['close_txt'] = responsive_menus_var_get('responsive_menus_mean_menu_close_txt', 'X', $js_defaults);
   $js_settings['close_size'] = responsive_menus_var_get('responsive_menus_mean_menu_close_size', '18px', $js_defaults);
@@ -722,7 +709,7 @@ function responsive_menus_sidr_style_settings() {
     '#title' => t('Sidr animation speed'),
     '#size' => 5,
     '#default_value' => variable_get('responsive_menus_sidr_animation_speed', 200),
-    '#description' => t('Speed (in milliseconds) of menu open/close. 1000 = 1 second.'),
+    '#description' => t('Speed of menu open/close.  See !documentation for examples.', array('!documentation' => l(t('Sidr documentation'), 'http://www.berriart.com/sidr/#documentation'))),
   );
   $form['responsive_menus_sidr_media_size'] = array(
     '#type' => 'textfield',
@@ -740,16 +727,6 @@ function responsive_menus_sidr_style_settings() {
     ),
     '#default_value' => variable_get('responsive_menus_sidr_displace', 1),
     '#description' => t('This setting controls whether the page is pushed when menu is opened.'),
-  );
-  $form['responsive_menus_sidr_renaming'] = array(
-    '#type' => 'select',
-    '#title' => t('Rename classes'),
-    '#options' => array(
-      1 => t('Yes'),
-      0 => t('No'),
-    ),
-    '#default_value' => variable_get('responsive_menus_sidr_renaming', 1),
-    '#description' => t('Controls whether Sidr will rename classes within the the selectors specified.'),
   );
   $form['responsive_menus_sidr_on_open'] = array(
     '#type' => 'textarea',
@@ -792,7 +769,6 @@ function responsive_menus_sidr_style_js_settings($js_defaults = array()) {
   $js_settings['speed'] = responsive_menus_var_get('responsive_menus_sidr_animation_speed', 200, $js_defaults);
   $js_settings['media_size'] = responsive_menus_var_get('responsive_menus_sidr_media_size', 768, $js_defaults);
   $js_settings['displace'] = responsive_menus_var_get('responsive_menus_sidr_displace', 1, $js_defaults);
-  $js_settings['renaming'] = responsive_menus_var_get('responsive_menus_sidr_renaming', 1, $js_defaults);
   $js_settings['onOpen'] = responsive_menus_var_get('responsive_menus_sidr_on_open', '', $js_defaults);
   $js_settings['onClose'] = responsive_menus_var_get('responsive_menus_sidr_on_close', '', $js_defaults);
 
