@@ -12,6 +12,24 @@ jQuery(document).ready(function () {
 		watch: true,
 		wrap: 'word',
 	});
+	
+	if (jQuery(window).width() < 760){
+		
+		var newstitle = jQuery('.front .view-news .field-name-title-field h4 a').text();
+		if (newstitle.length > 80){
+			var shortTextTitle = jQuery.trim(newstitle).substring(0, 80)+"...";
+			jQuery('.front .view-news .field-name-title-field h4 a').text(shortTextTitle);
+		}
+
+		var newsbody = jQuery('.front .view-news .field-name-body .field-item').text();
+		if (newsbody.length > 130){
+			var shortText = jQuery.trim(newsbody).substring(0, 130)+"...";
+			var $button = jQuery('.front .view-news .views-row .field-name-body .field-item .more-link').clone();
+  			jQuery('.front .view-news .field-name-body .field-item').text(shortText);
+			jQuery(".front .view-news .views-row .field-name-body").append('<span></span>');
+			jQuery('.front .view-news .views-row .field-name-body span').html($button);
+		}
+	}
 
 	var windowWidth= jQuery(window).width();//window size
 
