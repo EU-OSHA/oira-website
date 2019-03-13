@@ -12,7 +12,6 @@ jQuery(document).ready(function () {
 		watch: true,
 		wrap: 'word',
 	});
-
 	
 	if (jQuery(window).width() < 760){
 		
@@ -31,8 +30,6 @@ jQuery(document).ready(function () {
 			jQuery('.front .view-news .views-row .field-name-body span').html($button);
 		}
 	}
-
-
 
 	var windowWidth= jQuery(window).width();//window size
 

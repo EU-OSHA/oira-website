@@ -56,14 +56,14 @@ function napo_contact_update_7006() {
  * Feature revert: NOW-327,NOW-328 - Private zone promotional resources form updates OiRA / IRAT radio buttons
  */
 function napo_contact_update_7007() {
-  features_revert_module('napo_contact');
+  //features_revert_module('napo_contact');
 }
 
 /**
  * Feature revert: NOW-266.
  */
 function napo_contact_update_7008() {
-  features_revert_module('napo_contact');
+  //features_revert_module('napo_contact');
 }
 
 /**
