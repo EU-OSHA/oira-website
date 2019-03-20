@@ -20,7 +20,9 @@ files[] = views/link_views_handler_argument_target.inc
 files[] = views/link_views_handler_filter_protocol.inc
 
 ; Information added by Drupal.org packaging script on 2016-01-15
-version = "7.x-1.4"
+version = "7.x-1.6"
+; patched security update from 7.x-1.4.
+; real version = "7.x-1.4"
 core = "7.x"
 project = "link"
 datestamp = "1452830642"
