@@ -810,6 +810,12 @@ function osha_migration_normalize_field_text_long($row, $field_name, $field_info
       foreach ($values as $v) {
         $field[] = $v['value'];
         $languages[] = $language;
+        $v['format'] = str_replace('full_html_minimal', 'full_html', $v['format']);
+        $v['format'] = str_replace('dangerous_substances_minimal', 'full_html', $v['format']);
+        $v['format'] = str_replace('dangerous_substances', 'full_html', $v['format']);
+        if (!$v['format']) {
+          $v['format'] = 'full_html';
+        }
         $format[] = $v['format'];
       }
     }
