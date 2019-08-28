@@ -7067,6 +7067,7 @@ a.more-link:before {
 .field.field-name-field-country,
 .field-type-language-field,
 .field-name-field-sector,
+.field-name-field-sector-category,
 .field-name-field-promotional-material-type,
 .field-name-pr-language {
   display: block;
@@ -7078,6 +7079,7 @@ a.more-link:before {
 .field.field-name-field-country p,
 .field-type-language-field p,
 .field-name-field-sector p,
+.field-name-field-sector-category p,
 .field-name-field-promotional-material-type p,
 .field-name-pr-language p {
   margin-bottom: 0px;
@@ -7090,8 +7092,11 @@ a.more-link:before {
 .page-promotional-resources-search .field-type-language-field,
 .page-search-site .field-type-language-field,
 .oira-tools-search-page .field-name-field-sector,
+.oira-tools-search-page .field-name-field-sector-category,
 .page-promotional-resources-search .field-name-field-sector,
+.page-promotional-resources-search .field-name-field-sector-category,
 .page-search-site .field-name-field-sector,
+.page-search-site .field-name-field-sector-category,
 .oira-tools-search-page .field-name-field-promotional-material-type,
 .page-promotional-resources-search .field-name-field-promotional-material-type,
 .page-search-site .field-name-field-promotional-material-type,
@@ -7116,8 +7121,11 @@ a.more-link:before {
 .page-promotional-resources-search .field-type-language-field p,
 .page-search-site .field-type-language-field p,
 .oira-tools-search-page .field-name-field-sector p,
+.oira-tools-search-page .field-name-field-sector-category p,
 .page-promotional-resources-search .field-name-field-sector p,
+.page-promotional-resources-search .field-name-field-sector-category p,
 .page-search-site .field-name-field-sector p,
+.page-search-site .field-name-field-sector-category p,
 .oira-tools-search-page .field-name-field-promotional-material-type p,
 .page-promotional-resources-search .field-name-field-promotional-material-type p,
 .page-search-site .field-name-field-promotional-material-type p,
@@ -7139,7 +7147,8 @@ a.more-link:before {
   margin-top: 0px !important;
 }
 .page-search-site .field-name-pr-language,
-.page-search-site .field-name-field-sector {
+.page-search-site .field-name-field-sector,
+.page-search-site .field-name-field-sector-category {
   margin-bottom: 20px;
 }
 .alert {
@@ -9411,8 +9420,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-type-language-field,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-type-language-field,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector-category,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector-category,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector-category,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type,
@@ -9441,8 +9453,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-type-language-field p,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-type-language-field p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector p,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector-category p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector-category p,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector-category p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type p,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type p,
@@ -12442,8 +12457,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
@@ -12472,8 +12490,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field p,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-type-language-field p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category p,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
@@ -15039,7 +15060,8 @@ body.front .view-slideshow blockquote.image-field-caption p,
   }
   .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field.field-name-field-country,
   .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-type-language-field,
-  .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-field-sector {
+  .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-field-sector,
+  .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-field-sector-category {
     float: left;
     clear: both;
     margin-top: 10px;
@@ -16900,8 +16922,11 @@ body.front .view-slideshow blockquote.image-field-caption p,
   .page-promotional-resources-search .field-type-language-field,
   .page-search-site .field-type-language-field,
   .oira-tools-search-page .field-name-field-sector,
+  .oira-tools-search-page .field-name-field-sector-category,
   .page-promotional-resources-search .field-name-field-sector,
+  .page-promotional-resources-search .field-name-field-sector-category,
   .page-search-site .field-name-field-sector,
+  .page-search-site .field-name-field-sector-category,
   .oira-tools-search-page .field-name-field-promotional-material-type,
   .page-promotional-resources-search .field-name-field-promotional-material-type,
   .page-search-site .field-name-field-promotional-material-type,

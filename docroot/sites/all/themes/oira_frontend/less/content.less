@@ -208,6 +208,7 @@ a.more-link{
 .field.field-name-field-country,
 .field-type-language-field,
 .field-name-field-sector,
+.field-name-field-sector-category,
 .field-name-field-promotional-material-type,
 .field-name-pr-language{
 	display: block;
@@ -227,6 +228,7 @@ a.more-link{
 	.field.field-name-field-country,
 	.field-type-language-field,
 	.field-name-field-sector,
+	.field-name-field-sector-category,
 	.field-name-field-promotional-material-type,
 	.field-name-pr-language{
 		background-color: @color-tags;
@@ -254,7 +256,8 @@ a.more-link{
 }
 .page-search-site{
 	.field-name-pr-language,
-	.field-name-field-sector{
+	.field-name-field-sector,
+	.field-name-field-sector-category{
 		margin-bottom: 20px;
 	}
 }
@@ -1845,7 +1848,7 @@ a.more-link{
 **************************************************************/
 
 .page-faq,
-.page-oira-faqs{ 
+.page-oira-faqs{
 	.panels-flexible-row-new-main-row{
 		.field-name-body{
 			font-size: @font-size1-4;
@@ -2718,6 +2721,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		.field.field-name-field-country,
 		.field-type-language-field,
 		.field-name-field-sector,
+		.field-name-field-sector-category,
 		.field-name-field-promotional-material-type,
 		.field-name-pr-language,
 		.field-name-field-strategic-type{
@@ -4306,7 +4310,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			padding-left: 15px;
 			padding-right: 15px;
 		}
-		
+
 		@media only screen and (max-width: 1199px){
 			.pane-node-share-widget{
 				max-width: 970px;
@@ -4381,7 +4385,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						}
 					}
 				}
-				
+
 				.content-image{
 					margin-top: 45px;
 				    overflow: hidden;
@@ -4425,11 +4429,11 @@ div[id ^= "mini-panel-partner_in_"], {
 	.modal.fade.in{
 		padding-right: 0px !important;
 	}
-	
+
 	.modal.in .modal-dialog{
 		min-width: 900px;
 	}
-	
+
 	@media only screen and (max-width : 991px) {
 		.modal.in .modal-dialog{
 			min-width: 700px;
@@ -5212,7 +5216,7 @@ div[id ^= "mini-panel-partner_in_"], {
 
 //collaboration page
 .page-private-zone-collaboration-area{
-	
+
 	.page-promotional-materials-search{
 		.private-zone-back-link, .private-zone-back-wrapper{
 			margin-top: -30px;
@@ -5539,7 +5543,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						border-top: none;
 						margin-left: 0px;
 						margin-right: 0px;
-						padding-top: 0px;	
+						padding-top: 0px;
 					}
 					.node-collaboration-document{
 						h2{
@@ -5589,6 +5593,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						.field.field-name-field-country,
 						.field-type-language-field,
 						.field-name-field-sector,
+						.field-name-field-sector-category,
 						.field-name-field-promotional-material-type,
 						.field-name-pr-language,
 						.field-name-field-strategic-type{
@@ -5729,7 +5734,7 @@ div[id ^= "mini-panel-partner_in_"], {
 							}
 						}
 					}
-					
+
 				}
 				.views-submit-button{
 					display: none;
@@ -5741,7 +5746,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						.sector-filter-list-wrapper{
 		    				.sector-filter-label{
 		    					color: @color-text-purple;
-		    					
+
 		    				}
 		    				ul{
 								display: block;
@@ -5891,7 +5896,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						}
 					}
 				}
-				
+
 			}
 			#edit-submit{
 				display: none;
@@ -5903,7 +5908,7 @@ div[id ^= "mini-panel-partner_in_"], {
 					.sector-filter-list-wrapper{
 	    				.sector-filter-label{
 	    					color: @color-text-purple;
-	    					
+
 	    				}
 	    				ul{
 							display: block;
@@ -6169,7 +6174,7 @@ body.front .view-slideshow blockquote.image-field-caption p,
 }
 
 .page-eu-national-partners{
-	.view-id-countries .views-item-columns-container .views-field-country-content-count .field-content{ 
+	.view-id-countries .views-item-columns-container .views-field-country-content-count .field-content{
 		.country-content-count-label:first-child{
 			border:0;
 		}
@@ -6193,7 +6198,7 @@ body.front .view-slideshow blockquote.image-field-caption p,
 			padding-right: 10px;
 		}
 	}
-	
+
 }
 
 .margin-line{
@@ -6207,7 +6212,7 @@ body.front .view-slideshow blockquote.image-field-caption p,
     padding-top: 1em;
     text-align: right;
     padding-right: 0;
-    
+
     a{
     	color: @color-menu;
     	font-style: italic;
@@ -6223,5 +6228,5 @@ body.front .view-slideshow blockquote.image-field-caption p,
 		    color: @color-menu;
 		    font-style: normal;
 		}
-    }   
+    }
 }
