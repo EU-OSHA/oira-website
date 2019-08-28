@@ -1157,10 +1157,11 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['fields']['field_sector']['settings'] = array(
     'field_formatter_class' => '',
   );
-  /* Field: Field: Category */
+  /* Field: Content: Sector */
   $handler->display->display_options['fields']['field_sector_category']['id'] = 'field_sector_category';
   $handler->display->display_options['fields']['field_sector_category']['table'] = 'field_data_field_sector_category';
   $handler->display->display_options['fields']['field_sector_category']['field'] = 'field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['label'] = 'Category';
   $handler->display->display_options['fields']['field_sector_category']['settings'] = array(
     'field_formatter_class' => '',
   );
@@ -1190,7 +1191,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_sector_tid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_sector_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_sector_tid']['vocabulary'] = 'sector';
-  /* Filter criterion: Field: Category (field_sector_category) */
+  /* Filter criterion: Content: Sector (field_sector_category) */
   $handler->display->display_options['filters']['field_sector_category_tid']['id'] = 'field_sector_category_tid';
   $handler->display->display_options['filters']['field_sector_category_tid']['table'] = 'field_data_field_sector_category';
   $handler->display->display_options['filters']['field_sector_category_tid']['field'] = 'field_sector_category_tid';

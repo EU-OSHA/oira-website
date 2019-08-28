@@ -114,7 +114,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'trim_type' => 'chars',
         ),
         'type' => 'smart_trim_format',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -195,7 +195,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 24,
       ),
     ),
     'entity_type' => 'node',
@@ -270,7 +270,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
     ),
     'entity_type' => 'node',
@@ -319,7 +319,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -343,7 +343,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 21,
       ),
     ),
     'entity_type' => 'node',
@@ -446,7 +446,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => 'tools-tags',
         ),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -628,7 +628,7 @@ function hwc_practical_tool_field_default_field_instances() {
           ),
         ),
         'type' => 'language_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -747,7 +747,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -908,7 +908,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -938,12 +938,12 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => 'tools-tags',
         ),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_sector',
-    'label' => 'Sector',
+    'label' => 'old Sector',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -956,7 +956,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -981,7 +981,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 17,
+        'weight' => 11,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -1002,15 +1002,18 @@ function hwc_practical_tool_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_sector_category',
-    'label' => 'Category',
+    'label' => 'Sector',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1023,7 +1026,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -1080,7 +1083,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'text' => 'Access the tool',
         ),
         'type' => 'external_tool_link',
-        'weight' => 7,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -1204,7 +1207,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -1281,7 +1284,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
     ),
     'entity_type' => 'node',
@@ -1327,7 +1330,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 18,
       ),
       'highlights_item' => array(
         'label' => 'above',
@@ -1387,7 +1390,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'title_style' => 'h3',
         ),
         'type' => 'title_linked',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'title_body' => array(
         'label' => 'above',
@@ -1507,7 +1510,6 @@ function hwc_practical_tool_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Alternative description');
   t('Alternative title');
-  t('Category');
   t('Co-author');
   t('Country');
   t('Description');
@@ -1525,6 +1527,7 @@ function hwc_practical_tool_field_default_field_instances() {
   t('Tool link');
   t('Tool name');
   t('Type');
+  t('old Sector');
 
   return $field_instances;
 }

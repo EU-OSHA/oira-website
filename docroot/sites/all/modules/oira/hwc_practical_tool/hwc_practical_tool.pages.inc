@@ -142,7 +142,11 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
     '#default_value' => $sort,
     '#prefix' => '<div class="sort-container col-xs-3">',
     '#suffix' => '</div>',
-    '#options' => array('alphabetically' => t('Alphabetically'), 'date' => t('Latest first')),
+    '#options' => array(
+      'alphabetically' => t('Alphabetically'),
+      'date' => t('Latest first'),
+      'sector' => t('Sector'),
+    ),
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
@@ -336,6 +340,13 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
     case 'date':
       $query->sort('field_revised_date', 'DESC');
       break;
+
+    case 'sector':
+      $sector_field = 'title2';
+      if (function_exists('hwc_practical_tool_node_get_sort_sector_' . $language->language)) {
+        $sector_field = 'practical_tool_sort_sector_' . $language->language;
+      }
+      $query->sort($sector_field, 'ASC');
 
     default:
       $title_field = 'title2';

@@ -11,6 +11,7 @@ dependencies[] = entityreference
 dependencies[] = fe_nodequeue
 dependencies[] = features
 dependencies[] = field_collection
+dependencies[] = hwc_practical_tool
 dependencies[] = i18n_taxonomy
 dependencies[] = languagefield
 dependencies[] = link
