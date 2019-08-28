@@ -429,6 +429,110 @@ function hwc_practical_tool_node_get_sort_title_ca($item) {
   return hwc_practical_tool_node_get_sort_title($item, 'ca');
 }
 
+function hwc_practical_tool_node_get_sort_sector_en($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'en');
+}
+
+function hwc_practical_tool_node_get_sort_sector_bg($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'bg');
+}
+
+function hwc_practical_tool_node_get_sort_sector_cs($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'cs');
+}
+
+function hwc_practical_tool_node_get_sort_sector_da($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'da');
+}
+
+function hwc_practical_tool_node_get_sort_sector_de($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'de');
+}
+
+function hwc_practical_tool_node_get_sort_sector_el($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'el');
+}
+
+function hwc_practical_tool_node_get_sort_sector_es($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'es');
+}
+
+function hwc_practical_tool_node_get_sort_sector_et($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'et');
+}
+
+function hwc_practical_tool_node_get_sort_sector_fi($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'fi');
+}
+
+function hwc_practical_tool_node_get_sort_sector_hr($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'hr');
+}
+
+function hwc_practical_tool_node_get_sort_sector_fr($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'fr');
+}
+
+function hwc_practical_tool_node_get_sort_sector_hu($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'hu');
+}
+
+function hwc_practical_tool_node_get_sort_sector_is($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'is');
+}
+
+function hwc_practical_tool_node_get_sort_sector_it($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'it');
+}
+
+function hwc_practical_tool_node_get_sort_sector_lv($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'lv');
+}
+
+function hwc_practical_tool_node_get_sort_sector_lt($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'lt');
+}
+
+function hwc_practical_tool_node_get_sort_sector_nl($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'nl');
+}
+
+function hwc_practical_tool_node_get_sort_sector_mt($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'mt');
+}
+
+function hwc_practical_tool_node_get_sort_sector_no($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'no');
+}
+
+function hwc_practical_tool_node_get_sort_sector_pl($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'pl');
+}
+
+function hwc_practical_tool_node_get_sort_sector_pt($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'pt');
+}
+
+function hwc_practical_tool_node_get_sort_sector_ro($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'ro');
+}
+
+function hwc_practical_tool_node_get_sort_sector_sk($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'sk');
+}
+
+function hwc_practical_tool_node_get_sort_sector_sl($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'sl');
+}
+
+function hwc_practical_tool_node_get_sort_sector_sv($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'sv');
+}
+
+function hwc_practical_tool_node_get_sort_sector_ca($item) {
+  return hwc_practical_tool_node_get_sort_sector($item, 'ca');
+}
+
 function hwc_practical_tool_node_get_sort_title($item, $language) {
   if ($item->type != 'practical_tool') {
     return NULL;
@@ -441,11 +545,31 @@ function hwc_practical_tool_node_get_sort_title($item, $language) {
   return $wrapper->title_field->value();
 }
 
+function hwc_practical_tool_node_get_sort_sector($item, $language) {
+  if ($item->type != 'practical_tool') {
+    return NULL;
+  }
+  $wrapper = entity_metadata_wrapper('node', $item);
+  $value = $wrapper->language($language)->field_sector_category->value();
+  if ($value) {
+    return $value->name;
+  }
+  return NULL;
+}
 /**
  * Implements hook_entity_property_info_alter().
  */
 function hwc_practical_tool_entity_property_info_alter(&$info) {
 
+  $options = ['en', 'bg', 'cs', 'da', 'de', 'el', 'es', 'et', 'fi', 'hr', 'fr', 'hu', 'is', 'it', 'lv', 'lt', 'nl', 'mt', 'no', 'pl', 'pt', 'ro', 'sk', 'sl', 'sv', 'ca'];
+  foreach($options as $language) {
+    $info['node']['properties']['practical_tool_sort_sector_' . $language] = array(
+      'type' => 'string',
+      'label' => t('Practical tool sort %language sector', ["%language" => $language]),
+      'sanitized' => TRUE,
+      'getter callback' => 'hwc_practical_tool_node_get_sort_sector_' . $language,
+    );
+  }
   $info['node']['properties']['practical_tool_sort_title_en'] = array(
     'type' => 'string',
     'label' => t('Practical tool sort %language title', ["%language" => "en"]),

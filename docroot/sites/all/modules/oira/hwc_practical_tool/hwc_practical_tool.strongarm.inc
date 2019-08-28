@@ -169,31 +169,31 @@ function hwc_practical_tool_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '17',
+          'weight' => '18',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
         'workbench_access' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
         'language' => array(
           'weight' => '5',
         ),
         'xmlsitemap' => array(
-          'weight' => '18',
+          'weight' => '19',
         ),
       ),
       'display' => array(
         'share_widget' => array(
           'teaser' => array(
-            'weight' => '18',
+            'weight' => '19',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
@@ -232,14 +232,14 @@ function hwc_practical_tool_strongarm() {
         ),
         'related_partners' => array(
           'default' => array(
-            'weight' => '14',
+            'weight' => '15',
             'label' => 'hidden',
             'type' => 'related_partners',
             'visible' => TRUE,
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '8',
+            'weight' => '9',
             'label' => 'hidden',
             'type' => 'related_partners',
             'visible' => TRUE,
@@ -255,7 +255,7 @@ function hwc_practical_tool_strongarm() {
         ),
         'tools_see_more' => array(
           'default' => array(
-            'weight' => '12',
+            'weight' => '13',
             'label' => 'above',
             'type' => 'tools_see_more',
             'visible' => TRUE,
@@ -265,7 +265,7 @@ function hwc_practical_tool_strongarm() {
             ),
           ),
           'teaser' => array(
-            'weight' => '9',
+            'weight' => '10',
             'label' => 'hidden',
             'type' => 'tools_see_more',
             'visible' => TRUE,
@@ -294,7 +294,14 @@ function hwc_practical_tool_strongarm() {
             'settings' => array(),
           ),
           'teaser' => array(
-            'weight' => '0',
+            'weight' => '17',
+            'label' => 'above',
+            'type' => 'hidden',
+            'visible' => FALSE,
+            'settings' => array(),
+          ),
+          'default' => array(
+            'weight' => '17',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,

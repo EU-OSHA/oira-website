@@ -4,7 +4,7 @@ function _hwc_taxonomy_filter_options_list($vocabulary, $default = array()) {
   $vocabulary = taxonomy_vocabulary_machine_name_load($vocabulary);
   if (!empty($vocabulary)) {
     $terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
-    foreach($terms as $key => $term) {
+    foreach ($terms as $key => $term) {
       $default[$term->tid] = $term->name;
     }
   }
@@ -20,7 +20,7 @@ function _hwc_practical_tool_get_req_param($form_state, $name, $default = NULL) 
   if (!empty($_GET[$name])) {
     if (is_array($_GET[$name])) {
       $ret = array();
-      foreach($_GET[$name] as $v) {
+      foreach ($_GET[$name] as $v) {
         $ret[] = check_plain($v);
       }
     }
@@ -124,7 +124,7 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   if (!empty($text)) {
     $form['content']['search_phrase'] = array(
       '#type' => 'markup',
-      '#markup' => '<div class="results-for">' . t('Results for !text', array('!text' => '<span class="searched-text">' . check_plain($text) .'</span>')) . '</div>',
+      '#markup' => '<div class="results-for">' . t('Results for !text', array('!text' => '<span class="searched-text">' . check_plain($text) . '</span>')) . '</div>',
     );
   }
 
@@ -142,7 +142,11 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
     '#default_value' => $sort,
     '#prefix' => '<div class="sort-container col-xs-3">',
     '#suffix' => '</div>',
-    '#options' => array('alphabetically' => t('Alphabetically'),'date' => t('Latest first')),
+    '#options' => array(
+      'alphabetically' => t('Alphabetically'),
+      'date' => t('Latest first'),
+      'sector' => t('Sector'),
+    ),
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
@@ -264,7 +268,13 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
       '#prefix' => '<span class="count-container pull-right">',
       '#suffix' => '</span>',
       '#type' => 'markup',
-      '#markup' => t('Showing @start - @limit from @total', array('@start' => $start + 1, '@limit' => $start + count($nids), '@total' => $response['result count'])),
+      '#markup' => t('Showing @start - @limit from @total',
+        array(
+          '@start' => $start + 1,
+          '@limit' => $start + count($nids),
+          '@total' => $response['result count'],
+        )
+      ),
     );
   }
   else {
@@ -307,8 +317,13 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
   $query->condition('language', 'en');
   $query->condition('field_publication_date', time(), '<=');
   $query->keys($text);
-  $query->fields(array('title_field', 'body:value',
-    'field_alternative_title', 'field_alternative_body:value')
+  $query->fields(
+    array(
+      'title_field',
+      'body:value',
+      'field_alternative_title',
+      'field_alternative_body:value',
+    )
   );
   $query->setOption('search_api_facets', $facets_def);
   foreach ($facets_def as $field_name => $facet_def) {
@@ -326,7 +341,20 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
       $query->sort('field_revised_date', 'DESC');
       break;
 
+    case 'sector':
+      $sector_field = 'title2';
+      if (function_exists('hwc_practical_tool_node_get_sort_sector_' . $language->language)) {
+        $sector_field = 'practical_tool_sort_sector_' . $language->language;
+      }
+      $query->sort($sector_field, 'ASC');
+
     default:
+      $title_field = 'title2';
+      if (function_exists('hwc_practical_tool_node_get_sort_sector_' . $language->language)) {
+        $title_field = 'practical_tool_sort_sector_' . $language->language;
+      }
+      $query->sort($title_field, 'ASC');
+
       $title_field = 'title2';
       if (function_exists('hwc_practical_tool_node_get_sort_title_' . $language->language)) {
         $title_field = 'practical_tool_sort_title_' . $language->language;
@@ -362,15 +390,25 @@ function hwc_practical_tool_get_facets_def() {
       'options_callback' => 'oira_language_list_options',
       'options_callback_args' => array(TRUE, TRUE),
     ),
-    'field_sector' => array(
+//    'field_sector' => array(
+//      'label' => t('Sector'),
+//      'field' => 'field_sector',
+//      'limit' => 150,
+//      'operator' => 'or',
+//      'min_count' => 1,
+//      'missing' => 0,
+//      'options_callback' => '_hwc_taxonomy_filter_options_list',
+//      'options_callback_args' => array('sector'),
+//    ),
+    'field_sector_category' => array(
       'label' => t('Sector'),
-      'field' => 'field_sector',
+      'field' => 'field_sector_category',
       'limit' => 150,
       'operator' => 'or',
       'min_count' => 1,
       'missing' => 0,
       'options_callback' => '_hwc_taxonomy_filter_options_list',
-      'options_callback_args' => array('sector'),
+      'options_callback_args' => array('sector_category'),
     ),
   );
 }
@@ -379,7 +417,8 @@ function hwc_practical_tool_menu_tools_get_query() {
   $server = search_api_server_load('solr_server');
   $index = search_api_index_load(SOLR_SEARCH_INDEX);
   $query = new SearchApiQuery($index);
-  $query->fields(array()); // Avoid PHP notice
+  // Avoid PHP notice.
+  $query->fields(array());
   // If the return data option on server it's not set, highlight doesn't work.
   // So we force highlight without having to return field data.
   $server->options['highlight_data'] = TRUE;

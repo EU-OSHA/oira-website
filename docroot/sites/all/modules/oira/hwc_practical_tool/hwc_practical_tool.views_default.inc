@@ -1098,5 +1098,119 @@ function hwc_practical_tool_views_default_views() {
   );
   $export['tools'] = $view;
 
+  $view = new view();
+  $view->name = 'tools_sector_update';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'tools sector update';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_sector' => 'field_sector',
+  );
+  $handler->display->display_options['style_options']['default'] = 'title';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_sector' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Sector */
+  $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
+  $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
+  $handler->display->display_options['fields']['field_sector']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Sector */
+  $handler->display->display_options['fields']['field_sector_category']['id'] = 'field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['table'] = 'field_data_field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['field'] = 'field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['label'] = 'Category';
+  $handler->display->display_options['fields']['field_sector_category']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'practical_tool' => 'practical_tool',
+  );
+  /* Filter criterion: Content: Sector (field_sector) */
+  $handler->display->display_options['filters']['field_sector_tid']['id'] = 'field_sector_tid';
+  $handler->display->display_options['filters']['field_sector_tid']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['filters']['field_sector_tid']['field'] = 'field_sector_tid';
+  $handler->display->display_options['filters']['field_sector_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_sector_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_sector_tid']['vocabulary'] = 'sector';
+  /* Filter criterion: Content: Sector (field_sector_category) */
+  $handler->display->display_options['filters']['field_sector_category_tid']['id'] = 'field_sector_category_tid';
+  $handler->display->display_options['filters']['field_sector_category_tid']['table'] = 'field_data_field_sector_category';
+  $handler->display->display_options['filters']['field_sector_category_tid']['field'] = 'field_sector_category_tid';
+  $handler->display->display_options['filters']['field_sector_category_tid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['field_sector_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_sector_category_tid']['vocabulary'] = 'sector_category';
+  $translatables['tools_sector_update'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Displaying @start - @end of @total'),
+    t('Sector'),
+    t('Category'),
+  );
+  $export['tools_sector_update'] = $view;
+
   return $export;
 }

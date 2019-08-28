@@ -93,6 +93,7 @@
     display: none !important;
   }
   .field-name-field-sector,
+  .field-name-field-sector-category,
   .field-name-field-country,
   .field-name-field-language {
     margin-right: 15px !important;
