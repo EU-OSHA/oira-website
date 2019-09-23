@@ -90,3 +90,10 @@ function osha_news_update_7012() {
 function osha_news_update_7013() {
   features_revert(array('osha_news' => 'field_instance'));
 }
+
+/**
+ * MDR-2994 synchronisation osha oira website news items.
+ */
+function osha_news_update_7014() {
+  features_revert_module('osha_news');
+}
