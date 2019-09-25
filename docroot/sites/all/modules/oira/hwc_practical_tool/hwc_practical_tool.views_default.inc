@@ -30,8 +30,150 @@ function hwc_practical_tool_views_default_views() {
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'full_html',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'combine' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_country_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_sector_category_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_language_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_publication_date_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+        'datepicker_options' => '',
+      ),
+    ),
+    'field_revised_date_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+        'datepicker_options' => '',
+      ),
+    ),
+    'access_id' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -92,13 +234,14 @@ function hwc_practical_tool_views_default_views() {
     'field_formatter_class' => '',
   );
   /* Field: Content: Sector */
-  $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
-  $handler->display->display_options['fields']['field_sector']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_sector']['settings'] = array(
+  $handler->display->display_options['fields']['field_sector_category']['id'] = 'field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['table'] = 'field_data_field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['field'] = 'field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_sector_category']['settings'] = array(
     'field_formatter_class' => '',
   );
+  $handler->display->display_options['fields']['field_sector_category']['delta_offset'] = '0';
   /* Field: Content: Revised date */
   $handler->display->display_options['fields']['field_revised_date']['id'] = 'field_revised_date';
   $handler->display->display_options['fields']['field_revised_date']['table'] = 'field_data_field_revised_date';
@@ -214,18 +357,18 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_country_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_country_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_country_tid']['vocabulary'] = 'country';
-  /* Filter criterion: Content: Sector (field_sector) */
-  $handler->display->display_options['filters']['field_sector_tid']['id'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['filters']['field_sector_tid']['field'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_sector_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator_id'] = 'field_sector_tid_op';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['label'] = 'Sector';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['operator'] = 'field_sector_tid_op';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['identifier'] = 'field_sector_tid';
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Sector (field_sector_category) */
+  $handler->display->display_options['filters']['field_sector_category_tid']['id'] = 'field_sector_category_tid';
+  $handler->display->display_options['filters']['field_sector_category_tid']['table'] = 'field_data_field_sector_category';
+  $handler->display->display_options['filters']['field_sector_category_tid']['field'] = 'field_sector_category_tid';
+  $handler->display->display_options['filters']['field_sector_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_sector_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_category_tid']['expose']['operator_id'] = 'field_sector_category_tid_op';
+  $handler->display->display_options['filters']['field_sector_category_tid']['expose']['label'] = 'Sector';
+  $handler->display->display_options['filters']['field_sector_category_tid']['expose']['operator'] = 'field_sector_category_tid_op';
+  $handler->display->display_options['filters']['field_sector_category_tid']['expose']['identifier'] = 'field_sector_category_tid';
+  $handler->display->display_options['filters']['field_sector_category_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_category_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -236,10 +379,14 @@ function hwc_practical_tool_views_default_views() {
     8 => 0,
     9 => 0,
     10 => 0,
+    11 => 0,
+    12 => 0,
+    14 => 0,
+    13 => 0,
   );
-  $handler->display->display_options['filters']['field_sector_tid']['reduce_duplicates'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sector_tid']['vocabulary'] = 'sector';
+  $handler->display->display_options['filters']['field_sector_category_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_sector_category_tid']['vocabulary'] = 'sector_category';
   /* Filter criterion: Field: Language (field_language) */
   $handler->display->display_options['filters']['field_language_value']['id'] = 'field_language_value';
   $handler->display->display_options['filters']['field_language_value']['table'] = 'field_data_field_language';
@@ -359,6 +506,8 @@ function hwc_practical_tool_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
