@@ -21,6 +21,9 @@ class NCWNewsMigration extends AbstractNCWNodeMigration {
     $this->addFieldMapping('field_image_home_latest_news', 'field_image');
     $this->addFieldMapping('field_aditional_resources', 'field_aditional_resources');
 
+    $this->removeFieldMapping('workbench_access', NULL);
+    $this->addFieldMapping('workbench_access', 'workbench_access');
+
     $this->addUnmigratedDestinations(array(
       'field_tags:ignore_case',
       'field_expiration_date:rrule',
@@ -44,8 +47,16 @@ class NCWNewsMigration extends AbstractNCWNodeMigration {
   function prepareRow($row) {
     parent::prepareRow($row);
     $row->field_tags = osha_migration_normalize_migrated_term_reference($row->field_tags, 'tax_tags');
+    $section = 'section';
+    $map = $this->getMap();
+    if ($destid1 = $map->lookupDestinationID(array($row->nid))) {
+      $node = node_load($destid1['destid1']);
+      reset($node->workbench_access);
+      $section = current($node->workbench_access);
+    }
+    $row->workbench_access = [$section => $section];
 
-    // field_aditional_resources
+    // field_aditional_resources.
     $fi = field_info_field('field_aditional_resources');
     osha_migration_normalize_field_entityreference($row, 'field_aditional_resources', $fi);
     $additional_resources = $row->field_aditional_resources;

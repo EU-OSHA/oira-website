@@ -139,7 +139,8 @@ function oira_partner_preprocess_node(&$variables) {
     $node = $variables['node'];
     if ($node->type == 'practical_tool') {
       if (!empty($node->field_sector[LANGUAGE_NONE][0]['tid'])) {
-        $term = taxonomy_term_load($node->field_sector[LANGUAGE_NONE][0]['tid']);
+//        $term = taxonomy_term_load($node->field_sector[LANGUAGE_NONE][0]['tid']);
+        $term = taxonomy_term_load($node->field_sector_category[LANGUAGE_NONE][0]['tid']);
         $variables['attributes_array']['data-sector-tid'] = $term->tid;
         $variables['attributes_array']['data-sector-label'] = $term->name;
       }
