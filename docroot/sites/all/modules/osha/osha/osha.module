@@ -727,12 +727,17 @@ function osha_field_formatter_view($entity_type, $entity, $field, $instance, $la
       else {
         $settings = $display['settings'];
         $summary_items = field_get_items($entity_type, $entity, 'field_summary', $langcode);
+        $add_items = FALSE;
         if (!empty($settings['trim_options'])
           && !empty($settings['trim_options']['use_field_summary'])
           && !empty($summary_items)) {
+          $add_items = TRUE;
           $items = $summary_items;
         }
         $element = smart_trim_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
+        if ($add_items) {
+          $element['#items'] = $items;
+        }
       }
       break;
 
