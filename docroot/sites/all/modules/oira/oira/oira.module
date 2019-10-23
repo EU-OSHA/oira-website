@@ -376,21 +376,6 @@ function oira_form_node_form_alter(&$form, &$form_state, $form_id) {
         }
       }
     }
-    elseif ($form['type']['#value'] == 'news') {
-      $form['title_field']['#disabled'] = TRUE;
-
-      $disabled = [
-        "body", "language", "field_summary", "field_tags", "field_updated",
-        "field_co_author", "field_image_home_latest_news", "field_image", "field_publication_date", "field_aditional_resources",
-      ];
-
-      drupal_add_css(drupal_get_path('module', 'oira') . '/css/oira.admin.css');
-      foreach ($form as $k => $v) {
-        if (is_array($v) && in_array($k, $disabled)) {
-          $form[$k]['#access'] = FALSE;
-        }
-      }
-    }
     else {
       drupal_set_message('You are not allowed to edit imported content', 'warning');
       $form['#access'] = FALSE;
