@@ -213,7 +213,6 @@ a.more-link{
 .field-name-pr-language{
 	display: block;
 	color: @color-text-grey;
-	font-size: 0;
 	font-weight: bold;
 	font-style: italic;
 	p{
@@ -6230,3 +6229,17 @@ body.front .view-slideshow blockquote.image-field-caption p,
     }
 }
 
+/* MDR-3320 - Change on explanatory text/background info for each tool */
+
+.oira-tools-search-page{
+	.view-mode-teaser{
+		.group-right{
+			.field-name-body{
+				display: none;
+			}
+			.field-name-body.active{
+				display: block;
+			}
+		}
+	}
+}
