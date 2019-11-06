@@ -40,6 +40,14 @@
                         //$link.show();
                     }
                     $(this).toggleClass('show-less');
+
+                    // Check if is OiRA Tools page
+                    if ($(".oira-tools-search-page")[0]){
+                       // Toggle class active on body of the link
+                       var parent = $(this).closest(".node-practical-tool");
+                       $(" .field-name-body", parent).toggleClass("active");
+                    }
+
                 });
             });
 
