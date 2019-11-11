@@ -6548,7 +6548,7 @@ html[lang=fi] #block-menu-block-5 .menu.nav li {
   margin-top: 0px;
 }
 .top-header .header-blocks .region-header-block {
-  max-width: 300px;
+  width: 305px;
   float: right;
 }
 .top-header .header-blocks #block-oira-blocks-oira-print-friendly {
@@ -6556,7 +6556,10 @@ html[lang=fi] #block-menu-block-5 .menu.nav li {
   float: left;
 }
 .top-header .header-blocks #block-oira-blocks-oira-print-friendly a.printfriendly {
-  content: url("../images/icons/220r.png");
+  background: url(../images/icons/220r.png) no-repeat;
+  width: 30px;
+  height: 27px;
+  display: block;
 }
 .top-header .header-blocks #block-oira-blocks-oira-print-friendly a.printfriendly .glyphicon-print {
   display: none;
@@ -6670,6 +6673,7 @@ html[lang=fi] #block-menu-block-5 .menu.nav li {
 .top-header .header-blocks #block-search-form #search-block-form .input-group-btn button {
   border-radius: 0px;
   width: 30px;
+  height: 30px;
   color: white;
   background-color: #003399;
   border: 0px solid #003399;
@@ -6727,7 +6731,8 @@ html[lang=fi] #block-menu-block-5 .menu.nav li {
   display: none;
 }
 .top-header .header-blocks #block-oira-partner-oira-partner-masquerade {
-  margin-top: 10px;
+  margin-top: 7px;
+  float: right;
 }
 .top-header .header-blocks #block-oira-partner-oira-partner-masquerade > a {
   color: #003399;
@@ -7062,17 +7067,18 @@ a.more-link:before {
 .field.field-name-field-country,
 .field-type-language-field,
 .field-name-field-sector,
+.field-name-field-sector-category,
 .field-name-field-promotional-material-type,
 .field-name-pr-language {
   display: block;
   color: #58585a;
-  font-size: 0.em;
   font-weight: bold;
   font-style: italic;
 }
 .field.field-name-field-country p,
 .field-type-language-field p,
 .field-name-field-sector p,
+.field-name-field-sector-category p,
 .field-name-field-promotional-material-type p,
 .field-name-pr-language p {
   margin-bottom: 0px;
@@ -7087,6 +7093,9 @@ a.more-link:before {
 .oira-tools-search-page .field-name-field-sector,
 .page-promotional-resources-search .field-name-field-sector,
 .page-search-site .field-name-field-sector,
+.oira-tools-search-page .field-name-field-sector-category,
+.page-promotional-resources-search .field-name-field-sector-category,
+.page-search-site .field-name-field-sector-category,
 .oira-tools-search-page .field-name-field-promotional-material-type,
 .page-promotional-resources-search .field-name-field-promotional-material-type,
 .page-search-site .field-name-field-promotional-material-type,
@@ -7113,6 +7122,9 @@ a.more-link:before {
 .oira-tools-search-page .field-name-field-sector p,
 .page-promotional-resources-search .field-name-field-sector p,
 .page-search-site .field-name-field-sector p,
+.oira-tools-search-page .field-name-field-sector-category p,
+.page-promotional-resources-search .field-name-field-sector-category p,
+.page-search-site .field-name-field-sector-category p,
 .oira-tools-search-page .field-name-field-promotional-material-type p,
 .page-promotional-resources-search .field-name-field-promotional-material-type p,
 .page-search-site .field-name-field-promotional-material-type p,
@@ -7134,7 +7146,8 @@ a.more-link:before {
   margin-top: 0px !important;
 }
 .page-search-site .field-name-pr-language,
-.page-search-site .field-name-field-sector {
+.page-search-site .field-name-field-sector,
+.page-search-site .field-name-field-sector-category {
   margin-bottom: 20px;
 }
 .alert {
@@ -7591,7 +7604,7 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-row-new-9 .view-display-id-attachment_1 {
   border-bottom: 2px solid #967ea7;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   padding-top: 20px;
   margin-bottom: 20px;
 }
@@ -7600,6 +7613,7 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-row-new-9 .view-display-id-attachment_1 .more-link {
   text-align: left;
+  margin-top: 5px;
 }
 #block-system-main .panels-flexible-row-new-9 .views-item-columns-container {
   background-color: #ffffff;
@@ -8379,7 +8393,8 @@ a.more-link:before {
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-country label:after,
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-languagevalue label:after,
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-sector label:after {
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-sector label:after,
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column #edit-field-sector-category label:after {
   content: none;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes {
@@ -9083,13 +9098,14 @@ a.more-link:before {
   width: 100%;
   margin-top: 15px;
   margin-bottom: 10px;
+  text-align: center;
 }
 .page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label {
   display: inline-block;
   color: #ffffff;
   text-align: center;
   border-left: 2px solid #ffffff;
-  width: 20%;
+  width: 25%;
   margin-bottom: 0px;
 }
 .page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label:last-child {
@@ -9119,14 +9135,15 @@ a.more-link:before {
   margin-bottom: 30px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
-  margin: 30px 30px 0px 30px;
+  margin: 20px 20px 0px 20px;
+  float: left;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag img {
   max-height: 67px;
   min-height: 67px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field {
-  margin: 30px 30px 0px 30px;
+  margin: 20px 20px 0px 20px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field h2 {
   font-size: 2em;
@@ -9136,9 +9153,10 @@ a.more-link:before {
   font-family: "Roboto";
   font-weight: bold;
   min-height: 70px;
+  font-size: 0.9em;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count {
-  margin: 0px 30px 30px 30px;
+  margin: 0px 20px 20px 20px;
 }
 .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .form-group {
   margin-bottom: 0px;
@@ -9259,7 +9277,7 @@ div[id^="mini-panel-partner_in_"] .partner-contact-container .field-name-field-c
   font-size: 1em;
   font-weight: normal;
   font-style: normal;
-  margin-top: 0em;
+  margin-top: 0;
   margin-right: 0px;
   margin-bottom: 15px;
 }
@@ -9404,6 +9422,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector-category,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector-category,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector-category,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type,
@@ -9434,6 +9455,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector p,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector p,
+#quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-sector-category p,
+#quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-sector-category p,
+#quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-sector-category p,
 #quicktabs-container-view__country_partner_content__block .quicktabs-tabpage .field-name-field-promotional-material-type p,
 #quicktabs-container-view__country_partner_content__block_1 .quicktabs-tabpage .field-name-field-promotional-material-type p,
 #quicktabs-container-view__country_partner_content__block_2 .quicktabs-tabpage .field-name-field-promotional-material-type p,
@@ -9935,7 +9959,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   padding-bottom: 30px;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item {
-  min-height: 521px;
+  min-height: 527px;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(2),
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(3) {
@@ -12435,6 +12459,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type,
@@ -12465,6 +12492,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector p,
+.oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category p,
+.oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category p,
+.oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-sector-category p,
 .oira-search-form-container #oira-strategic-documentation-eu-osha-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
 .oira-search-form-container #oira-strategic-documentation-partners-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
 .oira-search-form-container #oira-collaboration-items-form div:first-child #edit-content .search-page-results-wrapper .node-strategic-documentation .field-name-field-promotional-material-type p,
@@ -12883,6 +12913,162 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 #act-as-partner .modal-footer button:before {
   content: "> ";
 }
+#sliding-popup .eu-cookie-compliance-secondary-button,
+#sliding-popup .eu-cookie-compliance-more-button {
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 1em;
+  vertical-align: middle;
+  overflow: visible;
+  width: auto;
+  -moz-box-shadow: inset 0 1px 0 0 #ffffff;
+  -webkit-box-shadow: inset 0 1px 0 0 #ffffff;
+  box-shadow: inset 0 1px 0 0 #ffffff;
+  background-color: #ededed;
+  background-image: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf));
+  background-image: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background-image: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background-image: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background-image: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  color: #000!important;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding: 4px 8px;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #ffffff;
+}
+#sliding-popup .eu-cookie-compliance-secondary-button:hover,
+#sliding-popup .eu-cookie-compliance-more-button {
+  background-color: #dfdfdf;
+  background-image: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #dfdfdf), color-stop(100%, #ededed));
+  background-image: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background-image: -o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background-image: -ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background-image: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+}
+#sliding-popup .popup-content #popup-text {
+  text-align: center;
+  width: 100%!important;
+  max-width: 100%!important;
+}
+#popup-buttons {
+  clear: both;
+  text-align: center;
+  float: left;
+  max-width: 100%!important;
+  font-size: 0.8em;
+}
+#popup-buttons button {
+  padding: 1px 5px!important;
+}
+#sliding-popup .popup-content #popup-buttons {
+  float: right;
+  margin: 0 0 1em 0;
+  width: 100%;
+  padding: 2px 5px!important;
+}
+#sliding-popup .popup-content #popup-text h2 {
+  font-size: 0.9em;
+  padding-top: 1em;
+}
+/*end act as a partner modal*/
+blockquote.image-field-caption {
+  color: #FFFF;
+  z-index: 99;
+  border-left: 0;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+blockquote.image-field-caption p {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: -25px;
+  padding-left: 1em;
+  background: rgba(145, 123, 162, 0.85);
+  font-size: 1.1rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+body.front .view-slideshow blockquote.image-field-caption p,
+.panels-flexible-region-new-image-inside blockquote.image-field-caption p {
+  position: absolute;
+  bottom: 0;
+  color: #FFF !important;
+  background: transparent;
+  opacity: 1;
+  z-index: 40;
+  right: 0%;
+  text-shadow: 1px 1px #000;
+  font-size: 1.1rem;
+  border-left: 0;
+  padding: 10px 20px;
+  margin: 0;
+  text-align: right;
+}
+/* Sector hidden - MDR-2548 */
+.country-content-count-sectors .form-group {
+  display: none;
+}
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:first-child {
+  border: 0;
+}
+.page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-country-content-count .field-content .country-content-count-label:last-child {
+  padding-left: 20px;
+}
+.page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content .country-content-count-label.country-content-count-total_sectors {
+  display: none;
+}
+.page-country-profile .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .pane-taxonomy-term-country-content-count .field-items .field-item:first-child {
+  border: 0;
+}
+.page-country-profile .panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .pane-taxonomy-term-country-content-count .field-items .field-item:nth-child(3) {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.margin-line {
+  padding-left: 30px;
+  padding-right: 0;
+}
+.content-login-view {
+  margin-top: 2em;
+  border-top: 2px solid #786586;
+  padding-top: 1em;
+  text-align: right;
+  padding-right: 0;
+}
+.content-login-view a {
+  color: #10b2e4;
+  font-style: italic;
+  font-weight: bold;
+}
+.content-login-view a:before {
+  content: "\e033";
+  margin-right: 8px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-size: 0.9em;
+  top: 1px;
+  position: relative;
+  color: #10b2e4;
+  font-style: normal;
+}
+/* MDR-3320 - Change on explanatory text/background info for each tool */
+.oira-tools-search-page .view-mode-teaser .group-right .field-name-body {
+  display: none;
+}
+.oira-tools-search-page .view-mode-teaser .group-right .field-name-body.active {
+  display: block;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
@@ -12927,6 +13113,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .site-footer .menu-block-2 .menu li {
   display: inline-block;
   margin-left: 10px;
+}
+@media only screen and (max-width: 1280px) {
+  .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
+    float: none;
+  }
 }
 @media only screen and (max-width: 1199px) {
   /*HEADER
@@ -13063,6 +13254,9 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     margin-right: 14px;
     width: inherit;
     top: 46px;
+  }
+  .top-header .region-header-block #block-menu-block-5 .introduction-image {
+    float: right;
   }
   .top-header .region-header-block #block-menu-block-5 .introduction-image img {
     width: 29px;
@@ -14402,6 +14596,15 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
     padding: 15px !important;
   }
   /*End private zone*/
+  .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 .promotional-introduction-item:nth-child(3) {
+    padding-top: 0;
+  }
+  .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
+    float: left;
+  }
+  .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-name-field h2 a {
+    font-size: 0.8em;
+  }
 }
 @media only screen and (min-width: 976px) and (max-width: 991px) {
   .quicktabs-tabs-container {
@@ -14520,6 +14723,13 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
 }
 @media only screen and (max-width: 767px) {
+  .margin-line {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  blockquote.image-field-caption p {
+    max-width: 430px;
+  }
   .searched-text {
     font-size: 2em !important;
   }
@@ -14552,7 +14762,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .top-header .header-blocks .region-header-block #block-menu-block-5 {
     position: absolute;
     bottom: 0px;
-    right: 58px;
+    right: 30px;
     top: 5px;
     margin-right: 15px;
   }
@@ -14657,8 +14867,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   /*HOME
 ***************************************/
-  .front .views-view-grid.cols-3 .row > :nth-child(3) {
-    display: block;
+  .front .views-view-grid.cols-3 > .row > div:nth-child(2) {
+    display: none;
+  }
+  .front .views-view-grid.cols-3 > .row > div:nth-child(3) {
+    display: none;
   }
   .front .panels-flexible-region-new-slider {
     margin-top: 5px !important;
@@ -14706,8 +14919,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .front .panels-flexible-region-new-promotional_materials h3.pane-title {
     color: #786586;
   }
-  .front .panels-flexible-region-new-promotional_materials .view-display-id-oshnews_latest .view-display-id-attachment_1 {
+  .front .panels-flexible-region-new-promotional_materials .view-display-id-oshnews_latest .view-display-id-attachment_1 .image-wrapper {
     display: none;
+  }
+  .front .panels-flexible-region-new-promotional_materials .view-display-id-oshnews_latest .view-display-id-attachment_1 h4 a {
+    font-size: 0.9em!important;
   }
   .front .panels-flexible-region-new-promotional_materials .views-item-columns-container {
     padding: 0px !important;
@@ -14851,7 +15067,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   }
   .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field.field-name-field-country,
   .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-type-language-field,
-  .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-field-sector {
+  .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-field-sector,
+  .front .panels-flexible-row-new-16 .view-display-id-block_1 .views-item-columns-container .field-name-field-sector-category {
     float: left;
     clear: both;
     margin-top: 10px;
@@ -16712,8 +16929,11 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   .page-promotional-resources-search .field-type-language-field,
   .page-search-site .field-type-language-field,
   .oira-tools-search-page .field-name-field-sector,
+  .oira-tools-search-page .field-name-field-sector-category,
   .page-promotional-resources-search .field-name-field-sector,
+  .page-promotional-resources-search .field-name-field-sector-category,
   .page-search-site .field-name-field-sector,
+  .page-search-site .field-name-field-sector-category,
   .oira-tools-search-page .field-name-field-promotional-material-type,
   .page-promotional-resources-search .field-name-field-promotional-material-type,
   .page-search-site .field-name-field-promotional-material-type,

@@ -31,10 +31,6 @@
     <li class="napo-share-widget-button napo-share-widget-linkedin">
       <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $url; ?>">Linked in</a>
     </li>
-    <li class="napo-share-widget-button napo-share-widget-google-plus">
-      <a onclick="window.open(this.href, 'hwc-share', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
-         href="https://plus.google.com/share?url=<?php print $url; ?>">Google+</a>
-    </li>
   </ul>
 </div>
 <script>
@@ -98,11 +94,6 @@ if (!empty($node->path['alias'])) {
                 $('.hwc-share-widget-facebook a').once('piwik_share_event', function(){
                     $(this).on('click', function(event) {
                         _paq.push(['trackEvent', 'Share', 'Facebook', '<?php print $event_name ?>', '<?php print $event_val ?>']);
-                    });
-                });
-                $('.napo-share-widget-google-plus a').once('piwik_share_event', function(){
-                    $(this).on('click', function(event) {
-                        _paq.push(['trackEvent', 'Share', 'Google+', '<?php print $event_name ?>', '<?php print $event_val ?>']);
                     });
                 });
             }

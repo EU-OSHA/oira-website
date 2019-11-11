@@ -1,7 +1,7 @@
 name = OiRA Promotional material
 core = 7.x
 package = OIRA
-version = 7.x-0.5
+version = 7.x-1.1
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = ds

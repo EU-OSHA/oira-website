@@ -111,3 +111,358 @@ function hwc_practical_tool_update_7011() {
 function hwc_practical_tool_update_7012() {
   features_revert_module('hwc_practical_tool');
 }
+
+/**
+ * MDR-2165 OiRA website, issues with the news coming from oshwiki / euosha.
+ */
+function hwc_practical_tool_update_7013() {
+  variable_set('hwc_practical_tool_allow_wiki', 1);
+}
+
+/**
+ * MDR-2289 webpage, pictures for tools showing up differently on different views/pages.
+ */
+function hwc_practical_tool_update_7014() {
+  features_revert_module('hwc_practical_tool');
+}
+
+/**
+ * MHOS-131 Update links in Drupal's catalogue of OiRA tools.
+ */
+function hwc_practical_tool_update_7015() {
+  $query = db_select('node', 'n');
+  $query->fields('n', ['nid']);
+  $query->condition('n.type', 'practical_tool');
+  $result = $query->execute()->fetchAllKeyed(0, 0);
+  foreach ($result as $nid) {
+    $node = node_load($nid);
+    if (!empty($node->field_tool_link[LANGUAGE_NONE][0]['url'])) {
+      $tool_link = explode('/', $node->field_tool_link[LANGUAGE_NONE][0]['url']);
+      if (!empty($tool_link[2]) && $tool_link[2] == 'client.oiraproject.eu') {
+        $tool_link[2] = 'oiraproject.eu/oira-tools';
+        $node->field_tool_link[LANGUAGE_NONE][0]['url'] = implode('/', $tool_link);
+        node_save($node);
+      }
+    }
+  }
+}
+
+/**
+ * MDR-2804 Sector categories reorganisation.
+ */
+function hwc_practical_tool_update_7016() {
+  features_revert_module('hwc_practical_tool');
+}
+
+/**
+ * MDR-2804 Sector categories reorganisation.
+ */
+function hwc_practical_tool_update_7017() {
+  $map = [
+
+    'AGRICULTURE, FORESTRY AND FISHING'=>[
+      'Agriculture',
+      'Crop and animal production',
+      'Forestry',
+      'Matisha production?',
+    ],
+    'AIR/WATER TRANSPORT'=>[
+      'Air transport',
+      'Maritime transport',
+      'Water transport',
+    ],
+
+    'ARTS AND ENTERTAINMENT'=>[
+      'Live performance - productions',
+      'Live performance - venues',
+      'Ceramist',
+      'audiovisual',
+    ],
+
+    'AUDIOVISUAL SECTOR'=>[
+
+    ],
+
+    'AUTOMOTIVE TRANSPORTATION, DISTRIBUTION AND LOGISTICS'=>[
+      'Warehousing and support activities for transportation',
+      'Road transport',
+      'Passenger land transport',
+      'Road transport',
+      'Courier services',
+      'Taxis',
+      'Bus driver',
+      'Road passenger transport',
+      'Removal activities',
+      'Parcel delivery/express freight',
+      'Ambulances',
+    ],
+
+    'BUILDING CONSTRUCTION AND MAINTENANCE'=>[
+      'Electricians',
+      'Construction',
+      'Roofers',
+      'Painters',
+      'Parquet workers',
+      'Carpentries',
+      'Plumber',
+      'Construction (demolition, scaffolding, insulation)',
+      'Construction (work outside, excavations)',
+    ],
+
+
+    'CLEANING SERVICES'=>[
+    ],
+
+
+    'EDUCATION'=>[
+      'Driving schools',
+      'Educational establishments',
+      'Child day care/social work without accommodation',
+    ],
+
+    'ELECTRICAL AND RELATED WORKS'=>[
+      'Lift installers and maintenance',
+      'Electricians',
+    ],
+
+
+    'FOOD AND BEVERAGES MANUFACTURE'=>[
+      'Manufacture of drinks',
+      'Manufacture of food products',
+      'Small food processing companies',
+      'Food production',
+      'Beverage production',
+      'Matisha production',
+    ],
+
+    'FOOD PRODUCTION & SALE'=>[
+      'Butchers',
+      'Bakeries',
+      'General food trade',
+      'Food wholesale',
+    ],
+
+    'GAS, WATER AND ELECTRICITY'=>[
+      'Production and distribution of electricity and steam',
+      'Wastewater – collection, distribution and treatment',
+      'Water collection, treatment and material recovery',
+      'Water collection, treatment and supply',
+      'Retail sale of automotive fuel and lubricants/Gas stations?',
+    ],
+
+
+    'GENERIC TOOLS/RISK SPECIFIC'=>[
+      'Generic',
+      'Psychosocial',
+    ],
+
+
+    'HAIRDRESSERS AND BEAUTY SALONS'=>[
+    ],
+
+    'Hotels Restaurants Catering'=>[
+      'Hotels and restaurants/guesthouses',
+      'Hotels and restaurants',
+      'Catering',
+      'Cooks',
+      'HORECA',
+      'Cafes and restaurants',
+    ],
+
+    'HUMAN HEALTH AND SOCIAL WORK ACTIVITIES'=>[
+      'Human health activities',
+      'Residential care activities',
+      'Home care activities',
+      'Pharmacies',
+      'Ambulances',
+      'Child day care/social work without accommodation',
+      'Social care including home care',
+      'Health care establishments',
+    ],
+
+    'INFORMATION AND COMMUNICATION'=>[
+      'Telecommunications',
+      'Printing activities',
+      'Printing services/digital printing',
+      'Audiovisual',
+    ],
+
+    'LEATHER AND TANNING'=>[
+      'Leather and tanning',
+      'Leather, tanning and manufacture of footwear',
+    ],
+
+
+    'MANUFACTURING'=>[
+      'Manufacture of basic metals',
+      'Manufacture of chemical products',
+      'Manufacture of clothing',
+      'Manufacture of drinks',
+      'Manufacture of food products',
+      'Manufacture of furniture',
+      'Manufacture of machinery',
+      'Manufacture of pharmaceuticals and related products',
+      'Manufacture of plastic products',
+      'Manufacture of rubber products',
+      'Manufacture of wood and of wood related products',
+      'Metal workers',
+      'Treatment and metal coating',
+      'Leather and tanning',
+      'Leather, tanning and manufacture of footwear',
+      'Woodworking',
+      'Printing',
+      'Sewing services',
+      'Metal industry',
+    ],
+
+    'MINING AND QUARRYING'=>[
+      'Mining of coal and metal ores and quarrying of non-metallic raw materials',
+    ],
+
+
+    'MOTOR VEHICLES, REPAIR AND RELATED ACTIVITIES'=>[
+      'Sale and repair of motor vehicles and motorcycles',
+      'Tyre repair workers',
+      'Car tinsmith',
+      'Retail sale of automotive fuel and lubricants/Gas stations',
+      'Car repair',
+    ],
+
+    'OFFICE AND ADMINISTRATIVE SUPPORT'=>[
+      'Working in offices',
+      'Public administration',
+    ],
+
+    'PERSONAL AND OTHER SERVICE OCCUPATIONS'=>[
+      'Laundries',
+      'Hairdressing',
+      'Private security',
+      'Sewing services',
+      'Beauty salons',
+      'Homecare',
+      'Social care including home care',
+      'Hair and beauty salons',
+      'Cleaning',
+      'Child day care/social work without accommodation',
+      'Printing activities',
+      'Printing services/digital printing',
+      'Real estate?',
+    ],
+
+    'PRIVATE SECURITY'=>[
+    ],
+
+    'PUBLIC/PASSENGER TRANSPORT'=>[
+      'Passenger land transport',
+      'Taxis',
+      'Bus driver',
+      'Road passenger transport',
+      'Ambulances',
+    ],
+
+    'REAL ESTATE'=>[
+      'Real estate',
+    ],
+
+    'SPORTS AND RECREATION'=>[
+      'Sports - active leisure',
+      'Sports clubs',
+      'Sports - not-for-profit',
+      'Sports - professional',
+    ],
+
+    'VETERINARY ACTIVITIES'=>[
+
+    ],
+
+    'WASTE MANAGEMENT'=>[
+      'Waste collection',
+      'Wastewater – collection, distribution and treatment',
+      'Sorting and waste treatment',
+      'Waste collection and management',
+    ],
+
+    'WHOLESALE AND RETAIL TRADE'=>[
+      'Commercial shops',
+      'Wholesale and retail trade of non-food products',
+      'Real estate',
+      'Sale and repair of motor vehicles and motorcycles',
+      'Pharmacies',
+      'Retail sale of automotive fuel and lubricants',
+      'General food trade',
+      'Food wholesale',
+      'None food wholesale',
+      'Supermarkets',
+    ],
+
+    'WOODWORKING AND OTHER RELATED ACTIVITIES'=>[
+      'Manufacture of wood and of wood related products',
+      'Woodworking',
+      'Carpentries',
+      'Manufacture of furniture',
+      'Woodworking (furniture)',
+      'Forestry',
+    ],
+
+    'WORKING WITH METAL'=>[
+      'Metal workers',
+      'Treatment and metal coating',
+      'Cutting/stamping/metal structures/boiler making/welding',
+      'Metal industry',
+    ],
+
+  ];
+  $name = 'sector_category';
+  $vocabulary = taxonomy_vocabulary_machine_name_load($name);
+  $tree = taxonomy_get_tree($vocabulary->vid);
+  foreach ($tree as $i => $term) {
+    $categories[$term->name] = $term->tid;
+  }
+  foreach (array_keys($map) as $new_term) {
+    if (empty($categories[$new_term])) {
+      $term = new stdClass();
+      $term->name = $term->name_field['en'][0]['value'] = $new_term;
+      $term->vid = $vocabulary->vid;
+      $term->language = 'en';
+      taxonomy_term_save($term);
+    }
+  }
+  $tree = taxonomy_get_tree($vocabulary->vid);
+  foreach ($tree as $i => $term) {
+    $categories[$term->name] = $term->tid;
+  }
+  $name = 'sector';
+  $sectors = [];
+  $vocabulary = taxonomy_vocabulary_machine_name_load($name);
+  $tree = taxonomy_get_tree($vocabulary->vid);
+  foreach ($tree as $i => $term) {
+    $sectors[$term->name] = $term->tid;
+  }
+  $tids_map = [];
+  foreach($map as $category => $rows) {
+    foreach ($rows as $sector) {
+      if (empty($sectors[$sector])) {
+        continue;
+      }
+      $tids_map[$sectors[$sector]] = $categories[$category];
+    }
+  }
+
+  $result = views_get_view_result('tools_sector_update');
+  foreach($result as $row) {
+    $sector = $row->field_field_sector[0]['raw']['tid'];
+    if (!empty($tids_map[$sector])) {
+      $node = node_load($row->nid);
+      $node->field_sector_category[LANGUAGE_NONE][0]['tid'] = $tids_map[$sector];
+      node_save($node);
+    }
+  }
+}
+
+/**
+ * MDR-2804 Sector categories reorganisation.
+ */
+function hwc_practical_tool_update_7018() {
+  features_revert_module('hwc_practical_tool');
+  features_revert_module('oira_partner');
+}

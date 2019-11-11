@@ -139,14 +139,14 @@ abstract class AbstractNCWNodeMigration extends Migration {
     $this->addFieldMapping('path', 'path');
     $this->addFieldMapping('workbench_access')->defaultValue('section'); // Assign default section
 
-    // Handle field migration in a generic way
+    // Handle field migration in a generic way.
     $fields = field_info_instances('node', $this->bundle);
     $exposed = $this->source->fields();
     foreach($fields as $field_name => $field_info) {
       if (array_key_exists($field_name, $exposed) && !in_array($field_name, $this->getManuallyMigratedFields())) {
         $this->addFieldMapping($field_name, $field_name);
 
-        // Extra mappings depending on field type
+        // Extra mappings depending on field type.
         $fi = field_info_field($field_name);
         if ($fi['translatable'] == 1
           && $fi['type'] != 'taxonomy_term_reference' /* field_organised_by */) {
@@ -177,7 +177,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
     }
     $this->addUnmigratedDestinations(
       array(
-        'revision', 'tnid', 'translate', 'revision_uid', 'is_new'
+        'revision', 'tnid', 'translate', 'revision_uid', 'is_new',
       )
     );
   }
@@ -231,10 +231,10 @@ abstract class AbstractNCWNodeMigration extends Migration {
     try {
       ncw_migration_debug('!klass:      * Preparing source node: !id', array(
         '!klass' => get_class($this),
-        '!id' => $row->nid
+        '!id' => $row->nid,
       ));
       $row->path = !empty($row->path['alias']) ? $row->path['alias'] : NULL;
-      // Normalize JSON structure, to match migrate expectations for field data
+      // Normalize JSON structure, to match migrate expectations for field data.
       $fields = field_info_instances('node', $this->bundle);
       foreach ($fields as $field_name => $field_info) {
         if (in_array($field_name, $this->getManuallyMigratedFields())) {
@@ -242,7 +242,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
         }
         $fi = field_info_field($field_name);
         if ($fi['type'] == 'entityreference') {
-          // Entity references will be manually handled by each migration
+          // Entity references will be manually handled by each migration.
           continue;
         }
         $normalizer = 'osha_migration_normalize_field_' . $fi['type'];
@@ -260,7 +260,8 @@ abstract class AbstractNCWNodeMigration extends Migration {
         }
       }
       $row->field_migration_source = 'ncw';
-    } catch(Exception $e) {
+    }
+    catch(Exception $e) {
       ncw_migration_debug("Exception while preparing the row: {$row->nid}", 'error');
       return FALSE;
     }
@@ -286,7 +287,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
     unset($row->translations['data']['en']);
     if (!empty($row->translations['data']) && $this->allowMigrateTranslation()) {
       $handler = entity_translation_get_handler('node', $entity);
-      foreach($row->translations['data'] as $language => $data) {
+      foreach ($row->translations['data'] as $language => $data) {
         $handler->setTranslation(array(
           'language' => $data['language'],
           'source' => $data['source'],
@@ -310,7 +311,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
   }
 
   public function validateEndpointURL() {
-    if(empty($this->endpoint_url)) {
+    if (empty($this->endpoint_url)) {
       return FALSE;
     }
     return TRUE;
@@ -349,7 +350,7 @@ abstract class AbstractNCWNodeMigration extends Migration {
         // TODO ?! Removing terms that don't exists anymore
         // Similar as for nodes below.
       }
-      else if (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'node') {
+      elseif (!empty($this->arguments['entity_type']) && $this->arguments['entity_type'] == 'node') {
         // Check if the needs review nodes are indeed missing in source.
         $initial_list = $source->getInitialSourceIds();
         foreach ($removed as $to_remove) {
@@ -476,7 +477,7 @@ abstract class AbstractNCWNodeSource extends MigrateSource {
             if (!empty($ob->parent_tid)) {
               $row->parent = $ob->parent_tid;
             }
-            foreach($row_ob as $k => $v) {
+            foreach ($row_ob as $k => $v) {
               $row->$k = $v;
             }
             $this->rows[$id] = $row;
@@ -579,18 +580,18 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
    *   Ignore these fields during mapping (or handle manually in derived class).
    */
   protected function addFieldMappings() {
-    // Taxnomy term base fields
+    // Taxnomy term base fields.
     $this->addSimpleMappings(array('name', 'description', 'format', 'weight'));
     $this->addFieldMapping('parent', 'parent')
       ->sourceMigration($this->getMachineName());
 
-    // Handle field migration in a generic way
+    // Handle field migration in a generic way.
     $fields = field_info_instances('taxonomy_term', $this->bundle);
     $exposed = $this->source->fields();
-    foreach($fields as $field_name => $field_info) {
+    foreach ($fields as $field_name => $field_info) {
       if (array_key_exists($field_name, $exposed) && !in_array($field_name, $this->getManuallyMigratedFields())) {
         $this->addFieldMapping($field_name, $field_name);
-        // Extra mappings depending on field type
+        // Extra mappings depending on field type.
         $fi = field_info_field($field_name);
         if ($fi['translatable'] == 1 && $fi['type'] != 'taxonomy_term_reference' /* field_organised_by */) {
           $this->addFieldMapping("$field_name:language", $field_name . '_language');
@@ -627,15 +628,15 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
     ncw_migration_debug('!klass:      * Preparing source term: !id', array('!klass' => get_class($this), '!id' => $row->tid));
     $row->language = 'en';
     $row->path = !empty($row->path['alias']) ? $row->path['alias']:  NULL;
-    // Normalize JSON structure, to match migrate expectations for field data
+    // Normalize JSON structure, to match migrate expectations for field data.
     $fields = field_info_instances('taxonomy_term', $this->bundle);
-    foreach($fields as $field_name => $field_info) {
+    foreach ($fields as $field_name => $field_info) {
       if (in_array($field_name, $this->getManuallyMigratedFields())) {
         continue;
       }
       $fi = field_info_field($field_name);
       $normalizer = 'osha_migration_normalize_field_' . $fi['type'];
-      if(function_exists($normalizer)) {
+      if (function_exists($normalizer)) {
         $filter_languages = array();
         if (!$this->allowMigrateTranslation()) {
           $filter_languages = array('en');
@@ -655,7 +656,7 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
         'article',
 //        'news',
       );
-      foreach($row->field_excluded_from as $k => $v) {
+      foreach ($row->field_excluded_from as $k => $v) {
         if (!in_array($v, $whitelist)) {
           unset($row->field_excluded_from[$k]);
         }
@@ -664,13 +665,13 @@ abstract class AbstractNCWTaxonomyTermMigration extends AbstractNCWNodeMigration
   }
 
   /**
-   * Implements Migration::complete() to configure translations
+   * Implements Migration::complete() to configure translations.
    */
   public function complete($entity, stdClass $row) {
     unset($row->translations['data']['en']);
     if (!empty($row->translations['data'])) {
       $handler = entity_translation_get_handler('taxonomy_term', $entity);
-      foreach($row->translations['data'] as $language => $data) {
+      foreach ($row->translations['data'] as $language => $data) {
         $handler->setTranslation(array(
           'language' => $data['language'],
           'source' => $data['source'],
@@ -714,19 +715,19 @@ abstract class AbstractNCWTaxonomyTermSource extends AbstractNCWNodeSource {
 
   public function fields() {
     return array(
-             'tid' => 'tid',
-             'name' => 'name',
-             'name_field_language' => 'name_field:language',
-             'name_field' => 'name_field',
-             'format' => 'format',
-             'weight' => 'weight',
-             'description' => 'description',
-             'description_field' => 'description_field',
-             'description_field_language' => 'description_field:language',
-             'description_field_format' => 'description_field:format',
-             'description_field_summary' => 'description_field:summary',
-             'field_excluded_from' => 'field_excluded_from',
-           ) + $this->contentFields();
+      'tid' => 'tid',
+      'name' => 'name',
+      'name_field_language' => 'name_field:language',
+      'name_field' => 'name_field',
+      'format' => 'format',
+      'weight' => 'weight',
+      'description' => 'description',
+      'description_field' => 'description_field',
+      'description_field_language' => 'description_field:language',
+      'description_field_format' => 'description_field:format',
+      'description_field_summary' => 'description_field:summary',
+      'field_excluded_from' => 'field_excluded_from',
+    ) + $this->contentFields();
   }
 }
 
@@ -777,7 +778,7 @@ function osha_migration_normalize_field_list_text($row, $field_name, $field_info
       if (!empty($filter_languages) && !in_array($language, $filter_languages)) {
         continue;
       }
-      foreach($values as $v) {
+      foreach ($values as $v) {
         $field[] = $v['value'];
       }
     }
@@ -806,9 +807,15 @@ function osha_migration_normalize_field_text_long($row, $field_name, $field_info
       if (!empty($filter_languages) && !in_array($language, $filter_languages)) {
         continue;
       }
-      foreach($values as $v) {
+      foreach ($values as $v) {
         $field[] = $v['value'];
         $languages[] = $language;
+        $v['format'] = str_replace('full_html_minimal', 'full_html', $v['format']);
+        $v['format'] = str_replace('dangerous_substances_minimal', 'full_html', $v['format']);
+        $v['format'] = str_replace('dangerous_substances', 'full_html', $v['format']);
+        if (!$v['format']) {
+          $v['format'] = 'full_html';
+        }
         $format[] = $v['format'];
       }
     }
@@ -862,7 +869,7 @@ function osha_migration_normalize_field_text($row, $field_name, $field_info, $fi
       if (!empty($filter_languages) && !in_array($language, $filter_languages)) {
         continue;
       }
-      foreach($values as $v) {
+      foreach ($values as $v) {
         $field[] = $v['value'];
         $languages[] = $language;
       }
@@ -880,7 +887,7 @@ function osha_migration_normalize_field_email($row, $field_name, $field_info, $f
       if (!empty($filter_languages) && !in_array($language, $filter_languages)) {
         continue;
       }
-      foreach($values as $v) {
+      foreach ($values as $v) {
         $field[] = $v['email'];
         $languages[] = $language;
       }
@@ -912,14 +919,14 @@ function osha_migration_normalize_field_taxonomy_term_reference($row, $field_nam
   if (isset($row->{$field_name}['name_original'])) { // cardinality 1
     $field[] = $row->{$field_name}['name_original'];
   }
-  else if (!empty($row->{$field_name}) && is_array($row->{$field_name})) {
+  elseif (!empty($row->{$field_name}) && is_array($row->{$field_name})) {
     foreach ($row->{$field_name} as $value) {
       if (isset($value['name_original'])) {
         $field[] = $value['name_original'];
       }
     }
   }
-  else if (empty($row->{$field_name})) {
+  elseif (empty($row->{$field_name})) {
     // Do nothing ...
   }
   else {
@@ -933,14 +940,14 @@ function osha_migration_normalize_field_entityreference($row, $field_name, $fiel
   //@todo cardinality -1 (multiple) not implemented
   if (!empty($row->{$field_name}) && is_array($row->{$field_name})) {
     foreach ($row->{$field_name} as $value) {
-      foreach($value as $arr) {
+      foreach ($value as $arr) {
         if (isset($arr['target_id'])) {
           $field[] = $arr['target_id'];
         }
       }
     }
   }
-  else if (empty($row->{$field_name})) {
+  elseif (empty($row->{$field_name})) {
     // Do nothing ...
   }
   else {
@@ -957,7 +964,7 @@ function osha_migration_normalize_field_file($row, $field_name, $field_info, $fi
       if (!empty($filter_languages) && !in_array($language, $filter_languages)) {
         continue;
       }
-      foreach($values as $f) {
+      foreach ($values as $f) {
         $field[] = osha_migration_url_files(str_replace('public://', '', $f['uri']));
         $languages[] = $language;
       }
@@ -994,7 +1001,7 @@ function osha_migration_normalize_migrated_term_reference(&$original, $source_mi
             $ret = $dest['destid1'];
           }
         }
-        else if (!empty($term['tid'])) {
+        elseif (!empty($term['tid'])) {
           $tid = $term['tid'];
           if ($tid && $dest = $migration->getMap()->getRowBySource(array($tid))) {
             $ret[] = $dest['destid1'];
@@ -1009,7 +1016,7 @@ function osha_migration_normalize_migrated_term_reference(&$original, $source_mi
 
 function ncw_migration_find_additional_resource($source_nid) {
   $migrations = array();
-  foreach($migrations as $machine_name) {
+  foreach ($migrations as $machine_name) {
     $migration = Migration::getInstance($machine_name);
     /** @var MigrateMap $map */
     $map = $migration->getMap();

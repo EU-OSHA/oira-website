@@ -31,3 +31,17 @@ function osha_search_install() {
     $server->save();
   }
 }
+
+/**
+ * MDR-2170 OiRA Tools: sort by alphabetical order the search criteria.
+ */
+function osha_search_update_7001() {
+  features_revert_module('osha_search');
+}
+
+/**
+ * MDR-2804 Sector categories reorganisation.
+ */
+function osha_search_update_7002() {
+  features_revert_module('osha_search');
+}

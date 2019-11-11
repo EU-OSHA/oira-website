@@ -1,5 +1,16 @@
 @media only screen and (max-width : 767px){
 
+.margin-line {
+	padding-left: 15px;
+    padding-right: 15px;
+}
+
+blockquote.image-field-caption {
+    p{
+		max-width: 430px;
+    }
+}
+
 .img-responsive{
 	//width: 100%;
 }
@@ -42,7 +53,7 @@
 			#block-menu-block-5{
 				position: absolute;
 				bottom: 0px;
-				right: 58px;
+				right: 30px;
 				top: 5px;
 				margin-right: 15px;
 				.introduction-image{
@@ -54,7 +65,7 @@
 					}
 					img{
 						width: 29px;
-						
+
 					}
 				}
 				.introduction-title{
@@ -137,7 +148,7 @@
 		}
 		.first{
 			a{
-				padding-left: 0px; 
+				padding-left: 0px;
 			}
 		}
 		.last{
@@ -174,8 +185,11 @@ h1.page-header {
 /*HOME
 ***************************************/
 .front{
-	.views-view-grid.cols-3 .row > :nth-child(3){
-		display: block;
+	.views-view-grid.cols-3 > .row > div:nth-child(2){
+		display: none;
+	}
+	.views-view-grid.cols-3 > .row > div:nth-child(3){
+		display: none;
 	}
 	.panels-flexible-region-new-slider{
 		margin-top: 5px !important;
@@ -234,7 +248,12 @@ h1.page-header {
 		}
 		.view-display-id-oshnews_latest{
 			.view-display-id-attachment_1{
-				display: none;
+				.image-wrapper{
+					display: none;
+				}
+				h4 a{
+					font-size: 0.9em!important;
+				}
 			}
 		}
 		.views-item-columns-container{
@@ -347,8 +366,8 @@ h1.page-header {
 	    		}
 	    		.field-name-title-field{
 	    			a{
-	    				font-size: @font-size1 !important;	
-	    			}	
+	    				font-size: @font-size1 !important;
+	    			}
 	    		}
 	    		.tool-of-the-week-label{
 	    			position: absolute;
@@ -399,7 +418,7 @@ h1.page-header {
 						margin-bottom: 0px;
 					}
 				}
-				.field.field-name-field-country, .field-type-language-field, .field-name-field-sector{
+				.field.field-name-field-country, .field-type-language-field, .field-name-field-sector, .field-name-field-sector-category{
 					float: left;
     				clear: both;
     				margin-top: 10px;
@@ -666,7 +685,7 @@ h1.page-header {
 				width: 100% !important;
     			margin: inherit;
 			}
-		}	
+		}
 	}
 	//ADITIONAL RESOURCES
 	.panels-flexible-region-7-add_res-inside{
@@ -729,7 +748,7 @@ h1.page-header {
 		}
 	}
 	//END ADITIONAL RESOURCES
-	
+
 	//accesibility page
 	.accesibility_table{
 		p, tr, td{
@@ -737,7 +756,7 @@ h1.page-header {
 			text-align: center;
 		}
 	}
-	
+
 	//privacy notice
 	iframe{
 		width: 100%;
@@ -801,7 +820,7 @@ h1.page-header {
 			}
 		}
 	}
-	
+
 }
 //contact us
 .page-contact-us{
@@ -940,7 +959,7 @@ h1.page-header {
 /* COUNTRY PROFILE
 ********************************************************************/
 .page-country-profile{
-	
+
 	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first{
 		margin-top: 5px !important;
 		padding-top: 30px;
@@ -967,11 +986,11 @@ h1.page-header {
 				}
 			}
 		}
-		
+
 		.partner-contact-container,
 		.partner-social-container,
 		.partner-colaborators-container{
-			
+
 			min-height: 0px !important;
 			.pane-contact-information-partner,
 			.pane-node-field-social-profile,
@@ -1039,9 +1058,9 @@ h1.page-header {
 					> div{
 						width: 100%;
 					}
-					.partner-contact-container, 
-					.partner-social-container, 
-					.partner-colaborators-container, 
+					.partner-contact-container,
+					.partner-social-container,
+					.partner-colaborators-container,
 					.partner-text2-container{
 						min-height: auto;
 						margin-top: 0px;
@@ -1216,9 +1235,9 @@ h1.page-header {
 			.partner-contact-container,
 			.partner-social-container,
 			.partner-colaborators-container{
-				
+
 				min-height: 0px !important;
-				
+
 				.pane-contact-information-partner,
 				.pane-node-field-social-profile,
 				.pane-node-field-collaborator{
@@ -1248,9 +1267,9 @@ h1.page-header {
 					}
 				}
 			}
-			.partner-contact-container, 
-			.partner-social-container, 
-			.partner-colaborators-container, 
+			.partner-contact-container,
+			.partner-social-container,
+			.partner-colaborators-container,
 			.partner-text2-container{
 				min-height: auto;
 				margin-top: 0px;
@@ -1702,8 +1721,8 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 .page-promotional-resources-search{
 	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last{
     	#oira-promotional-material-search-form {
-    		div:first-child{ 
-    			#edit-content{ 
+    		div:first-child{
+    			#edit-content{
     				.search-page-results-wrapper{
     					.node-promotional-material{
     						padding-bottom: 20px!important;
@@ -1878,9 +1897,9 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	.form-type-date-select .form-type-select[class*=hour] {
 	    margin-left: 0em;
 	}
-	#edit_field_co_author_und_chosen, 
+	#edit_field_co_author_und_chosen,
 	#edit_field_sector_und_chosen,
-	#edit_field_co_author_und__2_chosen, 
+	#edit_field_co_author_und__2_chosen,
 	#edit_field_sector_und__2_chosen {
     	width: 100% !important;
     	min-width: 100px;
@@ -1924,7 +1943,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 	}
 	.row{
 		margin-left: 0px !important;
-		margin-right: 0px !important; 
+		margin-right: 0px !important;
 	}
 
 }
@@ -2022,7 +2041,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 							}
 						}
 					}
-					
+
 				}
 			}
 			.views-submit-button{
@@ -2110,6 +2129,5 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		}
 	}
 }
-
 
 }

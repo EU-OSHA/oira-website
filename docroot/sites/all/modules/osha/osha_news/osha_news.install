@@ -11,42 +11,42 @@ function osha_news_update_7001() {
  * Revert osha_news module - added field_website, changed positions for field_publication_date and body,changed field_image widget type from media browser to image
  */
 function osha_news_update_7002() {
-  features_revert_module('osha_news');
+  //features_revert_module('osha_news');
 }
 
 /**
  * Feature revert: NOW-237
  */
 function osha_news_update_7003() {
-  features_revert_module('osha_news');
+  //features_revert_module('osha_news');
 }
 
 /**
  * Feature revert: NOW-237 - Private zone Edit form updates
  */
 function osha_news_update_7004() {
-  features_revert_module('osha_news');
+  //features_revert_module('osha_news');
 }
 
 /**
  * Feature revert: NOW-237 - Breadcrumb
  */
 function osha_news_update_7005() {
-  features_revert_module('osha_news');
+  //features_revert_module('osha_news');
 }
 
 /**
  * Feature revert: NOW-310 - Private zone news form - summary mandatory field
  */
 function osha_news_update_7006() {
-  features_revert_module('osha_news');
+  //features_revert_module('osha_news');
 }
 
 /**
  * Feature revert.
  */
 function osha_news_update_7007() {
-  features_revert_module('osha_news');
+  //features_revert_module('osha_news');
 }
 
 /**
@@ -89,4 +89,11 @@ function osha_news_update_7012() {
  */
 function osha_news_update_7013() {
   features_revert(array('osha_news' => 'field_instance'));
+}
+
+/**
+ * MDR-2994 synchronisation osha oira website news items.
+ */
+function osha_news_update_7014() {
+  features_revert_module('osha_news');
 }

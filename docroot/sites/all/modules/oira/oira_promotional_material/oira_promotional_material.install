@@ -97,3 +97,10 @@ function oira_promotional_material_update_7013() {
 function oira_promotional_material_update_7014() {
   features_revert_module('oira_promotional_material');
 }
+
+/**
+ * MDR-2410 Promotional Resources - Allow selecting multiple types.
+ */
+function oira_promotional_material_update_7015() {
+  features_revert_module('oira_promotional_material');
+}

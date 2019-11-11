@@ -208,11 +208,11 @@ a.more-link{
 .field.field-name-field-country,
 .field-type-language-field,
 .field-name-field-sector,
+.field-name-field-sector-category,
 .field-name-field-promotional-material-type,
 .field-name-pr-language{
 	display: block;
 	color: @color-text-grey;
-	font-size: 0.em;
 	font-weight: bold;
 	font-style: italic;
 	p{
@@ -227,6 +227,7 @@ a.more-link{
 	.field.field-name-field-country,
 	.field-type-language-field,
 	.field-name-field-sector,
+	.field-name-field-sector-category,
 	.field-name-field-promotional-material-type,
 	.field-name-pr-language{
 		background-color: @color-tags;
@@ -254,7 +255,8 @@ a.more-link{
 }
 .page-search-site{
 	.field-name-pr-language,
-	.field-name-field-sector{
+	.field-name-field-sector,
+	.field-name-field-sector-category{
 		margin-bottom: 20px;
 	}
 }
@@ -755,7 +757,7 @@ a.more-link{
 		}
 		.view-display-id-attachment_1{
 			border-bottom: 2px solid @color-text-purple;
-			padding-bottom: 30px;
+			padding-bottom: 15px;
 			padding-top: 20px;
 			margin-bottom: 20px;
 			.field-name-field-image{
@@ -771,6 +773,7 @@ a.more-link{
 			}
 			.more-link{
 				text-align: left;
+				margin-top: 5px;
 			}
 		}
 		.views-item-columns-container{
@@ -1620,7 +1623,7 @@ a.more-link{
 							}
 						}
 					}
-					#edit-field-country, #edit-field-languagevalue, #edit-field-sector{
+					#edit-field-country, #edit-field-languagevalue, #edit-field-sector, #edit-field-sector-category{
 						label{
 							&:after{
 								content: none;
@@ -1844,7 +1847,7 @@ a.more-link{
 **************************************************************/
 
 .page-faq,
-.page-oira-faqs{ 
+.page-oira-faqs{
 	.panels-flexible-row-new-main-row{
 		.field-name-body{
 			font-size: @font-size1-4;
@@ -2337,12 +2340,13 @@ a.more-link{
 			width: 100%;
 			margin-top: 15px;
 			margin-bottom: 10px;
+			text-align: center;
 			.country-content-count-label{
 				display: inline-block;
 				color: @color-white;
 				text-align: center;
 				border-left: 2px solid @color-white;
-				width: 20%;
+				width: 25%;
 				margin-bottom: 0px;
 				&:last-child{
 					border-right: 2px solid @color-white;
@@ -2374,14 +2378,15 @@ a.more-link{
 			overflow: auto;
 			margin-bottom: 30px;
 			.views-field-field-flag{
-				margin: 30px 30px 0px 30px;
+				margin: 20px 20px 0px 20px;
+				float: left;
 				img{
 					max-height: 67px;
 					min-height: 67px;
 				}
 			}
 			.views-field-name-field{
-				margin: 30px 30px 0px 30px;
+				margin: 20px 20px 0px 20px;
 				h2{
 					font-size: @font-size2;
 					a{
@@ -2389,11 +2394,12 @@ a.more-link{
 						font-family: "Roboto";
 						font-weight: bold;
 						min-height: 70px;
+						font-size: 0.9em;
 					}
 				}
 			}
 			.views-field-country-content-count{
-				margin: 0px 30px 30px 30px;
+				margin: 0px 20px 20px 20px;
 				.form-group{
 					margin-bottom: 0px;
 				}
@@ -2530,7 +2536,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			font-size: 1em;
 			font-weight: normal;
 			font-style: normal;
-			margin-top: 0em;
+			margin-top: 0;
 			margin-right: 0px;
 			margin-bottom: 15px;
 		}
@@ -2714,6 +2720,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		.field.field-name-field-country,
 		.field-type-language-field,
 		.field-name-field-sector,
+		.field-name-field-sector-category,
 		.field-name-field-promotional-material-type,
 		.field-name-pr-language,
 		.field-name-field-strategic-type{
@@ -3166,7 +3173,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		padding-top: 30px;
 		padding-bottom: 30px;
 		.promotional-introduction-item{
-			min-height: 521px;
+			min-height: 527px;
 		}
 		.promotional-introduction-item:nth-child(2), .promotional-introduction-item:nth-child(3){
 			padding-top: 35px;
@@ -4302,7 +4309,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			padding-left: 15px;
 			padding-right: 15px;
 		}
-		
+
 		@media only screen and (max-width: 1199px){
 			.pane-node-share-widget{
 				max-width: 970px;
@@ -4377,7 +4384,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						}
 					}
 				}
-				
+
 				.content-image{
 					margin-top: 45px;
 				    overflow: hidden;
@@ -4421,11 +4428,11 @@ div[id ^= "mini-panel-partner_in_"], {
 	.modal.fade.in{
 		padding-right: 0px !important;
 	}
-	
+
 	.modal.in .modal-dialog{
 		min-width: 900px;
 	}
-	
+
 	@media only screen and (max-width : 991px) {
 		.modal.in .modal-dialog{
 			min-width: 700px;
@@ -4735,7 +4742,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		border-radius: 0px;
 	}
 	select, .chosen-container-single{
-		background: url("../images/icons/down-arrow-inputs.png") no-repeat right #fff;
+		background: url("../images/icons/down-arrow-inputs.png") no-repeat right #ffffff;
 		appearance:none;
 		padding-right: 50px !important;
 		-moz-appearance:none; /* Firefox */
@@ -4879,7 +4886,7 @@ div[id ^= "mini-panel-partner_in_"], {
 				background-color: @color-primary-dark;
 				padding-top: 0px;
 				select, .chosen-container-single{
-					background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #fff;
+					background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #ffffff;
 					appearance:none;
 					padding-right: 50px !important;
 					-moz-appearance:none; /* Firefox */
@@ -5121,7 +5128,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		form{
 			color: white;
 			select, .chosen-container-single{
-				background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #fff;
+				background: url("../images/icons/down-arrow-inputs-blue.png") no-repeat right #ffffff;
 				appearance:none;
 				padding-right: 50px !important;
 				-moz-appearance:none; /* Firefox */
@@ -5208,7 +5215,7 @@ div[id ^= "mini-panel-partner_in_"], {
 
 //collaboration page
 .page-private-zone-collaboration-area{
-	
+
 	.page-promotional-materials-search{
 		.private-zone-back-link, .private-zone-back-wrapper{
 			margin-top: -30px;
@@ -5535,7 +5542,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						border-top: none;
 						margin-left: 0px;
 						margin-right: 0px;
-						padding-top: 0px;	
+						padding-top: 0px;
 					}
 					.node-collaboration-document{
 						h2{
@@ -5585,6 +5592,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						.field.field-name-field-country,
 						.field-type-language-field,
 						.field-name-field-sector,
+						.field-name-field-sector-category,
 						.field-name-field-promotional-material-type,
 						.field-name-pr-language,
 						.field-name-field-strategic-type{
@@ -5725,7 +5733,7 @@ div[id ^= "mini-panel-partner_in_"], {
 							}
 						}
 					}
-					
+
 				}
 				.views-submit-button{
 					display: none;
@@ -5737,7 +5745,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						.sector-filter-list-wrapper{
 		    				.sector-filter-label{
 		    					color: @color-text-purple;
-		    					
+
 		    				}
 		    				ul{
 								display: block;
@@ -5887,7 +5895,7 @@ div[id ^= "mini-panel-partner_in_"], {
 						}
 					}
 				}
-				
+
 			}
 			#edit-submit{
 				display: none;
@@ -5899,7 +5907,7 @@ div[id ^= "mini-panel-partner_in_"], {
 					.sector-filter-list-wrapper{
 	    				.sector-filter-label{
 	    					color: @color-text-purple;
-	    					
+
 	    				}
 	    				ul{
 							display: block;
@@ -6038,5 +6046,201 @@ div[id ^= "mini-panel-partner_in_"], {
 	    }
 	}
 }
+
+//end act as a partner modal
+// eu-cookie-compliance
+#sliding-popup .eu-cookie-compliance-secondary-button,
+#sliding-popup .eu-cookie-compliance-more-button {
+	cursor: pointer;
+	margin-right: 5px;
+	margin-top: 1em;
+	vertical-align: middle;
+	overflow: visible;
+	width: auto;
+	-moz-box-shadow: inset 0 1px 0 0 #ffffff;
+	-webkit-box-shadow: inset 0 1px 0 0 #ffffff;
+	box-shadow: inset 0 1px 0 0 #ffffff;
+	background-color: #ededed;
+	background-image: -moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ededed), color-stop(100%, #dfdfdf));
+	background-image: -webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: -o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: -ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background-image: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	color: #000!important;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	padding: 4px 8px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #ffffff;
+}
+
+#sliding-popup .eu-cookie-compliance-secondary-button:hover,
+#sliding-popup .eu-cookie-compliance-more-button {
+	background-color: #dfdfdf;
+	background-image: -moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #dfdfdf), color-stop(100%, #ededed));
+	background-image: -webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background-image: -o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background-image: -ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background-image: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+}
+
+#sliding-popup .popup-content #popup-text {
+	text-align: center;
+	width: 100%!important;
+	max-width: 100%!important;
+}
+
+#popup-buttons {
+	clear: both;
+	text-align: center;
+	float: left;
+	max-width: 100%!important;
+	font-size: 0.8em;
+}
+
+#popup-buttons button {
+	padding: 1px 5px!important;
+}
+
+#sliding-popup .popup-content #popup-buttons {
+	float: right;
+	margin: 0 0 1em 0;
+	width: 100%;
+	padding: 2px 5px!important;
+}
+
+#sliding-popup .popup-content #popup-text h2 {
+	font-size: 0.9em;
+	padding-top: 1em;
+}
+// end eu-cookie-compliance
+
 /*end act as a partner modal*/
 
+blockquote.image-field-caption {
+    color: #FFFF;
+    z-index: 99;
+    border-left: 0;
+    position: relative;
+    padding: 0;
+    margin:0;
+    p{
+  		z-index: 999;
+	    position: absolute;
+	    width: 100%;
+	    margin: 0;
+	    padding: 0;
+	    margin-top: -25px;
+	    padding-left: 1em;
+	    background: rgba(145,123,162,0.85);
+	    font-size: 1.1rem;
+	    padding-top: 5px;
+	    padding-bottom: 5px;
+    }
+}
+
+
+
+
+body.front .view-slideshow blockquote.image-field-caption p,
+.panels-flexible-region-new-image-inside  blockquote.image-field-caption p{
+	position: absolute;
+    bottom: 0;
+    color: #FFF !important;
+    background: transparent;
+    opacity: 1;
+    z-index: 40;
+    right: 0%;
+    text-shadow: 1px 1px #000;
+    font-size: 1.1rem;
+    border-left: 0;
+    padding: 10px 20px;
+    margin: 0;
+    text-align: right;
+}
+
+
+/* Sector hidden - MDR-2548 */
+
+.country-content-count-sectors .form-group{
+	display: none;
+}
+
+.page-eu-national-partners{
+	.view-id-countries .views-item-columns-container .views-field-country-content-count .field-content{
+		.country-content-count-label:first-child{
+			border:0;
+		}
+		.country-content-count-label:last-child{
+			padding-left: 20px;
+		}
+	}
+	.pane-oira-country-oira-country-count-all .pane-content .country-content-count-label.country-content-count-total_sectors{
+		display: none;
+	}
+}
+
+.page-country-profile{
+	.panels-flexible-row-new-main-row-inside.panels-flexible-row-inside-first .pane-taxonomy-term-country-content-count .field-items{
+		.field-item:first-child{
+			border:0;
+		}
+
+		.field-item:nth-child(3){
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+}
+
+.margin-line{
+	padding-left: 30px;
+    padding-right: 0;
+}
+
+.content-login-view{
+    margin-top: 2em;
+    border-top: 2px solid @color-primary-dark;
+    padding-top: 1em;
+    text-align: right;
+    padding-right: 0;
+
+    a{
+    	color: @color-menu;
+    	font-style: italic;
+    	font-weight: bold;
+    	&:before{
+	        content: "\e033";
+		    margin-right: 8px;
+		    display: inline-block;
+		    font-family: 'Glyphicons Halflings';
+		    font-size: 0.9em;
+		    top: 1px;
+		    position: relative;
+		    color: @color-menu;
+		    font-style: normal;
+		}
+    }
+}
+
+/* MDR-3320 - Change on explanatory text/background info for each tool */
+
+.oira-tools-search-page{
+	.view-mode-teaser{
+		.group-right{
+			.field-name-body{
+				display: none;
+			}
+			.field-name-body.active{
+				display: block;
+			}
+		}
+	}
+}

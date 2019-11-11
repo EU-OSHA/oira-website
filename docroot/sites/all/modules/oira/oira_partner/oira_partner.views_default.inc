@@ -75,6 +75,17 @@ function oira_partner_views_default_views() {
   $handler->display->display_options['fields']['field_sector']['settings'] = array(
     'field_formatter_class' => '',
   );
+  /* Field: Content: Sector */
+  $handler->display->display_options['fields']['field_sector_category']['id'] = 'field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['table'] = 'field_data_field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['field'] = 'field_sector_category';
+  $handler->display->display_options['fields']['field_sector_category']['label'] = '';
+  $handler->display->display_options['fields']['field_sector_category']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sector_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sector_category']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_sector_category']['settings'] = array(
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Publication date */
   $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
   $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';

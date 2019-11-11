@@ -554,13 +554,6 @@ function xmlsitemap_update_7203() {
   _xmlsitemap_sitemap_rehash_all();
 }
 
-function xmlsitemap_update_7204() {
-  // Drop all primary keys.
-  db_drop_primary_key('xmlsitemap');
-  // Add primary keys.
-  db_add_primary_key('xmlsitemap', array('id', 'type', 'language'));
-}
-
 function _xmlsitemap_sitemap_rehash_all() {
   // Reload the schema cache and reprocess all sitemap hashes into smids.
   drupal_load('module', 'xmlsitemap');
@@ -574,4 +567,11 @@ function _xmlsitemap_sitemap_rehash_all() {
       xmlsitemap_sitemap_save($sitemap);
     }
   }
+}
+
+function xmlsitemap_update_7204() {
+  // Drop all primary keys.
+  db_drop_primary_key('xmlsitemap');
+  // Add primary keys.
+  db_add_primary_key('xmlsitemap', array('id', 'type', 'language'));
 }
