@@ -1559,7 +1559,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 			padding-bottom: 20px !important;
 			min-height: 220px !important;
 			.search-page-results-wrapper{
-			    background-color: @color-primary !important;
+			    //background-color: @color-primary !important;
 			    padding: 15px !important;
 			    div[class*="col-sm-"]{
 			    	padding-left: 0px !important;
@@ -1586,7 +1586,7 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 			    		h3{
 			    			font-size: @font-size1 !important;
 			    			font-weight: bold !important;
-			    			margin-top: 0px !important;
+			    			margin-top: 1em !important;
 			    		}
 			    	}
 			    	.field-name-body{
@@ -1697,20 +1697,25 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 					.node-practical-tool {
 						padding-bottom: 20px!important;
 						.field-name-tools-see-more {
-    						margin-left: 0px !important;
-    						a.more-link{
+	  						margin-left: 0px !important;
+	  						display: none;
+  						a.more-link{
 								max-width: 171px;
 							}
-    					}
-    					.related-partners-1 > div{
+  					}
+  					.field-name-field-tool-link{
+  						position: relative !important;
+  					}
+						.related-partners-1 > div {
 							margin-left: 0px !important;
 						}
-    				}
     			}
     		}
     	}
+    }
 	}
 }
+
 /*END OIRA TOOLS*/
 
 /*PROMOTIONAL RESOURCES

@@ -1729,8 +1729,37 @@ a.more-link{
 									border: 1px solid grey;
 								}
 							}
+							.field-type-datetime{
+								.date-display-single{
+									  font-weight: normal;
+									  font-style: italic;
+  									color: #967ea7;
+								}
+							} 
 							.field-name-title-field{
 								font-size: @font-size1-4;
+								h3{
+									&:hover{
+										cursor:pointer;
+										color: @color-primary-dark;
+									}
+									&:after{
+										content: "\f107";
+										font-family: fontawesome;
+										position: absolute;
+										right: 0px;
+									}
+								}
+								&.show-less{
+									h3{		
+										&:after{
+											content: "\f106";
+											font-family: fontawesome;
+											position: absolute;
+											right: 0px;										
+										}	
+									}								
+								}
 							}
 							.group-center.col-md-12{
 								clear: both;
@@ -1759,41 +1788,63 @@ a.more-link{
 							.field-name-field-tool-link{
 								position: absolute;
 								right: 0px;
-								margin-top: 15px;
+								margin-top: 0px;
 								a{
 									color: @color-text-grey;
-									font-weight: bold;
+									font-weight: normal;
+									font-size: 14px;
 									margin-top: 0px;
 									display: block;
 									//margin-bottom: 15px;
 									span.glyphicon-new-window{
 										color: @color-see-more;
-										margin-left: 10px;
+										margin-left: 5px;
 									}
 								}
 							}
 							//partners inside oira tools
 							.field-name-related-partners{
-								margin-top: 50px;
+								margin-top: 2em;
+								display: block;
+								border-top: 1px solid @color-text-purple-darker;
 								.node-partner{
-									background-color: @color-primary-dark;
-									padding: 15px;
-									color: @color-white;
-
+									background-color: @color-white;
+									padding: 2em 0.8em 1em;
+							    display: flex;
+							    justify-content: space-evenly;
+							    flex-wrap: wrap;
+							    align-items: center;
+									//color: @color-white;
 									h4{
-										min-height: 45px;
+										//min-height: 45px;
 										a{
-											font-size: 0.9em;
-											color: @color-white;
+											font-size: 0.8em;
+											color:@color-text-purple-darker;
 											margin-top: 0px;
 										}
 									}
+									.field-name-field-logo{
+										img{
+
+										}
+									}
+									.field-name-node-link{
+										display: none;
+									}
 									.more-link{
-										color: @color-white;
+										//color: @color-white;
 										text-align: left;
+									}
+									.group-left{
+										margin-right: 2rem;
+										border-right: 1px solid @color-primary;
+									}
+									.group-left, .group-right{
+										flex: 1;
 									}
 								}
 							}
+							/*
 							.related-partners-1 > div{
 								margin-left: 222px;
 							}
@@ -1827,6 +1878,7 @@ a.more-link{
 									}
 								}
 							}
+							*/
 						}
 					}
 				}
@@ -6236,10 +6288,17 @@ body.front .view-slideshow blockquote.image-field-caption p,
 	.view-mode-teaser{
 		.group-right{
 			.field-name-body{
-				display: none;
+		    max-height: 0px;
+		    opacity: 0;
+		    -webkit-transition: all 0.8s;
+		    transition: all 0.8s;
+		    overflow: hidden;
 			}
 			.field-name-body.active{
-				display: block;
+				max-height:100rem;
+				opacity: 1;
+				-webkit-transition: all 0.8s;
+				transition: all 0.8s;
 			}
 		}
 	}

@@ -51,6 +51,34 @@
                 });
             });
 
+            if ( $('body')[0].className.indexOf("page-oira-tools") >= 0){
+                
+                $( ".node-teaser.view-mode-teaser" ).each(function( index ) {
+                    var groupRight = $('>.group-right',this );
+                    var link = $('.field-name-field-tool-link', this);
+                    var relatedPartners = $('.field-name-related-partners',this);
+                    var groupRightPartners = $('>.group-right .field-type-text-with-summary',this); 
+                    $('>.group-center',this).remove(); 
+
+                    $(groupRight).prepend(link );
+                    $(groupRightPartners).append(relatedPartners );  
+
+                    $('.field-name-tools-see-more').remove();
+                    $('.field-name-node-link').remove();
+
+                });
+
+                $('.field-name-title-field').on('click', function(e){
+                    $(this).toggleClass('show-less');
+                    // Check if is OiRA Tools page
+                    if ($(".oira-tools-search-page")[0]){
+                       // Toggle class active on body of the link
+                       var parent = $(this).closest(".node-practical-tool");
+                       $(" .field-name-body", parent).toggleClass("active");
+                    }
+                });
+            }
+
         }
     };
 })(jQuery);
