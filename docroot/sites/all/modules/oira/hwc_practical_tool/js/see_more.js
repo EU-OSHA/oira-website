@@ -55,13 +55,22 @@
                 
                 $( ".node-teaser.view-mode-teaser" ).each(function( index ) {
                     var groupRight = $('>.group-right',this );
+                    var bodyTool = $('>.group-right .field-name-body',this );
                     var link = $('.field-name-field-tool-link', this);
                     var relatedPartners = $('.field-name-related-partners',this);
                     var groupRightPartners = $('>.group-right .field-type-text-with-summary',this); 
-                    $('>.group-center',this).remove(); 
+                    var bodyWrapper = '<div class="field-name-body"></div>';
 
-                    $(groupRight).prepend(link );
-                    $(groupRightPartners).append(relatedPartners );  
+
+                    if( bodyTool.text().length > 0 ){
+                        $(groupRight).prepend(link );
+                        $(groupRightPartners).append(relatedPartners);  
+                    }else{
+                        $(groupRight).prepend(link);
+                        $(groupRight).append(bodyWrapper);
+                        $('>.group-right .field-name-body',this ).append(relatedPartners); 
+                    }
+                    $('>.group-center',this).remove(); 
 
                     $('.field-name-tools-see-more').remove();
                     $('.field-name-node-link').remove();
