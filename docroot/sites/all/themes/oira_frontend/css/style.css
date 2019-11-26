@@ -13120,6 +13120,122 @@ body.front .view-slideshow blockquote.image-field-caption p,
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
 }
+/* MDR-2846 - DEV - Mock-up - changes on EU-OSHA documents page (OiRA private area) */
+.eu-gallery .panels-flexible-row {
+  padding-bottom: 10px;
+}
+.eu-gallery .panels-flexible-region-last {
+  background: #765e84;
+  padding: 0;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li {
+  float: left;
+  padding: 15px 40px;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li .introduction-image img {
+  display: none;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li a {
+  color: #FFF;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li.active {
+  background: #dfd8e4;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li.active a {
+  color: #786586;
+}
+.eu-gallery .pane-private-images h2 {
+  padding-bottom: 1em;
+}
+.eu-gallery .view-private-images {
+  background: #FFF;
+}
+.eu-o-f-m .panels-flexible-row {
+  padding-bottom: 10px;
+}
+.eu-o-f-m .panels-flexible-region-last {
+  background: #765e84;
+  padding: 0;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li {
+  float: left;
+  padding: 15px 40px;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li .introduction-image img {
+  display: none;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li a {
+  color: #FFF;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li.active {
+  background: #dfd8e4;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li.active a {
+  color: #786586;
+}
+.eu-o-f-m .oira-search-form-container {
+  background: transparent;
+}
+.eu-o-f-m .bm-content-panel {
+  background: #dfd8e4;
+  padding-bottom: 3em;
+}
+.eu-o-f-m .bm-content-panel .panels-flexible-region-last {
+  background: #dfd8e4;
+}
+.eu-o-f-m .pane-eu-osha-files {
+  background: #dfd8e4;
+}
+.eu-o-f-m .pane-eu-osha-files h2 {
+  color: #786586;
+  padding-bottom: 0px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #786586;
+  padding-bottom: 20px;
+}
+.eu-o-f-m .pane-eu-osha-files .view-header {
+  border: none;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  border-top: 2px solid #786586;
+  border-bottom: 2px solid #786586;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background: #dfd8e4;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+  text-align: right;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content {
+  padding: 1em 2em 2em 2em;
+  background: #FFF;
+  margin-top: 2em;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-field-title {
+  padding-bottom: 10px;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-field-title a {
+  color: #58585a;
+  font-family: 'Oswald';
+  font-size: 2em;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-row {
+  border-top: 2px solid #786586;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-row-first {
+  border-top: 0;
+  padding-top: 0;
+}
+.view-promotional-materials-type .view-content .views-view-grid .row {
+  display: flex;
+  flex-wrap: wrap;
+}
 /*FOOTER
 ********************************************/
 .site-footer {

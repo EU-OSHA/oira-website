@@ -5,6 +5,9 @@ jQuery(document).ready(function () {
 //         jQuery("label[for='edit-field-languagevalue']").addClass("area-shown");
 //     };
 //
+	
+	jQuery( "#block-system-main > div > div > .bm-content-panel > div > div > div > div > h2" ).insertBefore( jQuery( "#block-system-main > div > div > .bm-content-panel > div > div > div > div > div > div > div.view-content article.views-row-first" ).once() );
+	jQuery( "#block-system-main > div > div > .bm-content-panel-gallery > div > div > div > div > h2" ).insertBefore( jQuery( "#block-system-main > div > div > .bm-content-panel-gallery > div > div > div > div > div > div > div.view-content article.views-row-first" ).once() );
 
 	jQuery('.trim-title').not('[data-partner-nid="91"] .trim-title').dotdotdot({
 		ellipsis: '...',
