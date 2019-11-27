@@ -51,6 +51,43 @@
                 });
             });
 
+            if ( $('body')[0].className.indexOf("page-oira-tools") >= 0){
+                
+                $( ".node-teaser.view-mode-teaser" ).each(function( index ) {
+                    var groupRight = $('>.group-right',this );
+                    var bodyTool = $('>.group-right .field-name-body',this );
+                    var link = $('.field-name-field-tool-link', this);
+                    var relatedPartners = $('.field-name-related-partners',this);
+                    var groupRightPartners = $('>.group-right .field-type-text-with-summary',this); 
+                    var bodyWrapper = '<div class="field-name-body"></div>';
+
+
+                    if( bodyTool.text().length > 0 ){
+                        $(groupRight).prepend(link );
+                        $(groupRightPartners).append(relatedPartners);  
+                    }else{
+                        $(groupRight).prepend(link);
+                        $(groupRight).append(bodyWrapper);
+                        $('>.group-right .field-name-body',this ).append(relatedPartners); 
+                    }
+                    $('>.group-center',this).remove(); 
+
+                    $('.field-name-tools-see-more').remove();
+                    $('.field-name-node-link').remove();
+
+                });
+
+                $('.field-name-title-field').on('click', function(e){
+                    $(this).toggleClass('show-less');
+                    // Check if is OiRA Tools page
+                    if ($(".oira-tools-search-page")[0]){
+                       // Toggle class active on body of the link
+                       var parent = $(this).closest(".node-practical-tool");
+                       $(" .field-name-body", parent).toggleClass("active");
+                    }
+                });
+            }
+
         }
     };
 })(jQuery);

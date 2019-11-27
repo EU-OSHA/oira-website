@@ -8486,6 +8486,41 @@ a.more-link:before {
   padding: 30px 0px;
   margin-right: 0px;
   margin-left: 0px;
+  /*
+							.related-partners-1 > div{
+								margin-left: 222px;
+							}
+							.related-partners-2{
+								.node-partner{
+									margin-left: 0px;
+								}
+							}
+							.related-partners-2 > div{
+								display: table;
+								border-collapse: collapse;
+								.group-left {
+									a{
+										img{
+											width: auto;
+											height: 100px;
+										}
+									}
+								}
+								& > .even, & > .odd{
+									&:first-child{
+										display: table-cell;
+									}
+								}
+								& > .even:first-child{
+									//border-right: 10px solid white;
+									width: 50%;
+									.node-partner{
+										margin-right: 10px;
+										margin-left: 0px;
+									}
+								}
+							}
+							*/
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 {
   padding-left: 0px;
@@ -8493,8 +8528,29 @@ a.more-link:before {
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .col-sm-3 img {
   border: 1px solid grey;
 }
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-type-datetime .date-display-single {
+  font-weight: normal;
+  font-style: italic;
+  color: #967ea7;
+}
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field {
   font-size: 1.4em;
+}
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field h3:hover {
+  cursor: pointer;
+  color: #786586;
+}
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field h3:after {
+  content: "\f107";
+  font-family: fontawesome;
+  position: absolute;
+  right: 0px;
+}
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field.show-less h3:after {
+  content: "\f106";
+  font-family: fontawesome;
+  position: absolute;
+  right: 0px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .group-center.col-md-12 {
   clear: both;
@@ -8523,62 +8579,50 @@ a.more-link:before {
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link {
   position: absolute;
   right: 0px;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a {
   color: #58585a;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 14px;
   margin-top: 0px;
   display: block;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link a span.glyphicon-new-window {
   color: #10b2e4;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners {
-  margin-top: 50px;
+  margin-top: 2em;
+  display: block;
+  border-top: 1px solid #786586;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner {
-  background-color: #786586;
-  padding: 15px;
-  color: #ffffff;
-}
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 {
-  min-height: 45px;
+  background-color: #ffffff;
+  padding: 2em 0.8em 1em;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner h4 a {
-  font-size: 0.9em;
-  color: #ffffff;
+  font-size: 0.8em;
+  color: #786586;
   margin-top: 0px;
 }
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .field-name-node-link {
+  display: none;
+}
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .more-link {
-  color: #ffffff;
   text-align: left;
 }
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
-  margin-left: 222px;
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .group-left {
+  margin-right: 2rem;
+  border-right: 1px solid #dfd8e4;
 }
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 .node-partner {
-  margin-left: 0px;
-}
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div {
-  display: table;
-  border-collapse: collapse;
-}
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div .group-left a img {
-  width: auto;
-  height: 100px;
-}
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child,
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .odd:first-child {
-  display: table-cell;
-}
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child {
-  width: 50%;
-}
-.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-2 > div > .even:first-child .node-partner {
-  margin-right: 10px;
-  margin-left: 0px;
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .group-left,
+.page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-related-partners .node-partner .group-right {
+  flex: 1;
 }
 .page-oira-tools .panels-flexible-row-first {
   background: none !important;
@@ -11260,6 +11304,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-91 .panels-flexible-row-new-1 {
   padding-bottom: 0px;
 }
+.node-type-partner .panels-flexible-row-new-main-row .field-name-field-logo .field-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 105px;
+}
 .page-private-zone .toogle-content-switcher,
 .page-node-add .toogle-content-switcher,
 .page-node-update-profile .toogle-content-switcher,
@@ -13064,10 +13114,133 @@ body.front .view-slideshow blockquote.image-field-caption p,
 }
 /* MDR-3320 - Change on explanatory text/background info for each tool */
 .oira-tools-search-page .view-mode-teaser .group-right .field-name-body {
-  display: none;
+  max-height: 0px;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  overflow: hidden;
 }
 .oira-tools-search-page .view-mode-teaser .group-right .field-name-body.active {
-  display: block;
+  max-height: 100rem;
+  opacity: 1;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+/* MDR-2846 - DEV - Mock-up - changes on EU-OSHA documents page (OiRA private area) */
+.eu-gallery .panels-flexible-row {
+  padding-bottom: 10px;
+}
+.eu-gallery .panels-flexible-region-last {
+  background: #765e84;
+  padding: 0;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li {
+  float: left;
+  padding: 15px 40px;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li .introduction-image img {
+  display: none;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li a {
+  color: #FFF;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li.active {
+  background: #dfd8e4;
+}
+.eu-gallery .panels-flexible-region-last .pane-block ul.menu.nav li.active a {
+  color: #786586;
+}
+.eu-gallery .pane-private-images h2 {
+  padding-bottom: 1em;
+}
+.eu-gallery .view-private-images {
+  background: #FFF;
+}
+.eu-o-f-m .panels-flexible-row {
+  padding-bottom: 10px;
+}
+.eu-o-f-m .panels-flexible-region-last {
+  background: #765e84;
+  padding: 0;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li {
+  float: left;
+  padding: 15px 40px;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li .introduction-image img {
+  display: none;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li a {
+  color: #FFF;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li.active {
+  background: #dfd8e4;
+}
+.eu-o-f-m .panels-flexible-region-last .pane-block ul.menu.nav li.active a {
+  color: #786586;
+}
+.eu-o-f-m .oira-search-form-container {
+  background: transparent;
+}
+.eu-o-f-m .bm-content-panel {
+  background: #dfd8e4;
+  padding-bottom: 3em;
+}
+.eu-o-f-m .bm-content-panel .panels-flexible-region-last {
+  background: #dfd8e4;
+}
+.eu-o-f-m .pane-eu-osha-files {
+  background: #dfd8e4;
+}
+.eu-o-f-m .pane-eu-osha-files h2 {
+  color: #786586;
+  padding-bottom: 0px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #786586;
+  padding-bottom: 20px;
+}
+.eu-o-f-m .pane-eu-osha-files .view-header {
+  border: none;
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  border-top: 2px solid #786586;
+  border-bottom: 2px solid #786586;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background: #dfd8e4;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+  text-align: right;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content {
+  padding: 1em 2em 2em 2em;
+  background: #FFF;
+  margin-top: 2em;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-field-title {
+  padding-bottom: 10px;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-field-title a {
+  color: #58585a;
+  font-family: 'Oswald';
+  font-size: 2em;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-row {
+  border-top: 2px solid #786586;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+.eu-o-f-m .pane-eu-osha-files .view-content .views-row-first {
+  border-top: 0;
+  padding-top: 0;
+}
+.view-promotional-materials-type .view-content .views-view-grid .row {
+  display: flex;
+  flex-wrap: wrap;
 }
 /*FOOTER
 ********************************************/
@@ -13171,9 +13344,10 @@ body.front .view-slideshow blockquote.image-field-caption p,
 **************************************/
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
     margin-left: 170px !important;
+    display: none;
   }
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
-    margin-left: 184px !important;
+    margin-left: 0 !important;
   }
   /*END OIRA TOOLS*/
   /*PROMOTIONAL RESOURCES
@@ -13813,7 +13987,8 @@ body.front .view-slideshow blockquote.image-field-caption p,
   .page-search-site .oira-search-form-container #edit-left-column,
   .page-private-zone-collaboration-area .oira-search-form-container #edit-left-column {
     position: absolute !important;
-    z-index: 1;
+    z-index: 99999;
+    width: 100%;
     padding-left: 30px;
     margin-left: 15px;
     margin-top: 20px;
@@ -13997,10 +14172,10 @@ body.front .view-slideshow blockquote.image-field-caption p,
     display: block !important;
   }
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
-    margin-left: 180px !important;
+    display: none;
   }
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
-    margin-left: 195px !important;
+    margin-left: 0 !important;
   }
   /*END OIRA TOOLS*/
   /*PROMOTIONAL RESOURCES
@@ -16106,7 +16281,6 @@ body.front .view-slideshow blockquote.image-field-caption p,
   .page-oira-tools .oira-search-form-container #edit-content .search-page-results-wrapper,
   .page-promotional-resources-search .oira-search-form-container #edit-content .search-page-results-wrapper,
   .page-search-site .oira-search-form-container #edit-content .search-page-results-wrapper {
-    background-color: #dfd8e4 !important;
     padding: 15px !important;
   }
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .search-page-results-wrapper div[class*="col-sm-"],
@@ -16221,7 +16395,7 @@ body.front .view-slideshow blockquote.image-field-caption p,
   .page-search-site .oira-search-form-container #edit-content .search-page-results-wrapper .group-right .field-name-title-field h3 {
     font-size: 1em !important;
     font-weight: bold !important;
-    margin-top: 0px !important;
+    margin-top: 1em !important;
   }
   .page-oira-tools .panels-flexible-row-new-1 #edit-content .search-page-results-wrapper .group-right .field-name-body .details,
   .page-promotional-resources-search .panels-flexible-row-new-1 #edit-content .search-page-results-wrapper .group-right .field-name-body .details,
@@ -16568,9 +16742,13 @@ body.front .view-slideshow blockquote.image-field-caption p,
   }
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more {
     margin-left: 0px !important;
+    display: none;
   }
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-tools-see-more a.more-link {
     max-width: 171px;
+  }
+  .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-field-tool-link {
+    position: relative !important;
   }
   .page-oira-tools #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .related-partners-1 > div {
     margin-left: 0px !important;
@@ -16942,5 +17120,31 @@ body.front .view-slideshow blockquote.image-field-caption p,
   .page-search-site .field-name-pr-language {
     width: 100%;
     margin-bottom: 5px;
+  }
+  .page-oira-tools .search-page-results-wrapper .node-practical-tool {
+    margin-bottom: 2em;
+    background: rgba(223, 216, 228, 0.2);
+    padding: 1em !important;
+    border-top: none !important;
+    border-bottom: 2px solid #786586;
+    border-radius: 12px;
+  }
+  .page-oira-tools .search-page-results-wrapper .group-left.col-sm-3 {
+    width: 100% !important;
+    margin-right: 1em !important;
+    margin-bottom: 1em !important;
+  }
+  .page-oira-tools .search-page-results-wrapper .group-left.col-sm-3 img {
+    margin: auto;
+  }
+  .page-oira-tools .search-page-results-wrapper .field-name-related-partners .node-partner {
+    flex-direction: column;
+  }
+  .page-oira-tools .search-page-results-wrapper .field-name-related-partners .node-partner .group-left {
+    border: 0 !important;
+  }
+  .page-oira-tools .search-page-results-wrapper .field-name-related-partners .node-partner .group-right {
+    padding: 0 1em;
+    text-align: center;
   }
 }
