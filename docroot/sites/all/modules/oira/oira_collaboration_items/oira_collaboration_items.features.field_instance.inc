@@ -304,7 +304,7 @@ function oira_collaboration_items_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -526,8 +526,8 @@ function oira_collaboration_items_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-collaboration_document-field_strategic_type'.
-  $field_instances['node-collaboration_document-field_strategic_type'] = array(
+  // 'node-collaboration_document-field_strategic_type_2'.
+  $field_instances['node-collaboration_document-field_strategic_type_2'] = array(
     'bundle' => 'collaboration_document',
     'default_value' => NULL,
     'deleted' => 0,
@@ -546,7 +546,7 @@ function oira_collaboration_items_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'list_default',
-        'weight' => 8,
+        'weight' => 10,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -574,15 +574,14 @@ function oira_collaboration_items_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_strategic_type',
+    'field_name' => 'field_strategic_type_2',
     'label' => 'Type',
-    'required' => 0,
+    'required' => FALSE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
@@ -590,7 +589,6 @@ function oira_collaboration_items_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 7,
     ),
-    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-collaboration_document-title_field'.
@@ -656,7 +654,7 @@ function oira_collaboration_items_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
