@@ -11304,6 +11304,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-91 .panels-flexible-row-new-1 {
   padding-bottom: 0px;
 }
+.node-type-partner .panels-flexible-row-new-main-row .field-name-field-logo .field-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 105px;
+}
 .page-private-zone .toogle-content-switcher,
 .page-node-add .toogle-content-switcher,
 .page-node-update-profile .toogle-content-switcher,
