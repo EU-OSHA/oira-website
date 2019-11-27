@@ -6,9 +6,9 @@ jQuery(document).ready(function () {
 //     };
 //
 	
-	jQuery( "#block-system-main > div > div > .bm-content-panel > div > div > div > div > h2" ).insertBefore( jQuery( "#block-system-main > div > div > .bm-content-panel > div > div > div > div > div > div > div.view-content article.views-row-first" ).once() );
-	jQuery( "#block-system-main > div > div > .bm-content-panel-gallery > div > div > div > div > h2" ).insertBefore( jQuery( "#block-system-main > div > div > .bm-content-panel-gallery > div > div > div > div > div > div > div.view-content article.views-row-first" ).once() );
-
+	jQuery( "#block-system-main .bm-content-panel h2" ).insertBefore( jQuery( "#block-system-main .bm-content-panel div.view-content article.views-row-first" ) );
+	jQuery( "#block-system-main .bm-content-panel-gallery h2" ).insertBefore( jQuery( "#block-system-main .bm-content-panel-gallery  div.view-content article.views-row-first" ) );
+	
 	jQuery('.trim-title').not('[data-partner-nid="91"] .trim-title').dotdotdot({
 		ellipsis: '...',
 		height: 45,
