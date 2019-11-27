@@ -185,5 +185,33 @@ function oira_collaboration_items_field_default_field_bases() {
     'type' => 'language_field',
   );
 
+  // Exported field_base: 'field_strategic_type_2'.
+  $field_bases['field_strategic_type_2'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_strategic_type_2',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'visual' => 'Visual materials',
+        'document' => 'Documents',
+        'meeting' => 'Meeting Documents/PPT',
+        'audiovisual' => 'Audiovisual materials',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   return $field_bases;
 }

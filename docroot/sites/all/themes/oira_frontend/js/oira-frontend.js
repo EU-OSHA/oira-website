@@ -5,7 +5,10 @@ jQuery(document).ready(function () {
 //         jQuery("label[for='edit-field-languagevalue']").addClass("area-shown");
 //     };
 //
-
+	/*Move h2 title position in EU-OSHA Files MDR-2846*/
+	jQuery( "#block-system-main .bm-content-panel h2" ).insertBefore( jQuery( "#block-system-main .bm-content-panel div.view-content article.views-row-first" ) );
+	jQuery( "#block-system-main .bm-content-panel-gallery h2" ).insertBefore( jQuery( "#block-system-main .bm-content-panel-gallery  div.view-content article.views-row-first" ) );
+	
 	jQuery('.trim-title').not('[data-partner-nid="91"] .trim-title').dotdotdot({
 		ellipsis: '...',
 		height: 45,

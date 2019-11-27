@@ -11,6 +11,187 @@ function oira_strategic_documentation_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'eu_osha_files';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'EU-OSHA Files';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Background documents';
+  $handler->display->display_options['css_class'] = 'eu-osha-files-view';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['empty'] = TRUE;
+  $handler->display->display_options['header']['result']['content'] = 'Showing @start - @end from @total';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Collaboration items */
+  $handler->display->display_options['fields']['field_collaboration_items']['id'] = 'field_collaboration_items';
+  $handler->display->display_options['fields']['field_collaboration_items']['table'] = 'field_data_field_collaboration_items';
+  $handler->display->display_options['fields']['field_collaboration_items']['field'] = 'field_collaboration_items';
+  $handler->display->display_options['fields']['field_collaboration_items']['label'] = '';
+  $handler->display->display_options['fields']['field_collaboration_items']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_collaboration_items']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_collaboration_items']['settings'] = array(
+    'view_mode' => 'full',
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_collaboration_items']['delta_offset'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'collaboration_document' => 'collaboration_document',
+  );
+
+  /* Display: Background documents */
+  $handler = $view->new_display('block', 'Background documents', 'eu_osha_files_background_documents');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'collaboration_document' => 'collaboration_document',
+  );
+  /* Filter criterion: Content: Type (field_strategic_type_2) */
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['id'] = 'field_strategic_type_2_value';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['table'] = 'field_data_field_strategic_type_2';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['field'] = 'field_strategic_type_2_value';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['value'] = array(
+    'document' => 'document',
+  );
+
+  /* Display: Meeting documents */
+  $handler = $view->new_display('block', 'Meeting documents', 'eu_osha_files_meeting_documents');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Meeting documents/PPTs';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'collaboration_document' => 'collaboration_document',
+  );
+  /* Filter criterion: Content: Type (field_strategic_type_2) */
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['id'] = 'field_strategic_type_2_value';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['table'] = 'field_data_field_strategic_type_2';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['field'] = 'field_strategic_type_2_value';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['value'] = array(
+    'meeting' => 'meeting',
+  );
+
+  /* Display: Audiovisual materials */
+  $handler = $view->new_display('block', 'Audiovisual materials', 'eu_osha_files_audiovisual_materials');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Audiovisual materials';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'collaboration_document' => 'collaboration_document',
+  );
+  /* Filter criterion: Content: Type (field_strategic_type_2) */
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['id'] = 'field_strategic_type_2_value';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['table'] = 'field_data_field_strategic_type_2';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['field'] = 'field_strategic_type_2_value';
+  $handler->display->display_options['filters']['field_strategic_type_2_value']['value'] = array(
+    'audiovisual' => 'audiovisual',
+  );
+  $translatables['eu_osha_files'] = array(
+    t('Master'),
+    t('Background documents'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Showing @start - @end from @total'),
+    t('Meeting documents'),
+    t('Meeting documents/PPTs'),
+    t('Audiovisual materials'),
+  );
+  $export['eu_osha_files'] = $view;
+
+  $view = new view();
   $view->name = 'strategic_documentation_admin';
   $view->description = '';
   $view->tag = 'default';
@@ -136,7 +317,7 @@ function oira_strategic_documentation_views_default_views() {
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
   $handler->display->display_options['fields']['section']['label'] = 'Partner (Author/Partner)';
-  /* Field: Content: Sector */
+  /* Field: Field: Sector */
   $handler->display->display_options['fields']['field_multiple_sector']['id'] = 'field_multiple_sector';
   $handler->display->display_options['fields']['field_multiple_sector']['table'] = 'field_data_field_multiple_sector';
   $handler->display->display_options['fields']['field_multiple_sector']['field'] = 'field_multiple_sector';
@@ -510,7 +691,7 @@ function oira_strategic_documentation_views_default_views() {
     3 => array(),
   );
   $handler->display->display_options['filters']['field_strategic_type_value_1']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Content: Sector (field_multiple_sector) */
+  /* Filter criterion: Field: Sector (field_multiple_sector) */
   $handler->display->display_options['filters']['field_multiple_sector_tid']['id'] = 'field_multiple_sector_tid';
   $handler->display->display_options['filters']['field_multiple_sector_tid']['table'] = 'field_data_field_multiple_sector';
   $handler->display->display_options['filters']['field_multiple_sector_tid']['field'] = 'field_multiple_sector_tid';
