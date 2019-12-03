@@ -8542,15 +8542,21 @@ a.more-link:before {
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field h3:after {
   content: "\f107";
-  font-family: fontawesome;
   position: absolute;
   right: 0px;
+  margin-top: 6px;
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  font-size: 1.7rem;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .field-name-title-field.show-less h3:after {
   content: "\f106";
-  font-family: fontawesome;
   position: absolute;
   right: 0px;
+  margin-top: 6px;
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  font-size: 1.7rem;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-content .search-page-results-wrapper .node-practical-tool .group-center.col-md-12 {
   clear: both;
