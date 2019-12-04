@@ -22,7 +22,7 @@ function oira_private_image_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Private images';
+  $handler->display->display_options['title'] = 'Image Gallery';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -102,39 +102,12 @@ function oira_private_image_views_default_views() {
     'private_album' => 'private_album',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Sector (field_multiple_sector) */
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['id'] = 'field_multiple_sector_tid';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['table'] = 'field_data_field_multiple_sector';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['field'] = 'field_multiple_sector_tid';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator_id'] = 'field_multiple_sector_tid_op';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['label'] = 'Sector';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['operator'] = 'field_multiple_sector_tid_op';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['identifier'] = 'field_multiple_sector_tid';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-    8 => 0,
-    9 => 0,
-    10 => 0,
-    11 => 0,
-    12 => 0,
-    14 => 0,
-    13 => 0,
-  );
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_multiple_sector_tid']['vocabulary'] = 'sector';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $translatables['private_images'] = array(
     t('Master'),
-    t('Private images'),
+    t('Image Gallery'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -150,7 +123,6 @@ function oira_private_image_views_default_views() {
     t('last »'),
     t('No results'),
     t('<p class="text-muted text-center">No results</p>'),
-    t('Sector'),
     t('Block'),
   );
   $export['private_images'] = $view;

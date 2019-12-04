@@ -650,7 +650,8 @@ div[id ^= "mini-panel-partner_in_"]{
 		}
     	#edit-left-column{
 			position: absolute !important;
-			z-index: 1;
+			z-index: 99999;
+			width: 100%;
 			padding-left: 30px;
 			margin-left: 15px;
 			margin-top: 20px;
@@ -733,10 +734,11 @@ div[id ^= "mini-panel-partner_in_"]{
 				.search-page-results-wrapper {
 					.node-practical-tool {
 						.field-name-tools-see-more {
-    						margin-left: 180px !important;
+    						//margin-left: 180px !important;
+    						display: none;
     					}
     					.related-partners-1 > div{
-							margin-left: 195px !important;
+							margin-left:0 !important;
 						}
     				}
     			}

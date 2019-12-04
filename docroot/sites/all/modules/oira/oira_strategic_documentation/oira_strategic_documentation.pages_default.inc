@@ -172,7 +172,7 @@ Collaboration area
     ),
   );
   $display->cache = array();
-  $display->title = 'Collaboration area';
+  $display->title = 'EU-OSHA Files';
   $display->uuid = 'eee1a97d-d0a3-4ef0-8501-cbacda3efc96';
   $display->storage_type = '';
   $display->storage_id = '';
@@ -766,7 +766,7 @@ Update Strategic Documentation',
   $page->api_version = 1;
   $page->name = 'eu_osha_documents';
   $page->task = 'page';
-  $page->admin_title = 'EU-OSHA documents';
+  $page->admin_title = 'EU-OSHA Files';
   $page->admin_description = '';
   $page->path = 'private-zone/collaboration-area/eu-osha-documents';
   $page->access = array(
@@ -808,7 +808,7 @@ Update Strategic Documentation',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page eu-osha-doc-page-selector',
+    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page eu-osha-doc-page-selector eu-o-f-m',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -856,7 +856,7 @@ EU-OSHA documents',
           0 => 'center',
         ),
         'parent' => 'main',
-        'class' => 'oira-search-form-container',
+        'class' => 'oira-search-form-container bm-content-panel',
         'hide_empty' => 0,
       ),
       'center' => array(
@@ -898,20 +898,32 @@ EU-OSHA documents',
     ),
   );
   $display->cache = array();
-  $display->title = 'EU-OSHA Documents';
+  $display->title = 'EU-OSHA Files';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->storage_type = '';
   $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
+  $pane->pid = 'new-2d8d005c-8713-445e-ad33-1b310527c416';
   $pane->panel = 'center';
-  $pane->type = 'block';
-  $pane->subtype = 'oira_collaboration_items-oira_collaboration_items';
+  $pane->type = 'views';
+  $pane->subtype = 'eu_osha_files';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '10',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'eu_osha_files_background_documents',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -924,9 +936,35 @@ EU-OSHA documents',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '9e4be591-440a-4380-858c-0b83d6b861b4';
-  $display->content['new-9e4be591-440a-4380-858c-0b83d6b861b4'] = $pane;
-  $display->panels['center'][0] = 'new-9e4be591-440a-4380-858c-0b83d6b861b4';
+  $pane->uuid = '2d8d005c-8713-445e-ad33-1b310527c416';
+  $display->content['new-2d8d005c-8713-445e-ad33-1b310527c416'] = $pane;
+  $display->panels['center'][0] = 'new-2d8d005c-8713-445e-ad33-1b310527c416';
+  $pane = new stdClass();
+  $pane->pid = 'new-b5f9384d-c064-40d6-a05c-f1131ef9050c';
+  $pane->panel = 'menu';
+  $pane->type = 'block';
+  $pane->subtype = 'menu_block-7';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b5f9384d-c064-40d6-a05c-f1131ef9050c';
+  $display->content['new-b5f9384d-c064-40d6-a05c-f1131ef9050c'] = $pane;
+  $display->panels['menu'][0] = 'new-b5f9384d-c064-40d6-a05c-f1131ef9050c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -980,7 +1018,7 @@ EU-OSHA documents',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page partner-doc-page-selector',
+    'body_classes_to_add' => 'page-oira-strategic-documentation oira-strategic-documentation-search-page private-zone-page partner-doc-page-selector eu-o-f-m',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -1028,7 +1066,7 @@ Partners documents',
           0 => 'center',
         ),
         'parent' => 'main',
-        'class' => 'oira-search-form-container',
+        'class' => 'oira-search-form-container bm-content-panel',
         'hide_empty' => 0,
       ),
       'center' => array(
@@ -1037,7 +1075,7 @@ Partners documents',
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'container',
+        'class' => 'container content-panel-document',
         'hide_empty' => 0,
       ),
       1 => array(
@@ -1068,22 +1106,37 @@ Partners documents',
       'introduction' => NULL,
       'menu' => NULL,
     ),
+    'center' => array(
+      'style' => '-1',
+    ),
   );
   $display->cache = array();
-  $display->title = 'Partners documents';
+  $display->title = 'EU-OSHA Files';
   $display->uuid = '0755c09e-1eb8-4423-856e-26eec25573a4';
   $display->storage_type = '';
   $display->storage_id = '';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+  $pane->pid = 'new-8019e6a6-3700-4c27-b372-b006956b07bc';
   $pane->panel = 'center';
-  $pane->type = 'block';
-  $pane->subtype = 'oira_strategic_documentation-oira_strategic_docs_partners';
+  $pane->type = 'views';
+  $pane->subtype = 'eu_osha_files';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 1,
+    'nodes_per_page' => '10',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '',
+    'url' => '',
+    'display' => 'eu_osha_files_meeting_documents',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -1096,9 +1149,35 @@ Partners documents',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
-  $display->content['new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed'] = $pane;
-  $display->panels['center'][0] = 'new-8a6c4a41-fdde-4e5c-8d58-8fafe9d8b3ed';
+  $pane->uuid = '8019e6a6-3700-4c27-b372-b006956b07bc';
+  $display->content['new-8019e6a6-3700-4c27-b372-b006956b07bc'] = $pane;
+  $display->panels['center'][0] = 'new-8019e6a6-3700-4c27-b372-b006956b07bc';
+  $pane = new stdClass();
+  $pane->pid = 'new-76ed9cee-dd6e-47b3-82e0-ed4f5a637213';
+  $pane->panel = 'menu';
+  $pane->type = 'block';
+  $pane->subtype = 'menu_block-7';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '76ed9cee-dd6e-47b3-82e0-ed4f5a637213';
+  $display->content['new-76ed9cee-dd6e-47b3-82e0-ed4f5a637213'] = $pane;
+  $display->panels['menu'][0] = 'new-76ed9cee-dd6e-47b3-82e0-ed4f5a637213';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

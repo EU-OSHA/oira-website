@@ -55,7 +55,7 @@ function oira_private_image_default_page_manager_pages() {
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'private-zone-page private-images-page-selector',
+    'body_classes_to_add' => 'private-zone-page private-images-page-selector eu-gallery',
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
@@ -103,7 +103,7 @@ Image gallery',
           0 => 'center',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'bm-content-panel-gallery',
         'hide_empty' => 0,
       ),
       'center' => array(
@@ -144,7 +144,7 @@ Image gallery',
     ),
   );
   $display->cache = array();
-  $display->title = 'Image Gallery';
+  $display->title = 'EU-OSHA Files';
   $display->uuid = 'e951151e-06c4-4692-80ac-906e2fca83b1';
   $display->storage_type = '';
   $display->storage_id = '';
@@ -170,7 +170,7 @@ Image gallery',
     'args' => '',
     'url' => '',
     'display' => 'block_1',
-    'override_title' => 1,
+    'override_title' => 0,
     'override_title_text' => '<none>',
     'override_title_heading' => 'h2',
   );
@@ -185,6 +185,32 @@ Image gallery',
   $pane->uuid = 'a6cdb474-e374-447d-80e3-8b2897a3ff0f';
   $display->content['new-a6cdb474-e374-447d-80e3-8b2897a3ff0f'] = $pane;
   $display->panels['center'][0] = 'new-a6cdb474-e374-447d-80e3-8b2897a3ff0f';
+  $pane = new stdClass();
+  $pane->pid = 'new-b9e0636d-c402-4275-b586-9663f6023d9c';
+  $pane->panel = 'menu';
+  $pane->type = 'block';
+  $pane->subtype = 'menu_block-7';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'container',
+  );
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b9e0636d-c402-4275-b586-9663f6023d9c';
+  $display->content['new-b9e0636d-c402-4275-b586-9663f6023d9c'] = $pane;
+  $display->panels['menu'][0] = 'new-b9e0636d-c402-4275-b586-9663f6023d9c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
