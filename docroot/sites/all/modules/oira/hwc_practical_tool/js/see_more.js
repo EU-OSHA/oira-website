@@ -4,6 +4,10 @@
             $('.tools-see-more').once('tools_see_more', function() {
                 var expander = Drupal.settings.tools_expander;
                 var key = $(this).attr('data-nid');
+                // Check if is OiRA Tools page
+                if ($(".oira-tools-search-page")[0]){
+                   key = 9999; 
+                }
                 var expander_setting = {};
                 $.each(expander, function(idx, value) {
                     if (value.delta == key) {
