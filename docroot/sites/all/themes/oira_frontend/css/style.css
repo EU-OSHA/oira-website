@@ -8251,7 +8251,7 @@ a.more-link:before {
 }
 .page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container {
   background-color: #dfd8e4;
-  min-height: 558px;
+  min-height: 175px;
 }
 .page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .views-field-field-image {
   min-height: 202px;
@@ -8265,6 +8265,7 @@ a.more-link:before {
 .page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper {
   padding: 15px;
   overflow: hidden;
+  padding-bottom: 2em;
 }
 .page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .field-name-related-partners .node-partner {
   background-color: #786586;
@@ -8290,6 +8291,9 @@ a.more-link:before {
 .page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.more-link {
   text-align: right;
   margin-top: 15px;
+  bottom: 8px;
+  position: absolute;
+  right: 30px;
 }
 .page-what-is-new .panels-flexible-row-last .panels-flexible-region .view-id-tools .views-item-columns-container .tool-teaser-content-wrapper .tools_see_more-processed a.show-less {
   text-align: right !important;
