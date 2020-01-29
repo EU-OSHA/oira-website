@@ -7085,21 +7085,63 @@ a.more-link:before {
 }
 /*Etiquetas azuler de pais e idioma*/
 .oira-tools-search-page .field.field-name-field-country,
+.oira-tools-search-page .field-type-language-field,
+.oira-tools-search-page .field-name-field-sector,
+.oira-tools-search-page .field-name-field-promotional-material-type,
+.oira-tools-search-page .field-name-pr-language {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-bottom: 2px;
+}
+.oira-tools-search-page .field.field-name-field-country p,
+.oira-tools-search-page .field-type-language-field p,
+.oira-tools-search-page .field-name-field-sector p,
+.oira-tools-search-page .field-name-field-promotional-material-type p,
+.oira-tools-search-page .field-name-pr-language p {
+  margin-bottom: 0px;
+}
+.oira-tools-search-page .field-name-field-sector-category {
+  float: left;
+}
+.oira-tools-search-page .field-name-field-sector-category .field-items .field-item {
+  background-color: #b4a4bf;
+  display: inline-block;
+  color: white;
+  padding: 2px 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0em;
+  margin-right: 5px;
+  border-radius: 15px;
+  margin-bottom: 2px;
+}
+.oira-tools-search-page .field-name-field-tool-link {
+  position: absolute;
+  right: 0px;
+  margin-top: 15px;
+}
+.oira-tools-search-page .field-name-field-tool-link a {
+  margin-top: 0px !important;
+}
 .page-promotional-resources-search .field.field-name-field-country,
 .page-search-site .field.field-name-field-country,
-.oira-tools-search-page .field-type-language-field,
 .page-promotional-resources-search .field-type-language-field,
 .page-search-site .field-type-language-field,
-.oira-tools-search-page .field-name-field-sector,
 .page-promotional-resources-search .field-name-field-sector,
 .page-search-site .field-name-field-sector,
-.oira-tools-search-page .field-name-field-sector-category,
 .page-promotional-resources-search .field-name-field-sector-category,
 .page-search-site .field-name-field-sector-category,
-.oira-tools-search-page .field-name-field-promotional-material-type,
 .page-promotional-resources-search .field-name-field-promotional-material-type,
 .page-search-site .field-name-field-promotional-material-type,
-.oira-tools-search-page .field-name-pr-language,
 .page-promotional-resources-search .field-name-pr-language,
 .page-search-site .field-name-pr-language {
   background-color: #b4a4bf;
@@ -7112,35 +7154,28 @@ a.more-link:before {
   margin-top: 0em;
   margin-right: 5px;
   border-radius: 15px;
+  margin-bottom: 2px;
 }
-.oira-tools-search-page .field.field-name-field-country p,
 .page-promotional-resources-search .field.field-name-field-country p,
 .page-search-site .field.field-name-field-country p,
-.oira-tools-search-page .field-type-language-field p,
 .page-promotional-resources-search .field-type-language-field p,
 .page-search-site .field-type-language-field p,
-.oira-tools-search-page .field-name-field-sector p,
 .page-promotional-resources-search .field-name-field-sector p,
 .page-search-site .field-name-field-sector p,
-.oira-tools-search-page .field-name-field-sector-category p,
 .page-promotional-resources-search .field-name-field-sector-category p,
 .page-search-site .field-name-field-sector-category p,
-.oira-tools-search-page .field-name-field-promotional-material-type p,
 .page-promotional-resources-search .field-name-field-promotional-material-type p,
 .page-search-site .field-name-field-promotional-material-type p,
-.oira-tools-search-page .field-name-pr-language p,
 .page-promotional-resources-search .field-name-pr-language p,
 .page-search-site .field-name-pr-language p {
   margin-bottom: 0px;
 }
-.oira-tools-search-page .field-name-field-tool-link,
 .page-promotional-resources-search .field-name-field-tool-link,
 .page-search-site .field-name-field-tool-link {
   position: absolute;
   right: 0px;
   margin-top: 15px;
 }
-.oira-tools-search-page .field-name-field-tool-link a,
 .page-promotional-resources-search .field-name-field-tool-link a,
 .page-search-site .field-name-field-tool-link a {
   margin-top: 0px !important;
@@ -14908,6 +14943,9 @@ body.front .view-slideshow blockquote.image-field-caption p,
   blockquote.image-field-caption p {
     max-width: 430px;
   }
+  .oira-tools-search-page .field-name-field-sector-category {
+    float: none;
+  }
   .searched-text {
     font-size: 2em !important;
   }
@@ -17121,6 +17159,14 @@ body.front .view-slideshow blockquote.image-field-caption p,
   .oira-tools-search-page .field-name-pr-language,
   .page-promotional-resources-search .field-name-pr-language,
   .page-search-site .field-name-pr-language {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .oira-tools-search-page .field-name-field-sector-category {
+    float: none;
+    margin-bottom: 0;
+  }
+  .oira-tools-search-page .field-name-field-sector-category .field-items .field-item {
     width: 100%;
     margin-bottom: 5px;
   }

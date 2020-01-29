@@ -258,7 +258,7 @@ function osha_search_autocomplete_callback($search = '*') {
       '@categories' => $total_groups - $showed_categ,
     ));
     $ac_item = array(
-      "link" => url('search/site', array(
+      "link" => url('search-site', array(
         'query' => array(
           'search_block_form' => $search,
         ),
@@ -281,7 +281,7 @@ function osha_search_autocomplete_callback($search = '*') {
 /**
  * Format a group of results for search autocomplete response.
  */
-function osha_search_autocomplete_add_group($group, $lang, $showing_items, $search, $see_all_path = 'search/site') {
+function osha_search_autocomplete_add_group($group, $lang, $showing_items, $search, $see_all_path = 'search-site') {
   $return = array();
   $count_items = 0;
   $bundles = node_type_get_types();
