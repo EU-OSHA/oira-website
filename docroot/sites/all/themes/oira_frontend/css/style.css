@@ -7315,6 +7315,9 @@ a.more-link:before {
   color: #10b2e4;
   margin-left: 10px;
 }
+.view-id-tools.view-display-id-block_2 .field-name-field-tool-link a {
+  margin-top: 5px;
+}
 .searched-text {
   font-family: "Oswald";
   font-size: 2.6em;
