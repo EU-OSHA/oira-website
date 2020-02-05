@@ -94,6 +94,18 @@ h5{
 	background-color: @color-primary-dark;
 }
 
+.page-oira-community{
+	.strong-background{
+		h2.pane-title{
+			display: none;
+		}
+		.pane-content{
+			padding-top: 3em;
+		}
+	}
+}
+
+
 .breadcrumb{
 	padding-left: 0px;
 	padding-right: 0px;
@@ -445,6 +457,14 @@ a.more-link{
 		span.glyphicon-new-window{
 			color: @color-see-more;
 			margin-left: 10px;
+		}
+	}
+}
+
+.view-id-tools.view-display-id-block_2{
+	.field-name-field-tool-link{
+		a{
+			margin-top: 5px;
 		}
 	}
 }
@@ -3766,6 +3786,219 @@ div[id ^= "mini-panel-partner_in_"], {
 /*END National social partners*/
 
 
+/* New styles grouping by Country */
+
+.page-national-partners, .page-others-partners, .page-sectorial-social-partners{
+	.view-partners-list{
+		.quicktabs-tabpage {
+			color:@color-text-purple-darker;
+			font-family: "Oswald";
+			font-size: @font-size2-2;
+			text-transform: uppercase;
+			background-color: @color-primary;
+			margin: 30px 0px 0px 0px;
+			padding: 15px 30px 0px 30px;
+		}
+		.quicktabs-views-group{
+			background-color: @color-primary;
+			padding: 0px 30px;
+			margin: 0 0 2em 0;
+
+			h3{
+				float: left;
+				padding-left: 2em;
+				a{
+					pointer-events: none;
+				}
+			}
+
+			.views-field.views-field-nothing{
+				border-top: 2px solid @color-primary-dark;
+				padding: 30px 15px;
+				padding-left: 0px;
+				overflow: hidden;
+				clear: both;
+				.col-sm-2{
+					padding-left: 0px;
+				}
+				.field-name-field-country{
+					background-color: inherit;
+					margin: 0px;
+					padding: 0px;
+					font-style: normal !important;
+					font-size: 1em;
+				}
+				.hwc-alpha-pager-view-title-field{
+					h3{
+						margin-top: 10px;
+						padding-left: 0;
+						a{
+							color: @color-text-grey;
+							font-weight: bold;
+							pointer-events: initial;
+						}
+					}
+				}
+				.partner-content-label{
+					display: table-cell;
+					text-align: center;
+					width: 25%;
+					margin-top: 25px;
+					border-right: 2px solid @color-primary-dark;
+
+					label{
+						display: block;
+						color: @color-text-purple-darker;
+						min-height: 40px;
+						line-height: 16px;
+						font-weight: normal;
+					}
+					span{
+						display: block;
+						color: @color-text-purple-darker;
+						font-size: @font-size2-2;
+						line-height: 16px;
+						font-weight: bold;
+					}
+				}
+				.partner-content-label:first-child{
+					border-left: 2px solid @color-primary-dark;
+				}
+			}
+		}
+
+		.flag{
+			width: 60px;
+			float: left;
+			margin-top: 15px;
+			position: absolute;
+			height: 41px;
+			overflow: hidden;
+		}
+
+		.views-row-2{
+			.flag{
+				display: none;
+			}
+		}
+
+		ul, ol{
+			list-style: none;
+		}
+	}
+}
+
+.page-sectorial-social-partners{
+	.view-partners-list{
+		.views-row-1{
+			.views-field.views-field-nothing{
+				border-top: 0;
+			}
+		}
+	}
+}
+
+
+
+.page-irat-network{
+	.view-id-partners_list{
+		.quicktabs-views-group.row{
+			background-color: @color-primary;
+			margin-bottom: 30px;
+			padding: 30px 15px 20px 15px;
+			margin-left: 0px;
+			margin-right: 0px;
+			.col-sm-10{
+				color: @color-primary-dark;
+				font-weight: bold;
+				h3{
+					margin-top: 10px;
+					padding-left: 0;
+					a{
+						color: @color-text-grey;
+						font-weight: bold;
+						&:hover{
+							text-decoration: underline !important;
+							color: @color-text-hover-blue;
+						}
+					}
+				}
+			}
+
+			.views-field.views-field-nothing {
+			    border-top: 2px solid #786586;
+			    padding: 30px 15px 0 0;
+			    overflow: hidden;
+			    clear: both;
+			}
+		}
+
+		h3{
+		    display: block;
+		    color: #786586;
+		    font-weight: bold;
+		    font-style: italic;
+		    margin-top: 0;
+		    float: none;
+			padding-left: 2.5em;
+		}
+
+		ul{
+			list-style: none;
+		}
+
+		.flag{
+			width: 60px;
+			float: left;
+			margin-top: -48px;
+			position: absolute;
+			height: 41px;
+			overflow: hidden;
+		}
+
+		.views-row-2{
+			.flag{
+				display: none;
+			}
+		}
+
+		ul{
+			list-style: none;
+		}
+	}
+}
+
+
+/* Reorder block partners views*/
+.views-field-nothing{
+	.field-content{
+		.col-sm-5.block-count{
+			display: flex;
+			flex-direction: row;
+			.partner-content-label.partner-content-count-news{
+				width: 33%;
+				margin-top: 0;
+				order: 2;
+			}
+			.partner-content-label.partner-content-count-practical_tool{
+				width: 33%;
+				margin-top: 0;
+				order: 1;
+				border-right: 0;
+				border-left: 2px solid #786586;
+			}
+			.partner-content-label.partner-content-count-promotional_material{
+				width: 33%;
+				margin-top: 0;
+				order: 3;
+			}
+		}
+	}
+}
+
+
+
+
 /*SITE MAP
 ********************************************************/
 .page-sitemap{
@@ -3831,7 +4064,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			text-align: center;
 			li{
 				display: table-cell;
-				width: 33%;
+				width: 25%;
 				.introduction-image{
 					img{
 						margin-bottom: 15px;
@@ -3846,7 +4079,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			}
 		}
 	}
-	.panels-flexible-row-new-2{
+	.field-type-text-with-summary{
 		h2{
 			font-size: @font-size1-6;
 			color: @color-text-purple-darker;
