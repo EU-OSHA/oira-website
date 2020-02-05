@@ -21,7 +21,7 @@ function oira_country_update_7001() {
  * Feature revert: NOW-264 - Homepage slider changes
  */
 function oira_country_update_7002() {
-  features_revert_module('oira_country');
+  //features_revert_module('oira_country');
 }
 
 /**

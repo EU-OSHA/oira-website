@@ -15,7 +15,6 @@ jQuery(document).ready(function () {
 		watch: true,
 		wrap: 'word',
 	});
-
 	
 	if (jQuery(window).width() < 760){
 		
@@ -34,19 +33,6 @@ jQuery(document).ready(function () {
 			jQuery('.front .view-news .views-row .field-name-body span').html($button);
 		}
 	}
-
-	/* Hide IRAT parnet description */
-	
-	/* TODO sprint 4
-
-		//hide type field
-		jQuery('.pane-node-field-partner-type').hide();
-		//if type field is IRAT partners we hide focal point text
-		if (jQuery('.field-name-field-partner-type div div').text().indexOf('IRAT partners') > -1) {
-			jQuery('.pane-focal-point-text').hide();
-
-		}
-	*/
 
 	var windowWidth= jQuery(window).width();//window size
 
