@@ -7648,7 +7648,7 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-row-new-9 .view-display-id-attachment_1 {
   border-bottom: 2px solid #967ea7;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   padding-top: 20px;
   margin-bottom: 20px;
 }
@@ -7657,6 +7657,7 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-row-new-9 .view-display-id-attachment_1 .more-link {
   text-align: left;
+  margin-top: 5px;
 }
 #block-system-main .panels-flexible-row-new-9 .views-item-columns-container {
   background-color: #ffffff;
@@ -10541,7 +10542,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-others-partners .view-partners-list .quicktabs-views-group h3,
 .page-sectorial-social-partners .view-partners-list .quicktabs-views-group h3 {
   float: left;
-  padding-left: 2em;
+  padding-left: 0;
+  padding-right: 10px;
 }
 .page-national-partners .view-partners-list .quicktabs-views-group h3 a,
 .page-others-partners .view-partners-list .quicktabs-views-group h3 a,
@@ -10619,12 +10621,19 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-national-partners .view-partners-list .flag,
 .page-others-partners .view-partners-list .flag,
 .page-sectorial-social-partners .view-partners-list .flag {
-  width: 60px;
-  float: left;
-  margin-top: 15px;
-  position: absolute;
-  height: 41px;
+  width: 45px;
+  float: right;
+  margin-top: 22px;
+  position: relative;
+  height: 29px;
   overflow: hidden;
+  right: 0;
+}
+.page-national-partners .view-partners-list .flag img,
+.page-others-partners .view-partners-list .flag img,
+.page-sectorial-social-partners .view-partners-list .flag img {
+  height: 100%;
+  width: 100%;
 }
 .page-national-partners .view-partners-list .views-row-2 .flag,
 .page-others-partners .view-partners-list .views-row-2 .flag,
@@ -10638,9 +10647,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-others-partners .view-partners-list ol,
 .page-sectorial-social-partners .view-partners-list ol {
   list-style: none;
-}
-.page-sectorial-social-partners .view-partners-list .views-row-1 .views-field.views-field-nothing {
-  border-top: 0;
 }
 .page-irat-network .view-id-partners_list .quicktabs-views-group.row {
   background-color: #dfd8e4;
@@ -10677,19 +10683,25 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-weight: bold;
   font-style: italic;
   margin-top: 0;
-  float: none;
-  padding-left: 2.5em;
+  float: left;
+  padding-left: 0;
+  padding-right: 10px;
 }
 .page-irat-network .view-id-partners_list ul {
   list-style: none;
 }
 .page-irat-network .view-id-partners_list .flag {
-  width: 60px;
-  float: left;
-  margin-top: -48px;
-  position: absolute;
-  height: 41px;
+  width: 45px;
+  float: right;
+  margin-top: 2px;
+  position: relative;
+  height: 29px;
   overflow: hidden;
+  right: 0;
+}
+.page-irat-network .view-id-partners_list .flag img {
+  height: 100%;
+  width: 100%;
 }
 .page-irat-network .view-id-partners_list .views-row-2 .flag {
   display: none;
