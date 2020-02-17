@@ -16412,6 +16412,11 @@ body.front .view-slideshow blockquote.image-field-caption p,
   .page-irat-network .quicktabs-views-group {
     padding: 0px 15px;
   }
+  .page-sectorial-social-partners .quicktabs-views-group .views-field-field-flag,
+  .page-national-partners .quicktabs-views-group .views-field-field-flag,
+  .page-irat-network .quicktabs-views-group .views-field-field-flag {
+    margin-right: 1em;
+  }
   .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing,
   .page-national-partners .quicktabs-views-group .views-field.views-field-nothing,
   .page-irat-network .quicktabs-views-group .views-field.views-field-nothing {
