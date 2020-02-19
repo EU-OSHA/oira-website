@@ -1458,55 +1458,84 @@ div[id*="quicktabs-container-view__country_partner_content__block"]{
 		padding-left: 0px;
     	padding-right: 0px;
 	}
-	.quicktabs-tabpage {
-		div[id ^= "hwc-char-"]{
-    		padding: 15px 15px 0px 15px;
-    		//margin-top: 0px !important;
+
+	.quicktabs-views-group{
+		padding: 0px 15px;
+
+		.views-field-field-flag{
+			margin-right: 1em;
 		}
-		.quicktabs-views-group{
-			padding: 0px 15px;
-			.views-field.views-field-nothing{
-				padding: 15px 0px;
-				.col-sm-2, .col-sm-5{
-					padding-right: 0px;
-					padding-left: 0px;
-				}
-				.col-sm-2{
-					margin-bottom: 15px;
-				}
-				.partner-content-label{
-					display: block;
-				    text-align: left;
-				    width: initial;
+
+		.views-field.views-field-nothing{
+			padding: 1em;
+			.col-sm-2, .col-sm-5{
+				padding-right: 0px;
+				padding-left: 0px;
+				clear: both;
+			}
+			.col-sm-2{
+				margin-bottom: 15px;
+			}
+			.partner-content-label{
+				display: block;
+			    text-align: left;
+			    width: initial;
+			    margin-top: 0px !important;
+			    border-right: none;
+			    font-style: italic;
+				label{
+					display: inline-block;
+					min-height: inherit;
 				    margin-top: 0px !important;
-				    border-right: none;
-				    font-style: italic;
-					label{
-						display: inline-block;
-						min-height: inherit;
-					    margin-top: 0px !important;
-					}
-					.form-group{
-					    margin-bottom: 0px !important;
-					}
-					span{
-						display: inline-block;
-						font-size: @font-size1;
-					    &:before{
-					    	content: "(";
-					    }
-					    &:after{
-					    	content: ")";
-					    }
-					}
 				}
-				.partner-content-label:first-child{
-					border-left: none;
+				.form-group{
+				    margin-bottom: 0px !important;
 				}
+				span{
+					display: inline-block;
+					font-size: @font-size1;
+				    &:before{
+				    	content: "(";
+				    }
+				    &:after{
+				    	content: ")";
+				    }
+				}
+			}
+			.partner-content-label{
+				border-left: none !important;
 			}
 		}
 	}
 }
+
+/* Reorder block partners views*/
+.views-field-nothing{
+	.field-content{
+		.col-sm-5.block-count{
+			display: block;
+			flex-direction: row;
+			.partner-content-label.partner-content-count-news{
+				width: 100%;
+				margin-top: 0;
+				order: 2;
+			}
+			.partner-content-label.partner-content-count-practical_tool{
+				width: 100%;
+				margin-top: 0;
+				order: 1;
+				border-right: 0;
+				border-left: 2px solid #786586;
+			}
+			.partner-content-label.partner-content-count-promotional_material{
+				width: 100%;
+				margin-top: 0;
+				order: 3;
+			}
+		}
+	}
+}
+
 .page-irat-network{
 	.panels-flexible-region-new-list.container{
 		padding-left: 0px !important;
