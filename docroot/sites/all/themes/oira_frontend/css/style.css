@@ -6814,7 +6814,7 @@ html[lang=fi] #block-menu-block-5 .menu.nav li {
   padding-top: 2px;
   padding-bottom: 3px;
 }
-.menu-header #navbar .navbar-nav li span .caret {
+.menu-header #navbar .navbar-nav li .caret {
   display: none;
 }
 .menu-header #navbar .navbar-nav li a,
@@ -6968,6 +6968,12 @@ h5 a {
 }
 .strong-background {
   background-color: #786586;
+}
+.page-oira-community .strong-background h2.pane-title {
+  display: none;
+}
+.page-oira-community .strong-background .pane-content {
+  padding-top: 3em;
 }
 .breadcrumb {
   padding-left: 0px;
@@ -7642,7 +7648,7 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-row-new-9 .view-display-id-attachment_1 {
   border-bottom: 2px solid #967ea7;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   padding-top: 20px;
   margin-bottom: 20px;
 }
@@ -7651,6 +7657,7 @@ a.more-link:before {
 }
 #block-system-main .panels-flexible-row-new-9 .view-display-id-attachment_1 .more-link {
   text-align: left;
+  margin-top: 5px;
 }
 #block-system-main .panels-flexible-row-new-9 .views-item-columns-container {
   background-color: #ffffff;
@@ -10512,6 +10519,219 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   color: #23527c;
 }
 /*END National social partners*/
+/* New styles grouping by Country */
+.page-national-partners .quicktabs-tabpage,
+.page-others-partners .quicktabs-tabpage,
+.page-sectorial-social-partners .quicktabs-tabpage {
+  color: #786586;
+  font-family: "Oswald";
+  font-size: 2.2em;
+  text-transform: uppercase;
+  background-color: #dfd8e4;
+  margin: 30px 0px 0px 0px;
+  padding: 15px 30px 0px 30px;
+}
+.page-national-partners .quicktabs-views-group,
+.page-others-partners .quicktabs-views-group,
+.page-sectorial-social-partners .quicktabs-views-group {
+  background-color: #dfd8e4;
+  padding: 0px 30px;
+  margin: 0 0 2em 0;
+}
+.page-national-partners .quicktabs-views-group h3,
+.page-others-partners .quicktabs-views-group h3,
+.page-sectorial-social-partners .quicktabs-views-group h3 {
+  float: left;
+  padding-left: 0;
+  padding-right: 10px;
+  width: 83%;
+}
+.page-national-partners .quicktabs-views-group h3 a,
+.page-others-partners .quicktabs-views-group h3 a,
+.page-sectorial-social-partners .quicktabs-views-group h3 a {
+  pointer-events: none;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing {
+  border-top: 2px solid #786586;
+  padding: 30px 15px;
+  padding-left: 0px;
+  overflow: hidden;
+  clear: both;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 {
+  padding-left: 0px;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .field-name-field-country,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .field-name-field-country,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .field-name-field-country {
+  background-color: inherit;
+  margin: 0px;
+  padding: 0px;
+  font-style: normal !important;
+  font-size: 1em;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3 {
+  margin-top: 10px;
+  padding-left: 0;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3 a,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3 a,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3 a {
+  color: #58585a;
+  font-weight: bold;
+  pointer-events: initial;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label {
+  display: table-cell;
+  text-align: center;
+  width: 25%;
+  margin-top: 25px;
+  border-right: 2px solid #786586;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label {
+  display: block;
+  color: #786586;
+  min-height: 40px;
+  line-height: 16px;
+  font-weight: normal;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span {
+  display: block;
+  color: #786586;
+  font-size: 2.2em;
+  line-height: 16px;
+  font-weight: bold;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child,
+.page-others-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child,
+.page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child {
+  border-left: 2px solid #786586;
+}
+.page-national-partners .flag,
+.page-others-partners .flag,
+.page-sectorial-social-partners .flag {
+  width: 45px;
+  float: right;
+  margin-top: 22px;
+  position: relative;
+  height: 29px;
+  overflow: hidden;
+  right: 0;
+}
+.page-national-partners .flag img,
+.page-others-partners .flag img,
+.page-sectorial-social-partners .flag img {
+  height: 100%;
+  width: 100%;
+}
+.page-national-partners .views-row-2 .flag,
+.page-others-partners .views-row-2 .flag,
+.page-sectorial-social-partners .views-row-2 .flag {
+  display: none;
+}
+.page-national-partners ul,
+.page-others-partners ul,
+.page-sectorial-social-partners ul,
+.page-national-partners ol,
+.page-others-partners ol,
+.page-sectorial-social-partners ol {
+  list-style: none;
+}
+.page-irat-network .view-id-partners_list .quicktabs-views-group.row {
+  background-color: #dfd8e4;
+  margin-bottom: 30px;
+  padding: 30px 15px 20px 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.page-irat-network .view-id-partners_list .quicktabs-views-group.row .col-sm-10 {
+  color: #786586;
+  font-weight: bold;
+}
+.page-irat-network .view-id-partners_list .quicktabs-views-group.row .col-sm-10 h3 {
+  margin-top: 10px;
+  padding-left: 0;
+}
+.page-irat-network .view-id-partners_list .quicktabs-views-group.row .col-sm-10 h3 a {
+  color: #58585a;
+  font-weight: bold;
+}
+.page-irat-network .view-id-partners_list .quicktabs-views-group.row .col-sm-10 h3 a:hover {
+  text-decoration: underline !important;
+  color: #23527c;
+}
+.page-irat-network .view-id-partners_list .quicktabs-views-group.row .views-field.views-field-nothing {
+  border-top: 2px solid #786586;
+  padding: 30px 15px 0 0;
+  overflow: hidden;
+  clear: both;
+}
+.page-irat-network .view-id-partners_list h3 {
+  display: block;
+  color: #786586;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0;
+  float: left;
+  padding-left: 0;
+  padding-right: 10px;
+}
+.page-irat-network .view-id-partners_list ul {
+  list-style: none;
+}
+.page-irat-network .view-id-partners_list .flag {
+  width: 45px;
+  float: right;
+  margin-top: 2px;
+  position: relative;
+  height: 29px;
+  overflow: hidden;
+  right: 0;
+}
+.page-irat-network .view-id-partners_list .flag img {
+  height: 100%;
+  width: 100%;
+}
+.page-irat-network .view-id-partners_list .views-row-2 .flag {
+  display: none;
+}
+.page-irat-network .view-id-partners_list ul {
+  list-style: none;
+}
+/* Reorder block partners views*/
+.views-field-nothing .field-content .col-sm-5.block-count {
+  display: flex;
+  flex-direction: row;
+}
+.views-field-nothing .field-content .col-sm-5.block-count .partner-content-label.partner-content-count-news {
+  width: 33%;
+  margin-top: 0;
+  order: 2;
+}
+.views-field-nothing .field-content .col-sm-5.block-count .partner-content-label.partner-content-count-practical_tool {
+  width: 33%;
+  margin-top: 0;
+  order: 1;
+  border-right: 0;
+  border-left: 2px solid #786586;
+}
+.views-field-nothing .field-content .col-sm-5.block-count .partner-content-label.partner-content-count-promotional_material {
+  width: 33%;
+  margin-top: 0;
+  order: 3;
+}
 /*SITE MAP
 ********************************************************/
 .page-sitemap #block-system-main {
@@ -10575,7 +10795,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 }
 .page-oira-community .oira-community-partners-block .menu li {
   display: table-cell;
-  width: 33%;
+  width: 25%;
 }
 .page-oira-community .oira-community-partners-block .menu li .introduction-image img {
   margin-bottom: 15px;
@@ -10584,20 +10804,20 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   color: #ffffff;
   font-style: italic;
 }
-.page-oira-community .panels-flexible-row-new-2 h2 {
+.page-oira-community .field-type-text-with-summary h2 {
   font-size: 1.6em;
   color: #786586;
   margin-bottom: 20px;
 }
-.page-oira-community .panels-flexible-row-new-2 hr {
+.page-oira-community .field-type-text-with-summary hr {
   border-top: 2px solid #786586;
   margin-top: 35px;
   margin-bottom: 40px;
 }
-.page-oira-community .panels-flexible-row-new-2 ul {
+.page-oira-community .field-type-text-with-summary ul {
   margin-left: 20px;
 }
-.page-oira-community .panels-flexible-row-new-2 p a {
+.page-oira-community .field-type-text-with-summary p a {
   font-style: italic;
   text-decoration: underline !important;
 }
@@ -13441,6 +13661,11 @@ body.front .view-slideshow blockquote.image-field-caption p,
   }
 }
 @media only screen and (max-width: 991px) {
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
+  .page-others-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label {
+    font-size: 1.3rem;
+  }
   /*HEADER
 ***********************************************/
   .top-header .header-logo {
@@ -16182,38 +16407,39 @@ body.front .view-slideshow blockquote.image-field-caption p,
     padding-left: 0px;
     padding-right: 0px;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage div[id^="hwc-char-"],
-  .page-national-partners .quicktabs-tabpage div[id^="hwc-char-"],
-  .page-irat-network .quicktabs-tabpage div[id^="hwc-char-"] {
-    padding: 15px 15px 0px 15px;
-  }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group {
+  .page-sectorial-social-partners .quicktabs-views-group,
+  .page-national-partners .quicktabs-views-group,
+  .page-irat-network .quicktabs-views-group {
     padding: 0px 15px;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing {
-    padding: 15px 0px;
+  .page-sectorial-social-partners .quicktabs-views-group .views-field-field-flag,
+  .page-national-partners .quicktabs-views-group .views-field-field-flag,
+  .page-irat-network .quicktabs-views-group .views-field-field-flag {
+    margin-right: 1em;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-5,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-5,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-5 {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing {
+    padding: 1em;
+  }
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-5,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-5,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .col-sm-5 {
     padding-right: 0px;
     padding-left: 0px;
+    clear: both;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 {
     margin-bottom: 15px;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .partner-content-label {
     display: block;
     text-align: left;
     width: initial;
@@ -16221,38 +16447,60 @@ body.front .view-slideshow blockquote.image-field-caption p,
     border-right: none;
     font-style: italic;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .partner-content-label label {
     display: inline-block;
     min-height: inherit;
     margin-top: 0px !important;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label .form-group,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label .form-group,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label .form-group {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label .form-group,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label .form-group,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .partner-content-label .form-group {
     margin-bottom: 0px !important;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span {
     display: inline-block;
     font-size: 1em;
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:before,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:before,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:before {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:before,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:before,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:before {
     content: "(";
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:after,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:after,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:after {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:after,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:after,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .partner-content-label span:after {
     content: ")";
   }
-  .page-sectorial-social-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child,
-  .page-national-partners .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child,
-  .page-irat-network .quicktabs-tabpage .quicktabs-views-group .views-field.views-field-nothing .partner-content-label:first-child {
-    border-left: none;
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .partner-content-label,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .partner-content-label {
+    border-left: none !important;
+  }
+  /* Reorder block partners views*/
+  .views-field-nothing .field-content .col-sm-5.block-count {
+    display: block;
+    flex-direction: row;
+  }
+  .views-field-nothing .field-content .col-sm-5.block-count .partner-content-label.partner-content-count-news {
+    width: 100%;
+    margin-top: 0;
+    order: 2;
+  }
+  .views-field-nothing .field-content .col-sm-5.block-count .partner-content-label.partner-content-count-practical_tool {
+    width: 100%;
+    margin-top: 0;
+    order: 1;
+    border-right: 0;
+    border-left: 2px solid #786586;
+  }
+  .views-field-nothing .field-content .col-sm-5.block-count .partner-content-label.partner-content-count-promotional_material {
+    width: 100%;
+    margin-top: 0;
+    order: 3;
   }
   .page-irat-network .panels-flexible-region-new-list.container {
     padding-left: 0px !important;

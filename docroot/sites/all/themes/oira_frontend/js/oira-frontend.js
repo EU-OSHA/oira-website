@@ -327,4 +327,15 @@ jQuery(document).ready(function () {
 
 });
 	
-	
+
+
+jQuery(document).ready(function () {
+	/* Hide IRAT parnet description */
+	//hide type field
+	jQuery('.pane-node-field-partner-type').hide();
+	//if type field is IRAT partners we hide focal point text
+	if (jQuery('.field-name-field-partner-type div div').text().indexOf('IRAT partners') > -1) {
+		jQuery('.pane-focal-point-text').hide();
+		jQuery('.panels-flexible-row-last').css('padding-bottom','0');
+	}
+});
