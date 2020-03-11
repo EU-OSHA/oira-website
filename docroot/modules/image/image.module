@@ -290,31 +290,15 @@ function image_file_download($uri) {
     // Remove the scheme from the path.
     array_shift($args);
 
-	// The remaining path for checks later on.
-    $remaining_path = implode('/', $args);
     // Then the remaining parts are the path to the image.
-    $original_uri = file_uri_scheme($uri) . '://' . $remaining_path;
-    // Grab the path to the sample image.
-    $sample_image = variable_get('image_style_preview_image', drupal_get_path('module', 'image') . '/sample.png');
+    $original_uri = file_uri_scheme($uri) . '://' . implode('/', $args);
+
     // Check that the file exists and is an image.
     if ($info = image_get_info($uri)) {
       // Check the permissions of the original to grant access to this image.
       $headers = module_invoke_all('file_download', $original_uri);
       // Confirm there's at least one module granting access and none denying access.
       if (!empty($headers) && !in_array(-1, $headers)) {
-        return array(
-          // Send headers describing the image's size, and MIME-type...
-          'Content-Type' => $info['mime_type'],
-          'Content-Length' => $info['file_size'],
-          // By not explicitly setting them here, this uses normal Drupal
-          // Expires, Cache-Control and ETag headers to prevent proxy or
-          // browser caching of private images.
-        );
-      }
-	  // It's unlikely that a module would deny access to the sample image, but
-      // check the headers just in case. If no modules deny access, then grant
-      // access to the sample image by default.
-      elseif (empty($headers) && $remaining_path == $sample_image) {
         return array(
           // Send headers describing the image's size, and MIME-type...
           'Content-Type' => $info['mime_type'],
