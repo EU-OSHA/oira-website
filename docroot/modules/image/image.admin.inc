@@ -822,11 +822,12 @@ function theme_image_style_preview($variables) {
   $output .= '</div>'; // End preview-image-wrapper.
 
   // Build the preview of the image style.
-  $preview_url = file_create_url($preview_file) . '?cache_bypass=' . REQUEST_TIME;
+  $token = IMAGE_DERIVATIVE_TOKEN . '=' . image_style_path_token($style['name'], file_default_scheme() . '://' . $sample_image);
+  $preview_url = file_create_url($preview_file) . '?cache_bypass=' . REQUEST_TIME . '&' . $token;
   $output .= '<div class="preview-image-wrapper">';
-  $output .= check_plain($style['label']) . ' (' . l(t('view actual size'), file_create_url($preview_file) . '?' . time()) . ')';
+  $output .= check_plain($style['label']) . ' (' . l(t('view actual size'), file_create_url($preview_file) . '?' . time() . '&' . $token) . ')';
   $output .= '<div class="preview-image modified-image" style="' . $preview_attributes['style'] . '">';
-  $output .= '<a href="' . file_create_url($preview_file) . '?' . time() . '">' . theme('image', array('path' => $preview_url, 'alt' => t('Sample modified image'), 'title' => '', 'attributes' => $preview_attributes)) . '</a>';
+  $output .= '<a href="' . file_create_url($preview_file) . '?' . time()  . '&' . $token . '">' . theme('image', array('path' => $preview_url, 'alt' => t('Sample modified image'), 'title' => '', 'attributes' => $preview_attributes)) . '</a>';
   $output .= '<div class="height" style="height: ' . $preview_height . 'px"><span>' . $preview_image['height'] . 'px</span></div>';
   $output .= '<div class="width" style="width: ' . $preview_width . 'px"><span>' . $preview_image['width'] . 'px</span></div>';
   $output .= '</div>'; // End preview-image.
