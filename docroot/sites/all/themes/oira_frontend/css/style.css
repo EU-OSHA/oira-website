@@ -8363,7 +8363,7 @@ a.more-link:before {
   font-family: 'Oswald';
   font-size: 1.4em;
   font-weight: 300;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 .page-oira-tools .panels-flexible-row-last {
   background: url('../images/background-two-colors.jpg') repeat-y 50%;
@@ -8678,7 +8678,7 @@ a.more-link:before {
 }
 .page-oira-tools .panels-flexible-row-first {
   background: none !important;
-  padding-bottom: 25px;
+  padding-bottom: 5px;
 }
 /*END OIRA TOOLS*/
 /*FAQ'S
@@ -8842,7 +8842,7 @@ a.more-link:before {
 .page-contact-us #block-system-main .field-type-text-with-summary {
   font-family: 'Oswald';
   font-size: 1.4em;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 .page-contact-us #block-system-main .container {
   position: relative;
@@ -9188,7 +9188,7 @@ a.more-link:before {
 .page-eu-national-partners .field-type-text-with-summary {
   font-family: 'Oswald';
   font-size: 1.4em;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 .page-eu-national-partners .pane-oira-country-oira-country-count-all .pane-content {
   width: 100%;
@@ -10047,7 +10047,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-family: 'Oswald';
   font-size: 1.4em;
   font-weight: 300;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 .page-promotional-resources .panels-flexible-row-page-promotional-materials-1 {
   background-color: #dfd8e4;
@@ -10086,7 +10086,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   font-family: 'Oswald';
   font-size: 1.4em;
   font-weight: 300;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 .page-promotional-resources-search .panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last {
   background: url('../images/background-two-colors.jpg') repeat-y 50%;
@@ -10348,11 +10348,6 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 /*END Promotional materials*/
 /*NATIONAL SOCIAL PARTNERS
 *************************************************************/
-.page-sectorial-social-partners h1,
-.page-national-partners h1,
-.page-irat-network h1 {
-  color: #58585a;
-}
 .page-sectorial-social-partners .pane-node-body,
 .page-national-partners .pane-node-body,
 .page-irat-network .pane-node-body {
@@ -11274,8 +11269,8 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
-  margin-bottom: 30px;
-  margin-top: 40px;
+  margin-bottom: 15px;
+  margin-top: 0;
   color: #967ea7;
 }
 @media only screen and (max-width: 991px) {
@@ -11306,7 +11301,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-node-401.node-type-article .article-content-container .esener-template .resume-section,
 .page-node-402.node-type-article .article-content-container .esener-template .resume-section {
   margin-top: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 .page-node-401.node-type-article .article-content-container .esener-template > ul,
@@ -13536,6 +13531,16 @@ header.hide-header {
 #sliding-popup.sliding-popup-top {
   z-index: 999999999999;
   position: fixed;
+}
+/*  MDR-3526 - Reduce the white heading around the introductory text */
+.page-header {
+  margin: 0;
+}
+.panels-flexible-row {
+  padding-bottom: 0px;
+}
+.view-id-partners_list.view-display-id-block_1 {
+  margin-top: 10px;
 }
 /*FOOTER
 ********************************************/
