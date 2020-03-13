@@ -123,25 +123,6 @@ jQuery(document).ready(function () {
 		jQuery('.toogle-content-switcher .hide-link').show();
 		jQuery('.toogle-content-switcher .show-link').hide();
 	});
-
-	
-
-
-	/*fixing sticky menu*/
-	/*hight of page*/
-	var num = 150; //number of pixels before modifying styles
-	if(jQuery("body").height()>=1300){
-		jQuery(window).bind('scroll', function () {
-			if(jQuery("body").height()>=1300){
-		    	if (jQuery(window).scrollTop() > num) {
-					jQuery("header").addClass("sticky-menu");
-		    	}else {
-		        	jQuery('header').removeClass('sticky-menu');
-		    	} 
-		    }
-		});
-	}
-	/*end hight of page*/
  
  	/*specific functions for pc, tablet and mobile */
 	funcionesPc();
@@ -339,3 +320,37 @@ jQuery(document).ready(function () {
 		jQuery('.panels-flexible-row-last').css('padding-bottom','0');
 	}
 });
+
+
+/* Sticky menu */
+// Menu scroll
+/* Sticky menu revamp desing */
+(function( $ ){
+	$(document).ready(function() {
+
+		var prevScrollpos = $(window).offset.top;
+		
+		$('header').addClass('fixedHeader');
+
+
+		$(window).scroll(function(){
+	    var currentScrollPos = $(window).scrollTop();
+      if(prevScrollpos > currentScrollPos)
+      {
+        $('header').removeClass('hide-header');
+      }
+      else
+      {
+				$('header').addClass('hide-header');
+				if( ($(this).scrollTop() <= 80) )
+				{
+					$('header').removeClass('hide-header');
+				}		        
+      }
+	    prevScrollpos = currentScrollPos;
+	  });
+	
+	});
+})( jQuery );
+
+

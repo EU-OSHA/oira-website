@@ -13507,6 +13507,33 @@ body.front .view-slideshow blockquote.image-field-caption p,
   display: flex;
   flex-wrap: wrap;
 }
+/* New Sticky header */
+header.hide-header {
+  position: fixed;
+  top: -23rem !important;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  z-index: 999999999;
+  width: 100%;
+}
+.fixedHeader {
+  position: fixed;
+  background: #FFFF;
+  width: 100%;
+  z-index: 9999;
+  transition: top 0.6s linear;
+  top: 0px!important;
+}
+.logged-in header.hide-header {
+  top: -29rem !important;
+}
+.logged-in .fixedHeader {
+  margin-top: 64px;
+}
+#sliding-popup.sliding-popup-top {
+  z-index: 999999999999;
+  position: fixed;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
