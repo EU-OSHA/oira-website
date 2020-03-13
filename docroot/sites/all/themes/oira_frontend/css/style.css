@@ -13539,7 +13539,11 @@ header.hide-header {
 .panels-flexible-row {
   padding-bottom: 0px;
 }
-.view-id-partners_list.view-display-id-block_1 {
+.node-type-partner .panels-flexible-row {
+  padding-bottom: 25px;
+}
+.view-id-partners_list.view-display-id-block_1,
+.view-id-partners_list.view-display-id-block_3 {
   margin-top: 10px;
 }
 /*FOOTER
