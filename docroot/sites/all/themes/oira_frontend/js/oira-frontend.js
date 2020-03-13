@@ -329,6 +329,15 @@ jQuery(document).ready(function () {
 	$(document).ready(function() {
 
 		var prevScrollpos = $(window).offset.top;
+
+		$(window).on("load resize scroll",function(e){
+			if( $(window).width() > 1006 )
+			{
+				$('body').css('padding-top','19.9rem');
+			} else {
+				$('body').css('padding-top','155px');
+			}
+		});
 		
 		$('header').addClass('fixedHeader');
 

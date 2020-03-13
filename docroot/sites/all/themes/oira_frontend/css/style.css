@@ -13524,6 +13524,9 @@ header.hide-header {
   transition: top 0.6s linear;
   top: 0px!important;
 }
+.logged-in {
+  padding-top: 29rem !important;
+}
 .logged-in header.hide-header {
   top: -29rem !important;
 }
