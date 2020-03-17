@@ -1841,6 +1841,11 @@ a.more-link{
 									}								
 								}
 							}
+
+							.field-name-field-alternative-body{
+								display: none;
+							}
+
 							.group-center.col-md-12{
 								clear: both;
 							}
@@ -3645,14 +3650,17 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-national-partners,
 .page-irat-network{
 	.pane-node-body{
-		font-weight: bold;
+	    font-weight: bold;
+	    padding-bottom: 10px;
+	    p{
+	    	margin-bottom: 0;
+	    }
 	}
 	.quicktabs-tabs{
 		background-color: @color-primary-dark;
 		li.active{
 			background-color: @color-primary;
 			.active{
-				//border-left: 0px !important;
 				background-color: rgba(255, 255, 255, 0);
 				color: @color-primary-dark !important;
 			}
@@ -6808,7 +6816,11 @@ header.hide-header{
 	}
 }
 
-.view-id-partners_list.view-display-id-block_1 ,
+.view-id-partners_list.view-display-id-block ,
 .view-id-partners_list.view-display-id-block_3{
-	margin-top: 10px;
+	.views-row-1{
+		.views-field.views-field-nothing{
+			border-top: 0;
+		}
+	}
 }
