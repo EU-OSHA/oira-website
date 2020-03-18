@@ -1624,7 +1624,7 @@ a.more-link{
 			font-family: @font-family-base-2;
 			font-size: 1.4em;
 			font-weight: 300;
-			margin-bottom: 30px;
+			margin-bottom: 0;
 		}
 	}
 	.panels-flexible-row-last{
@@ -1841,6 +1841,11 @@ a.more-link{
 									}								
 								}
 							}
+
+							.field-name-field-alternative-body{
+								display: none;
+							}
+
 							.group-center.col-md-12{
 								clear: both;
 							}
@@ -1967,7 +1972,7 @@ a.more-link{
 	}
 	.panels-flexible-row-first{
 		background:none !important;
-		padding-bottom:25px;
+		padding-bottom: 5px;
 	}
 }
 
@@ -2092,7 +2097,7 @@ a.more-link{
 		.field-type-text-with-summary{
 			font-family: 'Oswald';
 			font-size: 1.4em;
-			margin-bottom: 20px;
+			margin-bottom: 0;
 		}
 		.container{
 			position: relative;
@@ -2465,7 +2470,7 @@ a.more-link{
 	.field-type-text-with-summary {
 		font-family: 'Oswald';
 		font-size: 1.4em;
-		margin-bottom: 30px;
+		margin-bottom: 0;
 	}
 	.pane-oira-country-oira-country-count-all{
 		.pane-content{
@@ -3297,7 +3302,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			font-family: 'Oswald';
 			font-size: 1.4em;
 			font-weight: 300;
-			margin-bottom: 30px;
+			margin-bottom: 0;
 		}
 	}
 	.panels-flexible-row-page-promotional-materials-1{
@@ -3349,7 +3354,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			font-family: @font-family-base-2;
 			font-size: 1.4em;
 			font-weight: 300;
-			margin-bottom: 30px;
+			margin-bottom: 0;
 		}
 	}
 	.panels-flexible-row-page-promotional-materials-search.panels-flexible-row-last{
@@ -3644,18 +3649,18 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-sectorial-social-partners,
 .page-national-partners,
 .page-irat-network{
-	h1{
-		color: @color-text-grey;
-	}
 	.pane-node-body{
-		font-weight: bold;
+	    font-weight: bold;
+	    padding-bottom: 10px;
+	    p{
+	    	margin-bottom: 0;
+	    }
 	}
 	.quicktabs-tabs{
 		background-color: @color-primary-dark;
 		li.active{
 			background-color: @color-primary;
 			.active{
-				//border-left: 0px !important;
 				background-color: rgba(255, 255, 255, 0);
 				color: @color-primary-dark !important;
 			}
@@ -4642,8 +4647,8 @@ div[id ^= "mini-panel-partner_in_"], {
 			margin: 0 auto;
 			padding-right: 15px;
 			padding-left: 15px;
-			margin-bottom: 30px;
-			margin-top: 40px;
+			margin-bottom: 15px;
+			margin-top: 0;
 			color: @color-text-purple;
 		}
 		@media only screen and (max-width : 991px) {
@@ -4671,7 +4676,7 @@ div[id ^= "mini-panel-partner_in_"], {
 		.esener-template{
 			.resume-section{
 				margin-top: 25px;
-				margin-bottom: 40px;
+				margin-bottom: 5px;
 				font-weight: bold;
 			}
 			> ul{
@@ -6756,6 +6761,66 @@ body.front .view-slideshow blockquote.image-field-caption p,
 				display: flex;
    			 	flex-wrap: wrap;
 			}
+		}
+	}
+}
+
+
+/* New Sticky header */
+
+header.hide-header{
+	position: fixed;
+	top: -23rem !important;
+	-webkit-transition: all 0.6s; 
+	transition: all 0.6s;
+	z-index: 999999999;
+	width: 100%;
+}
+
+.fixedHeader{
+	position: fixed;
+	background: #FFFF;
+    width: 100%;
+    z-index: 9999;
+    transition: top 0.6s linear;
+    top: 0px!important;
+}
+
+.logged-in{
+	padding-top: 29rem !important;
+	header.hide-header{
+		top: -29rem !important;
+	}
+	.fixedHeader{
+		margin-top: 64px; 
+	} 
+}
+
+#sliding-popup.sliding-popup-top{
+	z-index: 999999999999;
+    position: fixed;
+}
+
+/*  MDR-3526 - Reduce the white heading around the introductory text */
+.page-header {	
+	margin: 0;
+}
+
+.panels-flexible-row{
+	padding-bottom: 0px;
+}
+
+.node-type-partner{
+	.panels-flexible-row{
+		padding-bottom: 25px;
+	}
+}
+
+.view-id-partners_list.view-display-id-block ,
+.view-id-partners_list.view-display-id-block_3{
+	.views-row-1{
+		.views-field.views-field-nothing{
+			border-top: 0;
 		}
 	}
 }
