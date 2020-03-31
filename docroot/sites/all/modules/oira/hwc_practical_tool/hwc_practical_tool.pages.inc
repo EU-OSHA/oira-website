@@ -323,6 +323,8 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
       'body:value',
       'field_alternative_title',
       'field_alternative_body:value',
+      'field_third_title',
+      'field_third_description:value',
     )
   );
   $query->setOption('search_api_facets', $facets_def);
