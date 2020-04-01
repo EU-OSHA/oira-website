@@ -13555,6 +13555,18 @@ header.hide-header {
 .view-id-partners_list.view-display-id-block_3 .views-row-1 .views-field.views-field-nothing {
   border-top: 0;
 }
+/* Cookies banner */
+#sliding-popup.sliding-popup-top,
+#sliding-popup.sliding-popup-top .eu-cookie-withdraw-banner,
+.eu-cookie-withdraw-tab {
+  background: url('../images/background-cookies.png') repeat !important;
+  height: auto !important;
+}
+#sliding-popup.sliding-popup-top button,
+#sliding-popup.sliding-popup-top .eu-cookie-withdraw-banner button,
+.eu-cookie-withdraw-tab button {
+  font-size: 11.5px;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
