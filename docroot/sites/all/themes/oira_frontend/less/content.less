@@ -2643,14 +2643,22 @@ div[id ^= "mini-panel-partner_in_"], {
 		border-bottom: 2px solid @color-text-purple-darker;
 		padding-top: 10px;
 		margin-bottom: 10px;
-		padding-bottom: 30px;
+		padding-bottom: 10px;
+		display: flex;
+		align-items: center;
+		
+		h1{
+			margin-top: 0;
+		}
+
 		h2{
 			margin-top: 0px;
 			line-height: 1.3em;
 		}
 		.partner-image-container{
+			float: left;
 			img{
-				margin: 0 auto;
+				margin: 0;
 			}
 		}
 	}
@@ -3706,8 +3714,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			padding: 15px 30px 0px 30px;
 		}
 		.quicktabs-views-group{
-			background-color: @color-primary;
-			padding: 0px 30px;
+			padding: 0px 15px;
 			margin: 0px 0px;
 
 			.views-field.views-field-nothing{
@@ -3766,9 +3773,8 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-irat-network{
 	.view-id-partners_list{
 		article{
-			background-color: @color-primary;
 			margin-bottom: 30px;
-			padding: 30px 15px;
+			padding: 0;
 			margin-left: 0px;
 			margin-right: 0px;
 			.col-sm-10{
@@ -3806,9 +3812,8 @@ div[id ^= "mini-panel-partner_in_"], {
 			padding: 15px 30px 0px 30px;
 		}
 		.quicktabs-views-group{
-			background-color: @color-primary;
-			padding: 0px 30px;
-			margin: 0 0 2em 0;
+			padding: 0px 15px;
+			margin: 0;
 
 			h3{
 				float: left;
@@ -3826,8 +3831,15 @@ div[id ^= "mini-panel-partner_in_"], {
 				padding-left: 0px;
 				overflow: hidden;
 				clear: both;
+				.field-content{
+					display: flex;
+    				align-items: center;
+				}
 				.col-sm-2{
 					padding-left: 0px;
+					img{
+						margin: 0 auto;
+					}
 				}
 				.field-name-field-country{
 					background-color: inherit;
@@ -3906,9 +3918,8 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-irat-network{
 	.view-id-partners_list{
 		.quicktabs-views-group.row{
-			background-color: @color-primary;
 			margin-bottom: 30px;
-			padding: 30px 15px 20px 15px;
+			padding: 0;
 			margin-left: 0px;
 			margin-right: 0px;
 			.col-sm-10{
@@ -3933,6 +3944,10 @@ div[id ^= "mini-panel-partner_in_"], {
 			    padding: 30px 15px 0 0;
 			    overflow: hidden;
 			    clear: both;
+			    .field-content{
+			    	display: flex;
+			    	align-items: center;
+			    }
 			}
 		}
 
@@ -4619,10 +4634,10 @@ div[id ^= "mini-panel-partner_in_"], {
 		div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first{
 			border-top: 2px solid @color-primary-dark;
 			border-bottom: none;
-			padding-top: 0px;
+			padding-top: 0;
 			margin-top: 15px;
-			margin-bottom: 0px;
-			padding-bottom: 0px;
+			margin-bottom: 0;
+			padding-bottom: 10px;
 			img{
 				height: 175px;
 			}
@@ -6572,7 +6587,6 @@ body.front .view-slideshow blockquote.image-field-caption p,
 
 .content-login-view{
     margin-top: 2em;
-    border-top: 2px solid @color-primary-dark;
     padding-top: 1em;
     text-align: right;
     padding-right: 0;
@@ -6825,9 +6839,7 @@ header.hide-header{
 	}
 }
 
-
 /* Cookies banner */
-
 #sliding-popup.sliding-popup-top, #sliding-popup.sliding-popup-top .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {
     background: url('../images/background-cookies.png') repeat !important;
     height: auto !important;
@@ -6835,4 +6847,3 @@ header.hide-header{
     	font-size: 11.5px;
     }
 }
-
