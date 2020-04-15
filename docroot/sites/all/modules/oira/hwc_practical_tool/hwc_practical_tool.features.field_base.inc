@@ -139,6 +139,79 @@ function hwc_practical_tool_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_third_description'.
+  $field_bases['field_third_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_third_description',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_third_language'.
+  $field_bases['field_third_language'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_third_language',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'languagefield',
+    'settings' => array(
+      'enabled' => 2,
+      'entity_translation_sync' => FALSE,
+      'excluded_languages' => array(),
+      'format' => array(
+        'iso' => 0,
+        'name' => 'name',
+        'name_native' => 0,
+      ),
+      'groups' => '',
+      'languages' => array(),
+    ),
+    'translatable' => 0,
+    'type' => 'language_field',
+  );
+
+  // Exported field_base: 'field_third_title'.
+  $field_bases['field_third_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_third_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 60,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_tool_link'.
   $field_bases['field_tool_link'] = array(
     'active' => 1,
