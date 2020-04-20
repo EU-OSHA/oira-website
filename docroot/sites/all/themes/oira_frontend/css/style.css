@@ -15253,6 +15253,17 @@ header.hide-header {
     padding-left: 15px;
     padding-right: 15px;
   }
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .field-content,
+  .page-others-partners .quicktabs-views-group .views-field.views-field-nothing .field-content,
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .field-content {
+    display: block;
+    align-items: left;
+  }
+  .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img,
+  .page-others-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img,
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img {
+    margin: 0;
+  }
   blockquote.image-field-caption p {
     max-width: 430px;
   }
