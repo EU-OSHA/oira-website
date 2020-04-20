@@ -394,7 +394,9 @@ function osha_news_field_default_field_instances() {
   $field_instances['node-news-field_image'] = array(
     'bundle' => 'news',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Image News list. 
+Recommended image format: .png
+ Manual Crop ratio: 259px 259px',
     'display' => array(
       'body' => array(
         'label' => 'above',
@@ -498,7 +500,6 @@ function osha_news_field_default_field_instances() {
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 0,
-      'title_field_required' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -507,14 +508,18 @@ function osha_news_field_default_field_instances() {
       'settings' => array(
         'manualcrop_crop_info' => 1,
         'manualcrop_default_crop_area' => 1,
-        'manualcrop_enable' => 0,
+        'manualcrop_enable' => 1,
         'manualcrop_inline_crop' => 0,
         'manualcrop_instant_crop' => 0,
         'manualcrop_instant_preview' => 1,
         'manualcrop_keyboard' => 1,
         'manualcrop_maximize_default_crop_area' => 0,
-        'manualcrop_require_cropping' => array(),
-        'manualcrop_styles_list' => array(),
+        'manualcrop_require_cropping' => array(
+          'news_list_and_node' => 'news_list_and_node',
+        ),
+        'manualcrop_styles_list' => array(
+          'news_list_and_node' => 'news_list_and_node',
+        ),
         'manualcrop_styles_mode' => 'include',
         'manualcrop_thumblist' => 0,
         'preview_image_style' => 'thumbnail',
@@ -530,7 +535,9 @@ function osha_news_field_default_field_instances() {
   $field_instances['node-news-field_image_home_latest_news'] = array(
     'bundle' => 'news',
     'deleted' => 0,
-    'description' => 'Image to Home page. Recommended image dimensions: 600 x 350 pixels',
+    'description' => 'Image to Home page. Recommended image dimensions: 1200 pixels x 800 pixels.
+Recommended image format: .png
+Manual Crop ratio: 555px 367px',
     'display' => array(
       'body' => array(
         'label' => 'above',
@@ -545,14 +552,9 @@ function osha_news_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'field_formatter_class' => '',
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 22,
       ),
       'osha_resources' => array(
@@ -1345,7 +1347,12 @@ function osha_news_field_default_field_instances() {
   t('Disable notifications');
   t('Image');
   t('Image Home latest news');
-  t('Image to Home page. Recommended image dimensions: 600 x 350 pixels');
+  t('Image News list. 
+Recommended image format: .png
+ Manual Crop ratio: 259px 259px');
+  t('Image to Home page. Recommended image dimensions: 1200 pixels x 800 pixels.
+Recommended image format: .png
+Manual Crop ratio: 555px 367px');
   t('Migration Source');
   t('Page count');
   t('Publication date');

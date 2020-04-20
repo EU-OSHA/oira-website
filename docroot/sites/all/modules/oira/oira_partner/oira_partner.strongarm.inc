@@ -317,7 +317,7 @@ function oira_partner_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_partner_pattern';
-  $strongarm->value = 'oira-community/[node:title]';
+  $strongarm->value = 'Partners/[node:title]';
   $export['pathauto_node_partner_pattern'] = $strongarm;
 
   return $export;
