@@ -8452,10 +8452,12 @@ a.more-link:before {
   margin-top: 15px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
-  display: none;
+  display: block;
+  position: absolute;
+  margin-left: 0;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label {
-  padding-left: 0px;
+  padding-left: 20px;
   margin-bottom: 0px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
@@ -8465,6 +8467,7 @@ a.more-link:before {
   display: block;
   margin-bottom: 10px;
   cursor: pointer;
+  padding-left: 0;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:after {
   content: "\e250";

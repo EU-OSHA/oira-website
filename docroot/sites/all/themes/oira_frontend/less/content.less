@@ -1713,10 +1713,12 @@ a.more-link{
 						margin-top: 15px;
 
 						input.form-checkbox{
-							display: none;
+							display: block;
+							position: absolute;
+    						margin-left: 0;
 						}
 						label{
-							padding-left: 0px;
+							padding-left: 20px;
 							margin-bottom: 0px;
 							&:first-child{
 								font-family: @font-family-base-2;
@@ -1725,6 +1727,7 @@ a.more-link{
 								display: block;
 								margin-bottom: 10px;
 								cursor: pointer;
+								padding-left: 0;
 							}
 							&:after{
 								content: "\e250";
