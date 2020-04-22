@@ -38,7 +38,7 @@ function osha_path_breadcrumbs_settings_info() {
   $path_breadcrumb->data = array(
     'titles' => array(
       0 => '%site:current-page:menu-link:pb-join:name',
-      1 => '%node:title',
+      1 => '%node:title2',
     ),
     'paths' => array(
       0 => '%site:current-page:menu-link:pb-join:url',

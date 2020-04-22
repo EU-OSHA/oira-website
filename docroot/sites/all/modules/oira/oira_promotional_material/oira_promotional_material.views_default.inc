@@ -123,22 +123,6 @@ function oira_promotional_material_views_default_views() {
     'tools_show_full' => 0,
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Field: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_image']['alter']['text'] = '<a href="[partner_url]"><img src="[field_image]" title="[title_field]" alt="[title_field]"/></a>';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['type'] = 'image_url';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'url_type' => '0',
-    'image_style' => 'generic_detail_thumbnail',
-    'image_link' => '',
-    'field_formatter_class' => '',
-  );
   /* Field: Field: Language */
   $handler->display->display_options['fields']['field_language']['id'] = 'field_language';
   $handler->display->display_options['fields']['field_language']['table'] = 'field_data_field_language';
@@ -184,12 +168,26 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['fields']['tools_see_more']['label'] = '';
   $handler->display->display_options['fields']['tools_see_more']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tools_see_more']['element_label_colon'] = FALSE;
+  /* Field: Content: Image Home latest materials */
+  $handler->display->display_options['fields']['field_image_home_latest_material']['id'] = 'field_image_home_latest_material';
+  $handler->display->display_options['fields']['field_image_home_latest_material']['table'] = 'field_data_field_image_home_latest_material';
+  $handler->display->display_options['fields']['field_image_home_latest_material']['field'] = 'field_image_home_latest_material';
+  $handler->display->display_options['fields']['field_image_home_latest_material']['label'] = '';
+  $handler->display->display_options['fields']['field_image_home_latest_material']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_home_latest_material']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_home_latest_material']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_home_latest_material']['settings'] = array(
+    'image_style' => 'latest_materials',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'materials-content-wrapper\'>
+<a href="[partner_url]">[field_image_home_latest_material]</a>
 <h4>[title_field]</h4>
 [field_language]
 [field_country]
@@ -208,10 +206,10 @@ function oira_promotional_material_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Promotional materials frontpage block'),
-    t('<a href="[partner_url]"><img src="[field_image]" title="[title_field]" alt="[title_field]"/></a>'),
     t('<div class="custom-label"><span>Language:</span><div>[field_language]</div></div>'),
     t('<div class="custom-label"><span>Country:</span><div>[field_country]</div></div>'),
     t('<div class=\'materials-content-wrapper\'>
+<a href="[partner_url]">[field_image_home_latest_material]</a>
 <h4>[title_field]</h4>
 [field_language]
 [field_country]
@@ -293,6 +291,7 @@ function oira_promotional_material_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'promotional_material_type' => 'promotional_material_type',
   );
+  $handler->display->display_options['filters']['machine_name']['group'] = 1;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

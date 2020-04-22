@@ -201,6 +201,7 @@ function osha_resources_field_default_field_instances() {
         'module' => 'hwc_practical_tool',
         'settings' => array(
           'field_formatter_class' => '',
+          'text' => '',
         ),
         'type' => 'external_tool_link',
         'weight' => 1,
@@ -343,10 +344,10 @@ function osha_resources_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
-      'entity_translation_sync' => 0,
+      'entity_translation_sync' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'image_field_caption' => 0,
+      'image_field_caption' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -358,6 +359,7 @@ function osha_resources_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
         ),
         'allowed_types' => array(

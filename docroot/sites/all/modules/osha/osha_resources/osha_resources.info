@@ -17,6 +17,7 @@ dependencies[] = link
 dependencies[] = media
 dependencies[] = number
 dependencies[] = osha
+dependencies[] = osha_resources
 dependencies[] = osha_slideshare
 dependencies[] = panels_mini
 dependencies[] = strongarm

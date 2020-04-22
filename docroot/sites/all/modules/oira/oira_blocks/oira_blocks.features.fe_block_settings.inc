@@ -108,8 +108,8 @@ function oira_blocks_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'oira_frontend' => array(
-        'region' => 'header_block',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'oira_frontend',
         'weight' => -46,
       ),
