@@ -10730,6 +10730,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-irat-network .view-id-partners_list .flag img {
   height: 100%;
   width: 100%;
+  border: 1px solid #b9b8b8;
 }
 .page-irat-network .view-id-partners_list .views-row-2 .flag {
   display: none;
