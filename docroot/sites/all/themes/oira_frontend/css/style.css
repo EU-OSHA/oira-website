@@ -10658,6 +10658,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-sectorial-social-partners .flag img {
   height: 100%;
   width: 100%;
+  border: 1px solid #b9b8b8;
 }
 .page-national-partners .views-row-2 .flag,
 .page-others-partners .views-row-2 .flag,
