@@ -8427,7 +8427,6 @@ a.more-link:before {
   display: block;
   color: #ffffff;
   margin-bottom: 10px;
-  font-style: italic;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column a.active span:before {
   color: #786586;
@@ -8457,7 +8456,8 @@ a.more-link:before {
   margin-left: 0;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label {
-  padding-left: 20px;
+  padding-left: 0px;
+  padding-bottom: 5px;
   margin-bottom: 0px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
@@ -10531,6 +10531,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   text-decoration: underline !important;
   color: #23527c;
 }
+.page-national-partners .quicktabs-views-group h3 a {
+  margin-left: -15px;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3 a {
+  margin-left: 0;
+}
 /*END National social partners*/
 /* New styles grouping by Country */
 .page-national-partners .quicktabs-tabpage,
@@ -10556,7 +10562,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   float: left;
   padding-left: 0;
   padding-right: 10px;
-  width: 83%;
+  width: 75%;
 }
 .page-national-partners .quicktabs-views-group h3 a,
 .page-others-partners .quicktabs-views-group h3 a,
@@ -10730,6 +10736,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
 .page-irat-network .view-id-partners_list .flag img {
   height: 100%;
   width: 100%;
+  border: 1px solid #b9b8b8;
 }
 .page-irat-network .view-id-partners_list .views-row-2 .flag {
   display: none;
@@ -13544,7 +13551,7 @@ header.hide-header {
 }
 .fixedHeader {
   position: fixed;
-  background: #FFFF;
+  background: #FFF;
   width: 100%;
   z-index: 9999;
   transition: top 0.6s linear;
@@ -13588,6 +13595,69 @@ header.hide-header {
 #sliding-popup.sliding-popup-top .eu-cookie-withdraw-banner button,
 .eu-cookie-withdraw-tab button {
   font-size: 11.5px;
+}
+/* input checkboxes */
+.page-oira-tools #edit-left-column input[type=checkbox] + label:before {
+  content: "\2714";
+  float: left;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  padding-left: 0.4em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+  clear: both;
+  background: #FFF;
+  margin-right: 10px;
+  border: 1px solid #765e84;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] + label {
+  display: block;
+  cursor: pointer;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] {
+  display: none !important;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:checked + label:before {
+  background-color: #FFF;
+  border-color: #FFF;
+  color: #765e84;
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] + label:before {
+  float: left;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+  padding-top: 0;
+  padding-right: 5px;
+  padding-bottom: 14px;
+  margin-bottom: 10px;
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:checked + label:before {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+  padding-top: 0;
+  padding-right: 5px;
+  padding-bottom: 14px;
 }
 /*FOOTER
 ********************************************/
@@ -15250,19 +15320,25 @@ header.hide-header {
   }
 }
 @media only screen and (max-width: 767px) {
+  .view.view-partners-list.view-display-id-block_2 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .margin-line {
     padding-left: 15px;
     padding-right: 15px;
   }
   .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .field-content,
   .page-others-partners .quicktabs-views-group .views-field.views-field-nothing .field-content,
-  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .field-content {
-    display: block;
-    align-items: left;
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .field-content,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .field-content {
+    display: block !important;
+    align-items: left !important;
   }
   .page-national-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img,
   .page-others-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img,
-  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img {
+  .page-sectorial-social-partners .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img,
+  .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img {
     margin: 0;
   }
   blockquote.image-field-caption p {
