@@ -363,3 +363,16 @@ jQuery(document).ready(function () {
 })( jQuery );
 
 
+
+/* OiRA tools filters expanded */
+(function( $ ){
+	$(document).ready(function() {
+		//Add display block
+		if ($(".page-oira-tools")[0]){
+			$('#edit-left-column .form-group > label').addClass('area-shown');
+			$('#edit-left-column .form-group .search-facet-field').css('display' , 'block');
+
+		}
+	});
+
+})( jQuery );
