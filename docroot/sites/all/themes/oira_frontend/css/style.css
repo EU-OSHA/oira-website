@@ -10528,6 +10528,12 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   text-decoration: underline !important;
   color: #23527c;
 }
+.page-national-partners .quicktabs-views-group h3 a {
+  margin-left: -15px;
+}
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3 a {
+  margin-left: 0;
+}
 /*END National social partners*/
 /* New styles grouping by Country */
 .page-national-partners .quicktabs-tabpage,
@@ -10553,7 +10559,7 @@ div[id^="mini-panel-partner_in_"] .partner-text2-container a:hover {
   float: left;
   padding-left: 0;
   padding-right: 10px;
-  width: 83%;
+  width: 75%;
 }
 .page-national-partners .quicktabs-views-group h3 a,
 .page-others-partners .quicktabs-views-group h3 a,
@@ -13542,7 +13548,7 @@ header.hide-header {
 }
 .fixedHeader {
   position: fixed;
-  background: #FFFF;
+  background: #FFF;
   width: 100%;
   z-index: 9999;
   transition: top 0.6s linear;
