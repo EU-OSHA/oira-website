@@ -416,7 +416,7 @@ Recommended image format: .png
         'settings' => array(
           'field_formatter_class' => '',
           'image_link' => '',
-          'image_style' => 'medium',
+          'image_style' => 'news_list_and_node',
         ),
         'type' => 'image',
         'weight' => 5,
