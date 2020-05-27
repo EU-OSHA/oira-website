@@ -381,7 +381,7 @@ function oira_form_node_form_alter(&$form, &$form_state, $form_id) {
 
       $disabled = [
         "body", "language", "field_summary", "field_tags", "field_updated",
-        "field_image_home_latest_news", "field_image", "field_publication_date", "field_aditional_resources",
+        "field_publication_date", "field_aditional_resources",
       ];
 
       drupal_add_css(drupal_get_path('module', 'oira') . '/css/oira.admin.css');

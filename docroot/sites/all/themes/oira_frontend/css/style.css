@@ -8427,7 +8427,6 @@ a.more-link:before {
   display: block;
   color: #ffffff;
   margin-bottom: 10px;
-  font-style: italic;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column a.active span:before {
   color: #786586;
@@ -8452,10 +8451,13 @@ a.more-link:before {
   margin-top: 15px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes input.form-checkbox {
-  display: none;
+  display: block;
+  position: absolute;
+  margin-left: 0;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label {
   padding-left: 0px;
+  padding-bottom: 5px;
   margin-bottom: 0px;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:first-child {
@@ -8465,6 +8467,7 @@ a.more-link:before {
   display: block;
   margin-bottom: 10px;
   cursor: pointer;
+  padding-left: 0;
 }
 .page-oira-tools .panels-flexible-row-last #hwc-practical-tool-menu-tools-form div:first-child #edit-left-column .form-type-checkboxes label:after {
   content: "\e250";
@@ -13592,6 +13595,69 @@ header.hide-header {
 #sliding-popup.sliding-popup-top .eu-cookie-withdraw-banner button,
 .eu-cookie-withdraw-tab button {
   font-size: 11.5px;
+}
+/* input checkboxes */
+.page-oira-tools #edit-left-column input[type=checkbox] + label:before {
+  content: "\2714";
+  float: left;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  padding-left: 0.4em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: .2s;
+  clear: both;
+  background: #FFF;
+  margin-right: 10px;
+  border: 1px solid #765e84;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] + label {
+  display: block;
+  cursor: pointer;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] {
+  display: none !important;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:checked + label:before {
+  background-color: #FFF;
+  border-color: #FFF;
+  color: #765e84;
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:checked:disabled + label:before {
+  transform: scale(1);
+  background-color: #bfb;
+  border-color: #bfb;
+}
+.page-oira-tools #edit-left-column input[type=checkbox] + label:before {
+  float: left;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+  padding-top: 0;
+  padding-right: 5px;
+  padding-bottom: 14px;
+  margin-bottom: 10px;
+}
+.page-oira-tools #edit-left-column input[type=checkbox]:checked + label:before {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+  padding-top: 0;
+  padding-right: 5px;
+  padding-bottom: 14px;
 }
 /*FOOTER
 ********************************************/

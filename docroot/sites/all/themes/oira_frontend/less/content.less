@@ -1684,8 +1684,7 @@ a.more-link{
 					a.active{
 						display: block;
 						color: @color-white;
-						margin-bottom: 10px;
-						font-style: italic;
+						margin-bottom: 10px;						
 						span{
 							&:before{
 								color: @color-text-purple-darker;
@@ -1713,10 +1712,13 @@ a.more-link{
 						margin-top: 15px;
 
 						input.form-checkbox{
-							display: none;
+							display: block;
+							position: absolute;
+    						margin-left: 0;
 						}
 						label{
 							padding-left: 0px;
+							padding-bottom: 5px;
 							margin-bottom: 0px;
 							&:first-child{
 								font-family: @font-family-base-2;
@@ -1725,6 +1727,7 @@ a.more-link{
 								display: block;
 								margin-bottom: 10px;
 								cursor: pointer;
+								padding-left: 0;
 							}
 							&:after{
 								content: "\e250";
@@ -2643,14 +2646,22 @@ div[id ^= "mini-panel-partner_in_"], {
 		border-bottom: 2px solid @color-text-purple-darker;
 		padding-top: 10px;
 		margin-bottom: 10px;
-		padding-bottom: 30px;
+		padding-bottom: 10px;
+		display: flex;
+		align-items: center;
+		
+		h1{
+			margin-top: 0;
+		}
+
 		h2{
 			margin-top: 0px;
 			line-height: 1.3em;
 		}
 		.partner-image-container{
+			float: left;
 			img{
-				margin: 0 auto;
+				margin: 0;
 			}
 		}
 	}
@@ -3706,8 +3717,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			padding: 15px 30px 0px 30px;
 		}
 		.quicktabs-views-group{
-			background-color: @color-primary;
-			padding: 0px 30px;
+			padding: 0px 15px;
 			margin: 0px 0px;
 
 			.views-field.views-field-nothing{
@@ -3766,9 +3776,8 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-irat-network{
 	.view-id-partners_list{
 		article{
-			background-color: @color-primary;
 			margin-bottom: 30px;
-			padding: 30px 15px;
+			padding: 0;
 			margin-left: 0px;
 			margin-right: 0px;
 			.col-sm-10{
@@ -3789,6 +3798,15 @@ div[id ^= "mini-panel-partner_in_"], {
 		}
 	}
 }
+
+.page-national-partners .quicktabs-views-group h3 a{
+	margin-left: -15px;
+}
+
+.page-national-partners .quicktabs-views-group .views-field.views-field-nothing .hwc-alpha-pager-view-title-field h3 a{
+	margin-left: 0;
+}
+
 /*END National social partners*/
 
 
@@ -3806,15 +3824,14 @@ div[id ^= "mini-panel-partner_in_"], {
 			padding: 15px 30px 0px 30px;
 		}
 		.quicktabs-views-group{
-			background-color: @color-primary;
-			padding: 0px 30px;
-			margin: 0 0 2em 0;
+			padding: 0px 15px;
+			margin: 0;
 
 			h3{
 				float: left;
 				padding-left: 0;
 				padding-right: 10px;
-				width: 83%;
+				width: 75%;
 				a{
 					pointer-events: none;
 				}
@@ -3826,8 +3843,15 @@ div[id ^= "mini-panel-partner_in_"], {
 				padding-left: 0px;
 				overflow: hidden;
 				clear: both;
+				.field-content{
+					display: flex;
+    				align-items: center;
+				}
 				.col-sm-2{
 					padding-left: 0px;
+					img{
+						margin: 0 auto;
+					}
 				}
 				.field-name-field-country{
 					background-color: inherit;
@@ -3887,6 +3911,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			img{
 				height: 100%;
 				width: 100%;
+				border:1px solid #b9b8b8;
 			}
 		}
 
@@ -3906,9 +3931,8 @@ div[id ^= "mini-panel-partner_in_"], {
 .page-irat-network{
 	.view-id-partners_list{
 		.quicktabs-views-group.row{
-			background-color: @color-primary;
 			margin-bottom: 30px;
-			padding: 30px 15px 20px 15px;
+			padding: 0;
 			margin-left: 0px;
 			margin-right: 0px;
 			.col-sm-10{
@@ -3933,6 +3957,10 @@ div[id ^= "mini-panel-partner_in_"], {
 			    padding: 30px 15px 0 0;
 			    overflow: hidden;
 			    clear: both;
+			    .field-content{
+			    	display: flex;
+			    	align-items: center;
+			    }
 			}
 		}
 
@@ -3962,6 +3990,7 @@ div[id ^= "mini-panel-partner_in_"], {
 			img{
 				height: 100%;
 				width: 100%;
+				border:1px solid #b9b8b8;
 			}
 		}
 
@@ -4619,10 +4648,10 @@ div[id ^= "mini-panel-partner_in_"], {
 		div[id^="mini-panel-partner_in_"] .panels-flexible-row-inside-first{
 			border-top: 2px solid @color-primary-dark;
 			border-bottom: none;
-			padding-top: 0px;
+			padding-top: 0;
 			margin-top: 15px;
-			margin-bottom: 0px;
-			padding-bottom: 0px;
+			margin-bottom: 0;
+			padding-bottom: 10px;
 			img{
 				height: 175px;
 			}
@@ -6572,7 +6601,6 @@ body.front .view-slideshow blockquote.image-field-caption p,
 
 .content-login-view{
     margin-top: 2em;
-    border-top: 2px solid @color-primary-dark;
     padding-top: 1em;
     text-align: right;
     padding-right: 0;
@@ -6779,7 +6807,7 @@ header.hide-header{
 
 .fixedHeader{
 	position: fixed;
-	background: #FFFF;
+	background: #FFF;
     width: 100%;
     z-index: 9999;
     transition: top 0.6s linear;
@@ -6825,14 +6853,91 @@ header.hide-header{
 	}
 }
 
-
 /* Cookies banner */
-
 #sliding-popup.sliding-popup-top, #sliding-popup.sliding-popup-top .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {
     background: url('../images/background-cookies.png') repeat !important;
     height: auto !important;
     button{
     	font-size: 11.5px;
     }
+}
+
+/* input checkboxes */
+
+.page-oira-tools{
+	#edit-left-column{
+		input[type=checkbox] + label:before {
+		    content: "\2714";
+		    float: left;
+		    border-radius: 0.2em;
+		    display: inline-block;
+		    width: 1.2em;
+		    height: 1.2em;
+		    padding-left: 0.4em;
+		    padding-bottom: 0.3em;
+		    margin-right: 0.2em;
+		    vertical-align: bottom;
+		    color: transparent;
+		    transition: .2s;
+		    clear: both;
+		    background: #FFF;
+		    margin-right: 10px;
+		    border: 1px solid #765e84; 
+		}
+
+		input[type=checkbox] + label {
+		  display: block;
+		  cursor: pointer;
+		}
+
+		input[type=checkbox] {
+		  display: none !important;
+		}
+
+
+		input[type=checkbox] + label:active:before {
+		  transform: scale(0);
+		}
+
+		input[type=checkbox]:checked + label:before {
+		  background-color: #FFF;
+		  border-color: #FFF;
+		  color: #765e84;
+		}
+
+		input[type=checkbox]:disabled + label:before {
+		  transform: scale(1);
+		  border-color: #aaa;
+		}
+
+		input[type=checkbox]:checked:disabled + label:before {
+		  transform: scale(1);
+		  background-color: #bfb;
+		  border-color: #bfb;
+		}
+
+		input[type=checkbox] + label:before {
+		    float: left;
+		    border: 0;
+		    width: 20px;
+		    height: 20px;
+		    padding-left: 5px;
+		    padding-top: 0;
+		    padding-right: 5px;
+		    padding-bottom: 14px;
+		    margin-bottom: 10px;
+		}
+
+		input[type=checkbox]:checked + label:before {
+		    border: 0;
+		    width: 20px;
+		    height: 20px;
+		    padding-left: 5px;
+		    padding-top: 0;
+		    padding-right: 5px;
+		    padding-bottom: 14px;
+		}
+
+	}
 }
 

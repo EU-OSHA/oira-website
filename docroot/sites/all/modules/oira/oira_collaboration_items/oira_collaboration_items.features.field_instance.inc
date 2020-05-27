@@ -334,7 +334,7 @@ function oira_collaboration_items_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -410,7 +410,7 @@ function oira_collaboration_items_field_default_field_instances() {
           ),
         ),
         'type' => 'language_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -478,7 +478,7 @@ function oira_collaboration_items_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 3,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -541,12 +541,9 @@ function oira_collaboration_items_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(
-          'field_formatter_class' => '',
-        ),
-        'type' => 'list_default',
-        'weight' => 10,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -576,12 +573,13 @@ function oira_collaboration_items_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_strategic_type_2',
     'label' => 'Type',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
@@ -589,6 +587,7 @@ function oira_collaboration_items_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 7,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-collaboration_document-title_field'.
@@ -608,7 +607,7 @@ function oira_collaboration_items_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'osha_resources' => array(
         'label' => 'above',

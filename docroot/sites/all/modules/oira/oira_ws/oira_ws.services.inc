@@ -11,7 +11,7 @@ function oira_ws_default_services_endpoint() {
   $export = array();
 
   $endpoint = new stdClass();
-  $endpoint->disabled = FALSE; /* Edit this to true to make a default endpoint disabled initially */
+  $endpoint->disabled = TRUE; /* Edit this to true to make a default endpoint disabled initially */
   $endpoint->api_version = 3;
   $endpoint->name = 'oiraws';
   $endpoint->server = 'rest_server';

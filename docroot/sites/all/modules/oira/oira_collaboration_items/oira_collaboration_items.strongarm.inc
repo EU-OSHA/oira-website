@@ -119,19 +119,19 @@ function oira_collaboration_items_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'xmlsitemap' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'language' => array(
           'weight' => '2',
@@ -150,7 +150,7 @@ function oira_collaboration_items_strongarm() {
             'settings' => array(),
           ),
           'default' => array(
-            'weight' => '5',
+            'weight' => '6',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
