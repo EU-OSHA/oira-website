@@ -177,22 +177,18 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
           );
         }
       }
-      if (!empty($form['left-column'][$field_name]['#default_value'])) {
-        foreach ($form['left-column'][$field_name]['#default_value'] as $val) {
-          if (!empty($options[$val])) {
-            $filter_label = '<span class="glyphicon glyphicon-remove"></span>' . $options[$val];
-            $query = _hwc_practical_tool_strip_param_value($query_params, $field_name, $val) ?: ['text' => ''];
-            $form['left-column']['search']['filters'][] = array(
-              '#type' => 'markup',
-              '#markup' => l($filter_label, $action, array('query' => $query, 'html' => TRUE)),
-            );
-          }
-        }
-      }
     }
     if (isset($form['left-column'][$field_name]['#options'])) {
       asort($form['left-column'][$field_name]['#options']);
     }
+  }
+
+  $query_params = drupal_get_query_parameters();
+  if (!empty($query_params)) {
+    $form['left-column']['search']['filters'] = array(
+      '#type' => 'markup',
+      '#markup' => l(t('Clear filter'), current_path()),
+    );
   }
 
   $form['left-column']['toggle_filter'] = $form['content']['sort_fieldset']['toggle_filter'];
@@ -323,6 +319,8 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
       'body:value',
       'field_alternative_title',
       'field_alternative_body:value',
+      'field_third_title',
+      'field_third_description:value',
     )
   );
   $query->setOption('search_api_facets', $facets_def);

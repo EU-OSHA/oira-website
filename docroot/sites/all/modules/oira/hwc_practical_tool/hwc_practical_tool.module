@@ -542,6 +542,10 @@ function hwc_practical_tool_node_get_sort_title($item, $language) {
   if ($field_language && $field_language['value'] == $language) {
     return $wrapper->field_alternative_title->value();
   }
+  $field_language = $wrapper->field_third_language->value();
+  if ($field_language && $field_language['value'] == $language) {
+    return $wrapper->field_third_title->value();
+  }
   return $wrapper->title_field->value();
 }
 
@@ -794,6 +798,13 @@ function osha_title_formatter_practical_tool_view($entity_type, $entity, $field,
     $items[0]['value'] = $entity->field_alternative_title[LANGUAGE_NONE][0]['value'];
     $items[0]['safe_value'] = $entity->field_alternative_title[LANGUAGE_NONE][0]['safe_value'];
   }
+  if (($field['field_name'] == 'title' || $field['field_name'] == 'title_field')
+    &&!empty($entity->field_third_language[LANGUAGE_NONE][0]['value'])
+    && $entity->field_third_language[LANGUAGE_NONE][0]['value'] == $language->language
+    && !empty($entity->field_third_title[LANGUAGE_NONE][0]['value'])) {
+    $items[0]['value'] = $entity->field_third_title[LANGUAGE_NONE][0]['value'];
+    $items[0]['safe_value'] = $entity->field_third_title[LANGUAGE_NONE][0]['safe_value'];
+  }
 
   $settings = $display['settings'];
   $output = isset($items[0]) ? $items[0]['safe_value'] : '';
@@ -859,6 +870,14 @@ function osha_smart_trim_formatter_practical_tool_view($entity_type, $entity, $f
     $items[0]['value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['value'];
     $items[0]['safe_value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['safe_value'];
   }
+  if ($field['field_name'] == 'body'
+    &&!empty($entity->field_third_language[LANGUAGE_NONE][0]['value'])
+    && $entity->field_third_language[LANGUAGE_NONE][0]['value'] == $language->language
+    && !empty($entity->field_third_description[LANGUAGE_NONE][0]['value'])) {
+    $items[0]['value'] = $entity->field_third_description[LANGUAGE_NONE][0]['value'];
+    $items[0]['safe_value'] = $entity->field_third_description[LANGUAGE_NONE][0]['safe_value'];
+  }
+
   if (!empty($display['settings']['tools_show_full'])) {
     $display['settings']['trim_length'] = 9999;
     $display['settings']['more_link'] = FALSE;
@@ -879,6 +898,13 @@ function osha_text_formatter_practical_tool_view($entity_type, $entity, $field, 
     && !empty($entity->field_alternative_body[LANGUAGE_NONE][0]['value'])) {
     $items[0]['value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['value'];
     $items[0]['safe_value'] = $entity->field_alternative_body[LANGUAGE_NONE][0]['safe_value'];
+  }
+  if ($field['field_name'] == 'body'
+    &&!empty($entity->field_third_language[LANGUAGE_NONE][0]['value'])
+    && $entity->field_third_language[LANGUAGE_NONE][0]['value'] == $language->language
+    && !empty($entity->field_third_description[LANGUAGE_NONE][0]['value'])) {
+    $items[0]['value'] = $entity->field_third_description[LANGUAGE_NONE][0]['value'];
+    $items[0]['safe_value'] = $entity->field_third_description[LANGUAGE_NONE][0]['safe_value'];
   }
   return text_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display);
 }

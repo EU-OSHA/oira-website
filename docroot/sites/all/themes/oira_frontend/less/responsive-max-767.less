@@ -1,8 +1,30 @@
 @media only screen and (max-width : 767px){
 
+
+.view.view-partners-list.view-display-id-block_2{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 .margin-line {
 	padding-left: 15px;
     padding-right: 15px;
+}
+
+.page-national-partners, .page-others-partners, .page-sectorial-social-partners, .page-irat-network{
+	.quicktabs-views-group{
+		.views-field.views-field-nothing{
+			.field-content{
+				display: block !important;
+				align-items: left !important;
+			}
+			.col-sm-2{
+				img{
+					margin: 0;
+				}
+			}
+		}
+	}
 }
 
 blockquote.image-field-caption {
@@ -182,8 +204,9 @@ h1{
 
 .page-header {
     padding-bottom: 0px;
-    margin: 22px 0 11px;
+    margin: 0 0 11px;
 }
+
 h1.page-header {
     font-size: 2em;
 }
@@ -1229,9 +1252,6 @@ h1.page-header {
 					margin-top: 0px !important;
 					border-bottom: none;
 					padding-bottom: 0px;
-					.partner-image-container{
-						min-height: 160px;
-					}
 					h2{
 						font-size: @font-size1-6;
 						text-align: left !important;

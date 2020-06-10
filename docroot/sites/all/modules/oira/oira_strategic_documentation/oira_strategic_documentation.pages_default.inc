@@ -766,9 +766,9 @@ Update Strategic Documentation',
   $page->api_version = 1;
   $page->name = 'eu_osha_documents';
   $page->task = 'page';
-  $page->admin_title = 'EU-OSHA Files';
+  $page->admin_title = 'Audiovisual materials';
   $page->admin_description = '';
-  $page->path = 'private-zone/collaboration-area/eu-osha-documents';
+  $page->path = 'private-zone/collaboration-area/audiovisual-materials';
   $page->access = array(
     'plugins' => array(
       0 => array(
@@ -905,7 +905,7 @@ EU-OSHA documents',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-2d8d005c-8713-445e-ad33-1b310527c416';
+  $pane->pid = 'new-de9921dc-43e1-4b5a-9d21-deaf5727babb';
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'eu_osha_files';
@@ -923,7 +923,7 @@ EU-OSHA documents',
     'link_to_view' => 0,
     'args' => '',
     'url' => '',
-    'display' => 'eu_osha_files_background_documents',
+    'display' => 'eu_osha_files_audiovisual_materials',
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -936,9 +936,9 @@ EU-OSHA documents',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '2d8d005c-8713-445e-ad33-1b310527c416';
-  $display->content['new-2d8d005c-8713-445e-ad33-1b310527c416'] = $pane;
-  $display->panels['center'][0] = 'new-2d8d005c-8713-445e-ad33-1b310527c416';
+  $pane->uuid = 'de9921dc-43e1-4b5a-9d21-deaf5727babb';
+  $display->content['new-de9921dc-43e1-4b5a-9d21-deaf5727babb'] = $pane;
+  $display->panels['center'][0] = 'new-de9921dc-43e1-4b5a-9d21-deaf5727babb';
   $pane = new stdClass();
   $pane->pid = 'new-b5f9384d-c064-40d6-a05c-f1131ef9050c';
   $pane->panel = 'menu';
@@ -1031,7 +1031,7 @@ EU-OSHA documents',
     'panels_breadcrumbs_state' => 1,
     'panels_breadcrumbs_titles' => 'Private Zone
 Collaboration area
-Partners documents',
+EU-OSHA documents',
     'panels_breadcrumbs_paths' => '/private-zone
 /private-zone/collaboration-area
 <none>',

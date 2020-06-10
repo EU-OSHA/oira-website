@@ -264,7 +264,7 @@ function osha_resources_views_default_views() {
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Field: Workbench Access: Section */
+  /* Field: Workbench Access: Partner */
   $handler->display->display_options['fields']['section']['id'] = 'section';
   $handler->display->display_options['fields']['section']['table'] = 'workbench_access';
   $handler->display->display_options['fields']['section']['field'] = 'section';
@@ -406,12 +406,13 @@ function osha_resources_views_default_views() {
     t('Delete'),
     t('Type'),
     t('Title'),
-    t('Section'),
+    t('Partner'),
     t('Updated date'),
     t('edit'),
     t('delete'),
     t('Operations'),
     t('[edit_node] [delete_node]'),
+    t('Section'),
   );
   $export['additional_resources_admin'] = $view;
 

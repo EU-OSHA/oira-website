@@ -73,7 +73,7 @@ function osha_image_default_styles() {
   $styles['generic_detail_thumbnail'] = array(
     'label' => 'Generic thumb image MC (large)',
     'effects' => array(
-      8 => array(
+      10 => array(
         'name' => 'manualcrop_crop_and_scale',
         'data' => array(
           'width' => 600,
@@ -85,7 +85,7 @@ function osha_image_default_styles() {
         ),
         'weight' => -11,
       ),
-      6 => array(
+      11 => array(
         'name' => 'canvasactions_definecanvas',
         'data' => array(
           'RGB' => array(

@@ -926,12 +926,12 @@ else {
   $handler->display->display_options['style_plugin'] = 'hwc_quicktabs';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_orgtype',
+      'field' => 'field_country',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
   );
-  $handler->display->display_options['style_options']['tab_title_field'] = 'field_orgtype';
+  $handler->display->display_options['style_options']['tab_title_field'] = 'field_country';
   $handler->display->display_options['style_options']['row_class'] = 'row';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Country (field_country) */
@@ -1024,10 +1024,10 @@ else {
 [partner_content_count]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Country (field_country) */
+  $handler->display->display_options['sorts']['field_country_tid']['id'] = 'field_country_tid';
+  $handler->display->display_options['sorts']['field_country_tid']['table'] = 'field_data_field_country';
+  $handler->display->display_options['sorts']['field_country_tid']['field'] = 'field_country_tid';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1054,6 +1054,15 @@ else {
 
   /* Display: Sectorial partners */
   $handler = $view->new_display('block', 'Sectorial partners', 'block');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'quicktabs-views-group row';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Organisation Type (field_orgtype) */
   $handler->display->display_options['relationships']['field_orgtype_tid']['id'] = 'field_orgtype_tid';
@@ -1121,7 +1130,7 @@ else {
   $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
     'url_type' => '0',
-    'image_style' => 'medium',
+    'image_style' => '',
     'image_link' => '',
     'field_formatter_class' => '',
   );
@@ -1153,20 +1162,14 @@ else {
 [field_logo]
 </div>
 <div class="col-sm-5">
-[field_country]
 <div class="hwc-alpha-pager-view-title-field"><div class="field-content">[title_field]</div></div>
 </div>
-<div class="col-sm-5">
+<div class="col-sm-5  block-count">
 [partner_content_count]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Taxonomy term: Weight */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['relationship'] = 'field_orgtype_tid';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -1197,10 +1200,26 @@ else {
   $handler->display->display_options['filters']['field_partner_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
 
-  /* Display: National partners */
-  $handler = $view->new_display('block', 'National partners', 'block_1');
+  /* Display: OiRA National partners */
+  $handler = $view->new_display('block', 'OiRA National partners', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'National partners';
+  $handler->display->display_options['title'] = 'OiRA National Partners details';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_country',
+      'rendered' => 0,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'quicktabs-views-group row';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Organisation Type */
   $handler->display->display_options['fields']['field_orgtype']['id'] = 'field_orgtype';
@@ -1220,6 +1239,21 @@ else {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Flag */
+  $handler->display->display_options['fields']['field_flag']['id'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['table'] = 'field_data_field_flag';
+  $handler->display->display_options['fields']['field_flag']['field'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['relationship'] = 'field_country_tid';
+  $handler->display->display_options['fields']['field_flag']['label'] = '';
+  $handler->display->display_options['fields']['field_flag']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_flag']['element_class'] = 'flag';
+  $handler->display->display_options['fields']['field_flag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_flag']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_flag']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -1262,7 +1296,7 @@ else {
   $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
     'url_type' => '0',
-    'image_style' => 'medium',
+    'image_style' => '',
     'image_link' => '',
     'field_formatter_class' => '',
   );
@@ -1274,6 +1308,7 @@ else {
   $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_country']['element_wrapper_class'] = 'hwc-alpha-pager-view-title-field';
+  $handler->display->display_options['fields']['field_country']['type'] = 'taxonomy_term_reference_link';
   $handler->display->display_options['fields']['field_country']['settings'] = array(
     'field_formatter_class' => '',
   );
@@ -1294,14 +1329,18 @@ else {
 [field_logo]
 </div>
 <div class="col-sm-5">
-[field_country]
 <div class="hwc-alpha-pager-view-title-field"><div class="field-content">[title_field]</div></div>
 </div>
-<div class="col-sm-5">
+<div class="col-sm-5 block-count">
 [partner_content_count]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Country (field_country) */
+  $handler->display->display_options['sorts']['field_country_tid']['id'] = 'field_country_tid';
+  $handler->display->display_options['sorts']['field_country_tid']['table'] = 'field_data_field_country';
+  $handler->display->display_options['sorts']['field_country_tid']['field'] = 'field_country_tid';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1333,8 +1372,15 @@ else {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'IRAT';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_country',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['wrapper_class'] = 'quicktabs-views-group row';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -1345,6 +1391,21 @@ else {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Taxonomy term: Flag */
+  $handler->display->display_options['fields']['field_flag']['id'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['table'] = 'field_data_field_flag';
+  $handler->display->display_options['fields']['field_flag']['field'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['relationship'] = 'field_country_tid';
+  $handler->display->display_options['fields']['field_flag']['label'] = '';
+  $handler->display->display_options['fields']['field_flag']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_flag']['element_class'] = 'flag';
+  $handler->display->display_options['fields']['field_flag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_flag']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_flag']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -1387,7 +1448,7 @@ else {
   $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
     'url_type' => '0',
-    'image_style' => 'medium',
+    'image_style' => '',
     'image_link' => '',
     'field_formatter_class' => '',
   );
@@ -1411,7 +1472,6 @@ else {
 [field_logo]
 </div>
 <div class="col-sm-10">
-[field_country]
 [title_field]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
@@ -1441,6 +1501,167 @@ else {
   );
   $handler->display->display_options['filters']['field_partner_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
+
+  /* Display: Others partners */
+  $handler = $view->new_display('block', 'Others partners', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Others Partners';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'row';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'quicktabs-views-group row';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Organisation Type */
+  $handler->display->display_options['fields']['field_orgtype']['id'] = 'field_orgtype';
+  $handler->display->display_options['fields']['field_orgtype']['table'] = 'field_data_field_orgtype';
+  $handler->display->display_options['fields']['field_orgtype']['field'] = 'field_orgtype';
+  $handler->display->display_options['fields']['field_orgtype']['label'] = '';
+  $handler->display->display_options['fields']['field_orgtype']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_orgtype']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_orgtype']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_orgtype']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Flag */
+  $handler->display->display_options['fields']['field_flag']['id'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['table'] = 'field_data_field_flag';
+  $handler->display->display_options['fields']['field_flag']['field'] = 'field_flag';
+  $handler->display->display_options['fields']['field_flag']['relationship'] = 'field_country_tid';
+  $handler->display->display_options['fields']['field_flag']['label'] = '';
+  $handler->display->display_options['fields']['field_flag']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_flag']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_flag']['element_class'] = 'flag';
+  $handler->display->display_options['fields']['field_flag']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_flag']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_flag']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field']['settings'] = array(
+    'title_style' => 'h3',
+    'title_link' => 'content',
+    'title_class' => '',
+    'field_formatter_class' => 'hwc-alpha-pager-view-title-field',
+  );
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 0;
+  /* Field: Field: Logo */
+  $handler->display->display_options['fields']['field_logo']['id'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['table'] = 'field_data_field_logo';
+  $handler->display->display_options['fields']['field_logo']['field'] = 'field_logo';
+  $handler->display->display_options['fields']['field_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_logo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['text'] = '<img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/>';
+  $handler->display->display_options['fields']['field_logo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_logo']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo']['type'] = 'image_url';
+  $handler->display->display_options['fields']['field_logo']['settings'] = array(
+    'url_type' => '0',
+    'image_style' => '',
+    'image_link' => '',
+    'field_formatter_class' => '',
+  );
+  /* Field: Content: Country */
+  $handler->display->display_options['fields']['field_country']['id'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['table'] = 'field_data_field_country';
+  $handler->display->display_options['fields']['field_country']['field'] = 'field_country';
+  $handler->display->display_options['fields']['field_country']['label'] = '';
+  $handler->display->display_options['fields']['field_country']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_country']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_country']['element_wrapper_class'] = 'hwc-alpha-pager-view-title-field';
+  $handler->display->display_options['fields']['field_country']['settings'] = array(
+    'field_formatter_class' => '',
+  );
+  $handler->display->display_options['fields']['field_country']['field_api_classes'] = TRUE;
+  /* Field: Content: Extrafield Content count */
+  $handler->display->display_options['fields']['partner_content_count']['id'] = 'partner_content_count';
+  $handler->display->display_options['fields']['partner_content_count']['table'] = 'node';
+  $handler->display->display_options['fields']['partner_content_count']['field'] = 'partner_content_count';
+  $handler->display->display_options['fields']['partner_content_count']['label'] = '';
+  $handler->display->display_options['fields']['partner_content_count']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['partner_content_count']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="col-sm-2">
+[field_logo]
+</div>
+<div class="col-sm-5">
+<div class="hwc-alpha-pager-view-title-field"><div class="field-content">[title_field]</div></div>
+</div>
+<div class="col-sm-5  block-count">
+[partner_content_count]
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Country (field_country) */
+  $handler->display->display_options['sorts']['field_country_tid']['id'] = 'field_country_tid';
+  $handler->display->display_options['sorts']['field_country_tid']['table'] = 'field_data_field_country';
+  $handler->display->display_options['sorts']['field_country_tid']['field'] = 'field_country_tid';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'partner' => 'partner',
+  );
+  /* Filter criterion: Content: Type (field_partner_type) */
+  $handler->display->display_options['filters']['field_partner_type_tid']['id'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['table'] = 'field_data_field_partner_type';
+  $handler->display->display_options['filters']['field_partner_type_tid']['field'] = 'field_partner_type_tid';
+  $handler->display->display_options['filters']['field_partner_type_tid']['value'] = array(
+    1214 => '1214',
+  );
+  $handler->display->display_options['filters']['field_partner_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
   $translatables['partners_list'] = array(
     t('Master'),
     t('Sectorial partners'),
@@ -1465,16 +1686,45 @@ else {
 </div>'),
     t('term from field_orgtype'),
     t('<div class="partner-logo-wrapper" title="[title_field_1]" data-partner-nid="[nid]"><img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/></div>'),
-    t('National partners'),
+    t('<div class="col-sm-2">
+[field_logo]
+</div>
+<div class="col-sm-5">
+<div class="hwc-alpha-pager-view-title-field"><div class="field-content">[title_field]</div></div>
+</div>
+<div class="col-sm-5  block-count">
+[partner_content_count]
+</div>'),
+    t('OiRA National partners'),
+    t('OiRA National Partners details'),
     t('<img class="img-responsive" src="[field_logo]" title="[title_field_1]" alt="[title_field_1]" width="[field_logo-width]" height="[field_logo-height]"/>'),
+    t('<div class="col-sm-2">
+[field_logo]
+</div>
+<div class="col-sm-5">
+<div class="hwc-alpha-pager-view-title-field"><div class="field-content">[title_field]</div></div>
+</div>
+<div class="col-sm-5 block-count">
+[partner_content_count]
+</div>'),
     t('IRAT'),
     t('Nid'),
     t('<div class="col-sm-2">
 [field_logo]
 </div>
 <div class="col-sm-10">
-[field_country]
 [title_field]
+</div>'),
+    t('Others partners'),
+    t('Others Partners'),
+    t('<div class="col-sm-2">
+[field_logo]
+</div>
+<div class="col-sm-5">
+<div class="hwc-alpha-pager-view-title-field"><div class="field-content">[title_field]</div></div>
+</div>
+<div class="col-sm-5  block-count">
+[partner_content_count]
 </div>'),
   );
   $export['partners_list'] = $view;

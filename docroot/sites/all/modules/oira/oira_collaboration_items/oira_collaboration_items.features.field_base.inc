@@ -201,7 +201,6 @@ function oira_collaboration_items_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'visual' => 'Visual materials',
         'document' => 'Documents',
         'meeting' => 'Meeting Documents/PPT',
         'audiovisual' => 'Audiovisual materials',
