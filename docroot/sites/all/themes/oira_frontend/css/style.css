@@ -7824,9 +7824,9 @@ a.more-link:before {
   line-height: 0;
 }
 #block-system-main .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner {
-  background-color: #786586;
+  background-color: transparent;
   padding: 15px;
-  color: #ffffff;
+  color: #58585a;
   margin-bottom: 15px;
 }
 #block-system-main .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner h4 {
@@ -7834,11 +7834,11 @@ a.more-link:before {
 }
 #block-system-main .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner h4 a {
   font-size: 0.9em;
-  color: #ffffff;
+  color: #58585a;
   margin-top: 0px;
 }
 #block-system-main .view-display-id-block_1 .views-item-columns-container .field-name-related-partners .node-partner .more-link {
-  color: #ffffff;
+  color: #58585a;
   text-align: left;
 }
 #block-system-main .panels-flexible-region-new-oira_partners .panels-flexible-region-new-oira_partners-inside h3:after {
