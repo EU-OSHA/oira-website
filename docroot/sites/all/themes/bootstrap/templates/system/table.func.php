@@ -235,7 +235,7 @@ function bootstrap_table($variables) {
   }
 
   // Format the table footer:
-  if (count($footer)) {
+  if (!empty($footer) && count($footer)) {
     $output .= "<tfoot>\n";
     foreach ($footer as $row) {
       // Check if we're dealing with a simple or complex row.
