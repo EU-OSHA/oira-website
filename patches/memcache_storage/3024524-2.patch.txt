@@ -1,0 +1,13 @@
+diff --git a/memcache_storage.inc b/memcache_storage.inc
+index 8dff9c5..e887ef3 100644
+--- a/memcache_storage.inc
++++ b/memcache_storage.inc
+@@ -225,7 +225,7 @@ class MemcacheStorage implements DrupalCacheInterface {
+       if ($cache->created <= $flush_timestamp) {
+ 
+         // See if current cache id matches wildcard.
+-        if (strpos($cache->cid, $wildcard) === 0) {
++        if (strpos($cache->cid, (string) $wildcard) === 0) {
+ 
+           // Remove the current cache ID from the list of cache IDs in use.
+           $this->removeCacheID($cache->cid);
