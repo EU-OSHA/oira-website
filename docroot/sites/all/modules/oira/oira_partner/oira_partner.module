@@ -11,6 +11,7 @@ define('OIRA_PARTNER_TYPE_SECTORIAL_TID', 284);
 define('OIRA_PARTNER_TYPE_NATIONAL_TID', 262);
 define('OIRA_PARTNER_TYPE_IRAT_TID', 263);
 
+define('OIRA_PARTNER_COUNTRY_EU_LEVEL', 256);
 
 /**
  * Implements hook_menu().
@@ -447,12 +448,19 @@ function oira_partner_node_presave($node) {
     cache_clear_all(_oira_partner_compute_count_cid($node), 'cache');
 
     // If country is caching, change to all partner content.
-    $old_country = !empty($node->original->field_country) && !empty($node->original->field_country[LANGUAGE_NONE])
+    $old_country =
+      !empty($node->original->field_country) &&
+      !empty($node->original->field_country[LANGUAGE_NONE])
       ? $node->original->field_country[LANGUAGE_NONE][0]['tid']
       : NULL;
     $new_country = !empty($node->field_country) && !empty($node->field_country[LANGUAGE_NONE])
       ? $node->field_country[LANGUAGE_NONE][0]['tid']
       : NULL;
+    $field_country = $node->field_country;
+    if (!empty($node->field_oira_eu_level) && $node->field_oira_eu_level[LANGUAGE_NONE][0]['value']) {
+      $new_country = OIRA_PARTNER_COUNTRY_EU_LEVEL;
+      $field_country[LANGUAGE_NONE][0]['tid'] = $new_country;
+    }
     if ($old_country !== $new_country) {
       $instance = field_info_field('field_country');
       $q = db_select('workbench_access_node', 'w');
@@ -466,7 +474,7 @@ function oira_partner_node_presave($node) {
         field_attach_update('node', (object) [
           'nid' => $nid,
           'type' => $type,
-          'field_country' => $node->field_country,
+          'field_country' => $field_country,
         ]);
       }
     }

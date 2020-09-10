@@ -199,3 +199,10 @@ function oira_partner_update_7023() {
 function oira_partner_update_7024() {
   features_revert_module('oira_partner');
 }
+
+/**
+ * MDR-3812 EU Maritime tool shows as Greek tool.
+ */
+function oira_partner_update_7025() {
+  features_revert(array('oira_partner' => 'field_base', 'field_instance'));
+}
