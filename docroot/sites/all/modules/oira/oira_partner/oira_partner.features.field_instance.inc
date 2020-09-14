@@ -1104,6 +1104,62 @@ function oira_partner_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-partner-field_oira_eu_level'.
+  $field_instances['node-partner-field_oira_eu_level'] = array(
+    'bundle' => 'partner',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_oira_eu_level',
+    'label' => 'Oira EU level',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 25,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-partner-field_orgtype'.
   $field_instances['node-partner-field_orgtype'] = array(
     'bundle' => 'partner',
@@ -1185,7 +1241,7 @@ function oira_partner_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 18,
       ),
       'osha_wiki' => array(
         'label' => 'above',
@@ -1243,7 +1299,7 @@ function oira_partner_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 22,
       ),
       'highlights_item' => array(
         'label' => 'above',
@@ -2012,6 +2068,7 @@ function oira_partner_field_default_field_instances() {
   t('Main Contact');
   t('Main Contact Email');
   t('Name');
+  t('Oira EU level');
   t('Organisation');
   t('Organisation GUID');
   t('Organisation Type');
