@@ -88,7 +88,11 @@ function match_redirect_init() {
       // Check if the current page exists unless overridden.
       if ($override || !match_redirect_url_exists()) {
         // Do the redirect.
-        drupal_goto($redirect, array(), $code);
+        //        drupal_goto($redirect, array(), $code);
+        $parsed_url = drupal_parse_url ( $redirect );
+        drupal_goto ( $parsed_url ['path'], array (
+          'query' => (! empty ( $parsed_url ['query'] ) ? $parsed_url ['query'] : array ())
+        ), $code );
         break;
       }
     }
