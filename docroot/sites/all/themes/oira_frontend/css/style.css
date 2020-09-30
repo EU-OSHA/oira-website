@@ -13704,6 +13704,18 @@ header.hide-header {
   display: inline-block;
   margin-left: 10px;
 }
+.page-certificates h1,
+.page-certificates .breadcrumb {
+  display: none;
+}
+.iframe-certificate {
+  width: 100%;
+  height: 580px;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border: none;
+}
 @media only screen and (max-width: 1280px) {
   .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
     float: none;
