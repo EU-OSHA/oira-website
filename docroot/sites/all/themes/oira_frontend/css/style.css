@@ -9056,7 +9056,7 @@ a.more-link:before {
 .view-display-id-oshnews_list {
   font-size: 16px;
 }
-.view-display-id-oshnews_list .field-type-image img {
+.view-display-id-oshnews_list .field-type-image {
   border: 1px solid grey;
 }
 .view-display-id-oshnews_list .views-row-odd {
@@ -9178,8 +9178,6 @@ a.more-link:before {
   float: left;
   margin-right: 30px;
   margin-bottom: 20px;
-}
-.node-news .field-name-field-image img {
   border: 1px solid grey;
 }
 .node-news .group-content-wrapper.news-field-group {
@@ -13659,6 +13657,20 @@ header.hide-header {
   padding-right: 5px;
   padding-bottom: 14px;
 }
+.page-certificates h1 {
+  display: none;
+}
+.page-certificates .breadcrumb {
+  display: none;
+}
+.iframe-certificate {
+  width: 100%;
+  height: 580px;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border: none;
+}
 /*FOOTER
 ********************************************/
 .site-footer {
@@ -13703,18 +13715,6 @@ header.hide-header {
 .site-footer .menu-block-2 .menu li {
   display: inline-block;
   margin-left: 10px;
-}
-.page-certificates h1,
-.page-certificates .breadcrumb {
-  display: none;
-}
-.iframe-certificate {
-  width: 100%;
-  height: 580px;
-  padding-top: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
-  border: none;
 }
 @media only screen and (max-width: 1280px) {
   .page-eu-national-partners .view-id-countries .views-item-columns-container .views-field-field-flag {
