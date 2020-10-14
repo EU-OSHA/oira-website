@@ -9056,7 +9056,7 @@ a.more-link:before {
 .view-display-id-oshnews_list {
   font-size: 16px;
 }
-.view-display-id-oshnews_list .field-type-image img {
+.view-display-id-oshnews_list .field-type-image {
   border: 1px solid grey;
 }
 .view-display-id-oshnews_list .views-row-odd {
@@ -9178,8 +9178,6 @@ a.more-link:before {
   float: left;
   margin-right: 30px;
   margin-bottom: 20px;
-}
-.node-news .field-name-field-image img {
   border: 1px solid grey;
 }
 .node-news .group-content-wrapper.news-field-group {
