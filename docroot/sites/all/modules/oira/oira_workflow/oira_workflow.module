@@ -295,8 +295,15 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
         $row->name = 'EU level';
       }
       $form['workbench_access']['workbench_access']['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
+      if (!empty($form['field_co_author'])) {
+        $form['field_co_author'][LANGUAGE_NONE]['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
+
+      }
     }
     asort($form['workbench_access']['workbench_access']['#options']);
+    if (!empty($form['field_co_author'])) {
+      asort($form['field_co_author'][LANGUAGE_NONE]['#options']);
+    }
   }
 
   if ($form_id == 'oira_configuration_form') {
