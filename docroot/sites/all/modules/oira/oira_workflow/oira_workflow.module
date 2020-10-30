@@ -271,6 +271,19 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
   global $user;
 
   if (isset($form['#node_edit_form']) && !empty($form['workbench_access']['workbench_access'])) {
+    $q = db_select('workbench_access_node', 't');
+    $q->leftJoin('taxonomy_term_data', 's', 't.access_id = s.tid');
+    $q->leftJoin('node', 'n', 'n.nid = t.nid');
+    $q->addField('t', 'access_id', 'tid');
+    $q->condition('t.access_id', 'section', '<>');
+    $q->condition('n.type', 'partner');
+    $q->condition('n.status', 0);
+    $sections = $q->execute()->fetchAll();
+    $default_value = 0;
+    if ($form['workbench_access']['workbench_access']['#default_value']) {
+      $default_value = $form['workbench_access']['workbench_access']['#default_value'][0];
+    }
+
     $q = db_select('workbench_access_node', 'w');
     $q->innerJoin('taxonomy_term_data', 't1', 't1.tid = w.access_id');
     $q->innerJoin('node', 'n', 'n.nid = w.nid');
@@ -297,7 +310,17 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       $form['workbench_access']['workbench_access']['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
       if (!empty($form['field_co_author'])) {
         $form['field_co_author'][LANGUAGE_NONE]['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
-
+      }
+    }
+    foreach ($sections as $section) {
+      if ($section->tid == $default_value) {
+        continue;
+      }
+      if (isset($form['workbench_access']['workbench_access']['#options'][$section->tid])) {
+        unset($form['workbench_access']['workbench_access']['#options'][$section->tid]);
+        if (!empty($form['field_co_author'])) {
+          unset($form['field_co_author'][LANGUAGE_NONE]['#options'][$section->tid]);
+        }
       }
     }
     asort($form['workbench_access']['workbench_access']['#options']);
