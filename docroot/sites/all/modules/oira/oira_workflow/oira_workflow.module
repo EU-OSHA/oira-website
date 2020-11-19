@@ -270,6 +270,65 @@ function oira_workflow_form_node_form_alter(&$form, &$form_state, $form_id) {
 function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
   global $user;
 
+  if (isset($form['#node_edit_form']) && !empty($form['workbench_access']['workbench_access'])) {
+    $q = db_select('workbench_access_node', 't');
+    $q->leftJoin('taxonomy_term_data', 's', 't.access_id = s.tid');
+    $q->leftJoin('node', 'n', 'n.nid = t.nid');
+    $q->addField('t', 'access_id', 'tid');
+    $q->condition('t.access_id', 'section', '<>');
+    $q->condition('n.type', 'partner');
+    $q->condition('n.status', 0);
+    $sections = $q->execute()->fetchAll();
+    $default_value = 0;
+    if ($form['workbench_access']['workbench_access']['#default_value']) {
+      $default_value = $form['workbench_access']['workbench_access']['#default_value'][0];
+    }
+
+    $q = db_select('workbench_access_node', 'w');
+    $q->innerJoin('taxonomy_term_data', 't1', 't1.tid = w.access_id');
+    $q->innerJoin('node', 'n', 'n.nid = w.nid');
+    $q->condition('n.type', 'partner');
+    $q->distinct();
+
+    $q->fields('w', ['access_id']);
+    $q->addField('t1', 'name', 'partner_name');
+
+    $q->innerJoin('field_data_field_country', 'c', 'c.entity_id = n.nid');
+    $q->innerJoin('field_data_field_oira_eu_level', 'e', 'c.entity_id = n.nid');
+    $q->innerJoin('taxonomy_term_data', 't2', 't2.tid = c.field_country_tid');
+
+
+    $q->addField('t2', 'name', 'country_name');
+    $q->fields('c', ['field_country_tid']);
+    $q->fields('e', ['field_oira_eu_level_value']);
+
+    $rs = $q->execute()->fetchAll();
+    foreach($rs as $row) {
+      if (intval($row->field_oira_eu_level_value)) {
+        $row->name = 'EU level';
+      }
+      $form['workbench_access']['workbench_access']['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
+      if (!empty($form['field_co_author'])) {
+        $form['field_co_author'][LANGUAGE_NONE]['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
+      }
+    }
+    foreach ($sections as $section) {
+      if ($section->tid == $default_value) {
+        continue;
+      }
+      if (isset($form['workbench_access']['workbench_access']['#options'][$section->tid])) {
+        unset($form['workbench_access']['workbench_access']['#options'][$section->tid]);
+        if (!empty($form['field_co_author'])) {
+          unset($form['field_co_author'][LANGUAGE_NONE]['#options'][$section->tid]);
+        }
+      }
+    }
+    asort($form['workbench_access']['workbench_access']['#options']);
+    if (!empty($form['field_co_author'])) {
+      asort($form['field_co_author'][LANGUAGE_NONE]['#options']);
+    }
+  }
+
   if ($form_id == 'oira_configuration_form') {
     $form['oira_workflow_partner_content_minutes_gap_autosubmit'] = array(
       '#type' => 'textfield',

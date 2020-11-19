@@ -44,6 +44,7 @@ class PartnerMigration extends HwcCrmMigration {
       'field_social_profile',
       'field_dedicated_oira_website',
       'field_partner_other_users',
+      'field_oira_eu_level',
     );
   }
 
@@ -158,6 +159,7 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml {
   }
 
   protected function parseSourceFile() {
+    global $user;
     self::$data = array();
     if (!is_readable($this->file)) {
       watchdog('hwc_crm_migration', 'Cannot find migration files: @file (set `hwc_crm_data_dir` properly)', array('@file' => $this->file), WATCHDOG_WARNING);
@@ -202,6 +204,16 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml {
         $data->field_main_contact_email = (string) $attributes['Textbox18'];
         $data->field_dedicated_oira_website = (string) $attributes['Textbox24'];
 
+        $data->field_oira_eu_level = 0;
+
+        $oira_eu_level = (string)$attributes['Textbox46'];
+        if (
+          !empty($oira_eu_level) &&
+          $oira_eu_level == 'True'
+        ) {
+          $data->field_oira_eu_level = 1;
+        }
+
         // Other users.
         // In XML, the fields are First name, last name, email.
         for ($i = 26; $i <= 45; $i += 4) {
@@ -242,7 +254,12 @@ class PartnerMigrateListXml extends AbstractCrmMigrateListXml {
         }
       }
     }
+
+    if (($user->uid == 1) && (arg(2) == 'migrate') && (isset($_REQUEST['debug']))) {
+      drupal_set_message(strtr('File: @file', array('@file' => $this->file)));
+    }
   }
+
 }
 
 class PartnerContentItemXML extends MigrateItem {

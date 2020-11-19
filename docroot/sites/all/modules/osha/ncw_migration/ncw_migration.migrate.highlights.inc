@@ -22,7 +22,12 @@ class NCWHighlightMigration extends AbstractNCWNodeMigration {
     $this->addFieldMapping('field_tags:source_type')->defaultValue('tid');
     $this->addFieldMapping('field_tags:create_term')->defaultValue(FALSE);
     $this->addFieldMapping('field_tags', 'field_tags');
-    $this->addFieldMapping('field_image_home_latest_news', 'field_image');
+
+    $this->addFieldMapping('field_image', 'field_image');
+    $this->addFieldMapping('field_image:file_replace')->defaultValue(TRUE);
+    $this->addFieldMapping('field_image_home_latest_news', 'field_image_home_latest_news');
+    $this->addFieldMapping('field_image_home_latest_news:file_replace')->defaultValue(TRUE);
+
     $this->addFieldMapping('field_aditional_resources', 'field_aditional_resources');
 
     $this->removeFieldMapping('workbench_access', NULL);
@@ -39,6 +44,16 @@ class NCWHighlightMigration extends AbstractNCWNodeMigration {
       'field_image:urlencode',
       'field_image:alt',
       'field_image:title',
+
+      'field_image_home_latest_news:file_class',
+      'field_image_home_latest_news:preserve_files',
+      'field_image_home_latest_news:destination_dir',
+      'field_image_home_latest_news:destination_file',
+      'field_image_home_latest_news:source_dir',
+      'field_image_home_latest_news:urlencode',
+      'field_image_home_latest_news:alt',
+      'field_image_home_latest_news:title',
+
       'field_publication_date:rrule',
       'field_summary',
       'field_summary:format',
@@ -50,11 +65,32 @@ class NCWHighlightMigration extends AbstractNCWNodeMigration {
   }
 
   protected function getManuallyMigratedFields() {
-    return array('field_tags', 'field_aditional_resources');
+    return [
+      'field_tags',
+      'field_aditional_resources',
+      'field_image_home_latest_news',
+      'field_image',
+    ];
   }
 
   function prepareRow($row) {
+
+    $row->field_image_home_latest_news = $row->field_image;
+    osha_migration_normalize_field_file($row, 'field_image_home_latest_news', NULL, NULL);
+    osha_migration_normalize_field_file($row, 'field_image', NULL, NULL);
+    $map = $this->getMap();
+    if ($destid1 = $map->lookupDestinationID(array($row->nid))) {
+      $node = node_load($destid1['destid1']);
+      if (!empty($node->field_image_home_latest_news[LANGUAGE_NONE][0]['uri'])) {
+        $row->field_image_home_latest_news[0] = $node->field_image_home_latest_news[LANGUAGE_NONE][0]['uri'];
+      }
+      if (!empty($node->field_image[LANGUAGE_NONE][0]['uri'])) {
+        $row->field_image[0] = $node->field_image[LANGUAGE_NONE][0]['uri'];
+      }
+    }
+
     parent::prepareRow($row);
+
     $row->field_tags = osha_migration_normalize_migrated_term_reference($row->field_tags, 'tax_tags');
     $section = 'section';
     $map = $this->getMap();
@@ -76,6 +112,7 @@ class NCWHighlightMigration extends AbstractNCWNodeMigration {
       }
     }
   }
+
 }
 
 
@@ -92,6 +129,8 @@ class NCWHighlightSource extends AbstractNCWNodeSource {
       'body_language',
       'body_summary',
       'body_format',
+      'field_image_home_latest_news',
+      'field_image_home_latest_news_language',
       'field_image',
       'field_image_language',
       'field_publication_date',
@@ -109,4 +148,5 @@ class NCWHighlightSource extends AbstractNCWNodeSource {
     );
     return array_combine($fields, $fields);
   }
+
 }
