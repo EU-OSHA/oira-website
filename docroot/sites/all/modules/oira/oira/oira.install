@@ -175,3 +175,19 @@ function oira_update_7018() {
   variable_set('piwik_translation_set', 1);
   variable_set('piwik_query_parameters', 1);
 }
+
+/**
+ * MDR-4013 change the links to the privacy statements.
+ */
+function oira_update_7019() {
+  $mlid = 1235;
+  $menu_link = menu_link_load($mlid);
+  $menu_link['visibility'] = [];
+  $menu_link['hidden'] = 0;
+  menu_link_save($menu_link);
+
+  $mlid = 2556;
+  $menu_link = menu_link_load($mlid);
+  $menu_link['hidden'] = 1;
+  menu_link_save($menu_link);
+}
