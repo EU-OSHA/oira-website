@@ -9,9 +9,8 @@ define('SOLR_SEARCH_INDEX', 'default_multilingual_node_index');
  */
 function oira_translated_menu_link_alter(&$item) {
   global $language;
-  if ($item['mlid'] == 1235) {
-    $item['href'] = str_replace('/' . $language->language, '', url('<front>', ['absolute' => TRUE]) );
-    $item['href'] .= '/sites/default/files/Websites-and-online services-OiRA-tool-users-' . $language->language . '.pdf';
+  if ($item['mlid'] == 2556) {
+    $item['href'] = 'http://osha.europa.eu/sites/default/files/Websites-and-online services-OiRA-tool-users-' . strtoupper($language->language) . '.pdf';
   }
 }
 
