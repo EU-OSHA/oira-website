@@ -5,16 +5,6 @@ include_once 'oira.features.inc';
 define('SOLR_SEARCH_INDEX', 'default_multilingual_node_index');
 
 /**
- * Implements hook_translated_menu_link_alter().
- */
-function oira_translated_menu_link_alter(&$item) {
-  global $language;
-  if ($item['mlid'] == 1235) {
-    $item['href'] = 'http://osha.europa.eu/sites/default/files/Websites-and-online services-OiRA-tool-users-' . strtoupper($language->language) . '.pdf';
-  }
-}
-
-/**
  * Implements hook_menu().
  */
 function oira_menu() {
