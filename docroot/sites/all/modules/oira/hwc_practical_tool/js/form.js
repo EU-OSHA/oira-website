@@ -81,7 +81,7 @@ jQuery(document).ready(function ($) {
     if (typeof _paq != 'undefined') {
         jQuery('.page-oira-tools .field-name-field-tool-link a').click(function (e) {
             var path = getTrackPath(jQuery(this).attr('href'));
-            _paq.push(['trackEvent', 'Banner', 'Click', path]);
+            _paq.push(['trackEvent', 'Button', 'Click', path]);
         });
     }
 });
