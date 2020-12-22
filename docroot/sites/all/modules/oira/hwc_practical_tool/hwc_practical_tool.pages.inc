@@ -11,7 +11,6 @@ function _hwc_taxonomy_filter_options_list($vocabulary, $default = array()) {
   return $default;
 }
 
-
 // We need this function because it is used within modules from hwc website.
 function _hwc_practical_tool_get_req_param($form_state, $name, $default = NULL) {
   if (!empty($form_state['values'][$name])) {
@@ -69,9 +68,6 @@ function _hwc_practical_tool_strip_param_value($params, $name, $value = NULL) {
 function hwc_practical_tool_menu_tools_form($form, $form_state) {
   $variables['form_state'] = $form_state;
   $variables['action'] = 'oira-tools';
-  $variables['facet_callback'] = 'hwc_practical_tool_get_facets_def';
-  $variables['search_callback'] = 'hwc_practical_tool_search';
-  $variables['language_field'] = 'field_language:value';
 
   return _hwc_practical_tool_get_generic_faceted_form($variables);
 }
@@ -86,9 +82,6 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   global $language;
   $form_state = $variables['form_state'];
   $action = $variables['action'];
-  $facet_callback = $variables['facet_callback'];
-  $search_callback = $variables['search_callback'];
-  $lang_field = $variables['language_field'];
 
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
   $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
@@ -150,24 +143,29 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
-  $facets_def = call_user_func($facet_callback);
+  $facets_def = hwc_practical_tool_get_facets_def();
 
-  $response = call_user_func($search_callback, $form_state, $per_page);
+  $response = hwc_practical_tool_search($form_state, $per_page);
 
   $facets = array();
   if (!empty($response['search_api_facets'])) {
     $facets = $response['search_api_facets'];
     _hwc_practical_tool_facet_value_clear($facets);
   }
-  $query_params = drupal_get_query_parameters();
 
+  $country_map = _hwc_practical_tool_country_map();
   foreach ($facets_def as $field_name => $facet_def) {
     if (!empty($facets[$field_name])) {
       $values_list = call_user_func($facet_def['options_callback'], $facet_def['options_callback_args']);
       $options = array();
       foreach ($facets[$field_name] as $facet_value) {
-        if (!empty($values_list[$facet_value['filter']])) {
-          $options[$facet_value['filter']] = $values_list[$facet_value['filter']] . ' ' . strtr('(@no)', array('@no' => $facet_value['count']));
+        $value = $facet_value['filter'];
+        $key = $value;
+        if ('field_country' == $field_name) {
+          $key = $country_map[$value];
+        }
+        if (!empty($values_list[$value])) {
+          $options[$key] = $values_list[$value] . ' ' . strtr('(@no)', array('@no' => $facet_value['count']));
           $form['left-column'][$field_name] = array(
             '#type' => 'checkboxes',
             '#options' => $options,
@@ -324,11 +322,16 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
     )
   );
   $query->setOption('search_api_facets', $facets_def);
+  $country_map = _hwc_practical_tool_country_map();
+  $country_map = array_flip($country_map);
   foreach ($facets_def as $field_name => $facet_def) {
     $selected_values = _hwc_practical_tool_get_req_param($form_state, $field_name, array());
     if (!empty($selected_values) && is_array($selected_values)) {
       $filter = $query->createFilter($facet_def['operator'], ['facet:' . $field_name]);
       foreach ($selected_values as $value) {
+        if ('field_country' == $field_name && !empty($country_map[$value])) {
+          $value = $country_map[$value];
+        }
         $filter->condition($field_name, $value);
         $query->filter($filter);
       }
@@ -422,4 +425,17 @@ function hwc_practical_tool_menu_tools_get_query() {
   $server->options['highlight_data'] = TRUE;
   $solr = new SearchApiSolrService($server);
   return array($solr, $query);
+}
+
+function _hwc_practical_tool_country_map() {
+  $default = array();
+  $vocabulary = taxonomy_vocabulary_machine_name_load('country');
+  if (!empty($vocabulary)) {
+    $terms = taxonomy_term_load_multiple(array(), array('vid' => $vocabulary->vid));
+    foreach ($terms as $key => $term) {
+      $code = strtolower(str_replace([' ', '/'], ['-', '-'], $term->field_iso2[LANGUAGE_NONE][0]['safe_value']));
+      $default[$term->tid] = $code;
+    }
+  }
+  return $default;
 }
