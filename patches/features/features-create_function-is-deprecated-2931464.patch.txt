@@ -1,0 +1,35 @@
+diff --git a/features.export.inc b/features.export.inc
+index 5045b13..e65216f 100644
+--- a/features.export.inc
++++ b/features.export.inc
+@@ -1090,10 +1090,10 @@ function _features_is_assoc($array) {
+ function features_remove_recursion($o) {
+   static $replace;
+   if (!isset($replace)) {
+-    $replace = create_function(
+-      '$m',
+-      '$r="\x00{$m[1]}ecursion_features";return \'s:\'.strlen($r.$m[2]).\':"\'.$r.$m[2].\'";\';'
+-    );
++    $replace = function($m) {
++      $r="\x00{$m[1]}ecursion_features";
++      return 's:'.strlen($r.$m[2]).':"'.$r.$m[2].'";';
++    };
+   }
+   if (is_array($o) || is_object($o)) {
+     $re = '#(r|R):([0-9]+);#';
+diff --git a/includes/features.menu.inc b/includes/features.menu.inc
+index edd4751..1837dcb 100644
+--- a/includes/features.menu.inc
++++ b/includes/features.menu.inc
+@@ -420,8 +420,7 @@ function features_menu_link_load($identifier) {
+  * Returns a lowercase clean string with only letters, numbers and dashes
+  */
+ function features_clean_title($str) {
+-  return strtolower(preg_replace_callback('/(\s)|([^a-zA-Z\-0-9])/i', create_function(
+-          '$matches',
+-          'return $matches[1]?"-":"";'
+-      ), $str));
++  return strtolower(preg_replace_callback('/(\s)|([^a-zA-Z\-0-9])/i', function($matches) {
++    return $matches[1] ? '-' : '';
++  }, $str));
+ }
