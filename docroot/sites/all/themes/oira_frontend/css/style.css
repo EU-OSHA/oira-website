@@ -15346,8 +15346,14 @@ header.hide-header {
   .page-irat-network .quicktabs-views-group .views-field.views-field-nothing .col-sm-2 img {
     margin: 0;
   }
-  blockquote.image-field-caption p {
-    max-width: 430px;
+  .node-news .field-name-field-image {
+    border: 0;
+  }
+  .view-display-id-oshnews_list .field-type-image {
+    border: 0;
+  }
+  blockquote.image-field-caption {
+    position: relative;
   }
   .oira-tools-search-page .field-name-field-sector-category {
     float: none;
