@@ -224,6 +224,25 @@ function oira_workflow_form_node_form_alter(&$form, &$form_state, $form_id) {
         );
       }
 
+      if ($form['#form_id'] == 'news_node_form') {
+        $partner_role = user_role_load_by_name(ROLE_OIRA_PARTNER);
+        if ($uid = $form['#node']->uid) {
+          $partner = user_load($uid);
+          if (user_has_role($partner_role->rid, $partner)) {
+              $format = 'full_html';
+              if (user_has_role($partner_role->rid)) {
+                $format = 'filtered_html_minimal';
+              }
+              if ($form['body'][$form['body']['#language']][0]['#format'] != $format) {
+                $form['body'][$form['body']['#language']][0]['#format'] = $format;
+              }
+              if ($form['field_summary'][$form['field_summary']['#language']][0]['#format'] != $format) {
+                $form['field_summary'][$form['field_summary']['#language']][0]['#format'] = $format;
+              }
+          }
+        }
+      }
+
       if (in_array(ROLE_OIRA_PARTNER, $user->roles) && count($user->roles) == 2) {
         foreach($user->workbench_access as $user_id_section => $value) {
           if (!empty($form['workbench_access']['workbench_access']['#options'])) {
