@@ -334,7 +334,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -485,7 +485,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -583,7 +583,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 10,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -796,7 +796,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'year_range' => '1970:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 11,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -898,7 +898,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'year_range' => '-1:+0',
       ),
       'type' => 'date_popup',
-      'weight' => 12,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -920,7 +920,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 20,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -962,7 +962,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 24,
+      'weight' => 19,
     ),
     'workbench_access_field' => 0,
   );
@@ -1035,7 +1035,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -1060,7 +1060,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 20,
+        'weight' => 18,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -1138,7 +1138,7 @@ function hwc_practical_tool_field_default_field_instances() {
           ),
         ),
         'type' => 'language_default',
-        'weight' => 21,
+        'weight' => 19,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -1185,6 +1185,73 @@ function hwc_practical_tool_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-practical_tool-field_third_partner'.
+  $field_instances['node-practical_tool-field_third_partner'] = array(
+    'bundle' => 'practical_tool',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'country_partner_content' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(
+          'field_formatter_class' => '',
+        ),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 14,
+      ),
+      'osha_resources' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'osha_wiki' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_third_partner',
+    'label' => '3rd Partner',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 14,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-practical_tool-field_third_title'.
   $field_instances['node-practical_tool-field_third_title'] = array(
     'bundle' => 'practical_tool',
@@ -1205,7 +1272,7 @@ function hwc_practical_tool_field_default_field_instances() {
           'field_formatter_class' => '',
         ),
         'type' => 'text_default',
-        'weight' => 19,
+        'weight' => 17,
       ),
       'osha_resources' => array(
         'label' => 'above',
@@ -1351,7 +1418,7 @@ function hwc_practical_tool_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -1458,7 +1525,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -1529,7 +1596,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 18,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -1557,7 +1624,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 22,
       ),
       'highlights_item' => array(
         'label' => 'above',
@@ -1811,6 +1878,7 @@ function hwc_practical_tool_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('3rd Partner');
   t('Alternative description');
   t('Alternative title');
   t('Co-author');

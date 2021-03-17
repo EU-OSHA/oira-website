@@ -68,6 +68,9 @@ function _hwc_practical_tool_strip_param_value($params, $name, $value = NULL) {
 function hwc_practical_tool_menu_tools_form($form, $form_state) {
   $variables['form_state'] = $form_state;
   $variables['action'] = 'oira-tools';
+  $variables['facet_callback'] = 'hwc_practical_tool_get_facets_def';
+  $variables['search_callback'] = 'hwc_practical_tool_search';
+  $variables['language_field'] = 'field_language:value';
 
   return _hwc_practical_tool_get_generic_faceted_form($variables);
 }
@@ -82,6 +85,9 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   global $language;
   $form_state = $variables['form_state'];
   $action = $variables['action'];
+  $facet_callback = $variables['facet_callback'];
+  $search_callback = $variables['search_callback'];
+  $lang_field = $variables['language_field'];
 
   $text = _hwc_practical_tool_get_req_param($form_state, 'text');
   $sort = _hwc_practical_tool_get_req_param($form_state, 'sort', 'date');
@@ -143,9 +149,9 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
   );
 
   $per_page = variable_get('hwc_tools_per_page', 10);
-  $facets_def = hwc_practical_tool_get_facets_def();
+  $facets_def = call_user_func($facet_callback);
 
-  $response = hwc_practical_tool_search($form_state, $per_page);
+  $response = call_user_func($search_callback, $form_state, $per_page);
 
   $facets = array();
   if (!empty($response['search_api_facets'])) {
