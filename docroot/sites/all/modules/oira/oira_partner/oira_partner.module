@@ -519,9 +519,13 @@ function _oira_partner_compute_content_count($node) {
     $co_subquery = db_select('field_data_field_co_author', 'co')
       ->fields('co', array('entity_id'))
       ->condition('field_co_author_tid', $section_id);
+    $third_subquery = db_select('field_data_field_third_partner', 'co')
+      ->fields('co', array('entity_id'))
+      ->condition('field_third_partner_tid', $section_id);
     $or = db_or();
     $or->condition('n.nid', $wa_subquery, 'IN');
     $or->condition('n.nid', $co_subquery, 'IN');
+    $or->condition('n.nid', $third_subquery, 'IN');
     $query = db_select('node', 'n')
       ->fields('n', array());
     $query->innerJoin('field_data_field_publication_date', 'pd', 'n.nid = pd.entity_id');

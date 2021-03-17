@@ -11,6 +11,9 @@ function hwc_practical_tool_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
@@ -50,6 +53,8 @@ function hwc_practical_tool_fe_nodequeue_export_fields() {
     'reference' => 0,
     'reverse' => 0,
     'i18n' => 0,
+    'insert_at_front' => 0,
+    'unique_entries' => 0,
     'subqueues' => 1,
     'types' => array(
       0 => 'practical_tool',

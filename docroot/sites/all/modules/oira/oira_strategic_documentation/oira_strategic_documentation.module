@@ -104,6 +104,9 @@ function oira_strategic_documentation_node_access($node, $op, $account) {
       if (isset($node->field_co_author['und'][0]['tid'])) {
         $node_sections[$node->field_co_author['und'][0]['tid']] = $node->field_co_author['und'][0]['tid'];
       }
+      if (isset($node->field_third_partner['und'][0]['tid'])) {
+        $node_sections[$node->field_third_partner['und'][0]['tid']] = $node->field_third_partner['und'][0]['tid'];
+      }
       $user_sections = osha_workflow_editor_get_sections($account);
       // Allow also the general section.
       $user_sections[] = 'section';

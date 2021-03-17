@@ -255,13 +255,13 @@ function hwc_practical_tool_views_default_views() {
     'osha_date_theme' => '',
     'field_formatter_class' => '',
   );
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
-  /* Field: Content: Delete link */
+  /* Field: Content: Link to delete content */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -289,7 +289,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['sorts']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
   $handler->display->display_options['sorts']['field_revised_date_value']['field'] = 'field_revised_date_value';
   $handler->display->display_options['sorts']['field_revised_date_value']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -672,7 +672,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['sorts']['field_revised_date_value']['table'] = 'field_data_field_revised_date';
   $handler->display->display_options['sorts']['field_revised_date_value']['field'] = 'field_revised_date_value';
   $handler->display->display_options['sorts']['field_revised_date_value']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -948,7 +948,7 @@ function hwc_practical_tool_views_default_views() {
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -978,7 +978,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_publication_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_publication_date_value']['form_type'] = 'date_text';
   $handler->display->display_options['filters']['field_publication_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
+  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['id'] = 'field_wiki_categories_tid_1';
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['table'] = 'field_data_field_wiki_categories';
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['field'] = 'field_wiki_categories_tid';
@@ -986,7 +986,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['group'] = 1;
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['type'] = 'select';
   $handler->display->display_options['filters']['field_wiki_categories_tid_1']['vocabulary'] = 'wiki_categories';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -1007,7 +1007,7 @@ function hwc_practical_tool_views_default_views() {
     'wiki_page' => 'wiki_page',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Content: Wiki categories (field_wiki_categories) */
+  /* Filter criterion: Content: OSHwiki category (field_wiki_categories) */
   $handler->display->display_options['filters']['field_wiki_categories_tid']['id'] = 'field_wiki_categories_tid';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['table'] = 'field_data_field_wiki_categories';
   $handler->display->display_options['filters']['field_wiki_categories_tid']['field'] = 'field_wiki_categories_tid';
@@ -1185,7 +1185,7 @@ function hwc_practical_tool_views_default_views() {
     2 => 'OR',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1332,7 +1332,7 @@ function hwc_practical_tool_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
