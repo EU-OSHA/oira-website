@@ -376,7 +376,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -485,7 +485,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -1035,7 +1035,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -1247,7 +1247,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
   );
@@ -1418,7 +1418,7 @@ function hwc_practical_tool_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -1525,7 +1525,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -1596,7 +1596,7 @@ function hwc_practical_tool_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );

@@ -181,7 +181,7 @@ function hwc_practical_tool_strongarm() {
           'weight' => '15',
         ),
         'workbench_access' => array(
-          'weight' => '14',
+          'weight' => '12',
         ),
         'language' => array(
           'weight' => '5',
