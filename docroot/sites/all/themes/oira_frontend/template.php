@@ -129,7 +129,32 @@ function oira_frontend_process_html_tag(&$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_page().
+ */
 function oira_frontend_preprocess_block(&$vars) {
+
+  if (variable_get('google_no_index', FALSE)) {
+    $robots_noindex = array(
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'name' => 'robots',
+        'content' => 'noindex',
+      ),
+    );
+    drupal_add_html_head($robots_noindex, 'no_index_robots');
+    $robots_noindex = array(
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'name' => 'googlebot',
+        'content' => 'noindex',
+      ),
+    );
+    drupal_add_html_head($robots_noindex, 'no_index_google');
+  }
+
   // Private zone menu block alter.
   if (!empty($vars['elements']['#block']->bid)
     && $vars['elements']['#block']->bid == 317) {

@@ -104,11 +104,18 @@ class oira_partner_handler_is_co_author extends views_handler_filter_boolean_ope
       $in_operator = 'IN';
       $equal_operator = '=';
     }
-    if (!empty($node->field_co_author)) {
+    if (!empty($node->field_co_author) || !empty($node->field_third_partner)) {
       $node_wrapper = entity_metadata_wrapper('node', $node);
       $tids = array();
-      foreach ($node_wrapper->field_co_author->value() as $term) {
-        $tids[] = $term->tid;
+      if (empty($node->field_co_author)) {
+        foreach ($node_wrapper->field_co_author->value() as $term) {
+          $tids[] = $term->tid;
+        }
+      }
+      if (empty($node->field_third_partner)) {
+        foreach ($node_wrapper->field_third_partner->value() as $term) {
+          $tids[] = $term->tid;
+        }
       }
       $subquery = db_select('workbench_access_node', 'workbench_access_node');
       $subquery->addField('workbench_access_node', 'nid');
@@ -152,14 +159,16 @@ class oira_partner_handler_country_partner_access extends views_handler_filter_b
         $subquery = db_select('workbench_access_node', 'wa')
           ->fields('wa', array('access_id'))
           ->condition('wa.nid', $nids);
-
         $subquery_coauthor = db_select('field_data_field_co_author', 'f')
           ->fields('f', array('entity_id'))
           ->condition('f.field_co_author_tid', $partner_workbench_access, 'IN');
-
+        $subquery_third_partner = db_select('field_data_field_third_partner', 'f')
+          ->fields('f', array('entity_id'))
+          ->condition('f.field_third_partner_tid', $partner_workbench_access, 'IN');
         $db_or = db_or();
         $db_or->condition('access_id', $subquery, 'IN');
         $db_or->condition('nid', $subquery_coauthor, 'IN');
+        $db_or->condition('nid', $subquery_third_partner, 'IN');
 
         $query = db_select('workbench_access_node', 'wan')
           ->fields('wan', array('nid'))
@@ -203,9 +212,12 @@ class oira_partner_handler_partner_author_coauthor_access extends views_handler_
       $subquery_coauthor = db_select('field_data_field_co_author', 'f')
         ->fields('f', array('entity_id'))
         ->condition('f.field_co_author_tid', $partner->workbench_access, 'IN');
-
+      $subquery_third_partner = db_select('field_data_field_third_partner', 'f')
+        ->fields('f', array('entity_id'))
+        ->condition('f.field_third_partner_tid', $partner->workbench_access, 'IN');
       $db_or = db_or();
       $db_or->condition('nid', $subquery_coauthor, 'IN');
+      $db_or->condition('nid', $subquery_third_partner, 'IN');
       $db_or->condition('nid', $subquery_partner, 'IN');
       $query = db_select('node', 'n')
         ->fields('n', array('nid'))
@@ -253,8 +265,11 @@ class oira_partner_handler_filter_node_belongs_partner extends views_handler_fil
       $subquery_coauthor = db_select('field_data_field_co_author', 'f')
         ->fields('f', array('entity_id'))
         ->condition('f.field_co_author_tid', $sections, 'IN');
-
+      $subquery_third_partner = db_select('field_data_field_third_partner', 'f')
+        ->fields('f', array('entity_id'))
+        ->condition('f.field_third_partner_tid', $sections, 'IN');
       $db_or = db_or();
+      $db_or->condition('nid', $subquery_third_partner, 'IN');
       $db_or->condition('nid', $subquery_coauthor, 'IN');
       $db_or->condition('nid', $subquery, 'IN');
       $query = db_select('node', 'n')

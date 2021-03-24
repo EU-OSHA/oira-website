@@ -546,7 +546,7 @@ function osha_tmgmt_update_7015() {
     'country',
     'fop_link_sections',
 //    'contact_type',
-    'newsletter_sections',
+//    'newsletter_sections',
 //    'section',
     'organised_by',
     'attachment_file_type',

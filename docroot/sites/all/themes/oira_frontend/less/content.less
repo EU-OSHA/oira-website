@@ -781,30 +781,6 @@ a.more-link{
 						margin: 0 auto;
 					}
 				}
-				/*
-				.views-field-field-link{
-					position: absolute;
-					//width: 1140px;
-					top: 45%;
-					left: 10%;
-					font-family: @font-family-base-2;
-					font-weight: 300;
-					margin-right: 10%;
-					a{
-						color: @color-white;
-						font-size: 1.2em;
-					}
-				}
-				.views-field-body{
-					position: absolute;
-					//width: 1140px;
-					top: 66%;
-					left: 10%;
-					color: @color-white;
-					margin-right: 10%;
-					font-size: @font-size1-3;
-				}
-				*/
 			}
 			.owl-controls.clickable{
 				position: absolute;
@@ -2388,7 +2364,6 @@ a.more-link{
 	}
 	.back-to-news{
 		width: 50%;
-		//float: none !important;
 		display: inline-block;
 		text-align: right;
 		margin-top: 20px;
@@ -2442,10 +2417,11 @@ a.more-link{
 		}
 	}
 	.field-name-field-image{
+		position: relative;
 		display: inline-block;
 		float: left;
 		margin-right: 30px;
-		margin-bottom: 20px;
+		margin-bottom: 35px;
 		border: 1px solid grey;
 	}
 	.group-content-wrapper.news-field-group{
@@ -6512,36 +6488,25 @@ div[id ^= "mini-panel-partner_in_"], {
 
 /*end act as a partner modal*/
 
+
 blockquote.image-field-caption {
-    color: #FFFF;
-    z-index: 99;
+    position: absolute;
+    color: #000;
+    font-size: 10px;
     border-left: 0;
-    position: relative;
-    padding: 0;
+    padding: 3px 15px 0 0;
     margin:0;
     p{
-  		z-index: 999;
-	    position: absolute;
-	    width: 100%;
-	    margin: 0;
-	    padding: 0;
-	    margin-top: -25px;
-	    padding-left: 1em;
-	    background: rgba(145,123,162,0.85);
-	    font-size: 1.1rem;
-	    padding-top: 5px;
-	    padding-bottom: 5px;
+    	padding: 0;
+    	margin:0;
     }
 }
 
-
-
-
 body.front .view-slideshow blockquote.image-field-caption p,
 .panels-flexible-region-new-image-inside  blockquote.image-field-caption p{
-	position: absolute;
+	position: relative;
     bottom: 0;
-    color: #FFF !important;
+    color: #FFF;
     background: transparent;
     opacity: 1;
     z-index: 40;
@@ -6552,6 +6517,7 @@ body.front .view-slideshow blockquote.image-field-caption p,
     padding: 10px 20px;
     margin: 0;
     text-align: right;
+    margin-top: -35px;
 }
 
 
@@ -6952,4 +6918,26 @@ header.hide-header{
   padding-left: 2em;
   padding-right: 2em;
   border: none;
+}
+
+
+body.front{
+	#block-system-main{
+		.panels-flexible-row-new-9{
+	 		.view-display-id-attachment_1{
+ 				padding-bottom: 25px;
+			}
+		}
+	}
+	.panels-flexible-row-new-16 {
+		.pane-promotional-materials {
+			.view-promotional-materials {
+				.views-item-columns-container{
+					blockquote.image-field-caption{
+						position: relative;
+					}
+				}
+			}
+		}
+	}
 }

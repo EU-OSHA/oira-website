@@ -330,6 +330,9 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       if (!empty($form['field_co_author'])) {
         $form['field_co_author'][LANGUAGE_NONE]['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
       }
+      if (!empty($form['field_third_partner'])) {
+        $form['field_third_partner'][LANGUAGE_NONE]['#options'][$row->access_id] = $row->country_name . ' - ' . $row->partner_name;
+      }
     }
     foreach ($sections as $section) {
       if ($section->tid == $default_value) {
@@ -337,6 +340,9 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
       }
       if (isset($form['workbench_access']['workbench_access']['#options'][$section->tid])) {
         unset($form['workbench_access']['workbench_access']['#options'][$section->tid]);
+        if (!empty($form['field_third_partner'])) {
+          unset($form['field_third_partner'][LANGUAGE_NONE]['#options'][$section->tid]);
+        }
         if (!empty($form['field_co_author'])) {
           unset($form['field_co_author'][LANGUAGE_NONE]['#options'][$section->tid]);
         }
@@ -345,6 +351,9 @@ function oira_workflow_form_alter(&$form, &$form_state, $form_id) {
     asort($form['workbench_access']['workbench_access']['#options']);
     if (!empty($form['field_co_author'])) {
       asort($form['field_co_author'][LANGUAGE_NONE]['#options']);
+    }
+    if (!empty($form['field_third_partner'])) {
+      asort($form['field_third_partner'][LANGUAGE_NONE]['#options']);
     }
   }
 

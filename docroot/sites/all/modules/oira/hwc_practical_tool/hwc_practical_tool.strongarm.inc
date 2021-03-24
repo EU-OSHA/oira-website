@@ -169,25 +169,25 @@ function hwc_practical_tool_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '22',
+          'weight' => '17',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '21',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '20',
+          'weight' => '15',
         ),
         'workbench_access' => array(
-          'weight' => '19',
+          'weight' => '12',
         ),
         'language' => array(
           'weight' => '5',
         ),
         'xmlsitemap' => array(
-          'weight' => '23',
+          'weight' => '18',
         ),
       ),
       'display' => array(
@@ -255,7 +255,7 @@ function hwc_practical_tool_strongarm() {
         ),
         'tools_see_more' => array(
           'default' => array(
-            'weight' => '13',
+            'weight' => '12',
             'label' => 'above',
             'type' => 'tools_see_more',
             'visible' => TRUE,
@@ -301,7 +301,7 @@ function hwc_practical_tool_strongarm() {
             'settings' => array(),
           ),
           'default' => array(
-            'weight' => '17',
+            'weight' => '21',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
