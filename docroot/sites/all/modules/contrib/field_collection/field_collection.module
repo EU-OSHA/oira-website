@@ -448,14 +448,15 @@ class FieldCollectionItemEntity extends Entity {
     if (($entity = $this->hostEntity()) && isset($entity->{$this->field_name})) {
       foreach ($entity->{$this->field_name} as $langcode => &$data) {
         if (!empty($data)) {
-        foreach ($data as $delta => $item) {
-          if (isset($item['value']) && $item['value'] == $this->item_id) {
-            $this->langcode = $langcode;
-            return $delta;
-          }
-          elseif (isset($item['entity']) && $item['entity'] === $this) {
-            $this->langcode = $langcode;
-            return $delta;
+          foreach ($data as $delta => $item) {
+            if (isset($item['value']) && $item['value'] == $this->item_id) {
+              $this->langcode = $langcode;
+              return $delta;
+            }
+            elseif (isset($item['entity']) && $item['entity'] === $this) {
+              $this->langcode = $langcode;
+              return $delta;
+            }
           }
         }
       }
