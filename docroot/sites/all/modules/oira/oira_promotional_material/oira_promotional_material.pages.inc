@@ -74,11 +74,17 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
   $query->keys($text);
   $query->fields(array('title_field', 'body:value', 'attachments_field_file'));
   $query->setOption('search_api_facets', $facets_def);
+
+  $country_map = _hwc_practical_tool_country_map();
+  $country_map = array_flip($country_map);
   foreach ($facets_def as $field_name => $facet_def) {
     $selected_values = _hwc_practical_tool_get_req_param($form_state, $field_name, array());
     if (!empty($selected_values) && is_array($selected_values)) {
       $filter = $query->createFilter($facet_def['operator'], ['facet:' . $field_name]);
       foreach ($selected_values as $value) {
+        if ('field_country' == $field_name && !empty($country_map[$value])) {
+          $value = $country_map[$value];
+        }
         $filter->condition($field_name, $value);
         $query->filter($filter);
       }
@@ -94,7 +100,7 @@ function oira_promotional_material_search($form_state, $per_page = 10) {
       break;
   }
   $query->range($page * $per_page, $per_page);
-
+  
   $response = $server->search($query);
   return $response;
 }
