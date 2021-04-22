@@ -462,7 +462,6 @@ class FieldCollectionItemEntity extends Entity {
       }
     }
   }
-  }
 
   /**
    * Determines the language code under which the item is stored.
