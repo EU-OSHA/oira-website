@@ -348,6 +348,84 @@ a.more-link{
 	display: none!important;
 }
 
+.page-promotional-materials-search{
+	input[type=checkbox] + label:before {
+	    content: "\2714";
+	    float: left;
+	    border-radius: 0.2em;
+	    display: inline-block;
+	    width: 1.2em;
+	    height: 1.2em;
+	    padding-left: 0.4em;
+	    padding-bottom: 0.3em;
+	    margin-right: 0.2em;
+	    vertical-align: bottom;
+	    color: transparent;
+	    transition: .2s;
+	    clear: both;
+	    background: #FFF;
+	    margin-right: 10px;
+	    border: 1px solid #765e84; 
+	}
+
+	input[type=checkbox] + label {
+	  display: block;
+	  cursor: pointer;
+	}
+
+	input[type=checkbox] {
+	  display: none !important;
+	}
+
+
+	input[type=checkbox] + label:active:before {
+	  transform: scale(0);
+	}
+
+	input[type=checkbox]:checked + label:before {
+	  background-color: #FFF;
+	  border-color: #FFF;
+	  color: #765e84;
+	}
+
+	input[type=checkbox]:disabled + label:before {
+	  transform: scale(1);
+	  border-color: #aaa;
+	}
+
+	input[type=checkbox]:checked:disabled + label:before {
+	  transform: scale(1);
+	  background-color: #bfb;
+	  border-color: #bfb;
+	}
+
+	input[type=checkbox] + label:before {
+	    float: left;
+	    border: 0;
+	    width: 20px;
+	    height: 20px;
+	    padding-left: 5px;
+	    padding-top: 0;
+	    padding-right: 5px;
+	    padding-bottom: 14px;
+	    margin-bottom: 10px;
+	}
+
+	input[type=checkbox]:checked + label:before {
+	    border: 0;
+	    width: 20px;
+	    height: 20px;
+	    padding-left: 5px;
+	    padding-top: 0;
+	    padding-right: 5px;
+	    padding-bottom: 14px;
+	}
+
+	.checkbox {
+	    margin-top: 0;
+	}
+}
+
 
 .field-name-field-publication-date, .field-type-datetime{
 	margin-bottom: 0px;
