@@ -189,7 +189,7 @@ function oira_partner_strongarm() {
             'settings' => array(),
           ),
           'default' => array(
-            'weight' => '21',
+            'weight' => '19',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,
@@ -226,7 +226,7 @@ function oira_partner_strongarm() {
             'settings' => array(),
           ),
           'default' => array(
-            'weight' => '20',
+            'weight' => '18',
             'label' => 'above',
             'type' => 'hidden',
             'visible' => FALSE,

@@ -997,7 +997,7 @@ function oira_partner_default_panels_mini() {
         'children' => array(
           0 => 12,
         ),
-        'class' => 'col-sm-4 partner-image-container',
+        'class' => 'partner-image-container',
         'hide_empty' => 0,
       ),
       12 => array(
