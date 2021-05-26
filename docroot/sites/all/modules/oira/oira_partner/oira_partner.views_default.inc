@@ -1199,6 +1199,12 @@ else {
   );
   $handler->display->display_options['filters']['field_partner_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '667';
 
   /* Display: OiRA National partners */
   $handler = $view->new_display('block', 'OiRA National partners', 'block_1');
@@ -1366,6 +1372,12 @@ else {
   );
   $handler->display->display_options['filters']['field_partner_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '667';
 
   /* Display: IRAT */
   $handler = $view->new_display('block', 'IRAT', 'block_2');
@@ -1501,6 +1513,12 @@ else {
   );
   $handler->display->display_options['filters']['field_partner_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_partner_type_tid']['vocabulary'] = 'partner_types';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid']['value']['value'] = '667';
 
   /* Display: Others partners */
   $handler = $view->new_display('block', 'Others partners', 'block_3');
@@ -1723,15 +1741,6 @@ else {
 </div>'),
     t('Others partners'),
     t('Others Partners'),
-    t('<div class="col-sm-2">
-[field_logo]
-</div>
-<div class="col-sm-5">
-<div class="hwc-alpha-pager-view-title-field"><div class="field-content">[title_field]</div></div>
-</div>
-<div class="col-sm-5  block-count">
-[partner_content_count]
-</div>'),
   );
   $export['partners_list'] = $view;
 
