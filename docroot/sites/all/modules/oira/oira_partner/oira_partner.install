@@ -211,5 +211,12 @@ function oira_partner_update_7025() {
  * MDR-4405 EU-OSHA does not appear as partner in drop down for promotional resources.
  */
 function oira_partner_update_7026() {
-  features_revert(array('oira_partner' => 'views_view'));
+  features_revert(array('oira_partner' => array('views_view')));
+}
+
+/**
+ * MDR-4405 EU-OSHA does not appear as partner in drop down for promotional resources.
+ */
+function oira_partner_update_7027() {
+  features_revert(array('oira_partner' => array('views_view')));
 }
