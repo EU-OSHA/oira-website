@@ -144,7 +144,6 @@ function _hwc_practical_tool_get_generic_faceted_form($variables) {
     '#options' => array(
       'alphabetically' => t('Alphabetically'),
       'date' => t('Latest first'),
-      'sector' => t('Sector'),
     ),
   );
 
@@ -348,13 +347,6 @@ function hwc_practical_tool_search($form_state, $per_page = 10) {
       $query->sort('field_revised_date', 'DESC');
       break;
 
-    case 'sector':
-      $sector_field = 'title2';
-      if (function_exists('hwc_practical_tool_node_get_sort_sector_' . $language->language)) {
-        $sector_field = 'practical_tool_sort_sector_' . $language->language;
-      }
-      $query->sort($sector_field, 'ASC');
-
     default:
       $title_field = 'title2';
       if (function_exists('hwc_practical_tool_node_get_sort_sector_' . $language->language)) {
@@ -397,16 +389,6 @@ function hwc_practical_tool_get_facets_def() {
       'options_callback' => 'oira_language_list_options',
       'options_callback_args' => array(TRUE, TRUE),
     ),
-//    'field_sector' => array(
-//      'label' => t('Sector'),
-//      'field' => 'field_sector',
-//      'limit' => 150,
-//      'operator' => 'or',
-//      'min_count' => 1,
-//      'missing' => 0,
-//      'options_callback' => '_hwc_taxonomy_filter_options_list',
-//      'options_callback_args' => array('sector'),
-//    ),
     'field_sector_category' => array(
       'label' => t('Sector'),
       'field' => 'field_sector_category',
